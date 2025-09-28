@@ -1,0 +1,5 @@
+robotframework>=6.0.0
+robotframework-sshlibrary>=3.8.0
+pywinrm>=0.4.0
+pyvmomi>=8.0.0
+requests>=2.25.0

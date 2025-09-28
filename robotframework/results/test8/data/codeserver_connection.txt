@@ -1,0 +1,6 @@
+Code Server Connection Details
+========================
+Host: codeserver.domain.com
+Username: jumpuser
+Connection ID: codeserver-ssh-codeserver.domain.com-jumpuser
+Timestamp: /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test8

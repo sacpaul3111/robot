@@ -1,0 +1,10 @@
+Test Results Summary
+==================
+
+Start Time: 2025-09-28 10:40:48
+End Time: 2025-09-28 10:40:49
+Duration: 1.0 seconds
+
+Detailed Results:
+- System Connection: PASS - linux connection to 192.168.1.100
+- Timezone Collection: PASS - Current: America/Chicago, File: /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt
