@@ -12,6 +12,8 @@ Metadata         Features      OS Validation, Package Management, Patch Complian
 Metadata         Reporting     Unified HTML Reports + Enhanced Dashboard
 
 Resource         ../../settings.resource
+Resource         os_keywords.resource
+Resource         variables.resource
 
 # Configure Robot Framework to output to html_reports directory
 Default Tags     os-validation

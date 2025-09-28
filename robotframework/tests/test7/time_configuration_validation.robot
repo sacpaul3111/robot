@@ -12,6 +12,8 @@ Metadata         Features      Time Zone, NTP Configuration, Chrony Service, Tim
 Metadata         Reporting     Unified HTML Reports + Enhanced Dashboard
 
 Resource         ../../settings.resource
+Resource         time_keywords.resource
+Resource         variables.resource
 
 # Configure Robot Framework to output to html_reports directory
 Default Tags     time-validation

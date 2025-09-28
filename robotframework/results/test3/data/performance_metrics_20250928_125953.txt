@@ -1,0 +1,6 @@
+Primary DNS Latency: 61.184ms
+Secondary DNS Latency: 34.653ms
+Minimum Latency: 26.152ms
+Maximum Latency: 47.289ms
+Average Latency: 38.266ms
+Packet Loss: 0%

@@ -12,6 +12,8 @@ Metadata         Features      DNS, Connectivity, Performance, Routing
 Metadata         Reporting     Unified HTML Reports + Enhanced Dashboard
 
 Resource         ../../settings.resource
+Resource         network_keywords.resource
+Resource         variables.resource
 
 # Configure Robot Framework to output to html_reports directory
 Default Tags     network-validation
