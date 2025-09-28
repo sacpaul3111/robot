@@ -11,7 +11,7 @@ Metadata         Version       1.0.0
 Metadata         Features      DNS, Connectivity, Performance, Routing
 Metadata         Reporting     Unified HTML Reports + Enhanced Dashboard
 
-Resource         settings.resource
+Resource         ../../settings.resource
 
 # Configure Robot Framework to output to html_reports directory
 Default Tags     network-validation

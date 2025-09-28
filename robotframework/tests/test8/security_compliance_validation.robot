@@ -11,7 +11,7 @@ Metadata         Version       1.0.0
 Metadata         Features      Security Audit, User Validation, Firewall Rules, Service Hardening
 Metadata         Reporting     Unified HTML Reports + Enhanced Dashboard
 
-Resource         settings.resource
+Resource         ../../settings.resource
 
 # Configure Robot Framework to output to html_reports directory
 Default Tags     security-validation

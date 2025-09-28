@@ -11,7 +11,7 @@ Metadata         Version       1.0.0
 Metadata         Features      OS Validation, Package Management, Patch Compliance, CIP-007 R2
 Metadata         Reporting     Unified HTML Reports + Enhanced Dashboard
 
-Resource         settings.resource
+Resource         ../../settings.resource
 
 # Configure Robot Framework to output to html_reports directory
 Default Tags     os-validation
