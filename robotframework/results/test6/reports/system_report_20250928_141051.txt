@@ -1,0 +1,15 @@
+OS Installation Validation Report
+=================================
+
+Generated: 20250928_141051
+
+OS Information:
+
+
+Package Information:
+
+
+Patch Information:
+{'patch_history': 'No patch manager found', 'last_update': 'Unknown'}
+
+Template Information:

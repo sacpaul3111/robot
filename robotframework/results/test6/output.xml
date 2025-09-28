@@ -1,117 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-09-28T12:48:29.414526" rpa="false" schemaversion="5">
-<suite id="s1" name="Test6" source="/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test6">
-<suite id="s1-s1" name="Os Installation Validation" source="/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test6/os_installation_validation.robot">
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-09-28T14:10:21.087247" rpa="false" schemaversion="5">
+<suite id="s1" name="Os Installation Validation" source="/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test6/os_installation_validation.robot">
 <kw name="Initialize Test Environment" owner="os_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.743849" level="INFO">🚀 Initializing OS Installation Validation Test Environment...</msg>
+<msg time="2025-09-28T14:10:21.617788" level="INFO">🚀 Initializing OS Installation Validation Test Environment...</msg>
 <arg>🚀 Initializing OS Installation Validation Test Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.743495" elapsed="0.000700"/>
+<status status="PASS" start="2025-09-28T14:10:21.616859" elapsed="0.001195"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-09-28T12:48:29.753125" level="INFO" html="true">Created directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/results/test6/reports"&gt;/mnt/c/Users/sacpa/Projects/results/test6/reports&lt;/a&gt;'.</msg>
+<msg time="2025-09-28T14:10:21.620176" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test6/reports"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test6/reports&lt;/a&gt;' already exists.</msg>
 <arg>${REPORTS_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.744432" elapsed="0.008825"/>
+<status status="PASS" start="2025-09-28T14:10:21.618419" elapsed="0.001930"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-09-28T12:48:29.761777" level="INFO" html="true">Created directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/results/test6/evidence"&gt;/mnt/c/Users/sacpa/Projects/results/test6/evidence&lt;/a&gt;'.</msg>
+<msg time="2025-09-28T14:10:21.623082" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test6/evidence"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test6/evidence&lt;/a&gt;' already exists.</msg>
 <arg>${EVIDENCE_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.753464" elapsed="0.008435"/>
+<status status="PASS" start="2025-09-28T14:10:21.620670" elapsed="0.003204"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.762345" level="INFO">${TOTAL_TESTS} = 0</msg>
+<msg time="2025-09-28T14:10:21.625259" level="INFO">${TOTAL_TESTS} = 0</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>0</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.762105" elapsed="0.000285"/>
+<status status="PASS" start="2025-09-28T14:10:21.624543" elapsed="0.000827"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.762675" level="INFO">${PASSED_TESTS} = 0</msg>
+<msg time="2025-09-28T14:10:21.626313" level="INFO">${PASSED_TESTS} = 0</msg>
 <arg>${PASSED_TESTS}</arg>
 <arg>0</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.762518" elapsed="0.000195"/>
+<status status="PASS" start="2025-09-28T14:10:21.625965" elapsed="0.000434"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.762969" level="INFO">@{empty_results} = [ ]</msg>
+<msg time="2025-09-28T14:10:21.626913" level="INFO">@{empty_results} = [ ]</msg>
 <var>@{empty_results}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.762814" elapsed="0.000179"/>
+<status status="PASS" start="2025-09-28T14:10:21.626625" elapsed="0.000330"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.763214" level="INFO">@{empty_metrics} = [ ]</msg>
+<msg time="2025-09-28T14:10:21.627345" level="INFO">@{empty_metrics} = [ ]</msg>
 <var>@{empty_metrics}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.763086" elapsed="0.000150"/>
+<status status="PASS" start="2025-09-28T14:10:21.627124" elapsed="0.000310"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.763555" level="INFO">@{TEST_RESULTS} = [ ]</msg>
+<msg time="2025-09-28T14:10:21.627914" level="INFO">@{TEST_RESULTS} = [ ]</msg>
 <arg>@{TEST_RESULTS}</arg>
 <arg>@{empty_results}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.763339" elapsed="0.000276"/>
+<status status="PASS" start="2025-09-28T14:10:21.627629" elapsed="0.000330"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.764632" level="INFO">@{PERFORMANCE_METRICS} = [ ]</msg>
+<msg time="2025-09-28T14:10:21.628388" level="INFO">@{PERFORMANCE_METRICS} = [ ]</msg>
 <arg>@{PERFORMANCE_METRICS}</arg>
 <arg>@{empty_metrics}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.763892" elapsed="0.000916"/>
+<status status="PASS" start="2025-09-28T14:10:21.628132" elapsed="0.000301"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.765208" level="INFO">✅ Test environment initialized successfully</msg>
+<msg time="2025-09-28T14:10:21.628783" level="INFO">✅ Test environment initialized successfully</msg>
 <arg>✅ Test environment initialized successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.764992" elapsed="0.000447"/>
+<status status="PASS" start="2025-09-28T14:10:21.628616" elapsed="0.000252"/>
 </kw>
 <doc>🚀 Initialize test environment and create necessary directories</doc>
-<status status="PASS" start="2025-09-28T12:48:29.742524" elapsed="0.023038"/>
+<status status="PASS" start="2025-09-28T14:10:21.614833" elapsed="0.014134"/>
 </kw>
-<test id="s1-s1-t1" name="Critical - Target System Connection Establishment" line="29">
+<test id="s1-t1" name="Critical - Target System Connection Establishment" line="29">
 <kw name="Log Test Start" owner="os_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.767115" level="INFO">▶️ Starting: Critical - Target System Connection Establishment</msg>
+<msg time="2025-09-28T14:10:21.630459" level="INFO">▶️ Starting: Critical - Target System Connection Establishment</msg>
 <arg>▶️ Starting: ${test_name}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.766927" elapsed="0.000316"/>
+<status status="PASS" start="2025-09-28T14:10:21.630234" elapsed="0.000328"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-09-28T12:48:29.766604" elapsed="0.000750"/>
+<status status="PASS" start="2025-09-28T14:10:21.629828" elapsed="0.000816"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.767792" level="INFO">🔍 Establishing connection to target system: 10.1.1.100</msg>
+<msg time="2025-09-28T14:10:21.630992" level="INFO">🔍 Establishing connection to target system: 10.1.1.100</msg>
 <arg>🔍 Establishing connection to target system: ${TARGET_HOST}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.767578" elapsed="0.000509"/>
+<status status="PASS" start="2025-09-28T14:10:21.630797" elapsed="0.000436"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.768610" level="INFO">${total} = 1</msg>
+<msg time="2025-09-28T14:10:21.631723" level="INFO">${total} = 1</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.768258" elapsed="0.000379"/>
+<status status="PASS" start="2025-09-28T14:10:21.631431" elapsed="0.000335"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.768947" level="INFO">${TOTAL_TESTS} = 1</msg>
+<msg time="2025-09-28T14:10:21.632145" level="INFO">${TOTAL_TESTS} = 1</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.768754" elapsed="0.000234"/>
+<status status="PASS" start="2025-09-28T14:10:21.631911" elapsed="0.000286"/>
 </kw>
 <kw name="Establish System Connection" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:29.770241" level="INFO">🔍 Connecting to linux system: 10.1.1.100</msg>
+<msg time="2025-09-28T14:10:21.633341" level="INFO">🔍 Connecting to linux system: 10.1.1.100</msg>
 <arg>🔍 Connecting to ${os_type} system: ${host}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.770029" elapsed="0.000330"/>
+<status status="PASS" start="2025-09-28T14:10:21.633080" elapsed="0.000479"/>
 </kw>
 <if>
 <branch type="IF" condition="'${os_type}' == 'linux'">
@@ -120,51 +119,51 @@
 <arg>${host}</arg>
 <arg>timeout=${SSH_TIMEOUT}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-09-28T12:48:29.771172" elapsed="0.000999"/>
+<status status="PASS" start="2025-09-28T14:10:21.634538" elapsed="0.000618"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
-<msg time="2025-09-28T12:48:29.772788" level="INFO">Logging into '10.1.1.100:22' as 'testuser'.</msg>
-<msg time="2025-09-28T12:48:59.816351" level="FAIL">TimeoutError: timed out</msg>
+<msg time="2025-09-28T14:10:21.635632" level="INFO">Logging into '10.1.1.100:22' as 'testuser'.</msg>
+<msg time="2025-09-28T14:10:51.662064" level="FAIL">TimeoutError: timed out</msg>
 <arg>${username}</arg>
 <arg>${password}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="FAIL" start="2025-09-28T12:48:29.772404" elapsed="30.052819">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-09-28T14:10:21.635330" elapsed="30.033518">TimeoutError: timed out</status>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${result}</var>
 <arg>echo "SSH connection test"</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.826548" elapsed="0.002197"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.669588" elapsed="0.000107"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
 <arg>SSH connection test</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.829992" elapsed="0.000160"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.670014" elapsed="0.000045"/>
 </kw>
 <kw name="Get Connection" owner="SSHLibrary">
 <var>${connection_id}</var>
 <doc>Returns information about the connection.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.830651" elapsed="0.000057"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.670289" elapsed="0.000043"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ SSH connection established: ${connection_id}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.831026" elapsed="0.000051"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.670514" elapsed="0.000036"/>
 </kw>
 <return>
 <value>${connection_id}</value>
-<status status="NOT RUN" start="2025-09-28T12:48:59.831246" elapsed="0.000343"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.670648" elapsed="0.000051"/>
 </return>
 <var>${connection}</var>
 <arg>${host}</arg>
 <arg>${username}</arg>
 <arg>${password}</arg>
 <doc>🐧 Establish SSH connection to Linux system</doc>
-<status status="FAIL" start="2025-09-28T12:48:29.770813" elapsed="30.063478">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-09-28T14:10:21.634132" elapsed="30.038017">TimeoutError: timed out</status>
 </kw>
-<status status="FAIL" start="2025-09-28T12:48:29.770516" elapsed="30.064031">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-09-28T14:10:21.633729" elapsed="30.038601">TimeoutError: timed out</status>
 </branch>
 <branch type="ELSE IF" condition="'${os_type}' == 'windows'">
 <kw name="Establish WinRM Connection" owner="os_keywords">
@@ -173,23 +172,23 @@
 <arg>${username}</arg>
 <arg>${password}</arg>
 <doc>🪟 Establish WinRM connection to Windows system</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.836167" elapsed="0.000166"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.672966" elapsed="0.000069"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.834854" elapsed="0.001696"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.672414" elapsed="0.000709"/>
 </branch>
 <branch type="ELSE">
 <kw name="Fail" owner="BuiltIn">
 <arg>Unsupported OS type: ${os_type}</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.837028" elapsed="0.000194"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.673401" elapsed="0.000040"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.836650" elapsed="0.000698"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.673178" elapsed="0.000327"/>
 </branch>
-<status status="FAIL" start="2025-09-28T12:48:29.770476" elapsed="30.066958">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-09-28T14:10:21.633680" elapsed="30.039921">TimeoutError: timed out</status>
 </if>
 <return>
 <value>${connection}</value>
-<status status="NOT RUN" start="2025-09-28T12:48:59.837628" elapsed="0.000060"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.673742" elapsed="0.000038"/>
 </return>
 <var>${connection_result}</var>
 <arg>${TARGET_HOST}</arg>
@@ -197,67 +196,67 @@
 <arg>${TARGET_PASSWORD}</arg>
 <arg>${TARGET_OS_TYPE}</arg>
 <doc>🔗 Establish connection to target system (SSH for Linux, WinRM for Windows)</doc>
-<status status="FAIL" start="2025-09-28T12:48:29.769402" elapsed="30.068589">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-09-28T14:10:21.632564" elapsed="30.041396">TimeoutError: timed out</status>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${connection_result}</arg>
 <arg>Failed to establish connection to target system</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.838514" elapsed="0.000069"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.674204" elapsed="0.000038"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${SYSTEM_CONNECTION}</arg>
 <arg>${connection_result}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.839013" elapsed="0.000162"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.674453" elapsed="0.000034"/>
 </kw>
 <kw name="Validate System Connection" owner="os_keywords">
 <var>${connection_status}</var>
 <arg>${connection_result}</arg>
 <doc>✅ Validate that system connection is active</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.839914" elapsed="0.000073"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.674911" elapsed="0.000048"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${connection_status}</arg>
 <arg>connected</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.840356" elapsed="0.000158"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.675180" elapsed="0.000035"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ System connection: ESTABLISHED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.840949" elapsed="0.000063"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.675502" elapsed="0.000050"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🔑 Connection Type: ${TARGET_OS_TYPE}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.841487" elapsed="0.000063"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.675880" elapsed="0.000044"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📍 Target Host: ${TARGET_HOST}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.841827" elapsed="0.000071"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.676108" elapsed="0.000034"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>System Connection: PASS - ${TARGET_OS_TYPE} connection to ${TARGET_HOST}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.842140" elapsed="0.000038"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.676891" elapsed="0.000073"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.842358" elapsed="0.000032"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.677230" elapsed="0.000353"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.842571" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.678317" elapsed="0.000105"/>
 </kw>
 <kw name="Log Test End" owner="os_keywords" type="TEARDOWN">
 <if>
@@ -266,25 +265,25 @@
 <arg>✅ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.844920" elapsed="0.000037"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.682313" elapsed="0.000061"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.844428" elapsed="0.000599"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.681726" elapsed="0.000770"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.846327" level="INFO">❌ Completed: Critical - Target System Connection Establishment - FAIL</msg>
+<msg time="2025-09-28T14:10:51.683435" level="INFO">❌ Completed: Critical - Target System Connection Establishment - FAIL</msg>
 <arg>❌ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.845714" elapsed="0.000804"/>
+<status status="PASS" start="2025-09-28T14:10:51.682840" elapsed="0.000879"/>
 </kw>
-<status status="PASS" start="2025-09-28T12:48:59.845446" elapsed="0.001141"/>
+<status status="PASS" start="2025-09-28T14:10:51.682572" elapsed="0.001258"/>
 </branch>
-<status status="PASS" start="2025-09-28T12:48:59.844366" elapsed="0.002256"/>
+<status status="PASS" start="2025-09-28T14:10:51.681637" elapsed="0.002255"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.843520" elapsed="0.003176"/>
+<status status="PASS" start="2025-09-28T14:10:51.680462" elapsed="0.003567"/>
 </kw>
 <doc>🔗 Establish connection to target system via WinRM (Windows) or SSH (Linux)
 Validates connectivity and authentication for OS validation tasks</doc>
@@ -294,74 +293,74 @@ Validates connectivity and authentication for OS validation tasks</doc>
 <tag>critical</tag>
 <tag>ssh</tag>
 <tag>winrm</tag>
-<status status="FAIL" start="2025-09-28T12:48:29.765744" elapsed="30.081020">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-09-28T14:10:21.629048" elapsed="30.055105">TimeoutError: timed out</status>
 </test>
-<test id="s1-s1-t2" name="Critical - Operating System Information Collection" line="55">
+<test id="s1-t2" name="Critical - Operating System Information Collection" line="55">
 <kw name="Log Test Start" owner="os_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.849019" level="INFO">▶️ Starting: Critical - Operating System Information Collection</msg>
+<msg time="2025-09-28T14:10:51.687482" level="INFO">▶️ Starting: Critical - Operating System Information Collection</msg>
 <arg>▶️ Starting: ${test_name}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.848692" elapsed="0.000680"/>
+<status status="PASS" start="2025-09-28T14:10:51.687158" elapsed="0.000439"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.848269" elapsed="0.001241"/>
+<status status="PASS" start="2025-09-28T14:10:51.686697" elapsed="0.000995"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.850083" level="INFO">🔍 Collecting operating system information...</msg>
+<msg time="2025-09-28T14:10:51.688036" level="INFO">🔍 Collecting operating system information...</msg>
 <arg>🔍 Collecting operating system information...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.849762" elapsed="0.000550"/>
+<status status="PASS" start="2025-09-28T14:10:51.687861" elapsed="0.000259"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.851198" level="INFO">${total} = 2</msg>
+<msg time="2025-09-28T14:10:51.688951" level="INFO">${total} = 2</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.850628" elapsed="0.000633"/>
+<status status="PASS" start="2025-09-28T14:10:51.688279" elapsed="0.000718"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.851955" level="INFO">${TOTAL_TESTS} = 2</msg>
+<msg time="2025-09-28T14:10:51.689520" level="INFO">${TOTAL_TESTS} = 2</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.851557" elapsed="0.000491"/>
+<status status="PASS" start="2025-09-28T14:10:51.689197" elapsed="0.000382"/>
 </kw>
 <kw name="Collect OS Information" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.853540" level="INFO">📊 Collecting OS information...</msg>
+<msg time="2025-09-28T14:10:51.691021" level="INFO">📊 Collecting OS information...</msg>
 <arg>📊 Collecting OS information...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.852883" elapsed="0.000866"/>
+<status status="PASS" start="2025-09-28T14:10:51.690800" elapsed="0.000325"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-09-28T12:48:59.854135" level="INFO">Executing command 'cat /etc/os-release'.</msg>
-<msg time="2025-09-28T12:48:59.855046" level="FAIL">Connection not open</msg>
+<msg time="2025-09-28T14:10:51.691835" level="INFO">Executing command 'cat /etc/os-release'.</msg>
+<msg time="2025-09-28T14:10:51.693444" level="FAIL">Connection not open</msg>
 <var>${os_release}</var>
 <arg>cat /etc/os-release</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.853971" elapsed="0.001588">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.691310" elapsed="0.002666">Connection not open</status>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${kernel_info}</var>
 <arg>uname -a</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.855729" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.694177" elapsed="0.000031"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${system_info}</var>
 <arg>hostnamectl</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.855870" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.694336" elapsed="0.000022"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${uptime_info}</var>
 <arg>uptime</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.855998" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.694475" elapsed="0.000022"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
 <var>&amp;{os_info}</var>
@@ -370,154 +369,154 @@ Validates connectivity and authentication for OS validation tasks</doc>
 <arg>system_info=${system_info}</arg>
 <arg>uptime_info=${uptime_info}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.856129" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.694621" elapsed="0.000021"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ OS information collected</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.856256" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.694763" elapsed="0.000021"/>
 </kw>
 <return>
 <value>&amp;{os_info}</value>
-<status status="NOT RUN" start="2025-09-28T12:48:59.856320" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.694837" elapsed="0.000025"/>
 </return>
 <var>${os_info}</var>
 <arg>${SYSTEM_CONNECTION}</arg>
 <doc>📊 Collect comprehensive operating system information</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.852402" elapsed="0.004045">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.689852" elapsed="0.005180">Connection not open</status>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${os_info}</arg>
 <arg>Failed to collect OS information</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.856589" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.695173" elapsed="0.000024"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${OS_INFO_DATA}</arg>
 <arg>${os_info}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.856723" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.695319" elapsed="0.000021"/>
 </kw>
 <kw name="Get OS Name" owner="os_keywords">
 <var>${os_name}</var>
 <arg>${os_info}</arg>
 <doc>🏷️ Extract OS name from OS information</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.856920" elapsed="0.000026"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.695562" elapsed="0.000033"/>
 </kw>
 <kw name="Get OS Version" owner="os_keywords">
 <var>${os_version}</var>
 <arg>${os_info}</arg>
 <doc>📊 Extract OS version from OS information</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.857216" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.695768" elapsed="0.000028"/>
 </kw>
 <kw name="Get Kernel Version" owner="os_keywords">
 <var>${kernel_version}</var>
 <arg>${os_info}</arg>
 <doc>🔧 Extract kernel version from OS information</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.857450" elapsed="0.000034"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.695953" elapsed="0.000028"/>
 </kw>
 <kw name="Get OS Architecture" owner="os_keywords">
 <var>${architecture}</var>
 <arg>${os_info}</arg>
 <doc>🏗️ Extract OS architecture from OS information</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.857708" elapsed="0.000036"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.696136" elapsed="0.000028"/>
 </kw>
 <kw name="Get OS Build Date" owner="os_keywords">
 <var>${build_date}</var>
 <arg>${os_info}</arg>
 <doc>📅 Extract OS build date from OS information</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.857943" elapsed="0.000038"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.696307" elapsed="0.000026"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${OS_NAME}</arg>
 <arg>${os_name}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.858172" elapsed="0.000036"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.696462" elapsed="0.000025"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${OS_VERSION}</arg>
 <arg>${os_version}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.858378" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.696741" elapsed="0.000030"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${KERNEL_VERSION}</arg>
 <arg>${kernel_version}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.858529" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.696899" elapsed="0.000048"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${OS_ARCHITECTURE}</arg>
 <arg>${architecture}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.858657" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.698008" elapsed="0.000037"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>OS Name: ${os_name}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.858770" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.698166" elapsed="0.000046"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>OS Version: ${os_version}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.858895" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.698313" elapsed="0.000020"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Kernel Version: ${kernel_version}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.859004" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.698433" elapsed="0.000020"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Architecture: ${architecture}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.859139" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.698553" elapsed="0.000020"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ OS information collected: SUCCESS</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.859271" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.698680" elapsed="0.000020"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🖥️ OS: ${os_name} ${os_version}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.859390" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.698805" elapsed="0.000024"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🔧 Kernel: ${kernel_version}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.859585" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.698934" elapsed="0.000051"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🏗️ Architecture: ${architecture}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.859694" elapsed="0.000014"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.699097" elapsed="0.000020"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>OS Information: PASS - ${os_name} ${os_version}, Kernel: ${kernel_version}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.859781" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.699218" elapsed="0.000020"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.859873" elapsed="0.000014"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.699347" elapsed="0.000020"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.859966" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.699494" elapsed="0.000021"/>
 </kw>
 <kw name="Log Test End" owner="os_keywords" type="TEARDOWN">
 <if>
@@ -526,25 +525,25 @@ Validates connectivity and authentication for OS validation tasks</doc>
 <arg>✅ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.860824" elapsed="0.000017"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.700783" elapsed="0.000028"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.860643" elapsed="0.000773"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.700428" elapsed="0.000436"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.862012" level="INFO">❌ Completed: Critical - Operating System Information Collection - FAIL</msg>
+<msg time="2025-09-28T14:10:51.702340" level="INFO">❌ Completed: Critical - Operating System Information Collection - FAIL</msg>
 <arg>❌ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.861704" elapsed="0.000417"/>
+<status status="PASS" start="2025-09-28T14:10:51.701867" elapsed="0.000636"/>
 </kw>
-<status status="PASS" start="2025-09-28T12:48:59.861514" elapsed="0.000663"/>
+<status status="PASS" start="2025-09-28T14:10:51.701592" elapsed="0.000987"/>
 </branch>
-<status status="PASS" start="2025-09-28T12:48:59.860595" elapsed="0.001618"/>
+<status status="PASS" start="2025-09-28T14:10:51.700394" elapsed="0.002231"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.860313" elapsed="0.001972"/>
+<status status="PASS" start="2025-09-28T14:10:51.699961" elapsed="0.002768"/>
 </kw>
 <doc>📊 Collect comprehensive OS version, kernel, and system information
 Gathers OS release details, kernel version, architecture, and build information</doc>
@@ -554,78 +553,78 @@ Gathers OS release details, kernel version, architecture, and build information<
 <tag>os</tag>
 <tag>system-info</tag>
 <tag>version</tag>
-<status status="FAIL" start="2025-09-28T12:48:59.847289" elapsed="0.015064">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.684948" elapsed="0.017873">Connection not open</status>
 </test>
-<test id="s1-s1-t3" name="Critical - Base Package Installation Verification" line="97">
+<test id="s1-t3" name="Critical - Base Package Installation Verification" line="97">
 <kw name="Log Test Start" owner="os_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.864215" level="INFO">▶️ Starting: Critical - Base Package Installation Verification</msg>
+<msg time="2025-09-28T14:10:51.705447" level="INFO">▶️ Starting: Critical - Base Package Installation Verification</msg>
 <arg>▶️ Starting: ${test_name}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.864017" elapsed="0.000355"/>
+<status status="PASS" start="2025-09-28T14:10:51.705123" elapsed="0.000451"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.863663" elapsed="0.000795"/>
+<status status="PASS" start="2025-09-28T14:10:51.704493" elapsed="0.001207"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.864749" level="INFO">🔍 Verifying base package installation...</msg>
+<msg time="2025-09-28T14:10:51.706183" level="INFO">🔍 Verifying base package installation...</msg>
 <arg>🔍 Verifying base package installation...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.864609" elapsed="0.000265"/>
+<status status="PASS" start="2025-09-28T14:10:51.705923" elapsed="0.000375"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.865322" level="INFO">${total} = 3</msg>
+<msg time="2025-09-28T14:10:51.706881" level="INFO">${total} = 3</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.865016" elapsed="0.000337"/>
+<status status="PASS" start="2025-09-28T14:10:51.706519" elapsed="0.000400"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.865718" level="INFO">${TOTAL_TESTS} = 3</msg>
+<msg time="2025-09-28T14:10:51.707437" level="INFO">${TOTAL_TESTS} = 3</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.865512" elapsed="0.000251"/>
+<status status="PASS" start="2025-09-28T14:10:51.707119" elapsed="0.000466"/>
 </kw>
 <kw name="Collect Installed Packages" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.866516" level="INFO">📦 Collecting installed packages...</msg>
+<msg time="2025-09-28T14:10:51.708511" level="INFO">📦 Collecting installed packages...</msg>
 <arg>📦 Collecting installed packages...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.866362" elapsed="0.000295"/>
+<status status="PASS" start="2025-09-28T14:10:51.708349" elapsed="0.000251"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-09-28T12:48:59.867118" level="INFO">Executing command 'which rpm'.</msg>
-<msg time="2025-09-28T12:48:59.867230" level="FAIL">Connection not open</msg>
+<msg time="2025-09-28T14:10:51.708995" level="INFO">Executing command 'which rpm'.</msg>
+<msg time="2025-09-28T14:10:51.709099" level="FAIL">Connection not open</msg>
 <arg>which rpm</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.867009" elapsed="0.000692">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.708904" elapsed="0.000530">Connection not open</status>
 </kw>
-<msg time="2025-09-28T12:48:59.867825" level="INFO">${rpm_check} = False</msg>
+<msg time="2025-09-28T14:10:51.709560" level="INFO">${rpm_check} = False</msg>
 <var>${rpm_check}</var>
 <arg>Execute Command</arg>
 <arg>which rpm</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.866809" elapsed="0.001045"/>
+<status status="PASS" start="2025-09-28T14:10:51.708758" elapsed="0.000826"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-09-28T12:48:59.868579" level="INFO">Executing command 'which dpkg'.</msg>
-<msg time="2025-09-28T12:48:59.868676" level="FAIL">Connection not open</msg>
+<msg time="2025-09-28T14:10:51.710133" level="INFO">Executing command 'which dpkg'.</msg>
+<msg time="2025-09-28T14:10:51.710211" level="FAIL">Connection not open</msg>
 <arg>which dpkg</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.868433" elapsed="0.000607">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.710038" elapsed="0.000693">Connection not open</status>
 </kw>
-<msg time="2025-09-28T12:48:59.869192" level="INFO">${dpkg_check} = False</msg>
+<msg time="2025-09-28T14:10:51.710996" level="INFO">${dpkg_check} = False</msg>
 <var>${dpkg_check}</var>
 <arg>Execute Command</arg>
 <arg>which dpkg</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.867991" elapsed="0.001228"/>
+<status status="PASS" start="2025-09-28T14:10:51.709695" elapsed="0.001359"/>
 </kw>
 <if>
 <branch type="IF" condition="${rpm_check}">
@@ -633,160 +632,160 @@ Gathers OS release details, kernel version, architecture, and build information<
 <var>${packages}</var>
 <arg>rpm -qa --queryformat "%{NAME}\\n" | sort</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.869474" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.711308" elapsed="0.000021"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.869305" elapsed="0.000241"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.711148" elapsed="0.000213"/>
 </branch>
 <branch type="ELSE IF" condition="${dpkg_check}">
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${packages}</var>
 <arg>dpkg-query -W -f='${Package}\\n' | sort</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.869730" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.711541" elapsed="0.000023"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.869575" elapsed="0.000216"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.711387" elapsed="0.000210"/>
 </branch>
 <branch type="ELSE">
 <kw name="Fail" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.870187" level="FAIL">No supported package manager found (rpm or dpkg)</msg>
+<msg time="2025-09-28T14:10:51.711883" level="FAIL">No supported package manager found (rpm or dpkg)</msg>
 <arg>No supported package manager found (rpm or dpkg)</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.869917" elapsed="0.000345">No supported package manager found (rpm or dpkg)</status>
+<status status="FAIL" start="2025-09-28T14:10:51.711710" elapsed="0.000236">No supported package manager found (rpm or dpkg)</status>
 </kw>
-<status status="FAIL" start="2025-09-28T12:48:59.869816" elapsed="0.000547">No supported package manager found (rpm or dpkg)</status>
+<status status="FAIL" start="2025-09-28T14:10:51.711620" elapsed="0.000388">No supported package manager found (rpm or dpkg)</status>
 </branch>
-<status status="FAIL" start="2025-09-28T12:48:59.869281" elapsed="0.001125">No supported package manager found (rpm or dpkg)</status>
+<status status="FAIL" start="2025-09-28T14:10:51.711121" elapsed="0.000915">No supported package manager found (rpm or dpkg)</status>
 </if>
 <kw name="Split To Lines" owner="String">
 <var>${package_list}</var>
 <arg>${packages}</arg>
 <doc>Splits the given string to lines.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.870564" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.712147" elapsed="0.000023"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Collected ${package_list.__len__()} packages</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.870699" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.712257" elapsed="0.000016"/>
 </kw>
 <return>
 <value>${package_list}</value>
-<status status="NOT RUN" start="2025-09-28T12:48:59.870769" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.712314" elapsed="0.000016"/>
 </return>
 <var>${package_list}</var>
 <arg>${SYSTEM_CONNECTION}</arg>
 <doc>📦 Collect list of installed packages</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.866034" elapsed="0.004866">No supported package manager found (rpm or dpkg)</status>
+<status status="FAIL" start="2025-09-28T14:10:51.708000" elapsed="0.004406">No supported package manager found (rpm or dpkg)</status>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${package_list}</arg>
 <arg>Failed to collect package information</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.871076" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.712525" elapsed="0.000022"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PACKAGE_DATA}</arg>
 <arg>${package_list}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.871273" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.712739" elapsed="0.000021"/>
 </kw>
 <kw name="Validate Base Packages" owner="os_keywords">
 <var>${base_validation}</var>
 <arg>${package_list}</arg>
 <arg>${REQUIRED_BASE_PACKAGES}</arg>
 <doc>✅ Validate that required base packages are installed</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.871707" elapsed="0.000036"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.713026" elapsed="0.000024"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${base_validation}</arg>
 <arg>Base package requirements not met</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.872729" elapsed="0.000048"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.713140" elapsed="0.000015"/>
 </kw>
 <kw name="Validate Minimal Installation" owner="os_keywords">
 <var>${minimal_validation}</var>
 <arg>${package_list}</arg>
 <arg>${EXCLUDED_PACKAGES}</arg>
 <doc>🚫 Validate that excluded packages are not installed (minimal installation)</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.873324" elapsed="0.000045"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.714490" elapsed="0.000082"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${minimal_validation}</arg>
 <arg>Installation contains non-minimal packages</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.873533" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.714734" elapsed="0.000023"/>
 </kw>
 <kw name="Get Package Count" owner="os_keywords">
 <var>${package_count}</var>
 <arg>${package_list}</arg>
 <doc>📊 Get total count of installed packages</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.873744" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.714901" elapsed="0.000025"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PACKAGE_COUNT}</arg>
 <arg>${package_count}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.874071" elapsed="0.000046"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.715059" elapsed="0.000024"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Total Packages: ${package_count}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.874258" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.715180" elapsed="0.000169"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Base Package Validation: PASSED</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.874481" elapsed="0.000070"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.715445" elapsed="0.000016"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Minimal Installation: VALIDATED</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.874755" elapsed="0.000041"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.715538" elapsed="0.000015"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Package validation: COMPLIANT</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.875002" elapsed="0.000079"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.715634" elapsed="0.000015"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📦 Total Packages: ${package_count}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.875299" elapsed="0.000038"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.715728" elapsed="0.000015"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✔️ Base packages: VALIDATED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.875526" elapsed="0.000037"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.715895" elapsed="0.000019"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✔️ Minimal installation: CONFIRMED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.875716" elapsed="0.000026"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.715994" elapsed="0.000015"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>Package Validation: PASS - ${package_count} packages, base/minimal compliant</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.875860" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.716156" elapsed="0.000020"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.876005" elapsed="0.000055"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.716427" elapsed="0.000026"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.876209" elapsed="0.000025"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.716642" elapsed="0.000033"/>
 </kw>
 <kw name="Log Test End" owner="os_keywords" type="TEARDOWN">
 <if>
@@ -795,25 +794,25 @@ Gathers OS release details, kernel version, architecture, and build information<
 <arg>✅ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.877393" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.718139" elapsed="0.000030"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.877103" elapsed="0.000374"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.717838" elapsed="0.000399"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.877918" level="INFO">❌ Completed: Critical - Base Package Installation Verification - FAIL</msg>
+<msg time="2025-09-28T14:10:51.718947" level="INFO">❌ Completed: Critical - Base Package Installation Verification - FAIL</msg>
 <arg>❌ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.877630" elapsed="0.000481"/>
+<status status="PASS" start="2025-09-28T14:10:51.718438" elapsed="0.000829"/>
 </kw>
-<status status="PASS" start="2025-09-28T12:48:59.877511" elapsed="0.000682"/>
+<status status="PASS" start="2025-09-28T14:10:51.718278" elapsed="0.001043"/>
 </branch>
-<status status="PASS" start="2025-09-28T12:48:59.877058" elapsed="0.001180"/>
+<status status="PASS" start="2025-09-28T14:10:51.717797" elapsed="0.001552"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.876636" elapsed="0.001711"/>
+<status status="PASS" start="2025-09-28T14:10:51.717143" elapsed="0.002276"/>
 </kw>
 <doc>📦 Verify base OS packages and minimal installation compliance
 Validates installed packages match base/minimal installation requirements</doc>
@@ -823,78 +822,78 @@ Validates installed packages match base/minimal installation requirements</doc>
 <tag>installation</tag>
 <tag>minimal</tag>
 <tag>packages</tag>
-<status status="FAIL" start="2025-09-28T12:48:59.862877" elapsed="0.015538">No supported package manager found (rpm or dpkg)</status>
+<status status="FAIL" start="2025-09-28T14:10:51.703329" elapsed="0.016145">No supported package manager found (rpm or dpkg)</status>
 </test>
-<test id="s1-s1-t4" name="Critical - Security Patch Assessment" line="137">
+<test id="s1-t4" name="Critical - Security Patch Assessment" line="137">
 <kw name="Log Test Start" owner="os_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.880411" level="INFO">▶️ Starting: Critical - Security Patch Assessment</msg>
+<msg time="2025-09-28T14:10:51.721283" level="INFO">▶️ Starting: Critical - Security Patch Assessment</msg>
 <arg>▶️ Starting: ${test_name}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.880179" elapsed="0.000373"/>
+<status status="PASS" start="2025-09-28T14:10:51.721073" elapsed="0.000296"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.879610" elapsed="0.001061"/>
+<status status="PASS" start="2025-09-28T14:10:51.720539" elapsed="0.000920"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.881089" level="INFO">🔍 Assessing security patch status...</msg>
+<msg time="2025-09-28T14:10:51.721866" level="INFO">🔍 Assessing security patch status...</msg>
 <arg>🔍 Assessing security patch status...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.880876" elapsed="0.000393"/>
+<status status="PASS" start="2025-09-28T14:10:51.721615" elapsed="0.000349"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.881768" level="INFO">${total} = 4</msg>
+<msg time="2025-09-28T14:10:51.722540" level="INFO">${total} = 4</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.881473" elapsed="0.000327"/>
+<status status="PASS" start="2025-09-28T14:10:51.722196" elapsed="0.000386"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.882189" level="INFO">${TOTAL_TESTS} = 4</msg>
+<msg time="2025-09-28T14:10:51.723082" level="INFO">${TOTAL_TESTS} = 4</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.881981" elapsed="0.000253"/>
+<status status="PASS" start="2025-09-28T14:10:51.722796" elapsed="0.000353"/>
 </kw>
 <kw name="Collect Patch Information" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.883013" level="INFO">🔒 Collecting patch information...</msg>
+<msg time="2025-09-28T14:10:51.724794" level="INFO">🔒 Collecting patch information...</msg>
 <arg>🔒 Collecting patch information...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.882852" elapsed="0.000310"/>
+<status status="PASS" start="2025-09-28T14:10:51.724475" elapsed="0.000462"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-09-28T12:48:59.883702" level="INFO">Executing command 'which yum'.</msg>
-<msg time="2025-09-28T12:48:59.883809" level="FAIL">Connection not open</msg>
+<msg time="2025-09-28T14:10:51.726090" level="INFO">Executing command 'which yum'.</msg>
+<msg time="2025-09-28T14:10:51.726393" level="FAIL">Connection not open</msg>
 <arg>which yum</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.883558" elapsed="0.000672">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.725852" elapsed="0.002288">Connection not open</status>
 </kw>
-<msg time="2025-09-28T12:48:59.884354" level="INFO">${yum_check} = False</msg>
+<msg time="2025-09-28T14:10:51.728321" level="INFO">${yum_check} = False</msg>
 <var>${yum_check}</var>
 <arg>Execute Command</arg>
 <arg>which yum</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.883380" elapsed="0.001692"/>
+<status status="PASS" start="2025-09-28T14:10:51.725226" elapsed="0.003126"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-09-28T12:48:59.885763" level="INFO">Executing command 'which dnf'.</msg>
-<msg time="2025-09-28T12:48:59.886049" level="FAIL">Connection not open</msg>
+<msg time="2025-09-28T14:10:51.729509" level="INFO">Executing command 'which dnf'.</msg>
+<msg time="2025-09-28T14:10:51.729606" level="FAIL">Connection not open</msg>
 <arg>which dnf</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.885672" elapsed="0.000704">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.729391" elapsed="0.000550">Connection not open</status>
 </kw>
-<msg time="2025-09-28T12:48:59.886478" level="INFO">${dnf_check} = False</msg>
+<msg time="2025-09-28T14:10:51.730062" level="INFO">${dnf_check} = False</msg>
 <var>${dnf_check}</var>
 <arg>Execute Command</arg>
 <arg>which dnf</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.885323" elapsed="0.001177"/>
+<status status="PASS" start="2025-09-28T14:10:51.729206" elapsed="0.000881"/>
 </kw>
 <if>
 <branch type="IF" condition="${dnf_check}">
@@ -902,152 +901,152 @@ Validates installed packages match base/minimal installation requirements</doc>
 <var>${patch_history}</var>
 <arg>dnf history list</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.886707" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.730337" elapsed="0.000021"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${last_update}</var>
 <arg>dnf history info 1</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.886841" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.730459" elapsed="0.000018"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.886568" elapsed="0.000324"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.730174" elapsed="0.000331"/>
 </branch>
 <branch type="ELSE IF" condition="${yum_check}">
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${patch_history}</var>
 <arg>yum history list</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.887043" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.730649" elapsed="0.000017"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${last_update}</var>
 <arg>yum history info 1</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.887148" elapsed="0.000017"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.730792" elapsed="0.000019"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.886914" elapsed="0.000277"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.730531" elapsed="0.000309"/>
 </branch>
 <branch type="ELSE">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.887412" level="INFO">${patch_history} = No patch manager found</msg>
+<msg time="2025-09-28T14:10:51.731222" level="INFO">${patch_history} = No patch manager found</msg>
 <var>${patch_history}</var>
 <arg>No patch manager found</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.887290" elapsed="0.000144"/>
+<status status="PASS" start="2025-09-28T14:10:51.730942" elapsed="0.000307"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.887619" level="INFO">${last_update} = Unknown</msg>
+<msg time="2025-09-28T14:10:51.731545" level="INFO">${last_update} = Unknown</msg>
 <var>${last_update}</var>
 <arg>Unknown</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.887519" elapsed="0.000120"/>
+<status status="PASS" start="2025-09-28T14:10:51.731386" elapsed="0.000182"/>
 </kw>
-<status status="PASS" start="2025-09-28T12:48:59.887211" elapsed="0.000455"/>
+<status status="PASS" start="2025-09-28T14:10:51.730861" elapsed="0.000736"/>
 </branch>
-<status status="PASS" start="2025-09-28T12:48:59.886549" elapsed="0.001135"/>
+<status status="PASS" start="2025-09-28T14:10:51.730149" elapsed="0.001470"/>
 </if>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.888404" level="INFO">&amp;{patch_info} = { patch_history=No patch manager found | last_update=Unknown }</msg>
+<msg time="2025-09-28T14:10:51.732483" level="INFO">&amp;{patch_info} = { patch_history=No patch manager found | last_update=Unknown }</msg>
 <var>&amp;{patch_info}</var>
 <arg>patch_history=${patch_history}</arg>
 <arg>last_update=${last_update}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.887770" elapsed="0.000663"/>
+<status status="PASS" start="2025-09-28T14:10:51.731730" elapsed="0.000786"/>
 </kw>
 <return>
 <value>&amp;{patch_info}</value>
-<status status="PASS" start="2025-09-28T12:48:59.888486" elapsed="0.000038"/>
+<status status="PASS" start="2025-09-28T14:10:51.732888" elapsed="0.000061"/>
 </return>
-<msg time="2025-09-28T12:48:59.888698" level="INFO">${patch_info} = {'patch_history': 'No patch manager found', 'last_update': 'Unknown'}</msg>
+<msg time="2025-09-28T14:10:51.733146" level="INFO">${patch_info} = {'patch_history': 'No patch manager found', 'last_update': 'Unknown'}</msg>
 <var>${patch_info}</var>
 <arg>${SYSTEM_CONNECTION}</arg>
 <doc>🔒 Collect system patch and update information</doc>
-<status status="PASS" start="2025-09-28T12:48:59.882518" elapsed="0.006202"/>
+<status status="PASS" start="2025-09-28T14:10:51.723576" elapsed="0.009595"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.889044" level="INFO">Length is 2.</msg>
+<msg time="2025-09-28T14:10:51.733475" level="INFO">Length is 2.</msg>
 <arg>${patch_info}</arg>
 <arg>Failed to collect patch information</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.888893" elapsed="0.000203"/>
+<status status="PASS" start="2025-09-28T14:10:51.733307" elapsed="0.000210"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.889377" level="INFO">${PATCH_DATA} = {'patch_history': 'No patch manager found', 'last_update': 'Unknown'}</msg>
+<msg time="2025-09-28T14:10:51.733804" level="INFO">${PATCH_DATA} = {'patch_history': 'No patch manager found', 'last_update': 'Unknown'}</msg>
 <arg>${PATCH_DATA}</arg>
 <arg>${patch_info}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.889217" elapsed="0.000192"/>
+<status status="PASS" start="2025-09-28T14:10:51.733634" elapsed="0.000207"/>
 </kw>
 <kw name="Get Last Patch Date" owner="os_keywords">
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-09-28T12:48:59.889961" level="INFO">${last_update} = Unknown</msg>
+<msg time="2025-09-28T14:10:51.734513" level="INFO">${last_update} = Unknown</msg>
 <var>${last_update}</var>
 <arg>${patch_info}</arg>
 <arg>last_update</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.889818" elapsed="0.000165"/>
+<status status="PASS" start="2025-09-28T14:10:51.734342" elapsed="0.000201"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-28T12:48:59.890267" level="INFO">${current_date} = 2025-09-28</msg>
+<msg time="2025-09-28T14:10:51.735482" level="INFO">${current_date} = 2025-09-28</msg>
 <var>${current_date}</var>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.890074" elapsed="0.000220"/>
+<status status="PASS" start="2025-09-28T14:10:51.734763" elapsed="0.000754"/>
 </kw>
 <return>
 <value>${current_date}</value>
-<status status="PASS" start="2025-09-28T12:48:59.890347" elapsed="0.000046"/>
+<status status="PASS" start="2025-09-28T14:10:51.735574" elapsed="0.000050"/>
 </return>
-<msg time="2025-09-28T12:48:59.890552" level="INFO">${last_patch_date} = 2025-09-28</msg>
+<msg time="2025-09-28T14:10:51.735759" level="INFO">${last_patch_date} = 2025-09-28</msg>
 <var>${last_patch_date}</var>
 <arg>${patch_info}</arg>
 <doc>📅 Extract last patch date from patch information</doc>
-<status status="PASS" start="2025-09-28T12:48:59.889581" elapsed="0.000993"/>
+<status status="PASS" start="2025-09-28T14:10:51.734024" elapsed="0.001757"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.890833" level="INFO">${LAST_PATCH_DATE} = 2025-09-28</msg>
+<msg time="2025-09-28T14:10:51.736139" level="INFO">${LAST_PATCH_DATE} = 2025-09-28</msg>
 <arg>${LAST_PATCH_DATE}</arg>
 <arg>${last_patch_date}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.890684" elapsed="0.000182"/>
+<status status="PASS" start="2025-09-28T14:10:51.735948" elapsed="0.000229"/>
 </kw>
 <kw name="Check Available Updates" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.891450" level="INFO">🔄 Checking available updates...</msg>
+<msg time="2025-09-28T14:10:51.737137" level="INFO">🔄 Checking available updates...</msg>
 <arg>🔄 Checking available updates...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.891310" elapsed="0.000269"/>
+<status status="PASS" start="2025-09-28T14:10:51.736985" elapsed="0.000242"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-09-28T12:48:59.891971" level="INFO">Executing command 'which dnf'.</msg>
-<msg time="2025-09-28T12:48:59.892067" level="FAIL">Connection not open</msg>
+<msg time="2025-09-28T14:10:51.737731" level="INFO">Executing command 'which dnf'.</msg>
+<msg time="2025-09-28T14:10:51.737894" level="FAIL">Connection not open</msg>
 <arg>which dnf</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.891890" elapsed="0.000478">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.737607" elapsed="0.000866">Connection not open</status>
 </kw>
-<msg time="2025-09-28T12:48:59.892454" level="INFO">${dnf_check} = False</msg>
+<msg time="2025-09-28T14:10:51.738670" level="INFO">${dnf_check} = False</msg>
 <var>${dnf_check}</var>
 <arg>Execute Command</arg>
 <arg>which dnf</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.891745" elapsed="0.000729"/>
+<status status="PASS" start="2025-09-28T14:10:51.737401" elapsed="0.001312"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-09-28T12:48:59.892761" level="INFO">Executing command 'which yum'.</msg>
-<msg time="2025-09-28T12:48:59.892831" level="FAIL">Connection not open</msg>
+<msg time="2025-09-28T14:10:51.739279" level="INFO">Executing command 'which yum'.</msg>
+<msg time="2025-09-28T14:10:51.739405" level="FAIL">Connection not open</msg>
 <arg>which yum</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.892687" elapsed="0.000469">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.739131" elapsed="0.000751">Connection not open</status>
 </kw>
-<msg time="2025-09-28T12:48:59.893756" level="INFO">${yum_check} = False</msg>
+<msg time="2025-09-28T14:10:51.740013" level="INFO">${yum_check} = False</msg>
 <var>${yum_check}</var>
 <arg>Execute Command</arg>
 <arg>which yum</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.892569" elapsed="0.001218"/>
+<status status="PASS" start="2025-09-28T14:10:51.738907" elapsed="0.001895"/>
 </kw>
 <if>
 <branch type="IF" condition="${dnf_check}">
@@ -1055,202 +1054,202 @@ Validates installed packages match base/minimal installation requirements</doc>
 <var>${updates}</var>
 <arg>dnf check-update</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.893993" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.741306" elapsed="0.000038"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.893858" elapsed="0.000183"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.740978" elapsed="0.000426"/>
 </branch>
 <branch type="ELSE IF" condition="${yum_check}">
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${updates}</var>
 <arg>yum check-update</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.894177" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.741704" elapsed="0.000033"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.894061" elapsed="0.000157"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.741452" elapsed="0.000345"/>
 </branch>
 <branch type="ELSE">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.894469" level="INFO">${updates} = No package manager found</msg>
+<msg time="2025-09-28T14:10:51.742406" level="INFO">${updates} = No package manager found</msg>
 <var>${updates}</var>
 <arg>No package manager found</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.894353" elapsed="0.000139"/>
+<status status="PASS" start="2025-09-28T14:10:51.742000" elapsed="0.000436"/>
 </kw>
-<status status="PASS" start="2025-09-28T12:48:59.894245" elapsed="0.000277"/>
+<status status="PASS" start="2025-09-28T14:10:51.741840" elapsed="0.000669"/>
 </branch>
-<status status="PASS" start="2025-09-28T12:48:59.893839" elapsed="0.000702"/>
+<status status="PASS" start="2025-09-28T14:10:51.740932" elapsed="0.001604"/>
 </if>
 <return>
 <value>${updates}</value>
-<status status="PASS" start="2025-09-28T12:48:59.894570" elapsed="0.000026"/>
+<status status="PASS" start="2025-09-28T14:10:51.742580" elapsed="0.000037"/>
 </return>
-<msg time="2025-09-28T12:48:59.894699" level="INFO">${available_updates} = No package manager found</msg>
+<msg time="2025-09-28T14:10:51.742752" level="INFO">${available_updates} = No package manager found</msg>
 <var>${available_updates}</var>
 <arg>${SYSTEM_CONNECTION}</arg>
 <doc>🔄 Check for available system updates</doc>
-<status status="PASS" start="2025-09-28T12:48:59.891067" elapsed="0.003653"/>
+<status status="PASS" start="2025-09-28T14:10:51.736437" elapsed="0.006339"/>
 </kw>
 <kw name="Get Update Count" owner="os_keywords">
 <kw name="Split To Lines" owner="String">
-<msg time="2025-09-28T12:48:59.895390" level="INFO">1 line returned.</msg>
-<msg time="2025-09-28T12:48:59.895453" level="INFO">${lines} = ['No package manager found']</msg>
+<msg time="2025-09-28T14:10:51.743415" level="INFO">1 line returned.</msg>
+<msg time="2025-09-28T14:10:51.743485" level="INFO">${lines} = ['No package manager found']</msg>
 <var>${lines}</var>
 <arg>${available_updates}</arg>
 <doc>Splits the given string to lines.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.895252" elapsed="0.000220"/>
+<status status="PASS" start="2025-09-28T14:10:51.743286" elapsed="0.000219"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.895658" level="INFO">Length is 1.</msg>
-<msg time="2025-09-28T12:48:59.895713" level="INFO">${count} = 1</msg>
+<msg time="2025-09-28T14:10:51.743710" level="INFO">Length is 1.</msg>
+<msg time="2025-09-28T14:10:51.743771" level="INFO">${count} = 1</msg>
 <var>${count}</var>
 <arg>${lines}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.895562" elapsed="0.000170"/>
+<status status="PASS" start="2025-09-28T14:10:51.743605" elapsed="0.000186"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.896002" level="INFO">${actual_count} = 0</msg>
+<msg time="2025-09-28T14:10:51.744101" level="INFO">${actual_count} = 0</msg>
 <var>${actual_count}</var>
 <arg>max(0, ${count} - 3)</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.895815" elapsed="0.000207"/>
+<status status="PASS" start="2025-09-28T14:10:51.743887" elapsed="0.000236"/>
 </kw>
 <return>
 <value>${actual_count}</value>
-<status status="PASS" start="2025-09-28T12:48:59.896058" elapsed="0.000026"/>
+<status status="PASS" start="2025-09-28T14:10:51.744164" elapsed="0.000030"/>
 </return>
-<msg time="2025-09-28T12:48:59.896185" level="INFO">${update_count} = 0</msg>
+<msg time="2025-09-28T14:10:51.744311" level="INFO">${update_count} = 0</msg>
 <var>${update_count}</var>
 <arg>${available_updates}</arg>
 <doc>📊 Get count of available updates</doc>
-<status status="PASS" start="2025-09-28T12:48:59.894864" elapsed="0.001340"/>
+<status status="PASS" start="2025-09-28T14:10:51.742969" elapsed="0.001364"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.896619" level="INFO">${AVAILABLE_UPDATES} = 0</msg>
+<msg time="2025-09-28T14:10:51.744682" level="INFO">${AVAILABLE_UPDATES} = 0</msg>
 <arg>${AVAILABLE_UPDATES}</arg>
 <arg>${update_count}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.896364" elapsed="0.000295"/>
+<status status="PASS" start="2025-09-28T14:10:51.744450" elapsed="0.000334"/>
 </kw>
 <kw name="Validate Patch Currency" owner="os_keywords">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-28T12:48:59.897313" level="INFO">${current_date} = 2025-09-28 12:48:59.897</msg>
+<msg time="2025-09-28T14:10:51.745467" level="INFO">${current_date} = 2025-09-28 14:10:51.745</msg>
 <var>${current_date}</var>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.897086" elapsed="0.000251"/>
+<status status="PASS" start="2025-09-28T14:10:51.745292" elapsed="0.000206"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2025-09-28T12:48:59.913737" level="INFO">${patch_date} = 2025-09-28 00:00:00.000</msg>
+<msg time="2025-09-28T14:10:51.747445" level="INFO">${patch_date} = 2025-09-28 00:00:00.000</msg>
 <var>${patch_date}</var>
 <arg>${last_patch_date}</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.897430" elapsed="0.016387"/>
+<status status="PASS" start="2025-09-28T14:10:51.745645" elapsed="0.001833"/>
 </kw>
 <kw name="Subtract Date From Date" owner="DateTime">
-<msg time="2025-09-28T12:48:59.914728" level="INFO">${age_days} = 46139.897</msg>
+<msg time="2025-09-28T14:10:51.747918" level="INFO">${age_days} = 51051.745</msg>
 <var>${age_days}</var>
 <arg>${current_date}</arg>
 <arg>${patch_date}</arg>
 <arg>result_format=number</arg>
 <doc>Subtracts date from another date and returns time between.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.914120" elapsed="0.000660"/>
+<status status="PASS" start="2025-09-28T14:10:51.747603" elapsed="0.000342"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.915564" level="INFO">${is_current} = False</msg>
+<msg time="2025-09-28T14:10:51.748341" level="INFO">${is_current} = False</msg>
 <var>${is_current}</var>
 <arg>${age_days} &lt;= ${max_age_days}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.915059" elapsed="0.000546"/>
+<status status="PASS" start="2025-09-28T14:10:51.748056" elapsed="0.000312"/>
 </kw>
 <return>
 <value>${is_current}</value>
-<status status="PASS" start="2025-09-28T12:48:59.915678" elapsed="0.000064"/>
+<status status="PASS" start="2025-09-28T14:10:51.748412" elapsed="0.000032"/>
 </return>
-<msg time="2025-09-28T12:48:59.915932" level="INFO">${patch_currency} = False</msg>
+<msg time="2025-09-28T14:10:51.748704" level="INFO">${patch_currency} = False</msg>
 <var>${patch_currency}</var>
 <arg>${last_patch_date}</arg>
 <arg>${MAX_PATCH_AGE_DAYS}</arg>
 <doc>✅ Validate that patches are current (within acceptable timeframe)</doc>
-<status status="PASS" start="2025-09-28T12:48:59.896816" elapsed="0.019148"/>
+<status status="PASS" start="2025-09-28T14:10:51.744979" elapsed="0.003752"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.916445" level="FAIL">System patches are not current</msg>
+<msg time="2025-09-28T14:10:51.749076" level="FAIL">System patches are not current</msg>
 <arg>${patch_currency}</arg>
 <arg>System patches are not current</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.916138" elapsed="0.000410">System patches are not current</status>
+<status status="FAIL" start="2025-09-28T14:10:51.748876" elapsed="0.000264">System patches are not current</status>
 </kw>
 <kw name="Check Critical Security Patches" owner="os_keywords">
 <var>${critical_patches}</var>
 <arg>${available_updates}</arg>
 <doc>🚨 Check for critical security patches in available updates</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.916842" elapsed="0.000065"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.749312" elapsed="0.000024"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
 <arg>${critical_patches}</arg>
 <arg>0</arg>
 <arg>Critical security patches pending</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.917097" elapsed="0.000073"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.749965" elapsed="0.000035"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Last Patch Date: ${last_patch_date}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.917316" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.750133" elapsed="0.000021"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Available Updates: ${update_count}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.917469" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.750266" elapsed="0.000021"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Critical Patches: ${critical_patches}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.917604" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.750629" elapsed="0.000047"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Patch assessment: COMPLIANT</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.917767" elapsed="0.000026"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.750857" elapsed="0.000028"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📅 Last Patch: ${last_patch_date}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.917924" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.751303" elapsed="0.000039"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🔄 Available Updates: ${update_count}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.919339" elapsed="0.000052"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.752439" elapsed="0.000047"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🚨 Critical Patches: ${critical_patches}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.919580" elapsed="0.000035"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.752709" elapsed="0.000056"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>Patch Assessment: PASS - Current as of ${last_patch_date}, ${update_count} updates available</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.919775" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.752912" elapsed="0.000043"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.919907" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.753106" elapsed="0.000026"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.920040" elapsed="0.000098"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.753347" elapsed="0.000032"/>
 </kw>
 <kw name="Log Test End" owner="os_keywords" type="TEARDOWN">
 <if>
@@ -1259,25 +1258,25 @@ Validates installed packages match base/minimal installation requirements</doc>
 <arg>✅ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.921395" elapsed="0.000050"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.754407" elapsed="0.000018"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.920946" elapsed="0.000578"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.754194" elapsed="0.000270"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.921952" level="INFO">❌ Completed: Critical - Security Patch Assessment - FAIL</msg>
+<msg time="2025-09-28T14:10:51.755259" level="INFO">❌ Completed: Critical - Security Patch Assessment - FAIL</msg>
 <arg>❌ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.921713" elapsed="0.000482"/>
+<status status="PASS" start="2025-09-28T14:10:51.754574" elapsed="0.000829"/>
 </kw>
-<status status="PASS" start="2025-09-28T12:48:59.921589" elapsed="0.000726"/>
+<status status="PASS" start="2025-09-28T14:10:51.754491" elapsed="0.000973"/>
 </branch>
-<status status="PASS" start="2025-09-28T12:48:59.920922" elapsed="0.001449"/>
+<status status="PASS" start="2025-09-28T14:10:51.754167" elapsed="0.001336"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.920579" elapsed="0.001920"/>
+<status status="PASS" start="2025-09-28T14:10:51.753786" elapsed="0.001812"/>
 </kw>
 <doc>🔒 Assess current patch level and security update status
 Validates patches are current and compliant with CIP-007 R2 requirements</doc>
@@ -1288,68 +1287,68 @@ Validates patches are current and compliant with CIP-007 R2 requirements</doc>
 <tag>patches</tag>
 <tag>r2</tag>
 <tag>security</tag>
-<status status="FAIL" start="2025-09-28T12:48:59.878819" elapsed="0.043784">System patches are not current</status>
+<status status="FAIL" start="2025-09-28T14:10:51.719765" elapsed="0.035898">System patches are not current</status>
 </test>
-<test id="s1-s1-t5" name="Critical - Ansible Build Template Verification" line="182">
+<test id="s1-t5" name="Critical - Ansible Build Template Verification" line="182">
 <kw name="Log Test Start" owner="os_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.924145" level="INFO">▶️ Starting: Critical - Ansible Build Template Verification</msg>
+<msg time="2025-09-28T14:10:51.757270" level="INFO">▶️ Starting: Critical - Ansible Build Template Verification</msg>
 <arg>▶️ Starting: ${test_name}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.923968" elapsed="0.000313"/>
+<status status="PASS" start="2025-09-28T14:10:51.757051" elapsed="0.000308"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.923438" elapsed="0.000918"/>
+<status status="PASS" start="2025-09-28T14:10:51.756648" elapsed="0.000792"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.924786" level="INFO">🔍 Verifying Ansible build template compliance...</msg>
+<msg time="2025-09-28T14:10:51.757760" level="INFO">🔍 Verifying Ansible build template compliance...</msg>
 <arg>🔍 Verifying Ansible build template compliance...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.924550" elapsed="0.000294"/>
+<status status="PASS" start="2025-09-28T14:10:51.757600" elapsed="0.000240"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.925236" level="INFO">${total} = 5</msg>
+<msg time="2025-09-28T14:10:51.758340" level="INFO">${total} = 5</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.924945" elapsed="0.000321"/>
+<status status="PASS" start="2025-09-28T14:10:51.758037" elapsed="0.000338"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.925540" level="INFO">${TOTAL_TESTS} = 5</msg>
+<msg time="2025-09-28T14:10:51.758856" level="INFO">${TOTAL_TESTS} = 5</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.925380" elapsed="0.000195"/>
+<status status="PASS" start="2025-09-28T14:10:51.758545" elapsed="0.000377"/>
 </kw>
 <kw name="Check Ansible Build Artifacts" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.926086" level="INFO">🤖 Checking for Ansible artifacts...</msg>
+<msg time="2025-09-28T14:10:51.760347" level="INFO">🤖 Checking for Ansible artifacts...</msg>
 <arg>🤖 Checking for Ansible artifacts...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.925980" elapsed="0.000223"/>
+<status status="PASS" start="2025-09-28T14:10:51.759735" elapsed="0.001552"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-09-28T12:48:59.926446" level="INFO">Executing command 'find /var/log -name "*ansible*" -type f 2&gt;/dev/null || echo "No ansible logs"'.</msg>
-<msg time="2025-09-28T12:48:59.926605" level="FAIL">Connection not open</msg>
+<msg time="2025-09-28T14:10:51.762123" level="INFO">Executing command 'find /var/log -name "*ansible*" -type f 2&gt;/dev/null || echo "No ansible logs"'.</msg>
+<msg time="2025-09-28T14:10:51.762316" level="FAIL">Connection not open</msg>
 <var>${ansible_log}</var>
 <arg>find /var/log -name "*ansible*" -type f 2&gt;/dev/null || echo "No ansible logs"</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.926336" elapsed="0.000687">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.761799" elapsed="0.001182">Connection not open</status>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${ansible_facts}</var>
 <arg>find /etc -name "*ansible*" -type f 2&gt;/dev/null || echo "No ansible facts"</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.927145" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.763272" elapsed="0.000042"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
 <var>${build_info}</var>
 <arg>cat /etc/build-info 2&gt;/dev/null || echo "No build info"</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.927291" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.763500" elapsed="0.000023"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
 <var>&amp;{artifacts}</var>
@@ -1357,58 +1356,58 @@ Validates patches are current and compliant with CIP-007 R2 requirements</doc>
 <arg>ansible_facts=${ansible_facts}</arg>
 <arg>build_info=${build_info}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.927499" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.763667" elapsed="0.000031"/>
 </kw>
 <return>
 <value>&amp;{artifacts}</value>
-<status status="NOT RUN" start="2025-09-28T12:48:59.927620" elapsed="0.000036"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.763763" elapsed="0.000031"/>
 </return>
 <var>${ansible_artifacts}</var>
 <arg>${SYSTEM_CONNECTION}</arg>
 <doc>🤖 Check for Ansible build artifacts on system</doc>
-<status status="FAIL" start="2025-09-28T12:48:59.925742" elapsed="0.002076">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.759240" elapsed="0.004655">Connection not open</status>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${ansible_artifacts}</arg>
 <arg>No Ansible build artifacts found</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.927974" elapsed="0.000017"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.764004" elapsed="0.000024"/>
 </kw>
 <kw name="Get Ansible Template Info" owner="os_keywords">
 <var>${template_info}</var>
 <arg>${ansible_artifacts}</arg>
 <doc>📋 Extract Ansible template information from artifacts</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.928136" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.764237" elapsed="0.000026"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${template_info}</arg>
 <arg>Failed to retrieve template information</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.928280" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.764351" elapsed="0.000016"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TEMPLATE_INFO}</arg>
 <arg>${template_info}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.928533" elapsed="0.000041"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.764458" elapsed="0.000016"/>
 </kw>
 <kw name="Get Template Name" owner="os_keywords">
 <var>${template_name}</var>
 <arg>${template_info}</arg>
 <doc>🏷️ Get template name from template info</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.929453" elapsed="0.000037"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.764662" elapsed="0.000025"/>
 </kw>
 <kw name="Get Template Version" owner="os_keywords">
 <var>${template_version}</var>
 <arg>${template_info}</arg>
 <doc>📊 Get template version from template info</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.930488" elapsed="0.000039"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.765918" elapsed="0.000058"/>
 </kw>
 <kw name="Get Build Timestamp" owner="os_keywords">
 <var>${build_timestamp}</var>
 <arg>${template_info}</arg>
 <doc>⏰ Get build timestamp from template info</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.930743" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.766731" elapsed="0.000152"/>
 </kw>
 <kw name="Validate Ansible Template" owner="os_keywords">
 <var>${template_validation}</var>
@@ -1416,91 +1415,91 @@ Validates patches are current and compliant with CIP-007 R2 requirements</doc>
 <arg>${template_version}</arg>
 <arg>${APPROVED_TEMPLATES}</arg>
 <doc>✅ Validate template against approved templates list</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.930943" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.767300" elapsed="0.000052"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${template_validation}</arg>
 <arg>Template not in approved list</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.931117" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.767541" elapsed="0.000031"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TEMPLATE_NAME}</arg>
 <arg>${template_name}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.931286" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.767744" elapsed="0.000029"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TEMPLATE_VERSION}</arg>
 <arg>${template_version}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.931442" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.768189" elapsed="0.000045"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${BUILD_TIMESTAMP}</arg>
 <arg>${build_timestamp}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.931587" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.768434" elapsed="0.000028"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Template Name: ${template_name}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.931725" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.768727" elapsed="0.000033"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Template Version: ${template_version}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.931859" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.768861" elapsed="0.000017"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Build Timestamp: ${build_timestamp}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.932020" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.768962" elapsed="0.000016"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Ansible template: VALIDATED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.932165" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.769074" elapsed="0.000023"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 Template: ${template_name}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.932309" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.769235" elapsed="0.000028"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📊 Version: ${template_version}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.932446" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.769400" elapsed="0.000027"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>⏰ Build Time: ${build_timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.932578" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.769535" elapsed="0.000023"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>Ansible Template: PASS - ${template_name} v${template_version}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.932748" elapsed="0.000025"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.769666" elapsed="0.000019"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.932904" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.769809" elapsed="0.000024"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.933060" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.769933" elapsed="0.000017"/>
 </kw>
 <kw name="Log Test End" owner="os_keywords" type="TEARDOWN">
 <if>
@@ -1509,25 +1508,25 @@ Validates patches are current and compliant with CIP-007 R2 requirements</doc>
 <arg>✅ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.934448" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.771728" elapsed="0.000025"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.934115" elapsed="0.000423"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.771446" elapsed="0.000358"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.935047" level="INFO">❌ Completed: Critical - Ansible Build Template Verification - FAIL</msg>
+<msg time="2025-09-28T14:10:51.772209" level="INFO">❌ Completed: Critical - Ansible Build Template Verification - FAIL</msg>
 <arg>❌ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.934730" elapsed="0.000488"/>
+<status status="PASS" start="2025-09-28T14:10:51.771963" elapsed="0.000417"/>
 </kw>
-<status status="PASS" start="2025-09-28T12:48:59.934577" elapsed="0.000698"/>
+<status status="PASS" start="2025-09-28T14:10:51.771832" elapsed="0.000600"/>
 </branch>
-<status status="PASS" start="2025-09-28T12:48:59.934079" elapsed="0.001230"/>
+<status status="PASS" start="2025-09-28T14:10:51.771413" elapsed="0.001042"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.933627" elapsed="0.001752"/>
+<status status="PASS" start="2025-09-28T14:10:51.770792" elapsed="0.001715"/>
 </kw>
 <doc>🤖 Verify Ansible playbook template and build compliance
 Validates system was built using approved Ansible templates</doc>
@@ -1537,290 +1536,290 @@ Validates system was built using approved Ansible templates</doc>
 <tag>build</tag>
 <tag>critical</tag>
 <tag>template</tag>
-<status status="FAIL" start="2025-09-28T12:48:59.922921" elapsed="0.012521">Connection not open</status>
+<status status="FAIL" start="2025-09-28T14:10:51.756024" elapsed="0.016526">Connection not open</status>
 </test>
-<test id="s1-s1-t6" name="Critical - CIP-007 R2 Compliance Validation" line="228">
+<test id="s1-t6" name="Critical - CIP-007 R2 Compliance Validation" line="228">
 <kw name="Log Test Start" owner="os_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.937548" level="INFO">▶️ Starting: Critical - CIP-007 R2 Compliance Validation</msg>
+<msg time="2025-09-28T14:10:51.773842" level="INFO">▶️ Starting: Critical - CIP-007 R2 Compliance Validation</msg>
 <arg>▶️ Starting: ${test_name}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.937247" elapsed="0.000461"/>
+<status status="PASS" start="2025-09-28T14:10:51.773663" elapsed="0.000246"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.936727" elapsed="0.001085"/>
+<status status="PASS" start="2025-09-28T14:10:51.773365" elapsed="0.000603"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.938154" level="INFO">🔍 Performing CIP-007 R2 compliance validation...</msg>
+<msg time="2025-09-28T14:10:51.774178" level="INFO">🔍 Performing CIP-007 R2 compliance validation...</msg>
 <arg>🔍 Performing CIP-007 R2 compliance validation...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.937971" elapsed="0.000292"/>
+<status status="PASS" start="2025-09-28T14:10:51.774069" elapsed="0.000160"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.938671" level="INFO">${total} = 6</msg>
+<msg time="2025-09-28T14:10:51.774533" level="INFO">${total} = 6</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.938395" elapsed="0.000302"/>
+<status status="PASS" start="2025-09-28T14:10:51.774331" elapsed="0.000230"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.938986" level="INFO">${TOTAL_TESTS} = 6</msg>
+<msg time="2025-09-28T14:10:51.774836" level="INFO">${TOTAL_TESTS} = 6</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.938817" elapsed="0.000206"/>
+<status status="PASS" start="2025-09-28T14:10:51.774682" elapsed="0.000188"/>
 </kw>
 <kw name="Validate OS Against CIP007R2" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.939887" level="INFO">✅ Validating OS against CIP-007 R2...</msg>
+<msg time="2025-09-28T14:10:51.775725" level="INFO">✅ Validating OS against CIP-007 R2...</msg>
 <arg>✅ Validating OS against CIP-007 R2...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.939671" elapsed="0.000344"/>
+<status status="PASS" start="2025-09-28T14:10:51.775608" elapsed="0.000180"/>
 </kw>
 <return>
 <value>${True}</value>
-<status status="PASS" start="2025-09-28T12:48:59.940931" elapsed="0.000095"/>
+<status status="PASS" start="2025-09-28T14:10:51.776723" elapsed="0.000092"/>
 </return>
-<msg time="2025-09-28T12:48:59.941367" level="INFO">${os_compliance} = True</msg>
+<msg time="2025-09-28T14:10:51.777033" level="INFO">${os_compliance} = True</msg>
 <var>${os_compliance}</var>
 <arg>${OS_INFO_DATA}</arg>
 <arg>${CIP007_OS_REQUIREMENTS}</arg>
 <doc>✅ Validate OS configuration against CIP-007 R2 requirements</doc>
-<status status="PASS" start="2025-09-28T12:48:59.939192" elapsed="0.002217"/>
+<status status="PASS" start="2025-09-28T14:10:51.775050" elapsed="0.002022"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${os_compliance}</arg>
 <arg>OS configuration non-compliant with CIP-007 R2</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.941671" elapsed="0.000333"/>
+<status status="PASS" start="2025-09-28T14:10:51.777261" elapsed="0.000405"/>
 </kw>
 <kw name="Validate Packages Against CIP007R2" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.943416" level="INFO">✅ Validating packages against CIP-007 R2...</msg>
+<msg time="2025-09-28T14:10:51.778275" level="INFO">✅ Validating packages against CIP-007 R2...</msg>
 <arg>✅ Validating packages against CIP-007 R2...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.943213" elapsed="0.000386"/>
+<status status="PASS" start="2025-09-28T14:10:51.778152" elapsed="0.000195"/>
 </kw>
 <return>
 <value>${True}</value>
-<status status="PASS" start="2025-09-28T12:48:59.943686" elapsed="0.000058"/>
+<status status="PASS" start="2025-09-28T14:10:51.778395" elapsed="0.000035"/>
 </return>
-<msg time="2025-09-28T12:48:59.943956" level="INFO">${package_compliance} = True</msg>
+<msg time="2025-09-28T14:10:51.778553" level="INFO">${package_compliance} = True</msg>
 <var>${package_compliance}</var>
 <arg>${PACKAGE_DATA}</arg>
 <arg>${CIP007_PACKAGE_REQUIREMENTS}</arg>
 <doc>✅ Validate packages against CIP-007 R2 requirements</doc>
-<status status="PASS" start="2025-09-28T12:48:59.942278" elapsed="0.001712"/>
+<status status="PASS" start="2025-09-28T14:10:51.777850" elapsed="0.000726"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${package_compliance}</arg>
 <arg>Package configuration non-compliant with CIP-007 R2</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.944164" elapsed="0.000384"/>
+<status status="PASS" start="2025-09-28T14:10:51.778677" elapsed="0.000174"/>
 </kw>
 <kw name="Validate Patches Against CIP007R2" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.945867" level="INFO">✅ Validating patches against CIP-007 R2...</msg>
+<msg time="2025-09-28T14:10:51.779401" level="INFO">✅ Validating patches against CIP-007 R2...</msg>
 <arg>✅ Validating patches against CIP-007 R2...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.945706" elapsed="0.000286"/>
+<status status="PASS" start="2025-09-28T14:10:51.779257" elapsed="0.000206"/>
 </kw>
 <return>
 <value>${True}</value>
-<status status="PASS" start="2025-09-28T12:48:59.946053" elapsed="0.000035"/>
+<status status="PASS" start="2025-09-28T14:10:51.779504" elapsed="0.000031"/>
 </return>
-<msg time="2025-09-28T12:48:59.946224" level="INFO">${patch_compliance} = True</msg>
+<msg time="2025-09-28T14:10:51.779679" level="INFO">${patch_compliance} = True</msg>
 <var>${patch_compliance}</var>
 <arg>${PATCH_DATA}</arg>
 <arg>${CIP007_PATCH_REQUIREMENTS}</arg>
 <doc>✅ Validate patches against CIP-007 R2 requirements</doc>
-<status status="PASS" start="2025-09-28T12:48:59.944765" elapsed="0.001485"/>
+<status status="PASS" start="2025-09-28T14:10:51.778992" elapsed="0.000708"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${patch_compliance}</arg>
 <arg>Patch management non-compliant with CIP-007 R2</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.946361" elapsed="0.000148"/>
+<status status="PASS" start="2025-09-28T14:10:51.779797" elapsed="0.000131"/>
 </kw>
 <kw name="Validate Template Against CIP007R2" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.947436" level="INFO">✅ Validating template against CIP-007 R2...</msg>
+<msg time="2025-09-28T14:10:51.780418" level="INFO">✅ Validating template against CIP-007 R2...</msg>
 <arg>✅ Validating template against CIP-007 R2...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.947219" elapsed="0.000419"/>
+<status status="PASS" start="2025-09-28T14:10:51.780316" elapsed="0.000161"/>
 </kw>
 <return>
 <value>${True}</value>
-<status status="PASS" start="2025-09-28T12:48:59.947728" elapsed="0.000056"/>
+<status status="PASS" start="2025-09-28T14:10:51.780516" elapsed="0.000027"/>
 </return>
-<msg time="2025-09-28T12:48:59.947925" level="INFO">${template_compliance} = True</msg>
+<msg time="2025-09-28T14:10:51.780688" level="INFO">${template_compliance} = True</msg>
 <var>${template_compliance}</var>
 <arg>${TEMPLATE_INFO}</arg>
 <arg>${CIP007_TEMPLATE_REQUIREMENTS}</arg>
 <doc>✅ Validate template against CIP-007 R2 requirements</doc>
-<status status="PASS" start="2025-09-28T12:48:59.946655" elapsed="0.001290"/>
+<status status="PASS" start="2025-09-28T14:10:51.780058" elapsed="0.000654"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${template_compliance}</arg>
 <arg>Build template non-compliant with CIP-007 R2</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.948249" elapsed="0.000282"/>
+<status status="PASS" start="2025-09-28T14:10:51.780836" elapsed="0.000147"/>
 </kw>
 <kw name="Calculate Compliance Score" owner="os_keywords">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.949875" level="INFO">${score} = 100</msg>
+<msg time="2025-09-28T14:10:51.781752" level="INFO">${score} = 100</msg>
 <var>${score}</var>
 <arg>(${os_compliance} + ${package_compliance} + ${patch_compliance} + ${template_compliance}) * 25</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.949518" elapsed="0.000391"/>
+<status status="PASS" start="2025-09-28T14:10:51.781491" elapsed="0.000285"/>
 </kw>
 <return>
 <value>${score}</value>
-<status status="PASS" start="2025-09-28T12:48:59.949961" elapsed="0.000034"/>
+<status status="PASS" start="2025-09-28T14:10:51.781817" elapsed="0.000027"/>
 </return>
-<msg time="2025-09-28T12:48:59.950126" level="INFO">${compliance_score} = 100</msg>
+<msg time="2025-09-28T14:10:51.781949" level="INFO">${compliance_score} = 100</msg>
 <var>${compliance_score}</var>
 <arg>${os_compliance}</arg>
 <arg>${package_compliance}</arg>
 <arg>${patch_compliance}</arg>
 <arg>${template_compliance}</arg>
 <doc>📊 Calculate overall compliance score</doc>
-<status status="PASS" start="2025-09-28T12:48:59.948966" elapsed="0.001183"/>
+<status status="PASS" start="2025-09-28T14:10:51.781123" elapsed="0.000845"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.950430" level="INFO">Argument types are:
+<msg time="2025-09-28T14:10:51.782202" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${compliance_score}</arg>
 <arg>100</arg>
 <arg>Overall compliance score below 100%</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.950269" elapsed="0.000229"/>
+<status status="PASS" start="2025-09-28T14:10:51.782068" elapsed="0.000195"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>OS Compliance: PASSED</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.950607" elapsed="0.000116"/>
+<status status="PASS" start="2025-09-28T14:10:51.782355" elapsed="0.000157"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Package Compliance: PASSED</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.950808" elapsed="0.000100"/>
+<status status="PASS" start="2025-09-28T14:10:51.782594" elapsed="0.000097"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Patch Compliance: PASSED</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.950991" elapsed="0.000102"/>
+<status status="PASS" start="2025-09-28T14:10:51.782768" elapsed="0.000117"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Template Compliance: PASSED</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.951199" elapsed="0.000099"/>
+<status status="PASS" start="2025-09-28T14:10:51.782965" elapsed="0.000099"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Overall Compliance Score: ${compliance_score}%</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.951379" elapsed="0.000145"/>
+<status status="PASS" start="2025-09-28T14:10:51.783144" elapsed="0.000127"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.951715" level="INFO">✅ CIP-007 R2 compliance: VALIDATED</msg>
+<msg time="2025-09-28T14:10:51.783498" level="INFO">✅ CIP-007 R2 compliance: VALIDATED</msg>
 <arg>✅ CIP-007 R2 compliance: VALIDATED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.951611" elapsed="0.000205"/>
+<status status="PASS" start="2025-09-28T14:10:51.783385" elapsed="0.000175"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.952034" level="INFO">🖥️ OS compliance: PASSED</msg>
+<msg time="2025-09-28T14:10:51.783747" level="INFO">🖥️ OS compliance: PASSED</msg>
 <arg>🖥️ OS compliance: PASSED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.951932" elapsed="0.000188"/>
+<status status="PASS" start="2025-09-28T14:10:51.783653" elapsed="0.000151"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.952306" level="INFO">📦 Package compliance: PASSED</msg>
+<msg time="2025-09-28T14:10:51.783976" level="INFO">📦 Package compliance: PASSED</msg>
 <arg>📦 Package compliance: PASSED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.952215" elapsed="0.000139"/>
+<status status="PASS" start="2025-09-28T14:10:51.783891" elapsed="0.000128"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.952522" level="INFO">🔒 Patch compliance: PASSED</msg>
+<msg time="2025-09-28T14:10:51.784187" level="INFO">🔒 Patch compliance: PASSED</msg>
 <arg>🔒 Patch compliance: PASSED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.952438" elapsed="0.000125"/>
+<status status="PASS" start="2025-09-28T14:10:51.784103" elapsed="0.000126"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.953779" level="INFO">🤖 Template compliance: PASSED</msg>
+<msg time="2025-09-28T14:10:51.785936" level="INFO">🤖 Template compliance: PASSED</msg>
 <arg>🤖 Template compliance: PASSED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.953568" elapsed="0.000327"/>
+<status status="PASS" start="2025-09-28T14:10:51.785333" elapsed="0.000757"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.954322" level="INFO">📊 Overall Score: 100%</msg>
+<msg time="2025-09-28T14:10:51.787057" level="INFO">📊 Overall Score: 100%</msg>
 <arg>📊 Overall Score: ${compliance_score}%</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.954072" elapsed="0.000353"/>
+<status status="PASS" start="2025-09-28T14:10:51.786435" elapsed="0.000840"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>CIP-007 R2 Compliance: PASS - 100% compliant, all requirements met</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.954586" elapsed="0.000184"/>
+<status status="PASS" start="2025-09-28T14:10:51.787561" elapsed="0.000284"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.955234" level="INFO">${passed} = 1</msg>
+<msg time="2025-09-28T14:10:51.788891" level="INFO">${passed} = 1</msg>
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.954921" elapsed="0.000351"/>
+<status status="PASS" start="2025-09-28T14:10:51.788158" elapsed="0.000796"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.955698" level="INFO">${PASSED_TESTS} = 1</msg>
+<msg time="2025-09-28T14:10:51.789511" level="INFO">${PASSED_TESTS} = 1</msg>
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.955445" elapsed="0.000315"/>
+<status status="PASS" start="2025-09-28T14:10:51.789218" elapsed="0.000364"/>
 </kw>
 <kw name="Log Test End" owner="os_keywords" type="TEARDOWN">
 <if>
 <branch type="IF" condition="'${test_status}' == 'PASS'">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.957163" level="INFO">✅ Completed: Critical - CIP-007 R2 Compliance Validation - PASS</msg>
+<msg time="2025-09-28T14:10:51.792152" level="INFO">✅ Completed: Critical - CIP-007 R2 Compliance Validation - PASS</msg>
 <arg>✅ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.956819" elapsed="0.000446"/>
+<status status="PASS" start="2025-09-28T14:10:51.791918" elapsed="0.000331"/>
 </kw>
-<status status="PASS" start="2025-09-28T12:48:59.956542" elapsed="0.000778"/>
+<status status="PASS" start="2025-09-28T14:10:51.791656" elapsed="0.000640"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
 <arg>❌ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:48:59.957519" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.792470" elapsed="0.000022"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:48:59.957364" elapsed="0.000233"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.792327" elapsed="0.000203"/>
 </branch>
-<status status="PASS" start="2025-09-28T12:48:59.956509" elapsed="0.001118"/>
+<status status="PASS" start="2025-09-28T14:10:51.790376" elapsed="0.002177"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.956117" elapsed="0.001582"/>
+<status status="PASS" start="2025-09-28T14:10:51.789970" elapsed="0.002759"/>
 </kw>
 <doc>✅ Final validation against CIP-007 R2 compliance requirements
 Ensures all collected data meets regulatory compliance standards</doc>
@@ -1831,68 +1830,68 @@ Ensures all collected data meets regulatory compliance standards</doc>
 <tag>final</tag>
 <tag>r2</tag>
 <tag>regulatory</tag>
-<status status="PASS" start="2025-09-28T12:48:59.935789" elapsed="0.021976"/>
+<status status="PASS" start="2025-09-28T14:10:51.772811" elapsed="0.020045"/>
 </test>
-<test id="s1-s1-t7" name="Normal - System Documentation and Evidence Collection" line="275">
+<test id="s1-t7" name="Normal - System Documentation and Evidence Collection" line="275">
 <kw name="Log Test Start" owner="os_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.961844" level="INFO">▶️ Starting: Normal - System Documentation and Evidence Collection</msg>
+<msg time="2025-09-28T14:10:51.795000" level="INFO">▶️ Starting: Normal - System Documentation and Evidence Collection</msg>
 <arg>▶️ Starting: ${test_name}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.961582" elapsed="0.000366"/>
+<status status="PASS" start="2025-09-28T14:10:51.794718" elapsed="0.000379"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-09-28T12:48:59.958965" elapsed="0.003072"/>
+<status status="PASS" start="2025-09-28T14:10:51.794150" elapsed="0.001026"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.962333" level="INFO">📋 Collecting system documentation and evidence...</msg>
+<msg time="2025-09-28T14:10:51.795476" level="INFO">📋 Collecting system documentation and evidence...</msg>
 <arg>📋 Collecting system documentation and evidence...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.962178" elapsed="0.000238"/>
+<status status="PASS" start="2025-09-28T14:10:51.795339" elapsed="0.000202"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.962842" level="INFO">${total} = 7</msg>
+<msg time="2025-09-28T14:10:51.796107" level="INFO">${total} = 7</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.962566" elapsed="0.000307"/>
+<status status="PASS" start="2025-09-28T14:10:51.795829" elapsed="0.000307"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.963294" level="INFO">${TOTAL_TESTS} = 7</msg>
+<msg time="2025-09-28T14:10:51.796442" level="INFO">${TOTAL_TESTS} = 7</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.963029" elapsed="0.000314"/>
+<status status="PASS" start="2025-09-28T14:10:51.796265" elapsed="0.000216"/>
 </kw>
 <kw name="Generate System Report" owner="os_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.964215" level="INFO">📄 Generating system report...</msg>
+<msg time="2025-09-28T14:10:51.797703" level="INFO">📄 Generating system report...</msg>
 <arg>📄 Generating system report...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.964058" elapsed="0.000247"/>
+<status status="PASS" start="2025-09-28T14:10:51.797508" elapsed="0.000330"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-28T12:48:59.964719" level="INFO">${timestamp} = 20250928_124859</msg>
+<msg time="2025-09-28T14:10:51.798294" level="INFO">${timestamp} = 20250928_141051</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.964455" elapsed="0.000297"/>
+<status status="PASS" start="2025-09-28T14:10:51.798027" elapsed="0.000302"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.967551" level="INFO">${report_path} = ../../results/test6/reports/system_report_20250928_124859.txt</msg>
+<msg time="2025-09-28T14:10:51.798708" level="INFO">${report_path} = ../../results/test6/reports/system_report_20250928_141051.txt</msg>
 <var>${report_path}</var>
 <arg>${REPORTS_DIR}/system_report_${timestamp}.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.966211" elapsed="0.001508"/>
+<status status="PASS" start="2025-09-28T14:10:51.798483" elapsed="0.000255"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.968303" level="INFO">${report_content} = OS Installation Validation Report
+<msg time="2025-09-28T14:10:51.799389" level="INFO">${report_content} = OS Installation Validation Report
 =================================
 
-Generated: 20250928_124859
+Generated: 20250928_141051
 
 OS Information:
 
@@ -1905,91 +1904,91 @@ Patch Information:
 <var>${report_content}</var>
 <arg>OS Installation Validation Report\n=================================\n\nGenerated: ${timestamp}\n\nOS Information:\n${os_info}\n\nPackage Information:\n${package_data}\n\nPatch Information:\n${patch_data}\n\nTemplate Information:\n${template_info}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.967954" elapsed="0.000377"/>
+<status status="PASS" start="2025-09-28T14:10:51.798929" elapsed="0.000487"/>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-09-28T12:48:59.981829" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/results/test6/reports/system_report_20250928_124859.txt"&gt;/mnt/c/Users/sacpa/Projects/results/test6/reports/system_report_20250928_124859.txt&lt;/a&gt;'.</msg>
+<msg time="2025-09-28T14:10:51.810070" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test6/reports/system_report_20250928_141051.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test6/reports/system_report_20250928_141051.txt&lt;/a&gt;'.</msg>
 <arg>${report_path}</arg>
 <arg>${report_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.968450" elapsed="0.013633"/>
+<status status="PASS" start="2025-09-28T14:10:51.799521" elapsed="0.010752"/>
 </kw>
 <return>
 <value>${report_path}</value>
-<status status="PASS" start="2025-09-28T12:48:59.982234" elapsed="0.000100"/>
+<status status="PASS" start="2025-09-28T14:10:51.810408" elapsed="0.000081"/>
 </return>
-<msg time="2025-09-28T12:48:59.982617" level="INFO">${system_report} = ../../results/test6/reports/system_report_20250928_124859.txt</msg>
+<msg time="2025-09-28T14:10:51.810764" level="INFO">${system_report} = ../../results/test6/reports/system_report_20250928_141051.txt</msg>
 <var>${system_report}</var>
 <arg>${OS_INFO_DATA}</arg>
 <arg>${PACKAGE_DATA}</arg>
 <arg>${PATCH_DATA}</arg>
 <arg>${TEMPLATE_INFO}</arg>
 <doc>📄 Generate comprehensive system report</doc>
-<status status="PASS" start="2025-09-28T12:48:59.963578" elapsed="0.019076"/>
+<status status="PASS" start="2025-09-28T14:10:51.796962" elapsed="0.013835"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.983215" level="INFO">Length is 61.</msg>
+<msg time="2025-09-28T14:10:51.811185" level="INFO">Length is 61.</msg>
 <arg>${system_report}</arg>
 <arg>Failed to generate system report</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.982909" elapsed="0.000391"/>
+<status status="PASS" start="2025-09-28T14:10:51.810983" elapsed="0.000249"/>
 </kw>
 <kw name="Create Evidence Package" owner="os_keywords">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-28T12:48:59.985027" level="INFO">${timestamp} = 20250928_124859</msg>
+<msg time="2025-09-28T14:10:51.812812" level="INFO">${timestamp} = 20250928_141051</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.984753" elapsed="0.000312"/>
+<status status="PASS" start="2025-09-28T14:10:51.812537" elapsed="0.000304"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.985646" level="INFO">${package_path} = ../../results/test6/evidence/evidence_package_20250928_124859.tar.gz</msg>
+<msg time="2025-09-28T14:10:51.813140" level="INFO">${package_path} = ../../results/test6/evidence/evidence_package_20250928_141051.tar.gz</msg>
 <var>${package_path}</var>
 <arg>${EVIDENCE_DIR}/evidence_package_${timestamp}.tar.gz</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.985394" elapsed="0.000287"/>
+<status status="PASS" start="2025-09-28T14:10:51.812962" elapsed="0.000202"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.985996" level="INFO">📦 Creating evidence package: ../../results/test6/evidence/evidence_package_20250928_124859.tar.gz</msg>
+<msg time="2025-09-28T14:10:51.813415" level="INFO">📦 Creating evidence package: ../../results/test6/evidence/evidence_package_20250928_141051.tar.gz</msg>
 <arg>📦 Creating evidence package: ${package_path}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.985807" elapsed="0.000338"/>
+<status status="PASS" start="2025-09-28T14:10:51.813265" elapsed="0.000268"/>
 </kw>
 <return>
 <value>${package_path}</value>
-<status status="PASS" start="2025-09-28T12:48:59.986228" elapsed="0.000058"/>
+<status status="PASS" start="2025-09-28T14:10:51.813585" elapsed="0.000062"/>
 </return>
-<msg time="2025-09-28T12:48:59.986538" level="INFO">${evidence_package} = ../../results/test6/evidence/evidence_package_20250928_124859.tar.gz</msg>
+<msg time="2025-09-28T14:10:51.813789" level="INFO">${evidence_package} = ../../results/test6/evidence/evidence_package_20250928_141051.tar.gz</msg>
 <var>${evidence_package}</var>
 <arg>${system_report}</arg>
 <doc>📦 Create evidence package for audit</doc>
-<status status="PASS" start="2025-09-28T12:48:59.984280" elapsed="0.002297"/>
+<status status="PASS" start="2025-09-28T14:10:51.812193" elapsed="0.001619"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.986874" level="INFO">Length is 68.</msg>
+<msg time="2025-09-28T14:10:51.814065" level="INFO">Length is 68.</msg>
 <arg>${evidence_package}</arg>
 <arg>Failed to create evidence package</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.986709" elapsed="0.000205"/>
+<status status="PASS" start="2025-09-28T14:10:51.813919" elapsed="0.000183"/>
 </kw>
 <kw name="Generate Compliance Certificate" owner="os_keywords">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-28T12:48:59.988464" level="INFO">${timestamp} = 20250928_124859</msg>
+<msg time="2025-09-28T14:10:51.814781" level="INFO">${timestamp} = 20250928_141051</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.987966" elapsed="0.000557"/>
+<status status="PASS" start="2025-09-28T14:10:51.814622" elapsed="0.000182"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.988878" level="INFO">${cert_path} = ../../results/test6/evidence/compliance_certificate_20250928_124859.txt</msg>
+<msg time="2025-09-28T14:10:51.815050" level="INFO">${cert_path} = ../../results/test6/evidence/compliance_certificate_20250928_141051.txt</msg>
 <var>${cert_path}</var>
 <arg>${EVIDENCE_DIR}/compliance_certificate_${timestamp}.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.988695" elapsed="0.000206"/>
+<status status="PASS" start="2025-09-28T14:10:51.814897" elapsed="0.000173"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:48:59.989387" level="INFO">${cert_content} = CIP-007 R2 COMPLIANCE CERTIFICATE
+<msg time="2025-09-28T14:10:51.815414" level="INFO">${cert_content} = CIP-007 R2 COMPLIANCE CERTIFICATE
 ===============================
 
 OS:  
@@ -1998,24 +1997,24 @@ Patches current as of: 2025-09-28
 Kernel: 
 CIP-007 R2 compliant: YES
 
-Generated: 20250928_124859</msg>
+Generated: 20250928_141051</msg>
 <var>${cert_content}</var>
 <arg>CIP-007 R2 COMPLIANCE CERTIFICATE\n===============================\n\nOS: ${os_name} ${os_version}\nTemplate: ${template_name}\nPatches current as of: ${patch_date}\nKernel: ${kernel_version}\nCIP-007 R2 compliant: YES\n\nGenerated: ${timestamp}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.988997" elapsed="0.000424"/>
+<status status="PASS" start="2025-09-28T14:10:51.815156" elapsed="0.000280"/>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-09-28T12:49:00.003324" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/results/test6/evidence/compliance_certificate_20250928_124859.txt"&gt;/mnt/c/Users/sacpa/Projects/results/test6/evidence/compliance_certificate_20250928_124859.txt&lt;/a&gt;'.</msg>
+<msg time="2025-09-28T14:10:51.825341" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test6/evidence/compliance_certificate_20250928_141051.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test6/evidence/compliance_certificate_20250928_141051.txt&lt;/a&gt;'.</msg>
 <arg>${cert_path}</arg>
 <arg>${cert_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-09-28T12:48:59.989880" elapsed="0.013674"/>
+<status status="PASS" start="2025-09-28T14:10:51.815525" elapsed="0.009973"/>
 </kw>
 <return>
 <value>${cert_path}</value>
-<status status="PASS" start="2025-09-28T12:49:00.003690" elapsed="0.000096"/>
+<status status="PASS" start="2025-09-28T14:10:51.825584" elapsed="0.000062"/>
 </return>
-<msg time="2025-09-28T12:49:00.004166" level="INFO">${compliance_cert} = ../../results/test6/evidence/compliance_certificate_20250928_124859.txt</msg>
+<msg time="2025-09-28T14:10:51.825856" level="INFO">${compliance_cert} = ../../results/test6/evidence/compliance_certificate_20250928_141051.txt</msg>
 <var>${compliance_cert}</var>
 <arg>${OS_NAME}</arg>
 <arg>${OS_VERSION}</arg>
@@ -2023,128 +2022,128 @@ Generated: 20250928_124859</msg>
 <arg>${LAST_PATCH_DATE}</arg>
 <arg>${KERNEL_VERSION}</arg>
 <doc>🏆 Generate compliance certificate</doc>
-<status status="PASS" start="2025-09-28T12:48:59.987088" elapsed="0.017140"/>
+<status status="PASS" start="2025-09-28T14:10:51.814262" elapsed="0.011621"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.004956" level="INFO">Length is 71.</msg>
+<msg time="2025-09-28T14:10:51.826352" level="INFO">Length is 71.</msg>
 <arg>${compliance_cert}</arg>
 <arg>Failed to generate compliance certificate</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.004566" elapsed="0.000481"/>
+<status status="PASS" start="2025-09-28T14:10:51.826080" elapsed="0.000349"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.005636" level="INFO">${SYSTEM_REPORT} = ../../results/test6/reports/system_report_20250928_124859.txt</msg>
+<msg time="2025-09-28T14:10:51.827282" level="INFO">${SYSTEM_REPORT} = ../../results/test6/reports/system_report_20250928_141051.txt</msg>
 <arg>${SYSTEM_REPORT}</arg>
 <arg>${system_report}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.005326" elapsed="0.000371"/>
+<status status="PASS" start="2025-09-28T14:10:51.826696" elapsed="0.000644"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.006125" level="INFO">${EVIDENCE_PACKAGE} = ../../results/test6/evidence/evidence_package_20250928_124859.tar.gz</msg>
+<msg time="2025-09-28T14:10:51.827858" level="INFO">${EVIDENCE_PACKAGE} = ../../results/test6/evidence/evidence_package_20250928_141051.tar.gz</msg>
 <arg>${EVIDENCE_PACKAGE}</arg>
 <arg>${evidence_package}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.005877" elapsed="0.000309"/>
+<status status="PASS" start="2025-09-28T14:10:51.827591" elapsed="0.000341"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.008530" level="INFO">${COMPLIANCE_CERTIFICATE} = ../../results/test6/evidence/compliance_certificate_20250928_124859.txt</msg>
+<msg time="2025-09-28T14:10:51.829886" level="INFO">${COMPLIANCE_CERTIFICATE} = ../../results/test6/evidence/compliance_certificate_20250928_141051.txt</msg>
 <arg>${COMPLIANCE_CERTIFICATE}</arg>
 <arg>${compliance_cert}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.006359" elapsed="0.002274"/>
+<status status="PASS" start="2025-09-28T14:10:51.828175" elapsed="0.001778"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>System Report: ${system_report}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.008859" elapsed="0.000361"/>
+<status status="PASS" start="2025-09-28T14:10:51.830089" elapsed="0.000189"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Evidence Package: ${evidence_package}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.009394" elapsed="0.000277"/>
+<status status="PASS" start="2025-09-28T14:10:51.830379" elapsed="0.000136"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Compliance Certificate: ${compliance_cert}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.009834" elapsed="0.000221"/>
+<status status="PASS" start="2025-09-28T14:10:51.830608" elapsed="0.000131"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.010409" level="INFO">✅ Documentation collection: COMPLETED</msg>
+<msg time="2025-09-28T14:10:51.830961" level="INFO">✅ Documentation collection: COMPLETED</msg>
 <arg>✅ Documentation collection: COMPLETED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.010218" elapsed="0.000315"/>
+<status status="PASS" start="2025-09-28T14:10:51.830834" elapsed="0.000266"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.010850" level="INFO">📄 System Report: ../../results/test6/reports/system_report_20250928_124859.txt</msg>
+<msg time="2025-09-28T14:10:51.831389" level="INFO">📄 System Report: ../../results/test6/reports/system_report_20250928_141051.txt</msg>
 <arg>📄 System Report: ${system_report}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.010659" elapsed="0.000299"/>
+<status status="PASS" start="2025-09-28T14:10:51.831215" elapsed="0.000241"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.011270" level="INFO">📦 Evidence Package: ../../results/test6/evidence/evidence_package_20250928_124859.tar.gz</msg>
+<msg time="2025-09-28T14:10:51.831742" level="INFO">📦 Evidence Package: ../../results/test6/evidence/evidence_package_20250928_141051.tar.gz</msg>
 <arg>📦 Evidence Package: ${evidence_package}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.011102" elapsed="0.000850"/>
+<status status="PASS" start="2025-09-28T14:10:51.831574" elapsed="0.001063"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.012256" level="INFO">🏆 Compliance Certificate: ../../results/test6/evidence/compliance_certificate_20250928_124859.txt</msg>
+<msg time="2025-09-28T14:10:51.852390" level="INFO">🏆 Compliance Certificate: ../../results/test6/evidence/compliance_certificate_20250928_141051.txt</msg>
 <arg>🏆 Compliance Certificate: ${compliance_cert}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.012088" elapsed="0.000229"/>
+<status status="PASS" start="2025-09-28T14:10:51.832894" elapsed="0.019696"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>Documentation: PASS - Report, evidence, and certificate generated</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.012420" elapsed="0.000145"/>
+<status status="PASS" start="2025-09-28T14:10:51.852785" elapsed="0.000195"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.012897" level="INFO">${passed} = 2</msg>
+<msg time="2025-09-28T14:10:51.853423" level="INFO">${passed} = 2</msg>
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.012680" elapsed="0.000241"/>
+<status status="PASS" start="2025-09-28T14:10:51.853164" elapsed="0.000286"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.013272" level="INFO">${PASSED_TESTS} = 2</msg>
+<msg time="2025-09-28T14:10:51.853760" level="INFO">${PASSED_TESTS} = 2</msg>
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.013028" elapsed="0.000283"/>
+<status status="PASS" start="2025-09-28T14:10:51.853575" elapsed="0.000224"/>
 </kw>
 <kw name="Log Test End" owner="os_keywords" type="TEARDOWN">
 <if>
 <branch type="IF" condition="'${test_status}' == 'PASS'">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.038532" level="INFO">✅ Completed: Normal - System Documentation and Evidence Collection - PASS</msg>
+<msg time="2025-09-28T14:10:51.854728" level="INFO">✅ Completed: Normal - System Documentation and Evidence Collection - PASS</msg>
 <arg>✅ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.038229" elapsed="0.000478"/>
+<status status="PASS" start="2025-09-28T14:10:51.854552" elapsed="0.000245"/>
 </kw>
-<status status="PASS" start="2025-09-28T12:49:00.037817" elapsed="0.000949"/>
+<status status="PASS" start="2025-09-28T14:10:51.854378" elapsed="0.000456"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log" owner="BuiltIn">
 <arg>❌ Completed: ${test_name} - ${test_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T12:49:00.038914" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.854952" elapsed="0.000018"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T12:49:00.038796" elapsed="0.000172"/>
+<status status="NOT RUN" start="2025-09-28T14:10:51.854860" elapsed="0.000141"/>
 </branch>
-<status status="PASS" start="2025-09-28T12:49:00.037792" elapsed="0.001199"/>
+<status status="PASS" start="2025-09-28T14:10:51.854355" elapsed="0.000690"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-09-28T12:49:00.037307" elapsed="0.001933"/>
+<status status="PASS" start="2025-09-28T14:10:51.854076" elapsed="0.001029"/>
 </kw>
 <doc>📋 Collect comprehensive documentation and evidence for audit trail
 Generates detailed reports with all collected system information</doc>
@@ -2154,180 +2153,180 @@ Generates detailed reports with all collected system information</doc>
 <tag>evidence</tag>
 <tag>normal</tag>
 <tag>reporting</tag>
-<status status="PASS" start="2025-09-28T12:48:59.958074" elapsed="0.081259"/>
+<status status="PASS" start="2025-09-28T14:10:51.793094" elapsed="0.062051"/>
 </test>
 <kw name="Generate Executive Summary" owner="os_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.040948" level="INFO">📊 Generating Executive Summary...</msg>
+<msg time="2025-09-28T14:10:51.856223" level="INFO">📊 Generating Executive Summary...</msg>
 <arg>📊 Generating Executive Summary...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.040673" elapsed="0.000546"/>
+<status status="PASS" start="2025-09-28T14:10:51.856038" elapsed="0.000272"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.041659" level="INFO">🎯 Total Tests: 7</msg>
+<msg time="2025-09-28T14:10:51.856669" level="INFO">🎯 Total Tests: 7</msg>
 <arg>🎯 Total Tests: ${TOTAL_TESTS}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.041370" elapsed="0.000615"/>
+<status status="PASS" start="2025-09-28T14:10:51.856459" elapsed="0.000281"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.042743" level="INFO">✅ Passed Tests: 2</msg>
+<msg time="2025-09-28T14:10:51.856998" level="INFO">✅ Passed Tests: 2</msg>
 <arg>✅ Passed Tests: ${PASSED_TESTS}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.042323" elapsed="0.000549"/>
+<status status="PASS" start="2025-09-28T14:10:51.856846" elapsed="0.000233"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.043455" level="INFO">${success_rate} = 28.6</msg>
+<msg time="2025-09-28T14:10:51.857510" level="INFO">${success_rate} = 28.6</msg>
 <var>${success_rate}</var>
 <arg>round((${PASSED_TESTS} / ${TOTAL_TESTS}) * 100, 1) if ${TOTAL_TESTS} &gt; 0 else 0</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.043059" elapsed="0.000425"/>
+<status status="PASS" start="2025-09-28T14:10:51.857213" elapsed="0.000321"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.043761" level="INFO">📈 Success Rate: 28.6%</msg>
+<msg time="2025-09-28T14:10:51.857829" level="INFO">📈 Success Rate: 28.6%</msg>
 <arg>📈 Success Rate: ${success_rate}%</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.043599" elapsed="0.000263"/>
+<status status="PASS" start="2025-09-28T14:10:51.857637" elapsed="0.000274"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.044085" level="INFO">📋 Test Results Summary:</msg>
+<msg time="2025-09-28T14:10:51.858190" level="INFO">📋 Test Results Summary:</msg>
 <arg>📋 Test Results Summary:</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.043973" elapsed="0.000229"/>
+<status status="PASS" start="2025-09-28T14:10:51.858059" elapsed="0.000196"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.044774" level="INFO">CIP-007 R2 Compliance: PASS - 100% compliant, all requirements met</msg>
+<msg time="2025-09-28T14:10:51.858901" level="INFO">CIP-007 R2 Compliance: PASS - 100% compliant, all requirements met</msg>
 <arg>${result}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.044635" elapsed="0.000231"/>
+<status status="PASS" start="2025-09-28T14:10:51.858712" elapsed="0.000251"/>
 </kw>
 <var name="${result}">CIP-007 R2 Compliance: PASS - 100% compliant, all requirements met</var>
-<status status="PASS" start="2025-09-28T12:49:00.044540" elapsed="0.000363"/>
+<status status="PASS" start="2025-09-28T14:10:51.858578" elapsed="0.000422"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.045333" level="INFO">Documentation: PASS - Report, evidence, and certificate generated</msg>
+<msg time="2025-09-28T14:10:51.859376" level="INFO">Documentation: PASS - Report, evidence, and certificate generated</msg>
 <arg>${result}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.045170" elapsed="0.000246"/>
+<status status="PASS" start="2025-09-28T14:10:51.859226" elapsed="0.000282"/>
 </kw>
 <var name="${result}">Documentation: PASS - Report, evidence, and certificate generated</var>
-<status status="PASS" start="2025-09-28T12:49:00.045007" elapsed="0.000444"/>
+<status status="PASS" start="2025-09-28T14:10:51.859133" elapsed="0.000584"/>
 </iter>
 <var>${result}</var>
 <value>@{TEST_RESULTS}</value>
-<status status="PASS" start="2025-09-28T12:49:00.044282" elapsed="0.001200"/>
+<status status="PASS" start="2025-09-28T14:10:51.858354" elapsed="0.001420"/>
 </for>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.045731" level="INFO">📊 Performance Metrics:</msg>
+<msg time="2025-09-28T14:10:51.860187" level="INFO">📊 Performance Metrics:</msg>
 <arg>📊 Performance Metrics:</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.045626" elapsed="0.000188"/>
+<status status="PASS" start="2025-09-28T14:10:51.859943" elapsed="0.000468"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.046251" level="INFO">OS Compliance: PASSED</msg>
+<msg time="2025-09-28T14:10:51.861206" level="INFO">OS Compliance: PASSED</msg>
 <arg>${metric}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.046124" elapsed="0.000240"/>
+<status status="PASS" start="2025-09-28T14:10:51.861013" elapsed="0.000265"/>
 </kw>
 <var name="${metric}">OS Compliance: PASSED</var>
-<status status="PASS" start="2025-09-28T12:49:00.046033" elapsed="0.000409"/>
+<status status="PASS" start="2025-09-28T14:10:51.860898" elapsed="0.000421"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.046757" level="INFO">Package Compliance: PASSED</msg>
+<msg time="2025-09-28T14:10:51.861714" level="INFO">Package Compliance: PASSED</msg>
 <arg>${metric}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.046636" elapsed="0.000207"/>
+<status status="PASS" start="2025-09-28T14:10:51.861563" elapsed="0.000215"/>
 </kw>
 <var name="${metric}">Package Compliance: PASSED</var>
-<status status="PASS" start="2025-09-28T12:49:00.046551" elapsed="0.000328"/>
+<status status="PASS" start="2025-09-28T14:10:51.861460" elapsed="0.000354"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.047170" level="INFO">Patch Compliance: PASSED</msg>
+<msg time="2025-09-28T14:10:51.862119" level="INFO">Patch Compliance: PASSED</msg>
 <arg>${metric}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.047025" elapsed="0.000227"/>
+<status status="PASS" start="2025-09-28T14:10:51.861982" elapsed="0.000196"/>
 </kw>
 <var name="${metric}">Patch Compliance: PASSED</var>
-<status status="PASS" start="2025-09-28T12:49:00.046953" elapsed="0.000337"/>
+<status status="PASS" start="2025-09-28T14:10:51.861895" elapsed="0.000344"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.048612" level="INFO">Template Compliance: PASSED</msg>
+<msg time="2025-09-28T14:10:51.863641" level="INFO">Template Compliance: PASSED</msg>
 <arg>${metric}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.047444" elapsed="0.001297"/>
+<status status="PASS" start="2025-09-28T14:10:51.862394" elapsed="0.001371"/>
 </kw>
 <var name="${metric}">Template Compliance: PASSED</var>
-<status status="PASS" start="2025-09-28T12:49:00.047367" elapsed="0.001443"/>
+<status status="PASS" start="2025-09-28T14:10:51.862316" elapsed="0.001524"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.049389" level="INFO">Overall Compliance Score: 100%</msg>
+<msg time="2025-09-28T14:10:51.864370" level="INFO">Overall Compliance Score: 100%</msg>
 <arg>${metric}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.049061" elapsed="0.000425"/>
+<status status="PASS" start="2025-09-28T14:10:51.864147" elapsed="0.000311"/>
 </kw>
 <var name="${metric}">Overall Compliance Score: 100%</var>
-<status status="PASS" start="2025-09-28T12:49:00.048954" elapsed="0.000576"/>
+<status status="PASS" start="2025-09-28T14:10:51.864000" elapsed="0.000513"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.049823" level="INFO">System Report: ../../results/test6/reports/system_report_20250928_124859.txt</msg>
+<msg time="2025-09-28T14:10:51.865166" level="INFO">System Report: ../../results/test6/reports/system_report_20250928_141051.txt</msg>
 <arg>${metric}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.049693" elapsed="0.000182"/>
+<status status="PASS" start="2025-09-28T14:10:51.864910" elapsed="0.000341"/>
 </kw>
-<var name="${metric}">System Report: ../../results/test6/reports/system_report_20250928_124859.txt</var>
-<status status="PASS" start="2025-09-28T12:49:00.049611" elapsed="0.000304"/>
+<var name="${metric}">System Report: ../../results/test6/reports/system_report_20250928_141051.txt</var>
+<status status="PASS" start="2025-09-28T14:10:51.864750" elapsed="0.000548"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.050207" level="INFO">Evidence Package: ../../results/test6/evidence/evidence_package_20250928_124859.tar.gz</msg>
+<msg time="2025-09-28T14:10:51.866427" level="INFO">Evidence Package: ../../results/test6/evidence/evidence_package_20250928_141051.tar.gz</msg>
 <arg>${metric}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.050063" elapsed="0.000201"/>
+<status status="PASS" start="2025-09-28T14:10:51.865808" elapsed="0.000737"/>
 </kw>
-<var name="${metric}">Evidence Package: ../../results/test6/evidence/evidence_package_20250928_124859.tar.gz</var>
-<status status="PASS" start="2025-09-28T12:49:00.049987" elapsed="0.000309"/>
+<var name="${metric}">Evidence Package: ../../results/test6/evidence/evidence_package_20250928_141051.tar.gz</var>
+<status status="PASS" start="2025-09-28T14:10:51.865419" elapsed="0.001225"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T12:49:00.050557" level="INFO">Compliance Certificate: ../../results/test6/evidence/compliance_certificate_20250928_124859.txt</msg>
+<msg time="2025-09-28T14:10:51.867098" level="INFO">Compliance Certificate: ../../results/test6/evidence/compliance_certificate_20250928_141051.txt</msg>
 <arg>${metric}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T12:49:00.050441" elapsed="0.000165"/>
+<status status="PASS" start="2025-09-28T14:10:51.866927" elapsed="0.000237"/>
 </kw>
-<var name="${metric}">Compliance Certificate: ../../results/test6/evidence/compliance_certificate_20250928_124859.txt</var>
-<status status="PASS" start="2025-09-28T12:49:00.050366" elapsed="0.000269"/>
+<var name="${metric}">Compliance Certificate: ../../results/test6/evidence/compliance_certificate_20250928_141051.txt</var>
+<status status="PASS" start="2025-09-28T14:10:51.866800" elapsed="0.000407"/>
 </iter>
 <var>${metric}</var>
 <value>@{PERFORMANCE_METRICS}</value>
-<status status="PASS" start="2025-09-28T12:49:00.045872" elapsed="0.004789"/>
+<status status="PASS" start="2025-09-28T14:10:51.860556" elapsed="0.006725"/>
 </for>
 <doc>📊 Generate executive summary with all results</doc>
-<status status="PASS" start="2025-09-28T12:49:00.040336" elapsed="0.010384"/>
+<status status="PASS" start="2025-09-28T14:10:51.855838" elapsed="0.011526"/>
 </kw>
 <doc>🖥️ OS Installation Validation Test Suite - Test-6
 Base OS installation and patch compliance validation per CIP-007 R2
@@ -2339,9 +2338,7 @@ Base OS installation and patch compliance validation per CIP-007 R2
 <meta name="Reporting">Unified HTML Reports + Enhanced Dashboard</meta>
 <meta name="Test Suite">OS Installation Validation Test-6</meta>
 <meta name="Version">1.0.0</meta>
-<status status="FAIL" start="2025-09-28T12:48:29.452204" elapsed="30.598551"/>
-</suite>
-<status status="FAIL" start="2025-09-28T12:48:29.417139" elapsed="30.634738"/>
+<status status="FAIL" start="2025-09-28T14:10:21.091580" elapsed="30.775825"/>
 </suite>
 <statistics>
 <total>
@@ -2380,8 +2377,7 @@ Base OS installation and patch compliance validation per CIP-007 R2
 <stat pass="0" fail="1" skip="0">winrm</stat>
 </tag>
 <suite>
-<stat name="Test6" id="s1" pass="2" fail="5" skip="0">Test6</stat>
-<stat name="Os Installation Validation" id="s1-s1" pass="2" fail="5" skip="0">Test6.Os Installation Validation</stat>
+<stat name="Os Installation Validation" id="s1" pass="2" fail="5" skip="0">Os Installation Validation</stat>
 </suite>
 </statistics>
 <errors>

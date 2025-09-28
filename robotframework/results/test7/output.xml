@@ -1,310 +1,310 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-09-28T10:40:48.650762" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-09-28T14:10:21.540697" rpa="false" schemaversion="5">
 <suite id="s1" name="Time Configuration Validation" source="/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/time_configuration_validation.robot">
 <kw name="Initialize Test Environment" owner="time_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-28T10:40:48.851052" level="INFO">${start_time} = 2025-09-28 10:40:48</msg>
+<msg time="2025-09-28T14:10:21.725630" level="INFO">${start_time} = 2025-09-28 14:10:21</msg>
 <var>${start_time}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.850543" elapsed="0.000580"/>
+<status status="PASS" start="2025-09-28T14:10:21.725262" elapsed="0.000420"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.853316" level="INFO">${TEST_START_TIME} = 2025-09-28 10:40:48</msg>
+<msg time="2025-09-28T14:10:21.727102" level="INFO">${TEST_START_TIME} = 2025-09-28 14:10:21</msg>
 <arg>${TEST_START_TIME}</arg>
 <arg>${start_time}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.851365" elapsed="0.002050"/>
+<status status="PASS" start="2025-09-28T14:10:21.725865" elapsed="0.001301"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-09-28T10:40:48.854546" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results&lt;/a&gt;' already exists.</msg>
+<msg time="2025-09-28T14:10:21.728161" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results&lt;/a&gt;' already exists.</msg>
 <arg>${REPORTS_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.853604" elapsed="0.001049"/>
+<status status="PASS" start="2025-09-28T14:10:21.727295" elapsed="0.000971"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-09-28T10:40:48.857263" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-09-28T14:10:21.729846" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.854810" elapsed="0.002671"/>
+<status status="PASS" start="2025-09-28T14:10:21.728425" elapsed="0.001544"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-09-28T10:40:48.860656" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/screenshots"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/screenshots&lt;/a&gt;' already exists.</msg>
+<msg time="2025-09-28T14:10:21.731516" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/screenshots"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/screenshots&lt;/a&gt;' already exists.</msg>
 <arg>${SCREENSHOTS_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.857843" elapsed="0.002948"/>
+<status status="PASS" start="2025-09-28T14:10:21.730186" elapsed="0.001421"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.861296" level="INFO">${TOTAL_TESTS} = 0</msg>
+<msg time="2025-09-28T14:10:21.732085" level="INFO">${TOTAL_TESTS} = 0</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>0</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.860999" elapsed="0.000360"/>
+<status status="PASS" start="2025-09-28T14:10:21.731864" elapsed="0.000268"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.861664" level="INFO">${PASSED_TESTS} = 0</msg>
+<msg time="2025-09-28T14:10:21.732414" level="INFO">${PASSED_TESTS} = 0</msg>
 <arg>${PASSED_TESTS}</arg>
 <arg>0</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.861506" elapsed="0.000197"/>
+<status status="PASS" start="2025-09-28T14:10:21.732261" elapsed="0.000190"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.862712" level="INFO">@{TEST_RESULTS} = [ ]</msg>
+<msg time="2025-09-28T14:10:21.733306" level="INFO">@{TEST_RESULTS} = [ ]</msg>
 <arg>@{TEST_RESULTS}</arg>
 <arg>@{EMPTY}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.861815" elapsed="0.000959"/>
+<status status="PASS" start="2025-09-28T14:10:21.732605" elapsed="0.000750"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.863496" level="INFO">@{PERFORMANCE_METRICS} = [ ]</msg>
+<msg time="2025-09-28T14:10:21.734107" level="INFO">@{PERFORMANCE_METRICS} = [ ]</msg>
 <arg>@{PERFORMANCE_METRICS}</arg>
 <arg>@{EMPTY}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.862911" elapsed="0.000639"/>
+<status status="PASS" start="2025-09-28T14:10:21.733475" elapsed="0.000681"/>
 </kw>
 <kw name="Get Hostname" owner="time_keywords">
 <kw name="Run Process" owner="Process">
-<msg time="2025-09-28T10:40:48.864320" level="INFO">Starting process:
+<msg time="2025-09-28T14:10:21.734837" level="INFO">Starting process:
 hostname</msg>
-<msg time="2025-09-28T10:40:48.865384" level="INFO">Waiting for process to complete.</msg>
-<msg time="2025-09-28T10:40:48.868685" level="INFO">Process completed.</msg>
-<msg time="2025-09-28T10:40:48.868860" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<msg time="2025-09-28T14:10:21.735599" level="INFO">Waiting for process to complete.</msg>
+<msg time="2025-09-28T14:10:21.738881" level="INFO">Process completed.</msg>
+<msg time="2025-09-28T14:10:21.739138" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
 <var>${result}</var>
 <arg>hostname</arg>
 <arg>shell=True</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.864048" elapsed="0.004841"/>
+<status status="PASS" start="2025-09-28T14:10:21.734583" elapsed="0.004606"/>
 </kw>
 <return>
 <value>${result.stdout}</value>
-<status status="PASS" start="2025-09-28T10:40:48.868977" elapsed="0.000113"/>
+<status status="PASS" start="2025-09-28T14:10:21.739337" elapsed="0.000101"/>
 </return>
-<msg time="2025-09-28T10:40:48.869706" level="INFO">${hostname} = DESKTOP-933PGUE</msg>
+<msg time="2025-09-28T14:10:21.741017" level="INFO">${hostname} = DESKTOP-933PGUE</msg>
 <var>${hostname}</var>
 <doc>Gets the current hostname</doc>
-<status status="PASS" start="2025-09-28T10:40:48.863815" elapsed="0.005921"/>
+<status status="PASS" start="2025-09-28T14:10:21.734362" elapsed="0.006723"/>
 </kw>
 <kw name="Get OS Information" owner="time_keywords">
 <kw name="Run Process" owner="Process">
-<msg time="2025-09-28T10:40:48.870513" level="INFO">Starting process:
+<msg time="2025-09-28T14:10:21.741947" level="INFO">Starting process:
 uname -a</msg>
-<msg time="2025-09-28T10:40:48.871247" level="INFO">Waiting for process to complete.</msg>
-<msg time="2025-09-28T10:40:48.875394" level="INFO">Process completed.</msg>
-<msg time="2025-09-28T10:40:48.875602" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<msg time="2025-09-28T14:10:21.742656" level="INFO">Waiting for process to complete.</msg>
+<msg time="2025-09-28T14:10:21.745697" level="INFO">Process completed.</msg>
+<msg time="2025-09-28T14:10:21.745866" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
 <var>${result}</var>
 <arg>uname -a</arg>
 <arg>shell=True</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.870302" elapsed="0.005331"/>
+<status status="PASS" start="2025-09-28T14:10:21.741725" elapsed="0.004170"/>
 </kw>
 <return>
 <value>${result.stdout}</value>
-<status status="PASS" start="2025-09-28T10:40:48.875714" elapsed="0.000056"/>
+<status status="PASS" start="2025-09-28T14:10:21.745989" elapsed="0.000067"/>
 </return>
-<msg time="2025-09-28T10:40:48.876596" level="INFO">${os_info} = Linux DESKTOP-933PGUE 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux</msg>
+<msg time="2025-09-28T14:10:21.747086" level="INFO">${os_info} = Linux DESKTOP-933PGUE 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux</msg>
 <var>${os_info}</var>
 <doc>Gets basic OS information</doc>
-<status status="PASS" start="2025-09-28T10:40:48.869930" elapsed="0.006722"/>
+<status status="PASS" start="2025-09-28T14:10:21.741449" elapsed="0.005672"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🚀 ===================================================</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.876825" elapsed="0.000357"/>
+<status status="PASS" start="2025-09-28T14:10:21.747444" elapsed="0.000278"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🕒 TIME CONFIGURATION VALIDATION - TEST-7</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.877379" elapsed="0.000267"/>
+<status status="PASS" start="2025-09-28T14:10:21.747877" elapsed="0.000135"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>⚡ ===================================================</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.877780" elapsed="0.000139"/>
+<status status="PASS" start="2025-09-28T14:10:21.748113" elapsed="0.000115"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📅 Start Time: ${start_time}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.878095" elapsed="0.000324"/>
+<status status="PASS" start="2025-09-28T14:10:21.748322" elapsed="0.000154"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🖥️ Hostname: ${hostname}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.878550" elapsed="0.000202"/>
+<status status="PASS" start="2025-09-28T14:10:21.748674" elapsed="0.000173"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>💻 OS Info: ${os_info}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.878856" elapsed="0.000215"/>
+<status status="PASS" start="2025-09-28T14:10:21.748950" elapsed="0.000142"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📊 Reports: ${REPORTS_DIR}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.879171" elapsed="0.000253"/>
+<status status="PASS" start="2025-09-28T14:10:21.749184" elapsed="0.000155"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📁 Data: ${DATA_DIR}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.879579" elapsed="0.000240"/>
+<status status="PASS" start="2025-09-28T14:10:21.749447" elapsed="0.000588"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🎯 Target: ${TARGET_HOST}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.879964" elapsed="0.000255"/>
+<status status="PASS" start="2025-09-28T14:10:21.750148" elapsed="0.000151"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🌍 Required TZ: ${REQUIRED_TIMEZONE}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.880376" elapsed="0.000248"/>
+<status status="PASS" start="2025-09-28T14:10:21.750392" elapsed="0.000134"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🌐 Required NTP: ${REQUIRED_NTP_SERVER}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.881787" elapsed="0.000358"/>
+<status status="PASS" start="2025-09-28T14:10:21.752102" elapsed="0.000365"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>===================================================</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.882326" elapsed="0.000203"/>
+<status status="PASS" start="2025-09-28T14:10:21.752788" elapsed="0.000194"/>
 </kw>
 <doc>🚀 Sets up test environment with enhanced logging for time validation</doc>
-<status status="PASS" start="2025-09-28T10:40:48.848052" elapsed="0.034593"/>
+<status status="PASS" start="2025-09-28T14:10:21.724418" elapsed="0.028647"/>
 </kw>
-<test id="s1-t1" name="Critical - Target System Connection Establishment" line="27">
+<test id="s1-t1" name="Critical - Target System Connection Establishment" line="29">
 <kw name="Log Test Start" owner="time_keywords" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🔍 Starting: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.885151" elapsed="0.000480"/>
+<status status="PASS" start="2025-09-28T14:10:21.754262" elapsed="0.000158"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <doc>Logs test start with formatting</doc>
-<status status="PASS" start="2025-09-28T10:40:48.884241" elapsed="0.001537"/>
+<status status="PASS" start="2025-09-28T14:10:21.753984" elapsed="0.000494"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.886523" level="INFO">🔍 Establishing connection to target system: 192.168.1.100</msg>
+<msg time="2025-09-28T14:10:21.754746" level="INFO">🔍 Establishing connection to target system: 192.168.1.100</msg>
 <arg>🔍 Establishing connection to target system: ${TARGET_HOST}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.886109" elapsed="0.000604"/>
+<status status="PASS" start="2025-09-28T14:10:21.754583" elapsed="0.000222"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.887528" level="INFO">${total} = 1</msg>
+<msg time="2025-09-28T14:10:21.755148" level="INFO">${total} = 1</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.886960" elapsed="0.000625"/>
+<status status="PASS" start="2025-09-28T14:10:21.754908" elapsed="0.000270"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.888157" level="INFO">${TOTAL_TESTS} = 1</msg>
+<msg time="2025-09-28T14:10:21.755518" level="INFO">${TOTAL_TESTS} = 1</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.887821" elapsed="0.000399"/>
+<status status="PASS" start="2025-09-28T14:10:21.755329" elapsed="0.000258"/>
 </kw>
 <kw name="Establish System Connection" owner="time_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.890201" level="INFO">Simulating linux connection to 192.168.1.100 (running locally for demo)</msg>
+<msg time="2025-09-28T14:10:21.756712" level="INFO">Simulating linux connection to 192.168.1.100 (running locally for demo)</msg>
 <arg>Simulating ${os_type} connection to ${host} (running locally for demo)</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.889215" elapsed="0.001107"/>
+<status status="PASS" start="2025-09-28T14:10:21.756471" elapsed="0.000303"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.890784" level="INFO">${connection_id} = local-connection-192.168.1.100</msg>
+<msg time="2025-09-28T14:10:21.757100" level="INFO">${connection_id} = local-connection-192.168.1.100</msg>
 <var>${connection_id}</var>
 <arg>local-connection-${host}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.890519" elapsed="0.000307"/>
+<status status="PASS" start="2025-09-28T14:10:21.756902" elapsed="0.000255"/>
 </kw>
 <return>
 <value>${connection_id}</value>
-<status status="PASS" start="2025-09-28T10:40:48.890913" elapsed="0.000072"/>
+<status status="PASS" start="2025-09-28T14:10:21.757223" elapsed="0.000051"/>
 </return>
-<msg time="2025-09-28T10:40:48.891211" level="INFO">${connection_result} = local-connection-192.168.1.100</msg>
+<msg time="2025-09-28T14:10:21.757586" level="INFO">${connection_result} = local-connection-192.168.1.100</msg>
 <var>${connection_result}</var>
 <arg>${TARGET_HOST}</arg>
 <arg>${TARGET_USERNAME}</arg>
 <arg>${TARGET_PASSWORD}</arg>
 <arg>${TARGET_OS_TYPE}</arg>
 <doc>Establishes connection to target system (simplified for local testing)</doc>
-<status status="PASS" start="2025-09-28T10:40:48.888505" elapsed="0.002750"/>
+<status status="PASS" start="2025-09-28T14:10:21.755778" elapsed="0.001837"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.891757" level="INFO">Length is 30.</msg>
+<msg time="2025-09-28T14:10:21.757877" level="INFO">Length is 30.</msg>
 <arg>${connection_result}</arg>
 <arg>Failed to establish connection to target system</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.891456" elapsed="0.000377"/>
+<status status="PASS" start="2025-09-28T14:10:21.757726" elapsed="0.000190"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.893856" level="INFO">${SYSTEM_CONNECTION} = local-connection-192.168.1.100</msg>
+<msg time="2025-09-28T14:10:21.759225" level="INFO">${SYSTEM_CONNECTION} = local-connection-192.168.1.100</msg>
 <arg>${SYSTEM_CONNECTION}</arg>
 <arg>${connection_result}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.892038" elapsed="0.002110"/>
+<status status="PASS" start="2025-09-28T14:10:21.758024" elapsed="0.001250"/>
 </kw>
 <kw name="Validate System Connection" owner="time_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.895461" level="INFO">Validating connection: local-connection-192.168.1.100</msg>
+<msg time="2025-09-28T14:10:21.759900" level="INFO">Validating connection: local-connection-192.168.1.100</msg>
 <arg>Validating connection: ${connection}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.895202" elapsed="0.000369"/>
+<status status="PASS" start="2025-09-28T14:10:21.759741" elapsed="0.000202"/>
 </kw>
 <return>
 <value>connected</value>
-<status status="PASS" start="2025-09-28T10:40:48.895820" elapsed="0.000085"/>
+<status status="PASS" start="2025-09-28T14:10:21.759998" elapsed="0.000044"/>
 </return>
-<msg time="2025-09-28T10:40:48.896126" level="INFO">${connection_status} = connected</msg>
+<msg time="2025-09-28T14:10:21.760156" level="INFO">${connection_status} = connected</msg>
 <var>${connection_status}</var>
 <arg>${connection_result}</arg>
 <doc>Validates that the system connection is active</doc>
-<status status="PASS" start="2025-09-28T10:40:48.894539" elapsed="0.001630"/>
+<status status="PASS" start="2025-09-28T14:10:21.759446" elapsed="0.000731"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${connection_status}</arg>
 <arg>connected</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.896398" elapsed="0.000332"/>
+<status status="PASS" start="2025-09-28T14:10:21.760280" elapsed="0.000163"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.897155" level="INFO">✅ System connection: ESTABLISHED</msg>
+<msg time="2025-09-28T14:10:21.760722" level="INFO">✅ System connection: ESTABLISHED</msg>
 <arg>✅ System connection: ESTABLISHED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.896921" elapsed="0.000359"/>
+<status status="PASS" start="2025-09-28T14:10:21.760572" elapsed="0.000223"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.897768" level="INFO">🔑 Connection Type: linux</msg>
+<msg time="2025-09-28T14:10:21.761070" level="INFO">🔑 Connection Type: linux</msg>
 <arg>🔑 Connection Type: ${TARGET_OS_TYPE}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.897504" elapsed="0.000629"/>
+<status status="PASS" start="2025-09-28T14:10:21.760892" elapsed="0.000235"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.899326" level="INFO">📍 Target Host: 192.168.1.100</msg>
+<msg time="2025-09-28T14:10:21.761401" level="INFO">📍 Target Host: 192.168.1.100</msg>
 <arg>📍 Target Host: ${TARGET_HOST}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.898682" elapsed="0.001023"/>
+<status status="PASS" start="2025-09-28T14:10:21.761223" elapsed="0.000257"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>System Connection: PASS - ${TARGET_OS_TYPE} connection to ${TARGET_HOST}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.900066" elapsed="0.000475"/>
+<status status="PASS" start="2025-09-28T14:10:21.761662" elapsed="0.000440"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.901227" level="INFO">${passed} = 1</msg>
+<msg time="2025-09-28T14:10:21.763071" level="INFO">${passed} = 1</msg>
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.900829" elapsed="0.000438"/>
+<status status="PASS" start="2025-09-28T14:10:21.762310" elapsed="0.000806"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.901852" level="INFO">${PASSED_TESTS} = 1</msg>
+<msg time="2025-09-28T14:10:21.763439" level="INFO">${PASSED_TESTS} = 1</msg>
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.901507" elapsed="0.000408"/>
+<status status="PASS" start="2025-09-28T14:10:21.763248" elapsed="0.000230"/>
 </kw>
 <kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
 <if>
@@ -312,24 +312,24 @@ uname -a</msg>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>✅ Completed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.903318" elapsed="0.000328"/>
+<status status="PASS" start="2025-09-28T14:10:21.764309" elapsed="0.000181"/>
 </kw>
-<status status="PASS" start="2025-09-28T10:40:48.903037" elapsed="0.000672"/>
+<status status="PASS" start="2025-09-28T14:10:21.764107" elapsed="0.000424"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>❌ Failed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:48.903936" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:21.764829" elapsed="0.000031"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T10:40:48.903767" elapsed="0.000242"/>
+<status status="NOT RUN" start="2025-09-28T14:10:21.764656" elapsed="0.000245"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:48.902988" elapsed="0.001873"/>
+<status status="PASS" start="2025-09-28T14:10:21.764076" elapsed="0.001415"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
 <doc>Logs test end with status</doc>
-<status status="PASS" start="2025-09-28T10:40:48.902526" elapsed="0.002463"/>
+<status status="PASS" start="2025-09-28T14:10:21.763783" elapsed="0.001803"/>
 </kw>
 <doc>🔗 Establish connection to target system via WinRM (Windows) or SSH (Linux)
 Validates connectivity and authentication for time configuration validation tasks</doc>
@@ -339,211 +339,211 @@ Validates connectivity and authentication for time configuration validation task
 <tag>critical</tag>
 <tag>ssh</tag>
 <tag>winrm</tag>
-<status status="PASS" start="2025-09-28T10:40:48.882794" elapsed="0.022252"/>
+<status status="PASS" start="2025-09-28T14:10:21.753165" elapsed="0.012472"/>
 </test>
-<test id="s1-t2" name="Critical - Time Zone Configuration Collection" line="53">
+<test id="s1-t2" name="Critical - Time Zone Configuration Collection" line="55">
 <kw name="Log Test Start" owner="time_keywords" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🔍 Starting: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.908060" elapsed="0.000656"/>
+<status status="PASS" start="2025-09-28T14:10:21.766795" elapsed="0.000166"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <doc>Logs test start with formatting</doc>
-<status status="PASS" start="2025-09-28T10:40:48.906883" elapsed="0.002069"/>
+<status status="PASS" start="2025-09-28T14:10:21.766513" elapsed="0.000503"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.909627" level="INFO">🔍 Collecting timezone configuration data...</msg>
+<msg time="2025-09-28T14:10:21.767279" level="INFO">🔍 Collecting timezone configuration data...</msg>
 <arg>🔍 Collecting timezone configuration data...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.909313" elapsed="0.000550"/>
+<status status="PASS" start="2025-09-28T14:10:21.767117" elapsed="0.000225"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.910720" level="INFO">${total} = 2</msg>
+<msg time="2025-09-28T14:10:21.767648" level="INFO">${total} = 2</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.910239" elapsed="0.000535"/>
+<status status="PASS" start="2025-09-28T14:10:21.767445" elapsed="0.000228"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.912302" level="INFO">${TOTAL_TESTS} = 2</msg>
+<msg time="2025-09-28T14:10:21.767946" level="INFO">${TOTAL_TESTS} = 2</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.911698" elapsed="0.000922"/>
+<status status="PASS" start="2025-09-28T14:10:21.767783" elapsed="0.000197"/>
 </kw>
 <kw name="Execute Time Command" owner="time_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:48.914880" level="INFO">Executing: Timezone configuration - timedatectl</msg>
+<msg time="2025-09-28T14:10:21.768830" level="INFO">Executing: Timezone configuration - timedatectl</msg>
 <arg>Executing: ${description} - ${command}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.914522" elapsed="0.000462"/>
+<status status="PASS" start="2025-09-28T14:10:21.768697" elapsed="0.000172"/>
 </kw>
 <kw name="Run Process" owner="Process">
-<msg time="2025-09-28T10:40:48.915735" level="INFO">Starting process:
+<msg time="2025-09-28T14:10:21.769162" level="INFO">Starting process:
 timedatectl</msg>
-<msg time="2025-09-28T10:40:48.916679" level="INFO">Waiting for process to complete.</msg>
-<msg time="2025-09-28T10:40:49.118287" level="INFO">Process completed.</msg>
-<msg time="2025-09-28T10:40:49.118552" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<msg time="2025-09-28T14:10:21.769774" level="INFO">Waiting for process to complete.</msg>
+<msg time="2025-09-28T14:10:22.071219" level="INFO">Process completed.</msg>
+<msg time="2025-09-28T14:10:22.071857" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
 <var>${result}</var>
 <arg>${command}</arg>
 <arg>shell=True</arg>
 <arg>timeout=30s</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2025-09-28T10:40:48.915222" elapsed="0.203368"/>
+<status status="PASS" start="2025-09-28T14:10:21.768962" elapsed="0.303377"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.120584" level="INFO">Argument types are:
+<msg time="2025-09-28T14:10:22.076017" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${result.rc}</arg>
 <arg>0</arg>
 <arg>Command failed: ${command}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.118836" elapsed="0.001861"/>
+<status status="PASS" start="2025-09-28T14:10:22.073077" elapsed="0.003182"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.122430" level="INFO">Length is 311.</msg>
+<msg time="2025-09-28T14:10:22.079534" level="INFO">Length is 311.</msg>
 <arg>${result.stdout}</arg>
 <arg>Command returned empty output: ${command}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.120956" elapsed="0.001597"/>
+<status status="PASS" start="2025-09-28T14:10:22.076926" elapsed="0.002751"/>
 </kw>
 <return>
 <value>${result.stdout}</value>
-<status status="PASS" start="2025-09-28T10:40:49.122675" elapsed="0.000088"/>
+<status status="PASS" start="2025-09-28T14:10:22.079827" elapsed="0.000155"/>
 </return>
-<msg time="2025-09-28T10:40:49.124019" level="INFO">${timedatectl_output} =                Local time: Sun 2025-09-28 10:40:49 CDT
-           Universal time: Sun 2025-09-28 15:40:49 UTC
-                 RTC time: Sun 2025-09-28 15:40:48
+<msg time="2025-09-28T14:10:22.082201" level="INFO">${timedatectl_output} =                Local time: Sun 2025-09-28 14:10:21 CDT
+           Universal time: Sun 2025-09-28 19:10:21 UTC
+                 RTC time: Sun 2025-09-28 19:10:21
                 Time zone: America/Chic...</msg>
 <var>${timedatectl_output}</var>
 <arg>${SYSTEM_CONNECTION}</arg>
 <arg>timedatectl</arg>
 <arg>Timezone configuration</arg>
 <doc>Executes time-related command on target system with enhanced error handling</doc>
-<status status="PASS" start="2025-09-28T10:40:48.913189" elapsed="0.210891"/>
+<status status="PASS" start="2025-09-28T14:10:21.768136" elapsed="0.314149"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.124717" level="INFO">Length is 311.</msg>
+<msg time="2025-09-28T14:10:22.083943" level="INFO">Length is 311.</msg>
 <arg>${timedatectl_output}</arg>
 <arg>Failed to execute timedatectl command</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.124399" elapsed="0.000407"/>
+<status status="PASS" start="2025-09-28T14:10:22.083122" elapsed="0.000961"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.127149" level="INFO">${TIMEDATECTL_DATA} =                Local time: Sun 2025-09-28 10:40:49 CDT
-           Universal time: Sun 2025-09-28 15:40:49 UTC
-                 RTC time: Sun 2025-09-28 15:40:48
+<msg time="2025-09-28T14:10:22.091511" level="INFO">${TIMEDATECTL_DATA} =                Local time: Sun 2025-09-28 14:10:21 CDT
+           Universal time: Sun 2025-09-28 19:10:21 UTC
+                 RTC time: Sun 2025-09-28 19:10:21
                 Time zone: America/Chic...</msg>
 <arg>${TIMEDATECTL_DATA}</arg>
 <arg>${timedatectl_output}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.125050" elapsed="0.002244"/>
+<status status="PASS" start="2025-09-28T14:10:22.084464" elapsed="0.007231"/>
 </kw>
 <kw name="Save Command Output To File" owner="time_keywords">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-28T10:40:49.131244" level="INFO">${timestamp} = 2025-09-28 10:40:49</msg>
+<msg time="2025-09-28T14:10:22.093829" level="INFO">${timestamp} = 2025-09-28 14:10:22</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.130587" elapsed="0.000743"/>
+<status status="PASS" start="2025-09-28T14:10:22.093301" elapsed="0.000595"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.132353" level="INFO">${header} = </msg>
+<msg time="2025-09-28T14:10:22.094524" level="INFO">${header} = </msg>
 <var>${header}</var>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.131659" elapsed="0.000817"/>
+<status status="PASS" start="2025-09-28T14:10:22.094215" elapsed="0.000432"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.133208" level="INFO">${content} =                Local time: Sun 2025-09-28 10:40:49 CDT
-           Universal time: Sun 2025-09-28 15:40:49 UTC
-                 RTC time: Sun 2025-09-28 15:40:48
+<msg time="2025-09-28T14:10:22.095321" level="INFO">${content} =                Local time: Sun 2025-09-28 14:10:21 CDT
+           Universal time: Sun 2025-09-28 19:10:21 UTC
+                 RTC time: Sun 2025-09-28 19:10:21
                 Time zone: America/Chic...</msg>
 <var>${content}</var>
 <arg>${header}${output}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.132740" elapsed="0.000519"/>
+<status status="PASS" start="2025-09-28T14:10:22.094886" elapsed="0.000495"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.133918" level="INFO">${filepath} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</msg>
+<msg time="2025-09-28T14:10:22.095967" level="INFO">${filepath} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</msg>
 <var>${filepath}</var>
 <arg>${DATA_DIR}/${filename}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.133464" elapsed="0.000501"/>
+<status status="PASS" start="2025-09-28T14:10:22.095642" elapsed="0.000369"/>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-09-28T10:40:49.143541" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data/timedatectl_output.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data/timedatectl_output.txt&lt;/a&gt;'.</msg>
+<msg time="2025-09-28T14:10:22.106988" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data/timedatectl_output.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data/timedatectl_output.txt&lt;/a&gt;'.</msg>
 <arg>${filepath}</arg>
 <arg>${content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.134237" elapsed="0.009544"/>
+<status status="PASS" start="2025-09-28T14:10:22.096203" elapsed="0.011083"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.144479" level="INFO">Output saved to: /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</msg>
+<msg time="2025-09-28T14:10:22.108303" level="INFO">Output saved to: /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</msg>
 <arg>Output saved to: ${filepath}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.144077" elapsed="0.000512"/>
+<status status="PASS" start="2025-09-28T14:10:22.107666" elapsed="0.000756"/>
 </kw>
 <return>
 <value>${filepath}</value>
-<status status="PASS" start="2025-09-28T10:40:49.144708" elapsed="0.000088"/>
+<status status="PASS" start="2025-09-28T14:10:22.108647" elapsed="0.000086"/>
 </return>
-<msg time="2025-09-28T10:40:49.146071" level="INFO">${timedatectl_file} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</msg>
+<msg time="2025-09-28T14:10:22.109708" level="INFO">${timedatectl_file} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</msg>
 <var>${timedatectl_file}</var>
 <arg>${timedatectl_output}</arg>
 <arg>timedatectl_output.txt</arg>
 <doc>Saves command output to specified file with timestamp</doc>
-<status status="PASS" start="2025-09-28T10:40:49.129590" elapsed="0.016586"/>
+<status status="PASS" start="2025-09-28T14:10:22.092309" elapsed="0.017482"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.147022" level="INFO">Length is 108.</msg>
+<msg time="2025-09-28T14:10:22.110339" level="INFO">Length is 108.</msg>
 <arg>${timedatectl_file}</arg>
 <arg>Failed to save timedatectl output to file</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.146472" elapsed="0.000670"/>
+<status status="PASS" start="2025-09-28T14:10:22.110056" elapsed="0.000358"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.147780" level="INFO">${TIMEDATECTL_FILE} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</msg>
+<msg time="2025-09-28T14:10:22.110895" level="INFO">${TIMEDATECTL_FILE} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</msg>
 <arg>${TIMEDATECTL_FILE}</arg>
 <arg>${timedatectl_file}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.147435" elapsed="0.000417"/>
+<status status="PASS" start="2025-09-28T14:10:22.110627" elapsed="0.000322"/>
 </kw>
 <kw name="Extract Timezone From Output" owner="time_keywords">
 <kw name="Split To Lines" owner="String">
-<msg time="2025-09-28T10:40:49.149069" level="INFO">7 lines returned.</msg>
-<msg time="2025-09-28T10:40:49.149208" level="INFO">${lines} = ['               Local time: Sun 2025-09-28 10:40:49 CDT', '           Universal time: Sun 2025-09-28 15:40:49 UTC', '                 RTC time: Sun 2025-09-28 15:40:48', '                Time zone: A...</msg>
+<msg time="2025-09-28T14:10:22.111941" level="INFO">7 lines returned.</msg>
+<msg time="2025-09-28T14:10:22.112062" level="INFO">${lines} = ['               Local time: Sun 2025-09-28 14:10:21 CDT', '           Universal time: Sun 2025-09-28 19:10:21 UTC', '                 RTC time: Sun 2025-09-28 19:10:21', '                Time zone: A...</msg>
 <var>${lines}</var>
 <arg>${output}</arg>
 <doc>Splits the given string to lines.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.148841" elapsed="0.000416"/>
+<status status="PASS" start="2025-09-28T14:10:22.111731" elapsed="0.000365"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Convert To Lower Case" owner="String">
-<msg time="2025-09-28T10:40:49.150203" level="INFO">${line_lower} =                local time: sun 2025-09-28 10:40:49 cdt</msg>
+<msg time="2025-09-28T14:10:22.112984" level="INFO">${line_lower} =                local time: sun 2025-09-28 14:10:21 cdt</msg>
 <var>${line_lower}</var>
 <arg>${line}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.149947" elapsed="0.000296"/>
+<status status="PASS" start="2025-09-28T14:10:22.112757" elapsed="0.000265"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.151075" level="FAIL">'               local time: sun 2025-09-28 10:40:49 cdt' does not contain 'time zone'</msg>
+<msg time="2025-09-28T14:10:22.113757" level="FAIL">'               local time: sun 2025-09-28 14:10:21 cdt' does not contain 'time zone'</msg>
 <arg>${line_lower}</arg>
 <arg>time zone</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.150735" elapsed="0.000575">'               local time: sun 2025-09-28 10:40:49 cdt' does not contain 'time zone'</status>
+<status status="FAIL" start="2025-09-28T14:10:22.113442" elapsed="0.000738">'               local time: sun 2025-09-28 14:10:21 cdt' does not contain 'time zone'</status>
 </kw>
-<msg time="2025-09-28T10:40:49.151462" level="INFO">${contains_tz} = False</msg>
+<msg time="2025-09-28T14:10:22.114411" level="INFO">${contains_tz} = False</msg>
 <var>${contains_tz}</var>
 <arg>Should Contain</arg>
 <arg>${line_lower}</arg>
 <arg>time zone</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.150454" elapsed="0.001042"/>
+<status status="PASS" start="2025-09-28T14:10:22.113193" elapsed="0.001268"/>
 </kw>
 <if>
 <branch type="IF" condition="${contains_tz}">
@@ -552,55 +552,55 @@ timedatectl</msg>
 <arg>${line}</arg>
 <arg>:</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.151873" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.114968" elapsed="0.000042"/>
 </kw>
 <kw name="Strip String" owner="String">
 <var>${timezone}</var>
 <arg>${parts}[1]</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.152051" elapsed="0.000026"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.115223" elapsed="0.000034"/>
 </kw>
 <kw name="Split String" owner="String">
 <var>${tz_parts}</var>
 <arg>${timezone}</arg>
 <arg>${SPACE}</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.152209" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.115438" elapsed="0.000034"/>
 </kw>
 <return>
 <value>${tz_parts}[0]</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.152305" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.115557" elapsed="0.000033"/>
 </return>
-<status status="NOT RUN" start="2025-09-28T10:40:49.151630" elapsed="0.000746"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.114648" elapsed="0.001049"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.151587" elapsed="0.000821"/>
+<status status="PASS" start="2025-09-28T14:10:22.114587" elapsed="0.001177"/>
 </if>
-<var name="${line}">               Local time: Sun 2025-09-28 10:40:49 CDT</var>
-<status status="PASS" start="2025-09-28T10:40:49.149790" elapsed="0.002665"/>
+<var name="${line}">               Local time: Sun 2025-09-28 14:10:21 CDT</var>
+<status status="PASS" start="2025-09-28T14:10:22.112535" elapsed="0.003289"/>
 </iter>
 <iter>
 <kw name="Convert To Lower Case" owner="String">
-<msg time="2025-09-28T10:40:49.153084" level="INFO">${line_lower} =            universal time: sun 2025-09-28 15:40:49 utc</msg>
+<msg time="2025-09-28T14:10:22.117411" level="INFO">${line_lower} =            universal time: sun 2025-09-28 19:10:21 utc</msg>
 <var>${line_lower}</var>
 <arg>${line}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.152836" elapsed="0.000284"/>
+<status status="PASS" start="2025-09-28T14:10:22.117035" elapsed="0.000432"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.153858" level="FAIL">'           universal time: sun 2025-09-28 15:40:49 utc' does not contain 'time zone'</msg>
+<msg time="2025-09-28T14:10:22.118369" level="FAIL">'           universal time: sun 2025-09-28 19:10:21 utc' does not contain 'time zone'</msg>
 <arg>${line_lower}</arg>
 <arg>time zone</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.153481" elapsed="0.000910">'           universal time: sun 2025-09-28 15:40:49 utc' does not contain 'time zone'</status>
+<status status="FAIL" start="2025-09-28T14:10:22.118027" elapsed="0.000564">'           universal time: sun 2025-09-28 19:10:21 utc' does not contain 'time zone'</status>
 </kw>
-<msg time="2025-09-28T10:40:49.154555" level="INFO">${contains_tz} = False</msg>
+<msg time="2025-09-28T14:10:22.119033" level="INFO">${contains_tz} = False</msg>
 <var>${contains_tz}</var>
 <arg>Should Contain</arg>
 <arg>${line_lower}</arg>
 <arg>time zone</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.153275" elapsed="0.001319"/>
+<status status="PASS" start="2025-09-28T14:10:22.117731" elapsed="0.001350"/>
 </kw>
 <if>
 <branch type="IF" condition="${contains_tz}">
@@ -609,55 +609,55 @@ timedatectl</msg>
 <arg>${line}</arg>
 <arg>:</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.154965" elapsed="0.000034"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.119569" elapsed="0.000036"/>
 </kw>
 <kw name="Strip String" owner="String">
 <var>${timezone}</var>
 <arg>${parts}[1]</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.155160" elapsed="0.000095"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.119860" elapsed="0.000039"/>
 </kw>
 <kw name="Split String" owner="String">
 <var>${tz_parts}</var>
 <arg>${timezone}</arg>
 <arg>${SPACE}</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.155483" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.120079" elapsed="0.000030"/>
 </kw>
 <return>
 <value>${tz_parts}[0]</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.155584" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.120268" elapsed="0.000189"/>
 </return>
-<status status="NOT RUN" start="2025-09-28T10:40:49.154720" elapsed="0.000940"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.119257" elapsed="0.001270"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.154685" elapsed="0.001005"/>
+<status status="PASS" start="2025-09-28T14:10:22.119211" elapsed="0.001388"/>
 </if>
-<var name="${line}">           Universal time: Sun 2025-09-28 15:40:49 UTC</var>
-<status status="PASS" start="2025-09-28T10:40:49.152705" elapsed="0.003027"/>
+<var name="${line}">           Universal time: Sun 2025-09-28 19:10:21 UTC</var>
+<status status="PASS" start="2025-09-28T14:10:22.116727" elapsed="0.003924"/>
 </iter>
 <iter>
 <kw name="Convert To Lower Case" owner="String">
-<msg time="2025-09-28T10:40:49.156412" level="INFO">${line_lower} =                  rtc time: sun 2025-09-28 15:40:48</msg>
+<msg time="2025-09-28T14:10:22.121485" level="INFO">${line_lower} =                  rtc time: sun 2025-09-28 19:10:21</msg>
 <var>${line_lower}</var>
 <arg>${line}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.156146" elapsed="0.000305"/>
+<status status="PASS" start="2025-09-28T14:10:22.121143" elapsed="0.000391"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.156999" level="FAIL">'                 rtc time: sun 2025-09-28 15:40:48' does not contain 'time zone'</msg>
+<msg time="2025-09-28T14:10:22.122329" level="FAIL">'                 rtc time: sun 2025-09-28 19:10:21' does not contain 'time zone'</msg>
 <arg>${line_lower}</arg>
 <arg>time zone</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.156797" elapsed="0.000280">'                 rtc time: sun 2025-09-28 15:40:48' does not contain 'time zone'</status>
+<status status="FAIL" start="2025-09-28T14:10:22.122025" elapsed="0.000425">'                 rtc time: sun 2025-09-28 19:10:21' does not contain 'time zone'</status>
 </kw>
-<msg time="2025-09-28T10:40:49.157184" level="INFO">${contains_tz} = False</msg>
+<msg time="2025-09-28T14:10:22.122610" level="INFO">${contains_tz} = False</msg>
 <var>${contains_tz}</var>
 <arg>Should Contain</arg>
 <arg>${line_lower}</arg>
 <arg>time zone</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.156635" elapsed="0.000572"/>
+<status status="PASS" start="2025-09-28T14:10:22.121776" elapsed="0.000861"/>
 </kw>
 <if>
 <branch type="IF" condition="${contains_tz}">
@@ -666,214 +666,214 @@ timedatectl</msg>
 <arg>${line}</arg>
 <arg>:</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.158419" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.123506" elapsed="0.000039"/>
 </kw>
 <kw name="Strip String" owner="String">
 <var>${timezone}</var>
 <arg>${parts}[1]</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.158532" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.123723" elapsed="0.000031"/>
 </kw>
 <kw name="Split String" owner="String">
 <var>${tz_parts}</var>
 <arg>${timezone}</arg>
 <arg>${SPACE}</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.158628" elapsed="0.000016"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.123892" elapsed="0.000026"/>
 </kw>
 <return>
 <value>${tz_parts}[0]</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.158683" elapsed="0.000017"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.123989" elapsed="0.000038"/>
 </return>
-<status status="NOT RUN" start="2025-09-28T10:40:49.158258" elapsed="0.000467"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.123210" elapsed="0.000863"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.158231" elapsed="0.000514"/>
+<status status="PASS" start="2025-09-28T14:10:22.123168" elapsed="0.000944"/>
 </if>
-<var name="${line}">                 RTC time: Sun 2025-09-28 15:40:48</var>
-<status status="PASS" start="2025-09-28T10:40:49.156015" elapsed="0.002755"/>
+<var name="${line}">                 RTC time: Sun 2025-09-28 19:10:21</var>
+<status status="PASS" start="2025-09-28T14:10:22.120985" elapsed="0.003174"/>
 </iter>
 <iter>
 <kw name="Convert To Lower Case" owner="String">
-<msg time="2025-09-28T10:40:49.159155" level="INFO">${line_lower} =                 time zone: america/chicago (cdt, -0500)</msg>
+<msg time="2025-09-28T14:10:22.124907" level="INFO">${line_lower} =                 time zone: america/chicago (cdt, -0500)</msg>
 <var>${line_lower}</var>
 <arg>${line}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.159000" elapsed="0.000179"/>
+<status status="PASS" start="2025-09-28T14:10:22.124615" elapsed="0.000328"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${line_lower}</arg>
 <arg>time zone</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.160293" elapsed="0.000503"/>
+<status status="PASS" start="2025-09-28T14:10:22.125720" elapsed="0.000272"/>
 </kw>
-<msg time="2025-09-28T10:40:49.160995" level="INFO">${contains_tz} = True</msg>
+<msg time="2025-09-28T14:10:22.126862" level="INFO">${contains_tz} = True</msg>
 <var>${contains_tz}</var>
 <arg>Should Contain</arg>
 <arg>${line_lower}</arg>
 <arg>time zone</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.159981" elapsed="0.001067"/>
+<status status="PASS" start="2025-09-28T14:10:22.125283" elapsed="0.001646"/>
 </kw>
 <if>
 <branch type="IF" condition="${contains_tz}">
 <kw name="Split String" owner="String">
-<msg time="2025-09-28T10:40:49.162577" level="INFO">${parts} = ['                Time zone', ' America/Chicago (CDT, -0500)']</msg>
+<msg time="2025-09-28T14:10:22.127894" level="INFO">${parts} = ['                Time zone', ' America/Chicago (CDT, -0500)']</msg>
 <var>${parts}</var>
 <arg>${line}</arg>
 <arg>:</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.161730" elapsed="0.000927"/>
+<status status="PASS" start="2025-09-28T14:10:22.127557" elapsed="0.000387"/>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2025-09-28T10:40:49.163548" level="INFO">${timezone} = America/Chicago (CDT, -0500)</msg>
+<msg time="2025-09-28T14:10:22.128386" level="INFO">${timezone} = America/Chicago (CDT, -0500)</msg>
 <var>${timezone}</var>
 <arg>${parts}[1]</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.162906" elapsed="0.000719"/>
+<status status="PASS" start="2025-09-28T14:10:22.128161" elapsed="0.000255"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-09-28T10:40:49.164219" level="INFO">${tz_parts} = ['America/Chicago', '(CDT,', '-0500)']</msg>
+<msg time="2025-09-28T14:10:22.128878" level="INFO">${tz_parts} = ['America/Chicago', '(CDT,', '-0500)']</msg>
 <var>${tz_parts}</var>
 <arg>${timezone}</arg>
 <arg>${SPACE}</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.163838" elapsed="0.000445"/>
+<status status="PASS" start="2025-09-28T14:10:22.128595" elapsed="0.000312"/>
 </kw>
 <return>
 <value>${tz_parts}[0]</value>
-<status status="PASS" start="2025-09-28T10:40:49.164380" elapsed="0.000077"/>
+<status status="PASS" start="2025-09-28T14:10:22.128963" elapsed="0.000045"/>
 </return>
-<status status="PASS" start="2025-09-28T10:40:49.161231" elapsed="0.003308"/>
+<status status="PASS" start="2025-09-28T14:10:22.127216" elapsed="0.001828"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.161175" elapsed="0.003413"/>
+<status status="PASS" start="2025-09-28T14:10:22.127169" elapsed="0.001900"/>
 </if>
 <var name="${line}">                Time zone: America/Chicago (CDT, -0500)</var>
-<status status="PASS" start="2025-09-28T10:40:49.158924" elapsed="0.005723"/>
+<status status="PASS" start="2025-09-28T14:10:22.124437" elapsed="0.004663"/>
 </iter>
 <var>${line}</var>
 <value>@{lines}</value>
-<status status="PASS" start="2025-09-28T10:40:49.149370" elapsed="0.015344"/>
+<status status="PASS" start="2025-09-28T14:10:22.112197" elapsed="0.016937"/>
 </for>
 <return>
 <value>Unknown</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.164820" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.129179" elapsed="0.000013"/>
 </return>
-<msg time="2025-09-28T10:40:49.165124" level="INFO">${current_timezone} = America/Chicago</msg>
+<msg time="2025-09-28T14:10:22.129382" level="INFO">${current_timezone} = America/Chicago</msg>
 <var>${current_timezone}</var>
 <arg>${timedatectl_output}</arg>
 <doc>Extracts timezone from timedatectl output</doc>
-<status status="PASS" start="2025-09-28T10:40:49.148328" elapsed="0.016839"/>
+<status status="PASS" start="2025-09-28T14:10:22.111334" elapsed="0.018074"/>
 </kw>
 <kw name="Extract Local Time From Output" owner="time_keywords">
 <kw name="Split To Lines" owner="String">
-<msg time="2025-09-28T10:40:49.166436" level="INFO">7 lines returned.</msg>
-<msg time="2025-09-28T10:40:49.166557" level="INFO">${lines} = ['               Local time: Sun 2025-09-28 10:40:49 CDT', '           Universal time: Sun 2025-09-28 15:40:49 UTC', '                 RTC time: Sun 2025-09-28 15:40:48', '                Time zone: A...</msg>
+<msg time="2025-09-28T14:10:22.130124" level="INFO">7 lines returned.</msg>
+<msg time="2025-09-28T14:10:22.130211" level="INFO">${lines} = ['               Local time: Sun 2025-09-28 14:10:21 CDT', '           Universal time: Sun 2025-09-28 19:10:21 UTC', '                 RTC time: Sun 2025-09-28 19:10:21', '                Time zone: A...</msg>
 <var>${lines}</var>
 <arg>${output}</arg>
 <doc>Splits the given string to lines.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.166275" elapsed="0.000319"/>
+<status status="PASS" start="2025-09-28T14:10:22.130003" elapsed="0.000231"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Convert To Lower Case" owner="String">
-<msg time="2025-09-28T10:40:49.167615" level="INFO">${line_lower} =                local time: sun 2025-09-28 10:40:49 cdt</msg>
+<msg time="2025-09-28T14:10:22.130789" level="INFO">${line_lower} =                local time: sun 2025-09-28 14:10:21 cdt</msg>
 <var>${line_lower}</var>
 <arg>${line}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.167208" elapsed="0.000476"/>
+<status status="PASS" start="2025-09-28T14:10:22.130603" elapsed="0.000212"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${line_lower}</arg>
 <arg>local time</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.168528" elapsed="0.000326"/>
+<status status="PASS" start="2025-09-28T14:10:22.131071" elapsed="0.000127"/>
 </kw>
-<msg time="2025-09-28T10:40:49.169090" level="INFO">${contains_local} = True</msg>
+<msg time="2025-09-28T14:10:22.131296" level="INFO">${contains_local} = True</msg>
 <var>${contains_local}</var>
 <arg>Should Contain</arg>
 <arg>${line_lower}</arg>
 <arg>local time</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.168099" elapsed="0.001048"/>
+<status status="PASS" start="2025-09-28T14:10:22.130928" elapsed="0.000397"/>
 </kw>
 <if>
 <branch type="IF" condition="${contains_local}">
 <kw name="Split String" owner="String">
-<msg time="2025-09-28T10:40:49.170387" level="INFO">${parts} = ['               Local time', ' Sun 2025-09-28 10:40:49 CDT']</msg>
+<msg time="2025-09-28T14:10:22.131664" level="INFO">${parts} = ['               Local time', ' Sun 2025-09-28 14:10:21 CDT']</msg>
 <var>${parts}</var>
 <arg>${line}</arg>
 <arg>:</arg>
 <arg>1</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.169754" elapsed="0.000703"/>
+<status status="PASS" start="2025-09-28T14:10:22.131521" elapsed="0.000164"/>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2025-09-28T10:40:49.170889" level="INFO">${time_part} = Sun 2025-09-28 10:40:49 CDT</msg>
+<msg time="2025-09-28T14:10:22.131927" level="INFO">${time_part} = Sun 2025-09-28 14:10:21 CDT</msg>
 <var>${time_part}</var>
 <arg>${parts}[1]</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.170652" elapsed="0.000267"/>
+<status status="PASS" start="2025-09-28T14:10:22.131777" elapsed="0.000172"/>
 </kw>
 <return>
 <value>${time_part}</value>
-<status status="PASS" start="2025-09-28T10:40:49.170993" elapsed="0.000054"/>
+<status status="PASS" start="2025-09-28T14:10:22.131994" elapsed="0.000034"/>
 </return>
-<status status="PASS" start="2025-09-28T10:40:49.169351" elapsed="0.001738"/>
+<status status="PASS" start="2025-09-28T14:10:22.131397" elapsed="0.000660"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.169292" elapsed="0.001832"/>
+<status status="PASS" start="2025-09-28T14:10:22.131378" elapsed="0.000702"/>
 </if>
-<var name="${line}">               Local time: Sun 2025-09-28 10:40:49 CDT</var>
-<status status="PASS" start="2025-09-28T10:40:49.167035" elapsed="0.004133"/>
+<var name="${line}">               Local time: Sun 2025-09-28 14:10:21 CDT</var>
+<status status="PASS" start="2025-09-28T14:10:22.130515" elapsed="0.001590"/>
 </iter>
 <var>${line}</var>
 <value>@{lines}</value>
-<status status="PASS" start="2025-09-28T10:40:49.166708" elapsed="0.004500"/>
+<status status="PASS" start="2025-09-28T14:10:22.130303" elapsed="0.001843"/>
 </for>
 <return>
 <value>Unknown</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.171260" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.132206" elapsed="0.000040"/>
 </return>
-<msg time="2025-09-28T10:40:49.171428" level="INFO">${local_time} = Sun 2025-09-28 10:40:49 CDT</msg>
+<msg time="2025-09-28T14:10:22.133889" level="INFO">${local_time} = Sun 2025-09-28 14:10:21 CDT</msg>
 <var>${local_time}</var>
 <arg>${timedatectl_output}</arg>
 <doc>Extracts local time from timedatectl output</doc>
-<status status="PASS" start="2025-09-28T10:40:49.165732" elapsed="0.005724"/>
+<status status="PASS" start="2025-09-28T14:10:22.129712" elapsed="0.004663"/>
 </kw>
 <kw name="Extract UTC Time From Output" owner="time_keywords">
 <kw name="Split To Lines" owner="String">
-<msg time="2025-09-28T10:40:49.172992" level="INFO">7 lines returned.</msg>
-<msg time="2025-09-28T10:40:49.173079" level="INFO">${lines} = ['               Local time: Sun 2025-09-28 10:40:49 CDT', '           Universal time: Sun 2025-09-28 15:40:49 UTC', '                 RTC time: Sun 2025-09-28 15:40:48', '                Time zone: A...</msg>
+<msg time="2025-09-28T14:10:22.138730" level="INFO">7 lines returned.</msg>
+<msg time="2025-09-28T14:10:22.139029" level="INFO">${lines} = ['               Local time: Sun 2025-09-28 14:10:21 CDT', '           Universal time: Sun 2025-09-28 19:10:21 UTC', '                 RTC time: Sun 2025-09-28 19:10:21', '                Time zone: A...</msg>
 <var>${lines}</var>
 <arg>${output}</arg>
 <doc>Splits the given string to lines.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.172860" elapsed="0.000243"/>
+<status status="PASS" start="2025-09-28T14:10:22.138076" elapsed="0.001010"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Convert To Lower Case" owner="String">
-<msg time="2025-09-28T10:40:49.173928" level="INFO">${line_lower} =                local time: sun 2025-09-28 10:40:49 cdt</msg>
+<msg time="2025-09-28T14:10:22.141008" level="INFO">${line_lower} =                local time: sun 2025-09-28 14:10:21 cdt</msg>
 <var>${line_lower}</var>
 <arg>${line}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.173755" elapsed="0.000204"/>
+<status status="PASS" start="2025-09-28T14:10:22.140352" elapsed="0.000725"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.174486" level="FAIL">'               local time: sun 2025-09-28 10:40:49 cdt' does not contain 'universal time'</msg>
+<msg time="2025-09-28T14:10:22.142056" level="FAIL">'               local time: sun 2025-09-28 14:10:21 cdt' does not contain 'universal time'</msg>
 <arg>${line_lower}</arg>
 <arg>universal time</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.174293" elapsed="0.000263">'               local time: sun 2025-09-28 10:40:49 cdt' does not contain 'universal time'</status>
+<status status="FAIL" start="2025-09-28T14:10:22.141723" elapsed="0.000470">'               local time: sun 2025-09-28 14:10:21 cdt' does not contain 'universal time'</status>
 </kw>
-<msg time="2025-09-28T10:40:49.174663" level="INFO">${contains_utc} = False</msg>
+<msg time="2025-09-28T14:10:22.142467" level="INFO">${contains_utc} = False</msg>
 <var>${contains_utc}</var>
 <arg>Should Contain</arg>
 <arg>${line_lower}</arg>
 <arg>universal time</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.174118" elapsed="0.000580"/>
+<status status="PASS" start="2025-09-28T14:10:22.141414" elapsed="0.001104"/>
 </kw>
 <if>
 <branch type="IF" condition="${contains_utc}">
@@ -883,124 +883,124 @@ timedatectl</msg>
 <arg>:</arg>
 <arg>1</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.174950" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.143092" elapsed="0.000034"/>
 </kw>
 <kw name="Strip String" owner="String">
 <var>${time_part}</var>
 <arg>${parts}[1]</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.175082" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.143303" elapsed="0.000028"/>
 </kw>
 <return>
 <value>${time_part}</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.175197" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.143409" elapsed="0.000034"/>
 </return>
-<status status="NOT RUN" start="2025-09-28T10:40:49.174812" elapsed="0.000440"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.142725" elapsed="0.000773"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.174786" elapsed="0.000488"/>
+<status status="PASS" start="2025-09-28T14:10:22.142645" elapsed="0.000898"/>
 </if>
-<var name="${line}">               Local time: Sun 2025-09-28 10:40:49 CDT</var>
-<status status="PASS" start="2025-09-28T10:40:49.173649" elapsed="0.001650"/>
+<var name="${line}">               Local time: Sun 2025-09-28 14:10:21 CDT</var>
+<status status="PASS" start="2025-09-28T14:10:22.139963" elapsed="0.003638"/>
 </iter>
 <iter>
 <kw name="Convert To Lower Case" owner="String">
-<msg time="2025-09-28T10:40:49.175694" level="INFO">${line_lower} =            universal time: sun 2025-09-28 15:40:49 utc</msg>
+<msg time="2025-09-28T14:10:22.144486" level="INFO">${line_lower} =            universal time: sun 2025-09-28 19:10:21 utc</msg>
 <var>${line_lower}</var>
 <arg>${line}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.175551" elapsed="0.000167"/>
+<status status="PASS" start="2025-09-28T14:10:22.144088" elapsed="0.000442"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${line_lower}</arg>
 <arg>universal time</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.175947" elapsed="0.000125"/>
+<status status="PASS" start="2025-09-28T14:10:22.145050" elapsed="0.000241"/>
 </kw>
-<msg time="2025-09-28T10:40:49.176147" level="INFO">${contains_utc} = True</msg>
+<msg time="2025-09-28T14:10:22.145437" level="INFO">${contains_utc} = True</msg>
 <var>${contains_utc}</var>
 <arg>Should Contain</arg>
 <arg>${line_lower}</arg>
 <arg>universal time</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.175816" elapsed="0.000353"/>
+<status status="PASS" start="2025-09-28T14:10:22.144796" elapsed="0.000685"/>
 </kw>
 <if>
 <branch type="IF" condition="${contains_utc}">
 <kw name="Split String" owner="String">
-<msg time="2025-09-28T10:40:49.177581" level="INFO">${parts} = ['           Universal time', ' Sun 2025-09-28 15:40:49 UTC']</msg>
+<msg time="2025-09-28T14:10:22.146369" level="INFO">${parts} = ['           Universal time', ' Sun 2025-09-28 19:10:21 UTC']</msg>
 <var>${parts}</var>
 <arg>${line}</arg>
 <arg>:</arg>
 <arg>1</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.176394" elapsed="0.001320"/>
+<status status="PASS" start="2025-09-28T14:10:22.146046" elapsed="0.000357"/>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2025-09-28T10:40:49.178555" level="INFO">${time_part} = Sun 2025-09-28 15:40:49 UTC</msg>
+<msg time="2025-09-28T14:10:22.146800" level="INFO">${time_part} = Sun 2025-09-28 19:10:21 UTC</msg>
 <var>${time_part}</var>
 <arg>${parts}[1]</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.178212" elapsed="0.000393"/>
+<status status="PASS" start="2025-09-28T14:10:22.146579" elapsed="0.000255"/>
 </kw>
 <return>
 <value>${time_part}</value>
-<status status="PASS" start="2025-09-28T10:40:49.179007" elapsed="0.000095"/>
+<status status="PASS" start="2025-09-28T14:10:22.146900" elapsed="0.000051"/>
 </return>
-<status status="PASS" start="2025-09-28T10:40:49.176235" elapsed="0.002930"/>
+<status status="PASS" start="2025-09-28T14:10:22.145741" elapsed="0.001259"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.176218" elapsed="0.003000"/>
+<status status="PASS" start="2025-09-28T14:10:22.145638" elapsed="0.001398"/>
 </if>
-<var name="${line}">           Universal time: Sun 2025-09-28 15:40:49 UTC</var>
-<status status="PASS" start="2025-09-28T10:40:49.175471" elapsed="0.003804"/>
+<var name="${line}">           Universal time: Sun 2025-09-28 19:10:21 UTC</var>
+<status status="PASS" start="2025-09-28T14:10:22.143914" elapsed="0.003253"/>
 </iter>
 <var>${line}</var>
 <value>@{lines}</value>
-<status status="PASS" start="2025-09-28T10:40:49.173165" elapsed="0.006175"/>
+<status status="PASS" start="2025-09-28T14:10:22.139325" elapsed="0.007908"/>
 </for>
 <return>
 <value>Unknown</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.179413" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.147307" elapsed="0.000027"/>
 </return>
-<msg time="2025-09-28T10:40:49.179675" level="INFO">${utc_time} = Sun 2025-09-28 15:40:49 UTC</msg>
+<msg time="2025-09-28T14:10:22.147698" level="INFO">${utc_time} = Sun 2025-09-28 19:10:21 UTC</msg>
 <var>${utc_time}</var>
 <arg>${timedatectl_output}</arg>
 <doc>Extracts UTC time from timedatectl output</doc>
-<status status="PASS" start="2025-09-28T10:40:49.171838" elapsed="0.007880"/>
+<status status="PASS" start="2025-09-28T14:10:22.135338" elapsed="0.012393"/>
 </kw>
 <kw name="Extract RTC Time From Output" owner="time_keywords">
 <kw name="Split To Lines" owner="String">
-<msg time="2025-09-28T10:40:49.181338" level="INFO">7 lines returned.</msg>
-<msg time="2025-09-28T10:40:49.181573" level="INFO">${lines} = ['               Local time: Sun 2025-09-28 10:40:49 CDT', '           Universal time: Sun 2025-09-28 15:40:49 UTC', '                 RTC time: Sun 2025-09-28 15:40:48', '                Time zone: A...</msg>
+<msg time="2025-09-28T14:10:22.148469" level="INFO">7 lines returned.</msg>
+<msg time="2025-09-28T14:10:22.148594" level="INFO">${lines} = ['               Local time: Sun 2025-09-28 14:10:21 CDT', '           Universal time: Sun 2025-09-28 19:10:21 UTC', '                 RTC time: Sun 2025-09-28 19:10:21', '                Time zone: A...</msg>
 <var>${lines}</var>
 <arg>${output}</arg>
 <doc>Splits the given string to lines.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.181018" elapsed="0.000598"/>
+<status status="PASS" start="2025-09-28T14:10:22.148339" elapsed="0.000299"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Convert To Lower Case" owner="String">
-<msg time="2025-09-28T10:40:49.182742" level="INFO">${line_lower} =                local time: sun 2025-09-28 10:40:49 cdt</msg>
+<msg time="2025-09-28T14:10:22.149249" level="INFO">${line_lower} =                local time: sun 2025-09-28 14:10:21 cdt</msg>
 <var>${line_lower}</var>
 <arg>${line}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.182401" elapsed="0.000388"/>
+<status status="PASS" start="2025-09-28T14:10:22.149072" elapsed="0.000203"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.183479" level="FAIL">'               local time: sun 2025-09-28 10:40:49 cdt' does not contain 'rtc time'</msg>
+<msg time="2025-09-28T14:10:22.149776" level="FAIL">'               local time: sun 2025-09-28 14:10:21 cdt' does not contain 'rtc time'</msg>
 <arg>${line_lower}</arg>
 <arg>rtc time</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.183197" elapsed="0.000398">'               local time: sun 2025-09-28 10:40:49 cdt' does not contain 'rtc time'</status>
+<status status="FAIL" start="2025-09-28T14:10:22.149544" elapsed="0.000317">'               local time: sun 2025-09-28 14:10:21 cdt' does not contain 'rtc time'</status>
 </kw>
-<msg time="2025-09-28T10:40:49.183791" level="INFO">${contains_rtc} = False</msg>
+<msg time="2025-09-28T14:10:22.149980" level="INFO">${contains_rtc} = False</msg>
 <var>${contains_rtc}</var>
 <arg>Should Contain</arg>
 <arg>${line_lower}</arg>
 <arg>rtc time</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.182976" elapsed="0.000858"/>
+<status status="PASS" start="2025-09-28T14:10:22.149389" elapsed="0.000613"/>
 </kw>
 <if>
 <branch type="IF" condition="${contains_rtc}">
@@ -1010,48 +1010,48 @@ timedatectl</msg>
 <arg>:</arg>
 <arg>1</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.184248" elapsed="0.000040"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.150290" elapsed="0.000035"/>
 </kw>
 <kw name="Strip String" owner="String">
 <var>${time_part}</var>
 <arg>${parts}[1]</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.184532" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.150659" elapsed="0.000051"/>
 </kw>
 <return>
 <value>${time_part}</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.185522" elapsed="0.000046"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.151390" elapsed="0.000039"/>
 </return>
-<status status="NOT RUN" start="2025-09-28T10:40:49.183980" elapsed="0.001645"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.150117" elapsed="0.001373"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.183941" elapsed="0.001724"/>
+<status status="PASS" start="2025-09-28T14:10:22.150094" elapsed="0.001432"/>
 </if>
-<var name="${line}">               Local time: Sun 2025-09-28 10:40:49 CDT</var>
-<status status="PASS" start="2025-09-28T10:40:49.182201" elapsed="0.003520"/>
+<var name="${line}">               Local time: Sun 2025-09-28 14:10:21 CDT</var>
+<status status="PASS" start="2025-09-28T14:10:22.148978" elapsed="0.002583"/>
 </iter>
 <iter>
 <kw name="Convert To Lower Case" owner="String">
-<msg time="2025-09-28T10:40:49.186534" level="INFO">${line_lower} =            universal time: sun 2025-09-28 15:40:49 utc</msg>
+<msg time="2025-09-28T14:10:22.153096" level="INFO">${line_lower} =            universal time: sun 2025-09-28 19:10:21 utc</msg>
 <var>${line_lower}</var>
 <arg>${line}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.186274" elapsed="0.000301"/>
+<status status="PASS" start="2025-09-28T14:10:22.151988" elapsed="0.001209"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.187250" level="FAIL">'           universal time: sun 2025-09-28 15:40:49 utc' does not contain 'rtc time'</msg>
+<msg time="2025-09-28T14:10:22.154861" level="FAIL">'           universal time: sun 2025-09-28 19:10:21 utc' does not contain 'rtc time'</msg>
 <arg>${line_lower}</arg>
 <arg>rtc time</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.186902" elapsed="0.000514">'           universal time: sun 2025-09-28 15:40:49 utc' does not contain 'rtc time'</status>
+<status status="FAIL" start="2025-09-28T14:10:22.154421" elapsed="0.000598">'           universal time: sun 2025-09-28 19:10:21 utc' does not contain 'rtc time'</status>
 </kw>
-<msg time="2025-09-28T10:40:49.187566" level="INFO">${contains_rtc} = False</msg>
+<msg time="2025-09-28T14:10:22.155320" level="INFO">${contains_rtc} = False</msg>
 <var>${contains_rtc}</var>
 <arg>Should Contain</arg>
 <arg>${line_lower}</arg>
 <arg>rtc time</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.186739" elapsed="0.000863"/>
+<status status="PASS" start="2025-09-28T14:10:22.153552" elapsed="0.001822"/>
 </kw>
 <if>
 <branch type="IF" condition="${contains_rtc}">
@@ -1061,183 +1061,183 @@ timedatectl</msg>
 <arg>:</arg>
 <arg>1</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.187890" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.155783" elapsed="0.000033"/>
 </kw>
 <kw name="Strip String" owner="String">
 <var>${time_part}</var>
 <arg>${parts}[1]</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.188030" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.155984" elapsed="0.000027"/>
 </kw>
 <return>
 <value>${time_part}</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.188089" elapsed="0.000016"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.156094" elapsed="0.000033"/>
 </return>
-<status status="NOT RUN" start="2025-09-28T10:40:49.187692" elapsed="0.000441"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.155526" elapsed="0.000652"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.187669" elapsed="0.000485"/>
+<status status="PASS" start="2025-09-28T14:10:22.155484" elapsed="0.000730"/>
 </if>
-<var name="${line}">           Universal time: Sun 2025-09-28 15:40:49 UTC</var>
-<status status="PASS" start="2025-09-28T10:40:49.186052" elapsed="0.002126"/>
+<var name="${line}">           Universal time: Sun 2025-09-28 19:10:21 UTC</var>
+<status status="PASS" start="2025-09-28T14:10:22.151760" elapsed="0.004500"/>
 </iter>
 <iter>
 <kw name="Convert To Lower Case" owner="String">
-<msg time="2025-09-28T10:40:49.188859" level="INFO">${line_lower} =                  rtc time: sun 2025-09-28 15:40:48</msg>
+<msg time="2025-09-28T14:10:22.160398" level="INFO">${line_lower} =                  rtc time: sun 2025-09-28 19:10:21</msg>
 <var>${line_lower}</var>
 <arg>${line}</arg>
 <doc>Converts string to lower case.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.188423" elapsed="0.000470"/>
+<status status="PASS" start="2025-09-28T14:10:22.159455" elapsed="0.001081"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${line_lower}</arg>
 <arg>rtc time</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.189159" elapsed="0.000129"/>
+<status status="PASS" start="2025-09-28T14:10:22.161810" elapsed="0.000235"/>
 </kw>
-<msg time="2025-09-28T10:40:49.189365" level="INFO">${contains_rtc} = True</msg>
+<msg time="2025-09-28T14:10:22.162159" level="INFO">${contains_rtc} = True</msg>
 <var>${contains_rtc}</var>
 <arg>Should Contain</arg>
 <arg>${line_lower}</arg>
 <arg>rtc time</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.189018" elapsed="0.000369"/>
+<status status="PASS" start="2025-09-28T14:10:22.161285" elapsed="0.000903"/>
 </kw>
 <if>
 <branch type="IF" condition="${contains_rtc}">
 <kw name="Split String" owner="String">
-<msg time="2025-09-28T10:40:49.189731" level="INFO">${parts} = ['                 RTC time', ' Sun 2025-09-28 15:40:48']</msg>
+<msg time="2025-09-28T14:10:22.162670" level="INFO">${parts} = ['                 RTC time', ' Sun 2025-09-28 19:10:21']</msg>
 <var>${parts}</var>
 <arg>${line}</arg>
 <arg>:</arg>
 <arg>1</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.189580" elapsed="0.000174"/>
+<status status="PASS" start="2025-09-28T14:10:22.162480" elapsed="0.000220"/>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2025-09-28T10:40:49.190006" level="INFO">${time_part} = Sun 2025-09-28 15:40:48</msg>
+<msg time="2025-09-28T14:10:22.163079" level="INFO">${time_part} = Sun 2025-09-28 19:10:21</msg>
 <var>${time_part}</var>
 <arg>${parts}[1]</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.189851" elapsed="0.000176"/>
+<status status="PASS" start="2025-09-28T14:10:22.162836" elapsed="0.000269"/>
 </kw>
 <return>
 <value>${time_part}</value>
-<status status="PASS" start="2025-09-28T10:40:49.190067" elapsed="0.000096"/>
+<status status="PASS" start="2025-09-28T14:10:22.163156" elapsed="0.000045"/>
 </return>
-<status status="PASS" start="2025-09-28T10:40:49.189456" elapsed="0.000751"/>
+<status status="PASS" start="2025-09-28T14:10:22.162313" elapsed="0.000920"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.189437" elapsed="0.000803"/>
+<status status="PASS" start="2025-09-28T14:10:22.162286" elapsed="0.000970"/>
 </if>
-<var name="${line}">                 RTC time: Sun 2025-09-28 15:40:48</var>
-<status status="PASS" start="2025-09-28T10:40:49.188344" elapsed="0.001925"/>
+<var name="${line}">                 RTC time: Sun 2025-09-28 19:10:21</var>
+<status status="PASS" start="2025-09-28T14:10:22.157491" elapsed="0.005792"/>
 </iter>
 <var>${line}</var>
 <value>@{lines}</value>
-<status status="PASS" start="2025-09-28T10:40:49.181749" elapsed="0.008550"/>
+<status status="PASS" start="2025-09-28T14:10:22.148730" elapsed="0.014582"/>
 </for>
 <return>
 <value>Unknown</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.190336" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.163360" elapsed="0.000018"/>
 </return>
-<msg time="2025-09-28T10:40:49.190500" level="INFO">${rtc_time} = Sun 2025-09-28 15:40:48</msg>
+<msg time="2025-09-28T14:10:22.163806" level="INFO">${rtc_time} = Sun 2025-09-28 19:10:21</msg>
 <var>${rtc_time}</var>
 <arg>${timedatectl_output}</arg>
 <doc>Extracts RTC time from timedatectl output</doc>
-<status status="PASS" start="2025-09-28T10:40:49.180308" elapsed="0.010215"/>
+<status status="PASS" start="2025-09-28T14:10:22.148042" elapsed="0.015800"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.190808" level="INFO">${CURRENT_TIMEZONE} = America/Chicago</msg>
+<msg time="2025-09-28T14:10:22.164771" level="INFO">${CURRENT_TIMEZONE} = America/Chicago</msg>
 <arg>${CURRENT_TIMEZONE}</arg>
 <arg>${current_timezone}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.190641" elapsed="0.000203"/>
+<status status="PASS" start="2025-09-28T14:10:22.164260" elapsed="0.000598"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.191134" level="INFO">${LOCAL_TIME} = Sun 2025-09-28 10:40:49 CDT</msg>
+<msg time="2025-09-28T14:10:22.165438" level="INFO">${LOCAL_TIME} = Sun 2025-09-28 14:10:21 CDT</msg>
 <arg>${LOCAL_TIME}</arg>
 <arg>${local_time}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.190969" elapsed="0.000202"/>
+<status status="PASS" start="2025-09-28T14:10:22.165103" elapsed="0.000412"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.191406" level="INFO">${UTC_TIME} = Sun 2025-09-28 15:40:49 UTC</msg>
+<msg time="2025-09-28T14:10:22.166035" level="INFO">${UTC_TIME} = Sun 2025-09-28 19:10:21 UTC</msg>
 <arg>${UTC_TIME}</arg>
 <arg>${utc_time}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.191266" elapsed="0.000173"/>
+<status status="PASS" start="2025-09-28T14:10:22.165755" elapsed="0.000350"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Current Timezone: ${current_timezone}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.191527" elapsed="0.000141"/>
+<status status="PASS" start="2025-09-28T14:10:22.166295" elapsed="0.000313"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Local Time: ${local_time}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.191751" elapsed="0.000123"/>
+<status status="PASS" start="2025-09-28T14:10:22.166779" elapsed="0.000248"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>UTC Time: ${utc_time}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.191951" elapsed="0.000118"/>
+<status status="PASS" start="2025-09-28T14:10:22.167182" elapsed="0.000232"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Timedatectl File: ${timedatectl_file}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.192146" elapsed="0.000132"/>
+<status status="PASS" start="2025-09-28T14:10:22.167563" elapsed="0.000268"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.192504" level="INFO">✅ Timezone configuration collected: SUCCESS</msg>
+<msg time="2025-09-28T14:10:22.168179" level="INFO">✅ Timezone configuration collected: SUCCESS</msg>
 <arg>✅ Timezone configuration collected: SUCCESS</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.192372" elapsed="0.000263"/>
+<status status="PASS" start="2025-09-28T14:10:22.167990" elapsed="0.000290"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.194001" level="INFO">🌍 Current Timezone: America/Chicago</msg>
+<msg time="2025-09-28T14:10:22.169044" level="INFO">🌍 Current Timezone: America/Chicago</msg>
 <arg>🌍 Current Timezone: ${current_timezone}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.192742" elapsed="0.001412"/>
+<status status="PASS" start="2025-09-28T14:10:22.168424" elapsed="0.000720"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.194668" level="INFO">🕒 Local Time: Sun 2025-09-28 10:40:49 CDT</msg>
+<msg time="2025-09-28T14:10:22.169541" level="INFO">🕒 Local Time: Sun 2025-09-28 14:10:21 CDT</msg>
 <arg>🕒 Local Time: ${local_time}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.194372" elapsed="0.000419"/>
+<status status="PASS" start="2025-09-28T14:10:22.169309" elapsed="0.000323"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.195287" level="INFO">📄 Output saved to: /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</msg>
+<msg time="2025-09-28T14:10:22.170014" level="INFO">📄 Output saved to: /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</msg>
 <arg>📄 Output saved to: ${timedatectl_file}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.194997" elapsed="0.000468"/>
+<status status="PASS" start="2025-09-28T14:10:22.169791" elapsed="0.000307"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>Timezone Collection: PASS - Current: ${current_timezone}, File: ${timedatectl_file}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.195687" elapsed="0.000751"/>
+<status status="PASS" start="2025-09-28T14:10:22.170255" elapsed="0.000283"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.199270" level="INFO">${passed} = 2</msg>
+<msg time="2025-09-28T14:10:22.171015" level="INFO">${passed} = 2</msg>
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.197340" elapsed="0.001988"/>
+<status status="PASS" start="2025-09-28T14:10:22.170700" elapsed="0.000354"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.199961" level="INFO">${PASSED_TESTS} = 2</msg>
+<msg time="2025-09-28T14:10:22.171497" level="INFO">${PASSED_TESTS} = 2</msg>
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.199561" elapsed="0.000463"/>
+<status status="PASS" start="2025-09-28T14:10:22.171256" elapsed="0.000297"/>
 </kw>
 <kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
 <if>
@@ -1245,24 +1245,24 @@ timedatectl</msg>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>✅ Completed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.201317" elapsed="0.000474"/>
+<status status="PASS" start="2025-09-28T14:10:22.173142" elapsed="0.000309"/>
 </kw>
-<status status="PASS" start="2025-09-28T10:40:49.200940" elapsed="0.000953"/>
+<status status="PASS" start="2025-09-28T14:10:22.172770" elapsed="0.000770"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>❌ Failed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.202226" elapsed="0.000046"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.173831" elapsed="0.000040"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T10:40:49.201962" elapsed="0.000367"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.173595" elapsed="0.000331"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.200896" elapsed="0.001464"/>
+<status status="PASS" start="2025-09-28T14:10:22.172729" elapsed="0.001230"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
 <doc>Logs test end with status</doc>
-<status status="PASS" start="2025-09-28T10:40:49.200419" elapsed="0.002033"/>
+<status status="PASS" start="2025-09-28T14:10:22.172164" elapsed="0.001894"/>
 </kw>
 <doc>🌍 Collect current timezone configuration using timedatectl command
 Gathers timezone settings, local time, UTC time, and RTC configuration</doc>
@@ -1271,74 +1271,74 @@ Gathers timezone settings, local time, UTC time, and RTC configuration</doc>
 <tag>critical</tag>
 <tag>timedatectl</tag>
 <tag>timezone</tag>
-<status status="PASS" start="2025-09-28T10:40:48.905435" elapsed="0.297067"/>
+<status status="PASS" start="2025-09-28T14:10:21.765913" elapsed="0.408207"/>
 </test>
-<test id="s1-t3" name="Critical - Pacific Timezone Validation" line="98">
+<test id="s1-t3" name="Critical - Pacific Timezone Validation" line="100">
 <kw name="Log Test Start" owner="time_keywords" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🔍 Starting: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.203968" elapsed="0.000241"/>
+<status status="PASS" start="2025-09-28T14:10:22.175711" elapsed="0.000210"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <doc>Logs test start with formatting</doc>
-<status status="PASS" start="2025-09-28T10:40:49.203573" elapsed="0.000714"/>
+<status status="PASS" start="2025-09-28T14:10:22.175415" elapsed="0.000574"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.204568" level="INFO">🔍 Validating Pacific timezone configuration...</msg>
+<msg time="2025-09-28T14:10:22.176229" level="INFO">🔍 Validating Pacific timezone configuration...</msg>
 <arg>🔍 Validating Pacific timezone configuration...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.204400" elapsed="0.000277"/>
+<status status="PASS" start="2025-09-28T14:10:22.176100" elapsed="0.000184"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.205046" level="INFO">${total} = 3</msg>
+<msg time="2025-09-28T14:10:22.176614" level="INFO">${total} = 3</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.204812" elapsed="0.000259"/>
+<status status="PASS" start="2025-09-28T14:10:22.176385" elapsed="0.000267"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.205335" level="INFO">${TOTAL_TESTS} = 3</msg>
+<msg time="2025-09-28T14:10:22.176942" level="INFO">${TOTAL_TESTS} = 3</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.205176" elapsed="0.000194"/>
+<status status="PASS" start="2025-09-28T14:10:22.176770" elapsed="0.000222"/>
 </kw>
 <kw name="Validate Timezone Setting" owner="time_keywords">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Be Equal" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.206242" level="FAIL">America/Chicago != America/Los_Angeles</msg>
+<msg time="2025-09-28T14:10:22.178222" level="FAIL">America/Chicago != America/Los_Angeles</msg>
 <arg>${current_timezone}</arg>
 <arg>${required_timezone}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.205969" elapsed="0.000336">America/Chicago != America/Los_Angeles</status>
+<status status="FAIL" start="2025-09-28T14:10:22.177623" elapsed="0.000705">America/Chicago != America/Los_Angeles</status>
 </kw>
-<msg time="2025-09-28T10:40:49.206397" level="INFO">${timezone_matches} = False</msg>
+<msg time="2025-09-28T14:10:22.178475" level="INFO">${timezone_matches} = False</msg>
 <var>${timezone_matches}</var>
 <arg>Should Be Equal</arg>
 <arg>${current_timezone}</arg>
 <arg>${required_timezone}</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.205803" elapsed="0.000613"/>
+<status status="PASS" start="2025-09-28T14:10:22.177469" elapsed="0.001040"/>
 </kw>
 <return>
 <value>${timezone_matches}</value>
-<status status="PASS" start="2025-09-28T10:40:49.206461" elapsed="0.000028"/>
+<status status="PASS" start="2025-09-28T14:10:22.178592" elapsed="0.000051"/>
 </return>
-<msg time="2025-09-28T10:40:49.206597" level="INFO">${timezone_validation} = False</msg>
+<msg time="2025-09-28T14:10:22.178959" level="INFO">${timezone_validation} = False</msg>
 <var>${timezone_validation}</var>
 <arg>${CURRENT_TIMEZONE}</arg>
 <arg>${REQUIRED_TIMEZONE}</arg>
 <doc>Validates timezone against required setting</doc>
-<status status="PASS" start="2025-09-28T10:40:49.205518" elapsed="0.001099"/>
+<status status="PASS" start="2025-09-28T14:10:22.177174" elapsed="0.001841"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.206912" level="FAIL">Timezone not set to Pacific/Los_Angeles: America/Chicago</msg>
+<msg time="2025-09-28T14:10:22.179757" level="FAIL">Timezone not set to Pacific/Los_Angeles: America/Chicago</msg>
 <arg>${timezone_validation}</arg>
 <arg>Timezone not set to Pacific/Los_Angeles: ${CURRENT_TIMEZONE}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.206707" elapsed="0.000308">Timezone not set to Pacific/Los_Angeles: America/Chicago</status>
+<status status="FAIL" start="2025-09-28T14:10:22.179255" elapsed="0.000631">Timezone not set to Pacific/Los_Angeles: America/Chicago</status>
 </kw>
 <kw name="Check Timezone Aliases" owner="time_keywords">
 <var>${timezone_alias_check}</var>
@@ -1346,62 +1346,62 @@ Gathers timezone settings, local time, UTC time, and RTC configuration</doc>
 <arg>America/Los_Angeles</arg>
 <arg>US/Pacific</arg>
 <doc>Checks if timezone matches any known aliases</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.207618" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.180326" elapsed="0.000042"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${timezone_alias_check}</arg>
 <arg>Timezone does not match Pacific timezone variants</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.207754" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.180520" elapsed="0.000056"/>
 </kw>
 <kw name="Validate Pacific Timezone Offset" owner="time_keywords">
 <var>${offset_validation}</var>
 <arg>${LOCAL_TIME}</arg>
 <arg>${UTC_TIME}</arg>
 <doc>Validates Pacific timezone offset against UTC</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.207940" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.180805" elapsed="0.000035"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${offset_validation}</arg>
 <arg>Pacific timezone offset validation failed</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.208065" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.180979" elapsed="0.000023"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Pacific timezone validation: PASSED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.208170" elapsed="0.000017"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.181125" elapsed="0.000026"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🌊 Confirmed timezone: ${CURRENT_TIMEZONE}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.209050" elapsed="0.000025"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.183500" elapsed="0.000066"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✔️ Pacific timezone: VALIDATED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.209166" elapsed="0.000016"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.183771" elapsed="0.000034"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>Pacific Timezone: PASS - ${CURRENT_TIMEZONE} validated</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.209265" elapsed="0.000017"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.184012" elapsed="0.000051"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.209365" elapsed="0.000016"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.184195" elapsed="0.000022"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.209476" elapsed="0.000015"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.184396" elapsed="0.000057"/>
 </kw>
 <kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
 <if>
@@ -1409,24 +1409,24 @@ Gathers timezone settings, local time, UTC time, and RTC configuration</doc>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>✅ Completed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.210513" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.188122" elapsed="0.000044"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T10:40:49.210307" elapsed="0.000286"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.187245" elapsed="0.000994"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>❌ Failed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.210791" elapsed="0.000333"/>
+<status status="PASS" start="2025-09-28T14:10:22.188393" elapsed="0.000492"/>
 </kw>
-<status status="PASS" start="2025-09-28T10:40:49.210634" elapsed="0.000551"/>
+<status status="PASS" start="2025-09-28T14:10:22.188274" elapsed="0.001020"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.210279" elapsed="0.000939"/>
+<status status="PASS" start="2025-09-28T14:10:22.187186" elapsed="0.002174"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
 <doc>Logs test end with status</doc>
-<status status="PASS" start="2025-09-28T10:40:49.209899" elapsed="0.001393"/>
+<status status="PASS" start="2025-09-28T14:10:22.185224" elapsed="0.004267"/>
 </kw>
 <doc>🌊 Validate timezone is set to Pacific/Los_Angeles
 Ensures timezone configuration matches required Pacific timezone setting</doc>
@@ -1436,99 +1436,99 @@ Ensures timezone configuration matches required Pacific timezone setting</doc>
 <tag>pacific</tag>
 <tag>timezone</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2025-09-28T10:40:49.202875" elapsed="0.008480">Timezone not set to Pacific/Los_Angeles: America/Chicago</status>
+<status status="FAIL" start="2025-09-28T14:10:22.174483" elapsed="0.015105">Timezone not set to Pacific/Los_Angeles: America/Chicago</status>
 </test>
-<test id="s1-t4" name="Critical - NTP Service Status Collection" line="127">
+<test id="s1-t4" name="Critical - NTP Service Status Collection" line="129">
 <kw name="Log Test Start" owner="time_keywords" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🔍 Starting: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.213374" elapsed="0.000424"/>
+<status status="PASS" start="2025-09-28T14:10:22.192092" elapsed="0.000379"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <doc>Logs test start with formatting</doc>
-<status status="PASS" start="2025-09-28T10:40:49.212734" elapsed="0.001214"/>
+<status status="PASS" start="2025-09-28T14:10:22.191442" elapsed="0.001225"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.214616" level="INFO">🔍 Collecting NTP service status and configuration...</msg>
+<msg time="2025-09-28T14:10:22.193224" level="INFO">🔍 Collecting NTP service status and configuration...</msg>
 <arg>🔍 Collecting NTP service status and configuration...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.214322" elapsed="0.000441"/>
+<status status="PASS" start="2025-09-28T14:10:22.192882" elapsed="0.000470"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.215524" level="INFO">${total} = 4</msg>
+<msg time="2025-09-28T14:10:22.193958" level="INFO">${total} = 4</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.215043" elapsed="0.000534"/>
+<status status="PASS" start="2025-09-28T14:10:22.193543" elapsed="0.000454"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.216121" level="INFO">${TOTAL_TESTS} = 4</msg>
+<msg time="2025-09-28T14:10:22.194537" level="INFO">${TOTAL_TESTS} = 4</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.215800" elapsed="0.000390"/>
+<status status="PASS" start="2025-09-28T14:10:22.194241" elapsed="0.000353"/>
 </kw>
 <kw name="Execute Time Command" owner="time_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.217234" level="INFO">Executing: Chrony service status - systemctl status chronyd</msg>
+<msg time="2025-09-28T14:10:22.195489" level="INFO">Executing: Chrony service status - systemctl status chronyd</msg>
 <arg>Executing: ${description} - ${command}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.217018" elapsed="0.000266"/>
+<status status="PASS" start="2025-09-28T14:10:22.195320" elapsed="0.000231"/>
 </kw>
 <kw name="Run Process" owner="Process">
-<msg time="2025-09-28T10:40:49.217665" level="INFO">Starting process:
+<msg time="2025-09-28T14:10:22.195982" level="INFO">Starting process:
 systemctl status chronyd</msg>
-<msg time="2025-09-28T10:40:49.219107" level="INFO">Waiting for process to complete.</msg>
-<msg time="2025-09-28T10:40:49.323685" level="INFO">Process completed.</msg>
-<msg time="2025-09-28T10:40:49.323898" level="INFO">${result} = &lt;result object with rc 4&gt;</msg>
+<msg time="2025-09-28T14:10:22.196693" level="INFO">Waiting for process to complete.</msg>
+<msg time="2025-09-28T14:10:22.297366" level="INFO">Process completed.</msg>
+<msg time="2025-09-28T14:10:22.297773" level="INFO">${result} = &lt;result object with rc 4&gt;</msg>
 <var>${result}</var>
 <arg>${command}</arg>
 <arg>shell=True</arg>
 <arg>timeout=30s</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.217411" elapsed="0.106515"/>
+<status status="PASS" start="2025-09-28T14:10:22.195688" elapsed="0.102144"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.325157" level="INFO">Argument types are:
+<msg time="2025-09-28T14:10:22.300739" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2025-09-28T10:40:49.325308" level="FAIL">Command failed: systemctl status chronyd: 4.0 != 0.0</msg>
+<msg time="2025-09-28T14:10:22.301051" level="FAIL">Command failed: systemctl status chronyd: 4.0 != 0.0</msg>
 <arg>${result.rc}</arg>
 <arg>0</arg>
 <arg>Command failed: ${command}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.324132" elapsed="0.001249">Command failed: systemctl status chronyd: 4.0 != 0.0</status>
+<status status="FAIL" start="2025-09-28T14:10:22.298245" elapsed="0.002965">Command failed: systemctl status chronyd: 4.0 != 0.0</status>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${result.stdout}</arg>
 <arg>Command returned empty output: ${command}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.325545" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.301576" elapsed="0.000053"/>
 </kw>
 <return>
 <value>${result.stdout}</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.325621" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.301706" elapsed="0.000056"/>
 </return>
 <var>${chrony_status}</var>
 <arg>${SYSTEM_CONNECTION}</arg>
 <arg>systemctl status chronyd</arg>
 <arg>Chrony service status</arg>
 <doc>Executes time-related command on target system with enhanced error handling</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.216507" elapsed="0.109266">Command failed: systemctl status chronyd: 4.0 != 0.0</status>
+<status status="FAIL" start="2025-09-28T14:10:22.194851" elapsed="0.107140">Command failed: systemctl status chronyd: 4.0 != 0.0</status>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${chrony_status}</arg>
 <arg>Failed to get chrony service status</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.325886" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.302206" elapsed="0.000061"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${CHRONY_STATUS}</arg>
 <arg>${chrony_status}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.326025" elapsed="0.000017"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.302430" elapsed="0.000026"/>
 </kw>
 <kw name="Execute Time Command" owner="time_keywords">
 <var>${chrony_sources}</var>
@@ -1536,117 +1536,117 @@ systemctl status chronyd</msg>
 <arg>chronyc sources</arg>
 <arg>Chrony sources</arg>
 <doc>Executes time-related command on target system with enhanced error handling</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.326382" elapsed="0.000035"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.302700" elapsed="0.000033"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${chrony_sources}</arg>
 <arg>Failed to get chrony sources</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.326522" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.302920" elapsed="0.000027"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${CHRONY_SOURCES}</arg>
 <arg>${chrony_sources}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.326648" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.303352" elapsed="0.000096"/>
 </kw>
 <kw name="Save Command Output To File" owner="time_keywords">
 <var>${chrony_status_file}</var>
 <arg>${chrony_status}</arg>
 <arg>chrony_status.txt</arg>
 <doc>Saves command output to specified file with timestamp</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.326818" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.303881" elapsed="0.000051"/>
 </kw>
 <kw name="Save Command Output To File" owner="time_keywords">
 <var>${chrony_sources_file}</var>
 <arg>${chrony_sources}</arg>
 <arg>chrony_sources.txt</arg>
 <doc>Saves command output to specified file with timestamp</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.328212" elapsed="0.000059"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.305123" elapsed="0.000051"/>
 </kw>
 <kw name="Extract Service Status" owner="time_keywords">
 <var>${service_status}</var>
 <arg>${chrony_status}</arg>
 <doc>Extracts service status from systemctl output</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.328731" elapsed="0.000047"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.306082" elapsed="0.000061"/>
 </kw>
 <kw name="Count Active NTP Sources" owner="time_keywords">
 <var>${active_sources}</var>
 <arg>${chrony_sources}</arg>
 <doc>Counts active NTP sources from chronyc sources output</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.329124" elapsed="0.000050"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.306675" elapsed="0.000052"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${NTP_SERVICE_STATUS}</arg>
 <arg>${service_status}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.329361" elapsed="0.000036"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.306970" elapsed="0.000042"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${ACTIVE_NTP_SOURCES}</arg>
 <arg>${active_sources}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.329608" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.307249" elapsed="0.000040"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Chrony Service: ${service_status}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.329783" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.307464" elapsed="0.000037"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Active NTP Sources: ${active_sources}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.329950" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.307704" elapsed="0.000035"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Chrony Status File: ${chrony_status_file}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.330179" elapsed="0.000037"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.307922" elapsed="0.000038"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Chrony Sources File: ${chrony_sources_file}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.330347" elapsed="0.000025"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.308198" elapsed="0.000039"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ NTP service status collected: SUCCESS</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.330480" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.308410" elapsed="0.000033"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>⚙️ Chrony Service: ${service_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.330640" elapsed="0.000025"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.308777" elapsed="0.000062"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🔗 Active Sources: ${active_sources}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.330811" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.309070" elapsed="0.000036"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>NTP Service: PASS - Status: ${service_status}, Sources: ${active_sources}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.331062" elapsed="0.000039"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.309268" elapsed="0.000029"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.331243" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.309453" elapsed="0.000027"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.331436" elapsed="0.000032"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.309643" elapsed="0.000028"/>
 </kw>
 <kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
 <if>
@@ -1654,24 +1654,24 @@ systemctl status chronyd</msg>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>✅ Completed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.338376" elapsed="0.000068"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.310949" elapsed="0.000050"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T10:40:49.333192" elapsed="0.005334"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.310714" elapsed="0.000334"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>❌ Failed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.338739" elapsed="0.000345"/>
+<status status="PASS" start="2025-09-28T14:10:22.311182" elapsed="0.000232"/>
 </kw>
-<status status="PASS" start="2025-09-28T10:40:49.338580" elapsed="0.000557"/>
+<status status="PASS" start="2025-09-28T14:10:22.311079" elapsed="0.000379"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.333146" elapsed="0.006028"/>
+<status status="PASS" start="2025-09-28T14:10:22.310687" elapsed="0.000811"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
 <doc>Logs test end with status</doc>
-<status status="PASS" start="2025-09-28T10:40:49.332138" elapsed="0.007237"/>
+<status status="PASS" start="2025-09-28T14:10:22.310309" elapsed="0.001251"/>
 </kw>
 <doc>⏰ Collect NTP/Chrony service status and configuration
 Gathers chrony service status, sources, and synchronization data</doc>
@@ -1681,136 +1681,136 @@ Gathers chrony service status, sources, and synchronization data</doc>
 <tag>ntp</tag>
 <tag>service</tag>
 <tag>status</tag>
-<status status="FAIL" start="2025-09-28T10:40:49.211707" elapsed="0.127927">Command failed: systemctl status chronyd: 4.0 != 0.0</status>
+<status status="FAIL" start="2025-09-28T14:10:22.190144" elapsed="0.121464">Command failed: systemctl status chronyd: 4.0 != 0.0</status>
 </test>
-<test id="s1-t5" name="Critical - NTP Server Configuration Validation" line="172">
+<test id="s1-t5" name="Critical - NTP Server Configuration Validation" line="174">
 <kw name="Log Test Start" owner="time_keywords" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🔍 Starting: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.343757" elapsed="0.000354"/>
+<status status="PASS" start="2025-09-28T14:10:22.313631" elapsed="0.000299"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <doc>Logs test start with formatting</doc>
-<status status="PASS" start="2025-09-28T10:40:49.343143" elapsed="0.001095"/>
+<status status="PASS" start="2025-09-28T14:10:22.313161" elapsed="0.000899"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.344698" level="INFO">🔍 Validating NTP server configuration...</msg>
+<msg time="2025-09-28T14:10:22.314423" level="INFO">🔍 Validating NTP server configuration...</msg>
 <arg>🔍 Validating NTP server configuration...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.344449" elapsed="0.000365"/>
+<status status="PASS" start="2025-09-28T14:10:22.314200" elapsed="0.000310"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.345379" level="INFO">${total} = 5</msg>
+<msg time="2025-09-28T14:10:22.314925" level="INFO">${total} = 5</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.345019" elapsed="0.000402"/>
+<status status="PASS" start="2025-09-28T14:10:22.314658" elapsed="0.000301"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.345911" level="INFO">${TOTAL_TESTS} = 5</msg>
+<msg time="2025-09-28T14:10:22.315302" level="INFO">${TOTAL_TESTS} = 5</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.345603" elapsed="0.000387"/>
+<status status="PASS" start="2025-09-28T14:10:22.315095" elapsed="0.000253"/>
 </kw>
 <kw name="Check NTP Server Configuration" owner="time_keywords">
-<msg time="2025-09-28T10:40:49.347518" level="FAIL">Variable '${CHRONY_SOURCES}' not found. Did you mean:
+<msg time="2025-09-28T14:10:22.317325" level="FAIL">Variable '${CHRONY_SOURCES}' not found. Did you mean:
     ${CHRONY_SOURCES_FILE}</msg>
 <var>${ntp_server_configured}</var>
 <arg>${CHRONY_SOURCES}</arg>
 <arg>${REQUIRED_NTP_SERVER}</arg>
 <doc>Checks if required NTP server is configured in sources</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.346255" elapsed="0.001325">Variable '${CHRONY_SOURCES}' not found. Did you mean:
+<status status="FAIL" start="2025-09-28T14:10:22.315533" elapsed="0.001865">Variable '${CHRONY_SOURCES}' not found. Did you mean:
     ${CHRONY_SOURCES_FILE}</status>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${ntp_server_configured}</arg>
 <arg>Required NTP server not found: ${REQUIRED_NTP_SERVER}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.347719" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.317592" elapsed="0.000029"/>
 </kw>
 <kw name="Test NTP Server Connectivity" owner="time_keywords">
 <var>${ntp_connectivity}</var>
 <arg>${SYSTEM_CONNECTION}</arg>
 <arg>${REQUIRED_NTP_SERVER}</arg>
 <doc>Tests connectivity to NTP server</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.348101" elapsed="0.000041"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.318023" elapsed="0.000059"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${ntp_connectivity}</arg>
 <arg>Cannot reach NTP server: ${REQUIRED_NTP_SERVER}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.349338" elapsed="0.000065"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.321217" elapsed="0.000151"/>
 </kw>
 <kw name="Get NTP Server Status" owner="time_keywords">
 <var>${ntp_server_status}</var>
 <arg>${CHRONY_SOURCES}</arg>
 <arg>${REQUIRED_NTP_SERVER}</arg>
 <doc>Gets status of specific NTP server from sources output</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.349967" elapsed="0.000058"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.322144" elapsed="0.000062"/>
 </kw>
 <kw name="Should Not Be Equal" owner="BuiltIn">
 <arg>${ntp_server_status}</arg>
 <arg>offline</arg>
 <arg>NTP server is offline or unreachable</arg>
 <doc>Fails if the given objects are equal.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.350298" elapsed="0.000034"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.322476" elapsed="0.000041"/>
 </kw>
 <kw name="Check Time Synchronization Status" owner="time_keywords">
 <var>${sync_status}</var>
 <arg>${SYSTEM_CONNECTION}</arg>
 <doc>Checks if time synchronization is active</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.350591" elapsed="0.000038"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.322809" elapsed="0.000043"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${sync_status}</arg>
 <arg>Time synchronization is not active</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.350805" elapsed="0.000067"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.323022" elapsed="0.000033"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ NTP server validation: PASSED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.351044" elapsed="0.000041"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.323221" elapsed="0.000030"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🌐 NTP Server: ${REQUIRED_NTP_SERVER}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.351234" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.323436" elapsed="0.000056"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✔️ Server Status: ${ntp_server_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.351403" elapsed="0.000026"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.323649" elapsed="0.000031"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🔄 Sync Status: Active</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.351633" elapsed="0.000038"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.323818" elapsed="0.000026"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>NTP Server: PASS - ${REQUIRED_NTP_SERVER} configured and active</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.351813" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.323974" elapsed="0.000044"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.352003" elapsed="0.000032"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.324172" elapsed="0.000031"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.352183" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.324397" elapsed="0.000066"/>
 </kw>
 <kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
 <if>
@@ -1818,24 +1818,24 @@ Gathers chrony service status, sources, and synchronization data</doc>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>✅ Completed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.353533" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.326020" elapsed="0.000040"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T10:40:49.353248" elapsed="0.000376"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.325691" elapsed="0.000466"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>❌ Failed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.353800" elapsed="0.000432"/>
+<status status="PASS" start="2025-09-28T14:10:22.326385" elapsed="0.000355"/>
 </kw>
-<status status="PASS" start="2025-09-28T10:40:49.353668" elapsed="0.000631"/>
+<status status="PASS" start="2025-09-28T14:10:22.326203" elapsed="0.000603"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.353211" elapsed="0.001127"/>
+<status status="PASS" start="2025-09-28T14:10:22.325639" elapsed="0.001205"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
 <doc>Logs test end with status</doc>
-<status status="PASS" start="2025-09-28T10:40:49.352703" elapsed="0.001736"/>
+<status status="PASS" start="2025-09-28T14:10:22.325067" elapsed="0.001872"/>
 </kw>
 <doc>🌐 Validate NTP server configuration against ntpx.domain.com
 Ensures proper NTP server configuration and connectivity</doc>
@@ -1846,217 +1846,217 @@ Ensures proper NTP server configuration and connectivity</doc>
 <tag>ntp</tag>
 <tag>ntpx</tag>
 <tag>server</tag>
-<status status="FAIL" start="2025-09-28T10:40:49.341687" elapsed="0.012822">Variable '${CHRONY_SOURCES}' not found. Did you mean:
+<status status="FAIL" start="2025-09-28T14:10:22.311930" elapsed="0.015086">Variable '${CHRONY_SOURCES}' not found. Did you mean:
     ${CHRONY_SOURCES_FILE}</status>
 </test>
-<test id="s1-t6" name="Critical - Hardware Clock Synchronization Check" line="206">
+<test id="s1-t6" name="Critical - Hardware Clock Synchronization Check" line="208">
 <kw name="Log Test Start" owner="time_keywords" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🔍 Starting: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.356447" elapsed="0.000459"/>
+<status status="PASS" start="2025-09-28T14:10:22.329776" elapsed="0.000515"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <doc>Logs test start with formatting</doc>
-<status status="PASS" start="2025-09-28T10:40:49.355975" elapsed="0.001065"/>
+<status status="PASS" start="2025-09-28T14:10:22.328920" elapsed="0.001485"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.357748" level="INFO">🔍 Checking hardware clock synchronization...</msg>
+<msg time="2025-09-28T14:10:22.330919" level="INFO">🔍 Checking hardware clock synchronization...</msg>
 <arg>🔍 Checking hardware clock synchronization...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.357269" elapsed="0.000742"/>
+<status status="PASS" start="2025-09-28T14:10:22.330599" elapsed="0.000448"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.358893" level="INFO">${total} = 6</msg>
+<msg time="2025-09-28T14:10:22.331669" level="INFO">${total} = 6</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.358424" elapsed="0.000507"/>
+<status status="PASS" start="2025-09-28T14:10:22.331190" elapsed="0.000518"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.359580" level="INFO">${TOTAL_TESTS} = 6</msg>
+<msg time="2025-09-28T14:10:22.332490" level="INFO">${TOTAL_TESTS} = 6</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.359184" elapsed="0.000466"/>
+<status status="PASS" start="2025-09-28T14:10:22.331891" elapsed="0.000787"/>
 </kw>
 <kw name="Execute Time Command" owner="time_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.361295" level="INFO">Executing: Hardware clock time - hwclock --show</msg>
+<msg time="2025-09-28T14:10:22.333780" level="INFO">Executing: Hardware clock time - hwclock --show</msg>
 <arg>Executing: ${description} - ${command}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.360464" elapsed="0.001100"/>
+<status status="PASS" start="2025-09-28T14:10:22.333595" elapsed="0.000258"/>
 </kw>
 <kw name="Run Process" owner="Process">
-<msg time="2025-09-28T10:40:49.362522" level="INFO">Starting process:
+<msg time="2025-09-28T14:10:22.334205" level="INFO">Starting process:
 hwclock --show</msg>
-<msg time="2025-09-28T10:40:49.363509" level="INFO">Waiting for process to complete.</msg>
-<msg time="2025-09-28T10:40:49.464152" level="INFO">Process completed.</msg>
-<msg time="2025-09-28T10:40:49.464375" level="INFO">${result} = &lt;result object with rc 127&gt;</msg>
+<msg time="2025-09-28T14:10:22.335156" level="INFO">Waiting for process to complete.</msg>
+<msg time="2025-09-28T14:10:22.435965" level="INFO">Process completed.</msg>
+<msg time="2025-09-28T14:10:22.436304" level="INFO">${result} = &lt;result object with rc 127&gt;</msg>
 <var>${result}</var>
 <arg>${command}</arg>
 <arg>shell=True</arg>
 <arg>timeout=30s</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.361903" elapsed="0.102509"/>
+<status status="PASS" start="2025-09-28T14:10:22.333978" elapsed="0.102431"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.465856" level="INFO">Argument types are:
+<msg time="2025-09-28T14:10:22.438769" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2025-09-28T10:40:49.465997" level="FAIL">Command failed: hwclock --show: 127.0 != 0.0</msg>
+<msg time="2025-09-28T14:10:22.439329" level="FAIL">Command failed: hwclock --show: 127.0 != 0.0</msg>
 <arg>${result.rc}</arg>
 <arg>0</arg>
 <arg>Command failed: ${command}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.464822" elapsed="0.001275">Command failed: hwclock --show: 127.0 != 0.0</status>
+<status status="FAIL" start="2025-09-28T14:10:22.436857" elapsed="0.002612">Command failed: hwclock --show: 127.0 != 0.0</status>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${result.stdout}</arg>
 <arg>Command returned empty output: ${command}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.466701" elapsed="0.000085"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.439739" elapsed="0.000046"/>
 </kw>
 <return>
 <value>${result.stdout}</value>
-<status status="NOT RUN" start="2025-09-28T10:40:49.466883" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.439873" elapsed="0.000033"/>
 </return>
 <var>${hwclock_output}</var>
 <arg>${SYSTEM_CONNECTION}</arg>
 <arg>hwclock --show</arg>
 <arg>Hardware clock time</arg>
 <doc>Executes time-related command on target system with enhanced error handling</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.359952" elapsed="0.108127">Command failed: hwclock --show: 127.0 != 0.0</status>
+<status status="FAIL" start="2025-09-28T14:10:22.333029" elapsed="0.107847">Command failed: hwclock --show: 127.0 != 0.0</status>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${hwclock_output}</arg>
 <arg>Failed to get hardware clock time</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.468381" elapsed="0.000053"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.441232" elapsed="0.000040"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${HWCLOCK_DATA}</arg>
 <arg>${hwclock_output}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.468641" elapsed="0.000038"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.441486" elapsed="0.000040"/>
 </kw>
 <kw name="Save Command Output To File" owner="time_keywords">
 <var>${hwclock_file}</var>
 <arg>${hwclock_output}</arg>
 <arg>hwclock_output.txt</arg>
 <doc>Saves command output to specified file with timestamp</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.469041" elapsed="0.000064"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.441907" elapsed="0.000052"/>
 </kw>
 <kw name="Calculate Clock Drift" owner="time_keywords">
 <var>${clock_drift}</var>
 <arg>${LOCAL_TIME}</arg>
 <arg>${hwclock_output}</arg>
 <doc>Calculates drift between system time and hardware clock</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.469384" elapsed="0.000044"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.442175" elapsed="0.000035"/>
 </kw>
 <kw name="Extract Drift Seconds" owner="time_keywords">
 <var>${drift_seconds}</var>
 <arg>${clock_drift}</arg>
 <doc>Extracts drift value in seconds</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.469728" elapsed="0.000045"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.442440" elapsed="0.000035"/>
 </kw>
 <kw name="Validate Clock Drift" owner="time_keywords">
 <var>${drift_validation}</var>
 <arg>${drift_seconds}</arg>
 <arg>${MAX_CLOCK_DRIFT_SECONDS}</arg>
 <doc>Validates clock drift is within acceptable range</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.469974" elapsed="0.000039"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.442654" elapsed="0.000029"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${drift_validation}</arg>
 <arg>Clock drift exceeds maximum: ${drift_seconds}s</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.470347" elapsed="0.000044"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.442833" elapsed="0.000027"/>
 </kw>
 <kw name="Check RTC Synchronization" owner="time_keywords">
 <var>${rtc_sync_enabled}</var>
 <arg>${TIMEDATECTL_DATA}</arg>
 <doc>Checks if RTC synchronization is enabled</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.470644" elapsed="0.000046"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.443018" elapsed="0.000023"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${rtc_sync_enabled}</arg>
 <arg>RTC synchronization is not enabled</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.470881" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.443130" elapsed="0.000016"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${CLOCK_DRIFT_SECONDS}</arg>
 <arg>${drift_seconds}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.471082" elapsed="0.000034"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.443253" elapsed="0.000017"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${HWCLOCK_FILE}</arg>
 <arg>${hwclock_file}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.471280" elapsed="0.000038"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.443355" elapsed="0.000020"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Clock Drift: ${drift_seconds} seconds</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.471477" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.443460" elapsed="0.000016"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>RTC Sync: Enabled</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.471636" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.443550" elapsed="0.000015"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Hardware Clock File: ${hwclock_file}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.471851" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.443652" elapsed="0.000016"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Hardware clock check: PASSED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.472022" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.443777" elapsed="0.000022"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🕰️ Clock Drift: ${drift_seconds} seconds</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.472199" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.443908" elapsed="0.000021"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✔️ RTC Sync: Enabled</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.472370" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.444015" elapsed="0.000016"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📄 Output saved to: ${hwclock_file}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.472546" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.444115" elapsed="0.000015"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>Hardware Clock: PASS - Drift: ${drift_seconds}s, RTC sync enabled</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.472715" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.444218" elapsed="0.000015"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.472882" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.444355" elapsed="0.000021"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.473033" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.444472" elapsed="0.000025"/>
 </kw>
 <kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
 <if>
@@ -2064,24 +2064,24 @@ hwclock --show</msg>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>✅ Completed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.474415" elapsed="0.000036"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.445831" elapsed="0.000033"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T10:40:49.474060" elapsed="0.000454"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.445534" elapsed="0.000389"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>❌ Failed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.474723" elapsed="0.000343"/>
+<status status="PASS" start="2025-09-28T14:10:22.446109" elapsed="0.000336"/>
 </kw>
-<status status="PASS" start="2025-09-28T10:40:49.474563" elapsed="0.000563"/>
+<status status="PASS" start="2025-09-28T14:10:22.445968" elapsed="0.000534"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.474024" elapsed="0.001138"/>
+<status status="PASS" start="2025-09-28T14:10:22.445496" elapsed="0.001037"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
 <doc>Logs test end with status</doc>
-<status status="PASS" start="2025-09-28T10:40:49.473501" elapsed="0.001748"/>
+<status status="PASS" start="2025-09-28T14:10:22.445017" elapsed="0.001596"/>
 </kw>
 <doc>🕰️ Validate hardware clock synchronization and drift
 Ensures RTC (Real Time Clock) is properly synchronized with system time</doc>
@@ -2092,76 +2092,76 @@ Ensures RTC (Real Time Clock) is properly synchronized with system time</doc>
 <tag>hardware</tag>
 <tag>rtc</tag>
 <tag>synchronization</tag>
-<status status="FAIL" start="2025-09-28T10:40:49.355144" elapsed="0.120170">Command failed: hwclock --show: 127.0 != 0.0</status>
+<status status="FAIL" start="2025-09-28T14:10:22.327467" elapsed="0.119216">Command failed: hwclock --show: 127.0 != 0.0</status>
 </test>
-<test id="s1-t7" name="Normal - Time Configuration Compliance Summary" line="253">
+<test id="s1-t7" name="Normal - Time Configuration Compliance Summary" line="255">
 <kw name="Log Test Start" owner="time_keywords" type="SETUP">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🔍 Starting: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.476568" elapsed="0.000201"/>
+<status status="PASS" start="2025-09-28T14:10:22.448410" elapsed="0.000278"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <doc>Logs test start with formatting</doc>
-<status status="PASS" start="2025-09-28T10:40:49.476275" elapsed="0.000562"/>
+<status status="PASS" start="2025-09-28T14:10:22.448050" elapsed="0.000715"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.477073" level="INFO">🔍 Generating time configuration compliance summary...</msg>
+<msg time="2025-09-28T14:10:22.449059" level="INFO">🔍 Generating time configuration compliance summary...</msg>
 <arg>🔍 Generating time configuration compliance summary...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.476941" elapsed="0.000189"/>
+<status status="PASS" start="2025-09-28T14:10:22.448914" elapsed="0.000246"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.478694" level="INFO">${total} = 7</msg>
+<msg time="2025-09-28T14:10:22.450382" level="INFO">${total} = 7</msg>
 <var>${total}</var>
 <arg>${TOTAL_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.478293" elapsed="0.000444"/>
+<status status="PASS" start="2025-09-28T14:10:22.450023" elapsed="0.000389"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.479163" level="INFO">${TOTAL_TESTS} = 7</msg>
+<msg time="2025-09-28T14:10:22.450812" level="INFO">${TOTAL_TESTS} = 7</msg>
 <arg>${TOTAL_TESTS}</arg>
 <arg>${total}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.478923" elapsed="0.000301"/>
+<status status="PASS" start="2025-09-28T14:10:22.450556" elapsed="0.000304"/>
 </kw>
 <kw name="Validate Timezone Compliance" owner="time_keywords">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Be Equal" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.480354" level="FAIL">America/Chicago != America/Los_Angeles</msg>
+<msg time="2025-09-28T14:10:22.452322" level="FAIL">America/Chicago != America/Los_Angeles</msg>
 <arg>${current_tz}</arg>
 <arg>${required_tz}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.480068" elapsed="0.000372">America/Chicago != America/Los_Angeles</status>
+<status status="FAIL" start="2025-09-28T14:10:22.451692" elapsed="0.000781">America/Chicago != America/Los_Angeles</status>
 </kw>
-<msg time="2025-09-28T10:40:49.480557" level="INFO">${compliant} = False</msg>
+<msg time="2025-09-28T14:10:22.453172" level="INFO">${compliant} = False</msg>
 <var>${compliant}</var>
 <arg>Should Be Equal</arg>
 <arg>${current_tz}</arg>
 <arg>${required_tz}</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.479899" elapsed="0.000686"/>
+<status status="PASS" start="2025-09-28T14:10:22.451448" elapsed="0.001820"/>
 </kw>
 <return>
 <value>${compliant}</value>
-<status status="PASS" start="2025-09-28T10:40:49.480646" elapsed="0.000040"/>
+<status status="PASS" start="2025-09-28T14:10:22.453392" elapsed="0.000070"/>
 </return>
-<msg time="2025-09-28T10:40:49.480846" level="INFO">${timezone_compliance} = False</msg>
+<msg time="2025-09-28T14:10:22.453669" level="INFO">${timezone_compliance} = False</msg>
 <var>${timezone_compliance}</var>
 <arg>${CURRENT_TIMEZONE}</arg>
 <arg>${REQUIRED_TIMEZONE}</arg>
 <doc>Validates timezone compliance</doc>
-<status status="PASS" start="2025-09-28T10:40:49.479450" elapsed="0.001427"/>
+<status status="PASS" start="2025-09-28T14:10:22.451031" elapsed="0.002667"/>
 </kw>
 <kw name="Validate NTP Compliance" owner="time_keywords">
-<msg time="2025-09-28T10:40:49.482387" level="FAIL">Variable '${CHRONY_SOURCES}' not found. Did you mean:
+<msg time="2025-09-28T14:10:22.457265" level="FAIL">Variable '${CHRONY_SOURCES}' not found. Did you mean:
     ${CHRONY_SOURCES_FILE}</msg>
 <var>${ntp_compliance}</var>
 <arg>${CHRONY_SOURCES}</arg>
 <arg>${REQUIRED_NTP_SERVER}</arg>
 <doc>Validates NTP server compliance</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.481067" elapsed="0.001386">Variable '${CHRONY_SOURCES}' not found. Did you mean:
+<status status="FAIL" start="2025-09-28T14:10:22.453970" elapsed="0.003415">Variable '${CHRONY_SOURCES}' not found. Did you mean:
     ${CHRONY_SOURCES_FILE}</status>
 </kw>
 <kw name="Validate Sync Compliance" owner="time_keywords">
@@ -2169,7 +2169,7 @@ Ensures RTC (Real Time Clock) is properly synchronized with system time</doc>
 <arg>${NTP_SERVICE_STATUS}</arg>
 <arg>${CLOCK_DRIFT_SECONDS}</arg>
 <doc>Validates synchronization compliance</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.482707" elapsed="0.000036"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.458031" elapsed="0.000083"/>
 </kw>
 <kw name="Calculate Time Compliance Score" owner="time_keywords">
 <var>${compliance_score}</var>
@@ -2177,13 +2177,13 @@ Ensures RTC (Real Time Clock) is properly synchronized with system time</doc>
 <arg>${ntp_compliance}</arg>
 <arg>${sync_compliance}</arg>
 <doc>Calculates overall time compliance score</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.482904" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.458716" elapsed="0.000064"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${compliance_score} &gt;= 95</arg>
 <arg>Overall compliance score below 95%: ${compliance_score}%</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.483062" elapsed="0.000025"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.459031" elapsed="0.000042"/>
 </kw>
 <kw name="Generate Time Configuration Report" owner="time_keywords">
 <var>${time_report}</var>
@@ -2192,13 +2192,13 @@ Ensures RTC (Real Time Clock) is properly synchronized with system time</doc>
 <arg>${CHRONY_SOURCES}</arg>
 <arg>${HWCLOCK_DATA}</arg>
 <doc>Generates comprehensive time configuration report</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.483273" elapsed="0.000028"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.459373" elapsed="0.000035"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${time_report}</arg>
 <arg>Failed to generate time configuration report</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.483604" elapsed="0.000079"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.459540" elapsed="0.000022"/>
 </kw>
 <kw name="Create Time Evidence Package" owner="time_keywords">
 <var>${evidence_package}</var>
@@ -2207,127 +2207,127 @@ Ensures RTC (Real Time Clock) is properly synchronized with system time</doc>
 <arg>${CHRONY_SOURCES_FILE}</arg>
 <arg>${HWCLOCK_FILE}</arg>
 <doc>Creates evidence package with all time-related files</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.483931" elapsed="0.000061"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.459740" elapsed="0.000026"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
 <arg>${evidence_package}</arg>
 <arg>Failed to create time evidence package</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.484121" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.459869" elapsed="0.000019"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TIME_COMPLIANCE_SCORE}</arg>
 <arg>${compliance_score}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.484251" elapsed="0.000291"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.459999" elapsed="0.000019"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TIME_REPORT}</arg>
 <arg>${time_report}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.484657" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.460109" elapsed="0.000017"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${TIME_EVIDENCE_PACKAGE}</arg>
 <arg>${evidence_package}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.484772" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.460215" elapsed="0.000017"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Timezone Compliance: PASSED</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.484877" elapsed="0.000018"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.460307" elapsed="0.000015"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>NTP Compliance: PASSED</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.484979" elapsed="0.000017"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.460399" elapsed="0.000016"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Sync Compliance: PASSED</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.485401" elapsed="0.000193"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.460490" elapsed="0.000015"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Overall Compliance Score: ${compliance_score}%</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.486079" elapsed="0.000189"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.460664" elapsed="0.000022"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Time Report: ${time_report}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.486567" elapsed="0.000047"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.460769" elapsed="0.000016"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>Evidence Package: ${evidence_package}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.486786" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.460860" elapsed="0.000015"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Time configuration compliance: VALIDATED</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.486988" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.460956" elapsed="0.000016"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🌍 Timezone: COMPLIANT</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.487167" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.461054" elapsed="0.000016"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🌐 NTP Server: COMPLIANT</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.487355" elapsed="0.000024"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.461166" elapsed="0.000015"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🔄 Synchronization: COMPLIANT</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.487483" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.461254" elapsed="0.000015"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📊 Overall Score: ${compliance_score}%</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.487608" elapsed="0.000974"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.461342" elapsed="0.000580"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📄 Report: ${time_report}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.488854" elapsed="0.000046"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.462086" elapsed="0.000025"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📦 Evidence: ${evidence_package}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.489013" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.462214" elapsed="0.000019"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${TEST_RESULTS}</arg>
 <arg>Time Compliance: PASS - ${compliance_score}% compliant, all requirements met</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.489145" elapsed="0.000022"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.462325" elapsed="0.000018"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
 <var>${passed}</var>
 <arg>${PASSED_TESTS} + 1</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.489277" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.462436" elapsed="0.000020"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
 <arg>${PASSED_TESTS}</arg>
 <arg>${passed}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.489427" elapsed="0.000021"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.462556" elapsed="0.000017"/>
 </kw>
 <kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
 <if>
@@ -2335,24 +2335,24 @@ Ensures RTC (Real Time Clock) is properly synchronized with system time</doc>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>✅ Completed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-09-28T10:40:49.490710" elapsed="0.000023"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.463565" elapsed="0.000024"/>
 </kw>
-<status status="NOT RUN" start="2025-09-28T10:40:49.490471" elapsed="0.000310"/>
+<status status="NOT RUN" start="2025-09-28T14:10:22.463334" elapsed="0.000327"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>❌ Failed: ${test_name}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.490907" elapsed="0.000371"/>
+<status status="PASS" start="2025-09-28T14:10:22.463801" elapsed="0.000333"/>
 </kw>
-<status status="PASS" start="2025-09-28T10:40:49.490812" elapsed="0.000518"/>
+<status status="PASS" start="2025-09-28T14:10:22.463692" elapsed="0.000488"/>
 </branch>
-<status status="PASS" start="2025-09-28T10:40:49.490439" elapsed="0.000918"/>
+<status status="PASS" start="2025-09-28T14:10:22.463308" elapsed="0.000899"/>
 </if>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
 <doc>Logs test end with status</doc>
-<status status="PASS" start="2025-09-28T10:40:49.489841" elapsed="0.001583"/>
+<status status="PASS" start="2025-09-28T14:10:22.462923" elapsed="0.001342"/>
 </kw>
 <doc>✅ Generate comprehensive time configuration compliance report
 Validates all time-related settings meet requirements and creates summary</doc>
@@ -2362,64 +2362,64 @@ Validates all time-related settings meet requirements and creates summary</doc>
 <tag>reporting</tag>
 <tag>summary</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2025-09-28T10:40:49.475594" elapsed="0.015891">Variable '${CHRONY_SOURCES}' not found. Did you mean:
+<status status="FAIL" start="2025-09-28T14:10:22.447036" elapsed="0.017272">Variable '${CHRONY_SOURCES}' not found. Did you mean:
     ${CHRONY_SOURCES_FILE}</status>
 </test>
 <kw name="Generate Executive Summary" owner="time_keywords" type="TEARDOWN">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-28T10:40:49.493042" level="INFO">${end_time} = 2025-09-28 10:40:49</msg>
+<msg time="2025-09-28T14:10:22.465723" level="INFO">${end_time} = 2025-09-28 14:10:22</msg>
 <var>${end_time}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.492737" elapsed="0.000345"/>
+<status status="PASS" start="2025-09-28T14:10:22.465402" elapsed="0.000370"/>
 </kw>
 <kw name="Subtract Date From Date" owner="DateTime">
-<msg time="2025-09-28T10:40:49.496163" level="INFO">${test_duration} = 1.0</msg>
+<msg time="2025-09-28T14:10:22.474854" level="INFO">${test_duration} = 1.0</msg>
 <var>${test_duration}</var>
 <arg>${end_time}</arg>
 <arg>${TEST_START_TIME}</arg>
 <arg>result_format=number</arg>
 <doc>Subtracts date from another date and returns time between.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.493221" elapsed="0.002996"/>
+<status status="PASS" start="2025-09-28T14:10:22.465952" elapsed="0.008949"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.496921" level="INFO">${pass_rate} = 28.6</msg>
+<msg time="2025-09-28T14:10:22.475489" level="INFO">${pass_rate} = 28.6</msg>
 <var>${pass_rate}</var>
 <arg>round((${PASSED_TESTS} / ${TOTAL_TESTS}) * 100, 1) if ${TOTAL_TESTS} &gt; 0 else 0</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.496400" elapsed="0.000559"/>
+<status status="PASS" start="2025-09-28T14:10:22.475078" elapsed="0.000443"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-28T10:40:49.497389" level="INFO">${timestamp} = 20250928_104049</msg>
+<msg time="2025-09-28T14:10:22.475907" level="INFO">${timestamp} = 20250928_141022</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y%m%d_%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.497106" elapsed="0.000318"/>
+<status status="PASS" start="2025-09-28T14:10:22.475711" elapsed="0.000222"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.497870" level="INFO">${metrics_file} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/test_metrics_20250928_104049.json</msg>
+<msg time="2025-09-28T14:10:22.476244" level="INFO">${metrics_file} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/test_metrics_20250928_141022.json</msg>
 <var>${metrics_file}</var>
 <arg>${DATA_DIR}/test_metrics_${timestamp}.json</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.497621" elapsed="0.000280"/>
+<status status="PASS" start="2025-09-28T14:10:22.476050" elapsed="0.000227"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.498392" level="INFO">${results_file} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/test_results_20250928_104049.txt</msg>
+<msg time="2025-09-28T14:10:22.477025" level="INFO">${results_file} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/test_results_20250928_141022.txt</msg>
 <var>${results_file}</var>
 <arg>${DATA_DIR}/test_results_${timestamp}.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.498050" elapsed="0.000384"/>
+<status status="PASS" start="2025-09-28T14:10:22.476428" elapsed="0.000637"/>
 </kw>
 <kw name="Create Metrics JSON" owner="time_keywords">
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.499527" level="INFO">${metrics_str} = ['Current Timezone: America/Chicago', 'Local Time: Sun 2025-09-28 10:40:49 CDT', 'UTC Time: Sun 2025-09-28 15:40:49 UTC', 'Timedatectl File: /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test...</msg>
+<msg time="2025-09-28T14:10:22.478147" level="INFO">${metrics_str} = ['Current Timezone: America/Chicago', 'Local Time: Sun 2025-09-28 14:10:21 CDT', 'UTC Time: Sun 2025-09-28 19:10:21 UTC', 'Timedatectl File: /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test...</msg>
 <var>${metrics_str}</var>
 <arg>${metrics}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.499271" elapsed="0.000289"/>
+<status status="PASS" start="2025-09-28T14:10:22.477867" elapsed="0.000321"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.500067" level="INFO">${json_content} = ['{\n', '"test_suite": "Time Configuration Validation Test Suite - Test-7",\n', '"total_tests": 7,\n', '"passed_tests": 2,\n', '"pass_rate": 28.6,\n', '"duration_seconds": 1.0,\n', '"metrics": "[\'Cur...</msg>
+<msg time="2025-09-28T14:10:22.479414" level="INFO">${json_content} = ['{\n', '"test_suite": "Time Configuration Validation Test Suite - Test-7",\n', '"total_tests": 7,\n', '"passed_tests": 2,\n', '"pass_rate": 28.6,\n', '"duration_seconds": 1.0,\n', '"metrics": "[\'Cur...</msg>
 <var>${json_content}</var>
 <arg>{\n</arg>
 <arg>"test_suite": "${suite_name}",\n</arg>
@@ -2429,13 +2429,13 @@ Validates all time-related settings meet requirements and creates summary</doc>
 <arg>"duration_seconds": ${duration},\n</arg>
 <arg>"metrics": "${metrics_str}"\n}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.499697" elapsed="0.000557"/>
+<status status="PASS" start="2025-09-28T14:10:22.478333" elapsed="0.001883"/>
 </kw>
 <return>
 <value>${json_content}</value>
-<status status="PASS" start="2025-09-28T10:40:49.500392" elapsed="0.000089"/>
+<status status="PASS" start="2025-09-28T14:10:22.480352" elapsed="0.000147"/>
 </return>
-<msg time="2025-09-28T10:40:49.500762" level="INFO">${metrics_json} = ['{\n', '"test_suite": "Time Configuration Validation Test Suite - Test-7",\n', '"total_tests": 7,\n', '"passed_tests": 2,\n', '"pass_rate": 28.6,\n', '"duration_seconds": 1.0,\n', '"metrics": "[\'Cur...</msg>
+<msg time="2025-09-28T14:10:22.480854" level="INFO">${metrics_json} = ['{\n', '"test_suite": "Time Configuration Validation Test Suite - Test-7",\n', '"total_tests": 7,\n', '"passed_tests": 2,\n', '"pass_rate": 28.6,\n', '"duration_seconds": 1.0,\n', '"metrics": "[\'Cur...</msg>
 <var>${metrics_json}</var>
 <arg>${TEST_SUITE_NAME}</arg>
 <arg>${TOTAL_TESTS}</arg>
@@ -2444,22 +2444,22 @@ Validates all time-related settings meet requirements and creates summary</doc>
 <arg>${test_duration}</arg>
 <arg>${PERFORMANCE_METRICS}</arg>
 <doc>Creates JSON metrics content</doc>
-<status status="PASS" start="2025-09-28T10:40:49.498710" elapsed="0.002101"/>
+<status status="PASS" start="2025-09-28T14:10:22.477295" elapsed="0.003686"/>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-09-28T10:40:49.512709" level="FAIL">TypeError: write() argument must be str, not list</msg>
+<msg time="2025-09-28T14:10:22.490161" level="FAIL">TypeError: write() argument must be str, not list</msg>
 <arg>${metrics_file}</arg>
 <arg>${metrics_json}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.501017" elapsed="0.011951">TypeError: write() argument must be str, not list</status>
+<status status="FAIL" start="2025-09-28T14:10:22.481213" elapsed="0.009051">TypeError: write() argument must be str, not list</status>
 </kw>
 <kw name="Create Results Content" owner="time_keywords">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.515416" level="INFO">${content} = Test Results Summary
+<msg time="2025-09-28T14:10:22.491980" level="INFO">${content} = Test Results Summary
 ==================
 
-Start Time: 2025-09-28 10:40:48
-End Time: 2025-09-28 10:40:49
+Start Time: 2025-09-28 14:10:21
+End Time: 2025-09-28 14:10:22
 Duration: 1.0 seconds
 
 Detailed Results:
@@ -2467,16 +2467,16 @@ Detailed Results:
 <var>${content}</var>
 <arg>Test Results Summary\n==================\n\nStart Time: ${start_time}\nEnd Time: ${end_time}\nDuration: ${duration} seconds\n\nDetailed Results:\n</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.514749" elapsed="0.001381"/>
+<status status="PASS" start="2025-09-28T14:10:22.491535" elapsed="0.001181"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.517197" level="INFO">${content} = Test Results Summary
+<msg time="2025-09-28T14:10:22.493558" level="INFO">${content} = Test Results Summary
 ==================
 
-Start Time: 2025-09-28 10:40:48
-End Time: 2025-09-28 10:40:49
+Start Time: 2025-09-28 14:10:21
+End Time: 2025-09-28 14:10:22
 Duration: 1.0 seconds
 
 Detailed Results:
@@ -2484,18 +2484,18 @@ Detailed Results:
 <var>${content}</var>
 <arg>${content}- ${result}\n</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.516800" elapsed="0.000452"/>
+<status status="PASS" start="2025-09-28T14:10:22.493219" elapsed="0.000385"/>
 </kw>
 <var name="${result}">System Connection: PASS - linux connection to 192.168.1.100</var>
-<status status="PASS" start="2025-09-28T10:40:49.516608" elapsed="0.000731"/>
+<status status="PASS" start="2025-09-28T14:10:22.493078" elapsed="0.000587"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.518061" level="INFO">${content} = Test Results Summary
+<msg time="2025-09-28T14:10:22.494219" level="INFO">${content} = Test Results Summary
 ==================
 
-Start Time: 2025-09-28 10:40:48
-End Time: 2025-09-28 10:40:49
+Start Time: 2025-09-28 14:10:21
+End Time: 2025-09-28 14:10:22
 Duration: 1.0 seconds
 
 Detailed Results:
@@ -2503,24 +2503,24 @@ Detailed Results:
 <var>${content}</var>
 <arg>${content}- ${result}\n</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.517716" elapsed="0.000428"/>
+<status status="PASS" start="2025-09-28T14:10:22.493957" elapsed="0.000292"/>
 </kw>
 <var name="${result}">Timezone Collection: PASS - Current: America/Chicago, File: /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7/../../results/test7/data/timedatectl_output.txt</var>
-<status status="PASS" start="2025-09-28T10:40:49.517525" elapsed="0.000672"/>
+<status status="PASS" start="2025-09-28T14:10:22.493781" elapsed="0.000550"/>
 </iter>
 <var>${result}</var>
 <value>@{results}</value>
-<status status="PASS" start="2025-09-28T10:40:49.516308" elapsed="0.001928"/>
+<status status="PASS" start="2025-09-28T14:10:22.492870" elapsed="0.001516"/>
 </for>
 <return>
 <value>${content}</value>
-<status status="PASS" start="2025-09-28T10:40:49.518295" elapsed="0.000059"/>
+<status status="PASS" start="2025-09-28T14:10:22.494449" elapsed="0.000051"/>
 </return>
-<msg time="2025-09-28T10:40:49.518576" level="INFO">${results_content} = Test Results Summary
+<msg time="2025-09-28T14:10:22.494684" level="INFO">${results_content} = Test Results Summary
 ==================
 
-Start Time: 2025-09-28 10:40:48
-End Time: 2025-09-28 10:40:49
+Start Time: 2025-09-28 14:10:21
+End Time: 2025-09-28 14:10:22
 Duration: 1.0 seconds
 
 Detailed Results:
@@ -2531,28 +2531,28 @@ Detailed Results:
 <arg>${end_time}</arg>
 <arg>${test_duration}</arg>
 <doc>Creates detailed results content</doc>
-<status status="PASS" start="2025-09-28T10:40:49.513761" elapsed="0.004853"/>
+<status status="PASS" start="2025-09-28T14:10:22.490806" elapsed="0.003913"/>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-09-28T10:40:49.531749" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data/test_results_20250928_104049.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data/test_results_20250928_104049.txt&lt;/a&gt;'.</msg>
+<msg time="2025-09-28T14:10:22.502255" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data/test_results_20250928_141022.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7/data/test_results_20250928_141022.txt&lt;/a&gt;'.</msg>
 <arg>${results_file}</arg>
 <arg>${results_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.518757" elapsed="0.013229"/>
+<status status="PASS" start="2025-09-28T14:10:22.494885" elapsed="0.007496"/>
 </kw>
 <kw name="Generate Enhanced Dashboard" owner="time_keywords">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-28T10:40:49.534770" level="INFO">${html_content} = &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Time Configuration Validation Test Suite - Test-7 - Dashboard&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Time Configuration Validation Test Suite - Test-7&lt;/h1&gt;&lt;p&gt;Total: 7, Passed: 2, Ra...</msg>
+<msg time="2025-09-28T14:10:22.503416" level="INFO">${html_content} = &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Time Configuration Validation Test Suite - Test-7 - Dashboard&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Time Configuration Validation Test Suite - Test-7&lt;/h1&gt;&lt;p&gt;Total: 7, Passed: 2, Ra...</msg>
 <var>${html_content}</var>
 <arg>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;${suite_name} - Dashboard&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;${suite_name}&lt;/h1&gt;&lt;p&gt;Total: ${total}, Passed: ${passed}, Rate: ${pass_rate}%, Duration: ${duration}s&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.533681" elapsed="0.001198"/>
+<status status="PASS" start="2025-09-28T14:10:22.503114" elapsed="0.000336"/>
 </kw>
 <return>
 <value>${html_content}</value>
-<status status="PASS" start="2025-09-28T10:40:49.535062" elapsed="0.000123"/>
+<status status="PASS" start="2025-09-28T14:10:22.503508" elapsed="0.000039"/>
 </return>
-<msg time="2025-09-28T10:40:49.535729" level="INFO">${dashboard_content} = &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Time Configuration Validation Test Suite - Test-7 - Dashboard&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Time Configuration Validation Test Suite - Test-7&lt;/h1&gt;&lt;p&gt;Total: 7, Passed: 2, Ra...</msg>
+<msg time="2025-09-28T14:10:22.503671" level="INFO">${dashboard_content} = &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Time Configuration Validation Test Suite - Test-7 - Dashboard&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Time Configuration Validation Test Suite - Test-7&lt;/h1&gt;&lt;p&gt;Total: 7, Passed: 2, Ra...</msg>
 <var>${dashboard_content}</var>
 <arg>${TEST_SUITE_NAME}</arg>
 <arg>${TOTAL_TESTS}</arg>
@@ -2562,84 +2562,84 @@ Detailed Results:
 <arg>${PERFORMANCE_METRICS}</arg>
 <arg>${test_duration}</arg>
 <doc>Generates enhanced HTML dashboard</doc>
-<status status="PASS" start="2025-09-28T10:40:49.532486" elapsed="0.003307"/>
+<status status="PASS" start="2025-09-28T14:10:22.502631" elapsed="0.001067"/>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-09-28T10:40:49.546606" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/latest_dashboard.html"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/latest_dashboard.html&lt;/a&gt;'.</msg>
+<msg time="2025-09-28T14:10:22.509586" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/latest_dashboard.html"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/latest_dashboard.html&lt;/a&gt;'.</msg>
 <arg>${REPORTS_DIR}/latest_dashboard.html</arg>
 <arg>${dashboard_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.536215" elapsed="0.010557"/>
+<status status="PASS" start="2025-09-28T14:10:22.503828" elapsed="0.005901"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n📊 ===================================================</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.547077" elapsed="0.000386"/>
+<status status="PASS" start="2025-09-28T14:10:22.510009" elapsed="0.000368"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🎯 TIME CONFIGURATION TEST SUMMARY</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.547663" elapsed="0.000196"/>
+<status status="PASS" start="2025-09-28T14:10:22.510620" elapsed="0.000195"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>===================================================</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.548006" elapsed="0.000167"/>
+<status status="PASS" start="2025-09-28T14:10:22.510961" elapsed="0.000137"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>⏰ Duration: ${test_duration} seconds</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.548302" elapsed="0.000232"/>
+<status status="PASS" start="2025-09-28T14:10:22.511227" elapsed="0.000243"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📊 Total Tests: ${TOTAL_TESTS}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.548666" elapsed="0.000196"/>
+<status status="PASS" start="2025-09-28T14:10:22.511587" elapsed="0.000154"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>✅ Passed: ${PASSED_TESTS}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.549066" elapsed="0.000239"/>
+<status status="PASS" start="2025-09-28T14:10:22.511829" elapsed="0.000138"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📈 Pass Rate: ${pass_rate}%</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.549446" elapsed="0.000287"/>
+<status status="PASS" start="2025-09-28T14:10:22.512087" elapsed="0.000156"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📄 Metrics: ${metrics_file}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.549878" elapsed="0.000272"/>
+<status status="PASS" start="2025-09-28T14:10:22.512331" elapsed="0.000139"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📋 Results: ${results_file}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.550378" elapsed="0.001402"/>
+<status status="PASS" start="2025-09-28T14:10:22.512687" elapsed="0.000246"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🌐 Dashboard: ${REPORTS_DIR}/latest_dashboard.html</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.552224" elapsed="0.000566"/>
+<status status="PASS" start="2025-09-28T14:10:22.513074" elapsed="0.000255"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>===================================================</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-09-28T10:40:49.553100" elapsed="0.000385"/>
+<status status="PASS" start="2025-09-28T14:10:22.513480" elapsed="0.000173"/>
 </kw>
 <doc>📊 Generates comprehensive executive summary with enhanced metrics</doc>
-<status status="FAIL" start="2025-09-28T10:40:49.492479" elapsed="0.062562">TypeError: write() argument must be str, not list</status>
+<status status="FAIL" start="2025-09-28T14:10:22.465191" elapsed="0.049429">TypeError: write() argument must be str, not list</status>
 </kw>
 <doc>🕒 Time Configuration Validation Test Suite - Test-7
 Comprehensive time zone and NTP configuration validation
 ✨ Features: Timezone validation, NTP server configuration, time synchronization
 📊 Results: Unified HTML reports with enhanced dashboard
-🎯 Run with: robot time_configuration_validation.robot</doc>
+🎯 Run with: robot --outputdir ../../results/test7 time_configuration_validation.robot</doc>
 <meta name="Environment">Production-Ready</meta>
 <meta name="Features">Time Zone, NTP Configuration, Chrony Service, Time Sync</meta>
 <meta name="Reporting">Unified HTML Reports + Enhanced Dashboard</meta>
 <meta name="Test Suite">Time Configuration Validation Test-7</meta>
 <meta name="Version">1.0.0</meta>
-<status status="FAIL" start="2025-09-28T10:40:48.653727" elapsed="0.901511">Suite teardown failed:
+<status status="FAIL" start="2025-09-28T14:10:21.544416" elapsed="0.970630">Suite teardown failed:
 TypeError: write() argument must be str, not list</status>
 </suite>
 <statistics>
