@@ -1,31 +1,30 @@
 *** Variables ***
-# Test Metadata
-${TEST_SUITE_NAME}      Hostname Validation Test Suite - Test-3
+# Test Metadata - Dynamic test suite identification
+${TEST_SUITE_ID}        test3                    # Override with --variable TEST_SUITE_ID:testX
+${TEST_SUITE_NAME}      Hostname Validation Test Suite - ${TEST_SUITE_ID}
 ${TEST_VERSION}         2.0.0
 ${TEST_ENVIRONMENT}     Development QA
 
-# Directory Configuration - Test-specific data, global reports
-${REPORTS_DIR}          ${CURDIR}/../../results
-${DATA_DIR}             ${CURDIR}/../../results/test3/data
+# Directory Configuration - Dynamic based on test suite ID  
+${ROBOTFRAMEWORK_ROOT}  ${EXECDIR}
+${REPORTS_DIR}          ${ROBOTFRAMEWORK_ROOT}/results
+${TEST_REPORTS_DIR}     ${REPORTS_DIR}/${TEST_SUITE_ID}
+${DATA_DIR}             ${TEST_REPORTS_DIR}/data
 
-# Target Configuration from CBS_Itential_DRAFT_v0.01.xlsx
-# These values will be overridden by Itential workflow variables
-${TARGET_HOSTNAME}      alhxvdvitap01
-${TARGET_IP}            10.26.216.107
-${TARGET_SUBNET}        10.26.216.0/24
-${TARGET_MASK}          255.255.255.0
-${TARGET_GATEWAY}       10.26.216.4
-${TARGET_CNAME}         alhxvdvitap01
-${TARGET_DOMAIN}        gnscet.com
+# Target Configuration - These will be dynamically set by CBS lookup
+${TARGET_HOSTNAME}      # Set via command line --variable TARGET_HOSTNAME:value
+${TARGET_IP}            # Set dynamically from CBS lookup
+${TARGET_SUBNET}        # Set dynamically from CBS lookup  
+${TARGET_MASK}          # Set dynamically from CBS lookup
+${TARGET_GATEWAY}       # Set dynamically from CBS lookup
+${TARGET_CNAME}         # Set dynamically from CBS lookup
+${TARGET_DOMAIN}        # Set dynamically from CBS lookup
 
-# Network Test Configuration
-${PRIMARY_DNS_SERVER}   8.8.8.8
-${SECONDARY_DNS_SERVER}   1.1.1.1
-${TEST_DOMAINS}         google.com,github.com,stackoverflow.com
-${PING_COUNT}           5
+# Network Test Configuration 
+${PING_COUNT}           3
 ${TIMEOUT_SECONDS}      15
 
-# Test Execution Tracking (initialized values)
+# Test Execution Tracking
 ${TOTAL_TESTS}          0
 ${PASSED_TESTS}         0
 @{TEST_RESULTS}
