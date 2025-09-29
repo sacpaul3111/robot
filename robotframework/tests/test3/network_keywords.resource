@@ -4,8 +4,46 @@ Library          OperatingSystem
 Library          Collections
 Library          DateTime
 Library          String
+Library          ../../library/CBSLookup.py
 
 *** Keywords ***
+Initialize Test Environment And Lookup Configuration
+    [Documentation]    🚀 Sets up test environment with CBS lookup based on TARGET_HOSTNAME
+
+    ${start_time}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
+    Set Suite Variable    ${TEST_START_TIME}    ${start_time}
+
+    # Create directory structure
+    Create Directory    ${REPORTS_DIR}
+    Create Directory    ${DATA_DIR}
+
+    # Initialize counters and collections
+    Set Suite Variable    ${TOTAL_TESTS}    0
+    Set Suite Variable    ${PASSED_TESTS}    0
+    Set Suite Variable    @{TEST_RESULTS}    @{EMPTY}
+    Set Suite Variable    @{PERFORMANCE_METRICS}    @{EMPTY}
+
+    # Lookup configuration from CBS sheet based on TARGET_HOSTNAME
+    Log To Console    \n🔍 Looking up configuration for hostname: ${TARGET_HOSTNAME}
+    ${config}=    Lookup Configuration From CBS Sheet    ${TARGET_HOSTNAME}
+
+    # System information collection
+    ${hostname}=    Get Hostname
+    ${os_info}=     Get OS Information
+
+    Log To Console    \n🚀 ===================================================
+    Log To Console    🌐 HOSTNAME VALIDATION TEST SUITE - TEST-3
+    Log To Console    ⚡ ===================================================
+    Log To Console    📅 Start Time: ${start_time}
+    Log To Console    🖥️ Current Hostname: ${hostname}
+    Log To Console    🎯 Target Hostname: ${TARGET_HOSTNAME}
+    Log To Console    📍 Expected IP: ${TARGET_IP}
+    Log To Console    📍 Expected Gateway: ${TARGET_GATEWAY}
+    Log To Console    💻 OS Info: ${os_info}
+    Log To Console    📊 Reports: ${REPORTS_DIR}
+    Log To Console    📁 Data: ${DATA_DIR}
+    Log To Console    ===================================================
+
 Initialize Test Environment
     [Documentation]    🚀 Sets up test environment with enhanced logging
 
@@ -357,6 +395,29 @@ Generate Enhanced HTML Dashboard
 
     # Generate Unified Index Page
     Generate Unified Index Page    ${timestamp}
+
+Lookup Configuration From CBS Sheet
+    [Documentation]    🔍 Looks up server configuration from CBS sheet based on hostname
+    [Arguments]    ${hostname}
+
+    ${config}=    Lookup Server Config    ${hostname}
+
+    # Set suite variables with looked up values
+    Set Suite Variable    ${TARGET_IP}           ${config}[ip]
+    Set Suite Variable    ${TARGET_SUBNET}       ${config}[subnet]
+    Set Suite Variable    ${TARGET_MASK}         ${config}[mask]
+    Set Suite Variable    ${TARGET_GATEWAY}      ${config}[gateway]
+    Set Suite Variable    ${TARGET_CNAME}        ${config}[cname]
+    Set Suite Variable    ${TARGET_DOMAIN}       ${config}[domain]
+
+    Log    📋 Looked up configuration for ${hostname}:    console=yes
+    Log    📍 IP: ${TARGET_IP}    console=yes
+    Log    📍 Subnet: ${TARGET_SUBNET}    console=yes
+    Log    📍 Gateway: ${TARGET_GATEWAY}    console=yes
+    Log    📍 CNAME: ${TARGET_CNAME}    console=yes
+    Log    📍 Domain: ${TARGET_DOMAIN}    console=yes
+
+    RETURN    ${config}
 
 Generate Unified Index Page
     [Documentation]    🎯 Creates a unified index page linking to all report types
