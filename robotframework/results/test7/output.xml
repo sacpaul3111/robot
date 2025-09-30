@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-29T22:22:53.862205" rpa="false" schemaversion="5">
+<suite id="s1" name="Time Configuration Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test7_time_configuration_validation\time_configuration_validation.robot">
+<kw name="Initialize Time Test Environment" owner="time_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-29T22:22:55.165066" level="INFO">🚀 Initializing Test-7: Time Configuration Validation Environment...</msg>
+<arg>🚀 Initializing Test-7: Time Configuration Validation Environment...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-29T22:22:55.164747" elapsed="0.000712"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-09-29T22:22:55.166193" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test7\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test7\data&lt;/a&gt;' already exists.</msg>
+<arg>${DATA_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-09-29T22:22:55.165798" elapsed="0.000744"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-09-29T22:22:55.167335" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test7\screenshots"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test7\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>${SCREENSHOTS_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-09-29T22:22:55.166984" elapsed="0.000449"/>
+</kw>
+<kw name="Lookup Server Config" owner="EDSLookup">
+<msg time="2025-09-29T22:22:55.197205" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-09-29T22:22:55.197699" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
+<msg time="2025-09-29T22:22:55.197868" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-09-29T22:22:55.197923" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-09-29T22:22:55.197961" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-09-29T22:22:55.197996" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-09-29T22:22:55.198030" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-09-29T22:22:55.198071" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-09-29T22:22:55.198107" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-09-29T22:22:55.198143" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-09-29T22:22:55.198186" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-09-29T22:22:55.198221" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-09-29T22:22:55.198255" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-09-29T22:22:55.198293" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-09-29T22:22:55.198350" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-09-29T22:22:55.198407" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-09-29T22:22:55.198458" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-09-29T22:22:55.198513" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-09-29T22:22:55.198572" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-09-29T22:22:55.198820" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<var>${eds_config}</var>
+<arg>${TARGET_HOSTNAME}</arg>
+<doc>Lookup server configuration from EDS sheet based on hostname</doc>
+<status status="PASS" start="2025-09-29T22:22:55.167672" elapsed="0.031200"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-09-29T22:22:55.206092" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
+<arg>${TARGET_IP}</arg>
+<arg>${eds_config['ip']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-09-29T22:22:55.199154" elapsed="0.007094"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-29T22:22:55.207102" level="INFO">📋 Target Server: alhxvdvitap01</msg>
+<arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-29T22:22:55.206593" elapsed="0.000973"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-29T22:22:55.208305" level="INFO">📋 Target IP: 10.26.216.107</msg>
+<arg>📋 Target IP: ${TARGET_IP}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-29T22:22:55.207926" elapsed="0.000744"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-29T22:22:55.209957" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
+<arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-29T22:22:55.209001" elapsed="0.001580"/>
+</kw>
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${TARGET_IP}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2025-09-29T22:22:55.211199" elapsed="0.000780"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2025-09-29T22:22:55.212959" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
+<msg time="2025-09-29T22:22:58.230075" level="FAIL">TimeoutError: timed out</msg>
+<arg>${SSH_USERNAME}</arg>
+<arg>${SSH_PASSWORD}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="FAIL" start="2025-09-29T22:22:55.212398" elapsed="3.022842">TimeoutError: timed out</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ SSH connection established successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-09-29T22:22:58.235813" elapsed="0.000095"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Test-7 environment initialized</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-09-29T22:22:58.236408" elapsed="0.000079"/>
+</kw>
+<doc>🏗️ Set up test environment for time configuration validation</doc>
+<status status="FAIL" start="2025-09-29T22:22:55.162960" elapsed="3.073866">TimeoutError: timed out</status>
+</kw>
+<test id="s1-t1" name="Critical - Connect to Target Server" line="19">
+<doc>🔗 Establish direct connection to target machine via SSH</doc>
+<tag>connection</tag>
+<tag>critical</tag>
+<tag>infrastructure</tag>
+<tag>ssh</tag>
+<status status="FAIL" start="2025-09-29T22:22:58.237114" elapsed="0.001192">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t2" name="Critical - Collect Time Configuration Data" line="32">
+<doc>⏰ Execute time-related commands to gather timezone, chrony, and NTP configuration</doc>
+<tag>critical</tag>
+<tag>data_collection</tag>
+<tag>ntp</tag>
+<tag>time</tag>
+<status status="FAIL" start="2025-09-29T22:22:58.239653" elapsed="0.000881">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t3" name="Critical - Validate Timezone Setting" line="50">
+<doc>🌎 Validate timezone is set to Pacific/Los Angeles (America/Los_Angeles)</doc>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>timezone</tag>
+<status status="FAIL" start="2025-09-29T22:22:58.241507" elapsed="0.000521">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t4" name="Critical - Validate Chrony Service Status" line="63">
+<doc>📡 Validate chrony service is active and running</doc>
+<tag>chrony</tag>
+<tag>critical</tag>
+<tag>ntp</tag>
+<tag>service</tag>
+<status status="FAIL" start="2025-09-29T22:22:58.242722" elapsed="0.000454">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t5" name="Critical - Validate NTP Server Configuration" line="75">
+<doc>🕐 Validate NTP server is configured to use ntpx.domain.com</doc>
+<tag>configuration</tag>
+<tag>critical</tag>
+<tag>ntp</tag>
+<tag>server</tag>
+<status status="FAIL" start="2025-09-29T22:22:58.243887" elapsed="0.000729">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t6" name="Critical - Validate Time Synchronization Status" line="88">
+<doc>🔄 Validate time synchronization is working and clock is synchronized</doc>
+<tag>critical</tag>
+<tag>ntp</tag>
+<tag>synchronization</tag>
+<tag>time</tag>
+<status status="FAIL" start="2025-09-29T22:22:58.246706" elapsed="0.001219">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t7" name="Normal - Comprehensive Time Configuration Validation" line="101">
+<doc>📊 Perform comprehensive validation of all time configuration settings</doc>
+<tag>compliance</tag>
+<tag>comprehensive</tag>
+<tag>normal</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-09-29T22:22:58.252179" elapsed="0.001303">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t8" name="Normal - Hardware Clock Verification" line="117">
+<doc>🕰️ Verify hardware clock and its synchronization with system clock</doc>
+<tag>clock</tag>
+<tag>hardware</tag>
+<tag>normal</tag>
+<tag>verification</tag>
+<status status="FAIL" start="2025-09-29T22:22:58.254938" elapsed="0.002016">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t9" name="Normal - NTP Source Analysis" line="134">
+<doc>📊 Analyze NTP source details and server reachability</doc>
+<tag>analysis</tag>
+<tag>normal</tag>
+<tag>ntp</tag>
+<tag>sources</tag>
+<status status="FAIL" start="2025-09-29T22:22:58.258465" elapsed="0.002232">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t10" name="Normal - Clock Drift Monitoring" line="166">
+<doc>📉 Monitor clock drift and synchronization accuracy</doc>
+<tag>accuracy</tag>
+<tag>drift</tag>
+<tag>monitoring</tag>
+<tag>normal</tag>
+<status status="FAIL" start="2025-09-29T22:22:58.261857" elapsed="0.000809">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<kw name="Generate Time Configuration Executive Summary" owner="time_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-29T22:22:58.264306" level="INFO">📊 Generating Test-7 Time Configuration Executive Summary...</msg>
+<arg>📊 Generating Test-7 Time Configuration Executive Summary...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-29T22:22:58.264132" elapsed="0.000363"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-09-29T22:22:58.265311" level="INFO">${timestamp} = 2025-09-29 22:22:58</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-09-29T22:22:58.264834" elapsed="0.000527"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-09-29T22:22:58.265901" level="INFO">${summary_file} = results/test7/Test7_Time_Configuration_Executive_Summary.txt</msg>
+<var>${summary_file}</var>
+<arg>results/test7/Test7_Time_Configuration_Executive_Summary.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-09-29T22:22:58.265653" elapsed="0.000295"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-09-29T22:22:58.267698" level="INFO">${summary_content} = ========================================
+⏰ TEST-7: TIME CONFIGURATION VALIDATION
+📊 EXECUTIVE SUMMARY REPORT
+========================================
+
+📅 Report Generated: 2025-09-29 22:22:58
+🎯 Target S...</msg>
+<var>${summary_content}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>========================================</arg>
+<arg>⏰ TEST-7: TIME CONFIGURATION VALIDATION</arg>
+<arg>📊 EXECUTIVE SUMMARY REPORT</arg>
+<arg>========================================</arg>
+<arg>📅 Report Generated: ${timestamp}</arg>
+<arg>🎯 Target System: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>📋 Test Suite: Test-7 Time Configuration Validation</arg>
+<arg>========================================</arg>
+<arg>📋 EXPECTED CONFIGURATION</arg>
+<arg>========================================</arg>
+<arg>🌎 Timezone: Pacific/Los Angeles (America/Los_Angeles)</arg>
+<arg>🕐 NTP Server: ntpx.domain.com</arg>
+<arg>📡 Service: Chrony (active and running)</arg>
+<arg>🔄 Synchronization: Enabled</arg>
+<arg>========================================</arg>
+<arg>✅ VALIDATION RESULTS</arg>
+<arg>========================================</arg>
+<arg>Results available in detailed test reports.</arg>
+<arg>========================================</arg>
+<arg>📁 SUPPORTING DOCUMENTATION</arg>
+<arg>========================================</arg>
+<arg>📄 Time configuration data: results/test7/data/</arg>
+<arg>📷 Evidence files: results/test7/screenshots/</arg>
+<arg>📊 Robot Framework reports: results/test7/</arg>
+<arg>========================================</arg>
+<arg>🏆 COMPLIANCE STATUS</arg>
+<arg>========================================</arg>
+<arg>✅ Test execution completed successfully</arg>
+<arg>📋 Time configuration validated</arg>
+<arg>🔍 Results ready for stakeholder review</arg>
+<arg>End of Executive Summary</arg>
+<arg>========================================</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-09-29T22:22:58.266903" elapsed="0.001001"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-09-29T22:22:58.270285" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test7\Test7_Time_Configuration_Executive_Summary.txt"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test7\Test7_Time_Configuration_Executive_Summary.txt&lt;/a&gt;'.</msg>
+<arg>${summary_file}</arg>
+<arg>${summary_content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-09-29T22:22:58.268547" elapsed="0.001905"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-29T22:22:58.271001" level="INFO">📊 Executive summary generated: results/test7/Test7_Time_Configuration_Executive_Summary.txt</msg>
+<arg>📊 Executive summary generated: ${summary_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-29T22:22:58.270723" elapsed="0.001427"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-29T22:22:58.272597" level="INFO">✅ Test-7 Time Configuration Validation completed successfully!</msg>
+<arg>✅ Test-7 Time Configuration Validation completed successfully!</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-29T22:22:58.272395" elapsed="0.000533"/>
+</kw>
+<doc>📊 Generate executive summary for time configuration validation</doc>
+<status status="PASS" start="2025-09-29T22:22:58.263839" elapsed="0.009462"/>
+</kw>
+<doc>⏰ Time Configuration Validation Test Suite - Test-7
+🔍 Process: Find hostname in EDS → SSH to server → Collect time/NTP data → Validate timezone and NTP configuration
+✅ Pass if timezone is Pacific/Los Angeles and NTP server is ntpx.domain.com with proper synchronization
+📊 Validates: Timezone setting, Chrony service status, NTP server configuration, time synchronization</doc>
+<status status="FAIL" start="2025-09-29T22:22:53.865492" elapsed="4.408026">Suite setup failed:
+TimeoutError: timed out</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="10" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">accuracy</stat>
+<stat pass="0" fail="1" skip="0">analysis</stat>
+<stat pass="0" fail="1" skip="0">chrony</stat>
+<stat pass="0" fail="1" skip="0">clock</stat>
+<stat pass="0" fail="2" skip="0">compliance</stat>
+<stat pass="0" fail="1" skip="0">comprehensive</stat>
+<stat pass="0" fail="1" skip="0">configuration</stat>
+<stat pass="0" fail="1" skip="0">connection</stat>
+<stat pass="0" fail="6" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">data_collection</stat>
+<stat pass="0" fail="1" skip="0">drift</stat>
+<stat pass="0" fail="1" skip="0">hardware</stat>
+<stat pass="0" fail="1" skip="0">infrastructure</stat>
+<stat pass="0" fail="1" skip="0">monitoring</stat>
+<stat pass="0" fail="4" skip="0">normal</stat>
+<stat pass="0" fail="5" skip="0">ntp</stat>
+<stat pass="0" fail="1" skip="0">server</stat>
+<stat pass="0" fail="1" skip="0">service</stat>
+<stat pass="0" fail="1" skip="0">sources</stat>
+<stat pass="0" fail="1" skip="0">ssh</stat>
+<stat pass="0" fail="1" skip="0">synchronization</stat>
+<stat pass="0" fail="2" skip="0">time</stat>
+<stat pass="0" fail="1" skip="0">timezone</stat>
+<stat pass="0" fail="1" skip="0">validation</stat>
+<stat pass="0" fail="1" skip="0">verification</stat>
+</tag>
+<suite>
+<stat name="Time Configuration Validation" id="s1" pass="0" fail="10" skip="0">Time Configuration Validation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

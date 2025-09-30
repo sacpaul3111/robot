@@ -1,9 +1,0 @@
-Security Test Results Summary
-=========================
-
-Start Time: 2025-09-28 10:51:03
-End Time: 2025-09-28 10:51:05
-Duration: 2.0 seconds
-
-Detailed Results:
-- System Connection: PASS - linux connection to 192.168.1.100

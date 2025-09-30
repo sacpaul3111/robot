@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(python3:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(pipx install:*)",
+      "Bash(robot:*)",
+      "Bash(command -v:*)",
+      "Read(//usr/bin/**)",
+      "Bash(getent:*)",
+      "Bash(chmod:*)",
+      "Bash(./run_enhanced_reports.sh:*)",
+      "Bash(mkdir:*)",
+      "Bash(sudo apt:*)",
+      "Bash(sudo apt install:*)",
+      "Bash(python -m robot:*)",
+      "Bash(python:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

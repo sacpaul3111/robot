@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth:*)",
+      "Bash(curl:*)",
+      "Bash(sudo dd:*)",
+      "Bash(sudo chmod:*)",
+      "Bash(sudo tee:*)",
+      "Bash(sudo apt:*)",
+      "Bash(sudo apt install:*)",
+      "Bash(mkdir:*)",
+      "Bash(robot time_configuration_validation.robot:*)",
+      "Bash(robot:*)",
+      "Bash(pip install:*)",
+      "Bash(pipx inject:*)",
+      "Bash(for test in test3 test4 test6 test7 test8)",
+      "Bash(do echo \"=== $test ===\")",
+      "Bash(if [ -f \"$test/output.xml\" ])",
+      "Bash(then grep -E \"suite.*name=|stat \" \"$test/output.xml\")",
+      "Bash(else echo \"No output.xml\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(then head -5 \"$test/output.xml\")",
+      "Bash(if [ -f \"results/$test/output.xml\" ])",
+      "Bash(then head -10 \"results/$test/output.xml\")",
+      "Bash(else echo \"No output.xml for $test\")",
+      "Bash(then grep -E \"<suite.*name=|<stat \" \"$test/output.xml\")",
+      "Bash(do echo \"=== $test files ===\")",
+      "Bash(ls:*)",
+      "Bash(echo:*)",
+      "Read(//tmp/system_info/**)",
+      "Bash(for:*)",
+      "Bash(if [ -f \"robotframework/results/$test/output.xml\" ])",
+      "Bash(then grep -E \"<suite.*name=|<stat \" \"robotframework/results/$test/output.xml\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
