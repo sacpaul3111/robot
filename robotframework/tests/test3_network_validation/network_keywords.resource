@@ -32,12 +32,15 @@ Initialize Test Environment And Lookup Configuration
     ...    Auto Detect Test Suite ID
     ...    ELSE
     ...    Set Variable    ${TEST_SUITE_ID}
-    
+
+    # Auto-detect full suite name for directory structure
+    ${suite_name}=    Auto Detect Test Suite Name
+
     Set Suite Variable    ${TEST_SUITE_ID}    ${suite_id}
     Set Suite Variable    ${TEST_SUITE_NAME}    Hostname Validation Test Suite - ${suite_id}
-    
-    # Update directory paths with detected suite ID
-    Set Suite Variable    ${TEST_REPORTS_DIR}    ${REPORTS_DIR}/${suite_id}
+
+    # Update directory paths with full suite name
+    Set Suite Variable    ${TEST_REPORTS_DIR}    ${REPORTS_DIR}/${suite_name}
     Set Suite Variable    ${DATA_DIR}             ${TEST_REPORTS_DIR}/data
 
     # Create directory structure
@@ -78,25 +81,45 @@ Initialize Test Environment And Lookup Configuration
 
 Auto Detect Test Suite ID
     [Documentation]    Auto-detect test suite ID from current working directory or test file path
-    
+
     # Try to get suite ID from Robot Framework's built-in variables
     ${suite_source}=    Get Variable Value    ${SUITE_SOURCE}    ${EMPTY}
-    
+
     # Extract test suite ID from the file path (e.g., test3_network_validation)
     ${path_parts}=    Split String    ${suite_source}    ${/}
     FOR    ${part}    IN    @{path_parts}
-        ${is_test_dir}=    Run Keyword And Return Status    
+        ${is_test_dir}=    Run Keyword And Return Status
         ...    Should Match Regexp    ${part}    ^test\\d+_
-        
+
         Run Keyword If    ${is_test_dir}
         ...    Run Keywords
         ...    ${detected_id}=    Get Regexp Matches    ${part}    ^(test\\d+)_    1
         ...    AND    Return From Keyword    ${detected_id}[0]
     END
-    
+
     # Fallback to test3 if detection fails
     Log    ⚠️ Could not auto-detect test suite ID, defaulting to test3    WARN
     RETURN    test3
+
+Auto Detect Test Suite Name
+    [Documentation]    Auto-detect full test suite name from current working directory or test file path
+
+    # Try to get suite name from Robot Framework's built-in variables
+    ${suite_source}=    Get Variable Value    ${SUITE_SOURCE}    ${EMPTY}
+
+    # Extract full test suite directory name (e.g., test3_network_validation)
+    ${path_parts}=    Split String    ${suite_source}    ${/}
+    FOR    ${part}    IN    @{path_parts}
+        ${is_test_dir}=    Run Keyword And Return Status
+        ...    Should Match Regexp    ${part}    ^test\\d+_
+
+        Run Keyword If    ${is_test_dir}
+        ...    Return From Keyword    ${part}
+    END
+
+    # Fallback to test3_network_validation if detection fails
+    Log    ⚠️ Could not auto-detect test suite name, defaulting to test3_network_validation    WARN
+    RETURN    test3_network_validation
 
 # Include all your existing SSH and server extraction keywords here...
 Establish SSH Session

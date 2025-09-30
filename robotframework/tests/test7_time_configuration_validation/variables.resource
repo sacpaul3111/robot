@@ -9,9 +9,8 @@ ${TEST_SUITE_ID}          test7
 ${TEST_DESCRIPTION}       Validate timezone (Pacific/Los Angeles) and NTP configuration (ntpx.domain.com)
 
 # 📁 Directory Paths
-${TEST7_RESULTS_DIR}      results/test7
-${TEST7_DATA_DIR}         results/test7/data
-${TEST7_SCREENSHOTS_DIR}  results/test7/screenshots
+${TEST7_RESULTS_DIR}      results/test7_time_configuration_validation
+${TEST7_DATA_DIR}         results/test7_time_configuration_validation/data
 
 # 🏷️ Test Tags
 @{CRITICAL_TAGS}          critical    time    ntp    compliance

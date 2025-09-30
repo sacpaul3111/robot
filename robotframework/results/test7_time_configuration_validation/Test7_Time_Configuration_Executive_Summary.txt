@@ -3,7 +3,7 @@
 📊 EXECUTIVE SUMMARY REPORT
 ========================================
 
-📅 Report Generated: 2025-09-29 22:22:58
+📅 Report Generated: 2025-09-30 17:13:09
 🎯 Target System: alhxvdvitap01 (10.26.216.107)
 📋 Test Suite: Test-7 Time Configuration Validation
 
@@ -24,9 +24,8 @@ Results available in detailed test reports.
 ========================================
 📁 SUPPORTING DOCUMENTATION
 ========================================
-📄 Time configuration data: results/test7/data/
-📷 Evidence files: results/test7/screenshots/
-📊 Robot Framework reports: results/test7/
+📄 Time configuration data: results/test7_time_configuration_validation/data/
+📊 Robot Framework reports: results/test7_time_configuration_validation/
 
 ========================================
 🏆 COMPLIANCE STATUS

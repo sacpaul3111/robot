@@ -10,8 +10,7 @@ Library          DateTime
 Resource         ../../settings.resource
 
 *** Variables ***
-${DATA_DIR}                results/test7/data
-${SCREENSHOTS_DIR}         results/test7/screenshots
+${DATA_DIR}                results/test7_time_configuration_validation/data
 
 *** Keywords ***
 Initialize Time Test Environment
@@ -20,7 +19,6 @@ Initialize Time Test Environment
 
     # Create directories for data collection
     Create Directory    ${DATA_DIR}
-    Create Directory    ${SCREENSHOTS_DIR}
 
     # Lookup EDS configuration to get target IP
     ${eds_config}=    EDSLookup.Lookup Server Config    ${TARGET_HOSTNAME}
@@ -230,7 +228,7 @@ Generate Time Configuration Executive Summary
     Log    📊 Generating Test-7 Time Configuration Executive Summary...    console=yes
 
     ${timestamp}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
-    ${summary_file}=    Set Variable    results/test7/Test7_Time_Configuration_Executive_Summary.txt
+    ${summary_file}=    Set Variable    results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt
 
     ${summary_content}=    Catenate    SEPARATOR=\n
     ...    ========================================
@@ -259,9 +257,8 @@ Generate Time Configuration Executive Summary
     ...    ========================================
     ...    📁 SUPPORTING DOCUMENTATION
     ...    ========================================
-    ...    📄 Time configuration data: results/test7/data/
-    ...    📷 Evidence files: results/test7/screenshots/
-    ...    📊 Robot Framework reports: results/test7/
+    ...    📄 Time configuration data: results/test7_time_configuration_validation/data/
+    ...    📊 Robot Framework reports: results/test7_time_configuration_validation/
     ...
     ...    ========================================
     ...    🏆 COMPLIANCE STATUS

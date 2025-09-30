@@ -10,8 +10,7 @@ Library          DateTime
 Resource         ../../settings.resource
 
 *** Variables ***
-${DATA_DIR}                results/test5/data
-${SCREENSHOTS_DIR}         results/test5/screenshots
+${DATA_DIR}                results/test5_disk_space_validation/data
 
 *** Keywords ***
 Initialize Storage Test Environment And Lookup Configuration
@@ -20,7 +19,6 @@ Initialize Storage Test Environment And Lookup Configuration
 
     # Create directories for data collection
     Create Directory    ${DATA_DIR}
-    Create Directory    ${SCREENSHOTS_DIR}
 
     # Initialize EDS lookup and get configuration
     ${eds_config}=    EDSLookup.Lookup Server Config    ${TARGET_HOSTNAME}
@@ -298,7 +296,7 @@ Generate Storage Executive Summary
     Log    📊 Generating Test-5 Storage Validation Executive Summary...    console=yes
 
     ${timestamp}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
-    ${summary_file}=    Set Variable    results/test5/Test5_Storage_Executive_Summary.txt
+    ${summary_file}=    Set Variable    results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt
 
     ${summary_content}=    Catenate    SEPARATOR=\n
     ...    ========================================
@@ -331,9 +329,8 @@ Generate Storage Executive Summary
     ...    ========================================
     ...    📁 SUPPORTING DOCUMENTATION
     ...    ========================================
-    ...    📄 Detailed data files: results/test5/data/
-    ...    📷 Evidence screenshots: results/test5/screenshots/
-    ...    📊 Robot Framework reports: results/test5/
+    ...    📄 Detailed data files: results/test5_disk_space_validation/data/
+    ...    📊 Robot Framework reports: results/test5_disk_space_validation/
     ...
     ...    ========================================
     ...    🏆 COMPLIANCE STATUS

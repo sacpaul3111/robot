@@ -9,9 +9,8 @@ ${TEST_SUITE_ID}          test5
 ${TEST_DESCRIPTION}       Validate disk space allocation, CPU, memory, and storage configuration against EDS requirements
 
 # 📁 Directory Paths
-${TEST5_RESULTS_DIR}      results/test5
-${TEST5_DATA_DIR}         results/test5/data
-${TEST5_SCREENSHOTS_DIR}  results/test5/screenshots
+${TEST5_RESULTS_DIR}      results/test5_disk_space_validation
+${TEST5_DATA_DIR}         results/test5_disk_space_validation/data
 
 # 🏷️ Test Tags
 @{CRITICAL_TAGS}          critical    storage    system    compliance

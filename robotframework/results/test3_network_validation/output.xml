@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Rebot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-30T17:13:09.974478" rpa="false" schemaversion="5">
-<suite id="s1" name="Network Validation &amp; Disk Space Validation &amp; Time Configuration Validation">
-<suite id="s1-s1" name="Network Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test3_network_validation\network_validation.robot">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-09-30T17:12:36.430880" rpa="false" schemaversion="5">
+<suite id="s1" name="Network Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test3_network_validation\network_validation.robot">
 <kw name="Initialize Test Environment And Lookup Configuration" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-09-30T17:12:39.337220" level="INFO">${start_time} = 2025-09-30 17:12:39</msg>
@@ -493,7 +492,7 @@
 <doc>🚀 Load EDS configuration and prepare for server validation</doc>
 <status status="PASS" start="2025-09-30T17:12:39.336006" elapsed="0.047118"/>
 </kw>
-<test id="s1-s1-t1" name="Critical - Hostname Validation" line="18">
+<test id="s1-t1" name="Critical - Hostname Validation" line="18">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-09-30T17:12:39.384319" level="INFO">${timestamp} = 2025-09-30 17:12:39</msg>
@@ -650,7 +649,7 @@
 <tag>hostname</tag>
 <status status="FAIL" start="2025-09-30T17:12:39.383216" elapsed="21.078015">TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond</status>
 </test>
-<test id="s1-s1-t2" name="Critical - IP Address Validation" line="37">
+<test id="s1-t2" name="Critical - IP Address Validation" line="37">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-09-30T17:13:00.467210" level="INFO">${timestamp} = 2025-09-30 17:13:00</msg>
@@ -755,7 +754,7 @@
 <tag>networking</tag>
 <status status="FAIL" start="2025-09-30T17:13:00.463637" elapsed="0.021342">Connection not open</status>
 </test>
-<test id="s1-s1-t3" name="Critical - Subnet Validation" line="56">
+<test id="s1-t3" name="Critical - Subnet Validation" line="56">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-09-30T17:13:00.489481" level="INFO">${timestamp} = 2025-09-30 17:13:00</msg>
@@ -868,7 +867,7 @@
 <tag>subnet</tag>
 <status status="FAIL" start="2025-09-30T17:13:00.487131" elapsed="0.017569">Connection not open</status>
 </test>
-<test id="s1-s1-t4" name="Critical - Gateway Validation" line="75">
+<test id="s1-t4" name="Critical - Gateway Validation" line="75">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-09-30T17:13:00.507395" level="INFO">${timestamp} = 2025-09-30 17:13:00</msg>
@@ -973,7 +972,7 @@
 <tag>networking</tag>
 <status status="FAIL" start="2025-09-30T17:13:00.505814" elapsed="0.014828">Connection not open</status>
 </test>
-<test id="s1-s1-t5" name="Critical - DNS Name Validation" line="94">
+<test id="s1-t5" name="Critical - DNS Name Validation" line="94">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-09-30T17:13:00.524307" level="INFO">${timestamp} = 2025-09-30 17:13:00</msg>
@@ -1102,7 +1101,7 @@
 <tag>hostname</tag>
 <status status="FAIL" start="2025-09-30T17:13:00.522611" elapsed="0.016657">Connection not open</status>
 </test>
-<test id="s1-s1-t6" name="Normal - NTP Configuration Validation" line="117">
+<test id="s1-t6" name="Normal - NTP Configuration Validation" line="117">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-09-30T17:13:00.542414" level="INFO">${timestamp} = 2025-09-30 17:13:00</msg>
@@ -1280,718 +1279,25 @@
 ✅ Pass if server matches EDS, ❌ Fail if mismatch</doc>
 <status status="FAIL" start="2025-09-30T17:12:36.433122" elapsed="24.130313"/>
 </suite>
-<suite id="s1-s2" name="Disk Space Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test5_disk_space_validation\disk_space_validation.robot">
-<kw name="Initialize Storage Test Environment And Lookup Configuration" owner="storage_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.923788" level="INFO">🚀 Initializing Test-5: Storage &amp; System Validation Environment...</msg>
-<arg>🚀 Initializing Test-5: Storage &amp; System Validation Environment...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.923503" elapsed="0.000607"/>
-</kw>
-<kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-09-30T17:13:01.924735" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\data&lt;/a&gt;' already exists.</msg>
-<arg>${DATA_DIR}</arg>
-<doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.924443" elapsed="0.000382"/>
-</kw>
-<kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-09-30T17:13:01.946827" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
-<msg time="2025-09-30T17:13:01.947031" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
-<msg time="2025-09-30T17:13:01.947072" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
-<msg time="2025-09-30T17:13:01.947099" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
-<msg time="2025-09-30T17:13:01.947124" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
-<msg time="2025-09-30T17:13:01.947147" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
-<msg time="2025-09-30T17:13:01.947170" level="INFO">Extracted domain from EDS: gnscet.com</msg>
-<msg time="2025-09-30T17:13:01.947197" level="INFO">Extracted CPU cores from EDS: 8</msg>
-<msg time="2025-09-30T17:13:01.947221" level="INFO">Extracted RAM from EDS: 16</msg>
-<msg time="2025-09-30T17:13:01.947244" level="INFO">Extracted storage type from EDS: VSAN</msg>
-<msg time="2025-09-30T17:13:01.947274" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
-<msg time="2025-09-30T17:13:01.947299" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
-<msg time="2025-09-30T17:13:01.947323" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
-<msg time="2025-09-30T17:13:01.947347" level="INFO">Extracted logical volume/partition from EDS: /</msg>
-<msg time="2025-09-30T17:13:01.947372" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
-<msg time="2025-09-30T17:13:01.947397" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
-<msg time="2025-09-30T17:13:01.947419" level="INFO">Extracted drive purpose from EDS: OS</msg>
-<msg time="2025-09-30T17:13:01.947442" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
-<msg time="2025-09-30T17:13:01.947469" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
-<msg time="2025-09-30T17:13:01.947604" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
-<var>${eds_config}</var>
-<arg>${TARGET_HOSTNAME}</arg>
-<doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="PASS" start="2025-09-30T17:13:01.925003" elapsed="0.022628"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.949778" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
-<arg>${TARGET_IP}</arg>
-<arg>${eds_config['ip']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.947828" elapsed="0.002004"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.951224" level="INFO">${TARGET_CPU_CORES} = 8</msg>
-<arg>${TARGET_CPU_CORES}</arg>
-<arg>${eds_config['cpu_cores']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.949969" elapsed="0.001313"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.953020" level="INFO">${TARGET_RAM} = 16</msg>
-<arg>${TARGET_RAM}</arg>
-<arg>${eds_config['ram']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.951410" elapsed="0.001676"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.954410" level="INFO">${TARGET_STORAGE_TYPE} = VSAN</msg>
-<arg>${TARGET_STORAGE_TYPE}</arg>
-<arg>${eds_config['storage_type']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.953589" elapsed="0.000864"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.956038" level="INFO">${TARGET_STORAGE_TOTAL_TB} = 0.465</msg>
-<arg>${TARGET_STORAGE_TOTAL_TB}</arg>
-<arg>${eds_config['storage_total_tb']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.954651" elapsed="0.001542"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.957333" level="INFO">${TARGET_DRIVE_VOLUME_GROUP} = rootvg:</msg>
-<arg>${TARGET_DRIVE_VOLUME_GROUP}</arg>
-<arg>${eds_config['drive_volume_group']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.956384" elapsed="0.000996"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.958443" level="INFO">${TARGET_FILE_SYSTEM} = /dev/mapper/rootvg-rootlv</msg>
-<arg>${TARGET_FILE_SYSTEM}</arg>
-<arg>${eds_config['file_system']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.957505" elapsed="0.000982"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.959551" level="INFO">${TARGET_LOGICAL_VOLUME} = /</msg>
-<arg>${TARGET_LOGICAL_VOLUME}</arg>
-<arg>${eds_config['logical_volume_partition']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.958638" elapsed="0.000960"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.960365" level="INFO">${TARGET_STORAGE_ALLOC_GB} = 20</msg>
-<arg>${TARGET_STORAGE_ALLOC_GB}</arg>
-<arg>${eds_config['storage_allocation_gb']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.959717" elapsed="0.000684"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.961079" level="INFO">${TARGET_RECOMMENDED_GB} = 20</msg>
-<arg>${TARGET_RECOMMENDED_GB}</arg>
-<arg>${eds_config['recommended_storage_gb']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.960501" elapsed="0.000613"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.962068" level="INFO">${TARGET_DRIVE_PURPOSE} = OS</msg>
-<arg>${TARGET_DRIVE_PURPOSE}</arg>
-<arg>${eds_config['drive_purpose']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.961433" elapsed="0.000673"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.962931" level="INFO">${TARGET_OS_TYPE} = RHEL 9.6</msg>
-<arg>${TARGET_OS_TYPE}</arg>
-<arg>${eds_config['os_type']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.962203" elapsed="0.000763"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.963248" level="INFO">📋 EDS Target IP: 10.26.216.107</msg>
-<arg>📋 EDS Target IP: ${TARGET_IP}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.963058" elapsed="0.000426"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.963883" level="INFO">📋 EDS CPU Cores: 8</msg>
-<arg>📋 EDS CPU Cores: ${TARGET_CPU_CORES}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.963649" elapsed="0.000381"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.964393" level="INFO">📋 EDS RAM: 16 GB</msg>
-<arg>📋 EDS RAM: ${TARGET_RAM} GB</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.964179" elapsed="0.000348"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.964874" level="INFO">📋 EDS Storage Type: VSAN</msg>
-<arg>📋 EDS Storage Type: ${TARGET_STORAGE_TYPE}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.964665" elapsed="0.000358"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.965338" level="INFO">📋 EDS Storage Total: 0.465 TB</msg>
-<arg>📋 EDS Storage Total: ${TARGET_STORAGE_TOTAL_TB} TB</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.965137" elapsed="0.000325"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.965787" level="INFO">📋 EDS OS Type: RHEL 9.6</msg>
-<arg>📋 EDS OS Type: ${TARGET_OS_TYPE}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.965598" elapsed="0.000312"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:01.966222" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
-<arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.966036" elapsed="0.000307"/>
-</kw>
-<kw name="Open Connection" owner="SSHLibrary">
-<arg>${TARGET_IP}</arg>
-<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-09-30T17:13:01.966521" elapsed="0.000190"/>
-</kw>
-<kw name="Login" owner="SSHLibrary">
-<msg time="2025-09-30T17:13:01.966956" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
-<msg time="2025-09-30T17:13:04.976810" level="FAIL">TimeoutError: timed out</msg>
-<arg>${SSH_USERNAME}</arg>
-<arg>${SSH_PASSWORD}</arg>
-<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="FAIL" start="2025-09-30T17:13:01.966800" elapsed="3.015920">TimeoutError: timed out</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ SSH connection established successfully</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-30T17:13:04.982956" elapsed="0.000028"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Test-5 environment initialized</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-30T17:13:04.983075" elapsed="0.000017"/>
-</kw>
-<doc>🏗️ Set up test environment and lookup EDS configuration</doc>
-<status status="FAIL" start="2025-09-30T17:13:01.922539" elapsed="3.060679">TimeoutError: timed out</status>
-</kw>
-<test id="s1-s2-t1" name="Critical - CPU Cores Validation" line="19">
-<doc>💻 SSH to server and validate CPU core count matches EDS specification</doc>
-<tag>compliance</tag>
-<tag>cpu</tag>
-<tag>critical</tag>
-<tag>hardware</tag>
-<status status="FAIL" start="2025-09-30T17:13:04.983319" elapsed="0.000784">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s2-t2" name="Critical - Memory Allocation Validation" line="36">
-<doc>🧠 SSH to server and validate memory allocation matches EDS specification</doc>
-<tag>compliance</tag>
-<tag>critical</tag>
-<tag>hardware</tag>
-<tag>memory</tag>
-<status status="FAIL" start="2025-09-30T17:13:04.984846" elapsed="0.000491">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s2-t3" name="Critical - Disk Space Allocation Validation" line="53">
-<doc>💾 SSH to server and validate disk space allocation against EDS requirements</doc>
-<tag>compliance</tag>
-<tag>critical</tag>
-<tag>disk</tag>
-<tag>storage</tag>
-<status status="FAIL" start="2025-09-30T17:13:04.985934" elapsed="0.000397">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s2-t4" name="Critical - Storage Type Validation" line="70">
-<doc>📡 SSH to server and validate storage infrastructure matches EDS specification</doc>
-<tag>compliance</tag>
-<tag>critical</tag>
-<tag>infrastructure</tag>
-<tag>storage</tag>
-<status status="FAIL" start="2025-09-30T17:13:04.986850" elapsed="0.000367">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s2-t5" name="Critical - Root Filesystem Validation" line="87">
-<doc>🗂️ SSH to server and validate root filesystem configuration against EDS</doc>
-<tag>compliance</tag>
-<tag>critical</tag>
-<tag>filesystem</tag>
-<tag>storage</tag>
-<status status="FAIL" start="2025-09-30T17:13:04.987729" elapsed="0.000379">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s2-t6" name="Normal - Storage Capacity Analysis" line="107">
-<doc>📊 Analyze overall storage capacity and utilization patterns</doc>
-<tag>analysis</tag>
-<tag>capacity</tag>
-<tag>normal</tag>
-<tag>storage</tag>
-<status status="FAIL" start="2025-09-30T17:13:04.989485" elapsed="0.001557">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s2-t7" name="Normal - Volume Group Analysis" line="127">
-<doc>🏗️ Analyze volume group and logical volume configuration</doc>
-<tag>analysis</tag>
-<tag>lvm</tag>
-<tag>normal</tag>
-<tag>volumes</tag>
-<status status="FAIL" start="2025-09-30T17:13:04.993819" elapsed="0.002323">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s2-t8" name="Normal - Operating System Validation" line="146">
-<doc>🖥️ Validate operating system type matches EDS specification</doc>
-<tag>compliance</tag>
-<tag>normal</tag>
-<tag>os</tag>
-<tag>system</tag>
-<status status="FAIL" start="2025-09-30T17:13:04.999554" elapsed="0.002689">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<kw name="Generate Storage Executive Summary" owner="storage_keywords" type="TEARDOWN">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:05.007515" level="INFO">📊 Generating Test-5 Storage Validation Executive Summary...</msg>
-<arg>📊 Generating Test-5 Storage Validation Executive Summary...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:05.007168" elapsed="0.000787"/>
-</kw>
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-30T17:13:05.009341" level="INFO">${timestamp} = 2025-09-30 17:13:05</msg>
-<var>${timestamp}</var>
-<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-30T17:13:05.008421" elapsed="0.000996"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:05.010395" level="INFO">${summary_file} = results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
-<var>${summary_file}</var>
-<arg>results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-30T17:13:05.009710" elapsed="0.000769"/>
-</kw>
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2025-09-30T17:13:05.012324" level="INFO">${summary_content} = ========================================
-🗄️ TEST-5: STORAGE &amp; SYSTEM VALIDATION
-📊 EXECUTIVE SUMMARY REPORT
-========================================
-
-📅 Report Generated: 2025-09-30 17:13:05
-🎯 Target Sy...</msg>
-<var>${summary_content}</var>
-<arg>SEPARATOR=\n</arg>
-<arg>========================================</arg>
-<arg>🗄️ TEST-5: STORAGE &amp; SYSTEM VALIDATION</arg>
-<arg>📊 EXECUTIVE SUMMARY REPORT</arg>
-<arg>========================================</arg>
-<arg>📅 Report Generated: ${timestamp}</arg>
-<arg>🎯 Target System: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
-<arg>📋 Test Suite: Test-5 Disk Space &amp; System Validation</arg>
-<arg>========================================</arg>
-<arg>📋 EDS BASELINE CONFIGURATION</arg>
-<arg>========================================</arg>
-<arg>💻 CPU Cores (Expected): ${TARGET_CPU_CORES}</arg>
-<arg>🧠 RAM (Expected): ${TARGET_RAM} GB</arg>
-<arg>📡 Storage Type (Expected): ${TARGET_STORAGE_TYPE}</arg>
-<arg>💾 Storage Total (Expected): ${TARGET_STORAGE_TOTAL_TB} TB</arg>
-<arg>🗂️ Mount Point (Expected): ${TARGET_LOGICAL_VOLUME}</arg>
-<arg>📊 Storage Allocation (Expected): ${TARGET_STORAGE_ALLOC_GB} GB</arg>
-<arg>🎯 Drive Purpose: ${TARGET_DRIVE_PURPOSE}</arg>
-<arg>🖥️ OS Type (Expected): ${TARGET_OS_TYPE}</arg>
-<arg>========================================</arg>
-<arg>✅ VALIDATION RESULTS</arg>
-<arg>========================================</arg>
-<arg>Results available in detailed test reports.</arg>
-<arg>========================================</arg>
-<arg>📁 SUPPORTING DOCUMENTATION</arg>
-<arg>========================================</arg>
-<arg>📄 Detailed data files: results/test5_disk_space_validation/data/</arg>
-<arg>📊 Robot Framework reports: results/test5_disk_space_validation/</arg>
-<arg>========================================</arg>
-<arg>🏆 COMPLIANCE STATUS</arg>
-<arg>========================================</arg>
-<arg>✅ Test execution completed successfully</arg>
-<arg>📋 All data collected and validated against EDS</arg>
-<arg>🔍 Results ready for stakeholder review</arg>
-<arg>End of Executive Summary</arg>
-<arg>========================================</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2025-09-30T17:13:05.010768" elapsed="0.001816"/>
-</kw>
-<kw name="Create File" owner="OperatingSystem">
-<msg time="2025-09-30T17:13:05.017144" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\Test5_Storage_Executive_Summary.txt"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\Test5_Storage_Executive_Summary.txt&lt;/a&gt;'.</msg>
-<arg>${summary_file}</arg>
-<arg>${summary_content}</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-09-30T17:13:05.014585" elapsed="0.002810"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:05.018326" level="INFO">📊 Executive summary generated: results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
-<arg>📊 Executive summary generated: ${summary_file}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:05.017812" elapsed="0.000888"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:05.019368" level="INFO">✅ Test-5 Storage Validation completed successfully!</msg>
-<arg>✅ Test-5 Storage Validation completed successfully!</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:05.019045" elapsed="0.000766"/>
-</kw>
-<doc>📊 Generate executive summary for storage validation results</doc>
-<status status="PASS" start="2025-09-30T17:13:05.006581" elapsed="0.013435"/>
-</kw>
-<doc>🗄️ Storage &amp; System Validation Test Suite - Test-5
-🔍 Process: Find hostname in EDS → SSH to server → Collect disk/CPU/memory data → Compare server vs EDS
-✅ Pass if server resources match EDS requirements, ❌ Fail if mismatch
-📊 Validates: CPU cores, RAM, disk space allocation, filesystem types, storage configuration</doc>
-<status status="FAIL" start="2025-09-30T17:13:01.148318" elapsed="3.871783">Suite setup failed:
-TimeoutError: timed out</status>
-</suite>
-<suite id="s1-s3" name="Time Configuration Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test7_time_configuration_validation\time_configuration_validation.robot">
-<kw name="Initialize Time Test Environment" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:06.304847" level="INFO">🚀 Initializing Test-7: Time Configuration Validation Environment...</msg>
-<arg>🚀 Initializing Test-7: Time Configuration Validation Environment...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:06.304654" elapsed="0.000532"/>
-</kw>
-<kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-09-30T17:13:06.305717" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test7_time_configuration_validation\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test7_time_configuration_validation\data&lt;/a&gt;' already exists.</msg>
-<arg>${DATA_DIR}</arg>
-<doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-09-30T17:13:06.305445" elapsed="0.000332"/>
-</kw>
-<kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-09-30T17:13:06.319218" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
-<msg time="2025-09-30T17:13:06.319416" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
-<msg time="2025-09-30T17:13:06.319460" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
-<msg time="2025-09-30T17:13:06.319490" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
-<msg time="2025-09-30T17:13:06.319517" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
-<msg time="2025-09-30T17:13:06.319542" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
-<msg time="2025-09-30T17:13:06.319566" level="INFO">Extracted domain from EDS: gnscet.com</msg>
-<msg time="2025-09-30T17:13:06.319595" level="INFO">Extracted CPU cores from EDS: 8</msg>
-<msg time="2025-09-30T17:13:06.319621" level="INFO">Extracted RAM from EDS: 16</msg>
-<msg time="2025-09-30T17:13:06.319647" level="INFO">Extracted storage type from EDS: VSAN</msg>
-<msg time="2025-09-30T17:13:06.319676" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
-<msg time="2025-09-30T17:13:06.319700" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
-<msg time="2025-09-30T17:13:06.319724" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
-<msg time="2025-09-30T17:13:06.319749" level="INFO">Extracted logical volume/partition from EDS: /</msg>
-<msg time="2025-09-30T17:13:06.319773" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
-<msg time="2025-09-30T17:13:06.319798" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
-<msg time="2025-09-30T17:13:06.319821" level="INFO">Extracted drive purpose from EDS: OS</msg>
-<msg time="2025-09-30T17:13:06.319844" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
-<msg time="2025-09-30T17:13:06.319872" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
-<msg time="2025-09-30T17:13:06.319988" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
-<var>${eds_config}</var>
-<arg>${TARGET_HOSTNAME}</arg>
-<doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="PASS" start="2025-09-30T17:13:06.305896" elapsed="0.014118"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:06.322257" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
-<arg>${TARGET_IP}</arg>
-<arg>${eds_config['ip']}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-09-30T17:13:06.320167" elapsed="0.002148"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:06.323715" level="INFO">📋 Target Server: alhxvdvitap01</msg>
-<arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:06.322584" elapsed="0.001350"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:06.324562" level="INFO">📋 Target IP: 10.26.216.107</msg>
-<arg>📋 Target IP: ${TARGET_IP}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:06.324229" elapsed="0.000858"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:06.325680" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
-<arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:06.325294" elapsed="0.000784"/>
-</kw>
-<kw name="Open Connection" owner="SSHLibrary">
-<arg>${TARGET_IP}</arg>
-<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-09-30T17:13:06.326319" elapsed="0.000453"/>
-</kw>
-<kw name="Login" owner="SSHLibrary">
-<msg time="2025-09-30T17:13:06.327470" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
-<msg time="2025-09-30T17:13:09.333760" level="FAIL">TimeoutError: timed out</msg>
-<arg>${SSH_USERNAME}</arg>
-<arg>${SSH_PASSWORD}</arg>
-<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="FAIL" start="2025-09-30T17:13:06.326951" elapsed="3.014399">TimeoutError: timed out</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ SSH connection established successfully</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-30T17:13:09.341788" elapsed="0.000062"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Test-7 environment initialized</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-09-30T17:13:09.342100" elapsed="0.000047"/>
-</kw>
-<doc>🏗️ Set up test environment for time configuration validation</doc>
-<status status="FAIL" start="2025-09-30T17:13:06.304062" elapsed="3.038365">TimeoutError: timed out</status>
-</kw>
-<test id="s1-s3-t1" name="Critical - Connect to Target Server" line="19">
-<doc>🔗 Establish direct connection to target machine via SSH</doc>
-<tag>connection</tag>
-<tag>critical</tag>
-<tag>infrastructure</tag>
-<tag>ssh</tag>
-<status status="FAIL" start="2025-09-30T17:13:09.342658" elapsed="0.001430">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s3-t2" name="Critical - Collect Time Configuration Data" line="32">
-<doc>⏰ Execute time-related commands to gather timezone, chrony, and NTP configuration</doc>
-<tag>critical</tag>
-<tag>data_collection</tag>
-<tag>ntp</tag>
-<tag>time</tag>
-<status status="FAIL" start="2025-09-30T17:13:09.345731" elapsed="0.001175">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s3-t3" name="Critical - Validate Timezone Setting" line="50">
-<doc>🌎 Validate timezone is set to Pacific/Los Angeles (America/Los_Angeles)</doc>
-<tag>compliance</tag>
-<tag>critical</tag>
-<tag>timezone</tag>
-<status status="FAIL" start="2025-09-30T17:13:09.348470" elapsed="0.002240">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s3-t4" name="Critical - Validate Chrony Service Status" line="63">
-<doc>📡 Validate chrony service is active and running</doc>
-<tag>chrony</tag>
-<tag>critical</tag>
-<tag>ntp</tag>
-<tag>service</tag>
-<status status="FAIL" start="2025-09-30T17:13:09.354548" elapsed="0.001818">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s3-t5" name="Critical - Validate NTP Server Configuration" line="75">
-<doc>🕐 Validate NTP server is configured to use ntpx.domain.com</doc>
-<tag>configuration</tag>
-<tag>critical</tag>
-<tag>ntp</tag>
-<tag>server</tag>
-<status status="FAIL" start="2025-09-30T17:13:09.359086" elapsed="0.002663">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s3-t6" name="Critical - Validate Time Synchronization Status" line="88">
-<doc>🔄 Validate time synchronization is working and clock is synchronized</doc>
-<tag>critical</tag>
-<tag>ntp</tag>
-<tag>synchronization</tag>
-<tag>time</tag>
-<status status="FAIL" start="2025-09-30T17:13:09.363553" elapsed="0.002070">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s3-t7" name="Normal - Comprehensive Time Configuration Validation" line="101">
-<doc>📊 Perform comprehensive validation of all time configuration settings</doc>
-<tag>compliance</tag>
-<tag>comprehensive</tag>
-<tag>normal</tag>
-<tag>validation</tag>
-<status status="FAIL" start="2025-09-30T17:13:09.367511" elapsed="0.001123">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s3-t8" name="Normal - Hardware Clock Verification" line="117">
-<doc>🕰️ Verify hardware clock and its synchronization with system clock</doc>
-<tag>clock</tag>
-<tag>hardware</tag>
-<tag>normal</tag>
-<tag>verification</tag>
-<status status="FAIL" start="2025-09-30T17:13:09.370908" elapsed="0.001568">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s3-t9" name="Normal - NTP Source Analysis" line="134">
-<doc>📊 Analyze NTP source details and server reachability</doc>
-<tag>analysis</tag>
-<tag>normal</tag>
-<tag>ntp</tag>
-<tag>sources</tag>
-<status status="FAIL" start="2025-09-30T17:13:09.373958" elapsed="0.001445">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<test id="s1-s3-t10" name="Normal - Clock Drift Monitoring" line="166">
-<doc>📉 Monitor clock drift and synchronization accuracy</doc>
-<tag>accuracy</tag>
-<tag>drift</tag>
-<tag>monitoring</tag>
-<tag>normal</tag>
-<status status="FAIL" start="2025-09-30T17:13:09.377489" elapsed="0.001154">Parent suite setup failed:
-TimeoutError: timed out</status>
-</test>
-<kw name="Generate Time Configuration Executive Summary" owner="time_keywords" type="TEARDOWN">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:09.381862" level="INFO">📊 Generating Test-7 Time Configuration Executive Summary...</msg>
-<arg>📊 Generating Test-7 Time Configuration Executive Summary...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:09.381492" elapsed="0.001840"/>
-</kw>
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2025-09-30T17:13:09.384515" level="INFO">${timestamp} = 2025-09-30 17:13:09</msg>
-<var>${timestamp}</var>
-<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-09-30T17:13:09.383635" elapsed="0.000939"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-09-30T17:13:09.385002" level="INFO">${summary_file} = results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
-<var>${summary_file}</var>
-<arg>results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-09-30T17:13:09.384784" elapsed="0.000259"/>
-</kw>
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2025-09-30T17:13:09.385891" level="INFO">${summary_content} = ========================================
-⏰ TEST-7: TIME CONFIGURATION VALIDATION
-📊 EXECUTIVE SUMMARY REPORT
-========================================
-
-📅 Report Generated: 2025-09-30 17:13:09
-🎯 Target S...</msg>
-<var>${summary_content}</var>
-<arg>SEPARATOR=\n</arg>
-<arg>========================================</arg>
-<arg>⏰ TEST-7: TIME CONFIGURATION VALIDATION</arg>
-<arg>📊 EXECUTIVE SUMMARY REPORT</arg>
-<arg>========================================</arg>
-<arg>📅 Report Generated: ${timestamp}</arg>
-<arg>🎯 Target System: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
-<arg>📋 Test Suite: Test-7 Time Configuration Validation</arg>
-<arg>========================================</arg>
-<arg>📋 EXPECTED CONFIGURATION</arg>
-<arg>========================================</arg>
-<arg>🌎 Timezone: Pacific/Los Angeles (America/Los_Angeles)</arg>
-<arg>🕐 NTP Server: ntpx.domain.com</arg>
-<arg>📡 Service: Chrony (active and running)</arg>
-<arg>🔄 Synchronization: Enabled</arg>
-<arg>========================================</arg>
-<arg>✅ VALIDATION RESULTS</arg>
-<arg>========================================</arg>
-<arg>Results available in detailed test reports.</arg>
-<arg>========================================</arg>
-<arg>📁 SUPPORTING DOCUMENTATION</arg>
-<arg>========================================</arg>
-<arg>📄 Time configuration data: results/test7_time_configuration_validation/data/</arg>
-<arg>📊 Robot Framework reports: results/test7_time_configuration_validation/</arg>
-<arg>========================================</arg>
-<arg>🏆 COMPLIANCE STATUS</arg>
-<arg>========================================</arg>
-<arg>✅ Test execution completed successfully</arg>
-<arg>📋 Time configuration validated</arg>
-<arg>🔍 Results ready for stakeholder review</arg>
-<arg>End of Executive Summary</arg>
-<arg>========================================</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2025-09-30T17:13:09.385209" elapsed="0.000735"/>
-</kw>
-<kw name="Create File" owner="OperatingSystem">
-<msg time="2025-09-30T17:13:09.387643" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test7_time_configuration_validation\Test7_Time_Configuration_Executive_Summary.txt"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test7_time_configuration_validation\Test7_Time_Configuration_Executive_Summary.txt&lt;/a&gt;'.</msg>
-<arg>${summary_file}</arg>
-<arg>${summary_content}</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-09-30T17:13:09.386254" elapsed="0.001481"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:09.388131" level="INFO">📊 Executive summary generated: results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
-<arg>📊 Executive summary generated: ${summary_file}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:09.387901" elapsed="0.000727"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-30T17:13:09.389430" level="INFO">✅ Test-7 Time Configuration Validation completed successfully!</msg>
-<arg>✅ Test-7 Time Configuration Validation completed successfully!</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-30T17:13:09.389113" elapsed="0.000685"/>
-</kw>
-<doc>📊 Generate executive summary for time configuration validation</doc>
-<status status="PASS" start="2025-09-30T17:13:09.380919" elapsed="0.009030"/>
-</kw>
-<doc>⏰ Time Configuration Validation Test Suite - Test-7
-🔍 Process: Find hostname in EDS → SSH to server → Collect time/NTP data → Validate timezone and NTP configuration
-✅ Pass if timezone is Pacific/Los Angeles and NTP server is ntpx.domain.com with proper synchronization
-📊 Validates: Timezone setting, Chrony service status, NTP server configuration, time synchronization</doc>
-<status status="FAIL" start="2025-09-30T17:13:05.562320" elapsed="3.827754">Suite setup failed:
-TimeoutError: timed out</status>
-</suite>
-<status status="FAIL" elapsed="31.829850"/>
-</suite>
 <statistics>
 <total>
-<stat pass="0" fail="24" skip="0">All Tests</stat>
+<stat pass="0" fail="6" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">accuracy</stat>
-<stat pass="0" fail="3" skip="0">analysis</stat>
-<stat pass="0" fail="1" skip="0">capacity</stat>
-<stat pass="0" fail="1" skip="0">chrony</stat>
-<stat pass="0" fail="1" skip="0">clock</stat>
-<stat pass="0" fail="9" skip="0">compliance</stat>
-<stat pass="0" fail="1" skip="0">comprehensive</stat>
-<stat pass="0" fail="1" skip="0">configuration</stat>
-<stat pass="0" fail="1" skip="0">connection</stat>
-<stat pass="0" fail="1" skip="0">cpu</stat>
-<stat pass="0" fail="16" skip="0">critical</stat>
-<stat pass="0" fail="1" skip="0">data_collection</stat>
-<stat pass="0" fail="1" skip="0">disk</stat>
+<stat pass="0" fail="1" skip="0">compliance</stat>
+<stat pass="0" fail="5" skip="0">critical</stat>
 <stat pass="0" fail="1" skip="0">dns</stat>
-<stat pass="0" fail="1" skip="0">drift</stat>
-<stat pass="0" fail="1" skip="0">filesystem</stat>
 <stat pass="0" fail="1" skip="0">gateway</stat>
-<stat pass="0" fail="3" skip="0">hardware</stat>
 <stat pass="0" fail="2" skip="0">hostname</stat>
-<stat pass="0" fail="2" skip="0">infrastructure</stat>
 <stat pass="0" fail="1" skip="0">ip</stat>
-<stat pass="0" fail="1" skip="0">lvm</stat>
-<stat pass="0" fail="1" skip="0">memory</stat>
-<stat pass="0" fail="1" skip="0">monitoring</stat>
 <stat pass="0" fail="3" skip="0">networking</stat>
-<stat pass="0" fail="8" skip="0">normal</stat>
-<stat pass="0" fail="6" skip="0">ntp</stat>
-<stat pass="0" fail="1" skip="0">os</stat>
-<stat pass="0" fail="1" skip="0">server</stat>
-<stat pass="0" fail="1" skip="0">service</stat>
-<stat pass="0" fail="1" skip="0">sources</stat>
-<stat pass="0" fail="1" skip="0">ssh</stat>
-<stat pass="0" fail="4" skip="0">storage</stat>
+<stat pass="0" fail="1" skip="0">normal</stat>
+<stat pass="0" fail="1" skip="0">ntp</stat>
 <stat pass="0" fail="1" skip="0">subnet</stat>
-<stat pass="0" fail="1" skip="0">synchronization</stat>
-<stat pass="0" fail="1" skip="0">system</stat>
-<stat pass="0" fail="3" skip="0">time</stat>
-<stat pass="0" fail="1" skip="0">timezone</stat>
-<stat pass="0" fail="1" skip="0">validation</stat>
-<stat pass="0" fail="1" skip="0">verification</stat>
-<stat pass="0" fail="1" skip="0">volumes</stat>
+<stat pass="0" fail="1" skip="0">time</stat>
 </tag>
 <suite>
-<stat name="Network Validation &amp; Disk Space Validation &amp; Time Configuration Validation" id="s1" pass="0" fail="24" skip="0">Network Validation &amp; Disk Space Validation &amp; Time Configuration Validation</stat>
-<stat name="Network Validation" id="s1-s1" pass="0" fail="6" skip="0">Network Validation &amp; Disk Space Validation &amp; Time Configuration Validation.Network Validation</stat>
-<stat name="Disk Space Validation" id="s1-s2" pass="0" fail="8" skip="0">Network Validation &amp; Disk Space Validation &amp; Time Configuration Validation.Disk Space Validation</stat>
-<stat name="Time Configuration Validation" id="s1-s3" pass="0" fail="10" skip="0">Network Validation &amp; Disk Space Validation &amp; Time Configuration Validation.Time Configuration Validation</stat>
+<stat name="Network Validation" id="s1" pass="0" fail="6" skip="0">Network Validation</stat>
 </suite>
 </statistics>
 <errors>

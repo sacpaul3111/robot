@@ -1,11 +1,31 @@
 param(
     [string]$Username,
     [string]$Password,
+    [Parameter(Mandatory=$true)]
     [string]$TargetHostname,
     [string]$OutputDir = "results"
 )
 
 Write-Host "GSA Itential Robot Framework - Test Runner" -ForegroundColor Cyan
+
+# Get credentials from environment variables if not provided as parameters
+if ([string]::IsNullOrEmpty($Username)) {
+    $Username = $env:SSH_USERNAME
+    if ([string]::IsNullOrEmpty($Username)) {
+        Write-Host "ERROR: Username not provided. Set SSH_USERNAME environment variable or use -Username parameter" -ForegroundColor Red
+        exit 1
+    }
+    Write-Host "Using username from environment variable: SSH_USERNAME" -ForegroundColor Yellow
+}
+
+if ([string]::IsNullOrEmpty($Password)) {
+    $Password = $env:SSH_PASSWORD
+    if ([string]::IsNullOrEmpty($Password)) {
+        Write-Host "ERROR: Password not provided. Set SSH_PASSWORD environment variable or use -Password parameter" -ForegroundColor Red
+        exit 1
+    }
+    Write-Host "Using password from environment variable: SSH_PASSWORD" -ForegroundColor Yellow
+}
 
 # Detect Python executable (prefer venv)
 $pythonExe = $null
@@ -36,9 +56,10 @@ $allOutputFiles = @()
 # Run each test suite
 foreach ($testDir in $testDirs) {
     $testId = $testDir.Name.Split("_")[0]
-    Write-Host "Running $testId..." -ForegroundColor Green
-    
-    $suiteDir = "$OutputDir/$testId"
+    $suiteName = $testDir.Name
+    Write-Host "Running $suiteName..." -ForegroundColor Green
+
+    $suiteDir = "$OutputDir/$suiteName"
     $robotFile = Get-ChildItem -Path $testDir.FullName -Filter "*.robot" | Select-Object -First 1
     
     if ($robotFile) {
