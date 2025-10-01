@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-01T15:11:52.564546" rpa="false" schemaversion="5">
+<suite id="s1" name="Services Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test11_services_validation\services_validation.robot">
+<kw name="Initialize Services Test Environment" owner="services_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T15:11:55.913766" level="INFO">🚀 Initializing Test-11: Services Validation Environment...</msg>
+<arg>🚀 Initializing Test-11: Services Validation Environment...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T15:11:55.913453" elapsed="0.000617"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-01T15:11:55.916414" level="INFO" html="true">Created directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test11_services_validation\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test11_services_validation\data&lt;/a&gt;'.</msg>
+<arg>${DATA_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-01T15:11:55.914527" elapsed="0.002688"/>
+</kw>
+<kw name="Lookup Server Config" owner="EDSLookup">
+<msg time="2025-10-01T15:11:55.960166" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-01T15:11:55.960773" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
+<msg time="2025-10-01T15:11:55.961190" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-01T15:11:55.961377" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-01T15:11:55.961481" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-01T15:11:55.961574" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-01T15:11:55.961661" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-01T15:11:55.961761" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-01T15:11:55.961853" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-01T15:11:55.961941" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-01T15:11:55.962039" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-01T15:11:55.962127" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-01T15:11:55.962214" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-01T15:11:55.962324" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-01T15:11:55.962413" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-01T15:11:55.962499" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-01T15:11:55.962579" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-01T15:11:55.962819" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-01T15:11:55.962931" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-01T15:11:55.963613" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<var>${eds_config}</var>
+<arg>${TARGET_HOSTNAME}</arg>
+<doc>Lookup server configuration from EDS sheet based on hostname</doc>
+<status status="PASS" start="2025-10-01T15:11:55.917732" elapsed="0.046029"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-01T15:11:55.966368" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
+<arg>${TARGET_IP}</arg>
+<arg>${eds_config['ip']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-01T15:11:55.964224" elapsed="0.002291"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T15:11:55.968894" level="INFO">📋 Target Server: alhxvdvitap01</msg>
+<arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T15:11:55.967466" elapsed="0.001993"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T15:11:55.970449" level="INFO">📋 Target IP: 10.26.216.107</msg>
+<arg>📋 Target IP: ${TARGET_IP}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T15:11:55.969928" elapsed="0.001143"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T15:11:55.972330" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
+<arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T15:11:55.971662" elapsed="0.001172"/>
+</kw>
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${TARGET_IP}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2025-10-01T15:11:55.973319" elapsed="0.000565"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2025-10-01T15:11:55.974996" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
+<msg time="2025-10-01T15:11:58.973795" level="FAIL">TimeoutError: timed out</msg>
+<arg>${SSH_USERNAME}</arg>
+<arg>${SSH_PASSWORD}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="FAIL" start="2025-10-01T15:11:55.974329" elapsed="3.011940">TimeoutError: timed out</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ SSH connection established successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-01T15:11:58.986982" elapsed="0.000104"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Test-11 environment initialized</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-01T15:11:58.987556" elapsed="0.000092"/>
+</kw>
+<doc>🏗️ Set up test environment for services validation</doc>
+<status status="FAIL" start="2025-10-01T15:11:55.912393" elapsed="3.075756">TimeoutError: timed out</status>
+</kw>
+<test id="s1-t1" name="Critical - Connect to Target Server" line="20">
+<doc>🔗 Establish direct connection to target machine via SSH</doc>
+<tag>connection</tag>
+<tag>critical</tag>
+<tag>infrastructure</tag>
+<tag>ssh</tag>
+<status status="FAIL" start="2025-10-01T15:11:58.988894" elapsed="0.002234">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t2" name="Critical - List All Running Services" line="33">
+<doc>📋 Execute systemctl to list all services and their current status</doc>
+<tag>critical</tag>
+<tag>data_collection</tag>
+<tag>services</tag>
+<tag>systemctl</tag>
+<status status="FAIL" start="2025-10-01T15:11:58.992696" elapsed="0.001358">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t3" name="Critical - Document Service Status to File" line="49">
+<doc>💾 Save complete service list output to file for compliance review</doc>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>documentation</tag>
+<tag>file_output</tag>
+<status status="FAIL" start="2025-10-01T15:11:58.995657" elapsed="0.001232">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t4" name="Critical - Validate Required Services Enabled" line="67">
+<doc>✅ Verify required services (autofs, sshd, sssd, chronyd, ntpd, syslog) are enabled</doc>
+<tag>critical</tag>
+<tag>enabled</tag>
+<tag>services</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-01T15:11:59.000066" elapsed="0.001589">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t5" name="Critical - Validate Unnecessary Services Disabled" line="85">
+<doc>❌ Verify unnecessary services (iptables, selinux) are disabled</doc>
+<tag>critical</tag>
+<tag>disabled</tag>
+<tag>security</tag>
+<tag>services</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-01T15:11:59.002946" elapsed="0.001064">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t6" name="Normal - Service Dependency Analysis" line="103">
+<doc>🔗 Analyze service dependencies and relationships</doc>
+<tag>analysis</tag>
+<tag>dependencies</tag>
+<tag>normal</tag>
+<tag>services</tag>
+<status status="FAIL" start="2025-10-01T15:11:59.005232" elapsed="0.001361">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t7" name="Normal - Failed Services Report" line="121">
+<doc>⚠️ Identify and report any failed services on the system</doc>
+<tag>failed</tag>
+<tag>monitoring</tag>
+<tag>normal</tag>
+<tag>troubleshooting</tag>
+<status status="FAIL" start="2025-10-01T15:11:59.008019" elapsed="0.001057">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t8" name="Normal - Service Startup Time Analysis" line="139">
+<doc>⏱️ Analyze system boot time and service startup performance</doc>
+<tag>boot</tag>
+<tag>normal</tag>
+<tag>performance</tag>
+<tag>timing</tag>
+<status status="FAIL" start="2025-10-01T15:11:59.010422" elapsed="0.002708">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t9" name="Normal - Security Services Status" line="155">
+<doc>🔒 Check status of security-related services and configurations</doc>
+<tag>firewall</tag>
+<tag>normal</tag>
+<tag>security</tag>
+<tag>selinux</tag>
+<status status="FAIL" start="2025-10-01T15:11:59.015214" elapsed="0.000805">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<kw name="Close All SSH Connections" owner="services_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T15:11:59.018155" level="INFO">🔌 Closing SSH connections...</msg>
+<arg>🔌 Closing SSH connections...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T15:11:59.017957" elapsed="0.000521"/>
+</kw>
+<kw name="Close All Connections" owner="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" start="2025-10-01T15:11:59.018811" elapsed="0.000193"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T15:11:59.019448" level="INFO">✅ SSH connections closed</msg>
+<arg>✅ SSH connections closed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T15:11:59.019132" elapsed="0.000700"/>
+</kw>
+<doc>🔌 Close all SSH connections</doc>
+<status status="PASS" start="2025-10-01T15:11:59.017635" elapsed="0.002377"/>
+</kw>
+<doc>⚙️ Services Validation Test Suite - Test-11
+🔍 Process: Find hostname in EDS → SSH to server → Collect service status data → Document all running services
+✅ Validates: Required services (autofs, sshd, sssd, chronyd, ntpd, syslog) are enabled
+❌ Validates: Unnecessary services (iptables, selinux) are disabled
+📊 Documents complete service list for manual compliance review</doc>
+<status status="FAIL" start="2025-10-01T15:11:52.566820" elapsed="6.453251">Suite setup failed:
+TimeoutError: timed out</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="9" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">analysis</stat>
+<stat pass="0" fail="1" skip="0">boot</stat>
+<stat pass="0" fail="1" skip="0">compliance</stat>
+<stat pass="0" fail="1" skip="0">connection</stat>
+<stat pass="0" fail="5" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">data_collection</stat>
+<stat pass="0" fail="1" skip="0">dependencies</stat>
+<stat pass="0" fail="1" skip="0">disabled</stat>
+<stat pass="0" fail="1" skip="0">documentation</stat>
+<stat pass="0" fail="1" skip="0">enabled</stat>
+<stat pass="0" fail="1" skip="0">failed</stat>
+<stat pass="0" fail="1" skip="0">file_output</stat>
+<stat pass="0" fail="1" skip="0">firewall</stat>
+<stat pass="0" fail="1" skip="0">infrastructure</stat>
+<stat pass="0" fail="1" skip="0">monitoring</stat>
+<stat pass="0" fail="4" skip="0">normal</stat>
+<stat pass="0" fail="1" skip="0">performance</stat>
+<stat pass="0" fail="2" skip="0">security</stat>
+<stat pass="0" fail="1" skip="0">selinux</stat>
+<stat pass="0" fail="4" skip="0">services</stat>
+<stat pass="0" fail="1" skip="0">ssh</stat>
+<stat pass="0" fail="1" skip="0">systemctl</stat>
+<stat pass="0" fail="1" skip="0">timing</stat>
+<stat pass="0" fail="1" skip="0">troubleshooting</stat>
+<stat pass="0" fail="2" skip="0">validation</stat>
+</tag>
+<suite>
+<stat name="Services Validation" id="s1" pass="0" fail="9" skip="0">Services Validation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
