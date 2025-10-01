@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-01T16:14:11.496821" rpa="false" schemaversion="5">
+<suite id="s1" name="Event Logs" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test22_event_logs\event_logs.robot">
+<kw name="Initialize Event Logs Test Environment" owner="logs_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:12.803446" level="INFO">🚀 Initializing Test-22: Event Logs &amp; Critical Error Validation Environment...</msg>
+<arg>🚀 Initializing Test-22: Event Logs &amp; Critical Error Validation Environment...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:12.803194" elapsed="0.000661"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-01T16:14:12.804496" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test22_event_logs\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test22_event_logs\data&lt;/a&gt;' already exists.</msg>
+<arg>${DATA_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-01T16:14:12.804108" elapsed="0.000474"/>
+</kw>
+<kw name="Lookup Server Config" owner="EDSLookup">
+<msg time="2025-10-01T16:14:12.835225" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-01T16:14:12.835534" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
+<msg time="2025-10-01T16:14:12.835600" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-01T16:14:12.835648" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-01T16:14:12.835688" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-01T16:14:12.835720" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-01T16:14:12.835750" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-01T16:14:12.835786" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-01T16:14:12.835819" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-01T16:14:12.835852" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-01T16:14:12.835889" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-01T16:14:12.835922" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-01T16:14:12.835970" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-01T16:14:12.836003" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-01T16:14:12.836034" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-01T16:14:12.836066" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-01T16:14:12.836097" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-01T16:14:12.836128" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-01T16:14:12.836166" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-01T16:14:12.836321" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<var>${eds_config}</var>
+<arg>${TARGET_HOSTNAME}</arg>
+<doc>Lookup server configuration from EDS sheet based on hostname</doc>
+<status status="PASS" start="2025-10-01T16:14:12.804921" elapsed="0.031433"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-01T16:14:12.838597" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
+<arg>${TARGET_IP}</arg>
+<arg>${eds_config['ip']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-01T16:14:12.836563" elapsed="0.002104"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:12.839078" level="INFO">📋 Target Server: alhxvdvitap01</msg>
+<arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:12.838837" elapsed="0.001482"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:12.841436" level="INFO">📋 Target IP: 10.26.216.107</msg>
+<arg>📋 Target IP: ${TARGET_IP}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:12.840752" elapsed="0.001249"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:12.842820" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
+<arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:12.842404" elapsed="0.000675"/>
+</kw>
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${TARGET_IP}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2025-10-01T16:14:12.843283" elapsed="0.000322"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2025-10-01T16:14:12.844038" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
+<msg time="2025-10-01T16:14:15.858236" level="FAIL">TimeoutError: timed out</msg>
+<arg>${SSH_USERNAME}</arg>
+<arg>${SSH_PASSWORD}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="FAIL" start="2025-10-01T16:14:12.843762" elapsed="3.027045">TimeoutError: timed out</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ SSH connection established successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-01T16:14:15.872066" elapsed="0.000095"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Test-22 environment initialized</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-01T16:14:15.872744" elapsed="0.000062"/>
+</kw>
+<doc>🏗️ Set up test environment for event log validation</doc>
+<status status="FAIL" start="2025-10-01T16:14:12.802371" elapsed="3.071388">TimeoutError: timed out</status>
+</kw>
+<test id="s1-t1" name="Critical - Connect to Target Server" line="20">
+<doc>🔗 Establish direct connection to target machine via SSH</doc>
+<tag>connection</tag>
+<tag>critical</tag>
+<tag>infrastructure</tag>
+<tag>ssh</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.874152" elapsed="0.002747">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t2" name="Critical - Collect System Journal Logs (journalctl)" line="33">
+<doc>📋 Collect system journal logs using journalctl</doc>
+<tag>critical</tag>
+<tag>journalctl</tag>
+<tag>logs</tag>
+<tag>systemd</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.880667" elapsed="0.002093">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t3" name="Critical - Collect Boot Messages (dmesg)" line="51">
+<doc>🚀 Collect kernel boot messages using dmesg</doc>
+<tag>boot</tag>
+<tag>critical</tag>
+<tag>dmesg</tag>
+<tag>kernel</tag>
+<tag>logs</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.886807" elapsed="0.001576">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t4" name="Critical - Collect System Log Files" line="70">
+<doc>📂 Collect important system log files from /var/log</doc>
+<tag>critical</tag>
+<tag>logs</tag>
+<tag>system</tag>
+<tag>var_log</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.891272" elapsed="0.002901">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t5" name="Critical - Check for Critical Errors in Journalctl" line="88">
+<doc>⚠️ Search for critical and emergency level errors in journal</doc>
+<tag>critical</tag>
+<tag>errors</tag>
+<tag>journalctl</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.896415" elapsed="0.001230">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t6" name="Critical - Validate Clean Boot Sequence" line="107">
+<doc>🚀 Validate system boot sequence is clean without errors</doc>
+<tag>boot</tag>
+<tag>critical</tag>
+<tag>sequence</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.899116" elapsed="0.000864">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t7" name="Critical - Validate Service Startup Status" line="122">
+<doc>🔧 Verify all critical services started successfully</doc>
+<tag>critical</tag>
+<tag>services</tag>
+<tag>startup</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.900999" elapsed="0.000862">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t8" name="Critical - Check Log Rotation Configuration" line="137">
+<doc>🔄 Validate log rotation is properly configured</doc>
+<tag>configuration</tag>
+<tag>critical</tag>
+<tag>logrotate</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.902989" elapsed="0.000655">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t9" name="Normal - Analyze Repeating Error Patterns" line="152">
+<doc>🔁 Search for repeating error patterns that might indicate issues</doc>
+<tag>analysis</tag>
+<tag>errors</tag>
+<tag>normal</tag>
+<tag>patterns</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.906130" elapsed="0.001163">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t10" name="Normal - Check Authentication Logs" line="167">
+<doc>🔐 Review authentication logs for failed login attempts</doc>
+<tag>authentication</tag>
+<tag>logs</tag>
+<tag>normal</tag>
+<tag>security</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.910848" elapsed="0.001593">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t11" name="Normal - Check Kernel Messages for Errors" line="182">
+<doc>🖥️ Analyze kernel messages for hardware or driver errors</doc>
+<tag>errors</tag>
+<tag>hardware</tag>
+<tag>kernel</tag>
+<tag>normal</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.913531" elapsed="0.001172">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t12" name="Normal - Validate Disk Space for Logs" line="197">
+<doc>💾 Check if sufficient disk space is available for logging</doc>
+<tag>capacity</tag>
+<tag>disk_space</tag>
+<tag>logs</tag>
+<tag>normal</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.916076" elapsed="0.000872">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t13" name="Normal - Check Log File Permissions" line="209">
+<doc>🔒 Verify log files have correct permissions</doc>
+<tag>logs</tag>
+<tag>normal</tag>
+<tag>permissions</tag>
+<tag>security</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.918058" elapsed="0.001193">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t14" name="Normal - Check SELinux Denial Logs" line="224">
+<doc>🔒 Check for SELinux denials in logs</doc>
+<tag>audit</tag>
+<tag>normal</tag>
+<tag>security</tag>
+<tag>selinux</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.920250" elapsed="0.000924">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t15" name="Normal - Check Application Specific Logs" line="239">
+<doc>📱 Collect and validate application-specific logs</doc>
+<tag>applications</tag>
+<tag>logs</tag>
+<tag>normal</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.922182" elapsed="0.001251">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t16" name="Normal - Validate Rsyslog Configuration" line="254">
+<doc>📡 Verify rsyslog is properly configured</doc>
+<tag>configuration</tag>
+<tag>logging</tag>
+<tag>normal</tag>
+<tag>rsyslog</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.924505" elapsed="0.001061">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t17" name="Normal - Check Log Size and Growth Rate" line="269">
+<doc>📈 Analyze log file sizes and growth rates</doc>
+<tag>growth</tag>
+<tag>log_size</tag>
+<tag>monitoring</tag>
+<tag>normal</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.927047" elapsed="0.001541">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t18" name="Normal - Check System Uptime and Reboot History" line="284">
+<doc>⏱️ Check system uptime and analyze reboot history</doc>
+<tag>normal</tag>
+<tag>reboot</tag>
+<tag>stability</tag>
+<tag>uptime</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.929963" elapsed="0.000917">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t19" name="Normal - Comprehensive Log Health Summary" line="299">
+<doc>📊 Generate comprehensive summary of log health analysis</doc>
+<tag>compliance</tag>
+<tag>comprehensive</tag>
+<tag>normal</tag>
+<tag>summary</tag>
+<status status="FAIL" start="2025-10-01T16:14:15.931791" elapsed="0.000826">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<kw name="Close All SSH Connections" owner="logs_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:15.935001" level="INFO">🔌 Closing SSH connections...</msg>
+<arg>🔌 Closing SSH connections...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:15.934643" elapsed="0.001103"/>
+</kw>
+<kw name="Close All Connections" owner="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" start="2025-10-01T16:14:15.936017" elapsed="0.000238"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:15.936694" level="INFO">✅ SSH connections closed</msg>
+<arg>✅ SSH connections closed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:15.936452" elapsed="0.000545"/>
+</kw>
+<doc>🔌 Close all SSH connections</doc>
+<status status="PASS" start="2025-10-01T16:14:15.934181" elapsed="0.002949"/>
+</kw>
+<doc>📋 Event Logs &amp; Critical Error Validation Test Suite - Test-22
+🔍 Process: Find hostname in EDS → SSH to server → Collect system logs → Validate no critical errors
+✅ Validates: No critical errors in logs, clean boot sequence, successful service starts, proper log rotation
+📊 Documents: journalctl output, dmesg, /var/log files, error patterns, boot messages, service status
+⚠️ Focus: System health validation through comprehensive log analysis</doc>
+<status status="FAIL" start="2025-10-01T16:14:11.499895" elapsed="4.437292">Suite setup failed:
+TimeoutError: timed out</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="19" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">analysis</stat>
+<stat pass="0" fail="1" skip="0">applications</stat>
+<stat pass="0" fail="1" skip="0">audit</stat>
+<stat pass="0" fail="1" skip="0">authentication</stat>
+<stat pass="0" fail="2" skip="0">boot</stat>
+<stat pass="0" fail="1" skip="0">capacity</stat>
+<stat pass="0" fail="1" skip="0">compliance</stat>
+<stat pass="0" fail="1" skip="0">comprehensive</stat>
+<stat pass="0" fail="2" skip="0">configuration</stat>
+<stat pass="0" fail="1" skip="0">connection</stat>
+<stat pass="0" fail="8" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">disk_space</stat>
+<stat pass="0" fail="1" skip="0">dmesg</stat>
+<stat pass="0" fail="3" skip="0">errors</stat>
+<stat pass="0" fail="1" skip="0">growth</stat>
+<stat pass="0" fail="1" skip="0">hardware</stat>
+<stat pass="0" fail="1" skip="0">infrastructure</stat>
+<stat pass="0" fail="2" skip="0">journalctl</stat>
+<stat pass="0" fail="2" skip="0">kernel</stat>
+<stat pass="0" fail="1" skip="0">logging</stat>
+<stat pass="0" fail="1" skip="0">logrotate</stat>
+<stat pass="0" fail="7" skip="0">logs</stat>
+<stat pass="0" fail="1" skip="0">log_size</stat>
+<stat pass="0" fail="1" skip="0">monitoring</stat>
+<stat pass="0" fail="11" skip="0">normal</stat>
+<stat pass="0" fail="1" skip="0">patterns</stat>
+<stat pass="0" fail="1" skip="0">permissions</stat>
+<stat pass="0" fail="1" skip="0">reboot</stat>
+<stat pass="0" fail="1" skip="0">rsyslog</stat>
+<stat pass="0" fail="3" skip="0">security</stat>
+<stat pass="0" fail="1" skip="0">selinux</stat>
+<stat pass="0" fail="1" skip="0">sequence</stat>
+<stat pass="0" fail="1" skip="0">services</stat>
+<stat pass="0" fail="1" skip="0">ssh</stat>
+<stat pass="0" fail="1" skip="0">stability</stat>
+<stat pass="0" fail="1" skip="0">startup</stat>
+<stat pass="0" fail="1" skip="0">summary</stat>
+<stat pass="0" fail="1" skip="0">system</stat>
+<stat pass="0" fail="1" skip="0">systemd</stat>
+<stat pass="0" fail="1" skip="0">uptime</stat>
+<stat pass="0" fail="5" skip="0">validation</stat>
+<stat pass="0" fail="1" skip="0">var_log</stat>
+</tag>
+<suite>
+<stat name="Event Logs" id="s1" pass="0" fail="19" skip="0">Event Logs</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

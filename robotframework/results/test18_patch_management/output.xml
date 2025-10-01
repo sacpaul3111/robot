@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-01T16:14:01.027878" rpa="false" schemaversion="5">
+<suite id="s1" name="Patch Management" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test18_patch_management\patch_management.robot">
+<kw name="Initialize Patch Management Test Environment" owner="patch_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:02.037656" level="INFO">🚀 Initializing Test-18: Patch Management &amp; RSA Authentication Environment...</msg>
+<arg>🚀 Initializing Test-18: Patch Management &amp; RSA Authentication Environment...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:02.037388" elapsed="0.000514"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-01T16:14:02.038528" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test18_patch_management\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test18_patch_management\data&lt;/a&gt;' already exists.</msg>
+<arg>${DATA_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-01T16:14:02.038247" elapsed="0.000361"/>
+</kw>
+<kw name="Lookup Server Config" owner="EDSLookup">
+<msg time="2025-10-01T16:14:02.066195" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-01T16:14:02.066472" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
+<msg time="2025-10-01T16:14:02.066529" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-01T16:14:02.066567" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-01T16:14:02.066601" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-01T16:14:02.066634" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-01T16:14:02.066665" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-01T16:14:02.066704" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-01T16:14:02.066739" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-01T16:14:02.066772" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-01T16:14:02.066810" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-01T16:14:02.066842" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-01T16:14:02.066874" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-01T16:14:02.066905" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-01T16:14:02.066937" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-01T16:14:02.066976" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-01T16:14:02.067005" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-01T16:14:02.067035" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-01T16:14:02.067070" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-01T16:14:02.067229" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<var>${eds_config}</var>
+<arg>${TARGET_HOSTNAME}</arg>
+<doc>Lookup server configuration from EDS sheet based on hostname</doc>
+<status status="PASS" start="2025-10-01T16:14:02.038765" elapsed="0.028496"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-01T16:14:02.070438" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
+<arg>${TARGET_IP}</arg>
+<arg>${eds_config['ip']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-01T16:14:02.067475" elapsed="0.003104"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:02.071525" level="INFO">📋 Target Server: alhxvdvitap01</msg>
+<arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:02.070970" elapsed="0.001961"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:02.073572" level="INFO">📋 Target IP: 10.26.216.107</msg>
+<arg>📋 Target IP: ${TARGET_IP}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:02.073159" elapsed="0.000619"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:02.074326" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
+<arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:02.074079" elapsed="0.000721"/>
+</kw>
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${TARGET_IP}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2025-10-01T16:14:02.075041" elapsed="0.000364"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2025-10-01T16:14:02.075921" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
+<msg time="2025-10-01T16:14:05.082911" level="FAIL">TimeoutError: timed out</msg>
+<arg>${SSH_USERNAME}</arg>
+<arg>${SSH_PASSWORD}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="FAIL" start="2025-10-01T16:14:02.075594" elapsed="3.015908">TimeoutError: timed out</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ SSH connection established successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-01T16:14:05.092205" elapsed="0.000102"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Test-18 environment initialized</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-01T16:14:05.092763" elapsed="0.000083"/>
+</kw>
+<doc>🏗️ Set up test environment for patch management and RSA validation</doc>
+<status status="FAIL" start="2025-10-01T16:14:02.036533" elapsed="3.056844">TimeoutError: timed out</status>
+</kw>
+<test id="s1-t1" name="Critical - Connect to Target Server" line="20">
+<doc>🔗 Establish direct connection to target machine via SSH</doc>
+<tag>connection</tag>
+<tag>critical</tag>
+<tag>infrastructure</tag>
+<tag>ssh</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.094051" elapsed="0.002246">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t2" name="Critical - Check RSA Agent Installation" line="33">
+<doc>🔐 Verify RSA SecurID agent is installed on the system</doc>
+<tag>agent</tag>
+<tag>critical</tag>
+<tag>installation</tag>
+<tag>rsa</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.098162" elapsed="0.001277">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t3" name="Critical - Validate RSA Configuration Files" line="48">
+<doc>📄 Check for RSA configuration files and validate their presence</doc>
+<tag>configuration</tag>
+<tag>critical</tag>
+<tag>files</tag>
+<tag>rsa</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.100997" elapsed="0.001068">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t4" name="Critical - Check RSA Authentication Settings" line="63">
+<doc>🔐 Verify RSA authentication is properly configured</doc>
+<tag>authentication</tag>
+<tag>critical</tag>
+<tag>rsa</tag>
+<tag>settings</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.104139" elapsed="0.002949">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t5" name="Critical - Test RSA Server Connectivity" line="75">
+<doc>🌐 Test connectivity to RSA authentication server</doc>
+<tag>connectivity</tag>
+<tag>critical</tag>
+<tag>network</tag>
+<tag>rsa</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.109503" elapsed="0.002113">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t6" name="Critical - Validate RSA Agent Status" line="91">
+<doc>🔧 Check if RSA agent service is running</doc>
+<tag>critical</tag>
+<tag>rsa</tag>
+<tag>service</tag>
+<tag>status</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.112955" elapsed="0.001509">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t7" name="Critical - Check Patch Management Registration" line="103">
+<doc>📦 Verify system is registered with patch management server (Ansible/Satellite)</doc>
+<tag>ansible</tag>
+<tag>critical</tag>
+<tag>patch_management</tag>
+<tag>registration</tag>
+<tag>satellite</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.115667" elapsed="0.002705">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t8" name="Normal - Validate Two-Factor Authentication Flow" line="118">
+<doc>🔐 Verify RSA two-factor authentication flow is ready</doc>
+<tag>2fa</tag>
+<tag>authentication_flow</tag>
+<tag>normal</tag>
+<tag>rsa</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.119835" elapsed="0.001490">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t9" name="Normal - Check RSA Token Configuration" line="130">
+<doc>🎫 Verify RSA token configuration and assignment</doc>
+<tag>configuration</tag>
+<tag>normal</tag>
+<tag>rsa</tag>
+<tag>token</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.123551" elapsed="0.001993">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t10" name="Normal - Validate Satellite Subscription Status" line="142">
+<doc>📦 Check Red Hat Satellite subscription status</doc>
+<tag>normal</tag>
+<tag>rhel</tag>
+<tag>satellite</tag>
+<tag>subscription</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.129899" elapsed="0.001607">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t11" name="Normal - Check Available Patches" line="157">
+<doc>🔄 Check for available patches and updates</doc>
+<tag>normal</tag>
+<tag>patches</tag>
+<tag>updates</tag>
+<tag>yum</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.133445" elapsed="0.001103">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t12" name="Normal - Validate Ansible Control Node Access" line="172">
+<doc>🤖 Verify connectivity and access to Ansible control node</doc>
+<tag>ansible</tag>
+<tag>connectivity</tag>
+<tag>control_node</tag>
+<tag>normal</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.136040" elapsed="0.001339">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t13" name="Normal - Check Patch Management Schedule" line="184">
+<doc>📅 Verify patch management schedule and maintenance windows</doc>
+<tag>maintenance</tag>
+<tag>normal</tag>
+<tag>patches</tag>
+<tag>schedule</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.138653" elapsed="0.002596">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t14" name="Normal - Validate Security Updates Status" line="196">
+<doc>🔒 Check status of security patches and critical updates</doc>
+<tag>critical</tag>
+<tag>normal</tag>
+<tag>security</tag>
+<tag>updates</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.143139" elapsed="0.001343">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t15" name="Normal - Comprehensive Patch Management Summary" line="211">
+<doc>📊 Generate comprehensive summary of patch management and RSA configuration</doc>
+<tag>compliance</tag>
+<tag>comprehensive</tag>
+<tag>normal</tag>
+<tag>summary</tag>
+<status status="FAIL" start="2025-10-01T16:14:05.145786" elapsed="0.001332">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<kw name="Close All SSH Connections" owner="patch_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:05.150827" level="INFO">🔌 Closing SSH connections...</msg>
+<arg>🔌 Closing SSH connections...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:05.150350" elapsed="0.000819"/>
+</kw>
+<kw name="Close All Connections" owner="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" start="2025-10-01T16:14:05.151681" elapsed="0.000384"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-01T16:14:05.152724" level="INFO">✅ SSH connections closed</msg>
+<arg>✅ SSH connections closed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-01T16:14:05.152362" elapsed="0.000824"/>
+</kw>
+<doc>🔌 Close all SSH connections</doc>
+<status status="PASS" start="2025-10-01T16:14:05.149606" elapsed="0.003786"/>
+</kw>
+<doc>🔐 Patch Management &amp; RSA Authentication Test Suite - Test-18
+🔍 Process: Find hostname in EDS → SSH to server → Check RSA configuration → Validate patch management registration
+✅ Validates: RSA agent installation, RSA configuration files, RSA authentication settings, RSA server connectivity
+📊 Documents: Patch management server registration (Ansible/Satellite), RSA agent status, authentication flow readiness
+🔐 Focus: Two-factor authentication (RSA) setup validation for patch management access</doc>
+<status status="FAIL" start="2025-10-01T16:14:01.030363" elapsed="4.123125">Suite setup failed:
+TimeoutError: timed out</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="15" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">2fa</stat>
+<stat pass="0" fail="1" skip="0">agent</stat>
+<stat pass="0" fail="2" skip="0">ansible</stat>
+<stat pass="0" fail="1" skip="0">authentication</stat>
+<stat pass="0" fail="1" skip="0">authentication_flow</stat>
+<stat pass="0" fail="1" skip="0">compliance</stat>
+<stat pass="0" fail="1" skip="0">comprehensive</stat>
+<stat pass="0" fail="2" skip="0">configuration</stat>
+<stat pass="0" fail="1" skip="0">connection</stat>
+<stat pass="0" fail="2" skip="0">connectivity</stat>
+<stat pass="0" fail="1" skip="0">control_node</stat>
+<stat pass="0" fail="8" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">files</stat>
+<stat pass="0" fail="1" skip="0">infrastructure</stat>
+<stat pass="0" fail="1" skip="0">installation</stat>
+<stat pass="0" fail="1" skip="0">maintenance</stat>
+<stat pass="0" fail="1" skip="0">network</stat>
+<stat pass="0" fail="8" skip="0">normal</stat>
+<stat pass="0" fail="2" skip="0">patches</stat>
+<stat pass="0" fail="1" skip="0">patch_management</stat>
+<stat pass="0" fail="1" skip="0">registration</stat>
+<stat pass="0" fail="1" skip="0">rhel</stat>
+<stat pass="0" fail="7" skip="0">rsa</stat>
+<stat pass="0" fail="2" skip="0">satellite</stat>
+<stat pass="0" fail="1" skip="0">schedule</stat>
+<stat pass="0" fail="1" skip="0">security</stat>
+<stat pass="0" fail="1" skip="0">service</stat>
+<stat pass="0" fail="1" skip="0">settings</stat>
+<stat pass="0" fail="1" skip="0">ssh</stat>
+<stat pass="0" fail="1" skip="0">status</stat>
+<stat pass="0" fail="1" skip="0">subscription</stat>
+<stat pass="0" fail="1" skip="0">summary</stat>
+<stat pass="0" fail="1" skip="0">token</stat>
+<stat pass="0" fail="2" skip="0">updates</stat>
+<stat pass="0" fail="1" skip="0">yum</stat>
+</tag>
+<suite>
+<stat name="Patch Management" id="s1" pass="0" fail="15" skip="0">Patch Management</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

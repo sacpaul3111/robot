@@ -1,101 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-01T15:12:00.255867" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-01T16:13:56.020236" rpa="false" schemaversion="5">
 <suite id="s1" name="Mail Configuration" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test17_mail_configuration\mail_configuration.robot">
 <kw name="Initialize Mail Test Environment" owner="mail_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T15:12:01.524654" level="INFO">🚀 Initializing Test-17: Mail Configuration Validation Environment...</msg>
+<msg time="2025-10-01T16:13:56.985999" level="INFO">🚀 Initializing Test-17: Mail Configuration Validation Environment...</msg>
 <arg>🚀 Initializing Test-17: Mail Configuration Validation Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T15:12:01.524408" elapsed="0.000875"/>
+<status status="PASS" start="2025-10-01T16:13:56.985746" elapsed="0.000572"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-01T15:12:01.526647" level="INFO" html="true">Created directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test17_mail_configuration\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test17_mail_configuration\data&lt;/a&gt;'.</msg>
+<msg time="2025-10-01T16:13:56.986825" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test17_mail_configuration\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test17_mail_configuration\data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-01T15:12:01.525677" elapsed="0.001097"/>
+<status status="PASS" start="2025-10-01T16:13:56.986576" elapsed="0.000323"/>
 </kw>
 <kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-10-01T15:12:01.562534" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
-<msg time="2025-10-01T15:12:01.563221" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
-<msg time="2025-10-01T15:12:01.563391" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
-<msg time="2025-10-01T15:12:01.563465" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
-<msg time="2025-10-01T15:12:01.563524" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
-<msg time="2025-10-01T15:12:01.563611" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
-<msg time="2025-10-01T15:12:01.563666" level="INFO">Extracted domain from EDS: gnscet.com</msg>
-<msg time="2025-10-01T15:12:01.563716" level="INFO">Extracted CPU cores from EDS: 8</msg>
-<msg time="2025-10-01T15:12:01.563754" level="INFO">Extracted RAM from EDS: 16</msg>
-<msg time="2025-10-01T15:12:01.563793" level="INFO">Extracted storage type from EDS: VSAN</msg>
-<msg time="2025-10-01T15:12:01.563841" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
-<msg time="2025-10-01T15:12:01.563881" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
-<msg time="2025-10-01T15:12:01.563920" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
-<msg time="2025-10-01T15:12:01.563956" level="INFO">Extracted logical volume/partition from EDS: /</msg>
-<msg time="2025-10-01T15:12:01.563992" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-01T15:12:01.564032" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-01T15:12:01.564077" level="INFO">Extracted drive purpose from EDS: OS</msg>
-<msg time="2025-10-01T15:12:01.564118" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
-<msg time="2025-10-01T15:12:01.564188" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
-<msg time="2025-10-01T15:12:01.564550" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<msg time="2025-10-01T16:13:57.010494" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-01T16:13:57.010744" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
+<msg time="2025-10-01T16:13:57.010807" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-01T16:13:57.010847" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-01T16:13:57.010881" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-01T16:13:57.010912" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-01T16:13:57.010943" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-01T16:13:57.010981" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-01T16:13:57.011014" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-01T16:13:57.011046" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-01T16:13:57.011083" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-01T16:13:57.011115" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-01T16:13:57.011151" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-01T16:13:57.011194" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-01T16:13:57.011244" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-01T16:13:57.011292" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-01T16:13:57.011331" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-01T16:13:57.011374" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-01T16:13:57.011421" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-01T16:13:57.012043" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
 <var>${eds_config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
 <doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="PASS" start="2025-10-01T15:12:01.527115" elapsed="0.037483"/>
+<status status="PASS" start="2025-10-01T16:13:56.987036" elapsed="0.025163"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T15:12:01.567474" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
+<msg time="2025-10-01T16:13:57.015460" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
 <arg>${TARGET_IP}</arg>
 <arg>${eds_config['ip']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T15:12:01.564980" elapsed="0.002590"/>
+<status status="PASS" start="2025-10-01T16:13:57.012743" elapsed="0.002803"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T15:12:01.568456" level="INFO">📋 Target Server: alhxvdvitap01</msg>
+<msg time="2025-10-01T16:13:57.015972" level="INFO">📋 Target Server: alhxvdvitap01</msg>
 <arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T15:12:01.567935" elapsed="0.001216"/>
+<status status="PASS" start="2025-10-01T16:13:57.015723" elapsed="0.000954"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T15:12:01.569796" level="INFO">📋 Target IP: 10.26.216.107</msg>
+<msg time="2025-10-01T16:13:57.017773" level="INFO">📋 Target IP: 10.26.216.107</msg>
 <arg>📋 Target IP: ${TARGET_IP}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T15:12:01.569541" elapsed="0.000459"/>
+<status status="PASS" start="2025-10-01T16:13:57.017182" elapsed="0.001387"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T15:12:01.570647" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
+<msg time="2025-10-01T16:13:57.019189" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
 <arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T15:12:01.570337" elapsed="0.000531"/>
+<status status="PASS" start="2025-10-01T16:13:57.018945" elapsed="0.000439"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${TARGET_IP}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-10-01T15:12:01.571183" elapsed="0.000346"/>
+<status status="PASS" start="2025-10-01T16:13:57.019607" elapsed="0.000334"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
-<msg time="2025-10-01T15:12:01.572036" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
-<msg time="2025-10-01T15:12:04.585955" level="FAIL">TimeoutError: timed out</msg>
+<msg time="2025-10-01T16:13:57.020292" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
+<msg time="2025-10-01T16:14:00.032133" level="FAIL">TimeoutError: timed out</msg>
 <arg>${SSH_USERNAME}</arg>
 <arg>${SSH_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="FAIL" start="2025-10-01T15:12:01.571717" elapsed="3.022299">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-01T16:13:57.020078" elapsed="3.019876">TimeoutError: timed out</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ SSH connection established successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-01T15:12:04.594464" elapsed="0.000068"/>
+<status status="NOT RUN" start="2025-10-01T16:14:00.040460" elapsed="0.000072"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Test-17 environment initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-01T15:12:04.594802" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-10-01T16:14:00.040811" elapsed="0.000052"/>
 </kw>
 <doc>🏗️ Set up test environment for mail configuration validation</doc>
-<status status="FAIL" start="2025-10-01T15:12:01.523618" elapsed="3.071567">TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-01T16:13:56.984948" elapsed="3.056235">TimeoutError: timed out</status>
 </kw>
 <test id="s1-t1" name="Critical - Connect to Target Server" line="20">
 <doc>🔗 Establish direct connection to target machine via SSH</doc>
@@ -103,7 +103,7 @@
 <tag>critical</tag>
 <tag>infrastructure</tag>
 <tag>ssh</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.595420" elapsed="0.001621">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.041422" elapsed="0.001419">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t2" name="Critical - Collect DNS MX Records" line="33">
@@ -112,7 +112,7 @@ TimeoutError: timed out</status>
 <tag>dns</tag>
 <tag>mail</tag>
 <tag>mx_records</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.598899" elapsed="0.001187">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.045553" elapsed="0.002202">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t3" name="Critical - Collect Mail.rc Configuration" line="49">
@@ -121,7 +121,7 @@ TimeoutError: timed out</status>
 <tag>critical</tag>
 <tag>mail_rc</tag>
 <tag>smtp</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.602550" elapsed="0.002036">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.049545" elapsed="0.001774">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t4" name="Critical - Validate SMTP Relay Configuration" line="64">
@@ -130,7 +130,7 @@ TimeoutError: timed out</status>
 <tag>relay</tag>
 <tag>smtp</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.607772" elapsed="0.002692">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.053147" elapsed="0.002484">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t5" name="Critical - Test SMTP Port Connectivity" line="77">
@@ -139,7 +139,7 @@ TimeoutError: timed out</status>
 <tag>critical</tag>
 <tag>port25</tag>
 <tag>smtp</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.616023" elapsed="0.002094">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.058270" elapsed="0.001929">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t6" name="Normal - Send Test Email" line="91">
@@ -148,7 +148,7 @@ TimeoutError: timed out</status>
 <tag>normal</tag>
 <tag>smtp</tag>
 <tag>test_email</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.620548" elapsed="0.002120">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.063421" elapsed="0.002621">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t7" name="Normal - Check Mail Queue Status" line="105">
@@ -157,7 +157,7 @@ TimeoutError: timed out</status>
 <tag>monitoring</tag>
 <tag>normal</tag>
 <tag>postfix</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.625004" elapsed="0.002208">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.068633" elapsed="0.001981">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t8" name="Normal - Validate Mail Subsystem Services" line="122">
@@ -166,7 +166,7 @@ TimeoutError: timed out</status>
 <tag>postfix</tag>
 <tag>sendmail</tag>
 <tag>services</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.631087" elapsed="0.001547">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.073722" elapsed="0.002569">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t9" name="Normal - Collect Mail Logs" line="134">
@@ -175,7 +175,7 @@ TimeoutError: timed out</status>
 <tag>maillog</tag>
 <tag>monitoring</tag>
 <tag>normal</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.638581" elapsed="0.001753">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.078539" elapsed="0.001517">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t10" name="Normal - Validate Firewall Rules for SMTP" line="149">
@@ -184,7 +184,7 @@ TimeoutError: timed out</status>
 <tag>normal</tag>
 <tag>security</tag>
 <tag>smtp</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.642148" elapsed="0.002069">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.083097" elapsed="0.001637">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t11" name="Normal - Test SMTP Authentication" line="162">
@@ -193,7 +193,7 @@ TimeoutError: timed out</status>
 <tag>normal</tag>
 <tag>security</tag>
 <tag>smtp</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.646685" elapsed="0.001283">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.086417" elapsed="0.001655">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t12" name="Normal - Validate Mail Aliases Configuration" line="175">
@@ -202,7 +202,7 @@ TimeoutError: timed out</status>
 <tag>configuration</tag>
 <tag>mail</tag>
 <tag>normal</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.650910" elapsed="0.001580">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.090693" elapsed="0.001310">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <test id="s1-t13" name="Normal - Comprehensive Mail Configuration Summary" line="190">
@@ -211,37 +211,37 @@ TimeoutError: timed out</status>
 <tag>comprehensive</tag>
 <tag>normal</tag>
 <tag>summary</tag>
-<status status="FAIL" start="2025-10-01T15:12:04.653808" elapsed="0.001323">Parent suite setup failed:
+<status status="FAIL" start="2025-10-01T16:14:00.094147" elapsed="0.001509">Parent suite setup failed:
 TimeoutError: timed out</status>
 </test>
 <kw name="Close All SSH Connections" owner="mail_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T15:12:04.660786" level="INFO">🔌 Closing SSH connections...</msg>
+<msg time="2025-10-01T16:14:00.100136" level="INFO">🔌 Closing SSH connections...</msg>
 <arg>🔌 Closing SSH connections...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T15:12:04.660117" elapsed="0.001536"/>
+<status status="PASS" start="2025-10-01T16:14:00.099748" elapsed="0.001147"/>
 </kw>
 <kw name="Close All Connections" owner="SSHLibrary">
 <doc>Closes all open connections.</doc>
-<status status="PASS" start="2025-10-01T15:12:04.662204" elapsed="0.000370"/>
+<status status="PASS" start="2025-10-01T16:14:00.101433" elapsed="0.000420"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T15:12:04.663189" level="INFO">✅ SSH connections closed</msg>
+<msg time="2025-10-01T16:14:00.102531" level="INFO">✅ SSH connections closed</msg>
 <arg>✅ SSH connections closed</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T15:12:04.662845" elapsed="0.001110"/>
+<status status="PASS" start="2025-10-01T16:14:00.102181" elapsed="0.000878"/>
 </kw>
 <doc>🔌 Close all SSH connections</doc>
-<status status="PASS" start="2025-10-01T15:12:04.658862" elapsed="0.005500"/>
+<status status="PASS" start="2025-10-01T16:14:00.099101" elapsed="0.004305"/>
 </kw>
 <doc>📧 Mail Configuration Validation Test Suite - Test-17
 🔍 Process: Find hostname in EDS → SSH to server → Collect mail/SMTP configuration → Validate relay settings
 ✅ Validates: SMTP relay server (mail.domain.com), port connectivity, mail.rc configuration, test email delivery
 📊 Documents: MX records, SMTP connectivity, mail queue status, relay configuration
 ⚠️ Note: This test validates mail configuration if required in project scope</doc>
-<status status="FAIL" start="2025-10-01T15:12:00.258045" elapsed="4.406506">Suite setup failed:
+<status status="FAIL" start="2025-10-01T16:13:56.022346" elapsed="4.081186">Suite setup failed:
 TimeoutError: timed out</status>
 </suite>
 <statistics>
