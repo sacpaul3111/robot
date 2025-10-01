@@ -4,7 +4,7 @@ Documentation    📋 Variables for Test-22: Event Logs & Critical Error Validat
 
 *** Variables ***
 # Target Server Configuration
-${TARGET_HOSTNAME}              alhxvdvitap01
+${TARGET_HOSTNAME}              # Set via command line --variable TARGET_HOSTNAME:value
 
 # Log Collection Settings
 ${LOG_LINES_TO_COLLECT}         500

@@ -97,7 +97,7 @@ ${SSH_PASSWORD}           password
 ${SSH_TIMEOUT}            30
 
 # 🎯 Target Server Configuration (from EDS)
-${TARGET_HOSTNAME}        test-server-01
+${TARGET_HOSTNAME}        # Set via command line --variable TARGET_HOSTNAME:value
 ${TARGET_IP}              ${EMPTY}    # Will be populated from EDS lookup
 
 # 📝 Test Email Configuration

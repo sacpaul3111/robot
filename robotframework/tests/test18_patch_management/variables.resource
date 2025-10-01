@@ -4,7 +4,7 @@ Documentation    🔐 Variables for Test-18: Patch Management & RSA Authenticati
 
 *** Variables ***
 # Target Server Configuration
-${TARGET_HOSTNAME}              alhxvdvitap01
+${TARGET_HOSTNAME}              # Set via command line --variable TARGET_HOSTNAME:value
 
 # RSA Server Configuration
 ${EXPECTED_RSA_SERVER}          rsa.domain.com

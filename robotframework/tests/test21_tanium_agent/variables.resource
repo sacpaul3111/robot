@@ -4,7 +4,7 @@ Documentation    🔍 Variables for Test-21: Tanium Agent Validation
 
 *** Variables ***
 # Target Server Configuration
-${TARGET_HOSTNAME}              alhxvdvitap01
+${TARGET_HOSTNAME}              # Set via command line --variable TARGET_HOSTNAME:value
 
 # Tanium Server Configuration
 ${EXPECTED_TANIUM_SERVER}       tanium.domain.com
