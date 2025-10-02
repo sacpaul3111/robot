@@ -1,0 +1,121 @@
+---
+#############################################################################
+# Ansible Task File: Execute Individual Test Suite
+# Description: Runs a single Robot Framework test suite
+# This file is included by run_tests.yml
+#############################################################################
+
+- name: Extract test suite information
+  set_fact:
+    test_suite_path: "{{ test_dir.path }}"
+    test_suite_name: "{{ test_dir.path | basename }}"
+    test_suite_id: "{{ test_dir.path | basename | regex_replace('^(test[0-9]+)_.*', '\\1') }}"
+
+- name: Display test suite being executed
+  debug:
+    msg:
+      - "========================================================"
+      - "Executing: {{ test_suite_name }}"
+      - "Test ID:   {{ test_suite_id }}"
+      - "========================================================"
+
+- name: Create test suite output directory
+  file:
+    path: "{{ robot_project_dir }}/{{ robot_output_dir }}/{{ test_suite_name }}"
+    state: directory
+    mode: '0755'
+
+- name: Find robot file in test suite directory
+  find:
+    paths: "{{ test_suite_path }}"
+    patterns: '*.robot'
+    file_type: file
+  register: robot_files
+
+- name: Skip if no robot file found
+  debug:
+    msg: "⚠️  No .robot file found in {{ test_suite_name }}, skipping..."
+  when: robot_files.files | length == 0
+
+- name: Execute Robot Framework test suite
+  command: >
+    {{ python_executable }} -m robot
+    --variable SSH_USERNAME:{{ robot_username }}
+    --variable SSH_PASSWORD:{{ robot_password }}
+    --variable TARGET_HOSTNAME:{{ robot_target_hostname }}
+    --variable TEST_SUITE_ID:{{ test_suite_id }}
+    --outputdir {{ robot_project_dir }}/{{ robot_output_dir }}/{{ test_suite_name }}
+    {{ robot_files.files[0].path }}
+  args:
+    chdir: "{{ robot_project_dir }}"
+  register: robot_execution
+  ignore_errors: yes
+  when: robot_files.files | length > 0
+
+- name: Check if output.xml was created
+  stat:
+    path: "{{ robot_project_dir }}/{{ robot_output_dir }}/{{ test_suite_name }}/output.xml"
+  register: output_xml_stat
+  when: robot_files.files | length > 0
+
+- name: Add output file to consolidation list
+  set_fact:
+    all_output_files: "{{ all_output_files + [robot_project_dir + '/' + robot_output_dir + '/' + test_suite_name + '/output.xml'] }}"
+  when:
+    - robot_files.files | length > 0
+    - output_xml_stat.stat.exists
+
+- name: Parse test results from output.xml
+  xml:
+    path: "{{ robot_project_dir }}/{{ robot_output_dir }}/{{ test_suite_name }}/output.xml"
+    xpath: /robot/statistics/total/stat
+    content: attribute
+  register: test_statistics
+  when:
+    - robot_files.files | length > 0
+    - output_xml_stat.stat.exists
+  ignore_errors: yes
+
+- name: Extract pass/fail counts
+  set_fact:
+    suite_passed: "{{ test_statistics.matches[0].stat.pass | default('0') | int }}"
+    suite_failed: "{{ test_statistics.matches[0].stat.fail | default('0') | int }}"
+    suite_total: "{{ (test_statistics.matches[0].stat.pass | default('0') | int) + (test_statistics.matches[0].stat.fail | default('0') | int) }}"
+  when:
+    - robot_files.files | length > 0
+    - output_xml_stat.stat.exists
+    - test_statistics.matches is defined
+    - test_statistics.matches | length > 0
+
+- name: Update overall test counters
+  set_fact:
+    total_tests: "{{ total_tests | int + suite_total | default(0) | int }}"
+    passed_tests: "{{ passed_tests | int + suite_passed | default(0) | int }}"
+    failed_tests: "{{ failed_tests | int + suite_failed | default(0) | int }}"
+  when:
+    - robot_files.files | length > 0
+    - output_xml_stat.stat.exists
+
+- name: Determine suite status
+  set_fact:
+    suite_status: "{{ 'PASSED ✅' if (suite_failed | default(1) | int == 0) else 'FAILED ❌' }}"
+  when:
+    - robot_files.files | length > 0
+    - output_xml_stat.stat.exists
+
+- name: Record test suite result
+  set_fact:
+    test_results: "{{ test_results + ['[' + test_suite_id + '] ' + test_suite_name + ': ' + suite_status + ' (' + suite_passed|default('0')|string + '/' + suite_total|default('0')|string + ' passed)'] }}"
+  when:
+    - robot_files.files | length > 0
+    - output_xml_stat.stat.exists
+
+- name: Display test suite result
+  debug:
+    msg:
+      - "Test Suite: {{ test_suite_name }}"
+      - "Status:     {{ suite_status | default('SKIPPED') }}"
+      - "Passed:     {{ suite_passed | default(0) }}"
+      - "Failed:     {{ suite_failed | default(0) }}"
+      - "Total:      {{ suite_total | default(0) }}"
+  when: robot_files.files | length > 0

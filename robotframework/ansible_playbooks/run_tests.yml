@@ -1,0 +1,243 @@
+---
+#############################################################################
+# Ansible Playbook: Robot Framework Test Execution
+# Description: Execute all Robot Framework tests with pass/fail summary
+# Usage: ansible-playbook run_tests.yml -e TargetHostname=<hostname>
+#############################################################################
+
+- name: Execute Robot Framework Tests
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    # Default values - can be overridden with -e flag
+    robot_project_dir: "{{ playbook_dir }}"
+    robot_output_dir: "results"
+    robot_username: "{{ lookup('env', 'SSH_USERNAME') | default('', true) }}"
+    robot_password: "{{ lookup('env', 'SSH_PASSWORD') | default('', true) }}"
+    # Accept both TargetHostname (PowerShell style) and target_hostname (Ansible style)
+    robot_target_hostname: "{{ TargetHostname | default(target_hostname) | default('') }}"
+    robot_python_venv: "{{ robot_project_dir }}/venv"
+    fail_on_test_errors: false
+
+  pre_tasks:
+    - name: Display banner
+      debug:
+        msg:
+          - "========================================================"
+          - "   GSA Itential Robot Framework - Test Execution"
+          - "========================================================"
+          - "Project Directory: {{ robot_project_dir }}"
+          - "Target Hostname:   {{ robot_target_hostname }}"
+          - "Output Directory:  {{ robot_output_dir }}"
+          - "========================================================"
+
+    - name: Validate target hostname is provided
+      fail:
+        msg: |
+          ERROR: Target hostname is required!
+          Usage: ansible-playbook run_tests.yml -e TargetHostname=<hostname>
+                 ansible-playbook run_tests.yml -e target_hostname=<hostname>
+          Example: ansible-playbook run_tests.yml -e TargetHostname=alhxvdvitap01
+      when: robot_target_hostname == ''
+
+    - name: Validate SSH credentials are provided
+      fail:
+        msg: |
+          ERROR: SSH credentials required!
+          Set environment variables: export SSH_USERNAME=<user> SSH_PASSWORD=<pass>
+          Or use: -e robot_username=<user> -e robot_password=<pass>
+      when: robot_username == '' or robot_password == ''
+
+    - name: Check if project directory exists
+      stat:
+        path: "{{ robot_project_dir }}"
+      register: project_dir_stat
+
+    - name: Fail if project directory does not exist
+      fail:
+        msg: "Project directory does not exist: {{ robot_project_dir }}"
+      when: not project_dir_stat.stat.exists
+
+  tasks:
+    - name: Check if Python virtual environment exists
+      stat:
+        path: "{{ robot_python_venv }}/bin/python"
+      register: venv_stat
+
+    - name: Set Python executable path (venv)
+      set_fact:
+        python_executable: "{{ robot_python_venv }}/bin/python"
+      when: venv_stat.stat.exists
+
+    - name: Set Python executable path (system)
+      set_fact:
+        python_executable: "python3"
+      when: not venv_stat.stat.exists
+
+    - name: Display Python executable being used
+      debug:
+        msg: "Using Python: {{ python_executable }}"
+
+    - name: Check if tests directory exists
+      stat:
+        path: "{{ robot_project_dir }}/tests"
+      register: tests_dir_stat
+
+    - name: Fail if tests directory does not exist
+      fail:
+        msg: "Tests directory not found: {{ robot_project_dir }}/tests"
+      when: not tests_dir_stat.stat.exists
+
+    - name: Create output directory
+      file:
+        path: "{{ robot_project_dir }}/{{ robot_output_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Find all test suite directories
+      find:
+        paths: "{{ robot_project_dir }}/tests"
+        file_type: directory
+        patterns: 'test*_*'
+      register: test_directories
+
+    - name: Display found test suites
+      debug:
+        msg: "Found {{ test_directories.files | length }} test suite(s)"
+
+    - name: Initialize test results tracking
+      set_fact:
+        test_results: []
+        all_output_files: []
+        total_tests: 0
+        passed_tests: 0
+        failed_tests: 0
+
+    - name: Execute each test suite
+      include_tasks: execute_test_suite.yml
+      loop: "{{ test_directories.files | sort(attribute='path') }}"
+      loop_control:
+        loop_var: test_dir
+
+    - name: Create consolidated reports using rebot
+      command: >
+        {{ python_executable }} -m robot.rebot
+        --outputdir {{ robot_project_dir }}/{{ robot_output_dir }}
+        --output all_output.xml
+        --log all_log.html
+        --report all_report.html
+        {{ all_output_files | join(' ') }}
+      args:
+        chdir: "{{ robot_project_dir }}"
+      register: rebot_result
+      ignore_errors: yes
+      when: all_output_files | length > 0
+
+    - name: Check if consolidated report was created
+      stat:
+        path: "{{ robot_project_dir }}/{{ robot_output_dir }}/all_report.html"
+      register: consolidated_report_stat
+
+    - name: Parse consolidated output.xml for final results
+      xml:
+        path: "{{ robot_project_dir }}/{{ robot_output_dir }}/all_output.xml"
+        xpath: /robot/statistics/total/stat
+        content: attribute
+      register: final_statistics
+      when: consolidated_report_stat.stat.exists
+      ignore_errors: yes
+
+    - name: Extract pass/fail counts from consolidated results
+      set_fact:
+        total_tests_final: "{{ final_statistics.matches[0].stat.pass | default('0') | int + final_statistics.matches[0].stat.fail | default('0') | int }}"
+        passed_tests_final: "{{ final_statistics.matches[0].stat.pass | default('0') | int }}"
+        failed_tests_final: "{{ final_statistics.matches[0].stat.fail | default('0') | int }}"
+      when:
+        - consolidated_report_stat.stat.exists
+        - final_statistics.matches is defined
+        - final_statistics.matches | length > 0
+      ignore_errors: yes
+
+    - name: Set final test status
+      set_fact:
+        all_tests_passed: "{{ (failed_tests_final | default(failed_tests) | int) == 0 }}"
+        results_directory: "{{ robot_project_dir }}/{{ robot_output_dir }}"
+        consolidated_log: "{{ robot_project_dir }}/{{ robot_output_dir }}/all_log.html"
+        consolidated_report: "{{ robot_project_dir }}/{{ robot_output_dir }}/all_report.html"
+        total_count: "{{ total_tests_final | default(total_tests) }}"
+        passed_count: "{{ passed_tests_final | default(passed_tests) }}"
+        failed_count: "{{ failed_tests_final | default(failed_tests) }}"
+
+  post_tasks:
+    - name: Display test execution summary
+      debug:
+        msg:
+          - "========================================================"
+          - "           TEST EXECUTION SUMMARY"
+          - "========================================================"
+          - "Total Tests:    {{ total_count }}"
+          - "Passed Tests:   {{ passed_count }}"
+          - "Failed Tests:   {{ failed_count }}"
+          - "========================================================"
+          - "Overall Status: {{ 'PASSED ✅' if all_tests_passed else 'FAILED ❌' }}"
+          - "========================================================"
+          - ""
+          - "Results Location:"
+          - "  Directory:    {{ results_directory }}"
+          - "  Log:          {{ consolidated_log }}"
+          - "  Report:       {{ consolidated_report }}"
+          - "========================================================"
+
+    - name: Display individual test suite results
+      debug:
+        msg: "{{ test_results }}"
+      when: test_results | length > 0
+
+    - name: Save test summary to file
+      copy:
+        content: |
+          ========================================================
+          GSA Itential Robot Framework - Test Execution Summary
+          ========================================================
+          Execution Date: {{ ansible_date_time.iso8601 }}
+          Target Hostname: {{ robot_target_hostname }}
+
+          ========================================================
+          RESULTS SUMMARY
+          ========================================================
+          Total Tests:    {{ total_count }}
+          Passed Tests:   {{ passed_count }}
+          Failed Tests:   {{ failed_count }}
+          Overall Status: {{ 'PASSED' if all_tests_passed else 'FAILED' }}
+
+          ========================================================
+          INDIVIDUAL TEST SUITES
+          ========================================================
+          {% for result in test_results %}
+          {{ result }}
+          {% endfor %}
+
+          ========================================================
+          RESULTS LOCATION
+          ========================================================
+          Directory:  {{ results_directory }}
+          Log:        {{ consolidated_log }}
+          Report:     {{ consolidated_report }}
+          ========================================================
+        dest: "{{ robot_project_dir }}/{{ robot_output_dir }}/TEST_SUMMARY.txt"
+        mode: '0644'
+
+    - name: Display summary file location
+      debug:
+        msg: "Test summary saved to: {{ robot_project_dir }}/{{ robot_output_dir }}/TEST_SUMMARY.txt"
+
+    - name: Fail playbook if tests failed and fail_on_test_errors is true
+      fail:
+        msg: |
+          ❌ TEST EXECUTION FAILED ❌
+          {{ failed_count }} test(s) failed
+          Check reports at: {{ results_directory }}
+      when:
+        - not all_tests_passed
+        - fail_on_test_errors | bool
