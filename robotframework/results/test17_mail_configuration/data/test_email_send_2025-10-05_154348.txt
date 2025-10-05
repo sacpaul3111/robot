@@ -1,0 +1,9 @@
+=== Test Email Send Report ===
+Timestamp: 2025-10-05 15:43:48
+Target Server: alhxvdvitap01 (172.30.16.186)
+Recipient: test@domain.com
+Subject: Test Email from alhxvdvitap01 - 2025-10-05 15:43:48
+
+Result:
+bash: line 1: mail: command not found
+Mail command failed - check if mailx/mail is installed

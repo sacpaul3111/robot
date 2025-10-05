@@ -1,0 +1,22 @@
+=========================================
+=== Satellite Subscription Status ===
+=========================================
+Timestamp: 20251005_154415
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Subscription Status ===
+bash: line 1: subscription-manager: command not found
+subscription-manager not available
+
+=== Consumed Subscriptions ===
+bash: line 1: subscription-manager: command not found
+No subscriptions listed
+
+=== Enabled Repositories ===
+bash: line 1: subscription-manager: command not found
+
+=== Compliance Status ===
+bash: line 1: subscription-manager: command not found
+Compliance check not available
+
+=========================================

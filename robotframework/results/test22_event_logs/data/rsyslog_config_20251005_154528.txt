@@ -1,0 +1,94 @@
+=========================================
+=== Rsyslog Configuration ===
+=========================================
+Timestamp: 20251005_154528
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== /etc/rsyslog.conf ===
+# /etc/rsyslog.conf configuration file for rsyslog
+#
+# For more information install rsyslog-doc and see
+# /usr/share/doc/rsyslog-doc/html/configuration/index.html
+#
+# Default logging rules can be found in /etc/rsyslog.d/50-default.conf
+
+
+#################
+#### MODULES ####
+#################
+
+module(load="imuxsock") # provides support for local system logging
+#module(load="immark")  # provides --MARK-- message capability
+
+# provides UDP syslog reception
+#module(load="imudp")
+#input(type="imudp" port="514")
+
+# provides TCP syslog reception
+#module(load="imtcp")
+#input(type="imtcp" port="514")
+
+# provides kernel logging support and enable non-kernel klog messages
+module(load="imklog" permitnonkernelfacility="on")
+
+###########################
+#### GLOBAL DIRECTIVES ####
+###########################
+
+# Filter duplicated messages
+$RepeatedMsgReduction on
+
+#
+# Set the default permissions for all log files.
+#
+$FileOwner syslog
+$FileGroup adm
+$FileCreateMode 0640
+$DirCreateMode 0755
+$Umask 0022
+$PrivDropToUser syslog
+$PrivDropToGroup syslog
+
+#
+# Where to place spool and state files
+#
+$WorkDirectory /var/spool/rsyslog
+
+#
+# Include all config files in /etc/rsyslog.d/
+#
+$IncludeConfig /etc/rsyslog.d/*.conf
+
+=== /etc/rsyslog.d/ Directory ===
+total 16
+drwxr-xr-x  2 root root 4096 Aug  5 11:57 .
+drwxr-xr-x 91 root root 4096 Oct  5 15:44 ..
+-rw-r--r--  1 root root  255 Jun 24 16:14 21-cloudinit.conf
+-rw-r--r--  1 root root 1124 Mar 21  2024 50-default.conf
+
+=== Rsyslog Service Status ===
+● rsyslog.service - System Logging Service
+     Loaded: loaded (/usr/lib/systemd/system/rsyslog.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2025-10-05 12:18:17 CDT; 3h 27min ago
+TriggeredBy: ● syslog.socket
+       Docs: man:rsyslogd(8)
+             man:rsyslog.conf(5)
+             https://www.rsyslog.com/doc/
+   Main PID: 181 (rsyslogd)
+      Tasks: 4 (limit: 9422)
+     Memory: 2.3M (peak: 3.3M)
+        CPU: 595ms
+     CGroup: /system.slice/rsyslog.service
+             └─181 /usr/sbin/rsyslogd -n -iNONE
+
+Oct 05 12:18:17 DESKTOP-933PGUE systemd[1]: Starting rsyslog.service - System Logging Service...
+Oct 05 12:18:17 DESKTOP-933PGUE rsyslogd[181]: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2312.0]
+Oct 05 12:18:17 DESKTOP-933PGUE rsyslogd[181]: rsyslogd's groupid changed to 102
+Oct 05 12:18:17 DESKTOP-933PGUE systemd[1]: Started rsyslog.service - System Logging Service.
+Oct 05 12:18:17 DESKTOP-933PGUE rsyslogd[181]: rsyslogd's userid changed to 102
+Oct 05 12:18:17 DESKTOP-933PGUE rsyslogd[181]: [origin software="rsyslogd" swVersion="8.2312.0" x-pid="181" x-info="https://www.rsyslog.com"] start
+
+=== Syslog-NG Configuration (if present) ===
+No syslog-ng configuration
+
+=========================================

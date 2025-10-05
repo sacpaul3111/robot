@@ -274,13 +274,13 @@ Get File Size
 Log Test Start
     [Documentation]    📝 Log the start of a test case
     [Arguments]    ${test_name}
-    Log    \n${'='*80}    console=yes
+    Log    \n================================================================================    console=yes
     Log    🏁 Starting Test: ${test_name}    console=yes
-    Log    ${'='*80}    console=yes
+    Log    ================================================================================    console=yes
 
 Log Test End
     [Documentation]    📝 Log the end of a test case with status
     [Arguments]    ${test_name}    ${status}
-    Log    ${'='*80}    console=yes
+    Log    ================================================================================    console=yes
     Log    🏁 Completed Test: ${test_name} | Status: ${status}    console=yes
-    Log    ${'='*80}\n    console=yes
+    Log    ================================================================================\n    console=yes

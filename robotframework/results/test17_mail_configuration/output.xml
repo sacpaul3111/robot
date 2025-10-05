@@ -1,289 +1,2823 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-01T16:13:56.020236" rpa="false" schemaversion="5">
-<suite id="s1" name="Mail Configuration" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test17_mail_configuration\mail_configuration.robot">
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-10-05T15:43:20.805275" rpa="false" schemaversion="5">
+<suite id="s1" name="Mail Configuration" source="/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test17_mail_configuration/mail_configuration.robot">
 <kw name="Initialize Mail Test Environment" owner="mail_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:13:56.985999" level="INFO">🚀 Initializing Test-17: Mail Configuration Validation Environment...</msg>
+<msg time="2025-10-05T15:43:33.340680" level="INFO">🚀 Initializing Test-17: Mail Configuration Validation Environment...</msg>
 <arg>🚀 Initializing Test-17: Mail Configuration Validation Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:13:56.985746" elapsed="0.000572"/>
+<status status="PASS" start="2025-10-05T15:43:33.340435" elapsed="0.000392"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-01T16:13:56.986825" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test17_mail_configuration\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test17_mail_configuration\data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-05T15:43:33.342184" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-01T16:13:56.986576" elapsed="0.000323"/>
+<status status="PASS" start="2025-10-05T15:43:33.340993" elapsed="0.001288"/>
 </kw>
 <kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-10-01T16:13:57.010494" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
-<msg time="2025-10-01T16:13:57.010744" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
-<msg time="2025-10-01T16:13:57.010807" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
-<msg time="2025-10-01T16:13:57.010847" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
-<msg time="2025-10-01T16:13:57.010881" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
-<msg time="2025-10-01T16:13:57.010912" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
-<msg time="2025-10-01T16:13:57.010943" level="INFO">Extracted domain from EDS: gnscet.com</msg>
-<msg time="2025-10-01T16:13:57.010981" level="INFO">Extracted CPU cores from EDS: 8</msg>
-<msg time="2025-10-01T16:13:57.011014" level="INFO">Extracted RAM from EDS: 16</msg>
-<msg time="2025-10-01T16:13:57.011046" level="INFO">Extracted storage type from EDS: VSAN</msg>
-<msg time="2025-10-01T16:13:57.011083" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
-<msg time="2025-10-01T16:13:57.011115" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
-<msg time="2025-10-01T16:13:57.011151" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
-<msg time="2025-10-01T16:13:57.011194" level="INFO">Extracted logical volume/partition from EDS: /</msg>
-<msg time="2025-10-01T16:13:57.011244" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-01T16:13:57.011292" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-01T16:13:57.011331" level="INFO">Extracted drive purpose from EDS: OS</msg>
-<msg time="2025-10-01T16:13:57.011374" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
-<msg time="2025-10-01T16:13:57.011421" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
-<msg time="2025-10-01T16:13:57.012043" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<msg time="2025-10-05T15:43:33.381416" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-05T15:43:33.381811" level="INFO">Extracted IP from EDS: 172.30.16.186</msg>
+<msg time="2025-10-05T15:43:33.381896" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-05T15:43:33.381957" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-05T15:43:33.382002" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-05T15:43:33.382044" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-05T15:43:33.382086" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-05T15:43:33.382132" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-05T15:43:33.382172" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-05T15:43:33.382220" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-05T15:43:33.382281" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-05T15:43:33.382331" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-05T15:43:33.382390" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-05T15:43:33.382428" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-05T15:43:33.382466" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-05T15:43:33.382504" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-05T15:43:33.382539" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-05T15:43:33.382612" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-05T15:43:33.382675" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-05T15:43:33.382909" level="INFO">${eds_config} = {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
 <var>${eds_config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
 <doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="PASS" start="2025-10-01T16:13:56.987036" elapsed="0.025163"/>
+<status status="PASS" start="2025-10-05T15:43:33.342727" elapsed="0.040223"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:13:57.015460" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
+<msg time="2025-10-05T15:43:33.384699" level="INFO">${TARGET_IP} = 172.30.16.186</msg>
 <arg>${TARGET_IP}</arg>
 <arg>${eds_config['ip']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:13:57.012743" elapsed="0.002803"/>
+<status status="PASS" start="2025-10-05T15:43:33.383285" elapsed="0.001481"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:13:57.015972" level="INFO">📋 Target Server: alhxvdvitap01</msg>
+<msg time="2025-10-05T15:43:33.385140" level="INFO">📋 Target Server: alhxvdvitap01</msg>
 <arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:13:57.015723" elapsed="0.000954"/>
+<status status="PASS" start="2025-10-05T15:43:33.384920" elapsed="0.000340"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:13:57.017773" level="INFO">📋 Target IP: 10.26.216.107</msg>
+<msg time="2025-10-05T15:43:33.385589" level="INFO">📋 Target IP: 172.30.16.186</msg>
 <arg>📋 Target IP: ${TARGET_IP}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:13:57.017182" elapsed="0.001387"/>
+<status status="PASS" start="2025-10-05T15:43:33.385384" elapsed="0.000296"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:13:57.019189" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
+<msg time="2025-10-05T15:43:33.385956" level="INFO">🔗 Connecting to target server: 172.30.16.186...</msg>
 <arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:13:57.018945" elapsed="0.000439"/>
+<status status="PASS" start="2025-10-05T15:43:33.385791" elapsed="0.000255"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${TARGET_IP}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-10-01T16:13:57.019607" elapsed="0.000334"/>
+<status status="PASS" start="2025-10-05T15:43:33.386162" elapsed="0.000230"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
-<msg time="2025-10-01T16:13:57.020292" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
-<msg time="2025-10-01T16:14:00.032133" level="FAIL">TimeoutError: timed out</msg>
+<msg time="2025-10-05T15:43:33.386661" level="INFO">Logging into '172.30.16.186:22' as 'sac'.</msg>
+<msg time="2025-10-05T15:43:34.682720" level="INFO">Read output: Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sun Oct  5 15:43:04 CDT 2025
+
+  System load:  0.48                Processes:             36
+  Usage of /:   0.7% of 1006.85GB   Users logged in:       1
+  Memory usage: 7%                  IPv4 address for eth0: 172.30.16.186
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Last login: Sun Oct  5 15:43:04 2025 from 172.30.16.186
+[?2004hsac@alhxvdvitap01:~$</msg>
 <arg>${SSH_USERNAME}</arg>
 <arg>${SSH_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="FAIL" start="2025-10-01T16:13:57.020078" elapsed="3.019876">TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:33.386487" elapsed="1.296528"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.683951" level="INFO">✅ SSH connection established successfully</msg>
 <arg>✅ SSH connection established successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-01T16:14:00.040460" elapsed="0.000072"/>
+<status status="PASS" start="2025-10-05T15:43:34.683469" elapsed="0.001115"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.685590" level="INFO">✅ Test-17 environment initialized</msg>
 <arg>✅ Test-17 environment initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-01T16:14:00.040811" elapsed="0.000052"/>
+<status status="PASS" start="2025-10-05T15:43:34.685171" elapsed="0.000777"/>
 </kw>
 <doc>🏗️ Set up test environment for mail configuration validation</doc>
-<status status="FAIL" start="2025-10-01T16:13:56.984948" elapsed="3.056235">TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:33.339146" elapsed="1.347068"/>
 </kw>
 <test id="s1-t1" name="Critical - Connect to Target Server" line="20">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.689678" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.689263" elapsed="0.002050"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.692287" level="INFO">🏁 Starting Test: Critical - Connect to Target Server</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.691793" elapsed="0.000754"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.693836" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.692917" elapsed="0.001160"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:34.688585" elapsed="0.005903"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.695168" level="INFO">🔍 Verifying SSH connection to target server...</msg>
+<arg>🔍 Verifying SSH connection to target server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.694856" elapsed="0.000556"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.696195" level="INFO">📋 Target: alhxvdvitap01 (172.30.16.186)</msg>
+<arg>📋 Target: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.695676" elapsed="0.000728"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:34.697517" level="INFO">Executing command 'echo "Connection active"'.</msg>
+<msg time="2025-10-05T15:43:34.711797" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:34.712150" level="INFO">${output} = Connection active</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.697283" elapsed="0.014914"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:34.712341" elapsed="0.000183"/>
+</return>
+<msg time="2025-10-05T15:43:34.712882" level="INFO">${connection_status} = Connection active</msg>
+<var>${connection_status}</var>
+<arg>echo "Connection active"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:34.696749" elapsed="0.016176"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${connection_status}</arg>
+<arg>Connection active</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.713214" elapsed="0.000297"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.713919" level="INFO">✅ SSH connection verified and active</msg>
+<arg>✅ SSH connection verified and active</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.713699" elapsed="0.000423"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.715340" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.715136" elapsed="0.000334"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.715899" level="INFO">🏁 Completed Test: Critical - Connect to Target Server | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.715628" elapsed="0.000339"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.716284" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.716122" elapsed="0.000226"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:34.714627" elapsed="0.001787"/>
+</kw>
 <doc>🔗 Establish direct connection to target machine via SSH</doc>
 <tag>connection</tag>
 <tag>critical</tag>
 <tag>infrastructure</tag>
 <tag>ssh</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.041422" elapsed="0.001419">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:34.686503" elapsed="0.029966"/>
 </test>
 <test id="s1-t2" name="Critical - Collect DNS MX Records" line="33">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.718536" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.718289" elapsed="0.000353"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.718954" level="INFO">🏁 Starting Test: Critical - Collect DNS MX Records</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.718772" elapsed="0.000247"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.719241" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.719129" elapsed="0.000201"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:34.717354" elapsed="0.002039"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.719612" level="INFO">🔍 Collecting DNS MX records for mail domain...</msg>
+<arg>🔍 Collecting DNS MX records for mail domain...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.719508" elapsed="0.000204"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.719982" level="INFO">📋 Expected SMTP Relay: mail.domain.com</msg>
+<arg>📋 Expected SMTP Relay: ${EXPECTED_SMTP_RELAY}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.719828" elapsed="0.000244"/>
+</kw>
+<kw name="Collect MX Records" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.720686" level="INFO">🌐 Executing nslookup for MX records...</msg>
+<arg>🌐 Executing nslookup for MX records...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.720520" elapsed="0.000267"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:34.721382" level="INFO">Executing command 'echo "mail.domain.com" | awk -F. '{print $(NF-1)"."$NF}''.</msg>
+<msg time="2025-10-05T15:43:34.789574" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:34.790725" level="INFO">${output} = domain.com</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.721252" elapsed="0.069517"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:34.790860" elapsed="0.000133"/>
+</return>
+<msg time="2025-10-05T15:43:34.791425" level="INFO">${domain} = domain.com</msg>
+<var>${domain}</var>
+<arg>echo "${EXPECTED_SMTP_RELAY}" | awk -F. '{print $(NF-1)"."$NF}'</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:34.720954" elapsed="0.070512"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:34.792664" level="INFO">Executing command 'nslookup -query=mx domain.com 2&gt;/dev/null || echo "nslookup failed"'.</msg>
+<msg time="2025-10-05T15:43:34.835165" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:34.835387" level="INFO">${output} = nslookup failed</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.792434" elapsed="0.042978"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:34.835489" elapsed="0.000046"/>
+</return>
+<msg time="2025-10-05T15:43:34.835672" level="INFO">${mx_nslookup} = nslookup failed</msg>
+<var>${mx_nslookup}</var>
+<arg>nslookup -query=mx ${domain} 2&gt;/dev/null || echo "nslookup failed"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:34.791812" elapsed="0.043881"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:34.836490" level="INFO">Executing command 'dig domain.com MX +short 2&gt;/dev/null || echo "dig not available"'.</msg>
+<msg time="2025-10-05T15:43:34.884052" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:34.884771" level="INFO">${output} = dig not available</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.836360" elapsed="0.048482"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:34.884931" elapsed="0.000057"/>
+</return>
+<msg time="2025-10-05T15:43:34.885189" level="INFO">${mx_dig} = dig not available</msg>
+<var>${mx_dig}</var>
+<arg>dig ${domain} MX +short 2&gt;/dev/null || echo "dig not available"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:34.835938" elapsed="0.049285"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:34.886055" level="INFO">Executing command 'host -t MX domain.com 2&gt;/dev/null || echo "host not available"'.</msg>
+<msg time="2025-10-05T15:43:34.935421" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:34.935653" level="INFO">${output} = host not available</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.885911" elapsed="0.049772"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:34.935767" elapsed="0.000050"/>
+</return>
+<msg time="2025-10-05T15:43:34.935968" level="INFO">${mx_host} = host not available</msg>
+<var>${mx_host}</var>
+<arg>host -t MX ${domain} 2&gt;/dev/null || echo "host not available"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:34.885481" elapsed="0.050512"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.936467" level="INFO">${mx_records} = === nslookup MX ===
+nslookup failed
+
+=== dig MX ===
+dig not available
+
+=== host MX ===
+host not available</msg>
+<var>${mx_records}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== nslookup MX ===</arg>
+<arg>${mx_nslookup}</arg>
+<arg>=== dig MX ===</arg>
+<arg>${mx_dig}</arg>
+<arg>=== host MX ===</arg>
+<arg>${mx_host}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.936170" elapsed="0.000323"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.936905" level="INFO">${MX_RECORDS_OUTPUT} = === nslookup MX ===
+nslookup failed
+
+=== dig MX ===
+dig not available
+
+=== host MX ===
+host not available</msg>
+<arg>${MX_RECORDS_OUTPUT}</arg>
+<arg>${mx_records}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.936652" elapsed="0.000301"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:43:34.937273" level="INFO">${timestamp} = 20251005_154334</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.937066" elapsed="0.000230"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.937611" level="INFO">${mx_file} = results/test17_mail_configuration/data/mx_records_20251005_154334.txt</msg>
+<var>${mx_file}</var>
+<arg>${DATA_DIR}/mx_records_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.937425" elapsed="0.000209"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:43:34.946661" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/mx_records_20251005_154334.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/mx_records_20251005_154334.txt&lt;/a&gt;'.</msg>
+<arg>${mx_file}</arg>
+<arg>${mx_records}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.937725" elapsed="0.009128"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.947403" level="INFO">📄 MX records saved to: results/test17_mail_configuration/data/mx_records_20251005_154334.txt</msg>
+<arg>📄 MX records saved to: ${mx_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.947066" elapsed="0.000495"/>
+</kw>
+<return>
+<value>${mx_records}</value>
+<status status="PASS" start="2025-10-05T15:43:34.947691" elapsed="0.000122"/>
+</return>
+<msg time="2025-10-05T15:43:34.948110" level="INFO">${mx_records} = === nslookup MX ===
+nslookup failed
+
+=== dig MX ===
+dig not available
+
+=== host MX ===
+host not available</msg>
+<var>${mx_records}</var>
+<doc>🌐 Execute nslookup to collect MX records for mail domain</doc>
+<status status="PASS" start="2025-10-05T15:43:34.720290" elapsed="0.227865"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.948830" level="INFO">Length is 105.</msg>
+<arg>${mx_records}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.948475" elapsed="0.000444"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.949478" level="INFO">🌐 MX Records: === nslookup MX ===
+nslookup failed
+
+=== dig MX ===
+dig not available
+
+=== host MX ===
+host not available</msg>
+<arg>🌐 MX Records: ${mx_records}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.949167" elapsed="0.000495"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.950241" level="INFO">✅ DNS MX records collected successfully</msg>
+<arg>✅ DNS MX records collected successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.949898" elapsed="0.000560"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.951909" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.951782" elapsed="0.000230"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.952298" level="INFO">🏁 Completed Test: Critical - Collect DNS MX Records | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.952126" elapsed="0.000255"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.952606" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.952479" elapsed="0.000213"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:34.951434" elapsed="0.001317"/>
+</kw>
 <doc>🌐 Execute nslookup to collect MX records for mail domain</doc>
 <tag>critical</tag>
 <tag>dns</tag>
 <tag>mail</tag>
 <tag>mx_records</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.045553" elapsed="0.002202">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:34.716769" elapsed="0.236026"/>
 </test>
 <test id="s1-t3" name="Critical - Collect Mail.rc Configuration" line="49">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.953902" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.953780" elapsed="0.000225"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.954869" level="INFO">🏁 Starting Test: Critical - Collect Mail.rc Configuration</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.954307" elapsed="0.000849"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.955837" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.955604" elapsed="0.000415"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:34.953514" elapsed="0.002590"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.956410" level="INFO">🔍 Collecting /etc/mail.rc configuration...</msg>
+<arg>🔍 Collecting /etc/mail.rc configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.956296" elapsed="0.000267"/>
+</kw>
+<kw name="Collect Mail RC Configuration" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:34.957136" level="INFO">📄 Reading /etc/mail.rc configuration...</msg>
+<arg>📄 Reading /etc/mail.rc configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.957032" elapsed="0.000205"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:34.957860" level="INFO">Executing command 'cat /etc/mail.rc 2&gt;/dev/null || echo "Not found at /etc/mail.rc"'.</msg>
+<msg time="2025-10-05T15:43:34.986851" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:34.987069" level="INFO">${output} = Not found at /etc/mail.rc</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.957706" elapsed="0.029388"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:34.987173" elapsed="0.000047"/>
+</return>
+<msg time="2025-10-05T15:43:34.987364" level="INFO">${mail_rc_etc} = Not found at /etc/mail.rc</msg>
+<var>${mail_rc_etc}</var>
+<arg>cat /etc/mail.rc 2&gt;/dev/null || echo "Not found at /etc/mail.rc"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:34.957408" elapsed="0.029992"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:34.988163" level="INFO">Executing command 'cat /etc/mail/mail.rc 2&gt;/dev/null || echo "Not found at /etc/mail/mail.rc"'.</msg>
+<msg time="2025-10-05T15:43:35.036330" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:35.036628" level="INFO">${output} = Not found at /etc/mail/mail.rc</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:34.988031" elapsed="0.048639"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:35.036860" elapsed="0.000192"/>
+</return>
+<msg time="2025-10-05T15:43:35.037650" level="INFO">${mail_rc_mail} = Not found at /etc/mail/mail.rc</msg>
+<var>${mail_rc_mail}</var>
+<arg>cat /etc/mail/mail.rc 2&gt;/dev/null || echo "Not found at /etc/mail/mail.rc"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:34.987718" elapsed="0.049978"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:35.039019" level="INFO">Executing command 'cat /etc/nail.rc 2&gt;/dev/null || echo "Not found at /etc/nail.rc"'.</msg>
+<msg time="2025-10-05T15:43:35.088083" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:35.088392" level="INFO">${output} = Not found at /etc/nail.rc</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.038721" elapsed="0.049723"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:35.088573" elapsed="0.000076"/>
+</return>
+<msg time="2025-10-05T15:43:35.088911" level="INFO">${mail_rc_nail} = Not found at /etc/nail.rc</msg>
+<var>${mail_rc_nail}</var>
+<arg>cat /etc/nail.rc 2&gt;/dev/null || echo "Not found at /etc/nail.rc"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:35.038073" elapsed="0.050882"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.089807" level="INFO">${mail_rc_content} = === /etc/mail.rc ===
+Not found at /etc/mail.rc
+
+=== /etc/mail/mail.rc ===
+Not found at /etc/mail/mail.rc
+
+=== /etc/nail.rc ===
+Not found at /etc/nail.rc</msg>
+<var>${mail_rc_content}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== /etc/mail.rc ===</arg>
+<arg>${mail_rc_etc}</arg>
+<arg>=== /etc/mail/mail.rc ===</arg>
+<arg>${mail_rc_mail}</arg>
+<arg>=== /etc/nail.rc ===</arg>
+<arg>${mail_rc_nail}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.089223" elapsed="0.000632"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.091909" level="INFO">${MAIL_RC_CONTENT} = === /etc/mail.rc ===
+Not found at /etc/mail.rc
+
+=== /etc/mail/mail.rc ===
+Not found at /etc/mail/mail.rc
+
+=== /etc/nail.rc ===
+Not found at /etc/nail.rc</msg>
+<arg>${MAIL_RC_CONTENT}</arg>
+<arg>${mail_rc_content}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.091410" elapsed="0.000596"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.092494" level="INFO">✅ Mail.rc configuration collected</msg>
+<arg>✅ Mail.rc configuration collected</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.092217" elapsed="0.000504"/>
+</kw>
+<return>
+<value>${mail_rc_content}</value>
+<status status="PASS" start="2025-10-05T15:43:35.092847" elapsed="0.000087"/>
+</return>
+<msg time="2025-10-05T15:43:35.093179" level="INFO">${mail_rc_content} = === /etc/mail.rc ===
+Not found at /etc/mail.rc
+
+=== /etc/mail/mail.rc ===
+Not found at /etc/mail/mail.rc
+
+=== /etc/nail.rc ===
+Not found at /etc/nail.rc</msg>
+<var>${mail_rc_content}</var>
+<doc>📄 Read and collect /etc/mail.rc configuration file</doc>
+<status status="PASS" start="2025-10-05T15:43:34.956813" elapsed="0.136408"/>
+</kw>
+<kw name="Save Mail RC to File" owner="mail_keywords">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:43:35.094718" level="INFO">${timestamp} = 20251005_154335</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.094162" elapsed="0.000604"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.095266" level="INFO">${mail_rc_file} = results/test17_mail_configuration/data/mail_rc_20251005_154335.txt</msg>
+<var>${mail_rc_file}</var>
+<arg>${DATA_DIR}/mail_rc_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.094973" elapsed="0.000334"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.095953" level="INFO">${report} = =========================================
+=== Mail.rc Configuration Report ===
+=========================================
+Timestamp: 20251005_154335
+Target Server: alhxvdvitap01 (172.30.16.186)
+Expecte...</msg>
+<var>${report}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=========================================</arg>
+<arg>=== Mail.rc Configuration Report ===</arg>
+<arg>=========================================</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>Expected SMTP Relay: ${EXPECTED_SMTP_RELAY}</arg>
+<arg>${content}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.095468" elapsed="0.000524"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:43:35.107414" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/mail_rc_20251005_154335.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/mail_rc_20251005_154335.txt&lt;/a&gt;'.</msg>
+<arg>${mail_rc_file}</arg>
+<arg>${report}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.096255" elapsed="0.011336"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.108210" level="INFO">📄 Mail.rc saved to: results/test17_mail_configuration/data/mail_rc_20251005_154335.txt</msg>
+<arg>📄 Mail.rc saved to: ${mail_rc_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.107870" elapsed="0.000516"/>
+</kw>
+<return>
+<value>${mail_rc_file}</value>
+<status status="PASS" start="2025-10-05T15:43:35.108480" elapsed="0.000060"/>
+</return>
+<msg time="2025-10-05T15:43:35.108787" level="INFO">${mail_rc_file} = results/test17_mail_configuration/data/mail_rc_20251005_154335.txt</msg>
+<var>${mail_rc_file}</var>
+<arg>${mail_rc_content}</arg>
+<doc>💾 Save mail.rc configuration to file</doc>
+<status status="PASS" start="2025-10-05T15:43:35.093539" elapsed="0.015287"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.109328" level="INFO">📄 Mail.rc configuration saved to: results/test17_mail_configuration/data/mail_rc_20251005_154335.txt</msg>
+<arg>📄 Mail.rc configuration saved to: ${mail_rc_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.109068" elapsed="0.000409"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.109847" level="INFO">✅ Mail.rc configuration collected</msg>
+<arg>✅ Mail.rc configuration collected</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.109656" elapsed="0.000418"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.111363" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.111178" elapsed="0.000332"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.111946" level="INFO">🏁 Completed Test: Critical - Collect Mail.rc Configuration | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.111680" elapsed="0.000426"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.112822" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.112267" elapsed="0.000780"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:35.110586" elapsed="0.002618"/>
+</kw>
 <doc>📄 Read and collect /etc/mail.rc configuration file</doc>
 <tag>config</tag>
 <tag>critical</tag>
 <tag>mail_rc</tag>
 <tag>smtp</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.049545" elapsed="0.001774">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:34.953066" elapsed="0.160268"/>
 </test>
 <test id="s1-t4" name="Critical - Validate SMTP Relay Configuration" line="64">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.116013" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.115782" elapsed="0.000360"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.116530" level="INFO">🏁 Starting Test: Critical - Validate SMTP Relay Configuration</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.116296" elapsed="0.000375"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.116986" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.116835" elapsed="0.000258"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:35.115312" elapsed="0.002592"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.118416" level="INFO">🔍 Validating SMTP relay configuration...</msg>
+<arg>🔍 Validating SMTP relay configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.118182" elapsed="0.000400"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.119019" level="INFO">📋 Expected SMTP Relay: mail.domain.com</msg>
+<arg>📋 Expected SMTP Relay: ${EXPECTED_SMTP_RELAY}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.118793" elapsed="0.000352"/>
+</kw>
+<kw name="Validate SMTP Relay Configuration" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.120337" level="INFO">📧 Validating SMTP relay in mail.rc...</msg>
+<arg>📧 Validating SMTP relay in mail.rc...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.119780" elapsed="0.000661"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:35.121048" level="INFO">Executing command 'grep -i "smtp" /etc/mail.rc 2&gt;/dev/null || grep -i "smtp" /etc/nail.rc 2&gt;/dev/null || echo "No SMTP configuration found"'.</msg>
+<msg time="2025-10-05T15:43:35.139726" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:35.139993" level="INFO">${output} = No SMTP configuration found</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.120910" elapsed="0.019114"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:35.140113" elapsed="0.000057"/>
+</return>
+<msg time="2025-10-05T15:43:35.140330" level="INFO">${relay_found} = No SMTP configuration found</msg>
+<var>${relay_found}</var>
+<arg>grep -i "smtp" /etc/mail.rc 2&gt;/dev/null || grep -i "smtp" /etc/nail.rc 2&gt;/dev/null || echo "No SMTP configuration found"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:35.120636" elapsed="0.019720"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.141073" level="FAIL">'=== /etc/mail.rc ===
+Not found at /etc/mail.rc
+
+=== /etc/mail/mail.rc ===
+Not found at /etc/mail/mail.rc
+
+=== /etc/nail.rc ===
+Not found at /etc/nail.rc' does not contain 'mail.domain.com'</msg>
+<arg>${MAIL_RC_CONTENT}</arg>
+<arg>${EXPECTED_SMTP_RELAY}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-10-05T15:43:35.140741" elapsed="0.000536">'=== /etc/mail.rc ===
+Not found at /etc/mail.rc
+
+=== /etc/mail/mail.rc ===
+Not found at /etc/mail/mail.rc
+
+=== /etc/nail.rc ===
+Not found at /etc/nail.rc' does not contain 'mail.domain.com'</status>
+</kw>
+<msg time="2025-10-05T15:43:35.141392" level="INFO">${contains_expected} = False</msg>
+<var>${contains_expected}</var>
+<arg>Should Contain</arg>
+<arg>${MAIL_RC_CONTENT}</arg>
+<arg>${EXPECTED_SMTP_RELAY}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.140547" elapsed="0.000870"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.141742" level="INFO">${validation_result} = WARNING - Expected relay "mail.domain.com" not found in mail.rc</msg>
+<var>${validation_result}</var>
+<arg>${contains_expected}</arg>
+<arg>CONFIGURED - Expected relay found in mail.rc</arg>
+<arg>WARNING - Expected relay "${EXPECTED_SMTP_RELAY}" not found in mail.rc</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.141549" elapsed="0.000219"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.142136" level="INFO">📧 Relay Configuration: No SMTP configuration found</msg>
+<arg>📧 Relay Configuration: ${relay_found}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.141882" elapsed="0.000519"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.142920" level="INFO">📧 Validation: WARNING - Expected relay "mail.domain.com" not found in mail.rc</msg>
+<arg>📧 Validation: ${validation_result}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.142667" elapsed="0.000381"/>
+</kw>
+<return>
+<value>${validation_result}</value>
+<status status="PASS" start="2025-10-05T15:43:35.143140" elapsed="0.000055"/>
+</return>
+<msg time="2025-10-05T15:43:35.143368" level="INFO">${validation_result} = WARNING - Expected relay "mail.domain.com" not found in mail.rc</msg>
+<var>${validation_result}</var>
+<doc>📧 Validate SMTP relay server is configured correctly in mail.rc</doc>
+<status status="PASS" start="2025-10-05T15:43:35.119482" elapsed="0.023922"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.143817" level="INFO">📧 SMTP Relay Validation: WARNING - Expected relay "mail.domain.com" not found in mail.rc</msg>
+<arg>📧 SMTP Relay Validation: ${validation_result}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.143579" elapsed="0.000363"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.144284" level="INFO">✅ SMTP relay configuration validated</msg>
+<arg>✅ SMTP relay configuration validated</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.144115" elapsed="0.000290"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.145172" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.145049" elapsed="0.000225"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.145635" level="INFO">🏁 Completed Test: Critical - Validate SMTP Relay Configuration | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.145410" elapsed="0.000324"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.146027" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.145853" elapsed="0.000335"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:35.144694" elapsed="0.001571"/>
+</kw>
 <doc>📧 Validate SMTP relay server is configured correctly in mail.rc</doc>
 <tag>critical</tag>
 <tag>relay</tag>
 <tag>smtp</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.053147" elapsed="0.002484">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:35.113902" elapsed="0.032548"/>
 </test>
 <test id="s1-t5" name="Critical - Test SMTP Port Connectivity" line="77">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.148648" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.148489" elapsed="0.000284"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.149071" level="INFO">🏁 Starting Test: Critical - Test SMTP Port Connectivity</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.148902" elapsed="0.000272"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.149494" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.149296" elapsed="0.000295"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:35.148112" elapsed="0.001548"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.149891" level="INFO">🔍 Testing SMTP port connectivity...</msg>
+<arg>🔍 Testing SMTP port connectivity...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.149778" elapsed="0.000281"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.150563" level="INFO">📋 SMTP Server: mail.domain.com</msg>
+<arg>📋 SMTP Server: ${EXPECTED_SMTP_RELAY}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.150200" elapsed="0.000495"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.150971" level="INFO">📋 SMTP Port: 25</msg>
+<arg>📋 SMTP Port: ${SMTP_PORT}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.150815" elapsed="0.000251"/>
+</kw>
+<kw name="Test SMTP Port Connectivity" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:35.151776" level="INFO">🔌 Testing SMTP port 25 connectivity to mail.domain.com...</msg>
+<arg>🔌 Testing SMTP port ${SMTP_PORT} connectivity to ${EXPECTED_SMTP_RELAY}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.151524" elapsed="0.000358"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:35.152508" level="INFO">Executing command 'timeout 5 nc -zv mail.domain.com 25 2&gt;&amp;1 || echo "Connection failed or timeout"'.</msg>
+<msg time="2025-10-05T15:43:40.209737" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:40.210328" level="INFO">${output} = Connection failed or timeout</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:35.152378" elapsed="5.058131"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:40.210725" elapsed="0.000096"/>
+</return>
+<msg time="2025-10-05T15:43:40.211800" level="INFO">${nc_result} = Connection failed or timeout</msg>
+<var>${nc_result}</var>
+<arg>timeout 5 nc -zv ${EXPECTED_SMTP_RELAY} ${SMTP_PORT} 2&gt;&amp;1 || echo "Connection failed or timeout"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:35.152054" elapsed="5.059870"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:40.213932" level="INFO">Executing command 'timeout 5 bash -c "echo -e '
+QUIT
+' | telnet mail.domain.com 25 2&gt;&amp;1" | head -20 || echo "Telnet test failed"'.</msg>
+<msg time="2025-10-05T15:43:40.275772" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:40.276127" level="INFO">${output} = bash: line 3: telnet: command not found</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:40.213613" elapsed="0.062561"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:40.276306" elapsed="0.000080"/>
+</return>
+<msg time="2025-10-05T15:43:40.276738" level="INFO">${telnet_result} = bash: line 3: telnet: command not found</msg>
+<var>${telnet_result}</var>
+<arg>timeout 5 bash -c "echo -e '\nQUIT\n' | telnet ${EXPECTED_SMTP_RELAY} ${SMTP_PORT} 2&gt;&amp;1" | head -20 || echo "Telnet test failed"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:40.212552" elapsed="0.064232"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:40.278119" level="INFO">Executing command 'timeout 5 curl -v smtp://mail.domain.com:25 2&gt;&amp;1 | head -20 || echo "Curl test not available"'.</msg>
+<msg time="2025-10-05T15:43:48.217503" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.218236" level="INFO">${output} =   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0   ...</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:40.277875" elapsed="7.940517"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.218606" elapsed="0.000129"/>
+</return>
+<msg time="2025-10-05T15:43:48.219373" level="INFO">${curl_result} =   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0   ...</msg>
+<var>${curl_result}</var>
+<arg>timeout 5 curl -v smtp://${EXPECTED_SMTP_RELAY}:${SMTP_PORT} 2&gt;&amp;1 | head -20 || echo "Curl test not available"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:40.277224" elapsed="7.942266"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.220626" level="INFO">${connectivity_result} = === Netcat Test ===
+Connection failed or timeout
+
+=== Telnet Test ===
+bash: line 3: telnet: command not found
+
+=== Curl SMTP Test ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     ...</msg>
+<var>${connectivity_result}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== Netcat Test ===</arg>
+<arg>${nc_result}</arg>
+<arg>=== Telnet Test ===</arg>
+<arg>${telnet_result}</arg>
+<arg>=== Curl SMTP Test ===</arg>
+<arg>${curl_result}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.219924" elapsed="0.000772"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.221649" level="INFO">${SMTP_CONNECTIVITY_RESULT} = === Netcat Test ===
+Connection failed or timeout
+
+=== Telnet Test ===
+bash: line 3: telnet: command not found
+
+=== Curl SMTP Test ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     ...</msg>
+<arg>${SMTP_CONNECTIVITY_RESULT}</arg>
+<arg>${connectivity_result}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.221156" elapsed="0.000731"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:43:48.224068" level="INFO">${timestamp} = 20251005_154348</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.223611" elapsed="0.000519"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.224691" level="INFO">${conn_file} = results/test17_mail_configuration/data/smtp_connectivity_20251005_154348.txt</msg>
+<var>${conn_file}</var>
+<arg>${DATA_DIR}/smtp_connectivity_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.224353" elapsed="0.000383"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:43:48.250812" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/smtp_connectivity_20251005_154348.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/smtp_connectivity_20251005_154348.txt&lt;/a&gt;'.</msg>
+<arg>${conn_file}</arg>
+<arg>${connectivity_result}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.224915" elapsed="0.026050"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.251763" level="INFO">📄 Connectivity test saved to: results/test17_mail_configuration/data/smtp_connectivity_20251005_154348.txt</msg>
+<arg>📄 Connectivity test saved to: ${conn_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.251189" elapsed="0.000798"/>
+</kw>
+<return>
+<value>${connectivity_result}</value>
+<status status="PASS" start="2025-10-05T15:43:48.252126" elapsed="0.000075"/>
+</return>
+<msg time="2025-10-05T15:43:48.252438" level="INFO">${connectivity_result} = === Netcat Test ===
+Connection failed or timeout
+
+=== Telnet Test ===
+bash: line 3: telnet: command not found
+
+=== Curl SMTP Test ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     ...</msg>
+<var>${connectivity_result}</var>
+<doc>🔌 Test connectivity to SMTP server on port 25</doc>
+<status status="PASS" start="2025-10-05T15:43:35.151280" elapsed="13.101196"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.253052" level="INFO">🔌 SMTP Connectivity Result: === Netcat Test ===
+Connection failed or timeout
+
+=== Telnet Test ===
+bash: line 3: telnet: command not found
+
+=== Curl SMTP Test ===
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host mail.domain.com:25 was resolved.
+* IPv6: (none)
+* IPv4: 72.5.54.21
+*   Trying 72.5.54.21:25...
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0</msg>
+<arg>🔌 SMTP Connectivity Result: ${connectivity_result}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.252708" elapsed="0.000511"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.253566" level="INFO">✅ SMTP port connectivity test completed</msg>
+<arg>✅ SMTP port connectivity test completed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.253393" elapsed="0.000313"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.254622" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.254504" elapsed="0.000228"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.255070" level="INFO">🏁 Completed Test: Critical - Test SMTP Port Connectivity | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.254882" elapsed="0.000287"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.255460" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.255329" elapsed="0.000226"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:48.254134" elapsed="0.001506"/>
+</kw>
 <doc>🔌 Test connectivity to SMTP server on port 25 using telnet/nc</doc>
 <tag>connectivity</tag>
 <tag>critical</tag>
 <tag>port25</tag>
 <tag>smtp</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.058270" elapsed="0.001929">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:35.146741" elapsed="13.108939"/>
 </test>
 <test id="s1-t6" name="Normal - Send Test Email" line="91">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.256863" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.256657" elapsed="0.000324"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.257263" level="INFO">🏁 Starting Test: Normal - Send Test Email</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.257104" elapsed="0.000252"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.257663" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.257520" elapsed="0.000274"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:48.256412" elapsed="0.001471"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.258177" level="INFO">🔍 Sending test email...</msg>
+<arg>🔍 Sending test email...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.258034" elapsed="0.000242"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.258750" level="INFO">📋 Test Recipient: test@domain.com</msg>
+<arg>📋 Test Recipient: ${TEST_EMAIL_RECIPIENT}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.258397" elapsed="0.000523"/>
+</kw>
+<kw name="Send Test Email" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.259669" level="INFO">📨 Sending test email...</msg>
+<arg>📨 Sending test email...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.259542" elapsed="0.000236"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:43:48.260727" level="INFO">${timestamp} = 2025-10-05 15:43:48</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y-%m-%d %H:%M:%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.260526" elapsed="0.000228"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.261364" level="INFO">${test_subject} = Test Email from alhxvdvitap01 - 2025-10-05 15:43:48</msg>
+<var>${test_subject}</var>
+<arg>Test Email from ${TARGET_HOSTNAME} - ${timestamp}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.261073" elapsed="0.000326"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.261707" level="INFO">${test_body} = This is an automated test email from Robot Framework Test-17 Mail Configuration Validation.\nServer: alhxvdvitap01\nTimestamp: 2025-10-05 15:43:48</msg>
+<var>${test_body}</var>
+<arg>This is an automated test email from Robot Framework Test-17 Mail Configuration Validation.\\nServer: ${TARGET_HOSTNAME}\\nTimestamp: ${timestamp}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.261523" elapsed="0.000208"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.263332" level="INFO">Executing command 'echo "This is an automated test email from Robot Framework Test-17 Mail Configuration Validation.\nServer: alhxvdvitap01\nTimestamp: 2025-10-05 15:43:48" | mail -s "Test Email from alhxvdvitap01 - 2025-10-05 15:43:48" test@domain.com 2&gt;&amp;1 || echo "Mail command failed - check if mailx/mail is installed"'.</msg>
+<msg time="2025-10-05T15:43:48.275871" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.276119" level="INFO">${output} = bash: line 1: mail: command not found
+Mail command failed - check if mailx/mail is installed</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.263139" elapsed="0.013010"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.276255" elapsed="0.000065"/>
+</return>
+<msg time="2025-10-05T15:43:48.276544" level="INFO">${send_result} = bash: line 1: mail: command not found
+Mail command failed - check if mailx/mail is installed</msg>
+<var>${send_result}</var>
+<arg>echo "${test_body}" | mail -s "${test_subject}" ${TEST_EMAIL_RECIPIENT} 2&gt;&amp;1 || echo "Mail command failed - check if mailx/mail is installed"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.262341" elapsed="0.014239"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.277290" level="INFO">📨 Test email result: bash: line 1: mail: command not found
+Mail command failed - check if mailx/mail is installed</msg>
+<arg>📨 Test email result: ${send_result}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.276958" elapsed="0.000513"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.279271" level="INFO">${send_file} = results/test17_mail_configuration/data/test_email_send_2025-10-05_154348.txt</msg>
+<var>${send_file}</var>
+<arg>${DATA_DIR}/test_email_send_${timestamp.replace(' ', '_').replace(':', '')}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.277824" elapsed="0.001477"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.279726" level="INFO">${send_report} = === Test Email Send Report ===
+Timestamp: 2025-10-05 15:43:48
+Target Server: alhxvdvitap01 (172.30.16.186)
+Recipient: test@domain.com
+Subject: Test Email from alhxvdvitap01 - 2025-10-05 15:43:48
+
+Resu...</msg>
+<var>${send_report}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== Test Email Send Report ===</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>Recipient: ${TEST_EMAIL_RECIPIENT}</arg>
+<arg>Subject: ${test_subject}</arg>
+<arg>Result:</arg>
+<arg>${send_result}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.279414" elapsed="0.000336"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:43:48.286049" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/test_email_send_2025-10-05_154348.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/test_email_send_2025-10-05_154348.txt&lt;/a&gt;'.</msg>
+<arg>${send_file}</arg>
+<arg>${send_report}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.280264" elapsed="0.005923"/>
+</kw>
+<return>
+<value>${send_result}</value>
+<status status="PASS" start="2025-10-05T15:43:48.286253" elapsed="0.000044"/>
+</return>
+<msg time="2025-10-05T15:43:48.286448" level="INFO">${send_result} = bash: line 1: mail: command not found
+Mail command failed - check if mailx/mail is installed</msg>
+<var>${send_result}</var>
+<doc>📨 Send a test email to verify mail subsystem functionality</doc>
+<status status="PASS" start="2025-10-05T15:43:48.259238" elapsed="0.027234"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.286769" level="INFO">📨 Test Email Result: bash: line 1: mail: command not found
+Mail command failed - check if mailx/mail is installed</msg>
+<arg>📨 Test Email Result: ${send_result}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.286598" elapsed="0.000321"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.287446" level="INFO">ℹ️ Test email sent - check recipient mailbox for delivery</msg>
+<arg>ℹ️ Test email sent - check recipient mailbox for delivery</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.287251" elapsed="0.000657"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.288234" level="INFO">✅ Test email transmission: COMPLETED</msg>
+<arg>✅ Test email transmission: COMPLETED</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.288086" elapsed="0.000255"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.289161" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.289037" elapsed="0.000235"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.289617" level="INFO">🏁 Completed Test: Normal - Send Test Email | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.289413" elapsed="0.000453"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.290163" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.290037" elapsed="0.000220"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:48.288688" elapsed="0.002199"/>
+</kw>
 <doc>📨 Send a test email to verify mail subsystem functionality</doc>
 <tag>delivery</tag>
 <tag>normal</tag>
 <tag>smtp</tag>
 <tag>test_email</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.063421" elapsed="0.002621">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:48.255933" elapsed="0.035006"/>
 </test>
 <test id="s1-t7" name="Normal - Check Mail Queue Status" line="105">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.292227" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.292093" elapsed="0.000235"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.292597" level="INFO">🏁 Starting Test: Normal - Check Mail Queue Status</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.292454" elapsed="0.000236"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.293003" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.292822" elapsed="0.000281"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:48.291700" elapsed="0.001489"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.293487" level="INFO">🔍 Checking mail queue status...</msg>
+<arg>🔍 Checking mail queue status...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.293344" elapsed="0.000211"/>
+</kw>
+<kw name="Check Mail Queue Status" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.294594" level="INFO">📬 Checking mail queue status...</msg>
+<arg>📬 Checking mail queue status...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.294445" elapsed="0.000218"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.295204" level="INFO">Executing command 'mailq 2&gt;&amp;1 || echo "mailq command not available"'.</msg>
+<msg time="2025-10-05T15:43:48.326645" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.327119" level="INFO">${output} = bash: line 1: mailq: command not found
+mailq command not available</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.295076" elapsed="0.032102"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.327326" elapsed="0.000092"/>
+</return>
+<msg time="2025-10-05T15:43:48.327746" level="INFO">${mailq_output} = bash: line 1: mailq: command not found
+mailq command not available</msg>
+<var>${mailq_output}</var>
+<arg>mailq 2&gt;&amp;1 || echo "mailq command not available"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.294824" elapsed="0.032980"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.329038" level="INFO">Executing command 'postqueue -p 2&gt;&amp;1 || echo "postqueue not available"'.</msg>
+<msg time="2025-10-05T15:43:48.375660" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.375930" level="INFO">${output} = bash: line 1: postqueue: command not found
+postqueue not available</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.328772" elapsed="0.047193"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.376064" elapsed="0.000059"/>
+</return>
+<msg time="2025-10-05T15:43:48.376398" level="INFO">${postqueue_output} = bash: line 1: postqueue: command not found
+postqueue not available</msg>
+<var>${postqueue_output}</var>
+<arg>postqueue -p 2&gt;&amp;1 || echo "postqueue not available"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.328181" elapsed="0.048251"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.376961" level="INFO">${queue_status} = === mailq output ===
+bash: line 1: mailq: command not found
+mailq command not available
+
+=== postqueue -p output ===
+bash: line 1: postqueue: command not found
+postqueue not available</msg>
+<var>${queue_status}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== mailq output ===</arg>
+<arg>${mailq_output}</arg>
+<arg>=== postqueue -p output ===</arg>
+<arg>${postqueue_output}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.376643" elapsed="0.000351"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.377512" level="INFO">${MAIL_QUEUE_STATUS} = === mailq output ===
+bash: line 1: mailq: command not found
+mailq command not available
+
+=== postqueue -p output ===
+bash: line 1: postqueue: command not found
+postqueue not available</msg>
+<arg>${MAIL_QUEUE_STATUS}</arg>
+<arg>${queue_status}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.377198" elapsed="0.000373"/>
+</kw>
+<return>
+<value>${queue_status}</value>
+<status status="PASS" start="2025-10-05T15:43:48.377724" elapsed="0.000113"/>
+</return>
+<msg time="2025-10-05T15:43:48.378057" level="INFO">${queue_status} = === mailq output ===
+bash: line 1: mailq: command not found
+mailq command not available
+
+=== postqueue -p output ===
+bash: line 1: postqueue: command not found
+postqueue not available</msg>
+<var>${queue_status}</var>
+<doc>📬 Check mail queue status to ensure no stuck messages</doc>
+<status status="PASS" start="2025-10-05T15:43:48.293862" elapsed="0.084232"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.378520" level="INFO">📬 Mail Queue Status: === mailq output ===
+bash: line 1: mailq: command not found
+mailq command not available
+
+=== postqueue -p output ===
+bash: line 1: postqueue: command not found
+postqueue not available</msg>
+<arg>📬 Mail Queue Status: ${queue_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.378253" elapsed="0.000432"/>
+</kw>
+<kw name="Save Mail Queue Status to File" owner="mail_keywords">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:43:48.380479" level="INFO">${timestamp} = 20251005_154348</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.380188" elapsed="0.000324"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.380812" level="INFO">${queue_file} = results/test17_mail_configuration/data/mail_queue_20251005_154348.txt</msg>
+<var>${queue_file}</var>
+<arg>${DATA_DIR}/mail_queue_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.380635" elapsed="0.000202"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.382140" level="INFO">${report} = =========================================
+=== Mail Queue Status Report ===
+=========================================
+Timestamp: 20251005_154348
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== mailq ...</msg>
+<var>${report}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=========================================</arg>
+<arg>=== Mail Queue Status Report ===</arg>
+<arg>=========================================</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>${queue_status}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.380940" elapsed="0.001237"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:43:48.389465" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/mail_queue_20251005_154348.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/mail_queue_20251005_154348.txt&lt;/a&gt;'.</msg>
+<arg>${queue_file}</arg>
+<arg>${report}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.382318" elapsed="0.007267"/>
+</kw>
+<return>
+<value>${queue_file}</value>
+<status status="PASS" start="2025-10-05T15:43:48.389680" elapsed="0.000057"/>
+</return>
+<msg time="2025-10-05T15:43:48.390271" level="INFO">${queue_file} = results/test17_mail_configuration/data/mail_queue_20251005_154348.txt</msg>
+<var>${queue_file}</var>
+<arg>${queue_status}</arg>
+<doc>💾 Save mail queue status to file</doc>
+<status status="PASS" start="2025-10-05T15:43:48.379432" elapsed="0.010874"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.390664" level="INFO">📄 Queue status saved to: results/test17_mail_configuration/data/mail_queue_20251005_154348.txt</msg>
+<arg>📄 Queue status saved to: ${queue_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.390461" elapsed="0.000328"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.391088" level="INFO">✅ Mail queue check: INFORMATIONAL</msg>
+<arg>✅ Mail queue check: INFORMATIONAL</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.390953" elapsed="0.000343"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.392018" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.391881" elapsed="0.000241"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.392465" level="INFO">🏁 Completed Test: Normal - Check Mail Queue Status | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.392244" elapsed="0.000314"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.392808" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.392687" elapsed="0.000213"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:48.391565" elapsed="0.001406"/>
+</kw>
 <doc>📬 Check mail queue status to ensure no stuck messages</doc>
 <tag>mail_queue</tag>
 <tag>monitoring</tag>
 <tag>normal</tag>
 <tag>postfix</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.068633" elapsed="0.001981">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:48.291210" elapsed="0.101798"/>
 </test>
 <test id="s1-t8" name="Normal - Validate Mail Subsystem Services" line="122">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.394680" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.394502" elapsed="0.000290"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.395154" level="INFO">🏁 Starting Test: Normal - Validate Mail Subsystem Services</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.394956" elapsed="0.000306"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.395512" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.395394" elapsed="0.000217"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:48.394181" elapsed="0.001513"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.395947" level="INFO">🔍 Validating mail subsystem services...</msg>
+<arg>🔍 Validating mail subsystem services...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.395810" elapsed="0.000230"/>
+</kw>
+<kw name="Check Mail Service Status" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.396541" level="INFO">🔧 Checking mail service status...</msg>
+<arg>🔧 Checking mail service status...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.396440" elapsed="0.000195"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.397207" level="INFO">Executing command 'systemctl status postfix 2&gt;&amp;1 | head -20 || echo "Postfix not found"'.</msg>
+<msg time="2025-10-05T15:43:48.437444" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.438153" level="INFO">${output} = Unit postfix.service could not be found.</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.397073" elapsed="0.041163"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.438417" elapsed="0.000106"/>
+</return>
+<msg time="2025-10-05T15:43:48.438995" level="INFO">${postfix_status} = Unit postfix.service could not be found.</msg>
+<var>${postfix_status}</var>
+<arg>systemctl status postfix 2&gt;&amp;1 | head -20 || echo "Postfix not found"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.396798" elapsed="0.042266"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.440303" level="INFO">Executing command 'systemctl status sendmail 2&gt;&amp;1 | head -20 || echo "Sendmail not found"'.</msg>
+<msg time="2025-10-05T15:43:48.502027" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.502402" level="INFO">${output} = Unit sendmail.service could not be found.</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.439994" elapsed="0.062458"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.503655" elapsed="0.000087"/>
+</return>
+<msg time="2025-10-05T15:43:48.503990" level="INFO">${sendmail_status} = Unit sendmail.service could not be found.</msg>
+<var>${sendmail_status}</var>
+<arg>systemctl status sendmail 2&gt;&amp;1 | head -20 || echo "Sendmail not found"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.439511" elapsed="0.064516"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.504605" level="INFO">${service_status} = === Postfix Status ===
+Unit postfix.service could not be found.
+
+=== Sendmail Status ===
+Unit sendmail.service could not be found.</msg>
+<var>${service_status}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== Postfix Status ===</arg>
+<arg>${postfix_status}</arg>
+<arg>=== Sendmail Status ===</arg>
+<arg>${sendmail_status}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.504246" elapsed="0.000392"/>
+</kw>
+<return>
+<value>${service_status}</value>
+<status status="PASS" start="2025-10-05T15:43:48.504707" elapsed="0.000036"/>
+</return>
+<msg time="2025-10-05T15:43:48.504886" level="INFO">${service_status} = === Postfix Status ===
+Unit postfix.service could not be found.
+
+=== Sendmail Status ===
+Unit sendmail.service could not be found.</msg>
+<var>${service_status}</var>
+<doc>🔧 Check status of mail services (postfix/sendmail)</doc>
+<status status="PASS" start="2025-10-05T15:43:48.396227" elapsed="0.108687"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.505330" level="INFO">🔧 Mail Service Status: === Postfix Status ===
+Unit postfix.service could not be found.
+
+=== Sendmail Status ===
+Unit sendmail.service could not be found.</msg>
+<arg>🔧 Mail Service Status: ${service_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.505052" elapsed="0.000428"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.505990" level="INFO">✅ Mail service validation: INFORMATIONAL</msg>
+<arg>✅ Mail service validation: INFORMATIONAL</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.505711" elapsed="0.000405"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.509141" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.508869" elapsed="0.000417"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.509936" level="INFO">🏁 Completed Test: Normal - Validate Mail Subsystem Services | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.509487" elapsed="0.000586"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.510453" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.510252" elapsed="0.000326"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:48.506462" elapsed="0.004207"/>
+</kw>
 <doc>🔧 Validate mail-related services (postfix/sendmail) are running</doc>
 <tag>normal</tag>
 <tag>postfix</tag>
 <tag>sendmail</tag>
 <tag>services</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.073722" elapsed="0.002569">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:48.393256" elapsed="0.117473"/>
 </test>
 <test id="s1-t9" name="Normal - Collect Mail Logs" line="134">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.512375" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.512186" elapsed="0.000336"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.512985" level="INFO">🏁 Starting Test: Normal - Collect Mail Logs</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.512731" elapsed="0.000398"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.513537" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.513327" elapsed="0.000410"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:48.511798" elapsed="0.002401"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.514675" level="INFO">🔍 Collecting recent mail log entries...</msg>
+<arg>🔍 Collecting recent mail log entries...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.514429" elapsed="0.000462"/>
+</kw>
+<kw name="Collect Mail Logs" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.516025" level="INFO">📋 Collecting recent mail logs...</msg>
+<arg>📋 Collecting recent mail logs...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.515795" elapsed="0.000451"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.518231" level="INFO">Executing command 'tail -100 /var/log/maillog 2&gt;/dev/null || echo "No /var/log/maillog"'.</msg>
+<msg time="2025-10-05T15:43:48.576427" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.576797" level="INFO">${output} = No /var/log/maillog</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.517720" elapsed="0.059130"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.577011" elapsed="0.000082"/>
+</return>
+<msg time="2025-10-05T15:43:48.577364" level="INFO">${maillog} = No /var/log/maillog</msg>
+<var>${maillog}</var>
+<arg>tail -100 /var/log/maillog 2&gt;/dev/null || echo "No /var/log/maillog"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.516701" elapsed="0.060711"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.578876" level="INFO">Executing command 'tail -100 /var/log/mail.log 2&gt;/dev/null || echo "No /var/log/mail.log"'.</msg>
+<msg time="2025-10-05T15:43:48.628408" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.628799" level="INFO">${output} = No /var/log/mail.log</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.578631" elapsed="0.050220"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.630155" elapsed="0.000106"/>
+</return>
+<msg time="2025-10-05T15:43:48.630701" level="INFO">${mail_log} = No /var/log/mail.log</msg>
+<var>${mail_log}</var>
+<arg>tail -100 /var/log/mail.log 2&gt;/dev/null || echo "No /var/log/mail.log"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.578057" elapsed="0.052713"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.631985" level="INFO">Executing command 'tail -100 /var/log/mail.info 2&gt;/dev/null || echo "No /var/log/mail.info"'.</msg>
+<msg time="2025-10-05T15:43:48.684132" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.684599" level="INFO">${output} = No /var/log/mail.info</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.631726" elapsed="0.052957"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.684980" elapsed="0.000131"/>
+</return>
+<msg time="2025-10-05T15:43:48.685662" level="INFO">${mail_info} = No /var/log/mail.info</msg>
+<var>${mail_info}</var>
+<arg>tail -100 /var/log/mail.info 2&gt;/dev/null || echo "No /var/log/mail.info"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.631178" elapsed="0.054643"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.687331" level="INFO">Executing command 'grep -i mail /var/log/syslog 2&gt;/dev/null | tail -50 || echo "No mail entries in syslog"'.</msg>
+<msg time="2025-10-05T15:43:48.766839" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.767154" level="INFO">${output} = 2025-10-05T13:18:14.276600-05:00 DESKTOP-933PGUE python3[2608]: ansible-file Invoked with path=/mnt/c/Users/sacpa/Projects/robot/robotframework/ansible_playbooks/../results/test17_mail_configuration s...</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.687078" elapsed="0.080123"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.767323" elapsed="0.000072"/>
+</return>
+<msg time="2025-10-05T15:43:48.767760" level="INFO">${syslog_mail} = 2025-10-05T13:18:14.276600-05:00 DESKTOP-933PGUE python3[2608]: ansible-file Invoked with path=/mnt/c/Users/sacpa/Projects/robot/robotframework/ansible_playbooks/../results/test17_mail_configuration s...</msg>
+<var>${syslog_mail}</var>
+<arg>grep -i mail /var/log/syslog 2&gt;/dev/null | tail -50 || echo "No mail entries in syslog"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.686443" elapsed="0.081364"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.768676" level="INFO">${mail_logs} = === /var/log/maillog ===
+No /var/log/mail.log
+
+=== /var/log/mail.log ===
+No /var/log/mail.log
+
+=== /var/log/mail.info ===
+No /var/log/mail.info
+
+=== Syslog mail entries ===
+2025-10-05T13:18:14.276600-...</msg>
+<var>${mail_logs}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== /var/log/maillog ===</arg>
+<arg>${maillog}</arg>
+<arg>=== /var/log/mail.log ===</arg>
+<arg>${mail_log}</arg>
+<arg>=== /var/log/mail.info ===</arg>
+<arg>${mail_info}</arg>
+<arg>=== Syslog mail entries ===</arg>
+<arg>${syslog_mail}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.768072" elapsed="0.000674"/>
+</kw>
+<return>
+<value>${mail_logs}</value>
+<status status="PASS" start="2025-10-05T15:43:48.768874" elapsed="0.000052"/>
+</return>
+<msg time="2025-10-05T15:43:48.769123" level="INFO">${mail_logs} = === /var/log/maillog ===
+No /var/log/mail.log
+
+=== /var/log/mail.log ===
+No /var/log/mail.log
+
+=== /var/log/mail.info ===
+No /var/log/mail.info
+
+=== Syslog mail entries ===
+2025-10-05T13:18:14.276600-...</msg>
+<var>${mail_logs}</var>
+<doc>📋 Collect recent mail log entries</doc>
+<status status="PASS" start="2025-10-05T15:43:48.515318" elapsed="0.253847"/>
+</kw>
+<kw name="Save Mail Logs to File" owner="mail_keywords">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:43:48.770887" level="INFO">${timestamp} = 20251005_154348</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.770407" elapsed="0.000547"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.771760" level="INFO">${log_file} = results/test17_mail_configuration/data/mail_logs_20251005_154348.txt</msg>
+<var>${log_file}</var>
+<arg>${DATA_DIR}/mail_logs_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.771295" elapsed="0.001947"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.774541" level="INFO">${report} = =========================================
+=== Mail Logs Report ===
+=========================================
+Timestamp: 20251005_154348
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== /var/log/maill...</msg>
+<var>${report}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=========================================</arg>
+<arg>=== Mail Logs Report ===</arg>
+<arg>=========================================</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>${mail_logs}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.773727" elapsed="0.000866"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:43:48.783662" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/mail_logs_20251005_154348.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/mail_logs_20251005_154348.txt&lt;/a&gt;'.</msg>
+<arg>${log_file}</arg>
+<arg>${report}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.774810" elapsed="0.009011"/>
+</kw>
+<return>
+<value>${log_file}</value>
+<status status="PASS" start="2025-10-05T15:43:48.783969" elapsed="0.000070"/>
+</return>
+<msg time="2025-10-05T15:43:48.784276" level="INFO">${log_file} = results/test17_mail_configuration/data/mail_logs_20251005_154348.txt</msg>
+<var>${log_file}</var>
+<arg>${mail_logs}</arg>
+<doc>💾 Save mail logs to file</doc>
+<status status="PASS" start="2025-10-05T15:43:48.769477" elapsed="0.014837"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.785242" level="INFO">📋 Mail logs saved to: results/test17_mail_configuration/data/mail_logs_20251005_154348.txt</msg>
+<arg>📋 Mail logs saved to: ${log_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.784558" elapsed="0.000836"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.785931" level="INFO">✅ Mail log collection: INFORMATIONAL</msg>
+<arg>✅ Mail log collection: INFORMATIONAL</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.785588" elapsed="0.000435"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.787083" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.786909" elapsed="0.000777"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.788125" level="INFO">🏁 Completed Test: Normal - Collect Mail Logs | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.787879" elapsed="0.000387"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.788577" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.788408" elapsed="0.000274"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:48.786376" elapsed="0.002381"/>
+</kw>
 <doc>📋 Collect recent mail log entries for troubleshooting</doc>
 <tag>logs</tag>
 <tag>maillog</tag>
 <tag>monitoring</tag>
 <tag>normal</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.078539" elapsed="0.001517">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:48.511123" elapsed="0.277684"/>
 </test>
 <test id="s1-t10" name="Normal - Validate Firewall Rules for SMTP" line="149">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.790260" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.790097" elapsed="0.000280"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.790694" level="INFO">🏁 Starting Test: Normal - Validate Firewall Rules for SMTP</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.790511" elapsed="0.000307"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.791093" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.790953" elapsed="0.000248"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:48.789745" elapsed="0.001529"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.791527" level="INFO">🔍 Checking firewall rules for SMTP...</msg>
+<arg>🔍 Checking firewall rules for SMTP...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.791402" elapsed="0.000252"/>
+</kw>
+<kw name="Check Firewall Rules for SMTP" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.792252" level="INFO">🔥 Checking firewall rules for SMTP...</msg>
+<arg>🔥 Checking firewall rules for SMTP...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.792129" elapsed="0.000235"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.792969" level="INFO">Executing command 'iptables -L -n | grep -E "25|smtp" 2&gt;&amp;1 || echo "No iptables rules or not accessible"'.</msg>
+<msg time="2025-10-05T15:43:48.820082" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.820351" level="INFO">${output} = No iptables rules or not accessible</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.792831" elapsed="0.027606"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.820557" elapsed="0.000071"/>
+</return>
+<msg time="2025-10-05T15:43:48.820872" level="INFO">${iptables_rules} = No iptables rules or not accessible</msg>
+<var>${iptables_rules}</var>
+<arg>iptables -L -n | grep -E "25|smtp" 2&gt;&amp;1 || echo "No iptables rules or not accessible"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.792545" elapsed="0.028372"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.821941" level="INFO">Executing command 'firewall-cmd --list-all 2&gt;&amp;1 || echo "firewalld not active"'.</msg>
+<msg time="2025-10-05T15:43:48.870216" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.870492" level="INFO">${output} = bash: line 1: firewall-cmd: command not found
+firewalld not active</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.821698" elapsed="0.048832"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.870633" elapsed="0.000059"/>
+</return>
+<msg time="2025-10-05T15:43:48.870883" level="INFO">${firewalld_rules} = bash: line 1: firewall-cmd: command not found
+firewalld not active</msg>
+<var>${firewalld_rules}</var>
+<arg>firewall-cmd --list-all 2&gt;&amp;1 || echo "firewalld not active"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.821210" elapsed="0.049704"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.871555" level="INFO">${firewall_rules} = === iptables (port 25/smtp) ===
+No iptables rules or not accessible
+
+=== firewalld ===
+bash: line 1: firewall-cmd: command not found
+firewalld not active</msg>
+<var>${firewall_rules}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== iptables (port 25/smtp) ===</arg>
+<arg>${iptables_rules}</arg>
+<arg>=== firewalld ===</arg>
+<arg>${firewalld_rules}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.871124" elapsed="0.000468"/>
+</kw>
+<return>
+<value>${firewall_rules}</value>
+<status status="PASS" start="2025-10-05T15:43:48.871665" elapsed="0.000036"/>
+</return>
+<msg time="2025-10-05T15:43:48.871833" level="INFO">${firewall_rules} = === iptables (port 25/smtp) ===
+No iptables rules or not accessible
+
+=== firewalld ===
+bash: line 1: firewall-cmd: command not found
+firewalld not active</msg>
+<var>${firewall_rules}</var>
+<doc>🔥 Check firewall rules for SMTP traffic</doc>
+<status status="PASS" start="2025-10-05T15:43:48.791868" elapsed="0.079989"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.872147" level="INFO">🔥 Firewall Rules: === iptables (port 25/smtp) ===
+No iptables rules or not accessible
+
+=== firewalld ===
+bash: line 1: firewall-cmd: command not found
+firewalld not active</msg>
+<arg>🔥 Firewall Rules: ${firewall_rules}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.871972" elapsed="0.000313"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.872593" level="INFO">ℹ️ Firewall rules collected for review</msg>
+<arg>ℹ️ Firewall rules collected for review</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.872446" elapsed="0.000251"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.874269" level="INFO">✅ Firewall check: INFORMATIONAL</msg>
+<arg>✅ Firewall check: INFORMATIONAL</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.874070" elapsed="0.000332"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.875397" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.875274" elapsed="0.000240"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.875802" level="INFO">🏁 Completed Test: Normal - Validate Firewall Rules for SMTP | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.875641" elapsed="0.000254"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.876160" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.876014" elapsed="0.000236"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:48.874829" elapsed="0.001495"/>
+</kw>
 <doc>🔥 Check firewall rules allow SMTP traffic on port 25</doc>
 <tag>firewall</tag>
 <tag>normal</tag>
 <tag>security</tag>
 <tag>smtp</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.083097" elapsed="0.001637">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:48.789101" elapsed="0.087259"/>
 </test>
 <test id="s1-t11" name="Normal - Test SMTP Authentication" line="162">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.877794" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.877323" elapsed="0.000587"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.878174" level="INFO">🏁 Starting Test: Normal - Test SMTP Authentication</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.878032" elapsed="0.000236"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.878522" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.878407" elapsed="0.000203"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:48.877047" elapsed="0.001637"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.878879" level="INFO">🔍 Testing SMTP authentication configuration...</msg>
+<arg>🔍 Testing SMTP authentication configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.878781" elapsed="0.000186"/>
+</kw>
+<kw name="Check SMTP Authentication Config" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.879483" level="INFO">🔐 Checking SMTP authentication configuration...</msg>
+<arg>🔐 Checking SMTP authentication configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.879359" elapsed="0.000213"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.880028" level="INFO">Executing command 'postconf | grep -i sasl 2&gt;&amp;1 || echo "postconf not available"'.</msg>
+<msg time="2025-10-05T15:43:48.920640" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.920927" level="INFO">${output} = postconf not available</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.879928" elapsed="0.041038"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.921074" elapsed="0.000140"/>
+</return>
+<msg time="2025-10-05T15:43:48.921497" level="INFO">${postfix_sasl} = postconf not available</msg>
+<var>${postfix_sasl}</var>
+<arg>postconf | grep -i sasl 2&gt;&amp;1 || echo "postconf not available"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.879721" elapsed="0.041814"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.923407" level="INFO">Executing command 'cat /etc/postfix/sasl_passwd 2&gt;/dev/null || echo "No /etc/postfix/sasl_passwd"'.</msg>
+<msg time="2025-10-05T15:43:48.974948" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:48.975282" level="INFO">${output} = No /etc/postfix/sasl_passwd</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.923060" elapsed="0.052258"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:48.975422" elapsed="0.000070"/>
+</return>
+<msg time="2025-10-05T15:43:48.975709" level="INFO">${sasl_config} = No /etc/postfix/sasl_passwd</msg>
+<var>${sasl_config}</var>
+<arg>cat /etc/postfix/sasl_passwd 2&gt;/dev/null || echo "No /etc/postfix/sasl_passwd"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.922353" elapsed="0.053391"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.976408" level="INFO">${auth_config} = === Postfix SASL Configuration ===
+postconf not available
+
+=== SASL Password File ===
+No /etc/postfix/sasl_passwd</msg>
+<var>${auth_config}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== Postfix SASL Configuration ===</arg>
+<arg>${postfix_sasl}</arg>
+<arg>=== SASL Password File ===</arg>
+<arg>${sasl_config}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.975973" elapsed="0.000471"/>
+</kw>
+<return>
+<value>${auth_config}</value>
+<status status="PASS" start="2025-10-05T15:43:48.976512" elapsed="0.000033"/>
+</return>
+<msg time="2025-10-05T15:43:48.976690" level="INFO">${auth_config} = === Postfix SASL Configuration ===
+postconf not available
+
+=== SASL Password File ===
+No /etc/postfix/sasl_passwd</msg>
+<var>${auth_config}</var>
+<doc>🔐 Check SMTP authentication configuration</doc>
+<status status="PASS" start="2025-10-05T15:43:48.879136" elapsed="0.097582"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.977074" level="INFO">🔐 SMTP Auth Configuration: === Postfix SASL Configuration ===
+postconf not available
+
+=== SASL Password File ===
+No /etc/postfix/sasl_passwd</msg>
+<arg>🔐 SMTP Auth Configuration: ${auth_config}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.976860" elapsed="0.000381"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.977735" level="INFO">ℹ️ SMTP authentication settings documented</msg>
+<arg>ℹ️ SMTP authentication settings documented</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.977450" elapsed="0.001361"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.979225" level="INFO">✅ SMTP auth check: INFORMATIONAL</msg>
+<arg>✅ SMTP auth check: INFORMATIONAL</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.979048" elapsed="0.000314"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.980370" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.980210" elapsed="0.000300"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.981014" level="INFO">🏁 Completed Test: Normal - Test SMTP Authentication | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.980692" elapsed="0.000459"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.981507" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.981334" elapsed="0.000538"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:48.979740" elapsed="0.002265"/>
+</kw>
 <doc>🔐 Test SMTP authentication capability if configured</doc>
 <tag>authentication</tag>
 <tag>normal</tag>
 <tag>security</tag>
 <tag>smtp</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.086417" elapsed="0.001655">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:48.876606" elapsed="0.105488"/>
 </test>
 <test id="s1-t12" name="Normal - Validate Mail Aliases Configuration" line="175">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.984486" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.984326" elapsed="0.000276"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.984951" level="INFO">🏁 Starting Test: Normal - Validate Mail Aliases Configuration</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.984770" elapsed="0.000294"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.985405" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.985269" elapsed="0.000242"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:48.983868" elapsed="0.001781"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.986049" level="INFO">🔍 Validating mail aliases configuration...</msg>
+<arg>🔍 Validating mail aliases configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.985901" elapsed="0.000265"/>
+</kw>
+<kw name="Collect Mail Aliases Configuration" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:48.986755" level="INFO">📮 Collecting mail aliases configuration...</msg>
+<arg>📮 Collecting mail aliases configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.986642" elapsed="0.000223"/>
+</kw>
+<kw name="Execute Command" owner="mail_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:48.987480" level="INFO">Executing command 'cat /etc/aliases 2&gt;/dev/null | head -100 || echo "No /etc/aliases file"'.</msg>
+<msg time="2025-10-05T15:43:49.028519" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:49.029000" level="INFO">${output} = </msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:48.987310" elapsed="0.041746"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:49.029198" elapsed="0.000082"/>
+</return>
+<msg time="2025-10-05T15:43:49.029553" level="INFO">${aliases} = </msg>
+<var>${aliases}</var>
+<arg>cat /etc/aliases 2&gt;/dev/null | head -100 || echo "No /etc/aliases file"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:48.987054" elapsed="0.042614"/>
+</kw>
+<return>
+<value>${aliases}</value>
+<status status="PASS" start="2025-10-05T15:43:49.029953" elapsed="0.000152"/>
+</return>
+<msg time="2025-10-05T15:43:49.030379" level="INFO">${aliases_content} = </msg>
+<var>${aliases_content}</var>
+<doc>📮 Collect mail aliases configuration</doc>
+<status status="PASS" start="2025-10-05T15:43:48.986407" elapsed="0.044020"/>
+</kw>
+<kw name="Save Mail Aliases to File" owner="mail_keywords">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:43:49.031896" level="INFO">${timestamp} = 20251005_154349</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.031528" elapsed="0.000464"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.032601" level="INFO">${aliases_file} = results/test17_mail_configuration/data/mail_aliases_20251005_154349.txt</msg>
+<var>${aliases_file}</var>
+<arg>${DATA_DIR}/mail_aliases_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.032264" elapsed="0.000384"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.034009" level="INFO">${report} = =========================================
+=== Mail Aliases Configuration ===
+=========================================
+Timestamp: 20251005_154349
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+</msg>
+<var>${report}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=========================================</arg>
+<arg>=== Mail Aliases Configuration ===</arg>
+<arg>=========================================</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>${aliases_content}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.032835" elapsed="0.001298"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:43:49.044051" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/mail_aliases_20251005_154349.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test17_mail_configuration/data/mail_aliases_20251005_154349.txt&lt;/a&gt;'.</msg>
+<arg>${aliases_file}</arg>
+<arg>${report}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.034387" elapsed="0.009859"/>
+</kw>
+<return>
+<value>${aliases_file}</value>
+<status status="PASS" start="2025-10-05T15:43:49.045023" elapsed="0.000068"/>
+</return>
+<msg time="2025-10-05T15:43:49.045333" level="INFO">${aliases_file} = results/test17_mail_configuration/data/mail_aliases_20251005_154349.txt</msg>
+<var>${aliases_file}</var>
+<arg>${aliases_content}</arg>
+<doc>💾 Save mail aliases to file</doc>
+<status status="PASS" start="2025-10-05T15:43:49.030817" elapsed="0.014556"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.046107" level="INFO">📮 Mail aliases saved to: results/test17_mail_configuration/data/mail_aliases_20251005_154349.txt</msg>
+<arg>📮 Mail aliases saved to: ${aliases_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.045566" elapsed="0.000716"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.046807" level="INFO">✅ Mail aliases validation: INFORMATIONAL</msg>
+<arg>✅ Mail aliases validation: INFORMATIONAL</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.046612" elapsed="0.000346"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.048064" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.047879" elapsed="0.000319"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.049184" level="INFO">🏁 Completed Test: Normal - Validate Mail Aliases Configuration | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.048827" elapsed="0.000525"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.049786" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.049551" elapsed="0.000355"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:49.047381" elapsed="0.002617"/>
+</kw>
 <doc>📮 Validate mail aliases configuration for system accounts</doc>
 <tag>aliases</tag>
 <tag>configuration</tag>
 <tag>mail</tag>
 <tag>normal</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.090693" elapsed="0.001310">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:48.982465" elapsed="0.067594"/>
 </test>
 <test id="s1-t13" name="Normal - Comprehensive Mail Configuration Summary" line="190">
+<kw name="Log Test Start" owner="mail_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.051789" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.051602" elapsed="0.000343"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.052312" level="INFO">🏁 Starting Test: Normal - Comprehensive Mail Configuration Summary</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.052117" elapsed="0.000326"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.052798" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.052618" elapsed="0.000305"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:49.051258" elapsed="0.001836"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.053384" level="INFO">🔍 Generating comprehensive mail configuration summary...</msg>
+<arg>🔍 Generating comprehensive mail configuration summary...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.053247" elapsed="0.000268"/>
+</kw>
+<kw name="Validate All Mail Settings" owner="mail_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.054479" level="INFO">📊 Validating all mail settings...</msg>
+<arg>📊 Validating all mail settings...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.054345" elapsed="0.000263"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.054925" level="INFO">✅ All mail configuration data collected and validated</msg>
+<arg>✅ All mail configuration data collected and validated</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.054793" elapsed="0.000257"/>
+</kw>
+<doc>📊 Validate all mail settings and generate summary</doc>
+<status status="PASS" start="2025-10-05T15:43:49.053979" elapsed="0.001173"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.055467" level="INFO">📊 Comprehensive mail configuration summary:</msg>
+<arg>📊 Comprehensive mail configuration summary:</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.055327" elapsed="0.000262"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.055879" level="INFO">📊 - MX Records: Collected ✅</msg>
+<arg>📊 - MX Records: Collected ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.055750" elapsed="0.000247"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.056316" level="INFO">📊 - Mail.rc Config: Validated ✅</msg>
+<arg>📊 - Mail.rc Config: Validated ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.056164" elapsed="0.000287"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.056704" level="INFO">📊 - SMTP Connectivity: Tested ✅</msg>
+<arg>📊 - SMTP Connectivity: Tested ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.056583" elapsed="0.000212"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.057015" level="INFO">📊 - Test Email: Sent ✅</msg>
+<arg>📊 - Test Email: Sent ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.056914" elapsed="0.000191"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.057334" level="INFO">📊 - Mail Queue: Monitored ✅</msg>
+<arg>📊 - Mail Queue: Monitored ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.057225" elapsed="0.000256"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.057958" level="INFO">📊 - Services: Validated ✅</msg>
+<arg>📊 - Services: Validated ✅</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.057683" elapsed="0.000374"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.058701" level="INFO">✅ Comprehensive mail validation: COMPLETED</msg>
+<arg>✅ Comprehensive mail validation: COMPLETED</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.058592" elapsed="0.000206"/>
+</kw>
+<kw name="Log Test End" owner="mail_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.059514" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.059376" elapsed="0.000256"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.059933" level="INFO">🏁 Completed Test: Normal - Comprehensive Mail Configuration Summary | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.059762" elapsed="0.000272"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:49.060539" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:49.060180" elapsed="0.000462"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:49.059027" elapsed="0.001712"/>
+</kw>
 <doc>📊 Generate comprehensive summary of all mail configuration data</doc>
 <tag>compliance</tag>
 <tag>comprehensive</tag>
 <tag>normal</tag>
 <tag>summary</tag>
-<status status="FAIL" start="2025-10-01T16:14:00.094147" elapsed="0.001509">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:49.050471" elapsed="0.010315"/>
 </test>
 <kw name="Close All SSH Connections" owner="mail_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:00.100136" level="INFO">🔌 Closing SSH connections...</msg>
+<msg time="2025-10-05T15:43:49.061705" level="INFO">🔌 Closing SSH connections...</msg>
 <arg>🔌 Closing SSH connections...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:00.099748" elapsed="0.001147"/>
+<status status="PASS" start="2025-10-05T15:43:49.061556" elapsed="0.000331"/>
 </kw>
 <kw name="Close All Connections" owner="SSHLibrary">
 <doc>Closes all open connections.</doc>
-<status status="PASS" start="2025-10-01T16:14:00.101433" elapsed="0.000420"/>
+<status status="PASS" start="2025-10-05T15:43:49.062061" elapsed="0.000325"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:00.102531" level="INFO">✅ SSH connections closed</msg>
+<msg time="2025-10-05T15:43:49.062607" level="INFO">✅ SSH connections closed</msg>
 <arg>✅ SSH connections closed</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:00.102181" elapsed="0.000878"/>
+<status status="PASS" start="2025-10-05T15:43:49.062494" elapsed="0.000221"/>
 </kw>
 <doc>🔌 Close all SSH connections</doc>
-<status status="PASS" start="2025-10-01T16:14:00.099101" elapsed="0.004305"/>
+<status status="PASS" start="2025-10-05T15:43:49.061391" elapsed="0.001407"/>
 </kw>
 <doc>📧 Mail Configuration Validation Test Suite - Test-17
 🔍 Process: Find hostname in EDS → SSH to server → Collect mail/SMTP configuration → Validate relay settings
 ✅ Validates: SMTP relay server (mail.domain.com), port connectivity, mail.rc configuration, test email delivery
 📊 Documents: MX records, SMTP connectivity, mail queue status, relay configuration
 ⚠️ Note: This test validates mail configuration if required in project scope</doc>
-<status status="FAIL" start="2025-10-01T16:13:56.022346" elapsed="4.081186">Suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:20.807763" elapsed="28.255070"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="13" skip="0">All Tests</stat>
+<stat pass="13" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">aliases</stat>
-<stat pass="0" fail="1" skip="0">authentication</stat>
-<stat pass="0" fail="1" skip="0">compliance</stat>
-<stat pass="0" fail="1" skip="0">comprehensive</stat>
-<stat pass="0" fail="1" skip="0">config</stat>
-<stat pass="0" fail="1" skip="0">configuration</stat>
-<stat pass="0" fail="1" skip="0">connection</stat>
-<stat pass="0" fail="1" skip="0">connectivity</stat>
-<stat pass="0" fail="5" skip="0">critical</stat>
-<stat pass="0" fail="1" skip="0">delivery</stat>
-<stat pass="0" fail="1" skip="0">dns</stat>
-<stat pass="0" fail="1" skip="0">firewall</stat>
-<stat pass="0" fail="1" skip="0">infrastructure</stat>
-<stat pass="0" fail="1" skip="0">logs</stat>
-<stat pass="0" fail="2" skip="0">mail</stat>
-<stat pass="0" fail="1" skip="0">maillog</stat>
-<stat pass="0" fail="1" skip="0">mail_queue</stat>
-<stat pass="0" fail="1" skip="0">mail_rc</stat>
-<stat pass="0" fail="2" skip="0">monitoring</stat>
-<stat pass="0" fail="1" skip="0">mx_records</stat>
-<stat pass="0" fail="8" skip="0">normal</stat>
-<stat pass="0" fail="1" skip="0">port25</stat>
-<stat pass="0" fail="2" skip="0">postfix</stat>
-<stat pass="0" fail="1" skip="0">relay</stat>
-<stat pass="0" fail="2" skip="0">security</stat>
-<stat pass="0" fail="1" skip="0">sendmail</stat>
-<stat pass="0" fail="1" skip="0">services</stat>
-<stat pass="0" fail="6" skip="0">smtp</stat>
-<stat pass="0" fail="1" skip="0">ssh</stat>
-<stat pass="0" fail="1" skip="0">summary</stat>
-<stat pass="0" fail="1" skip="0">test_email</stat>
-<stat pass="0" fail="1" skip="0">validation</stat>
+<stat pass="1" fail="0" skip="0">aliases</stat>
+<stat pass="1" fail="0" skip="0">authentication</stat>
+<stat pass="1" fail="0" skip="0">compliance</stat>
+<stat pass="1" fail="0" skip="0">comprehensive</stat>
+<stat pass="1" fail="0" skip="0">config</stat>
+<stat pass="1" fail="0" skip="0">configuration</stat>
+<stat pass="1" fail="0" skip="0">connection</stat>
+<stat pass="1" fail="0" skip="0">connectivity</stat>
+<stat pass="5" fail="0" skip="0">critical</stat>
+<stat pass="1" fail="0" skip="0">delivery</stat>
+<stat pass="1" fail="0" skip="0">dns</stat>
+<stat pass="1" fail="0" skip="0">firewall</stat>
+<stat pass="1" fail="0" skip="0">infrastructure</stat>
+<stat pass="1" fail="0" skip="0">logs</stat>
+<stat pass="2" fail="0" skip="0">mail</stat>
+<stat pass="1" fail="0" skip="0">maillog</stat>
+<stat pass="1" fail="0" skip="0">mail_queue</stat>
+<stat pass="1" fail="0" skip="0">mail_rc</stat>
+<stat pass="2" fail="0" skip="0">monitoring</stat>
+<stat pass="1" fail="0" skip="0">mx_records</stat>
+<stat pass="8" fail="0" skip="0">normal</stat>
+<stat pass="1" fail="0" skip="0">port25</stat>
+<stat pass="2" fail="0" skip="0">postfix</stat>
+<stat pass="1" fail="0" skip="0">relay</stat>
+<stat pass="2" fail="0" skip="0">security</stat>
+<stat pass="1" fail="0" skip="0">sendmail</stat>
+<stat pass="1" fail="0" skip="0">services</stat>
+<stat pass="6" fail="0" skip="0">smtp</stat>
+<stat pass="1" fail="0" skip="0">ssh</stat>
+<stat pass="1" fail="0" skip="0">summary</stat>
+<stat pass="1" fail="0" skip="0">test_email</stat>
+<stat pass="1" fail="0" skip="0">validation</stat>
 </tag>
 <suite>
-<stat name="Mail Configuration" id="s1" pass="0" fail="13" skip="0">Mail Configuration</stat>
+<stat name="Mail Configuration" id="s1" pass="13" fail="0" skip="0">Mail Configuration</stat>
 </suite>
 </statistics>
 <errors>

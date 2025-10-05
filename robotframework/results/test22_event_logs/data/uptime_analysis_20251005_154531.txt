@@ -1,0 +1,43 @@
+=========================================
+=== Uptime and Reboot History ===
+=========================================
+Timestamp: 20251005_154531
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Current Uptime ===
+ 15:45:28 up  2:40,  2 users,  load average: 1.02, 0.50, 0.41
+
+=== Last Boot Time ===
+         system boot  2025-10-05 12:18
+
+=== Reboot History (last reboot) ===
+reboot   system boot  6.6.87.2-microso Sun Oct  5 12:18   still running
+reboot   system boot  6.6.87.2-microso Sun Oct  5 12:06   still running
+reboot   system boot  6.6.87.2-microso Mon Sep 29 22:06   still running
+reboot   system boot  6.6.87.2-microso Mon Sep 29 22:05   still running
+reboot   system boot  6.6.87.2-microso Mon Sep 29 22:03   still running
+reboot   system boot  6.6.87.2-microso Sun Sep 28 10:59   still running
+reboot   system boot  6.6.87.2-microso Sun Sep 28 10:09   still running
+reboot   system boot  6.6.87.2-microso Sun Sep 28 09:14   still running
+reboot   system boot  6.6.87.2-microso Sun Sep 28 08:48   still running
+reboot   system boot  6.6.87.2-microso Mon Sep 15 09:06   still running
+reboot   system boot  6.6.87.2-microso Thu Sep  4 20:03   still running
+reboot   system boot  6.6.87.2-microso Sun Aug 31 23:21   still running
+reboot   system boot  6.6.87.2-microso Wed Aug 20 18:44   still running
+reboot   system boot  6.6.87.2-microso Wed Aug 20 17:20   still running
+
+wtmp begins Wed Aug 20 17:20:54 2025
+
+=== Boot List (journalctl) ===
+IDX BOOT ID                          FIRST ENTRY                 LAST ENTRY
+ -8 c9febcdebe354d36953259d448b8d22f Wed 2025-08-20 17:20:55 CDT Wed 2025-08-20 18:34:34 CDT
+ -7 756707ee465642eca24996deda19358f Wed 2025-08-20 18:44:41 CDT Sun 2025-08-24 16:57:35 CDT
+ -6 59b2a05ead284c609e61339d67a64850 Sun 2025-08-31 23:21:49 CDT Sun 2025-08-31 23:29:19 CDT
+ -5 48da3fdc99e14050955ce1f3c1cf348c Thu 2025-09-04 20:03:21 CDT Sun 2025-09-14 04:01:29 CDT
+ -4 4b3e9c68ac4b4768ab5c59cea9de1fda Mon 2025-09-15 09:06:38 CDT Sun 2025-09-28 10:55:18 CDT
+ -3 1eee50944e4745269e3cc8421a05f8ec Sun 2025-09-28 10:59:07 CDT Mon 2025-09-29 21:30:55 CDT
+ -2 67afff32440444e5b1f5d3c7d2ddaf1d Mon 2025-09-29 22:03:32 CDT Mon 2025-09-29 22:03:51 CDT
+ -1 4732d18e6cae44b89ee806f24b08a11f Mon 2025-09-29 22:05:12 CDT Mon 2025-09-29 22:06:23 CDT
+  0 c3e9f72d9501467cb833a308f82df79a Sun 2025-10-05 12:06:43 CDT Sun 2025-10-05 15:45:31 CDT
+
+=========================================

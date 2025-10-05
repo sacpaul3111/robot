@@ -1,0 +1,25 @@
+=========================================
+=== Security Updates Status ===
+=========================================
+Timestamp: 20251005_154416
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Security Updates List ===
+bash: line 1: yum: command not found
+bash: line 1: dnf: command not found
+Security list not available
+
+=== Critical Updates List ===
+bash: line 1: yum: command not found
+bash: line 1: dnf: command not found
+Critical list not available
+
+=== CVE List ===
+bash: line 1: yum: command not found
+bash: line 1: dnf: command not found
+CVE list not available
+
+=== Security Update Details ===
+bash: line 1: yum: command not found
+
+=========================================

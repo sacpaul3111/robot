@@ -1,0 +1,29 @@
+=== Memory Information Report ===
+Timestamp: 20251005_130849
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Memory Summary ===
+Mem:           7.7Gi       487Mi       7.2Gi       3.5Mi       193Mi       7.2Gi
+Total Memory: 7.7 GB
+
+=== Detailed Memory Information ===
+MemTotal:        8050912 kB
+MemFree:         7512148 kB
+MemAvailable:    7551040 kB
+Buffers:            5104 kB
+Cached:           160740 kB
+SwapCached:            0 kB
+Active:            62836 kB
+Inactive:         171532 kB
+Active(anon):       2500 kB
+Inactive(anon):    69560 kB
+Active(file):      60336 kB
+Inactive(file):   101972 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2097152 kB
+SwapFree:        2097152 kB
+Dirty:               244 kB
+Writeback:             0 kB
+AnonPages:         68540 kB
+Mapped:           129756 kB

@@ -1,0 +1,75 @@
+=========================================
+=== Log Rotation Configuration ===
+=========================================
+Timestamp: 20251005_154514
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== /etc/logrotate.conf ===
+# see "man logrotate" for details
+
+# global options do not affect preceding include directives
+
+# rotate log files weekly
+weekly
+
+# use the adm group by default, since this is the owning group
+# of /var/log/.
+su root adm
+
+# keep 4 weeks worth of backlogs
+rotate 4
+
+# create new (empty) log files after rotating old ones
+create
+
+# use date as a suffix of the rotated file
+#dateext
+
+# uncomment this if you want your log files compressed
+#compress
+
+# packages drop log rotation information into this directory
+include /etc/logrotate.d
+
+# system-specific logs may also be configured here.
+
+=== /etc/logrotate.d/ Directory ===
+total 52
+drwxr-xr-x  2 root root 4096 Sep 25 06:42 .
+drwxr-xr-x 91 root root 4096 Oct  5 15:44 ..
+-rw-r--r--  1 root root  120 Feb  4  2024 alternatives
+-rw-r--r--  1 root root  126 Apr 22  2022 apport
+-rw-r--r--  1 root root  173 Mar 22  2024 apt
+-rw-r--r--  1 root root  130 Oct 14  2019 btmp
+-rw-r--r--  1 root root  144 Jun 24 16:14 cloud-init
+-rw-r--r--  1 root root  112 Feb  4  2024 dpkg
+-rw-r--r--  1 root root  580 Oct 15  2024 landscape-client
+-rw-r--r--  1 root root  248 Mar 21  2024 rsyslog
+-rw-r--r--  1 root root  270 Apr  2  2024 ubuntu-pro-client
+-rw-r--r--  1 root root  235 Feb 12  2024 unattended-upgrades
+-rw-r--r--  1 root root  145 Oct 14  2019 wtmp
+
+=== Logrotate Status ===
+No logrotate status file
+
+=== Logrotate Cron Job ===
+#!/bin/sh
+
+# skip in favour of systemd timer
+if [ -d /run/systemd/system ]; then
+    exit 0
+fi
+
+# this cronjob persists removals (but not purges)
+if [ ! -x /usr/sbin/logrotate ]; then
+    exit 0
+fi
+
+/usr/sbin/logrotate /etc/logrotate.conf
+EXITVALUE=$?
+if [ $EXITVALUE != 0 ]; then
+    /usr/bin/logger -t logrotate "ALERT exited abnormally with [$EXITVALUE]"
+fi
+exit $EXITVALUE
+
+=========================================

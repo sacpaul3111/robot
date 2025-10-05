@@ -1,308 +1,2328 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-01T16:14:40.096788" rpa="false" schemaversion="5">
-<suite id="s1" name="Disk Space Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test5_disk_space_validation\disk_space_validation.robot">
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-10-05T15:46:34.398803" rpa="false" schemaversion="5">
+<suite id="s1" name="Disk Space Validation" source="/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test5_disk_space_validation/disk_space_validation.robot">
 <kw name="Initialize Storage Test Environment And Lookup Configuration" owner="storage_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.459738" level="INFO">🚀 Initializing Test-5: Storage &amp; System Validation Environment...</msg>
+<msg time="2025-10-05T15:46:48.568462" level="INFO">🚀 Initializing Test-5: Storage &amp; System Validation Environment...</msg>
 <arg>🚀 Initializing Test-5: Storage &amp; System Validation Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.459451" elapsed="0.000662"/>
+<status status="PASS" start="2025-10-05T15:46:48.568210" elapsed="0.000419"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-01T16:14:41.460963" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-05T15:46:48.571590" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.460531" elapsed="0.000577"/>
+<status status="PASS" start="2025-10-05T15:46:48.568899" elapsed="0.002815"/>
 </kw>
 <kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-10-01T16:14:41.487248" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
-<msg time="2025-10-01T16:14:41.487635" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
-<msg time="2025-10-01T16:14:41.487753" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
-<msg time="2025-10-01T16:14:41.487825" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
-<msg time="2025-10-01T16:14:41.487889" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
-<msg time="2025-10-01T16:14:41.487951" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
-<msg time="2025-10-01T16:14:41.488012" level="INFO">Extracted domain from EDS: gnscet.com</msg>
-<msg time="2025-10-01T16:14:41.488093" level="INFO">Extracted CPU cores from EDS: 8</msg>
-<msg time="2025-10-01T16:14:41.488141" level="INFO">Extracted RAM from EDS: 16</msg>
-<msg time="2025-10-01T16:14:41.488193" level="INFO">Extracted storage type from EDS: VSAN</msg>
-<msg time="2025-10-01T16:14:41.488256" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
-<msg time="2025-10-01T16:14:41.488318" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
-<msg time="2025-10-01T16:14:41.488362" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
-<msg time="2025-10-01T16:14:41.488408" level="INFO">Extracted logical volume/partition from EDS: /</msg>
-<msg time="2025-10-01T16:14:41.488443" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-01T16:14:41.488477" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-01T16:14:41.488530" level="INFO">Extracted drive purpose from EDS: OS</msg>
-<msg time="2025-10-01T16:14:41.488568" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
-<msg time="2025-10-01T16:14:41.488628" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
-<msg time="2025-10-01T16:14:41.488916" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<msg time="2025-10-05T15:46:48.636669" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-05T15:46:48.637015" level="INFO">Extracted IP from EDS: 172.30.16.186</msg>
+<msg time="2025-10-05T15:46:48.637077" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-05T15:46:48.637121" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-05T15:46:48.637155" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-05T15:46:48.637188" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-05T15:46:48.637220" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-05T15:46:48.637259" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-05T15:46:48.637295" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-05T15:46:48.637329" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-05T15:46:48.637384" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-05T15:46:48.637418" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-05T15:46:48.637452" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-05T15:46:48.637486" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-05T15:46:48.637519" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-05T15:46:48.637553" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-05T15:46:48.637585" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-05T15:46:48.637615" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-05T15:46:48.637677" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-05T15:46:48.638011" level="INFO">${eds_config} = {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
 <var>${eds_config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
 <doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="PASS" start="2025-10-01T16:14:41.461396" elapsed="0.027568"/>
+<status status="PASS" start="2025-10-05T15:46:48.571889" elapsed="0.066171"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.491737" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
+<msg time="2025-10-05T15:46:48.641492" level="INFO">${TARGET_IP} = 172.30.16.186</msg>
 <arg>${TARGET_IP}</arg>
 <arg>${eds_config['ip']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.489221" elapsed="0.002589"/>
+<status status="PASS" start="2025-10-05T15:46:48.638322" elapsed="0.003267"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.492907" level="INFO">${TARGET_CPU_CORES} = 8</msg>
+<msg time="2025-10-05T15:46:48.643228" level="INFO">${TARGET_CPU_CORES} = 8</msg>
 <arg>${TARGET_CPU_CORES}</arg>
 <arg>${eds_config['cpu_cores']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.491978" elapsed="0.000981"/>
+<status status="PASS" start="2025-10-05T15:46:48.641948" elapsed="0.001384"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.494077" level="INFO">${TARGET_RAM} = 16</msg>
+<msg time="2025-10-05T15:46:48.644702" level="INFO">${TARGET_RAM} = 16</msg>
 <arg>${TARGET_RAM}</arg>
 <arg>${eds_config['ram']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.493099" elapsed="0.001023"/>
+<status status="PASS" start="2025-10-05T15:46:48.643566" elapsed="0.001185"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.495032" level="INFO">${TARGET_STORAGE_TYPE} = VSAN</msg>
+<msg time="2025-10-05T15:46:48.645770" level="INFO">${TARGET_STORAGE_TYPE} = VSAN</msg>
 <arg>${TARGET_STORAGE_TYPE}</arg>
 <arg>${eds_config['storage_type']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.494245" elapsed="0.000832"/>
+<status status="PASS" start="2025-10-05T15:46:48.644888" elapsed="0.000960"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.496640" level="INFO">${TARGET_STORAGE_TOTAL_TB} = 0.465</msg>
+<msg time="2025-10-05T15:46:48.646803" level="INFO">${TARGET_STORAGE_TOTAL_TB} = 0.465</msg>
 <arg>${TARGET_STORAGE_TOTAL_TB}</arg>
 <arg>${eds_config['storage_total_tb']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.495196" elapsed="0.001563"/>
+<status status="PASS" start="2025-10-05T15:46:48.645991" elapsed="0.000861"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.498614" level="INFO">${TARGET_DRIVE_VOLUME_GROUP} = rootvg:</msg>
+<msg time="2025-10-05T15:46:48.647704" level="INFO">${TARGET_DRIVE_VOLUME_GROUP} = rootvg:</msg>
 <arg>${TARGET_DRIVE_VOLUME_GROUP}</arg>
 <arg>${eds_config['drive_volume_group']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.497183" elapsed="0.001493"/>
+<status status="PASS" start="2025-10-05T15:46:48.646983" elapsed="0.000815"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.499708" level="INFO">${TARGET_FILE_SYSTEM} = /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-05T15:46:48.649087" level="INFO">${TARGET_FILE_SYSTEM} = /dev/mapper/rootvg-rootlv</msg>
 <arg>${TARGET_FILE_SYSTEM}</arg>
 <arg>${eds_config['file_system']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.498833" elapsed="0.000919"/>
+<status status="PASS" start="2025-10-05T15:46:48.647949" elapsed="0.001193"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.500596" level="INFO">${TARGET_LOGICAL_VOLUME} = /</msg>
+<msg time="2025-10-05T15:46:48.650221" level="INFO">${TARGET_LOGICAL_VOLUME} = /</msg>
 <arg>${TARGET_LOGICAL_VOLUME}</arg>
 <arg>${eds_config['logical_volume_partition']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.499893" elapsed="0.000746"/>
+<status status="PASS" start="2025-10-05T15:46:48.649285" elapsed="0.000989"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.502400" level="INFO">${TARGET_STORAGE_ALLOC_GB} = 20</msg>
+<msg time="2025-10-05T15:46:48.651568" level="INFO">${TARGET_STORAGE_ALLOC_GB} = 20</msg>
 <arg>${TARGET_STORAGE_ALLOC_GB}</arg>
 <arg>${eds_config['storage_allocation_gb']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.500797" elapsed="0.001681"/>
+<status status="PASS" start="2025-10-05T15:46:48.650444" elapsed="0.001188"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.504456" level="INFO">${TARGET_RECOMMENDED_GB} = 20</msg>
+<msg time="2025-10-05T15:46:48.652443" level="INFO">${TARGET_RECOMMENDED_GB} = 20</msg>
 <arg>${TARGET_RECOMMENDED_GB}</arg>
 <arg>${eds_config['recommended_storage_gb']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.502837" elapsed="0.001733"/>
+<status status="PASS" start="2025-10-05T15:46:48.651769" elapsed="0.000716"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.506766" level="INFO">${TARGET_DRIVE_PURPOSE} = OS</msg>
+<msg time="2025-10-05T15:46:48.653302" level="INFO">${TARGET_DRIVE_PURPOSE} = OS</msg>
 <arg>${TARGET_DRIVE_PURPOSE}</arg>
 <arg>${eds_config['drive_purpose']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.505119" elapsed="0.001720"/>
+<status status="PASS" start="2025-10-05T15:46:48.652626" elapsed="0.001334"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.509459" level="INFO">${TARGET_OS_TYPE} = RHEL 9.6</msg>
+<msg time="2025-10-05T15:46:48.654997" level="INFO">${TARGET_OS_TYPE} = RHEL 9.6</msg>
 <arg>${TARGET_OS_TYPE}</arg>
 <arg>${eds_config['os_type']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.507172" elapsed="0.002393"/>
+<status status="PASS" start="2025-10-05T15:46:48.654123" elapsed="0.000916"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.510142" level="INFO">📋 EDS Target IP: 10.26.216.107</msg>
+<msg time="2025-10-05T15:46:48.655337" level="INFO">📋 EDS Target IP: 172.30.16.186</msg>
 <arg>📋 EDS Target IP: ${TARGET_IP}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.509785" elapsed="0.001073"/>
+<status status="PASS" start="2025-10-05T15:46:48.655145" elapsed="0.000310"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.511536" level="INFO">📋 EDS CPU Cores: 8</msg>
+<msg time="2025-10-05T15:46:48.655794" level="INFO">📋 EDS CPU Cores: 8</msg>
 <arg>📋 EDS CPU Cores: ${TARGET_CPU_CORES}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.511183" elapsed="0.000731"/>
+<status status="PASS" start="2025-10-05T15:46:48.655625" elapsed="0.000270"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.513154" level="INFO">📋 EDS RAM: 16 GB</msg>
+<msg time="2025-10-05T15:46:48.656265" level="INFO">📋 EDS RAM: 16 GB</msg>
 <arg>📋 EDS RAM: ${TARGET_RAM} GB</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.512550" elapsed="0.001058"/>
+<status status="PASS" start="2025-10-05T15:46:48.656034" elapsed="0.000326"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.514348" level="INFO">📋 EDS Storage Type: VSAN</msg>
+<msg time="2025-10-05T15:46:48.656683" level="INFO">📋 EDS Storage Type: VSAN</msg>
 <arg>📋 EDS Storage Type: ${TARGET_STORAGE_TYPE}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.514038" elapsed="0.000568"/>
+<status status="PASS" start="2025-10-05T15:46:48.656501" elapsed="0.000281"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.515228" level="INFO">📋 EDS Storage Total: 0.465 TB</msg>
+<msg time="2025-10-05T15:46:48.657105" level="INFO">📋 EDS Storage Total: 0.465 TB</msg>
 <arg>📋 EDS Storage Total: ${TARGET_STORAGE_TOTAL_TB} TB</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.514941" elapsed="0.000546"/>
+<status status="PASS" start="2025-10-05T15:46:48.656951" elapsed="0.000248"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.516209" level="INFO">📋 EDS OS Type: RHEL 9.6</msg>
+<msg time="2025-10-05T15:46:48.657463" level="INFO">📋 EDS OS Type: RHEL 9.6</msg>
 <arg>📋 EDS OS Type: ${TARGET_OS_TYPE}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.515804" elapsed="0.000750"/>
+<status status="PASS" start="2025-10-05T15:46:48.657324" elapsed="0.000246"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:41.517051" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
+<msg time="2025-10-05T15:46:48.657928" level="INFO">🔗 Connecting to target server: 172.30.16.186...</msg>
 <arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.516771" elapsed="0.000510"/>
+<status status="PASS" start="2025-10-05T15:46:48.657734" elapsed="0.000288"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${TARGET_IP}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-10-01T16:14:41.517545" elapsed="0.000257"/>
+<status status="PASS" start="2025-10-05T15:46:48.658148" elapsed="0.000202"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
-<msg time="2025-10-01T16:14:41.518491" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
-<msg time="2025-10-01T16:14:44.548478" level="FAIL">TimeoutError: timed out</msg>
+<msg time="2025-10-05T15:46:48.658620" level="INFO">Logging into '172.30.16.186:22' as 'sac'.</msg>
+<msg time="2025-10-05T15:46:49.983727" level="INFO">Read output: Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sun Oct  5 15:45:53 CDT 2025
+
+  System load:  1.09                Processes:             36
+  Usage of /:   0.7% of 1006.85GB   Users logged in:       1
+  Memory usage: 7%                  IPv4 address for eth0: 172.30.16.186
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Last login: Sun Oct  5 15:45:54 2025 from 172.30.16.186
+[?2004hsac@alhxvdvitap01:~$</msg>
 <arg>${SSH_USERNAME}</arg>
 <arg>${SSH_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="FAIL" start="2025-10-01T16:14:41.518219" elapsed="3.037468">TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:46:48.658444" elapsed="1.325570"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:49.984558" level="INFO">✅ SSH connection established successfully</msg>
 <arg>✅ SSH connection established successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-01T16:14:44.556050" elapsed="0.000052"/>
+<status status="PASS" start="2025-10-05T15:46:49.984300" elapsed="0.000415"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:49.985076" level="INFO">✅ Test-5 environment initialized</msg>
 <arg>✅ Test-5 environment initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-01T16:14:44.556301" elapsed="0.000033"/>
+<status status="PASS" start="2025-10-05T15:46:49.984890" elapsed="0.000298"/>
 </kw>
 <doc>🏗️ Set up test environment and lookup EDS configuration</doc>
-<status status="FAIL" start="2025-10-01T16:14:41.458477" elapsed="3.098078">TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:46:48.567312" elapsed="1.418032"/>
 </kw>
 <test id="s1-t1" name="Critical - CPU Cores Validation" line="19">
+<kw name="Log Test Start" owner="storage_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:49.986648" level="INFO">🏁 Starting: Critical - CPU Cores Validation</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:49.986497" elapsed="0.000256"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:46:49.986210" elapsed="0.000628"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:49.987056" level="INFO">🔍 Validating CPU cores: EDS vs Server...</msg>
+<arg>🔍 Validating CPU cores: EDS vs Server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:49.986949" elapsed="0.000224"/>
+</kw>
+<kw name="Get CPU Information From Server" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:49.987705" level="INFO">💻 Collecting CPU information from server...</msg>
+<arg>💻 Collecting CPU information from server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:49.987600" elapsed="0.000197"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:46:49.988019" level="INFO">Executing command 'nproc'.</msg>
+<msg time="2025-10-05T15:46:50.010323" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:46:50.010617" level="INFO">${cpu_cores_output} = 8</msg>
+<var>${cpu_cores_output}</var>
+<arg>nproc</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:46:49.987923" elapsed="0.022730"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-10-05T15:46:50.011161" level="INFO">${cpu_cores} = 8</msg>
+<var>${cpu_cores}</var>
+<arg>${cpu_cores_output}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.010899" elapsed="0.000295"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:46:50.011573" level="INFO">Executing command 'lscpu | grep -E "(Model name|CPU\(s\)|Core\(s\) per socket|Socket\(s\))"'.</msg>
+<msg time="2025-10-05T15:46:50.106031" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:46:50.106395" level="INFO">${cpu_info_output} = CPU(s):                               8
+On-line CPU(s) list:                  0-7
+Model name:                           11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Core(s) per socket:              ...</msg>
+<var>${cpu_info_output}</var>
+<arg>lscpu | grep -E "(Model name|CPU\\(s\\)|Core\\(s\\) per socket|Socket\\(s\\))"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.011385" elapsed="0.095059"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:46:50.108073" level="INFO">Executing command 'lscpu | grep "Model name" | cut -d':' -f2 | xargs'.</msg>
+<msg time="2025-10-05T15:46:50.176041" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:46:50.176373" level="INFO">${cpu_model_output} = 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz</msg>
+<var>${cpu_model_output}</var>
+<arg>lscpu | grep "Model name" | cut -d':' -f2 | xargs</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.107801" elapsed="0.068617"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-10-05T15:46:50.177041" level="INFO">${cpu_model} = 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz</msg>
+<var>${cpu_model}</var>
+<arg>${cpu_model_output}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.176730" elapsed="0.000374"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:46:50.177969" level="INFO">${timestamp} = 20251005_154650</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.177340" elapsed="0.000700"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.178609" level="INFO">${cpu_file} = results/test5_disk_space_validation/data/cpu_information_20251005_154650.txt</msg>
+<var>${cpu_file}</var>
+<arg>${DATA_DIR}/cpu_information_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.178295" elapsed="0.000353"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.179461" level="INFO">${cpu_data} = === CPU Information Report ===
+Timestamp: 20251005_154650
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== CPU Core Count ===
+CPU Cores: 8
+
+=== CPU Model ===
+Model: 11th Gen Intel(R) Core(TM) i7-1185...</msg>
+<var>${cpu_data}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== CPU Information Report ===</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>=== CPU Core Count ===</arg>
+<arg>CPU Cores: ${cpu_cores}</arg>
+<arg>=== CPU Model ===</arg>
+<arg>Model: ${cpu_model}</arg>
+<arg>=== Detailed CPU Information ===</arg>
+<arg>${cpu_info_output}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.178810" elapsed="0.000707"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:46:50.187466" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data/cpu_information_20251005_154650.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data/cpu_information_20251005_154650.txt&lt;/a&gt;'.</msg>
+<arg>${cpu_file}</arg>
+<arg>${cpu_data}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.179721" elapsed="0.007866"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.188071" level="INFO">📄 CPU information saved to: results/test5_disk_space_validation/data/cpu_information_20251005_154650.txt</msg>
+<arg>📄 CPU information saved to: ${cpu_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.187824" elapsed="0.000532"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.188776" level="INFO">💻 Server CPU Cores: 8</msg>
+<arg>💻 Server CPU Cores: ${cpu_cores}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.188533" elapsed="0.000374"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.189485" level="INFO">💻 Server CPU Model: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz</msg>
+<arg>💻 Server CPU Model: ${cpu_model}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.189102" elapsed="0.000531"/>
+</kw>
+<return>
+<value>${cpu_cores}</value>
+<status status="PASS" start="2025-10-05T15:46:50.189946" elapsed="0.000091"/>
+</return>
+<msg time="2025-10-05T15:46:50.190242" level="INFO">${actual_cpu_cores} = 8</msg>
+<var>${actual_cpu_cores}</var>
+<doc>💻 Collect CPU information from server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:46:49.987411" elapsed="0.202861"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.190644" level="INFO">📋 EDS Expected CPU Cores: 8</msg>
+<arg>📋 EDS Expected CPU Cores: ${TARGET_CPU_CORES}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.190412" elapsed="0.000356"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.191082" level="INFO">💻 Server Actual CPU Cores: 8</msg>
+<arg>💻 Server Actual CPU Cores: ${actual_cpu_cores}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.190938" elapsed="0.000235"/>
+</kw>
+<kw name="Validate CPU Cores Against EDS" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.191822" level="INFO">🔍 Validating CPU cores: EDS vs Server...</msg>
+<arg>🔍 Validating CPU cores: EDS vs Server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.191703" elapsed="0.000213"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.192175" level="INFO">📋 EDS Expected: 8 cores</msg>
+<arg>📋 EDS Expected: ${TARGET_CPU_CORES} cores</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.192036" elapsed="0.000228"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.192513" level="INFO">💻 Server Actual: 8 cores</msg>
+<arg>💻 Server Actual: ${actual_cpu_cores} cores</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.192378" elapsed="0.000273"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_cpu_cores}</arg>
+<arg>${TARGET_CPU_CORES}</arg>
+<arg>❌ CPU CORE MISMATCH: EDS expects '${TARGET_CPU_CORES}' cores but server has '${actual_cpu_cores}' cores</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.192800" elapsed="0.000253"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.193244" level="INFO">✅ CPU cores validation: PASSED - EDS matches Server</msg>
+<arg>✅ CPU cores validation: PASSED - EDS matches Server</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.193150" elapsed="0.000183"/>
+</kw>
+<arg>${actual_cpu_cores}</arg>
+<doc>💻 Validate CPU cores match EDS expectation</doc>
+<status status="PASS" start="2025-10-05T15:46:50.191365" elapsed="0.002095"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.193666" level="INFO">✅ CPU cores validation: PASSED - EDS matches Server</msg>
+<arg>✅ CPU cores validation: PASSED - EDS matches Server</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.193558" elapsed="0.000230"/>
+</kw>
+<kw name="Log Test End" owner="storage_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.195603" level="INFO">✅ Completed: Critical - CPU Cores Validation - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.195431" elapsed="0.000278"/>
+</kw>
+<status status="PASS" start="2025-10-05T15:46:50.194987" elapsed="0.000780"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:50.195906" elapsed="0.000019"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:46:50.195802" elapsed="0.000155"/>
+</branch>
+<status status="PASS" start="2025-10-05T15:46:50.194915" elapsed="0.001065"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-05T15:46:50.194165" elapsed="0.001869"/>
+</kw>
 <doc>💻 SSH to server and validate CPU core count matches EDS specification</doc>
 <tag>compliance</tag>
 <tag>cpu</tag>
 <tag>critical</tag>
 <tag>hardware</tag>
-<status status="FAIL" start="2025-10-01T16:14:44.556716" elapsed="0.001347">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:46:49.985453" elapsed="0.210642"/>
 </test>
 <test id="s1-t2" name="Critical - Memory Allocation Validation" line="36">
+<kw name="Log Test Start" owner="storage_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.197738" level="INFO">🏁 Starting: Critical - Memory Allocation Validation</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.197573" elapsed="0.000303"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:46:50.197303" elapsed="0.000634"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.198195" level="INFO">🔍 Validating memory allocation: EDS vs Server...</msg>
+<arg>🔍 Validating memory allocation: EDS vs Server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.198045" elapsed="0.000313"/>
+</kw>
+<kw name="Get Memory Information From Server" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.198879" level="INFO">🧠 Collecting memory information from server...</msg>
+<arg>🧠 Collecting memory information from server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.198770" elapsed="0.000205"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:46:50.199175" level="INFO">Executing command 'free -h | grep "Mem:"'.</msg>
+<msg time="2025-10-05T15:46:50.228290" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:46:50.228530" level="INFO">${mem_output} = Mem:           7.7Gi       650Mi       6.8Gi       3.7Mi       371Mi       7.0Gi</msg>
+<var>${mem_output}</var>
+<arg>free -h | grep "Mem:"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.199088" elapsed="0.029468"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:46:50.228926" level="INFO">Executing command 'free -m | grep "Mem:" | awk '{print $2}''.</msg>
+<msg time="2025-10-05T15:46:50.289587" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:46:50.290086" level="INFO">${mem_total_output} = 7862</msg>
+<var>${mem_total_output}</var>
+<arg>free -m | grep "Mem:" | awk '{print $2}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.228759" elapsed="0.061385"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-10-05T15:46:50.290904" level="INFO">${mem_total_mb} = 7862</msg>
+<var>${mem_total_mb}</var>
+<arg>${mem_total_output}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.290527" elapsed="0.000425"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.291612" level="INFO">${mem_total_gb} = 7.7</msg>
+<var>${mem_total_gb}</var>
+<arg>round(${mem_total_mb} / 1024, 1)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.291136" elapsed="0.000519"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:46:50.292023" level="INFO">Executing command 'cat /proc/meminfo | head -20'.</msg>
+<msg time="2025-10-05T15:46:50.335929" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:46:50.336299" level="INFO">${mem_info_output} = MemTotal:        8050912 kB
+MemFree:         7171100 kB
+MemAvailable:    7384612 kB
+Buffers:            5080 kB
+Cached:           329192 kB
+SwapCached:            0 kB
+Active:           143376 kB
+Inac...</msg>
+<var>${mem_info_output}</var>
+<arg>cat /proc/meminfo | head -20</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.291871" elapsed="0.044480"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:46:50.337281" level="INFO">${timestamp} = 20251005_154650</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.336720" elapsed="0.000683"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.338408" level="INFO">${mem_file} = results/test5_disk_space_validation/data/memory_information_20251005_154650.txt</msg>
+<var>${mem_file}</var>
+<arg>${DATA_DIR}/memory_information_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.337905" elapsed="0.000550"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.339356" level="INFO">${mem_data} = === Memory Information Report ===
+Timestamp: 20251005_154650
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Memory Summary ===
+Mem:           7.7Gi       650Mi       6.8Gi       3.7Mi       371Mi  ...</msg>
+<var>${mem_data}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== Memory Information Report ===</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>=== Memory Summary ===</arg>
+<arg>${mem_output}</arg>
+<arg>Total Memory: ${mem_total_gb} GB</arg>
+<arg>=== Detailed Memory Information ===</arg>
+<arg>${mem_info_output}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.338648" elapsed="0.000760"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:46:50.349994" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data/memory_information_20251005_154650.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data/memory_information_20251005_154650.txt&lt;/a&gt;'.</msg>
+<arg>${mem_file}</arg>
+<arg>${mem_data}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.339650" elapsed="0.010461"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.350618" level="INFO">📄 Memory information saved to: results/test5_disk_space_validation/data/memory_information_20251005_154650.txt</msg>
+<arg>📄 Memory information saved to: ${mem_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.350339" elapsed="0.000460"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.351799" level="INFO">🧠 Server Total Memory: 7.7 GB</msg>
+<arg>🧠 Server Total Memory: ${mem_total_gb} GB</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.351541" elapsed="0.000412"/>
+</kw>
+<return>
+<value>${mem_total_gb}</value>
+<status status="PASS" start="2025-10-05T15:46:50.352060" elapsed="0.000068"/>
+</return>
+<msg time="2025-10-05T15:46:50.352358" level="INFO">${actual_memory_gb} = 7.7</msg>
+<var>${actual_memory_gb}</var>
+<doc>🧠 Collect memory information from server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:46:50.198560" elapsed="0.153841"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.352848" level="INFO">📋 EDS Expected RAM: 16 GB</msg>
+<arg>📋 EDS Expected RAM: ${TARGET_RAM} GB</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.352624" elapsed="0.000383"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.353456" level="INFO">🧠 Server Actual RAM: 7.7 GB</msg>
+<arg>🧠 Server Actual RAM: ${actual_memory_gb} GB</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.353178" elapsed="0.000424"/>
+</kw>
+<kw name="Validate Memory Against EDS" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.354559" level="INFO">🔍 Validating memory allocation: EDS vs Server...</msg>
+<arg>🔍 Validating memory allocation: EDS vs Server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.354409" elapsed="0.000304"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.355036" level="INFO">📋 EDS Expected: 16 GB</msg>
+<arg>📋 EDS Expected: ${TARGET_RAM} GB</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.354868" elapsed="0.000272"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.355512" level="INFO">🧠 Server Actual: 7.7 GB</msg>
+<arg>🧠 Server Actual: ${actual_memory_gb} GB</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.355272" elapsed="0.000339"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.356105" level="INFO">${ram_difference} = 8.3</msg>
+<var>${ram_difference}</var>
+<arg>abs(float("${actual_memory_gb}") - float("${TARGET_RAM}"))</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.355760" elapsed="0.000372"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.356481" level="INFO">${tolerance_passed} = False</msg>
+<var>${tolerance_passed}</var>
+<arg>${ram_difference} &lt;= 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.356242" elapsed="0.000289"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.357001" level="FAIL">❌ MEMORY MISMATCH: EDS expects '16' GB but server has '7.7' GB (difference: 8.3 GB, tolerance: 1GB)</msg>
+<arg>${tolerance_passed}</arg>
+<arg>❌ MEMORY MISMATCH: EDS expects '${TARGET_RAM}' GB but server has '${actual_memory_gb}' GB (difference: ${ram_difference} GB, tolerance: 1GB)</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-10-05T15:46:50.356640" elapsed="0.000574">❌ MEMORY MISMATCH: EDS expects '16' GB but server has '7.7' GB (difference: 8.3 GB, tolerance: 1GB)</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Memory validation: PASSED - EDS matches Server (within tolerance)</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:50.357370" elapsed="0.000034"/>
+</kw>
+<arg>${actual_memory_gb}</arg>
+<doc>🧠 Validate memory allocation matches EDS expectation</doc>
+<status status="FAIL" start="2025-10-05T15:46:50.354037" elapsed="0.003529">❌ MEMORY MISMATCH: EDS expects '16' GB but server has '7.7' GB (difference: 8.3 GB, tolerance: 1GB)</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Memory allocation validation: PASSED - EDS matches Server</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:50.357686" elapsed="0.000021"/>
+</kw>
+<kw name="Log Test End" owner="storage_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:50.359103" elapsed="0.000034"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:46:50.358871" elapsed="0.000322"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.359559" level="INFO">❌ Completed: Critical - Memory Allocation Validation - FAIL</msg>
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.359355" elapsed="0.000327"/>
+</kw>
+<status status="PASS" start="2025-10-05T15:46:50.359241" elapsed="0.000502"/>
+</branch>
+<status status="PASS" start="2025-10-05T15:46:50.358603" elapsed="0.001173"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-05T15:46:50.358270" elapsed="0.001589"/>
+</kw>
 <doc>🧠 SSH to server and validate memory allocation matches EDS specification</doc>
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>hardware</tag>
 <tag>memory</tag>
-<status status="FAIL" start="2025-10-01T16:14:44.559944" elapsed="0.001005">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-05T15:46:50.196701" elapsed="0.163230">❌ MEMORY MISMATCH: EDS expects '16' GB but server has '7.7' GB (difference: 8.3 GB, tolerance: 1GB)</status>
 </test>
 <test id="s1-t3" name="Critical - Disk Space Allocation Validation" line="53">
+<kw name="Log Test Start" owner="storage_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.361477" level="INFO">🏁 Starting: Critical - Disk Space Allocation Validation</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.361234" elapsed="0.000343"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:46:50.360955" elapsed="0.000696"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.362012" level="INFO">🔍 Validating disk space allocation: EDS vs Server...</msg>
+<arg>🔍 Validating disk space allocation: EDS vs Server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.361903" elapsed="0.000196"/>
+</kw>
+<kw name="Get Disk Space Information From Server" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:50.362647" level="INFO">💾 Collecting disk space information from server...</msg>
+<arg>💾 Collecting disk space information from server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.362514" elapsed="0.000216"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:46:50.362932" level="INFO">Executing command 'df -h'.</msg>
+<msg time="2025-10-05T15:46:50.390867" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:46:50.391107" level="INFO">${df_output} = Filesystem      Size  Used Avail Use% Mounted on
+none            3.9G     0  3.9G   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+none            3.9G  4.0K  3.9G   1% /mnt/wsl
+drivers         ...</msg>
+<var>${df_output}</var>
+<arg>df -h</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.362843" elapsed="0.028893"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:46:50.392162" level="INFO">Executing command 'lsblk'.</msg>
+<msg time="2025-10-05T15:46:50.453972" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:46:50.454276" level="INFO">${lsblk_output} = NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 388.4M  1 disk 
+sdb    8:16   0   186M  1 disk 
+sdc    8:32   0     2G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /mnt/wslg/distro
+       ...</msg>
+<var>${lsblk_output}</var>
+<arg>lsblk</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.392010" elapsed="0.062307"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:46:50.454740" level="INFO">Executing command 'sudo fdisk -l 2&gt;/dev/null || fdisk -l 2&gt;/dev/null || echo "fdisk requires elevated privileges"'.</msg>
+<msg time="2025-10-05T15:47:10.616409" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:10.617066" level="INFO">${fdisk_output} = </msg>
+<var>${fdisk_output}</var>
+<arg>sudo fdisk -l 2&gt;/dev/null || fdisk -l 2&gt;/dev/null || echo "fdisk requires elevated privileges"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:46:50.454573" elapsed="20.162556"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:10.618220" level="INFO">Executing command 'mount | grep -E "^/"'.</msg>
+<msg time="2025-10-05T15:47:10.683731" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:10.684204" level="INFO">${mount_output} = /dev/sdd on / type ext4 (rw,relatime,discard,errors=remount-ro,data=ordered)
+/dev/sdd on /mnt/wslg/distro type ext4 (ro,relatime,discard,errors=remount-ro,data=ordered)</msg>
+<var>${mount_output}</var>
+<arg>mount | grep -E "^/"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:10.617821" elapsed="0.066446"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:10.684893" level="INFO">Executing command 'df -h / | tail -1'.</msg>
+<msg time="2025-10-05T15:47:10.735021" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:10.735415" level="INFO">${root_df_output} = /dev/sdd       1007G  7.5G  949G   1% /</msg>
+<var>${root_df_output}</var>
+<arg>df -h / | tail -1</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:10.684614" elapsed="0.050852"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:10.736109" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $2}''.</msg>
+<msg time="2025-10-05T15:47:10.786017" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:10.786320" level="INFO">${root_size} = 1007G</msg>
+<var>${root_size}</var>
+<arg>df -h / | tail -1 | awk '{print $2}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:10.735851" elapsed="0.050500"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:10.786755" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $3}''.</msg>
+<msg time="2025-10-05T15:47:10.850868" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:10.851159" level="INFO">${root_used} = 7.5G</msg>
+<var>${root_used}</var>
+<arg>df -h / | tail -1 | awk '{print $3}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:10.786593" elapsed="0.064606"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:10.851798" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $4}''.</msg>
+<msg time="2025-10-05T15:47:10.911670" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:10.911992" level="INFO">${root_available} = 949G</msg>
+<var>${root_available}</var>
+<arg>df -h / | tail -1 | awk '{print $4}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:10.851581" elapsed="0.060461"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:10.912648" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $5}''.</msg>
+<msg time="2025-10-05T15:47:10.970293" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:10.970634" level="INFO">${root_usage_percent} = 1%</msg>
+<var>${root_usage_percent}</var>
+<arg>df -h / | tail -1 | awk '{print $5}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:10.912418" elapsed="0.058266"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:10.971398" level="INFO">Executing command 'sudo vgs 2&gt;/dev/null || vgs 2&gt;/dev/null || echo "Volume group information not available or requires privileges"'.</msg>
+<msg time="2025-10-05T15:47:34.019253" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:34.019833" level="INFO">${vg_output} = Volume group information not available or requires privileges</msg>
+<var>${vg_output}</var>
+<arg>sudo vgs 2&gt;/dev/null || vgs 2&gt;/dev/null || echo "Volume group information not available or requires privileges"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:10.971159" elapsed="23.048726"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:34.020747" level="INFO">Executing command 'sudo lvs 2&gt;/dev/null || lvs 2&gt;/dev/null || echo "Logical volume information not available or requires privileges"'.</msg>
+<msg time="2025-10-05T15:47:56.990519" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:56.990965" level="INFO">${lv_output} = Logical volume information not available or requires privileges</msg>
+<var>${lv_output}</var>
+<arg>sudo lvs 2&gt;/dev/null || lvs 2&gt;/dev/null || echo "Logical volume information not available or requires privileges"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:34.020353" elapsed="22.970707"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:47:56.992470" level="INFO">${timestamp} = 20251005_154756</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:47:56.991595" elapsed="0.000942"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:47:56.993543" level="INFO">${disk_file} = results/test5_disk_space_validation/data/disk_space_information_20251005_154756.txt</msg>
+<var>${disk_file}</var>
+<arg>${DATA_DIR}/disk_space_information_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:47:56.992873" elapsed="0.000723"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:47:56.995002" level="INFO">${disk_data} = === Disk Space Information Report ===
+Timestamp: 20251005_154756
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Disk Usage Summary (df -h) ===
+Filesystem      Size  Used Avail Use% Mounted on
+none ...</msg>
+<var>${disk_data}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== Disk Space Information Report ===</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>=== Disk Usage Summary (df -h) ===</arg>
+<arg>${df_output}</arg>
+<arg>=== Block Device Information (lsblk) ===</arg>
+<arg>${lsblk_output}</arg>
+<arg>=== Root Filesystem Details ===</arg>
+<arg>Total Size: ${root_size}</arg>
+<arg>Used Space: ${root_used}</arg>
+<arg>Available Space: ${root_available}</arg>
+<arg>Usage Percentage: ${root_usage_percent}</arg>
+<arg>=== Mount Points ===</arg>
+<arg>${mount_output}</arg>
+<arg>=== Volume Group Information ===</arg>
+<arg>${vg_output}</arg>
+<arg>=== Logical Volume Information ===</arg>
+<arg>${lv_output}</arg>
+<arg>=== Partition Information (fdisk -l) ===</arg>
+<arg>${fdisk_output}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:47:56.993814" elapsed="0.001240"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:47:57.006950" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data/disk_space_information_20251005_154756.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data/disk_space_information_20251005_154756.txt&lt;/a&gt;'.</msg>
+<arg>${disk_file}</arg>
+<arg>${disk_data}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:47:56.996376" elapsed="0.010788"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.007958" level="INFO">📄 Disk space information saved to: results/test5_disk_space_validation/data/disk_space_information_20251005_154756.txt</msg>
+<arg>📄 Disk space information saved to: ${disk_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.007562" elapsed="0.000632"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.009082" level="INFO">💾 Root filesystem: 1007G total, 7.5G used, 949G available (1% used)</msg>
+<arg>💾 Root filesystem: ${root_size} total, ${root_used} used, ${root_available} available (${root_usage_percent} used)</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.008526" elapsed="0.000944"/>
+</kw>
+<return>
+<value>${root_size}</value>
+<status status="PASS" start="2025-10-05T15:47:57.009637" elapsed="0.000375"/>
+</return>
+<msg time="2025-10-05T15:47:57.010328" level="INFO">${actual_root_size} = 1007G</msg>
+<var>${actual_root_size}</var>
+<doc>💾 Collect comprehensive disk space information from server</doc>
+<status status="PASS" start="2025-10-05T15:46:50.362314" elapsed="66.648062"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.011037" level="INFO">📋 EDS Expected Storage Allocation: 20 GB</msg>
+<arg>📋 EDS Expected Storage Allocation: ${TARGET_STORAGE_ALLOC_GB} GB</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.010605" elapsed="0.000678"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.011941" level="INFO">📋 EDS Recommended Storage: 20 GB</msg>
+<arg>📋 EDS Recommended Storage: ${TARGET_RECOMMENDED_GB} GB</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.011612" elapsed="0.000545"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.012814" level="INFO">💾 Server Root Filesystem Size: 1007G</msg>
+<arg>💾 Server Root Filesystem Size: ${actual_root_size}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.012487" elapsed="0.000822"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.014124" level="INFO">ℹ️ Disk space validation: Root=1007G, Expected=20GB</msg>
+<arg>ℹ️ Disk space validation: Root=${actual_root_size}, Expected=${TARGET_STORAGE_ALLOC_GB}GB</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.013679" elapsed="0.000684"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.015005" level="INFO">✅ Disk space allocation: LOGGED for compliance review</msg>
+<arg>✅ Disk space allocation: LOGGED for compliance review</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.014719" elapsed="0.000546"/>
+</kw>
+<kw name="Log Test End" owner="storage_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.017941" level="INFO">✅ Completed: Critical - Disk Space Allocation Validation - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.016826" elapsed="0.001300"/>
+</kw>
+<status status="PASS" start="2025-10-05T15:47:57.016478" elapsed="0.001751"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:47:57.018485" elapsed="0.000031"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:47:57.018305" elapsed="0.000263"/>
+</branch>
+<status status="PASS" start="2025-10-05T15:47:57.016444" elapsed="0.002155"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-05T15:47:57.016008" elapsed="0.002668"/>
+</kw>
 <doc>💾 SSH to server and validate disk space allocation against EDS requirements</doc>
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>disk</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-10-01T16:14:44.562168" elapsed="0.001419">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:46:50.360365" elapsed="66.658373"/>
 </test>
 <test id="s1-t4" name="Critical - Storage Type Validation" line="70">
+<kw name="Log Test Start" owner="storage_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.021719" level="INFO">🏁 Starting: Critical - Storage Type Validation</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.021348" elapsed="0.000538"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:47:57.020350" elapsed="0.001678"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.022400" level="INFO">🔍 Validating storage type: EDS vs Server...</msg>
+<arg>🔍 Validating storage type: EDS vs Server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.022214" elapsed="0.000338"/>
+</kw>
+<kw name="Get Storage Type From Server" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.023333" level="INFO">📡 Identifying storage type from server...</msg>
+<arg>📡 Identifying storage type from server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.023202" elapsed="0.000250"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:57.023739" level="INFO">Executing command 'lsblk -o NAME,TYPE,FSTYPE,SIZE,MOUNTPOINT'.</msg>
+<msg time="2025-10-05T15:47:57.052670" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:57.053059" level="INFO">${storage_info} = NAME TYPE FSTYPE   SIZE MOUNTPOINT
+sda  disk ext4   388.4M 
+sdb  disk ext4     186M 
+sdc  disk swap       2G [SWAP]
+sdd  disk ext4       1T /mnt/wslg/distro</msg>
+<var>${storage_info}</var>
+<arg>lsblk -o NAME,TYPE,FSTYPE,SIZE,MOUNTPOINT</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.023612" elapsed="0.029637"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:57.054726" level="INFO">Executing command 'ls /sys/class/scsi_host/ 2&gt;/dev/null | wc -l || echo "0"'.</msg>
+<msg time="2025-10-05T15:47:57.109423" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:57.109793" level="INFO">${scsi_info} = 1</msg>
+<var>${scsi_info}</var>
+<arg>ls /sys/class/scsi_host/ 2&gt;/dev/null | wc -l || echo "0"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.054517" elapsed="0.055367"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:57.110502" level="INFO">Executing command 'ls /dev/nvme* 2&gt;/dev/null | wc -l || echo "0"'.</msg>
+<msg time="2025-10-05T15:47:57.170003" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:57.170489" level="INFO">${nvme_info} = 0</msg>
+<var>${nvme_info}</var>
+<arg>ls /dev/nvme* 2&gt;/dev/null | wc -l || echo "0"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.110274" elapsed="0.060273"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:57.171155" level="INFO">Executing command 'ls /sys/block/ | grep -E "(vd|xvd)" | wc -l || echo "0"'.</msg>
+<msg time="2025-10-05T15:47:57.226272" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:57.226659" level="INFO">${virt_info} = 0</msg>
+<var>${virt_info}</var>
+<arg>ls /sys/block/ | grep -E "(vd|xvd)" | wc -l || echo "0"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.170914" elapsed="0.055801"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.227520" level="INFO">${storage_type} = Unknown</msg>
+<var>${storage_type}</var>
+<arg>Unknown</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.227198" elapsed="0.000374"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${nvme_info}&quot; != &quot;0&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${storage_type}</var>
+<arg>NVMe</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-10-05T15:47:57.228355" elapsed="0.000045"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:47:57.227870" elapsed="0.000604"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${virt_info}&quot; != &quot;0&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${storage_type}</var>
+<arg>Virtual/Cloud</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-10-05T15:47:57.229292" elapsed="0.000070"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:47:57.228689" elapsed="0.000791"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${scsi_info}&quot; != &quot;0&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.230283" level="INFO">${storage_type} = SCSI/SAN</msg>
+<var>${storage_type}</var>
+<arg>SCSI/SAN</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.230024" elapsed="0.000309"/>
+</kw>
+<status status="PASS" start="2025-10-05T15:47:57.229552" elapsed="0.000848"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${storage_type}</var>
+<arg>Local/Other</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-10-05T15:47:57.230626" elapsed="0.000572"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:47:57.230450" elapsed="0.001024"/>
+</branch>
+<status status="PASS" start="2025-10-05T15:47:57.227817" elapsed="0.003737"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.232345" level="INFO">📡 Detected storage type: SCSI/SAN</msg>
+<arg>📡 Detected storage type: ${storage_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.231895" elapsed="0.000687"/>
+</kw>
+<return>
+<value>${storage_type}</value>
+<status status="PASS" start="2025-10-05T15:47:57.232734" elapsed="0.000184"/>
+</return>
+<msg time="2025-10-05T15:47:57.233823" level="INFO">${actual_storage_type} = SCSI/SAN</msg>
+<var>${actual_storage_type}</var>
+<doc>📡 Identify storage type from server</doc>
+<status status="PASS" start="2025-10-05T15:47:57.022950" elapsed="0.210930"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.234605" level="INFO">📋 EDS Expected Storage Type: VSAN</msg>
+<arg>📋 EDS Expected Storage Type: ${TARGET_STORAGE_TYPE}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.234121" elapsed="0.000709"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.235594" level="INFO">📡 Server Detected Storage Type: SCSI/SAN</msg>
+<arg>📡 Server Detected Storage Type: ${actual_storage_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.235186" elapsed="0.000669"/>
+</kw>
+<kw name="Validate Storage Type Against EDS" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.237675" level="INFO">🔍 Validating storage type: EDS vs Server...</msg>
+<arg>🔍 Validating storage type: EDS vs Server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.237415" elapsed="0.000463"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.238498" level="INFO">📋 EDS Expected: VSAN</msg>
+<arg>📋 EDS Expected: ${TARGET_STORAGE_TYPE}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.238134" elapsed="0.000640"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.239465" level="INFO">📡 Server Detected: SCSI/SAN</msg>
+<arg>📡 Server Detected: ${actual_storage_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.239089" elapsed="0.000601"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.240318" level="INFO">ℹ️ Storage type comparison: EDS 'VSAN' vs Server 'SCSI/SAN'</msg>
+<arg>ℹ️ Storage type comparison: EDS '${TARGET_STORAGE_TYPE}' vs Server '${actual_storage_type}'</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.239952" elapsed="0.000576"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.241498" level="INFO">✅ Storage type validation: INFORMATIONAL - Logged for review</msg>
+<arg>✅ Storage type validation: INFORMATIONAL - Logged for review</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.240917" elapsed="0.000767"/>
+</kw>
+<arg>${actual_storage_type}</arg>
+<doc>📡 Validate storage type matches EDS expectation</doc>
+<status status="PASS" start="2025-10-05T15:47:57.236346" elapsed="0.005548"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.242327" level="INFO">✅ Storage type validation: INFORMATIONAL - Logged for review</msg>
+<arg>✅ Storage type validation: INFORMATIONAL - Logged for review</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.242113" elapsed="0.000388"/>
+</kw>
+<kw name="Log Test End" owner="storage_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.245663" level="INFO">✅ Completed: Critical - Storage Type Validation - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.244858" elapsed="0.000986"/>
+</kw>
+<status status="PASS" start="2025-10-05T15:47:57.243590" elapsed="0.002336"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:47:57.246194" elapsed="0.000036"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:47:57.245975" elapsed="0.000314"/>
+</branch>
+<status status="PASS" start="2025-10-05T15:47:57.243558" elapsed="0.002768"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-05T15:47:57.243100" elapsed="0.003310"/>
+</kw>
 <doc>📡 SSH to server and validate storage infrastructure matches EDS specification</doc>
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>infrastructure</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-10-01T16:14:44.565024" elapsed="0.001052">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:47:57.019477" elapsed="0.227001"/>
 </test>
 <test id="s1-t5" name="Critical - Root Filesystem Validation" line="87">
+<kw name="Log Test Start" owner="storage_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.249261" level="INFO">🏁 Starting: Critical - Root Filesystem Validation</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.248296" elapsed="0.001143"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:47:57.247856" elapsed="0.001698"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.249947" level="INFO">🔍 Validating root filesystem configuration: EDS vs Server...</msg>
+<arg>🔍 Validating root filesystem configuration: EDS vs Server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.249756" elapsed="0.000334"/>
+</kw>
+<kw name="Get Filesystem Information From Server" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.250963" level="INFO">🗂️ Collecting filesystem information from server...</msg>
+<arg>🗂️ Collecting filesystem information from server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.250780" elapsed="0.000324"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:57.251521" level="INFO">Executing command 'df -T / | tail -1 | awk '{print $2}''.</msg>
+<msg time="2025-10-05T15:47:57.285658" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:57.286047" level="INFO">${root_fs_type} = ext4</msg>
+<var>${root_fs_type}</var>
+<arg>df -T / | tail -1 | awk '{print $2}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.251289" elapsed="0.034808"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:57.286729" level="INFO">Executing command 'df / | tail -1 | awk '{print $1}''.</msg>
+<msg time="2025-10-05T15:47:57.345694" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:57.346283" level="INFO">${root_mount} = /dev/sdd</msg>
+<var>${root_mount}</var>
+<arg>df / | tail -1 | awk '{print $1}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.286444" elapsed="0.059938"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:57.347431" level="INFO">Executing command 'df -T | tail -n +2'.</msg>
+<msg time="2025-10-05T15:47:57.406853" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:57.407199" level="INFO">${fs_types_output} = none           overlay    4025456         0   4025456   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+none           tmpfs      4025456         4   4025452   1% /mnt/wsl
+drivers        9p      ...</msg>
+<var>${fs_types_output}</var>
+<arg>df -T | tail -n +2</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.347049" elapsed="0.060201"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.408022" level="INFO">🗂️ Root filesystem type: ext4</msg>
+<arg>🗂️ Root filesystem type: ${root_fs_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.407571" elapsed="0.000696"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.408852" level="INFO">🗂️ Root mounted from: /dev/sdd</msg>
+<arg>🗂️ Root mounted from: ${root_mount}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.408535" elapsed="0.000657"/>
+</kw>
+<return>
+<value>${root_fs_type}</value>
+<status status="PASS" start="2025-10-05T15:47:57.409364" elapsed="0.000119"/>
+</return>
+<msg time="2025-10-05T15:47:57.409850" level="INFO">${actual_fs_type} = ext4</msg>
+<var>${actual_fs_type}</var>
+<doc>🗂️ Collect filesystem information from server</doc>
+<status status="PASS" start="2025-10-05T15:47:57.250396" elapsed="0.159511"/>
+</kw>
+<kw name="Get Disk Space Information From Server" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:47:57.411130" level="INFO">💾 Collecting disk space information from server...</msg>
+<arg>💾 Collecting disk space information from server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.410918" elapsed="0.000412"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:57.411810" level="INFO">Executing command 'df -h'.</msg>
+<msg time="2025-10-05T15:47:57.470201" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:57.470565" level="INFO">${df_output} = Filesystem      Size  Used Avail Use% Mounted on
+none            3.9G     0  3.9G   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+none            3.9G  4.0K  3.9G   1% /mnt/wsl
+drivers         ...</msg>
+<var>${df_output}</var>
+<arg>df -h</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.411638" elapsed="0.058982"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:57.471315" level="INFO">Executing command 'lsblk'.</msg>
+<msg time="2025-10-05T15:47:57.529999" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:47:57.530462" level="INFO">${lsblk_output} = NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 388.4M  1 disk 
+sdb    8:16   0   186M  1 disk 
+sdc    8:32   0     2G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /mnt/wslg/distro
+       ...</msg>
+<var>${lsblk_output}</var>
+<arg>lsblk</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.471070" elapsed="0.059480"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:47:57.531522" level="INFO">Executing command 'sudo fdisk -l 2&gt;/dev/null || fdisk -l 2&gt;/dev/null || echo "fdisk requires elevated privileges"'.</msg>
+<msg time="2025-10-05T15:48:17.665378" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:48:17.665908" level="INFO">${fdisk_output} = </msg>
+<var>${fdisk_output}</var>
+<arg>sudo fdisk -l 2&gt;/dev/null || fdisk -l 2&gt;/dev/null || echo "fdisk requires elevated privileges"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:47:57.531075" elapsed="20.134879"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:48:17.667629" level="INFO">Executing command 'mount | grep -E "^/"'.</msg>
+<msg time="2025-10-05T15:48:17.720187" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:48:17.720648" level="INFO">${mount_output} = /dev/sdd on / type ext4 (rw,relatime,discard,errors=remount-ro,data=ordered)
+/dev/sdd on /mnt/wslg/distro type ext4 (ro,relatime,discard,errors=remount-ro,data=ordered)</msg>
+<var>${mount_output}</var>
+<arg>mount | grep -E "^/"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:48:17.667354" elapsed="0.053376"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:48:17.721737" level="INFO">Executing command 'df -h / | tail -1'.</msg>
+<msg time="2025-10-05T15:48:17.775891" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:48:17.776318" level="INFO">${root_df_output} = /dev/sdd       1007G  7.5G  949G   1% /</msg>
+<var>${root_df_output}</var>
+<arg>df -h / | tail -1</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:48:17.721420" elapsed="0.054956"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:48:17.777530" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $2}''.</msg>
+<msg time="2025-10-05T15:48:17.842976" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:48:17.843337" level="INFO">${root_size} = 1007G</msg>
+<var>${root_size}</var>
+<arg>df -h / | tail -1 | awk '{print $2}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:48:17.776783" elapsed="0.066619"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:48:17.843991" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $3}''.</msg>
+<msg time="2025-10-05T15:48:17.901425" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:48:17.901763" level="INFO">${root_used} = 7.5G</msg>
+<var>${root_used}</var>
+<arg>df -h / | tail -1 | awk '{print $3}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:48:17.843743" elapsed="0.058062"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:48:17.902442" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $4}''.</msg>
+<msg time="2025-10-05T15:48:17.961492" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:48:17.961858" level="INFO">${root_available} = 949G</msg>
+<var>${root_available}</var>
+<arg>df -h / | tail -1 | awk '{print $4}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:48:17.902112" elapsed="0.059796"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:48:17.962634" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $5}''.</msg>
+<msg time="2025-10-05T15:48:18.022799" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:48:18.023791" level="INFO">${root_usage_percent} = 1%</msg>
+<var>${root_usage_percent}</var>
+<arg>df -h / | tail -1 | awk '{print $5}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:48:17.962269" elapsed="0.061715"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:48:18.025624" level="INFO">Executing command 'sudo vgs 2&gt;/dev/null || vgs 2&gt;/dev/null || echo "Volume group information not available or requires privileges"'.</msg>
+<msg time="2025-10-05T15:48:41.090471" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:48:41.090846" level="INFO">${vg_output} = Volume group information not available or requires privileges</msg>
+<var>${vg_output}</var>
+<arg>sudo vgs 2&gt;/dev/null || vgs 2&gt;/dev/null || echo "Volume group information not available or requires privileges"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:48:18.024677" elapsed="23.066224"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:48:41.091509" level="INFO">Executing command 'sudo lvs 2&gt;/dev/null || lvs 2&gt;/dev/null || echo "Logical volume information not available or requires privileges"'.</msg>
+<msg time="2025-10-05T15:49:03.895849" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:03.896263" level="INFO">${lv_output} = Logical volume information not available or requires privileges</msg>
+<var>${lv_output}</var>
+<arg>sudo lvs 2&gt;/dev/null || lvs 2&gt;/dev/null || echo "Logical volume information not available or requires privileges"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:48:41.091272" elapsed="22.805051"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:49:03.897273" level="INFO">${timestamp} = 20251005_154903</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.896710" elapsed="0.000750"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.898999" level="INFO">${disk_file} = results/test5_disk_space_validation/data/disk_space_information_20251005_154903.txt</msg>
+<var>${disk_file}</var>
+<arg>${DATA_DIR}/disk_space_information_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.898463" elapsed="0.000605"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.900751" level="INFO">${disk_data} = === Disk Space Information Report ===
+Timestamp: 20251005_154903
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Disk Usage Summary (df -h) ===
+Filesystem      Size  Used Avail Use% Mounted on
+none ...</msg>
+<var>${disk_data}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== Disk Space Information Report ===</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>=== Disk Usage Summary (df -h) ===</arg>
+<arg>${df_output}</arg>
+<arg>=== Block Device Information (lsblk) ===</arg>
+<arg>${lsblk_output}</arg>
+<arg>=== Root Filesystem Details ===</arg>
+<arg>Total Size: ${root_size}</arg>
+<arg>Used Space: ${root_used}</arg>
+<arg>Available Space: ${root_available}</arg>
+<arg>Usage Percentage: ${root_usage_percent}</arg>
+<arg>=== Mount Points ===</arg>
+<arg>${mount_output}</arg>
+<arg>=== Volume Group Information ===</arg>
+<arg>${vg_output}</arg>
+<arg>=== Logical Volume Information ===</arg>
+<arg>${lv_output}</arg>
+<arg>=== Partition Information (fdisk -l) ===</arg>
+<arg>${fdisk_output}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.899412" elapsed="0.001402"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:49:03.915835" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data/disk_space_information_20251005_154903.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data/disk_space_information_20251005_154903.txt&lt;/a&gt;'.</msg>
+<arg>${disk_file}</arg>
+<arg>${disk_data}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.901296" elapsed="0.014776"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.917675" level="INFO">📄 Disk space information saved to: results/test5_disk_space_validation/data/disk_space_information_20251005_154903.txt</msg>
+<arg>📄 Disk space information saved to: ${disk_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.916440" elapsed="0.001462"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.918917" level="INFO">💾 Root filesystem: 1007G total, 7.5G used, 949G available (1% used)</msg>
+<arg>💾 Root filesystem: ${root_size} total, ${root_used} used, ${root_available} available (${root_usage_percent} used)</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.918367" elapsed="0.000745"/>
+</kw>
+<return>
+<value>${root_size}</value>
+<status status="PASS" start="2025-10-05T15:49:03.919256" elapsed="0.000141"/>
+</return>
+<msg time="2025-10-05T15:49:03.919769" level="INFO">${actual_root_size} = 1007G</msg>
+<var>${actual_root_size}</var>
+<doc>💾 Collect comprehensive disk space information from server</doc>
+<status status="PASS" start="2025-10-05T15:47:57.410493" elapsed="66.509330"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.920394" level="INFO">📋 EDS Expected Mount Point: /</msg>
+<arg>📋 EDS Expected Mount Point: ${TARGET_LOGICAL_VOLUME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.920046" elapsed="0.000579"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.921250" level="INFO">📋 EDS Expected File System: /dev/mapper/rootvg-rootlv</msg>
+<arg>📋 EDS Expected File System: ${TARGET_FILE_SYSTEM}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.920945" elapsed="0.000499"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.922122" level="INFO">🗂️ Server Root Filesystem Type: ext4</msg>
+<arg>🗂️ Server Root Filesystem Type: ${actual_fs_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.921705" elapsed="0.000708"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.923108" level="INFO">🗂️ Server Root Mount Size: 1007G</msg>
+<arg>🗂️ Server Root Mount Size: ${actual_root_size}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.922755" elapsed="0.000582"/>
+</kw>
+<kw name="Validate Root Filesystem Against EDS" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.924683" level="INFO">🔍 Validating root filesystem: EDS vs Server...</msg>
+<arg>🔍 Validating root filesystem: EDS vs Server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.924509" elapsed="0.000329"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.925334" level="INFO">📋 EDS Expected Mount: /</msg>
+<arg>📋 EDS Expected Mount: ${TARGET_LOGICAL_VOLUME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.925030" elapsed="0.000463"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.925894" level="INFO">📋 EDS Expected Storage: 20 GB</msg>
+<arg>📋 EDS Expected Storage: ${TARGET_STORAGE_ALLOC_GB} GB</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.925680" elapsed="0.000456"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.927421" level="INFO">🗂️ Server Filesystem: ext4</msg>
+<arg>🗂️ Server Filesystem: ${actual_fs_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.927122" elapsed="0.000537"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.928090" level="INFO">🗂️ Server Root Size: 1007G</msg>
+<arg>🗂️ Server Root Size: ${actual_root_size}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.927859" elapsed="0.000389"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.928833" level="INFO">ℹ️ Filesystem validation: Type=ext4, Size=1007G</msg>
+<arg>ℹ️ Filesystem validation: Type=${actual_fs_type}, Size=${actual_root_size}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.928447" elapsed="0.000540"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.929397" level="INFO">✅ Filesystem validation: LOGGED for compliance review</msg>
+<arg>✅ Filesystem validation: LOGGED for compliance review</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.929227" elapsed="0.000316"/>
+</kw>
+<arg>${actual_fs_type}</arg>
+<arg>${actual_root_size}</arg>
+<doc>🗂️ Validate root filesystem configuration against EDS</doc>
+<status status="PASS" start="2025-10-05T15:49:03.923657" elapsed="0.006021"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.930489" level="INFO">✅ Root filesystem validation: LOGGED for compliance review</msg>
+<arg>✅ Root filesystem validation: LOGGED for compliance review</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.929911" elapsed="0.000740"/>
+</kw>
+<kw name="Log Test End" owner="storage_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.931867" level="INFO">✅ Completed: Critical - Root Filesystem Validation - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.931673" elapsed="0.000360"/>
+</kw>
+<status status="PASS" start="2025-10-05T15:49:03.931380" elapsed="0.000712"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:49:03.932250" elapsed="0.000021"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:49:03.932125" elapsed="0.000182"/>
+</branch>
+<status status="PASS" start="2025-10-05T15:49:03.931355" elapsed="0.000974"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-05T15:49:03.931045" elapsed="0.001338"/>
+</kw>
 <doc>🗂️ SSH to server and validate root filesystem configuration against EDS</doc>
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>filesystem</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-10-01T16:14:44.567129" elapsed="0.001444">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:47:57.246969" elapsed="66.685457"/>
 </test>
 <test id="s1-t6" name="Normal - Storage Capacity Analysis" line="107">
+<kw name="Log Test Start" owner="storage_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.933866" level="INFO">🏁 Starting: Normal - Storage Capacity Analysis</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.933679" elapsed="0.000308"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:49:03.933354" elapsed="0.000999"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.934743" level="INFO">🔍 Performing storage capacity analysis...</msg>
+<arg>🔍 Performing storage capacity analysis...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.934586" elapsed="0.000277"/>
+</kw>
+<kw name="Get Disk Space Information From Server" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:49:03.936003" level="INFO">💾 Collecting disk space information from server...</msg>
+<arg>💾 Collecting disk space information from server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.935870" elapsed="0.000248"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:03.936445" level="INFO">Executing command 'df -h'.</msg>
+<msg time="2025-10-05T15:49:03.948692" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:03.948943" level="INFO">${df_output} = Filesystem      Size  Used Avail Use% Mounted on
+none            3.9G     0  3.9G   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+none            3.9G  4.0K  3.9G   1% /mnt/wsl
+drivers         ...</msg>
+<var>${df_output}</var>
+<arg>df -h</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.936325" elapsed="0.012647"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:03.949326" level="INFO">Executing command 'lsblk'.</msg>
+<msg time="2025-10-05T15:49:04.010734" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:04.011000" level="INFO">${lsblk_output} = NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 388.4M  1 disk 
+sdb    8:16   0   186M  1 disk 
+sdc    8:32   0     2G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /mnt/wslg/distro
+       ...</msg>
+<var>${lsblk_output}</var>
+<arg>lsblk</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:03.949183" elapsed="0.061851"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:04.011586" level="INFO">Executing command 'sudo fdisk -l 2&gt;/dev/null || fdisk -l 2&gt;/dev/null || echo "fdisk requires elevated privileges"'.</msg>
+<msg time="2025-10-05T15:49:24.146398" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:24.146934" level="INFO">${fdisk_output} = </msg>
+<var>${fdisk_output}</var>
+<arg>sudo fdisk -l 2&gt;/dev/null || fdisk -l 2&gt;/dev/null || echo "fdisk requires elevated privileges"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:04.011337" elapsed="20.135659"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:24.147646" level="INFO">Executing command 'mount | grep -E "^/"'.</msg>
+<msg time="2025-10-05T15:49:24.207136" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:24.207577" level="INFO">${mount_output} = /dev/sdd on / type ext4 (rw,relatime,discard,errors=remount-ro,data=ordered)
+/dev/sdd on /mnt/wslg/distro type ext4 (ro,relatime,discard,errors=remount-ro,data=ordered)</msg>
+<var>${mount_output}</var>
+<arg>mount | grep -E "^/"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:24.147353" elapsed="0.060306"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:24.208258" level="INFO">Executing command 'df -h / | tail -1'.</msg>
+<msg time="2025-10-05T15:49:24.252058" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:24.252438" level="INFO">${root_df_output} = /dev/sdd       1007G  7.5G  949G   1% /</msg>
+<var>${root_df_output}</var>
+<arg>df -h / | tail -1</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:24.208030" elapsed="0.044491"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:24.253090" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $2}''.</msg>
+<msg time="2025-10-05T15:49:24.318688" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:24.319049" level="INFO">${root_size} = 1007G</msg>
+<var>${root_size}</var>
+<arg>df -h / | tail -1 | awk '{print $2}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:24.252848" elapsed="0.066252"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:24.319767" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $3}''.</msg>
+<msg time="2025-10-05T15:49:24.384815" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:24.385460" level="INFO">${root_used} = 7.5G</msg>
+<var>${root_used}</var>
+<arg>df -h / | tail -1 | awk '{print $3}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:24.319440" elapsed="0.066565"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:24.387162" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $4}''.</msg>
+<msg time="2025-10-05T15:49:24.434488" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:24.434710" level="INFO">${root_available} = 949G</msg>
+<var>${root_available}</var>
+<arg>df -h / | tail -1 | awk '{print $4}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:24.386884" elapsed="0.047851"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:24.435093" level="INFO">Executing command 'df -h / | tail -1 | awk '{print $5}''.</msg>
+<msg time="2025-10-05T15:49:24.498500" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:24.498793" level="INFO">${root_usage_percent} = 1%</msg>
+<var>${root_usage_percent}</var>
+<arg>df -h / | tail -1 | awk '{print $5}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:24.434955" elapsed="0.063876"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:24.499363" level="INFO">Executing command 'sudo vgs 2&gt;/dev/null || vgs 2&gt;/dev/null || echo "Volume group information not available or requires privileges"'.</msg>
+<msg time="2025-10-05T15:49:47.688407" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:49:47.689201" level="INFO">${vg_output} = Volume group information not available or requires privileges</msg>
+<var>${vg_output}</var>
+<arg>sudo vgs 2&gt;/dev/null || vgs 2&gt;/dev/null || echo "Volume group information not available or requires privileges"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:24.499120" elapsed="23.190178"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:49:47.691003" level="INFO">Executing command 'sudo lvs 2&gt;/dev/null || lvs 2&gt;/dev/null || echo "Logical volume information not available or requires privileges"'.</msg>
+<msg time="2025-10-05T15:50:07.796115" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:50:07.796440" level="INFO">${lv_output} = Logical volume information not available or requires privileges</msg>
+<var>${lv_output}</var>
+<arg>sudo lvs 2&gt;/dev/null || lvs 2&gt;/dev/null || echo "Logical volume information not available or requires privileges"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:49:47.690630" elapsed="20.105863"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:50:07.797247" level="INFO">${timestamp} = 20251005_155007</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.796788" elapsed="0.000510"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:50:07.798885" level="INFO">${disk_file} = results/test5_disk_space_validation/data/disk_space_information_20251005_155007.txt</msg>
+<var>${disk_file}</var>
+<arg>${DATA_DIR}/disk_space_information_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.798471" elapsed="0.000472"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:50:07.800326" level="INFO">${disk_data} = === Disk Space Information Report ===
+Timestamp: 20251005_155007
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Disk Usage Summary (df -h) ===
+Filesystem      Size  Used Avail Use% Mounted on
+none ...</msg>
+<var>${disk_data}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=== Disk Space Information Report ===</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>=== Disk Usage Summary (df -h) ===</arg>
+<arg>${df_output}</arg>
+<arg>=== Block Device Information (lsblk) ===</arg>
+<arg>${lsblk_output}</arg>
+<arg>=== Root Filesystem Details ===</arg>
+<arg>Total Size: ${root_size}</arg>
+<arg>Used Space: ${root_used}</arg>
+<arg>Available Space: ${root_available}</arg>
+<arg>Usage Percentage: ${root_usage_percent}</arg>
+<arg>=== Mount Points ===</arg>
+<arg>${mount_output}</arg>
+<arg>=== Volume Group Information ===</arg>
+<arg>${vg_output}</arg>
+<arg>=== Logical Volume Information ===</arg>
+<arg>${lv_output}</arg>
+<arg>=== Partition Information (fdisk -l) ===</arg>
+<arg>${fdisk_output}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.799192" elapsed="0.001177"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:50:07.822441" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data/disk_space_information_20251005_155007.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/data/disk_space_information_20251005_155007.txt&lt;/a&gt;'.</msg>
+<arg>${disk_file}</arg>
+<arg>${disk_data}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.800611" elapsed="0.022019"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:07.823897" level="INFO">📄 Disk space information saved to: results/test5_disk_space_validation/data/disk_space_information_20251005_155007.txt</msg>
+<arg>📄 Disk space information saved to: ${disk_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.822949" elapsed="0.001169"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:07.824941" level="INFO">💾 Root filesystem: 1007G total, 7.5G used, 949G available (1% used)</msg>
+<arg>💾 Root filesystem: ${root_size} total, ${root_used} used, ${root_available} available (${root_usage_percent} used)</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.824359" elapsed="0.000750"/>
+</kw>
+<return>
+<value>${root_size}</value>
+<status status="PASS" start="2025-10-05T15:50:07.825208" elapsed="0.000080"/>
+</return>
+<msg time="2025-10-05T15:50:07.825529" level="INFO">${root_size} = 1007G</msg>
+<var>${root_size}</var>
+<doc>💾 Collect comprehensive disk space information from server</doc>
+<status status="PASS" start="2025-10-05T15:49:03.935601" elapsed="63.889959"/>
+</kw>
+<kw name="Get Storage Type From Server" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:07.826384" level="INFO">📡 Identifying storage type from server...</msg>
+<arg>📡 Identifying storage type from server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.826245" elapsed="0.000253"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:50:07.826769" level="INFO">Executing command 'lsblk -o NAME,TYPE,FSTYPE,SIZE,MOUNTPOINT'.</msg>
+<msg time="2025-10-05T15:50:07.859285" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:50:07.859766" level="INFO">${storage_info} = NAME TYPE FSTYPE   SIZE MOUNTPOINT
+sda  disk ext4   388.4M 
+sdb  disk ext4     186M 
+sdc  disk swap       2G [SWAP]
+sdd  disk ext4       1T /mnt/wslg/distro</msg>
+<var>${storage_info}</var>
+<arg>lsblk -o NAME,TYPE,FSTYPE,SIZE,MOUNTPOINT</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.826640" elapsed="0.033205"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:50:07.860562" level="INFO">Executing command 'ls /sys/class/scsi_host/ 2&gt;/dev/null | wc -l || echo "0"'.</msg>
+<msg time="2025-10-05T15:50:07.920222" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:50:07.920566" level="INFO">${scsi_info} = 1</msg>
+<var>${scsi_info}</var>
+<arg>ls /sys/class/scsi_host/ 2&gt;/dev/null | wc -l || echo "0"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.860273" elapsed="0.060344"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:50:07.921549" level="INFO">Executing command 'ls /dev/nvme* 2&gt;/dev/null | wc -l || echo "0"'.</msg>
+<msg time="2025-10-05T15:50:07.977099" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:50:07.977433" level="INFO">${nvme_info} = 0</msg>
+<var>${nvme_info}</var>
+<arg>ls /dev/nvme* 2&gt;/dev/null | wc -l || echo "0"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.921242" elapsed="0.056241"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:50:07.978123" level="INFO">Executing command 'ls /sys/block/ | grep -E "(vd|xvd)" | wc -l || echo "0"'.</msg>
+<msg time="2025-10-05T15:50:08.023980" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:50:08.024156" level="INFO">${virt_info} = 0</msg>
+<var>${virt_info}</var>
+<arg>ls /sys/block/ | grep -E "(vd|xvd)" | wc -l || echo "0"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:50:07.977821" elapsed="0.046360"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.024576" level="INFO">${storage_type} = Unknown</msg>
+<var>${storage_type}</var>
+<arg>Unknown</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.024349" elapsed="0.000255"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${nvme_info}&quot; != &quot;0&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${storage_type}</var>
+<arg>NVMe</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-10-05T15:50:08.024893" elapsed="0.000021"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:50:08.024690" elapsed="0.000266"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${virt_info}&quot; != &quot;0&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${storage_type}</var>
+<arg>Virtual/Cloud</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-10-05T15:50:08.025124" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:50:08.024980" elapsed="0.000191"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${scsi_info}&quot; != &quot;0&quot;">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.025463" level="INFO">${storage_type} = SCSI/SAN</msg>
+<var>${storage_type}</var>
+<arg>SCSI/SAN</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.025337" elapsed="0.000197"/>
+</kw>
+<status status="PASS" start="2025-10-05T15:50:08.025191" elapsed="0.001012"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${storage_type}</var>
+<arg>Local/Other</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-10-05T15:50:08.026410" elapsed="0.000023"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:50:08.026253" elapsed="0.000217"/>
+</branch>
+<status status="PASS" start="2025-10-05T15:50:08.024666" elapsed="0.001867"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.026959" level="INFO">📡 Detected storage type: SCSI/SAN</msg>
+<arg>📡 Detected storage type: ${storage_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.026688" elapsed="0.000414"/>
+</kw>
+<return>
+<value>${storage_type}</value>
+<status status="PASS" start="2025-10-05T15:50:08.027184" elapsed="0.000118"/>
+</return>
+<msg time="2025-10-05T15:50:08.027611" level="INFO">${storage_type} = SCSI/SAN</msg>
+<var>${storage_type}</var>
+<doc>📡 Identify storage type from server</doc>
+<status status="PASS" start="2025-10-05T15:50:07.825948" elapsed="0.201714"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.028141" level="INFO">📊 Storage Analysis Summary:</msg>
+<arg>📊 Storage Analysis Summary:</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.027865" elapsed="0.000409"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.028717" level="INFO">📊 - Storage Type: SCSI/SAN</msg>
+<arg>📊 - Storage Type: ${storage_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.028477" elapsed="0.000369"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.029174" level="INFO">📊 - Root Size: 1007G</msg>
+<arg>📊 - Root Size: ${root_size}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.028992" elapsed="0.000250"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.029539" level="INFO">📊 - EDS Total Storage: 0.465 TB</msg>
+<arg>📊 - EDS Total Storage: ${TARGET_STORAGE_TOTAL_TB} TB</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.029374" elapsed="0.000226"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.030329" level="INFO">📊 - EDS Drive Purpose: OS</msg>
+<arg>📊 - EDS Drive Purpose: ${TARGET_DRIVE_PURPOSE}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.029717" elapsed="0.000715"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.030648" level="INFO">ℹ️ Storage capacity analysis completed and logged</msg>
+<arg>ℹ️ Storage capacity analysis completed and logged</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.030547" elapsed="0.000179"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.030931" level="INFO">✅ Storage capacity analysis: INFORMATIONAL - Available for review</msg>
+<arg>✅ Storage capacity analysis: INFORMATIONAL - Available for review</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.030823" elapsed="0.000235"/>
+</kw>
+<kw name="Log Test End" owner="storage_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.032022" level="INFO">✅ Completed: Normal - Storage Capacity Analysis - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.031869" elapsed="0.000238"/>
+</kw>
+<status status="PASS" start="2025-10-05T15:50:08.031666" elapsed="0.000478"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:50:08.032261" elapsed="0.000017"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:50:08.032168" elapsed="0.000139"/>
+</branch>
+<status status="PASS" start="2025-10-05T15:50:08.031646" elapsed="0.000678"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-05T15:50:08.031340" elapsed="0.001056"/>
+</kw>
 <doc>📊 Analyze overall storage capacity and utilization patterns</doc>
 <tag>analysis</tag>
 <tag>capacity</tag>
 <tag>normal</tag>
 <tag>storage</tag>
-<status status="FAIL" start="2025-10-01T16:14:44.569803" elapsed="0.001701">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:49:03.932740" elapsed="64.099695"/>
 </test>
 <test id="s1-t7" name="Normal - Volume Group Analysis" line="127">
+<kw name="Log Test Start" owner="storage_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.033553" level="INFO">🏁 Starting: Normal - Volume Group Analysis</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.033415" elapsed="0.000314"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:50:08.033170" elapsed="0.000621"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.034023" level="INFO">🔍 Analyzing volume group configuration...</msg>
+<arg>🔍 Analyzing volume group configuration...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.033909" elapsed="0.000194"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.034341" level="INFO">📋 EDS Volume Group Info: rootvg:</msg>
+<arg>📋 EDS Volume Group Info: ${TARGET_DRIVE_VOLUME_GROUP}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.034198" elapsed="0.000216"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.034624" level="INFO">📋 EDS Logical Volume: /</msg>
+<arg>📋 EDS Logical Volume: ${TARGET_LOGICAL_VOLUME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.034505" elapsed="0.000190"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.034926" level="INFO">📋 EDS File System: /dev/mapper/rootvg-rootlv</msg>
+<arg>📋 EDS File System: ${TARGET_FILE_SYSTEM}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.034810" elapsed="0.000187"/>
+</kw>
+<kw name="Get Filesystem Information From Server" owner="storage_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.037650" level="INFO">🗂️ Collecting filesystem information from server...</msg>
+<arg>🗂️ Collecting filesystem information from server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.035598" elapsed="0.002195"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:50:08.038148" level="INFO">Executing command 'df -T / | tail -1 | awk '{print $2}''.</msg>
+<msg time="2025-10-05T15:50:08.089685" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:50:08.090032" level="INFO">${root_fs_type} = ext4</msg>
+<var>${root_fs_type}</var>
+<arg>df -T / | tail -1 | awk '{print $2}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.037987" elapsed="0.052093"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:50:08.092034" level="INFO">Executing command 'df / | tail -1 | awk '{print $1}''.</msg>
+<msg time="2025-10-05T15:50:08.149405" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:50:08.149750" level="INFO">${root_mount} = /dev/sdd</msg>
+<var>${root_mount}</var>
+<arg>df / | tail -1 | awk '{print $1}'</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.091686" elapsed="0.058114"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:50:08.150524" level="INFO">Executing command 'df -T | tail -n +2'.</msg>
+<msg time="2025-10-05T15:50:08.213839" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:50:08.214738" level="INFO">${fs_types_output} = none           overlay    4025456         0   4025456   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+none           tmpfs      4025456         4   4025452   1% /mnt/wsl
+drivers        9p      ...</msg>
+<var>${fs_types_output}</var>
+<arg>df -T | tail -n +2</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.150194" elapsed="0.064678"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.216148" level="INFO">🗂️ Root filesystem type: ext4</msg>
+<arg>🗂️ Root filesystem type: ${root_fs_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.215333" elapsed="0.001055"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.217087" level="INFO">🗂️ Root mounted from: /dev/sdd</msg>
+<arg>🗂️ Root mounted from: ${root_mount}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.216700" elapsed="0.000582"/>
+</kw>
+<return>
+<value>${root_fs_type}</value>
+<status status="PASS" start="2025-10-05T15:50:08.217422" elapsed="0.000080"/>
+</return>
+<msg time="2025-10-05T15:50:08.217768" level="INFO">${actual_fs_type} = ext4</msg>
+<var>${actual_fs_type}</var>
+<doc>🗂️ Collect filesystem information from server</doc>
+<status status="PASS" start="2025-10-05T15:50:08.035168" elapsed="0.182644"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.218450" level="INFO">🏗️ Server Filesystem Type: ext4</msg>
+<arg>🏗️ Server Filesystem Type: ${actual_fs_type}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.218116" elapsed="0.000539"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.219172" level="INFO">ℹ️ Volume group analysis: EDS vs Server configuration logged</msg>
+<arg>ℹ️ Volume group analysis: EDS vs Server configuration logged</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.218923" elapsed="0.000460"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.220034" level="INFO">✅ Volume group analysis: INFORMATIONAL - Available for review</msg>
+<arg>✅ Volume group analysis: INFORMATIONAL - Available for review</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.219808" elapsed="0.000398"/>
+</kw>
+<kw name="Log Test End" owner="storage_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.222579" level="INFO">✅ Completed: Normal - Volume Group Analysis - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.222173" elapsed="0.000609"/>
+</kw>
+<status status="PASS" start="2025-10-05T15:50:08.221818" elapsed="0.001163"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:50:08.223450" elapsed="0.000297"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:50:08.223047" elapsed="0.000829"/>
+</branch>
+<status status="PASS" start="2025-10-05T15:50:08.221771" elapsed="0.002166"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-05T15:50:08.220782" elapsed="0.003265"/>
+</kw>
 <doc>🏗️ Analyze volume group and logical volume configuration</doc>
 <tag>analysis</tag>
 <tag>lvm</tag>
 <tag>normal</tag>
 <tag>volumes</tag>
-<status status="FAIL" start="2025-10-01T16:14:44.572706" elapsed="0.001441">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:50:08.032665" elapsed="0.191457"/>
 </test>
 <test id="s1-t8" name="Normal - Operating System Validation" line="146">
+<kw name="Log Test Start" owner="storage_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.226774" level="INFO">🏁 Starting: Normal - Operating System Validation</msg>
+<arg>🏁 Starting: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.226470" elapsed="0.000579"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:50:08.225865" elapsed="0.001324"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.227944" level="INFO">🔍 Validating operating system: EDS vs Server...</msg>
+<arg>🔍 Validating operating system: EDS vs Server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.227697" elapsed="0.000698"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:50:08.228761" level="INFO">Executing command 'cat /etc/os-release | grep PRETTY_NAME | cut -d'"' -f2'.</msg>
+<msg time="2025-10-05T15:50:08.264160" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:50:08.264405" level="INFO">${os_info} = Ubuntu 24.04.3 LTS</msg>
+<var>${os_info}</var>
+<arg>cat /etc/os-release | grep PRETTY_NAME | cut -d'"' -f2</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.228626" elapsed="0.035872"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:50:08.264948" level="INFO">Executing command 'uname -r'.</msg>
+<msg time="2025-10-05T15:50:08.323279" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:50:08.323656" level="INFO">${kernel_info} = 6.6.87.2-microsoft-standard-WSL2</msg>
+<var>${kernel_info}</var>
+<arg>uname -r</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.264782" elapsed="0.058938"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.324290" level="INFO">📋 EDS Expected OS Type: RHEL 9.6</msg>
+<arg>📋 EDS Expected OS Type: ${TARGET_OS_TYPE}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.324021" elapsed="0.000417"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.324953" level="INFO">🖥️ Server OS: Ubuntu 24.04.3 LTS</msg>
+<arg>🖥️ Server OS: ${os_info}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.324640" elapsed="0.000445"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.325528" level="INFO">🖥️ Server Kernel: 6.6.87.2-microsoft-standard-WSL2</msg>
+<arg>🖥️ Server Kernel: ${kernel_info}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.325280" elapsed="0.001116"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.326737" level="INFO">ℹ️ OS validation: EDS expects 'RHEL 9.6', Server runs 'Ubuntu 24.04.3 LTS'</msg>
+<arg>ℹ️ OS validation: EDS expects '${TARGET_OS_TYPE}', Server runs '${os_info}'</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.326539" elapsed="0.000290"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.327046" level="INFO">✅ Operating system validation: LOGGED for compliance review</msg>
+<arg>✅ Operating system validation: LOGGED for compliance review</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.326940" elapsed="0.000186"/>
+</kw>
+<kw name="Log Test End" owner="storage_keywords" type="TEARDOWN">
+<if>
+<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:50:08.328189" level="INFO">✅ Completed: Normal - Operating System Validation - PASS</msg>
+<arg>✅ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:50:08.328036" elapsed="0.000240"/>
+</kw>
+<status status="PASS" start="2025-10-05T15:50:08.327849" elapsed="0.000463"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>❌ Completed: ${test_name} - ${test_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:50:08.328433" elapsed="0.000017"/>
+</kw>
+<status status="NOT RUN" start="2025-10-05T15:50:08.328340" elapsed="0.000139"/>
+</branch>
+<status status="PASS" start="2025-10-05T15:50:08.327825" elapsed="0.000671"/>
+</if>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case</doc>
+<status status="PASS" start="2025-10-05T15:50:08.327487" elapsed="0.001056"/>
+</kw>
 <doc>🖥️ Validate operating system type matches EDS specification</doc>
 <tag>compliance</tag>
 <tag>normal</tag>
 <tag>os</tag>
 <tag>system</tag>
-<status status="FAIL" start="2025-10-01T16:14:44.575744" elapsed="0.000834">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:50:08.224649" elapsed="0.103930"/>
 </test>
 <kw name="Generate Storage Executive Summary" owner="storage_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:44.578647" level="INFO">📊 Generating Test-5 Storage Validation Executive Summary...</msg>
+<msg time="2025-10-05T15:50:08.329550" level="INFO">📊 Generating Test-5 Storage Validation Executive Summary...</msg>
 <arg>📊 Generating Test-5 Storage Validation Executive Summary...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:44.578415" elapsed="0.000662"/>
+<status status="PASS" start="2025-10-05T15:50:08.329441" elapsed="0.000195"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-01T16:14:44.579790" level="INFO">${timestamp} = 2025-10-01 16:14:44</msg>
+<msg time="2025-10-05T15:50:08.329923" level="INFO">${timestamp} = 2025-10-05 15:50:08</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-01T16:14:44.579325" elapsed="0.000501"/>
+<status status="PASS" start="2025-10-05T15:50:08.329740" elapsed="0.000205"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:14:44.580110" level="INFO">${summary_file} = results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
+<msg time="2025-10-05T15:50:08.330138" level="INFO">${summary_file} = results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
 <var>${summary_file}</var>
 <arg>results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-01T16:14:44.579966" elapsed="0.000173"/>
+<status status="PASS" start="2025-10-05T15:50:08.330036" elapsed="0.000122"/>
 </kw>
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2025-10-01T16:14:44.580962" level="INFO">${summary_content} = ========================================
+<msg time="2025-10-05T15:50:08.331881" level="INFO">${summary_content} = ========================================
 🗄️ TEST-5: STORAGE &amp; SYSTEM VALIDATION
 📊 EXECUTIVE SUMMARY REPORT
 ========================================
 
-📅 Report Generated: 2025-10-01 16:14:44
+📅 Report Generated: 2025-10-05 15:50:08
 🎯 Target Sy...</msg>
 <var>${summary_content}</var>
 <arg>SEPARATOR=\n</arg>
@@ -342,63 +2362,62 @@ TimeoutError: timed out</status>
 <arg>End of Executive Summary</arg>
 <arg>========================================</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2025-10-01T16:14:44.580254" elapsed="0.000748"/>
+<status status="PASS" start="2025-10-05T15:50:08.330243" elapsed="0.001677"/>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-10-01T16:14:44.583048" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\Test5_Storage_Executive_Summary.txt"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test5_disk_space_validation\Test5_Storage_Executive_Summary.txt&lt;/a&gt;'.</msg>
+<msg time="2025-10-05T15:50:08.340108" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt&lt;/a&gt;'.</msg>
 <arg>${summary_file}</arg>
 <arg>${summary_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-10-01T16:14:44.581393" elapsed="0.001770"/>
+<status status="PASS" start="2025-10-05T15:50:08.332123" elapsed="0.008180"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:44.583708" level="INFO">📊 Executive summary generated: results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
+<msg time="2025-10-05T15:50:08.341113" level="INFO">📊 Executive summary generated: results/test5_disk_space_validation/Test5_Storage_Executive_Summary.txt</msg>
 <arg>📊 Executive summary generated: ${summary_file}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:44.583359" elapsed="0.000751"/>
+<status status="PASS" start="2025-10-05T15:50:08.340630" elapsed="0.000665"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:14:44.584535" level="INFO">✅ Test-5 Storage Validation completed successfully!</msg>
+<msg time="2025-10-05T15:50:08.342259" level="INFO">✅ Test-5 Storage Validation completed successfully!</msg>
 <arg>✅ Test-5 Storage Validation completed successfully!</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:14:44.584322" elapsed="0.000617"/>
+<status status="PASS" start="2025-10-05T15:50:08.341554" elapsed="0.000837"/>
 </kw>
 <doc>📊 Generate executive summary for storage validation results</doc>
-<status status="PASS" start="2025-10-01T16:14:44.578089" elapsed="0.007034"/>
+<status status="PASS" start="2025-10-05T15:50:08.329277" elapsed="0.013224"/>
 </kw>
 <doc>🗄️ Storage &amp; System Validation Test Suite - Test-5
 🔍 Process: Find hostname in EDS → SSH to server → Collect disk/CPU/memory data → Compare server vs EDS
 ✅ Pass if server resources match EDS requirements, ❌ Fail if mismatch
 📊 Validates: CPU cores, RAM, disk space allocation, filesystem types, storage configuration</doc>
-<status status="FAIL" start="2025-10-01T16:14:40.101936" elapsed="4.483254">Suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-05T15:46:34.402908" elapsed="213.939643"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="8" skip="0">All Tests</stat>
+<stat pass="7" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="2" skip="0">analysis</stat>
-<stat pass="0" fail="1" skip="0">capacity</stat>
-<stat pass="0" fail="6" skip="0">compliance</stat>
-<stat pass="0" fail="1" skip="0">cpu</stat>
-<stat pass="0" fail="5" skip="0">critical</stat>
-<stat pass="0" fail="1" skip="0">disk</stat>
-<stat pass="0" fail="1" skip="0">filesystem</stat>
-<stat pass="0" fail="2" skip="0">hardware</stat>
-<stat pass="0" fail="1" skip="0">infrastructure</stat>
-<stat pass="0" fail="1" skip="0">lvm</stat>
+<stat pass="2" fail="0" skip="0">analysis</stat>
+<stat pass="1" fail="0" skip="0">capacity</stat>
+<stat pass="5" fail="1" skip="0">compliance</stat>
+<stat pass="1" fail="0" skip="0">cpu</stat>
+<stat pass="4" fail="1" skip="0">critical</stat>
+<stat pass="1" fail="0" skip="0">disk</stat>
+<stat pass="1" fail="0" skip="0">filesystem</stat>
+<stat pass="1" fail="1" skip="0">hardware</stat>
+<stat pass="1" fail="0" skip="0">infrastructure</stat>
+<stat pass="1" fail="0" skip="0">lvm</stat>
 <stat pass="0" fail="1" skip="0">memory</stat>
-<stat pass="0" fail="3" skip="0">normal</stat>
-<stat pass="0" fail="1" skip="0">os</stat>
-<stat pass="0" fail="4" skip="0">storage</stat>
-<stat pass="0" fail="1" skip="0">system</stat>
-<stat pass="0" fail="1" skip="0">volumes</stat>
+<stat pass="3" fail="0" skip="0">normal</stat>
+<stat pass="1" fail="0" skip="0">os</stat>
+<stat pass="4" fail="0" skip="0">storage</stat>
+<stat pass="1" fail="0" skip="0">system</stat>
+<stat pass="1" fail="0" skip="0">volumes</stat>
 </tag>
 <suite>
-<stat name="Disk Space Validation" id="s1" pass="0" fail="8" skip="0">Disk Space Validation</stat>
+<stat name="Disk Space Validation" id="s1" pass="7" fail="1" skip="0">Disk Space Validation</stat>
 </suite>
 </statistics>
 <errors>

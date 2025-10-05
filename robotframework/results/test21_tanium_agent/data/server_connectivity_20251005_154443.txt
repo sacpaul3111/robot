@@ -1,0 +1,28 @@
+=========================================
+=== Tanium Server Connectivity Test ===
+=========================================
+Timestamp: 20251005_154443
+Target Server: alhxvdvitap01 (172.30.16.186)
+Tanium Server: tanium.domain.com
+Tanium Port: 17472
+
+=== DNS Resolution ===
+bash: line 1: nslookup: command not found
+bash: line 1: dig: command not found
+DNS lookup not available
+
+=== Ping Test ===
+ping: tanium.domain.com: No address associated with hostname
+Ping test failed
+
+=== Port 17472 Test ===
+nc: getaddrinfo for host "tanium.domain.com" port 17472: No address associated with hostname
+timeout: failed to run command ‘telnet’: No such file or directory
+
+=== Server Configuration ===
+Server configuration not found
+
+=== Connection Logs ===
+No connection logs
+
+=========================================

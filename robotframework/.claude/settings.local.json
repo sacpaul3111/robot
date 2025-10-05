@@ -17,7 +17,10 @@
       "Bash(sudo apt install:*)",
       "Bash(python -m robot:*)",
       "Bash(python:*)",
-      "Bash(rmdir:*)"
+      "Bash(rmdir:*)",
+      "Bash($env:SSH_USERNAME = \"sac\")",
+      "Bash($env:SSH_PASSWORD = \"sac\")",
+      "Bash(echo \"SSH_USERNAME=$env:SSH_USERNAME\")"
     ],
     "deny": [],
     "ask": []

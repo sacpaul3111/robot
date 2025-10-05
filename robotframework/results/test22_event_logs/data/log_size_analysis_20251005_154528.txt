@@ -1,0 +1,58 @@
+=========================================
+=== Log Size Analysis ===
+=========================================
+Timestamp: 20251005_154528
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Largest Log Files/Directories ===
+265M	/var/log/journal
+1.9M	/var/log/syslog.1
+1.8M	/var/log/syslog
+692K	/var/log/dpkg.log
+268K	/var/log/apt
+220K	/var/log/kern.log
+192K	/var/log/syslog.4.gz
+156K	/var/log/syslog.2.gz
+136K	/var/log/syslog.3.gz
+116K	/var/log/bootstrap.log
+72K	/var/log/dmesg
+64K	/var/log/auth.log
+60K	/var/log/wtmp
+56K	/var/log/unattended-upgrades
+44K	/var/log/kern.log.4.gz
+36K	/var/log/dmesg.0
+32K	/var/log/alternatives.log
+24K	/var/log/dmesg.1.gz
+12K	/var/log/kern.log.2.gz
+12K	/var/log/dmesg.4.gz
+
+=== Total /var/log Size ===
+du: cannot read directory '/var/log/private': Permission denied
+271M	/var/log
+Total size not available
+
+=== Oldest Log Files ===
+2025-08-05+11:55:29.0709635820 /var/log/faillog
+2025-08-05+11:55:53.9919859160 /var/log/bootstrap.log
+2025-08-05+11:57:31.9290298770 /var/log/landscape/sysinfo.log
+2025-08-20+17:20:56.0306179780 /var/log/unattended-upgrades/unattended-upgrades-shutdown.log
+2025-08-20+18:34:34.2728258160 /var/log/journal/e92ae856753b432cbc76262e53dea82e/system@00063cd48e76d833-a797d93680e2e28a.journal~
+2025-08-20+18:44:44.3793657980 /var/log/journal/e92ae856753b432cbc76262e53dea82e/system@58fccbfc504041f3b63cb65f30d5449c-0000000000000636-00063cd48e75fc89.journal
+2025-08-20+18:44:44.7918143090 /var/log/journal/e92ae856753b432cbc76262e53dea82e/user-1000@bf399174d6eb4f35942dc61f13333095-0000000000000470-00063cd364fba78d.journal
+2025-08-21+08:37:09.3543141950 /var/log/journal/e92ae856753b432cbc76262e53dea82e/system@58fccbfc504041f3b63cb65f30d5449c-00000000000008a4-00063cd48ea870e8.journal
+2025-08-21+08:37:10.5333647690 /var/log/journal/e92ae856753b432cbc76262e53dea82e/user-1000@58fccbfc504041f3b63cb65f30d5449c-00000000000008a3-00063cd48ea6bfe0.journal
+2025-08-24+16:57:35.2226793790 /var/log/journal/e92ae856753b432cbc76262e53dea82e/system@00063db5b5e10f9d-73b44760ee9ddcf4.journal~
+
+=== Newest Log Files ===
+2025-10-05+15:45:10.5283229340 /var/log/journal/e92ae856753b432cbc76262e53dea82e/system.journal
+2025-10-05+15:45:10.1683229470 /var/log/wtmp
+2025-10-05+15:45:10.1683229470 /var/log/lastlog
+2025-10-05+15:45:10.0747229520 /var/log/syslog
+2025-10-05+15:45:10.0495229530 /var/log/auth.log
+2025-10-05+15:44:50.3705228640 /var/log/journal/e92ae856753b432cbc76262e53dea82e/user-1000.journal
+2025-10-05+15:25:50.7468672350 /var/log/apt/term.log
+2025-10-05+15:25:50.7468672350 /var/log/apt/history.log
+2025-10-05+15:25:50.6820672370 /var/log/dpkg.log
+2025-10-05+15:25:45.7177756710 /var/log/apt/eipp.log.xz
+
+=========================================

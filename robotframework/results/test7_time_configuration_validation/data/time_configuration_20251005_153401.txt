@@ -1,0 +1,31 @@
+=== Time Configuration Report ===
+Timestamp: 20251005_153401
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Timedatectl Output ===
+               Local time: Sun 2025-10-05 15:34:00 CDT
+           Universal time: Sun 2025-10-05 20:34:00 UTC
+                 RTC time: Sun 2025-10-05 20:33:59
+                Time zone: America/Chicago (CDT, -0500)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+
+=== Current Date/Time ===
+Sun Oct  5 15:34:01 CDT 2025
+
+=== Timezone Configuration ===
+Timezone File: America/Chicago
+Localtime Link: lrwxrwxrwx 1 root root 35 Oct  5 12:18 /etc/localtime -> /usr/share/zoneinfo/America/Chicago
+
+=== Chrony Service Status ===
+Chrony service not found
+
+=== Chrony Sources (NTP Servers) ===
+
+
+=== Chrony Tracking (Synchronization Status) ===
+
+
+=== Hardware Clock ===
+hwclock requires privileges

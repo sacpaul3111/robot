@@ -1,0 +1,13 @@
+=========================================
+=== Tanium Agent Error History ===
+=========================================
+Timestamp: 20251005_154446
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Errors from Main Log ===
+
+
+=== Error Log File ===
+No error log file
+
+=========================================

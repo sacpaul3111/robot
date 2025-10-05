@@ -1,0 +1,13 @@
+=========================================
+=== Tanium Agent Update Status ===
+=========================================
+Timestamp: 20251005_154445
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Update Logs ===
+
+
+=== Updates Directory ===
+Updates directory not found
+
+=========================================

@@ -1,0 +1,20 @@
+=========================================
+=== Service Startup Analysis ===
+=========================================
+Timestamp: 20251005_154514
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Failed Services ===
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+
+0 loaded units listed.
+
+=== Service Startup/Shutdown Messages ===
+
+
+=== Failed Service Units ===
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+
+0 loaded units listed.
+
+=========================================

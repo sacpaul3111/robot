@@ -1,0 +1,13 @@
+=========================================
+=== Mail Queue Status Report ===
+=========================================
+Timestamp: 20251005_154348
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== mailq output ===
+bash: line 1: mailq: command not found
+mailq command not available
+
+=== postqueue -p output ===
+bash: line 1: postqueue: command not found
+postqueue not available

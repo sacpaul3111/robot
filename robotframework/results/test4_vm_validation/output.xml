@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-10-05T15:46:17.505533" rpa="false" schemaversion="5">
+<suite id="s1" name="Vm Validation" source="/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test4_vm_validation/vm_validation.robot">
+<kw name="Initialize VM Test Environment And Lookup Configuration" owner="variables" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:26.062061" level="INFO">🚀 Initializing VM Validation Test Suite (Test-4)</msg>
+<arg>🚀 Initializing VM Validation Test Suite (Test-4)</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:26.061785" elapsed="0.000434"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:26.062607" level="INFO">🎯 Target VM: alhxvdvitap01</msg>
+<arg>🎯 Target VM: ${TARGET_HOSTNAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:26.062390" elapsed="0.000359"/>
+</kw>
+<kw name="Lookup Server Config" owner="EDSLookup">
+<msg time="2025-10-05T15:46:26.098589" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-05T15:46:26.098796" level="INFO">Extracted IP from EDS: 172.30.16.186</msg>
+<msg time="2025-10-05T15:46:26.098835" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-05T15:46:26.098863" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-05T15:46:26.098885" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-05T15:46:26.098908" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-05T15:46:26.098929" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-05T15:46:26.098956" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-05T15:46:26.098979" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-05T15:46:26.099002" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-05T15:46:26.099039" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-05T15:46:26.099062" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-05T15:46:26.099082" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-05T15:46:26.099104" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-05T15:46:26.099126" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-05T15:46:26.099147" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-05T15:46:26.099167" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-05T15:46:26.099187" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-05T15:46:26.099208" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-05T15:46:26.099334" level="INFO">${eds_config} = {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<var>${eds_config}</var>
+<arg>${TARGET_HOSTNAME}</arg>
+<doc>Lookup server configuration from EDS sheet based on hostname</doc>
+<status status="PASS" start="2025-10-05T15:46:26.062874" elapsed="0.036483"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:46:26.100420" level="FAIL">Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</msg>
+<arg>${TARGET_VXRAIL_CLUSTER}</arg>
+<arg>${eds_config['vxrail_cluster']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="FAIL" start="2025-10-05T15:46:26.099545" elapsed="0.000975">Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</status>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${vcenter_from_eds}</var>
+<arg>${eds_config['vcenter_host']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.100737" elapsed="0.000036"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<var>${final_vcenter_host}</var>
+<arg>'${vcenter_from_eds}' == 'N/A'</arg>
+<arg>Set Variable</arg>
+<arg>${DEFAULT_VCENTER_HOST}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${vcenter_from_eds}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.100913" elapsed="0.000020"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${TARGET_VCENTER_HOST}</arg>
+<arg>${final_vcenter_host}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.101025" elapsed="0.000015"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${TARGET_VM_CPU_CORES}</arg>
+<arg>${eds_config['cpu_cores']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.101113" elapsed="0.000014"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${TARGET_VM_RAM}</arg>
+<arg>${eds_config['ram']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.101197" elapsed="0.000014"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${TARGET_VM_HARDWARE_VERSION}</arg>
+<arg>${eds_config['vm_hardware_version']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.101284" elapsed="0.000014"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${TARGET_VM_MEMORY_RESERVATION}</arg>
+<arg>${eds_config['vm_memory_reservation']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.101370" elapsed="0.000016"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${TARGET_VM_CPU_RESERVATION}</arg>
+<arg>${eds_config['vm_cpu_reservation']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.101458" elapsed="0.000016"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<var>${env_vcenter_user}</var>
+<arg>VCENTER_USERNAME</arg>
+<arg>${VCENTER_USERNAME}</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.101546" elapsed="0.000015"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<var>${env_vcenter_pass}</var>
+<arg>VCENTER_PASSWORD</arg>
+<arg>${VCENTER_PASSWORD}</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.101629" elapsed="0.000019"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${VCENTER_USERNAME}</arg>
+<arg>${env_vcenter_user}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.101794" elapsed="0.000028"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${VCENTER_PASSWORD}</arg>
+<arg>${env_vcenter_pass}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.101906" elapsed="0.000016"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 EDS Configuration Retrieved:</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.102635" elapsed="0.000024"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 - VxRail Cluster: ${TARGET_VXRAIL_CLUSTER}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.102737" elapsed="0.000018"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 - vCenter Host: ${TARGET_VCENTER_HOST}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.102841" elapsed="0.000022"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 - CPU Cores: ${TARGET_VM_CPU_CORES}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.102958" elapsed="0.000016"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 - RAM: ${TARGET_VM_RAM}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.103044" elapsed="0.000014"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📋 - Hardware Version: ${TARGET_VM_HARDWARE_VERSION}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.103124" elapsed="0.000013"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ VM Test Environment Initialized</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:46:26.103241" elapsed="0.000017"/>
+</kw>
+<doc>Initialize test environment and lookup VM configuration from EDS</doc>
+<status status="FAIL" start="2025-10-05T15:46:26.061185" elapsed="0.042195">Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</status>
+</kw>
+<test id="s1-t1" name="Critical - vCenter API Connection" line="21">
+<doc>🔌 Establish API connection to vCenter and retrieve VM details</doc>
+<tag>api</tag>
+<tag>connection</tag>
+<tag>critical</tag>
+<tag>vcenter</tag>
+<status status="FAIL" start="2025-10-05T15:46:26.103470" elapsed="0.000618">Parent suite setup failed:
+Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</status>
+</test>
+<test id="s1-t2" name="Critical - VM Cluster Placement Validation" line="48">
+<doc>🏢 Validate VM is placed in the correct VxRail cluster per EDS specification</doc>
+<tag>cluster</tag>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>placement</tag>
+<status status="FAIL" start="2025-10-05T15:46:26.104370" elapsed="0.000471">Parent suite setup failed:
+Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</status>
+</test>
+<test id="s1-t3" name="Critical - VM CPU Configuration Validation" line="62">
+<doc>💻 Validate VM CPU allocation matches EDS specification</doc>
+<tag>compliance</tag>
+<tag>cpu</tag>
+<tag>critical</tag>
+<tag>hardware</tag>
+<status status="FAIL" start="2025-10-05T15:46:26.105099" elapsed="0.000389">Parent suite setup failed:
+Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</status>
+</test>
+<test id="s1-t4" name="Critical - VM Memory Configuration Validation" line="76">
+<doc>🧠 Validate VM memory allocation matches EDS specification</doc>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>hardware</tag>
+<tag>memory</tag>
+<status status="FAIL" start="2025-10-05T15:46:26.105757" elapsed="0.000378">Parent suite setup failed:
+Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</status>
+</test>
+<test id="s1-t5" name="Critical - VM Hardware Version Validation" line="90">
+<doc>⚙️ Validate VM hardware version matches EDS specification</doc>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>hardware</tag>
+<tag>version</tag>
+<status status="FAIL" start="2025-10-05T15:46:26.106431" elapsed="0.000338">Parent suite setup failed:
+Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</status>
+</test>
+<test id="s1-t6" name="Critical - VM Network Adapter Validation" line="104">
+<doc>🌐 Validate VM network adapter configuration</doc>
+<tag>adapters</tag>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>network</tag>
+<status status="FAIL" start="2025-10-05T15:46:26.106961" elapsed="0.000500">Parent suite setup failed:
+Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</status>
+</test>
+<test id="s1-t7" name="Critical - VM Disk Configuration Validation" line="118">
+<doc>💾 Validate VM disk configuration and capacity</doc>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>disk</tag>
+<tag>storage</tag>
+<status status="FAIL" start="2025-10-05T15:46:26.107702" elapsed="0.000310">Parent suite setup failed:
+Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</status>
+</test>
+<test id="s1-t8" name="Normal - VM Properties Comprehensive Review" line="132">
+<doc>📋 Review all VM properties and configuration details</doc>
+<tag>analysis</tag>
+<tag>normal</tag>
+<tag>properties</tag>
+<tag>review</tag>
+<status status="FAIL" start="2025-10-05T15:46:26.108225" elapsed="0.000427">Parent suite setup failed:
+Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'</status>
+</test>
+<kw name="Generate VM Executive Summary And Disconnect" type="TEARDOWN">
+<kw name="Generate VM Executive Summary" owner="variables">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:26.109666" level="INFO">📊 Generating VM Validation Executive Summary...</msg>
+<arg>📊 Generating VM Validation Executive Summary...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:26.109505" elapsed="0.000261"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:46:26.110063" level="INFO">${summary_file} = /mnt/c/Users/sacpa/Projects/robot/robotframework/ansible_playbooks/../results/test4_vm_validation/Test4_VM_Validation_Executive_Summary.txt</msg>
+<var>${summary_file}</var>
+<arg>${OUTPUT_DIR}/Test4_VM_Validation_Executive_Summary.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:46:26.109876" elapsed="0.000211"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:46:26.111885" level="INFO">${summary} = ========================================
+VM VALIDATION TEST - EXECUTIVE SUMMARY
+========================================
+
+Test Suite: Test-4 VM Validation
+Target VM: alhxvdvitap01
+
+EDS CONFIGURATION:
+...</msg>
+<var>${summary}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>========================================</arg>
+<arg>VM VALIDATION TEST - EXECUTIVE SUMMARY</arg>
+<arg>========================================</arg>
+<arg>${EMPTY}</arg>
+<arg>Test Suite: Test-4 VM Validation</arg>
+<arg>Target VM: ${TARGET_HOSTNAME}</arg>
+<arg>${EMPTY}</arg>
+<arg>EDS CONFIGURATION:</arg>
+<arg>- VxRail Cluster: ${TARGET_VXRAIL_CLUSTER}</arg>
+<arg>- vCenter Host: ${TARGET_VCENTER_HOST}</arg>
+<arg>- Expected CPU Cores: ${TARGET_VM_CPU_CORES}</arg>
+<arg>- Expected RAM: ${TARGET_VM_RAM}</arg>
+<arg>- Expected Hardware Version: ${TARGET_VM_HARDWARE_VERSION}</arg>
+<arg>- Memory Reservation: ${TARGET_VM_MEMORY_RESERVATION}</arg>
+<arg>- CPU Reservation: ${TARGET_VM_CPU_RESERVATION}</arg>
+<arg>${EMPTY}</arg>
+<arg>VALIDATION STATUS:</arg>
+<arg>- See detailed test report for validation results</arg>
+<arg>${EMPTY}</arg>
+<arg>========================================</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:46:26.110169" elapsed="0.001744"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:46:26.117501" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test4_vm_validation/Test4_VM_Validation_Executive_Summary.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test4_vm_validation/Test4_VM_Validation_Executive_Summary.txt&lt;/a&gt;'.</msg>
+<arg>${summary_file}</arg>
+<arg>${summary}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:46:26.112033" elapsed="0.005883"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:46:26.118277" level="INFO">✅ Executive Summary generated: /mnt/c/Users/sacpa/Projects/robot/robotframework/ansible_playbooks/../results/test4_vm_validation/Test4_VM_Validation_Executive_Summary.txt</msg>
+<arg>✅ Executive Summary generated: ${summary_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:46:26.118045" elapsed="0.000349"/>
+</kw>
+<doc>Generate executive summary for VM validation test results</doc>
+<status status="PASS" start="2025-10-05T15:46:26.109350" elapsed="0.009135"/>
+</kw>
+<kw name="Disconnect From vCenter">
+<msg time="2025-10-05T15:46:26.119728" level="FAIL">No keyword with name 'Disconnect From vCenter' found.</msg>
+<status status="FAIL" start="2025-10-05T15:46:26.119690" elapsed="0.000077">No keyword with name 'Disconnect From vCenter' found.</status>
+</kw>
+<doc>Generate executive summary and disconnect from vCenter</doc>
+<status status="FAIL" start="2025-10-05T15:46:26.109150" elapsed="0.010728">No keyword with name 'Disconnect From vCenter' found.</status>
+</kw>
+<doc>🖥️ VM Configuration Validation Test Suite - Test-4
+🔍 Process: Connect to vCenter API → Query VM details → Compare vCenter vs EDS
+✅ Pass if VM configuration matches EDS requirements, ❌ Fail if mismatch
+📊 Validates: Cluster placement, CPU cores, memory, hardware version, network, disks</doc>
+<status status="FAIL" start="2025-10-05T15:46:17.508728" elapsed="8.611214">Suite setup failed:
+Resolving variable '${eds_config['vxrail_cluster']}' failed: KeyError: 'vxrail_cluster'
+
+Also suite teardown failed:
+No keyword with name 'Disconnect From vCenter' found.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="8" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">adapters</stat>
+<stat pass="0" fail="1" skip="0">analysis</stat>
+<stat pass="0" fail="1" skip="0">api</stat>
+<stat pass="0" fail="1" skip="0">cluster</stat>
+<stat pass="0" fail="6" skip="0">compliance</stat>
+<stat pass="0" fail="1" skip="0">connection</stat>
+<stat pass="0" fail="1" skip="0">cpu</stat>
+<stat pass="0" fail="7" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">disk</stat>
+<stat pass="0" fail="3" skip="0">hardware</stat>
+<stat pass="0" fail="1" skip="0">memory</stat>
+<stat pass="0" fail="1" skip="0">network</stat>
+<stat pass="0" fail="1" skip="0">normal</stat>
+<stat pass="0" fail="1" skip="0">placement</stat>
+<stat pass="0" fail="1" skip="0">properties</stat>
+<stat pass="0" fail="1" skip="0">review</stat>
+<stat pass="0" fail="1" skip="0">storage</stat>
+<stat pass="0" fail="1" skip="0">vcenter</stat>
+<stat pass="0" fail="1" skip="0">version</stat>
+</tag>
+<suite>
+<stat name="Vm Validation" id="s1" pass="0" fail="8" skip="0">Vm Validation</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-10-05T15:46:17.919182" level="ERROR">Error in file '/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test4_vm_validation/vm_validation.robot' on line 8: Resource file 'vm_keywords.resource' does not exist.</msg>
+</errors>
+</robot>

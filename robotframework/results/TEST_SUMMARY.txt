@@ -1,0 +1,34 @@
+========================================================
+GSA Itential Robot Framework - Test Execution Summary
+========================================================
+Execution Date: 2025-10-05T20:42:31Z
+Target Hostname: alhxvdvitap01
+
+========================================================
+RESULTS SUMMARY
+========================================================
+Total Tests:    108
+Passed Tests:   85
+Failed Tests:   23
+Overall Status: FAILED
+
+========================================================
+INDIVIDUAL TEST SUITES
+========================================================
+[test11] test11_services_validation: FAILED ❌ (6/9 passed)
+[test17] test17_mail_configuration: PASSED ✅ (13/13 passed)
+[test18] test18_patch_management: FAILED ❌ (14/15 passed)
+[test21] test21_tanium_agent: PASSED ✅ (20/20 passed)
+[test22] test22_event_logs: FAILED ❌ (15/19 passed)
+[test3] test3_network_validation: FAILED ❌ (4/6 passed)
+[test4] test4_vm_validation: FAILED ❌ (0/8 passed)
+[test5] test5_disk_space_validation: FAILED ❌ (7/8 passed)
+[test7] test7_time_configuration_validation: FAILED ❌ (6/10 passed)
+
+========================================================
+RESULTS LOCATION
+========================================================
+Directory:  /mnt/c/Users/sacpa/Projects/robot/robotframework/ansible_playbooks/../results
+Log:        /mnt/c/Users/sacpa/Projects/robot/robotframework/ansible_playbooks/../results/all_log.html
+Report:     /mnt/c/Users/sacpa/Projects/robot/robotframework/ansible_playbooks/../results/all_report.html
+========================================================

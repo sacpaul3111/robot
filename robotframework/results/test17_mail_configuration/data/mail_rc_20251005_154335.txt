@@ -1,0 +1,15 @@
+=========================================
+=== Mail.rc Configuration Report ===
+=========================================
+Timestamp: 20251005_154335
+Target Server: alhxvdvitap01 (172.30.16.186)
+Expected SMTP Relay: mail.domain.com
+
+=== /etc/mail.rc ===
+Not found at /etc/mail.rc
+
+=== /etc/mail/mail.rc ===
+Not found at /etc/mail/mail.rc
+
+=== /etc/nail.rc ===
+Not found at /etc/nail.rc

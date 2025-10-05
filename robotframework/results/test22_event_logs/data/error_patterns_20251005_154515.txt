@@ -1,0 +1,35 @@
+=========================================
+=== Repeating Error Pattern Analysis ===
+=========================================
+Timestamp: 20251005_154515
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Most Common Error Patterns (journalctl) ===
+    265 unknown: WSL (217)
+     85 kernel: misc dxg:
+     33 unknown: WSL (218)
+     17 unknown: WSL (220)
+     10 kernel: PCI: Fatal:
+      5   
+      4 unknown: WSL (7825
+      2 unknown: WSL (219)
+      2 login[303]: PAM unable
+      2 login[303]: PAM adding
+      1 sudo[953]: sac :
+      1 sudo[9185]: sac :
+      1 sudo[8900]: sac :
+      1 sudo[626]: sac :
+      1 sudo[4020]: sac :
+      1 sudo[1962]: sac :
+      1 sudo[1962]: pam_unix(sudo:auth): conversation
+      1 sudo[1962]: pam_unix(sudo:auth): auth
+      1 sudo[1959]: sac :
+      1 sudo[1959]: pam_unix(sudo:auth): conversation
+
+=== Repeated Error Messages (/var/log/messages) ===
+
+
+=== Error Frequency (Last 24 Hours) ===
+85 errors in last 24 hours
+
+=========================================

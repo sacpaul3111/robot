@@ -1,0 +1,13 @@
+=========================================
+=== Tanium Agent Resource Usage ===
+=========================================
+Timestamp: 20251005_154445
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Tanium Process Resources (ps) ===
+sac        13084 17.1  1.3 640324 109220 pts/0   Sl+  15:44   0:03 python3 -m robot --variable SSH_USERNAME:sac --variable SSH_PASSWORD:sac --variable TARGET_HOSTNAME:alhxvdvitap01 --variable TEST_SUITE_ID:test21 --outputdir /mnt/c/Users/sacpa/Projects/robot/robotframework/ansible_playbooks/../results/test21_tanium_agent /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test21_tanium_agent/tanium_agent.robot
+
+=== Top Output ===
+Top output not available
+
+=========================================

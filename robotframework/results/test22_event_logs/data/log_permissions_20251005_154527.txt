@@ -1,0 +1,26 @@
+=========================================
+=== Log File Permissions ===
+=========================================
+Timestamp: 20251005_154527
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Log File Permissions (ls -la) ===
+-rw-r--r-- 1 root   root   32433 Sep 28 10:17 /var/log/alternatives.log
+-rw-r----- 1 syslog adm    57781 Oct  5 15:45 /var/log/auth.log
+-rw-r--r-- 1 root   root  118497 Aug  5 11:55 /var/log/bootstrap.log
+-rw-r--r-- 1 root   root  700741 Oct  5 15:25 /var/log/dpkg.log
+-rw-r--r-- 1 root   root    1181 Sep 29 21:18 /var/log/fontconfig.log
+-rw-r----- 1 syslog adm   219783 Oct  5 15:03 /var/log/kern.log
+-rw-r----- 1 syslog adm  1874110 Oct  5 15:45 /var/log/syslog
+Permission check not available
+
+=== Log File Owners and Modes (stat) ===
+/var/log/alternatives.log root:root 644
+/var/log/auth.log syslog:adm 640
+/var/log/bootstrap.log root:root 644
+/var/log/dpkg.log root:root 644
+/var/log/fontconfig.log root:root 644
+/var/log/kern.log syslog:adm 640
+stat not available
+
+=========================================

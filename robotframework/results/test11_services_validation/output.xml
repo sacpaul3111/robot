@@ -1,249 +1,1854 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-01T16:13:47.596842" rpa="false" schemaversion="5">
-<suite id="s1" name="Services Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test11_services_validation\services_validation.robot">
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-10-05T15:42:49.276746" rpa="false" schemaversion="5">
+<suite id="s1" name="Services Validation" source="/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test11_services_validation/services_validation.robot">
 <kw name="Initialize Services Test Environment" owner="services_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:13:52.047938" level="INFO">🚀 Initializing Test-11: Services Validation Environment...</msg>
+<msg time="2025-10-05T15:43:03.726577" level="INFO">🚀 Initializing Test-11: Services Validation Environment...</msg>
 <arg>🚀 Initializing Test-11: Services Validation Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:13:52.047575" elapsed="0.001206"/>
+<status status="PASS" start="2025-10-05T15:43:03.726305" elapsed="0.000424"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-01T16:13:52.050095" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test11_services_validation\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test11_services_validation\data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-05T15:43:03.728284" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test11_services_validation/data"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test11_services_validation/data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-01T16:13:52.049352" elapsed="0.001203"/>
+<status status="PASS" start="2025-10-05T15:43:03.726886" elapsed="0.001493"/>
 </kw>
 <kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-10-01T16:13:52.093326" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
-<msg time="2025-10-01T16:13:52.093897" level="INFO">Extracted IP from EDS: 10.26.216.107</msg>
-<msg time="2025-10-01T16:13:52.094043" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
-<msg time="2025-10-01T16:13:52.094133" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
-<msg time="2025-10-01T16:13:52.094210" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
-<msg time="2025-10-01T16:13:52.094286" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
-<msg time="2025-10-01T16:13:52.094362" level="INFO">Extracted domain from EDS: gnscet.com</msg>
-<msg time="2025-10-01T16:13:52.094444" level="INFO">Extracted CPU cores from EDS: 8</msg>
-<msg time="2025-10-01T16:13:52.094522" level="INFO">Extracted RAM from EDS: 16</msg>
-<msg time="2025-10-01T16:13:52.094601" level="INFO">Extracted storage type from EDS: VSAN</msg>
-<msg time="2025-10-01T16:13:52.094685" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
-<msg time="2025-10-01T16:13:52.094765" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
-<msg time="2025-10-01T16:13:52.094844" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
-<msg time="2025-10-01T16:13:52.094923" level="INFO">Extracted logical volume/partition from EDS: /</msg>
-<msg time="2025-10-01T16:13:52.094999" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-01T16:13:52.095076" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-01T16:13:52.095150" level="INFO">Extracted drive purpose from EDS: OS</msg>
-<msg time="2025-10-01T16:13:52.095224" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
-<msg time="2025-10-01T16:13:52.095308" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
-<msg time="2025-10-01T16:13:52.095876" level="INFO">${eds_config} = {'ip': '10.26.216.107', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<msg time="2025-10-05T15:43:03.773378" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-05T15:43:03.773706" level="INFO">Extracted IP from EDS: 172.30.16.186</msg>
+<msg time="2025-10-05T15:43:03.773764" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-05T15:43:03.773798" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-05T15:43:03.773826" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-05T15:43:03.773853" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-05T15:43:03.773877" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-05T15:43:03.773907" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-05T15:43:03.773934" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-05T15:43:03.773959" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-05T15:43:03.774000" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-05T15:43:03.774025" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-05T15:43:03.774050" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-05T15:43:03.774074" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-05T15:43:03.774098" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-05T15:43:03.774121" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-05T15:43:03.774143" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-05T15:43:03.774165" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-05T15:43:03.774190" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-05T15:43:03.774334" level="INFO">${eds_config} = {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
 <var>${eds_config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
 <doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="PASS" start="2025-10-01T16:13:52.050919" elapsed="0.045099"/>
+<status status="PASS" start="2025-10-05T15:43:03.728597" elapsed="0.045764"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-01T16:13:52.098214" level="INFO">${TARGET_IP} = 10.26.216.107</msg>
+<msg time="2025-10-05T15:43:03.775576" level="INFO">${TARGET_IP} = 172.30.16.186</msg>
 <arg>${TARGET_IP}</arg>
 <arg>${eds_config['ip']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-01T16:13:52.096392" elapsed="0.001916"/>
+<status status="PASS" start="2025-10-05T15:43:03.774698" elapsed="0.000975"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:13:52.098957" level="INFO">📋 Target Server: alhxvdvitap01</msg>
+<msg time="2025-10-05T15:43:03.776185" level="INFO">📋 Target Server: alhxvdvitap01</msg>
 <arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:13:52.098549" elapsed="0.000867"/>
+<status status="PASS" start="2025-10-05T15:43:03.775882" elapsed="0.000468"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:13:52.100636" level="INFO">📋 Target IP: 10.26.216.107</msg>
+<msg time="2025-10-05T15:43:03.777154" level="INFO">📋 Target IP: 172.30.16.186</msg>
 <arg>📋 Target IP: ${TARGET_IP}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:13:52.100005" elapsed="0.001065"/>
+<status status="PASS" start="2025-10-05T15:43:03.776877" elapsed="0.000404"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:13:52.102410" level="INFO">🔗 Connecting to target server: 10.26.216.107...</msg>
+<msg time="2025-10-05T15:43:03.777676" level="INFO">🔗 Connecting to target server: 172.30.16.186...</msg>
 <arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:13:52.101774" elapsed="0.001250"/>
+<status status="PASS" start="2025-10-05T15:43:03.777446" elapsed="0.000336"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${TARGET_IP}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-10-01T16:13:52.103777" elapsed="0.000720"/>
+<status status="PASS" start="2025-10-05T15:43:03.777927" elapsed="0.000232"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
-<msg time="2025-10-01T16:13:52.105244" level="INFO">Logging into '10.26.216.107:22' as 'pauls6'.</msg>
-<msg time="2025-10-01T16:13:55.115399" level="FAIL">TimeoutError: timed out</msg>
+<msg time="2025-10-05T15:43:03.778509" level="INFO">Logging into '172.30.16.186:22' as 'sac'.</msg>
+<msg time="2025-10-05T15:43:05.841494" level="INFO">Read output: Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sun Oct  5 15:43:04 CDT 2025
+
+  System load:  0.48                Processes:             36
+  Usage of /:   0.7% of 1006.85GB   Users logged in:       1
+  Memory usage: 7%                  IPv4 address for eth0: 172.30.16.186
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Last login: Sun Oct  5 15:33:59 2025 from 172.30.16.186
+[?2004hsac@alhxvdvitap01:~$</msg>
 <arg>${SSH_USERNAME}</arg>
 <arg>${SSH_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="FAIL" start="2025-10-01T16:13:52.104793" elapsed="3.019040">TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:03.778268" elapsed="2.063770"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.843204" level="INFO">✅ SSH connection established successfully</msg>
 <arg>✅ SSH connection established successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-01T16:13:55.124410" elapsed="0.000081"/>
+<status status="PASS" start="2025-10-05T15:43:05.842685" elapsed="0.000827"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.844487" level="INFO">✅ Test-11 environment initialized</msg>
 <arg>✅ Test-11 environment initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-01T16:13:55.124798" elapsed="0.000056"/>
+<status status="PASS" start="2025-10-05T15:43:05.844121" elapsed="0.000698"/>
 </kw>
 <doc>🏗️ Set up test environment for services validation</doc>
-<status status="FAIL" start="2025-10-01T16:13:52.046285" elapsed="3.078918">TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:03.725290" elapsed="2.119846"/>
 </kw>
 <test id="s1-t1" name="Critical - Connect to Target Server" line="20">
+<kw name="Log Test Start" owner="services_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.848930" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.848353" elapsed="0.000901"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.851353" level="INFO">🏁 Starting Test: Critical - Connect to Target Server</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.851055" elapsed="0.000642"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.853222" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.852473" elapsed="0.000953"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:05.847270" elapsed="0.006518"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.854264" level="INFO">🔍 Verifying SSH connection to target server...</msg>
+<arg>🔍 Verifying SSH connection to target server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.854049" elapsed="0.000396"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.855549" level="INFO">📋 Target: alhxvdvitap01 (172.30.16.186)</msg>
+<arg>📋 Target: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.855019" elapsed="0.000742"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:05.856981" level="INFO">Executing command 'echo "Connection active"'.</msg>
+<msg time="2025-10-05T15:43:05.870897" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:05.871122" level="INFO">${output} = Connection active</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.856768" elapsed="0.014386"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:05.871238" elapsed="0.000070"/>
+</return>
+<msg time="2025-10-05T15:43:05.871484" level="INFO">${connection_status} = Connection active</msg>
+<var>${connection_status}</var>
+<arg>echo "Connection active"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:05.856248" elapsed="0.015264"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${connection_status}</arg>
+<arg>Connection active</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.871693" elapsed="0.000222"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.872246" level="INFO">✅ SSH connection verified and active</msg>
+<arg>✅ SSH connection verified and active</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.872090" elapsed="0.000266"/>
+</kw>
+<kw name="Log Test End" owner="services_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.873505" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.873284" elapsed="0.000362"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.874019" level="INFO">🏁 Completed Test: Critical - Connect to Target Server | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.873786" elapsed="0.000341"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.874393" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.874252" elapsed="0.000236"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:05.872649" elapsed="0.001907"/>
+</kw>
 <doc>🔗 Establish direct connection to target machine via SSH</doc>
 <tag>connection</tag>
 <tag>critical</tag>
 <tag>infrastructure</tag>
 <tag>ssh</tag>
-<status status="FAIL" start="2025-10-01T16:13:55.125472" elapsed="0.001631">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:05.845596" elapsed="0.029012"/>
 </test>
 <test id="s1-t2" name="Critical - List All Running Services" line="33">
+<kw name="Log Test Start" owner="services_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.876350" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.875838" elapsed="0.000630"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.876775" level="INFO">🏁 Starting Test: Critical - List All Running Services</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.876598" elapsed="0.000265"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.877062" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.876963" elapsed="0.000173"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:05.875460" elapsed="0.001731"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.877377" level="INFO">🔍 Collecting complete service list from server...</msg>
+<arg>🔍 Collecting complete service list from server...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.877288" elapsed="0.000168"/>
+</kw>
+<kw name="Collect All Services Status" owner="services_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.877939" level="INFO">📋 Executing systemctl to collect all services...</msg>
+<arg>📋 Executing systemctl to collect all services...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.877824" elapsed="0.000197"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:05.878489" level="INFO">Executing command 'systemctl list-units --type=service --all --no-pager --no-legend'.</msg>
+<msg time="2025-10-05T15:43:05.941047" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:05.941607" level="INFO">${output} =   apparmor.service                         loaded    inactive dead    Load AppArmor profiles
+  apport-autoreport.service                loaded    inactive dead    Process error reports when automatic ...</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.878378" elapsed="0.063864"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:05.942527" elapsed="0.000118"/>
+</return>
+<msg time="2025-10-05T15:43:05.943095" level="INFO">${all_services} =   apparmor.service                         loaded    inactive dead    Load AppArmor profiles
+  apport-autoreport.service                loaded    inactive dead    Process error reports when automatic ...</msg>
+<var>${all_services}</var>
+<arg>systemctl list-units --type=service --all --no-pager --no-legend</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:05.878165" elapsed="0.064988"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:05.943993" level="INFO">${ALL_SERVICES_OUTPUT} =   apparmor.service                         loaded    inactive dead    Load AppArmor profiles
+  apport-autoreport.service                loaded    inactive dead    Process error reports when automatic ...</msg>
+<arg>${ALL_SERVICES_OUTPUT}</arg>
+<arg>${all_services}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.943536" elapsed="0.000542"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:05.944750" level="INFO">Executing command 'systemctl list-unit-files --type=service --state=enabled --no-pager --no-legend'.</msg>
+<msg time="2025-10-05T15:43:06.669528" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:06.669768" level="INFO">${output} = apparmor.service                       enabled enabled
+apport.service                         enabled enabled
+cloud-config.service                   enabled enabled
+cloud-final.service                ...</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:05.944601" elapsed="0.725199"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:06.669892" elapsed="0.000055"/>
+</return>
+<msg time="2025-10-05T15:43:06.670119" level="INFO">${enabled_services} = apparmor.service                       enabled enabled
+apport.service                         enabled enabled
+cloud-config.service                   enabled enabled
+cloud-final.service                ...</msg>
+<var>${enabled_services}</var>
+<arg>systemctl list-unit-files --type=service --state=enabled --no-pager --no-legend</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:05.944312" elapsed="0.725839"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.670705" level="INFO">${ENABLED_SERVICES_OUTPUT} = apparmor.service                       enabled enabled
+apport.service                         enabled enabled
+cloud-config.service                   enabled enabled
+cloud-final.service                ...</msg>
+<arg>${ENABLED_SERVICES_OUTPUT}</arg>
+<arg>${enabled_services}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.670391" elapsed="0.000369"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:06.672231" level="INFO">Executing command 'systemctl list-units --type=service --state=active --no-pager --no-legend'.</msg>
+<msg time="2025-10-05T15:43:06.726481" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:06.726674" level="INFO">${output} =   console-getty.service                    loaded active running Console Getty
+  console-setup.service                    loaded active exited  Set console font and keymap
+  cron.service              ...</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.672023" elapsed="0.054678"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:06.726768" elapsed="0.000095"/>
+</return>
+<msg time="2025-10-05T15:43:06.727028" level="INFO">${active_services} =   console-getty.service                    loaded active running Console Getty
+  console-setup.service                    loaded active exited  Set console font and keymap
+  cron.service              ...</msg>
+<var>${active_services}</var>
+<arg>systemctl list-units --type=service --state=active --no-pager --no-legend</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:06.671074" elapsed="0.055978"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.727410" level="INFO">${ACTIVE_SERVICES_OUTPUT} =   console-getty.service                    loaded active running Console Getty
+  console-setup.service                    loaded active exited  Set console font and keymap
+  cron.service              ...</msg>
+<arg>${ACTIVE_SERVICES_OUTPUT}</arg>
+<arg>${active_services}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.727208" elapsed="0.000280"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.728005" level="INFO">✅ All services data collected</msg>
+<arg>✅ All services data collected</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.727684" elapsed="0.000463"/>
+</kw>
+<doc>📋 Execute systemctl to collect all services and their status</doc>
+<status status="PASS" start="2025-10-05T15:43:05.877633" elapsed="0.850602"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.728459" level="INFO">Length is 11941.</msg>
+<arg>${ALL_SERVICES_OUTPUT}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.728341" elapsed="0.000155"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.728894" level="INFO">Length is 1649.</msg>
+<arg>${ENABLED_SERVICES_OUTPUT}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.728751" elapsed="0.000193"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.729966" level="INFO">📋 Total services collected: 14 entries</msg>
+<arg>📋 Total services collected: ${ALL_SERVICES_OUTPUT.count('●')} entries</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.729180" elapsed="0.000894"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.730381" level="INFO">✅ Service list collected successfully</msg>
+<arg>✅ Service list collected successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.730240" elapsed="0.000234"/>
+</kw>
+<kw name="Log Test End" owner="services_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.731126" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.731021" elapsed="0.000205"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.731646" level="INFO">🏁 Completed Test: Critical - List All Running Services | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.731370" elapsed="0.000391"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.733023" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.732781" elapsed="0.000357"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:06.730729" elapsed="0.002486"/>
+</kw>
 <doc>📋 Execute systemctl to list all services and their current status</doc>
 <tag>critical</tag>
 <tag>data_collection</tag>
 <tag>services</tag>
 <tag>systemctl</tag>
-<status status="FAIL" start="2025-10-01T16:13:55.129071" elapsed="0.001653">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:05.874905" elapsed="0.858359"/>
 </test>
 <test id="s1-t3" name="Critical - Document Service Status to File" line="49">
+<kw name="Log Test Start" owner="services_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.734625" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.734473" elapsed="0.000254"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.735006" level="INFO">🏁 Starting Test: Critical - Document Service Status to File</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.734847" elapsed="0.000259"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.735337" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.735222" elapsed="0.000203"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:06.734173" elapsed="0.001325"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.735728" level="INFO">🔍 Saving service status documentation...</msg>
+<arg>🔍 Saving service status documentation...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.735612" elapsed="0.000269"/>
+</kw>
+<kw name="Save Services Status to File" owner="services_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.736530" level="INFO">💾 Saving service status to file...</msg>
+<arg>💾 Saving service status to file...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.736405" elapsed="0.000231"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-10-05T15:43:06.736991" level="INFO">${timestamp} = 20251005_154306</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d_%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.736763" elapsed="0.000257"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.737314" level="INFO">${service_file} = results/test11_services_validation/data/services_status_20251005_154306.txt</msg>
+<var>${service_file}</var>
+<arg>${DATA_DIR}/services_status_${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.737130" elapsed="0.000210"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.738331" level="INFO">${service_report} = =========================================
+=== Services Status Report ===
+=========================================
+Timestamp: 20251005_154306
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+============...</msg>
+<var>${service_report}</var>
+<arg>SEPARATOR=\n</arg>
+<arg>=========================================</arg>
+<arg>=== Services Status Report ===</arg>
+<arg>=========================================</arg>
+<arg>Timestamp: ${timestamp}</arg>
+<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
+<arg>=========================================</arg>
+<arg>=== ALL SERVICES (systemctl list-units --type=service --all) ===</arg>
+<arg>=========================================</arg>
+<arg>${ALL_SERVICES_OUTPUT}</arg>
+<arg>=========================================</arg>
+<arg>=== ENABLED SERVICES (systemctl list-unit-files --state=enabled) ===</arg>
+<arg>=========================================</arg>
+<arg>${ENABLED_SERVICES_OUTPUT}</arg>
+<arg>=========================================</arg>
+<arg>=== ACTIVE/RUNNING SERVICES (systemctl list-units --state=active) ===</arg>
+<arg>=========================================</arg>
+<arg>${ACTIVE_SERVICES_OUTPUT}</arg>
+<arg>=========================================</arg>
+<arg>=== REQUIRED SERVICES CHECK ===</arg>
+<arg>=========================================</arg>
+<arg>Required services that must be ENABLED:</arg>
+<arg>- autofs</arg>
+<arg>- sshd</arg>
+<arg>- sssd</arg>
+<arg>- chronyd</arg>
+<arg>- ntpd</arg>
+<arg>- syslog (rsyslog/syslog-ng)</arg>
+<arg>Services that must be DISABLED:</arg>
+<arg>- iptables</arg>
+<arg>- selinux (check with getenforce command)</arg>
+<arg>=========================================</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.737441" elapsed="0.001033"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-10-05T15:43:06.745139" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test11_services_validation/data/services_status_20251005_154306.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test11_services_validation/data/services_status_20251005_154306.txt&lt;/a&gt;'.</msg>
+<arg>${service_file}</arg>
+<arg>${service_report}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.738803" elapsed="0.006442"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.745644" level="INFO">📄 Service status saved to: results/test11_services_validation/data/services_status_20251005_154306.txt</msg>
+<arg>📄 Service status saved to: ${service_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.745408" elapsed="0.000362"/>
+</kw>
+<return>
+<value>${service_file}</value>
+<status status="PASS" start="2025-10-05T15:43:06.745859" elapsed="0.000052"/>
+</return>
+<msg time="2025-10-05T15:43:06.746072" level="INFO">${service_file} = results/test11_services_validation/data/services_status_20251005_154306.txt</msg>
+<var>${service_file}</var>
+<doc>💾 Save complete service status to file for compliance review</doc>
+<status status="PASS" start="2025-10-05T15:43:06.736162" elapsed="0.009935"/>
+</kw>
+<kw name="File Should Exist" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:06.746209" level="WARN">Keyword 'File Should Exist' found both from a custom library 'SSHLibrary' and a standard library 'OperatingSystem'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SSHLibrary.File Should Exist' or 'OperatingSystem.File Should Exist'.</msg>
+<msg time="2025-10-05T15:43:06.772098" level="INFO">[chan 5] Opened sftp connection (server version 3)</msg>
+<msg time="2025-10-05T15:43:06.774074" level="FAIL">File 'results/test11_services_validation/data/services_status_20251005_154306.txt' does not exist.</msg>
+<arg>${service_file}</arg>
+<doc>Fails if the given ``path`` does NOT point to an existing file.</doc>
+<status status="FAIL" start="2025-10-05T15:43:06.746248" elapsed="0.035175">File 'results/test11_services_validation/data/services_status_20251005_154306.txt' does not exist.</status>
+</kw>
+<kw name="Get File Size" owner="services_keywords">
+<var>${file_size}</var>
+<arg>${service_file}</arg>
+<doc>📏 Get size of a file in bytes</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.783563" elapsed="0.000044"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${file_size} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.783797" elapsed="0.000023"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📄 Service status saved to: ${service_file}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.783945" elapsed="0.000020"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📄 File size: ${file_size} bytes</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.784122" elapsed="0.000021"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Service documentation saved successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.784234" elapsed="0.000016"/>
+</kw>
+<kw name="Log Test End" owner="services_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.785466" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.785315" elapsed="0.000276"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.785899" level="INFO">🏁 Completed Test: Critical - Document Service Status to File | Status: FAIL</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.785713" elapsed="0.000284"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.786250" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.786127" elapsed="0.000204"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:06.784563" elapsed="0.001828"/>
+</kw>
 <doc>💾 Save complete service list output to file for compliance review</doc>
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>documentation</tag>
 <tag>file_output</tag>
-<status status="FAIL" start="2025-10-01T16:13:55.133269" elapsed="0.001744">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-05T15:43:06.733565" elapsed="0.052866">File 'results/test11_services_validation/data/services_status_20251005_154306.txt' does not exist.</status>
 </test>
 <test id="s1-t4" name="Critical - Validate Required Services Enabled" line="67">
+<kw name="Log Test Start" owner="services_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.787489" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.787360" elapsed="0.000228"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.787825" level="INFO">🏁 Starting Test: Critical - Validate Required Services Enabled</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.787681" elapsed="0.000221"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.788094" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.787996" elapsed="0.000178"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:06.787137" elapsed="0.001089"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.788405" level="INFO">🔍 Validating required services are enabled...</msg>
+<arg>🔍 Validating required services are enabled...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.788317" elapsed="0.000165"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.788697" level="INFO">📋 Required services: ['autofs', 'sshd', 'sssd', 'chronyd', 'ntpd', 'syslog']</msg>
+<arg>📋 Required services: ${REQUIRED_SERVICES_ENABLED}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.788569" elapsed="0.000202"/>
+</kw>
+<kw name="Validate Required Services Are Enabled" owner="services_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.789243" level="INFO">✅ Validating required services are enabled...</msg>
+<arg>✅ Validating required services are enabled...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.789157" elapsed="0.000161"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.790229" level="INFO">${validation_results} = {}</msg>
+<var>${validation_results}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.789422" elapsed="0.000861"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.791005" level="INFO">🔍 Checking service: autofs</msg>
+<arg>🔍 Checking service: ${service}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.790737" elapsed="0.000503"/>
+</kw>
+<kw name="Check Service Is Enabled" owner="services_keywords">
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:06.793251" level="INFO">Executing command 'systemctl is-enabled autofs 2&gt;/dev/null || echo "not-found"'.</msg>
+<msg time="2025-10-05T15:43:06.820521" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:06.820894" level="INFO">${output} = not-found
+not-found</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.792909" elapsed="0.028036"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:06.821146" elapsed="0.000099"/>
+</return>
+<msg time="2025-10-05T15:43:06.821576" level="INFO">${status1} = not-found
+not-found</msg>
+<var>${status1}</var>
+<arg>systemctl is-enabled ${service_name} 2&gt;/dev/null || echo "not-found"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:06.792531" elapsed="0.029109"/>
+</kw>
+<kw name="Return From Keyword If" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.822919" level="FAIL">Evaluating expression "'not-found\nnot-found' == 'enabled'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</msg>
+<arg>'${status1}' == 'enabled'</arg>
+<arg>enabled</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<status status="FAIL" start="2025-10-05T15:43:06.822364" elapsed="0.001031">Evaluating expression "'not-found\nnot-found' == 'enabled'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<var>${status2}</var>
+<arg>systemctl is-enabled ${service_name}.service 2&gt;/dev/null || echo "not-found"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.824633" elapsed="0.000043"/>
+</kw>
+<kw name="Return From Keyword If" owner="BuiltIn">
+<arg>'${status2}' == 'enabled'</arg>
+<arg>enabled</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.824848" elapsed="0.000027"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${is_syslog}</var>
+<arg>'${service_name}' == 'syslog'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.825025" elapsed="0.000026"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${is_syslog}</arg>
+<arg>Return From Keyword If</arg>
+<arg>${True}</arg>
+<arg>${${Check Syslog Service}}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.825246" elapsed="0.000043"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${is_chronyd}</var>
+<arg>'${service_name}' == 'chronyd'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.825540" elapsed="0.000041"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<var>${status_chrony}</var>
+<arg>${is_chronyd}</arg>
+<arg>Execute Command</arg>
+<arg>systemctl is-enabled chrony 2&gt;/dev/null || echo "not-found"</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.825884" elapsed="0.000050"/>
+</kw>
+<kw name="Return From Keyword If" owner="BuiltIn">
+<arg>'${status_chrony}' == 'enabled'</arg>
+<arg>enabled</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.826106" elapsed="0.000024"/>
+</kw>
+<return>
+<value>not-enabled</value>
+<status status="NOT RUN" start="2025-10-05T15:43:06.826190" elapsed="0.000020"/>
+</return>
+<var>${is_enabled}</var>
+<arg>${service}</arg>
+<doc>🔍 Check if a specific service is enabled (handles multiple service name variations)</doc>
+<status status="FAIL" start="2025-10-05T15:43:06.791705" elapsed="0.034828">Evaluating expression "'not-found\nnot-found' == 'enabled'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${validation_results}</arg>
+<arg>${service}=${is_enabled}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.826945" elapsed="0.000058"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${is_enabled}' == 'enabled'</arg>
+<arg>Log</arg>
+<arg>✅ ${service}: ENABLED</arg>
+<arg>console=yes</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>⚠️ ${service}: NOT ENABLED or NOT FOUND</arg>
+<arg>console=yes</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.827212" elapsed="0.000024"/>
+</kw>
+<var name="${service}">autofs</var>
+<status status="FAIL" start="2025-10-05T15:43:06.790637" elapsed="0.036696">Evaluating expression "'not-found\nnot-found' == 'enabled'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</iter>
+<var>${service}</var>
+<value>@{REQUIRED_SERVICES_ENABLED}</value>
+<status status="FAIL" start="2025-10-05T15:43:06.790443" elapsed="0.036995">Evaluating expression "'not-found\nnot-found' == 'enabled'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</for>
+<return>
+<value>${validation_results}</value>
+<status status="NOT RUN" start="2025-10-05T15:43:06.827579" elapsed="0.000020"/>
+</return>
+<var>${validation_results}</var>
+<doc>✅ Validate that required services are enabled on the system</doc>
+<status status="FAIL" start="2025-10-05T15:43:06.788959" elapsed="0.038849">Evaluating expression "'not-found\nnot-found' == 'enabled'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Required services validation:</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.827958" elapsed="0.000046"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${status}</var>
+<arg>${validation_results}</arg>
+<arg>${service}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.828256" elapsed="0.000354"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - ${service}: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.828779" elapsed="0.000031"/>
+</kw>
+<var name="${service}"/>
+<status status="NOT RUN" start="2025-10-05T15:43:06.828142" elapsed="0.000721"/>
+</iter>
+<var>${service}</var>
+<value>@{REQUIRED_SERVICES_ENABLED}</value>
+<status status="NOT RUN" start="2025-10-05T15:43:06.828065" elapsed="0.000840"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Required services validation completed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.829029" elapsed="0.000020"/>
+</kw>
+<kw name="Log Test End" owner="services_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.830334" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.830073" elapsed="0.000473"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.831043" level="INFO">🏁 Completed Test: Critical - Validate Required Services Enabled | Status: FAIL</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.830734" elapsed="0.000473"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.831891" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.831413" elapsed="0.000637"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:06.829425" elapsed="0.002736"/>
+</kw>
 <doc>✅ Verify required services (autofs, sshd, sssd, chronyd, ntpd, syslog) are enabled</doc>
 <tag>critical</tag>
 <tag>enabled</tag>
 <tag>services</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2025-10-01T16:13:55.140850" elapsed="0.001281">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-05T15:43:06.786681" elapsed="0.045538">Evaluating expression "'not-found\nnot-found' == 'enabled'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
 </test>
 <test id="s1-t5" name="Critical - Validate Unnecessary Services Disabled" line="85">
+<kw name="Log Test Start" owner="services_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.834528" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.833487" elapsed="0.001146"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.834926" level="INFO">🏁 Starting Test: Critical - Validate Unnecessary Services Disabled</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.834766" elapsed="0.000256"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.835257" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.835133" elapsed="0.000212"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:06.833108" elapsed="0.002319"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.835697" level="INFO">🔍 Validating unnecessary services are disabled...</msg>
+<arg>🔍 Validating unnecessary services are disabled...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.835566" elapsed="0.000310"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.836147" level="INFO">📋 Services to check: ['iptables', 'selinux']</msg>
+<arg>📋 Services to check: ${REQUIRED_SERVICES_DISABLED}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.835984" elapsed="0.000254"/>
+</kw>
+<kw name="Validate Unnecessary Services Are Disabled" owner="services_keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.836827" level="INFO">❌ Validating unnecessary services are disabled...</msg>
+<arg>❌ Validating unnecessary services are disabled...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.836711" elapsed="0.000217"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.837235" level="INFO">${validation_results} = {}</msg>
+<var>${validation_results}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.837063" elapsed="0.000220"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.838326" level="INFO">🔍 Checking service: iptables</msg>
+<arg>🔍 Checking service: ${service}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.838029" elapsed="0.000490"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.839175" level="INFO">${is_selinux} = False</msg>
+<var>${is_selinux}</var>
+<arg>'${service}' == 'selinux'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.838788" elapsed="0.000411"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Check Service Is Disabled" owner="services_keywords">
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:06.841561" level="INFO">Executing command 'systemctl is-enabled iptables 2&gt;/dev/null || echo "disabled"'.</msg>
+<msg time="2025-10-05T15:43:06.878408" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:06.878717" level="INFO">${output} = not-found
+disabled</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.841439" elapsed="0.037335"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:06.878901" elapsed="0.000078"/>
+</return>
+<msg time="2025-10-05T15:43:06.879312" level="INFO">${is_enabled} = not-found
+disabled</msg>
+<var>${is_enabled}</var>
+<arg>systemctl is-enabled ${service_name} 2&gt;/dev/null || echo "disabled"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:06.841116" elapsed="0.038250"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:06.880764" level="INFO">Executing command 'systemctl is-active iptables 2&gt;/dev/null || echo "inactive"'.</msg>
+<msg time="2025-10-05T15:43:06.934718" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:06.935059" level="INFO">${output} = inactive
+inactive</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.880520" elapsed="0.054616"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:06.935257" elapsed="0.000068"/>
+</return>
+<msg time="2025-10-05T15:43:06.935629" level="INFO">${is_active} = inactive
+inactive</msg>
+<var>${is_active}</var>
+<arg>systemctl is-active ${service_name} 2&gt;/dev/null || echo "inactive"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:06.879900" elapsed="0.055776"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.936694" level="FAIL">Evaluating expression "'not-found\ndisabled' in ['disabled', 'masked'] and 'inactive\ninactive' == 'inactive'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</msg>
+<var>${status}</var>
+<arg>'${is_enabled}' in ['disabled', 'masked'] and '${is_active}' == 'inactive'</arg>
+<arg>disabled</arg>
+<arg>ELSE</arg>
+<arg>active-or-enabled</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="FAIL" start="2025-10-05T15:43:06.936029" elapsed="0.000912">Evaluating expression "'not-found\ndisabled' in ['disabled', 'masked'] and 'inactive\ninactive' == 'inactive'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${results_dict}</arg>
+<arg>${service_name}=${status}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.937287" elapsed="0.000501"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'disabled'</arg>
+<arg>Log</arg>
+<arg>✅ ${service_name}: DISABLED</arg>
+<arg>console=yes</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>⚠️ ${service_name}: ACTIVE or ENABLED (enabled=${is_enabled}, active=${is_active})</arg>
+<arg>console=yes</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.938179" elapsed="0.000052"/>
+</kw>
+<arg>${service}</arg>
+<arg>${validation_results}</arg>
+<doc>🔍 Check if a service is disabled or inactive</doc>
+<status status="FAIL" start="2025-10-05T15:43:06.840650" elapsed="0.097842">Evaluating expression "'not-found\ndisabled' in ['disabled', 'masked'] and 'inactive\ninactive' == 'inactive'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</kw>
+<arg>${is_selinux}</arg>
+<arg>Check SELinux Status</arg>
+<arg>${validation_results}</arg>
+<arg>ELSE</arg>
+<arg>Check Service Is Disabled</arg>
+<arg>${service}</arg>
+<arg>${validation_results}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2025-10-05T15:43:06.839851" elapsed="0.098754">Evaluating expression "'not-found\ndisabled' in ['disabled', 'masked'] and 'inactive\ninactive' == 'inactive'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</kw>
+<var name="${service}">iptables</var>
+<status status="FAIL" start="2025-10-05T15:43:06.837805" elapsed="0.102057">Evaluating expression "'not-found\ndisabled' in ['disabled', 'masked'] and 'inactive\ninactive' == 'inactive'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</iter>
+<var>${service}</var>
+<value>@{REQUIRED_SERVICES_DISABLED}</value>
+<status status="FAIL" start="2025-10-05T15:43:06.837452" elapsed="0.102601">Evaluating expression "'not-found\ndisabled' in ['disabled', 'masked'] and 'inactive\ninactive' == 'inactive'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</for>
+<return>
+<value>${validation_results}</value>
+<status status="NOT RUN" start="2025-10-05T15:43:06.940218" elapsed="0.000046"/>
+</return>
+<var>${validation_results}</var>
+<doc>❌ Validate that unnecessary services are disabled</doc>
+<status status="FAIL" start="2025-10-05T15:43:06.836505" elapsed="0.103950">Evaluating expression "'not-found\ndisabled' in ['disabled', 'masked'] and 'inactive\ninactive' == 'inactive'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 Unnecessary services validation:</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.940795" elapsed="0.000059"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${status}</var>
+<arg>${validation_results}</arg>
+<arg>${service}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.941364" elapsed="0.000060"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>📊 - ${service}: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.941701" elapsed="0.000043"/>
+</kw>
+<var name="${service}"/>
+<status status="NOT RUN" start="2025-10-05T15:43:06.941143" elapsed="0.000681"/>
+</iter>
+<var>${service}</var>
+<value>@{REQUIRED_SERVICES_DISABLED}</value>
+<status status="NOT RUN" start="2025-10-05T15:43:06.940985" elapsed="0.000897"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Unnecessary services validation completed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-05T15:43:06.942157" elapsed="0.000037"/>
+</kw>
+<kw name="Log Test End" owner="services_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.943370" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.943183" elapsed="0.000379"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.944080" level="INFO">🏁 Completed Test: Critical - Validate Unnecessary Services Disabled | Status: FAIL</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.943828" elapsed="0.000384"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.944559" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.944367" elapsed="0.000321"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:06.942750" elapsed="0.002045"/>
+</kw>
 <doc>❌ Verify unnecessary services (iptables, selinux) are disabled</doc>
 <tag>critical</tag>
 <tag>disabled</tag>
 <tag>security</tag>
 <tag>services</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2025-10-01T16:13:55.143462" elapsed="0.001593">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-05T15:43:06.832525" elapsed="0.112347">Evaluating expression "'not-found\ndisabled' in ['disabled', 'masked'] and 'inactive\ninactive' == 'inactive'" failed: SyntaxError: unterminated string literal (detected at line 1) (&lt;string&gt;, line 1)</status>
 </test>
 <test id="s1-t6" name="Normal - Service Dependency Analysis" line="103">
+<kw name="Log Test Start" owner="services_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.946448" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.946293" elapsed="0.000260"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.946897" level="INFO">🏁 Starting Test: Normal - Service Dependency Analysis</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.946711" elapsed="0.000293"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.947294" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.947141" elapsed="0.000269"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:06.945990" elapsed="0.001638"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:06.948328" level="INFO">🔍 Analyzing service dependencies...</msg>
+<arg>🔍 Analyzing service dependencies...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.948156" elapsed="0.000337"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:06.949334" level="INFO">Executing command 'systemctl list-dependencies sshd.service | head -20'.</msg>
+<msg time="2025-10-05T15:43:06.981927" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:06.982134" level="INFO">${output} = sshd.service</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.949157" elapsed="0.033003"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:06.982242" elapsed="0.000051"/>
+</return>
+<msg time="2025-10-05T15:43:06.982445" level="INFO">${sshd_deps} = sshd.service</msg>
+<var>${sshd_deps}</var>
+<arg>systemctl list-dependencies sshd.service | head -20</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:06.948764" elapsed="0.033703"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:06.983525" level="INFO">Executing command 'systemctl list-dependencies chronyd.service 2&gt;/dev/null | head -20 || echo "chronyd not found"'.</msg>
+<msg time="2025-10-05T15:43:07.048678" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:07.048956" level="INFO">${output} = chronyd.service</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:06.983177" elapsed="0.067057"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:07.050618" elapsed="0.000121"/>
+</return>
+<msg time="2025-10-05T15:43:07.051151" level="INFO">${chronyd_deps} = chronyd.service</msg>
+<var>${chronyd_deps}</var>
+<arg>systemctl list-dependencies chronyd.service 2&gt;/dev/null | head -20 || echo "chronyd not found"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:06.982694" elapsed="0.068511"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:07.052682" level="INFO">Executing command 'systemctl list-dependencies sssd.service 2&gt;/dev/null | head -20 || echo "sssd not found"'.</msg>
+<msg time="2025-10-05T15:43:07.121075" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:07.121304" level="INFO">${output} = sssd.service</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.052408" elapsed="0.068927"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:07.121418" elapsed="0.000047"/>
+</return>
+<msg time="2025-10-05T15:43:07.121752" level="INFO">${sssd_deps} = sssd.service</msg>
+<var>${sssd_deps}</var>
+<arg>systemctl list-dependencies sssd.service 2&gt;/dev/null | head -20 || echo "sssd not found"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:07.051673" elapsed="0.070126"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.122406" level="INFO">📊 SSHD Dependencies: sshd.service</msg>
+<arg>📊 SSHD Dependencies: ${sshd_deps}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.122067" elapsed="0.000520"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.123095" level="INFO">📊 Chronyd Dependencies: chronyd.service</msg>
+<arg>📊 Chronyd Dependencies: ${chronyd_deps}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.122813" elapsed="0.000437"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.123868" level="INFO">📊 SSSD Dependencies: sssd.service</msg>
+<arg>📊 SSSD Dependencies: ${sssd_deps}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.123489" elapsed="0.000551"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.124524" level="INFO">ℹ️ Service dependency analysis completed</msg>
+<arg>ℹ️ Service dependency analysis completed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.124263" elapsed="0.000413"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.125097" level="INFO">✅ Service dependency analysis: INFORMATIONAL</msg>
+<arg>✅ Service dependency analysis: INFORMATIONAL</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.124887" elapsed="0.000358"/>
+</kw>
+<kw name="Log Test End" owner="services_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.126689" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.126420" elapsed="0.000466"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.128293" level="INFO">🏁 Completed Test: Normal - Service Dependency Analysis | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.127178" elapsed="0.001254"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.129076" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.128611" elapsed="0.000586"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:07.125666" elapsed="0.003635"/>
+</kw>
 <doc>🔗 Analyze service dependencies and relationships</doc>
 <tag>analysis</tag>
 <tag>dependencies</tag>
 <tag>normal</tag>
 <tag>services</tag>
-<status status="FAIL" start="2025-10-01T16:13:55.145628" elapsed="0.000457">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:06.945345" elapsed="0.184006"/>
 </test>
 <test id="s1-t7" name="Normal - Failed Services Report" line="121">
+<kw name="Log Test Start" owner="services_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.130820" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.130625" elapsed="0.000318"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.131276" level="INFO">🏁 Starting Test: Normal - Failed Services Report</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.131100" elapsed="0.000293"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.132035" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.131639" elapsed="0.000503"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:07.130314" elapsed="0.001903"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.132419" level="INFO">🔍 Checking for failed services...</msg>
+<arg>🔍 Checking for failed services...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.132322" elapsed="0.000188"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:07.133123" level="INFO">Executing command 'systemctl --failed --no-pager --no-legend'.</msg>
+<msg time="2025-10-05T15:43:07.182918" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:07.183203" level="INFO">${output} = </msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.132986" elapsed="0.050258"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:07.183375" elapsed="0.000097"/>
+</return>
+<msg time="2025-10-05T15:43:07.183861" level="INFO">${failed_services} = </msg>
+<var>${failed_services}</var>
+<arg>systemctl --failed --no-pager --no-legend</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:07.132704" elapsed="0.051216"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.186576" level="INFO">✅ No failed services detected</msg>
+<arg>✅ No failed services detected</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.186159" elapsed="0.000661"/>
+</kw>
+<arg>'${failed_services}' == ''</arg>
+<arg>Log</arg>
+<arg>✅ No failed services detected</arg>
+<arg>console=yes</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>⚠️ Failed services detected:\n${failed_services}</arg>
+<arg>console=yes</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.185291" elapsed="0.001690"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${failed_services}' != ''</arg>
+<arg>Save Failed Services Report</arg>
+<arg>${failed_services}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.187398" elapsed="0.000463"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.188379" level="INFO">ℹ️ Failed services check completed</msg>
+<arg>ℹ️ Failed services check completed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.188060" elapsed="0.000571"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.188997" level="INFO">✅ Failed services report: INFORMATIONAL</msg>
+<arg>✅ Failed services report: INFORMATIONAL</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.188826" elapsed="0.000301"/>
+</kw>
+<kw name="Log Test End" owner="services_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.190233" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.190011" elapsed="0.000378"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.190858" level="INFO">🏁 Completed Test: Normal - Failed Services Report | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.190613" elapsed="0.000401"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.191390" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.191163" elapsed="0.000377"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:07.189519" elapsed="0.002155"/>
+</kw>
 <doc>⚠️ Identify and report any failed services on the system</doc>
 <tag>failed</tag>
 <tag>monitoring</tag>
 <tag>normal</tag>
 <tag>troubleshooting</tag>
-<status status="FAIL" start="2025-10-01T16:13:55.146601" elapsed="0.000669">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:07.129706" elapsed="0.062099"/>
 </test>
 <test id="s1-t8" name="Normal - Service Startup Time Analysis" line="139">
+<kw name="Log Test Start" owner="services_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.193689" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.193531" elapsed="0.000273"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.194191" level="INFO">🏁 Starting Test: Normal - Service Startup Time Analysis</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.194008" elapsed="0.000285"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.194554" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.194415" elapsed="0.000230"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:07.193136" elapsed="0.001575"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:07.194973" level="INFO">🔍 Analyzing service startup times...</msg>
+<arg>🔍 Analyzing service startup times...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.194854" elapsed="0.000237"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:07.195925" level="INFO">Executing command 'systemd-analyze time 2&gt;/dev/null || echo "systemd-analyze not available"'.</msg>
+<msg time="2025-10-05T15:43:07.249885" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:07.250106" level="INFO">${output} = Startup finished in 2.752s (userspace) 
+graphical.target reached after 2.700s in userspace.</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.195707" elapsed="0.054433"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:07.250224" elapsed="0.000065"/>
+</return>
+<msg time="2025-10-05T15:43:07.250501" level="INFO">${boot_time} = Startup finished in 2.752s (userspace) 
+graphical.target reached after 2.700s in userspace.</msg>
+<var>${boot_time}</var>
+<arg>systemd-analyze time 2&gt;/dev/null || echo "systemd-analyze not available"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:07.195330" elapsed="0.055201"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:07.251259" level="INFO">Executing command 'systemd-analyze blame 2&gt;/dev/null | head -20 || echo "systemd-analyze not available"'.</msg>
+<msg time="2025-10-05T15:43:11.198287" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:11.198672" level="INFO">${output} = 1.538s landscape-client.service
+ 465ms snapd.seeded.service
+ 381ms dev-sdd.device
+ 334ms snapd.service
+ 321ms user@1000.service
+ 279ms wsl-pro.service
+ 269ms systemd-resolved.service
+ 198ms systemd-tm...</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:07.251113" elapsed="3.947605"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:11.198843" elapsed="0.000077"/>
+</return>
+<msg time="2025-10-05T15:43:11.199179" level="INFO">${slow_services} = 1.538s landscape-client.service
+ 465ms snapd.seeded.service
+ 381ms dev-sdd.device
+ 334ms snapd.service
+ 321ms user@1000.service
+ 279ms wsl-pro.service
+ 269ms systemd-resolved.service
+ 198ms systemd-tm...</msg>
+<var>${slow_services}</var>
+<arg>systemd-analyze blame 2&gt;/dev/null | head -20 || echo "systemd-analyze not available"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:07.250768" elapsed="3.948450"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.207354" level="INFO">⏱️ Boot Time Analysis: Startup finished in 2.752s (userspace) 
+graphical.target reached after 2.700s in userspace.</msg>
+<arg>⏱️ Boot Time Analysis: ${boot_time}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.199545" elapsed="0.008043"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.208402" level="INFO">📊 Slowest Services:
+1.538s landscape-client.service
+ 465ms snapd.seeded.service
+ 381ms dev-sdd.device
+ 334ms snapd.service
+ 321ms user@1000.service
+ 279ms wsl-pro.service
+ 269ms systemd-resolved.service
+ 198ms systemd-tmpfiles-clean.service
+ 152ms systemd-udev-trigger.service
+ 134ms systemd-timesyncd.service
+ 123ms rsyslog.service
+ 120ms systemd-journal-flush.service
+ 112ms systemd-udevd.service
+  90ms systemd-tmpfiles-setup.service
+  85ms keyboard-setup.service
+  82ms systemd-logind.service
+  80ms polkit.service
+  70ms systemd-journald.service
+  68ms e2scrub_reap.service
+  52ms dbus.service</msg>
+<arg>📊 Slowest Services:\n${slow_services}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.207954" elapsed="0.000636"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.209547" level="INFO">ℹ️ Service startup time analysis completed</msg>
+<arg>ℹ️ Service startup time analysis completed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.208863" elapsed="0.000854"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.210217" level="INFO">✅ Service startup analysis: INFORMATIONAL</msg>
+<arg>✅ Service startup analysis: INFORMATIONAL</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.209969" elapsed="0.000444"/>
+</kw>
+<kw name="Log Test End" owner="services_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.211503" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.211328" elapsed="0.000312"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.212045" level="INFO">🏁 Completed Test: Normal - Service Startup Time Analysis | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.211804" elapsed="0.000358"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.212501" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.212327" elapsed="0.000287"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:11.210814" elapsed="0.001914"/>
+</kw>
 <doc>⏱️ Analyze system boot time and service startup performance</doc>
 <tag>boot</tag>
 <tag>normal</tag>
 <tag>performance</tag>
 <tag>timing</tag>
-<status status="FAIL" start="2025-10-01T16:13:55.147880" elapsed="0.000869">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:07.192384" elapsed="4.020407"/>
 </test>
 <test id="s1-t9" name="Normal - Security Services Status" line="155">
+<kw name="Log Test Start" owner="services_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.214527" level="INFO">
+================================================================================</msg>
+<arg>\n================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.214290" elapsed="0.000387"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.215068" level="INFO">🏁 Starting Test: Normal - Security Services Status</msg>
+<arg>🏁 Starting Test: ${test_name}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.214848" elapsed="0.009410"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.224950" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.224601" elapsed="0.014624"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<doc>📝 Log the start of a test case</doc>
+<status status="PASS" start="2025-10-05T15:43:11.213879" elapsed="0.025579"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.240068" level="INFO">🔍 Checking security services status...</msg>
+<arg>🔍 Checking security services status...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.239755" elapsed="0.000510"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:11.241432" level="INFO">Executing command 'getenforce 2&gt;/dev/null || echo "SELinux not available"'.</msg>
+<msg time="2025-10-05T15:43:11.254379" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:11.254642" level="INFO">${output} = SELinux not available</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.241217" elapsed="0.013475"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:11.254802" elapsed="0.000070"/>
+</return>
+<msg time="2025-10-05T15:43:11.255120" level="INFO">${selinux_status} = SELinux not available</msg>
+<var>${selinux_status}</var>
+<arg>getenforce 2&gt;/dev/null || echo "SELinux not available"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:11.240659" elapsed="0.014505"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:11.256265" level="INFO">Executing command 'systemctl is-active iptables 2&gt;/dev/null || echo "inactive"'.</msg>
+<msg time="2025-10-05T15:43:11.303025" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:11.303247" level="INFO">${output} = inactive
+inactive</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.256036" elapsed="0.047240"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:11.303360" elapsed="0.000051"/>
+</return>
+<msg time="2025-10-05T15:43:11.303566" level="INFO">${iptables_status} = inactive
+inactive</msg>
+<var>${iptables_status}</var>
+<arg>systemctl is-active iptables 2&gt;/dev/null || echo "inactive"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:11.255506" elapsed="0.048083"/>
+</kw>
+<kw name="Execute Command" owner="services_keywords">
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2025-10-05T15:43:11.304249" level="INFO">Executing command 'systemctl is-active firewalld 2&gt;/dev/null || echo "inactive"'.</msg>
+<msg time="2025-10-05T15:43:11.373114" level="INFO">Command exited with return code 0.</msg>
+<msg time="2025-10-05T15:43:11.373423" level="INFO">${output} = inactive
+inactive</msg>
+<var>${output}</var>
+<arg>${command}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.304114" elapsed="0.082621"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-10-05T15:43:11.386905" elapsed="0.000084"/>
+</return>
+<msg time="2025-10-05T15:43:11.387277" level="INFO">${firewalld_status} = inactive
+inactive</msg>
+<var>${firewalld_status}</var>
+<arg>systemctl is-active firewalld 2&gt;/dev/null || echo "inactive"</arg>
+<doc>🔧 Execute a command on the remote server via SSH</doc>
+<status status="PASS" start="2025-10-05T15:43:11.303812" elapsed="0.083507"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.387887" level="INFO">🔒 SELinux Status: SELinux not available</msg>
+<arg>🔒 SELinux Status: ${selinux_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.387569" elapsed="0.000493"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.388552" level="INFO">🔒 iptables Status: inactive
+inactive</msg>
+<arg>🔒 iptables Status: ${iptables_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.388272" elapsed="0.000411"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.389067" level="INFO">🔒 firewalld Status: inactive
+inactive</msg>
+<arg>🔒 firewalld Status: ${firewalld_status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.388854" elapsed="0.000332"/>
+</kw>
+<kw name="Should Contain Any" owner="BuiltIn">
+<arg>${selinux_status}</arg>
+<arg>Disabled</arg>
+<arg>Permissive</arg>
+<arg>not available</arg>
+<arg>⚠️ SELinux should be disabled but shows: ${selinux_status}</arg>
+<doc>Fails if ``container`` does not contain any of the ``*items``.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.389353" elapsed="0.000263"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.389949" level="INFO">ℹ️ Security services status check completed</msg>
+<arg>ℹ️ Security services status check completed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.389774" elapsed="0.000291"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.390496" level="INFO">✅ Security services status: DOCUMENTED</msg>
+<arg>✅ Security services status: DOCUMENTED</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.390282" elapsed="0.000325"/>
+</kw>
+<kw name="Log Test End" owner="services_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.391519" level="INFO">================================================================================</msg>
+<arg>================================================================================</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.391363" elapsed="0.000275"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.392083" level="INFO">🏁 Completed Test: Normal - Security Services Status | Status: PASS</msg>
+<arg>🏁 Completed Test: ${test_name} | Status: ${status}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.391828" elapsed="0.000445"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-05T15:43:11.392644" level="INFO">================================================================================
+</msg>
+<arg>================================================================================\n</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-05T15:43:11.392449" elapsed="0.000319"/>
+</kw>
+<arg>${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<doc>📝 Log the end of a test case with status</doc>
+<status status="PASS" start="2025-10-05T15:43:11.390923" elapsed="0.001940"/>
+</kw>
 <doc>🔒 Check status of security-related services and configurations</doc>
 <tag>firewall</tag>
 <tag>normal</tag>
 <tag>security</tag>
 <tag>selinux</tag>
-<status status="FAIL" start="2025-10-01T16:13:55.149271" elapsed="0.000689">Parent suite setup failed:
-TimeoutError: timed out</status>
+<status status="PASS" start="2025-10-05T15:43:11.213145" elapsed="0.179785"/>
 </test>
 <kw name="Close All SSH Connections" owner="services_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:13:55.154251" level="INFO">🔌 Closing SSH connections...</msg>
+<msg time="2025-10-05T15:43:11.403878" level="INFO">🔌 Closing SSH connections...</msg>
 <arg>🔌 Closing SSH connections...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:13:55.152755" elapsed="0.005864"/>
+<status status="PASS" start="2025-10-05T15:43:11.403560" elapsed="0.000550"/>
 </kw>
 <kw name="Close All Connections" owner="SSHLibrary">
 <doc>Closes all open connections.</doc>
-<status status="PASS" start="2025-10-01T16:13:55.159278" elapsed="0.000650"/>
+<status status="PASS" start="2025-10-05T15:43:11.404354" elapsed="0.001151"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-01T16:13:55.161400" level="INFO">✅ SSH connections closed</msg>
+<msg time="2025-10-05T15:43:11.405917" level="INFO">✅ SSH connections closed</msg>
 <arg>✅ SSH connections closed</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-01T16:13:55.160796" elapsed="0.001751"/>
+<status status="PASS" start="2025-10-05T15:43:11.405704" elapsed="0.000351"/>
 </kw>
 <doc>🔌 Close all SSH connections</doc>
-<status status="PASS" start="2025-10-01T16:13:55.151880" elapsed="0.011152"/>
+<status status="PASS" start="2025-10-05T15:43:11.402554" elapsed="0.003615"/>
 </kw>
 <doc>⚙️ Services Validation Test Suite - Test-11
 🔍 Process: Find hostname in EDS → SSH to server → Collect service status data → Document all running services
 ✅ Validates: Required services (autofs, sshd, sssd, chronyd, ntpd, syslog) are enabled
 ❌ Validates: Unnecessary services (iptables, selinux) are disabled
 📊 Documents complete service list for manual compliance review</doc>
-<status status="FAIL" start="2025-10-01T16:13:47.600154" elapsed="7.563043">Suite setup failed:
-TimeoutError: timed out</status>
+<status status="FAIL" start="2025-10-05T15:42:49.281326" elapsed="22.124900"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="9" skip="0">All Tests</stat>
+<stat pass="6" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">analysis</stat>
-<stat pass="0" fail="1" skip="0">boot</stat>
+<stat pass="1" fail="0" skip="0">analysis</stat>
+<stat pass="1" fail="0" skip="0">boot</stat>
 <stat pass="0" fail="1" skip="0">compliance</stat>
-<stat pass="0" fail="1" skip="0">connection</stat>
-<stat pass="0" fail="5" skip="0">critical</stat>
-<stat pass="0" fail="1" skip="0">data_collection</stat>
-<stat pass="0" fail="1" skip="0">dependencies</stat>
+<stat pass="1" fail="0" skip="0">connection</stat>
+<stat pass="2" fail="3" skip="0">critical</stat>
+<stat pass="1" fail="0" skip="0">data_collection</stat>
+<stat pass="1" fail="0" skip="0">dependencies</stat>
 <stat pass="0" fail="1" skip="0">disabled</stat>
 <stat pass="0" fail="1" skip="0">documentation</stat>
 <stat pass="0" fail="1" skip="0">enabled</stat>
-<stat pass="0" fail="1" skip="0">failed</stat>
+<stat pass="1" fail="0" skip="0">failed</stat>
 <stat pass="0" fail="1" skip="0">file_output</stat>
-<stat pass="0" fail="1" skip="0">firewall</stat>
-<stat pass="0" fail="1" skip="0">infrastructure</stat>
-<stat pass="0" fail="1" skip="0">monitoring</stat>
-<stat pass="0" fail="4" skip="0">normal</stat>
-<stat pass="0" fail="1" skip="0">performance</stat>
-<stat pass="0" fail="2" skip="0">security</stat>
-<stat pass="0" fail="1" skip="0">selinux</stat>
-<stat pass="0" fail="4" skip="0">services</stat>
-<stat pass="0" fail="1" skip="0">ssh</stat>
-<stat pass="0" fail="1" skip="0">systemctl</stat>
-<stat pass="0" fail="1" skip="0">timing</stat>
-<stat pass="0" fail="1" skip="0">troubleshooting</stat>
+<stat pass="1" fail="0" skip="0">firewall</stat>
+<stat pass="1" fail="0" skip="0">infrastructure</stat>
+<stat pass="1" fail="0" skip="0">monitoring</stat>
+<stat pass="4" fail="0" skip="0">normal</stat>
+<stat pass="1" fail="0" skip="0">performance</stat>
+<stat pass="1" fail="1" skip="0">security</stat>
+<stat pass="1" fail="0" skip="0">selinux</stat>
+<stat pass="2" fail="2" skip="0">services</stat>
+<stat pass="1" fail="0" skip="0">ssh</stat>
+<stat pass="1" fail="0" skip="0">systemctl</stat>
+<stat pass="1" fail="0" skip="0">timing</stat>
+<stat pass="1" fail="0" skip="0">troubleshooting</stat>
 <stat pass="0" fail="2" skip="0">validation</stat>
 </tag>
 <suite>
-<stat name="Services Validation" id="s1" pass="0" fail="9" skip="0">Services Validation</stat>
+<stat name="Services Validation" id="s1" pass="6" fail="3" skip="0">Services Validation</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-10-05T15:43:06.746209" level="WARN">Keyword 'File Should Exist' found both from a custom library 'SSHLibrary' and a standard library 'OperatingSystem'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SSHLibrary.File Should Exist' or 'OperatingSystem.File Should Exist'.</msg>
 </errors>
 </robot>

@@ -1,0 +1,28 @@
+=========================================
+=== RSA Server Connectivity Test ===
+=========================================
+Timestamp: 20251005_154414
+Target Server: alhxvdvitap01 (172.30.16.186)
+Expected RSA Server: rsa.domain.com
+
+=== RSA Server Configuration ===
+No RSA server configuration found
+
+=== Port 5500 Test (RSA Auth) ===
+nc: getaddrinfo for host "rsa.domain.com" port 5500: No address associated with hostname
+Port 5500 test failed/timeout
+
+=== Port 5555 Test (RSA Auth) ===
+nc: getaddrinfo for host "rsa.domain.com" port 5555: No address associated with hostname
+Port 5555 test failed/timeout
+
+=== DNS Resolution ===
+bash: line 1: nslookup: command not found
+bash: line 1: dig: command not found
+DNS lookup not available
+
+=== Ping Test ===
+ping: rsa.domain.com: No address associated with hostname
+Ping test failed
+
+=========================================

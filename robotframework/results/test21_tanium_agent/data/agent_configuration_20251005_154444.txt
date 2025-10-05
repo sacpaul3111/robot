@@ -1,0 +1,25 @@
+=========================================
+=== Tanium Agent Configuration ===
+=========================================
+Timestamp: 20251005_154444
+Target Server: alhxvdvitap01 (172.30.16.186)
+Config File: /opt/Tanium/TaniumClient/TaniumClient.ini
+
+=== Configuration File (TaniumClient.ini) ===
+Configuration file not found
+
+=== tanium.dat ===
+tanium.dat not found
+
+=== Configuration Settings ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+
+=== Server List ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+ServerNameList not available
+
+=== Log Level ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+LogVerbosityLevel not available
+
+=========================================

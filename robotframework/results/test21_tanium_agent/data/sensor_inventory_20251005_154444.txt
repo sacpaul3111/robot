@@ -1,0 +1,19 @@
+=========================================
+=== Tanium Sensor Inventory ===
+=========================================
+Timestamp: 20251005_154444
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Sensors Directory ===
+Sensors directory not found
+
+=== Sensor Cache ===
+Sensor cache not found
+
+=== Sensor Logs ===
+
+
+=== Tools Directory ===
+Tools directory not found
+
+=========================================

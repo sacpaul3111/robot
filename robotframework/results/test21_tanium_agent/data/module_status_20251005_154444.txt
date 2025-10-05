@@ -1,0 +1,22 @@
+=========================================
+=== Tanium Module Installations ===
+=========================================
+Timestamp: 20251005_154444
+Target Server: alhxvdvitap01 (172.30.16.186)
+Required Modules: ['Comply', 'Detect', 'Discover', 'Patch', 'Trends']
+
+=== Modules Directory ===
+Modules directory not found
+
+=== Required Module Check ===
+
+Comply: Not found
+Detect: Not found
+Discover: Not found
+Patch: Not found
+Trends: Not found
+
+=== Module Logs ===
+
+
+=========================================

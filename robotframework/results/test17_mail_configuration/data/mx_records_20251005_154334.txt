@@ -1,0 +1,8 @@
+=== nslookup MX ===
+nslookup failed
+
+=== dig MX ===
+dig not available
+
+=== host MX ===
+host not available

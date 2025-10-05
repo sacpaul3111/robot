@@ -1,0 +1,46 @@
+=== Disk Space Information Report ===
+Timestamp: 20251005_155007
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Disk Usage Summary (df -h) ===
+Filesystem      Size  Used Avail Use% Mounted on
+none            3.9G     0  3.9G   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+none            3.9G  4.0K  3.9G   1% /mnt/wsl
+drivers         238G  167G   72G  71% /usr/lib/wsl/drivers
+/dev/sdd       1007G  7.5G  949G   1% /
+none            3.9G  100K  3.9G   1% /mnt/wslg
+none            3.9G     0  3.9G   0% /usr/lib/wsl/lib
+rootfs          3.9G  2.7M  3.9G   1% /init
+none            3.9G  528K  3.9G   1% /run
+none            3.9G     0  3.9G   0% /run/lock
+none            3.9G  164K  3.9G   1% /run/shm
+none            3.9G   76K  3.9G   1% /mnt/wslg/versions.txt
+none            3.9G   76K  3.9G   1% /mnt/wslg/doc
+C:\             238G  167G   72G  71% /mnt/c
+tmpfs           3.9G   16K  3.9G   1% /run/user/1000
+
+=== Block Device Information (lsblk) ===
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 388.4M  1 disk 
+sdb    8:16   0   186M  1 disk 
+sdc    8:32   0     2G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /mnt/wslg/distro
+                               /
+
+=== Root Filesystem Details ===
+Total Size: 1007G
+Used Space: 7.5G
+Available Space: 949G
+Usage Percentage: 1%
+
+=== Mount Points ===
+/dev/sdd on / type ext4 (rw,relatime,discard,errors=remount-ro,data=ordered)
+/dev/sdd on /mnt/wslg/distro type ext4 (ro,relatime,discard,errors=remount-ro,data=ordered)
+
+=== Volume Group Information ===
+Volume group information not available or requires privileges
+
+=== Logical Volume Information ===
+Logical volume information not available or requires privileges
+
+=== Partition Information (fdisk -l) ===

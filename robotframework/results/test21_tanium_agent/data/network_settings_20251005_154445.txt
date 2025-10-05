@@ -1,0 +1,23 @@
+=========================================
+=== Tanium Agent Network Settings ===
+=========================================
+Timestamp: 20251005_154445
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Server Name ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+ServerName not available
+
+=== Server Port ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+ServerPort not available
+
+=== Proxy Settings ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+No proxy configured
+
+=== Listen Port ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+ListenPort not available
+
+=========================================

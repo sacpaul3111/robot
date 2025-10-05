@@ -1,0 +1,17 @@
+=========================================
+=== Tanium Agent Logs ===
+=========================================
+Timestamp: 20251005_154445
+Target Server: alhxvdvitap01 (172.30.16.186)
+Log Directory: /opt/Tanium/TaniumClient/Logs
+
+=== Log Files ===
+Log directory not found
+
+=== TaniumClient Log (Last 200 lines) ===
+taniumclient.log not found
+
+=== TaniumClient Errors Log ===
+No error log
+
+=========================================

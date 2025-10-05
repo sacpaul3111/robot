@@ -8,10 +8,10 @@
 - name: Execute Robot Framework Tests
   hosts: localhost
   connection: local
-  gather_facts: no
+  gather_facts: yes
   vars:
     # Default values - can be overridden with -e flag
-    robot_project_dir: "{{ playbook_dir }}"
+    robot_project_dir: "{{ playbook_dir }}/.."
     robot_output_dir: "results"
     robot_username: "{{ lookup('env', 'SSH_USERNAME') | default('', true) }}"
     robot_password: "{{ lookup('env', 'SSH_PASSWORD') | default('', true) }}"
@@ -161,7 +161,7 @@
 
     - name: Set final test status
       set_fact:
-        all_tests_passed: "{{ (failed_tests_final | default(failed_tests) | int) == 0 }}"
+        all_tests_passed: "{{ (failed_tests_final | default(failed_tests) | int) == 0 and (total_tests_final | default(total_tests) | int) > 0 }}"
         results_directory: "{{ robot_project_dir }}/{{ robot_output_dir }}"
         consolidated_log: "{{ robot_project_dir }}/{{ robot_output_dir }}/all_log.html"
         consolidated_report: "{{ robot_project_dir }}/{{ robot_output_dir }}/all_report.html"

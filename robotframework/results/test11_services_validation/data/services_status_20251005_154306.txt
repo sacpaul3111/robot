@@ -1,0 +1,215 @@
+=========================================
+=== Services Status Report ===
+=========================================
+Timestamp: 20251005_154306
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=========================================
+=== ALL SERVICES (systemctl list-units --type=service --all) ===
+=========================================
+  apparmor.service                         loaded    inactive dead    Load AppArmor profiles
+  apport-autoreport.service                loaded    inactive dead    Process error reports when automatic reporting is enabled
+  apport.service                           loaded    inactive dead    automatic crash report generation
+  apt-daily-upgrade.service                loaded    inactive dead    Daily apt upgrade and clean activities
+  apt-daily.service                        loaded    inactive dead    Daily apt download activities
+● auditd.service                           not-found inactive dead    auditd.service
+● connman.service                          not-found inactive dead    connman.service
+  console-getty.service                    loaded    active   running Console Getty
+● console-screen.service                   not-found inactive dead    console-screen.service
+  console-setup.service                    loaded    active   exited  Set console font and keymap
+  cron.service                             loaded    active   running Regular background program processing daemon
+  dbus.service                             loaded    active   running D-Bus System Message Bus
+● display-manager.service                  not-found inactive dead    display-manager.service
+  dmesg.service                            loaded    inactive dead    Save initial kernel messages after boot
+  dpkg-db-backup.service                   loaded    inactive dead    Daily dpkg database backup service
+  e2scrub_all.service                      loaded    inactive dead    Online ext4 Metadata Check for All Filesystems
+  e2scrub_reap.service                     loaded    inactive dead    Remove Stale Online ext4 Metadata Check Snapshots
+  emergency.service                        loaded    inactive dead    Emergency Shell
+  fstrim.service                           loaded    inactive dead    Discard unused blocks on filesystems from /etc/fstab
+  getty-static.service                     loaded    inactive dead    getty on tty2-tty6 if dbus and logind are not available
+  getty@tty1.service                       loaded    active   running Getty on tty1
+  initrd-cleanup.service                   loaded    inactive dead    Cleaning Up and Shutting Down Daemons
+  initrd-parse-etc.service                 loaded    inactive dead    Mountpoints Configured in the Real Root
+  initrd-switch-root.service               loaded    inactive dead    Switch Root
+  initrd-udevadm-cleanup-db.service        loaded    inactive dead    Cleanup udev Database
+● kbd.service                              not-found inactive dead    kbd.service
+  keyboard-setup.service                   loaded    active   exited  Set the console keyboard layout
+  kmod-static-nodes.service                loaded    active   exited  Create List of Static Device Nodes
+  landscape-client.service                 loaded    inactive dead    Landscape client daemons
+  ldconfig.service                         loaded    inactive dead    Rebuild Dynamic Linker Cache
+  logrotate.service                        loaded    inactive dead    Rotate log files
+  man-db.service                           loaded    inactive dead    Daily man-db regeneration
+  modprobe@configfs.service                loaded    inactive dead    Load Kernel Module configfs
+  modprobe@dm_mod.service                  loaded    inactive dead    Load Kernel Module dm_mod
+  modprobe@drm.service                     loaded    inactive dead    Load Kernel Module drm
+  modprobe@efi_pstore.service              loaded    inactive dead    Load Kernel Module efi_pstore
+  modprobe@fuse.service                    loaded    inactive dead    Load Kernel Module fuse
+  modprobe@loop.service                    loaded    inactive dead    Load Kernel Module loop
+  motd-news.service                        loaded    inactive dead    Message of the Day
+  netplan-ovs-cleanup.service              loaded    inactive dead    OpenVSwitch configuration for cleanup
+  networkd-dispatcher.service              loaded    inactive dead    Dispatcher daemon for systemd-networkd
+● NetworkManager.service                   not-found inactive dead    NetworkManager.service
+● ovsdb-server.service                     not-found inactive dead    ovsdb-server.service
+● plymouth-quit-wait.service               not-found inactive dead    plymouth-quit-wait.service
+● plymouth-start.service                   not-found inactive dead    plymouth-start.service
+  polkit.service                           loaded    active   running Authorization Manager
+  rc-local.service                         loaded    inactive dead    /etc/rc.local Compatibility
+  rescue.service                           loaded    inactive dead    Rescue Shell
+  rsyslog.service                          loaded    active   running System Logging Service
+  setvtrgb.service                         loaded    active   exited  Set console scheme
+  snapd.apparmor.service                   loaded    inactive dead    Load AppArmor profiles managed internally by snapd
+  snapd.autoimport.service                 loaded    inactive dead    Auto import assertions from block devices
+  snapd.core-fixup.service                 loaded    inactive dead    Automatically repair incorrect owner/permissions on core devices
+  snapd.failure.service                    loaded    inactive dead    Failure handling of the snapd snap
+  snapd.recovery-chooser-trigger.service   loaded    inactive dead    Wait for the Ubuntu Core chooser trigger
+  snapd.seeded.service                     loaded    active   exited  Wait until snapd is fully seeded
+  snapd.service                            loaded    inactive dead    Snap Daemon
+  snapd.snap-repair.service                loaded    inactive dead    Automatically fetch and run repair assertions
+  snapd.system-shutdown.service            loaded    inactive dead    Ubuntu core (all-snaps) system shutdown helper setup service
+  ssh.service                              loaded    active   running OpenBSD Secure Shell server
+  systemd-ask-password-console.service     loaded    inactive dead    Dispatch Password Requests to Console
+  systemd-ask-password-wall.service        loaded    inactive dead    Forward Password Requests to Wall
+  systemd-battery-check.service            loaded    inactive dead    Check battery level during early boot
+  systemd-binfmt.service                   loaded    active   exited  Set Up Additional Binary Formats
+  systemd-bsod.service                     loaded    inactive dead    Displays emergency message in full screen.
+  systemd-firstboot.service                loaded    inactive dead    First Boot Wizard
+  systemd-fsck-root.service                loaded    inactive dead    File System Check on Root Device
+  systemd-fsckd.service                    loaded    inactive dead    File System Check Daemon to report status
+  systemd-hibernate-resume.service         loaded    inactive dead    Resume from hibernation
+  systemd-hwdb-update.service              loaded    inactive dead    Rebuild Hardware Database
+  systemd-initctl.service                  loaded    inactive dead    initctl Compatibility Daemon
+  systemd-journal-catalog-update.service   loaded    inactive dead    Rebuild Journal Catalog
+  systemd-journal-flush.service            loaded    active   exited  Flush Journal to Persistent Storage
+  systemd-journald.service                 loaded    active   running Journal Service
+  systemd-logind.service                   loaded    active   running User Login Management
+  systemd-machine-id-commit.service        loaded    inactive dead    Commit a transient machine-id on disk
+  systemd-modules-load.service             loaded    active   exited  Load Kernel Modules
+  systemd-networkd.service                 loaded    inactive dead    Network Configuration
+● systemd-oomd.service                     not-found inactive dead    systemd-oomd.service
+  systemd-pcrmachine.service               loaded    inactive dead    TPM2 PCR Machine ID Measurement
+  systemd-pcrphase-initrd.service          loaded    inactive dead    TPM2 PCR Barrier (initrd)
+  systemd-pcrphase-sysinit.service         loaded    inactive dead    TPM2 PCR Barrier (Initialization)
+  systemd-pcrphase.service                 loaded    inactive dead    TPM2 PCR Barrier (User)
+  systemd-pstore.service                   loaded    inactive dead    Platform Persistent Storage Archival
+  systemd-random-seed.service              loaded    inactive dead    Load/Save OS Random Seed
+  systemd-remount-fs.service               loaded    active   exited  Remount Root and Kernel File Systems
+  systemd-repart.service                   loaded    inactive dead    Repartition Root Disk
+  systemd-resolved.service                 loaded    active   running Network Name Resolution
+  systemd-soft-reboot.service              loaded    inactive dead    Reboot System Userspace
+  systemd-sysctl.service                   loaded    active   exited  Apply Kernel Variables
+  systemd-sysext.service                   loaded    inactive dead    Merge System Extension Images into /usr/ and /opt/
+  systemd-sysusers.service                 loaded    inactive dead    Create System Users
+  systemd-timesyncd.service                loaded    active   running Network Time Synchronization
+  systemd-tmpfiles-clean.service           loaded    inactive dead    Cleanup of Temporary Directories
+  systemd-tmpfiles-setup-dev-early.service loaded    active   exited  Create Static Device Nodes in /dev gracefully
+  systemd-tmpfiles-setup-dev.service       loaded    active   exited  Create Static Device Nodes in /dev
+  systemd-tmpfiles-setup.service           loaded    active   exited  Create Volatile Files and Directories
+  systemd-tpm2-setup-early.service         loaded    inactive dead    TPM2 SRK Setup (Early)
+  systemd-tpm2-setup.service               loaded    inactive dead    TPM2 SRK Setup
+  systemd-udev-settle.service              loaded    inactive dead    Wait for udev To Complete Device Initialization
+  systemd-udev-trigger.service             loaded    active   exited  Coldplug All udev Devices
+  systemd-udevd.service                    loaded    active   running Rule-based Manager for Device Events and Files
+  systemd-update-done.service              loaded    inactive dead    Update is Completed
+  systemd-update-utmp-runlevel.service     loaded    inactive dead    Record Runlevel Change in UTMP
+  systemd-update-utmp.service              loaded    active   exited  Record System Boot/Shutdown in UTMP
+  systemd-user-sessions.service            loaded    active   exited  Permit User Sessions
+● systemd-vconsole-setup.service           not-found inactive dead    systemd-vconsole-setup.service
+● ua-auto-attach.service                   not-found inactive dead    ua-auto-attach.service
+  ua-reboot-cmds.service                   loaded    inactive dead    Ubuntu Pro reboot cmds
+  ua-timer.service                         loaded    inactive dead    Ubuntu Pro Timer for running repeated jobs
+● ubuntu-advantage-cloud-id-shim.service   not-found inactive dead    ubuntu-advantage-cloud-id-shim.service
+  ubuntu-advantage.service                 loaded    inactive dead    Ubuntu Pro Background Auto Attach
+  unattended-upgrades.service              loaded    active   running Unattended Upgrades Shutdown
+  user-runtime-dir@1000.service            loaded    active   exited  User Runtime Directory /run/user/1000
+  user@1000.service                        loaded    active   running User Manager for UID 1000
+  uuidd.service                            loaded    inactive dead    Daemon for generating UUIDs
+  wsl-pro.service                          loaded    active   running Bridge to Ubuntu Pro agent on Windows
+  wslg.service                             loaded    inactive dead    WSLg Remount Service
+● zfs-mount.service                        not-found inactive dead    zfs-mount.service
+
+=========================================
+=== ENABLED SERVICES (systemctl list-unit-files --state=enabled) ===
+=========================================
+apparmor.service                       enabled enabled
+apport.service                         enabled enabled
+cloud-config.service                   enabled enabled
+cloud-final.service                    enabled enabled
+cloud-init-local.service               enabled enabled
+cloud-init.service                     enabled enabled
+console-setup.service                  enabled enabled
+cron.service                           enabled enabled
+dmesg.service                          enabled enabled
+e2scrub_reap.service                   enabled enabled
+getty@.service                         enabled enabled
+keyboard-setup.service                 enabled enabled
+landscape-client.service               enabled enabled
+networkd-dispatcher.service            enabled enabled
+rsyslog.service                        enabled enabled
+setvtrgb.service                       enabled enabled
+snapd.apparmor.service                 enabled enabled
+snapd.autoimport.service               enabled enabled
+snapd.core-fixup.service               enabled enabled
+snapd.recovery-chooser-trigger.service enabled enabled
+snapd.seeded.service                   enabled enabled
+snapd.service                          enabled enabled
+snapd.system-shutdown.service          enabled enabled
+systemd-pstore.service                 enabled enabled
+systemd-resolved.service               enabled enabled
+systemd-timesyncd.service              enabled enabled
+ua-reboot-cmds.service                 enabled enabled
+ubuntu-advantage.service               enabled enabled
+unattended-upgrades.service            enabled enabled
+wsl-pro.service                        enabled enabled
+
+=========================================
+=== ACTIVE/RUNNING SERVICES (systemctl list-units --state=active) ===
+=========================================
+  console-getty.service                    loaded active running Console Getty
+  console-setup.service                    loaded active exited  Set console font and keymap
+  cron.service                             loaded active running Regular background program processing daemon
+  dbus.service                             loaded active running D-Bus System Message Bus
+  getty@tty1.service                       loaded active running Getty on tty1
+  keyboard-setup.service                   loaded active exited  Set the console keyboard layout
+  kmod-static-nodes.service                loaded active exited  Create List of Static Device Nodes
+  polkit.service                           loaded active running Authorization Manager
+  rsyslog.service                          loaded active running System Logging Service
+  setvtrgb.service                         loaded active exited  Set console scheme
+  snapd.seeded.service                     loaded active exited  Wait until snapd is fully seeded
+  ssh.service                              loaded active running OpenBSD Secure Shell server
+  systemd-binfmt.service                   loaded active exited  Set Up Additional Binary Formats
+  systemd-journal-flush.service            loaded active exited  Flush Journal to Persistent Storage
+  systemd-journald.service                 loaded active running Journal Service
+  systemd-logind.service                   loaded active running User Login Management
+  systemd-modules-load.service             loaded active exited  Load Kernel Modules
+  systemd-remount-fs.service               loaded active exited  Remount Root and Kernel File Systems
+  systemd-resolved.service                 loaded active running Network Name Resolution
+  systemd-sysctl.service                   loaded active exited  Apply Kernel Variables
+  systemd-timesyncd.service                loaded active running Network Time Synchronization
+  systemd-tmpfiles-setup-dev-early.service loaded active exited  Create Static Device Nodes in /dev gracefully
+  systemd-tmpfiles-setup-dev.service       loaded active exited  Create Static Device Nodes in /dev
+  systemd-tmpfiles-setup.service           loaded active exited  Create Volatile Files and Directories
+  systemd-udev-trigger.service             loaded active exited  Coldplug All udev Devices
+  systemd-udevd.service                    loaded active running Rule-based Manager for Device Events and Files
+  systemd-update-utmp.service              loaded active exited  Record System Boot/Shutdown in UTMP
+  systemd-user-sessions.service            loaded active exited  Permit User Sessions
+  unattended-upgrades.service              loaded active running Unattended Upgrades Shutdown
+  user-runtime-dir@1000.service            loaded active exited  User Runtime Directory /run/user/1000
+  user@1000.service                        loaded active running User Manager for UID 1000
+  wsl-pro.service                          loaded active running Bridge to Ubuntu Pro agent on Windows
+
+=========================================
+=== REQUIRED SERVICES CHECK ===
+=========================================
+Required services that must be ENABLED:
+- autofs
+- sshd
+- sssd
+- chronyd
+- ntpd
+- syslog (rsyslog/syslog-ng)
+
+Services that must be DISABLED:
+- iptables
+- selinux (check with getenforce command)
+
+=========================================

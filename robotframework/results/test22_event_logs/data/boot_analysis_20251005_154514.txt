@@ -1,0 +1,251 @@
+=========================================
+=== Boot Sequence Analysis ===
+=========================================
+Timestamp: 20251005_154514
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Boot Time Analysis ===
+Startup finished in 2.752s (userspace) 
+graphical.target reached after 2.700s in userspace.
+
+=== Boot Blame (Slowest Services) ===
+1.538s landscape-client.service
+ 465ms snapd.seeded.service
+ 381ms dev-sdd.device
+ 334ms snapd.service
+ 321ms user@1000.service
+ 279ms wsl-pro.service
+ 269ms systemd-resolved.service
+ 198ms systemd-tmpfiles-clean.service
+ 152ms systemd-udev-trigger.service
+ 134ms systemd-timesyncd.service
+ 123ms rsyslog.service
+ 120ms systemd-journal-flush.service
+ 112ms systemd-udevd.service
+  90ms systemd-tmpfiles-setup.service
+  85ms keyboard-setup.service
+  82ms systemd-logind.service
+  80ms polkit.service
+  70ms systemd-journald.service
+  68ms e2scrub_reap.service
+  52ms dbus.service
+  41ms dev-hugepages.mount
+  40ms dev-mqueue.mount
+  39ms sys-kernel-debug.mount
+  38ms sys-kernel-tracing.mount
+  37ms systemd-tmpfiles-setup-dev-early.service
+  34ms modprobe@dm_mod.service
+  33ms ssh.service
+  33ms modprobe@configfs.service
+  32ms modprobe@drm.service
+  31ms systemd-binfmt.service
+
+=== Boot Critical Chain ===
+The time when unit became active or started is printed after the "@" character.
+The time the unit took to start is printed after the "+" character.
+
+graphical.target @2.700s
+└─multi-user.target @2.695s
+  └─snapd.seeded.service @1.169s +465ms
+    └─basic.target @1.136s
+      └─sockets.target @1.134s
+        └─snapd.socket @1.104s +29ms
+          └─sysinit.target @1.087s
+            └─systemd-resolved.service @816ms +269ms
+              └─systemd-tmpfiles-setup.service @612ms +90ms
+                └─systemd-journal-flush.service @465ms +120ms
+                  └─systemd-journald.service @373ms +70ms
+                    └─systemd-journald.socket @334ms
+                      └─-.mount @321ms
+                        └─-.slice @320ms
+
+=== Boot Messages (First 100) ===
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Linux version 6.6.87.2-microsoft-standard-WSL2 (root@439a258ad544) (gcc (GCC) 11.2.0, GNU ld (GNU Binutils) 2.37) #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Command line: initrd=\initrd.img WSL_ROOT_INIT=1 panic=-1 nr_cpus=8 hv_utils.timesync_implicit=1 console=hvc0 debug pty.legacy_count=0 WSL_ENABLE_CRASH_DUMP=1
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: KERNEL supported cpus:
+Oct 05 12:06:43 DESKTOP-933PGUE kernel:   Intel GenuineIntel
+Oct 05 12:06:43 DESKTOP-933PGUE kernel:   AMD AuthenticAMD
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: BIOS-provided physical RAM map:
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009ffff] usable
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: BIOS-e820: [mem 0x00000000000e0000-0x00000000000e0fff] reserved
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: BIOS-e820: [mem 0x0000000000100000-0x00000000001fffff] ACPI data
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: BIOS-e820: [mem 0x0000000000200000-0x00000000f7ffffff] usable
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: BIOS-e820: [mem 0x0000000100000000-0x0000000202ffffff] usable
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: NX (Execute Disable) protection: active
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: APIC: Static calls initialized
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: DMI not present or invalid.
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Hypervisor detected: Microsoft Hyper-V
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Hyper-V: privilege flags low 0xae7f, high 0x3b8030, hints 0x9a4e24, misc 0xe4bed7b6
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Hyper-V: Nested features: 0x3e0101
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Hyper-V: LAPIC Timer Frequency: 0xc3500
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Hyper-V: Using hypercall for remote TLB flush
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: clocksource: hyperv_clocksource_tsc_page: mask: 0xffffffffffffffff max_cycles: 0x24e6a1710, max_idle_ns: 440795202120 ns
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: clocksource: hyperv_clocksource_msr: mask: 0xffffffffffffffff max_cycles: 0x24e6a1710, max_idle_ns: 440795202120 ns
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: tsc: Detected 2995.213 MHz processor
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: last_pfn = 0x203000 max_arch_pfn = 0x400000000
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: MTRR map: 5 entries (4 fixed + 1 variable; max 20), built from 8 variable MTRRs
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: last_pfn = 0xf8000 max_arch_pfn = 0x400000000
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Using GB pages for direct mapping
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: RAMDISK: [mem 0x04be4000-0x04e7dfff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: Early table checksum verification disabled
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: RSDP 0x00000000000E0000 000024 (v02 VRTUAL)
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: XSDT 0x0000000000100000 000044 (v01 VRTUAL MICROSFT 00000001 MSFT 00000001)
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: FACP 0x0000000000101000 000114 (v06 VRTUAL MICROSFT 00000001 MSFT 00000001)
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: DSDT 0x00000000001011B8 01E11C (v02 MSFTVM DSDT01   00000001 INTL 20230628)
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: FACS 0x0000000000101114 000040
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: OEM0 0x0000000000101154 000064 (v01 VRTUAL MICROSFT 00000001 MSFT 00000001)
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT 0x000000000011F2D4 000330 (v02 VRTUAL MICROSFT 00000001 MSFT 00000001)
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: APIC 0x000000000011F604 000088 (v04 VRTUAL MICROSFT 00000001 MSFT 00000001)
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: Reserving FACP table memory at [mem 0x101000-0x101113]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: Reserving DSDT table memory at [mem 0x1011b8-0x11f2d3]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: Reserving FACS table memory at [mem 0x101114-0x101153]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: Reserving OEM0 table memory at [mem 0x101154-0x1011b7]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: Reserving SRAT table memory at [mem 0x11f2d4-0x11f603]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: Reserving APIC table memory at [mem 0x11f604-0x11f68b]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: SRAT: PXM 0 -> APIC 0x00 -> Node 0
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: SRAT: PXM 0 -> APIC 0x01 -> Node 0
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: SRAT: PXM 0 -> APIC 0x02 -> Node 0
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: SRAT: PXM 0 -> APIC 0x03 -> Node 0
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: SRAT: PXM 0 -> APIC 0x04 -> Node 0
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: SRAT: PXM 0 -> APIC 0x05 -> Node 0
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: SRAT: PXM 0 -> APIC 0x06 -> Node 0
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: SRAT: PXM 0 -> APIC 0x07 -> Node 0
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x00000000-0xf7ffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x100000000-0x202ffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x203000000-0x9ffdfffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x1000000000-0xffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x10000000000-0x1ffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x20000000000-0x3ffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x40000000000-0x7ffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x80000000000-0xfffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x100000000000-0x1fffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x200000000000-0x3fffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x400000000000-0x7fffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x800000000000-0xffffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x1000000000000-0x1ffffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x2000000000000-0x3ffffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x4000000000000-0x7ffffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: SRAT: Node 0 PXM 0 [mem 0x8000000000000-0xfffffffffffff] hotplug
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: NUMA: Node 0 [mem 0x00000000-0xf7ffffff] + [mem 0x100000000-0x202ffffff] -> [mem 0x00000000-0x202ffffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: NODE_DATA(0) allocated [mem 0x202fde000-0x202ffffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Zone ranges:
+Oct 05 12:06:43 DESKTOP-933PGUE kernel:   DMA32    [mem 0x0000000000001000-0x00000000ffffffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel:   Normal   [mem 0x0000000100000000-0x0000000202ffffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel:   Device   empty
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Movable zone start for each node
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Early memory node ranges
+Oct 05 12:06:43 DESKTOP-933PGUE kernel:   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel:   node   0: [mem 0x0000000000200000-0x00000000f7ffffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel:   node   0: [mem 0x0000000100000000-0x0000000202ffffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Initmem setup node 0 [mem 0x0000000000001000-0x0000000202ffffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: On node 0, zone DMA32: 1 pages in unavailable ranges
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: On node 0, zone DMA32: 352 pages in unavailable ranges
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: On node 0, zone Normal: 20480 pages in unavailable ranges
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: PM-Timer IO Port: 0x408
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: LAPIC_NMI (acpi_id[0x01] dfl dfl lint[0x1])
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: IOAPIC[0]: apic_id 8, version 17, address 0xfec00000, GSI 0-23
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: ACPI: Using ACPI (MADT) for SMP configuration information
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: TSC deadline timer available
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: smpboot: Allowing 8 CPUs, 0 hotplug CPUs
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000dffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0x000e0000-0x000e0fff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0x000e1000-0x000fffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0x00100000-0x001fffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0xf8000000-0xffffffff]
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: [mem 0xf8000000-0xffffffff] available for PCI devices
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Booting paravirtualized kernel on Hyper-V
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+
+=== Boot Errors ===
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: PCI: Fatal: No config space access function found
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Oct 05 12:06:48 DESKTOP-933PGUE login[377]: PAM unable to dlopen(pam_lastlog.so): /usr/lib/security/pam_lastlog.so: cannot open shared object file: No such file or directory
+Oct 05 12:06:48 DESKTOP-933PGUE login[377]: PAM adding faulty module: pam_lastlog.so
+Oct 05 12:06:49 DESKTOP-933PGUE unknown: WSL (218) ERROR: CheckConnection: getaddrinfo() failed: -5
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: PCI: Fatal: No config space access function found
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Oct 05 12:18:16 DESKTOP-933PGUE unknown: WSL (218) ERROR: CheckConnection: getaddrinfo() failed: -5
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+Oct 05 12:18:21 DESKTOP-933PGUE login[284]: PAM unable to dlopen(pam_lastlog.so): /usr/lib/security/pam_lastlog.so: cannot open shared object file: No such file or directory
+Oct 05 12:18:21 DESKTOP-933PGUE login[284]: PAM adding faulty module: pam_lastlog.so
+Oct 05 12:31:21 alhxvdvitap01 sudo[626]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 12:31:55 alhxvdvitap01 sudo[953]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 12:32:45 alhxvdvitap01 sudo[1371]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:11 alhxvdvitap01 sudo[1844]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:11 alhxvdvitap01 sudo[1844]: pam_unix(sudo:auth): conversation failed
+Oct 05 13:09:11 alhxvdvitap01 sudo[1844]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:09:34 alhxvdvitap01 sudo[1869]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:34 alhxvdvitap01 sudo[1869]: pam_unix(sudo:auth): conversation failed
+Oct 05 13:09:34 alhxvdvitap01 sudo[1869]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:09:54 alhxvdvitap01 sudo[1872]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:54 alhxvdvitap01 sudo[1872]: pam_unix(sudo:auth): conversation failed
+Oct 05 13:09:54 alhxvdvitap01 sudo[1872]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:10:18 alhxvdvitap01 sudo[1899]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:10:18 alhxvdvitap01 sudo[1899]: pam_unix(sudo:auth): conversation failed
+Oct 05 13:10:18 alhxvdvitap01 sudo[1899]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:10:41 alhxvdvitap01 sudo[1924]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:10:41 alhxvdvitap01 sudo[1924]: pam_unix(sudo:auth): conversation failed
+Oct 05 13:10:41 alhxvdvitap01 sudo[1924]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:11:01 alhxvdvitap01 sudo[1929]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:11:01 alhxvdvitap01 sudo[1929]: pam_unix(sudo:auth): conversation failed
+Oct 05 13:11:01 alhxvdvitap01 sudo[1929]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:11:25 alhxvdvitap01 sudo[1934]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:11:25 alhxvdvitap01 sudo[1934]: pam_unix(sudo:auth): conversation failed
+Oct 05 13:11:25 alhxvdvitap01 sudo[1934]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:11:45 alhxvdvitap01 sudo[1959]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:11:45 alhxvdvitap01 sudo[1959]: pam_unix(sudo:auth): conversation failed
+Oct 05 13:11:45 alhxvdvitap01 sudo[1959]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:12:08 alhxvdvitap01 sudo[1962]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:12:08 alhxvdvitap01 sudo[1962]: pam_unix(sudo:auth): conversation failed
+Oct 05 13:12:08 alhxvdvitap01 sudo[1962]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 14:13:59 alhxvdvitap01 sudo[4020]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 14:17:19 alhxvdvitap01 unknown: WSL (218) ERROR: CheckConnection: getaddrinfo() failed: -5
+Oct 05 15:03:04 alhxvdvitap01 unknown: WSL (218) ERROR: CheckConnection: getaddrinfo() failed: -5
+Oct 05 15:24:43 alhxvdvitap01 sudo[8900]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:25:28 alhxvdvitap01 sudo[9185]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:30:32 alhxvdvitap01 sudo[11090]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:30:32 alhxvdvitap01 sudo[11090]: pam_unix(sudo:auth): conversation failed
+Oct 05 15:30:32 alhxvdvitap01 sudo[11090]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:30:53 alhxvdvitap01 sudo[11117]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:30:53 alhxvdvitap01 sudo[11117]: pam_unix(sudo:auth): conversation failed
+Oct 05 15:30:53 alhxvdvitap01 sudo[11117]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:31:16 alhxvdvitap01 sudo[11120]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:31:16 alhxvdvitap01 sudo[11120]: pam_unix(sudo:auth): conversation failed
+Oct 05 15:31:16 alhxvdvitap01 sudo[11120]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:31:39 alhxvdvitap01 sudo[11179]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:31:39 alhxvdvitap01 sudo[11179]: pam_unix(sudo:auth): conversation failed
+Oct 05 15:31:39 alhxvdvitap01 sudo[11179]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:32:00 alhxvdvitap01 sudo[11205]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:32:00 alhxvdvitap01 sudo[11205]: pam_unix(sudo:auth): conversation failed
+Oct 05 15:32:00 alhxvdvitap01 sudo[11205]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:32:22 alhxvdvitap01 sudo[11296]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:32:22 alhxvdvitap01 sudo[11296]: pam_unix(sudo:auth): conversation failed
+Oct 05 15:32:22 alhxvdvitap01 sudo[11296]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:32:45 alhxvdvitap01 sudo[11341]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:32:45 alhxvdvitap01 sudo[11341]: pam_unix(sudo:auth): conversation failed
+Oct 05 15:32:45 alhxvdvitap01 sudo[11341]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:33:06 alhxvdvitap01 sudo[11400]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:33:06 alhxvdvitap01 sudo[11400]: pam_unix(sudo:auth): conversation failed
+Oct 05 15:33:06 alhxvdvitap01 sudo[11400]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:33:29 alhxvdvitap01 sudo[11403]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:33:29 alhxvdvitap01 sudo[11403]: pam_unix(sudo:auth): conversation failed
+Oct 05 15:33:29 alhxvdvitap01 sudo[11403]: pam_unix(sudo:auth): auth could not identify password for [sac]
+
+=========================================

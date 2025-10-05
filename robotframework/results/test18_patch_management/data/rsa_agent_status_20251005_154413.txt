@@ -1,0 +1,25 @@
+=========================================
+=== RSA Agent Installation Status ===
+=========================================
+Timestamp: 20251005_154413
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== RSA Packages ===
+ii  libuchardet0:amd64                               0.0.8-1build1                             amd64        universal charset detection library - shared library
+ii  libuuid1:amd64                                   2.39.3-9ubuntu6.3                         amd64        Universally Unique ID library
+ii  node-estraverse                                  5.3.0+ds+~5.1.1-1                         all          ECMAScript JS AST traversal functions
+ii  node-json-schema-traverse                        1.0.0-3                                   all          Json schema traversal package
+ii  python3-chardet                                  5.2.0+dfsg-1                              all          Universal Character Encoding Detector (Python3)
+ii  rsync                                            3.2.7-1ubuntu1.2                          amd64        fast, versatile, remote (and local) file-copying tool
+ii  uuid-runtime                                     2.39.3-9ubuntu6.3                         amd64        runtime components for the Universally Unique ID library
+
+=== RSA Agent Binary ===
+RSA agent binary not found in PATH
+
+=== RSA Installation Directory ===
+No RSA installation directories found
+
+=== ACE Client ===
+No ACE client found
+
+=========================================

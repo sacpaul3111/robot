@@ -1,0 +1,54 @@
+=========================================
+=== Application Logs ===
+=========================================
+Timestamp: 20251005_154527
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Application Log Directory ===
+total 5716
+drwxrwxr-x   8 root      syslog             4096 Oct  5 12:18 .
+drwxr-xr-x  13 root      root               4096 Aug 20 17:20 ..
+lrwxrwxrwx   1 root      root                 39 Aug  5 11:55 README -> ../../usr/share/doc/systemd/README.logs
+-rw-r--r--   1 root      root              32433 Sep 28 10:17 alternatives.log
+drwxr-xr-x   2 root      root               4096 Oct  5 15:25 apt
+-rw-r-----   1 syslog    adm               57781 Oct  5 15:45 auth.log
+-rw-r-----   1 syslog    adm                8568 Sep 27 20:17 auth.log.1
+-rw-r-----   1 syslog    adm                1747 Sep 21 23:17 auth.log.2.gz
+-rw-r-----   1 syslog    adm                 984 Sep 13 18:17 auth.log.3.gz
+-rw-r-----   1 syslog    adm                2543 Sep  7 03:10 auth.log.4.gz
+-rw-r--r--   1 root      root             118497 Aug  5 11:55 bootstrap.log
+drwxr-xr-x   2 root      root               4096 Jul 25 11:08 dist-upgrade
+-rw-r-----   1 root      adm               72119 Oct  5 12:18 dmesg
+-rw-r-----   1 root      adm               34852 Oct  5 12:06 dmesg.0
+-rw-r-----   1 root      adm               20836 Sep 29 22:06 dmesg.1.gz
+-rw-r-----   1 root      adm               10685 Sep 29 22:05 dmesg.2.gz
+-rw-r-----   1 root      adm               10722 Sep 29 22:03 dmesg.3.gz
+-rw-r-----   1 root      adm               10652 Sep 28 10:59 dmesg.4.gz
+-rw-r--r--   1 root      root             700741 Oct  5 15:25 dpkg.log
+-rw-r--r--   1 root      root                  0 Aug  5 11:55 faillog
+-rw-r--r--   1 root      root               1181 Sep 29 21:18 fontconfig.log
+drwxr-sr-x+  3 root      systemd-journal    4096 Aug 20 17:20 journal
+-rw-r-----   1 syslog    adm              219783 Oct  5 15:03 kern.log
+-rw-r-----   1 syslog    adm                6612 Sep 27 20:26 kern.log.1
+-rw-r-----   1 syslog    adm               12079 Sep 22 01:32 kern.log.2.gz
+-rw-r-----   1 syslog    adm                1595 Sep 13 13:26 kern.log.3.gz
+-rw-r-----   1 syslog    adm               43817 Sep  6 17:21 kern.log.4.gz
+drwxr-xr-x   2 landscape landscape          4096 Aug  5 11:57 landscape
+drwx------   2 root      root               4096 Aug  5 11:55 private
+-rw-r-----   1 syslog    adm             1874110 Oct  5 15:45 syslog
+-rw-r-----   1 syslog    adm             1937435 Sep 28 00:19 syslog.1
+-rw-r-----   1 syslog    adm              158816 Sep 22 07:22 syslog.2.gz
+-rw-r-----   1 syslog    adm              137035 Sep 14 03:02 syslog.3.gz
+-rw-r-----   1 syslog    adm              193012 Sep  7 03:10 syslog.4.gz
+drwxr-x---   2 root      adm                4096 Aug 24 08:05 unattended-upgrades
+
+=== HTTPD/Apache Logs ===
+No httpd logs
+
+=== Nginx Logs ===
+No nginx logs
+
+=== Database Logs ===
+No database logs
+
+=========================================

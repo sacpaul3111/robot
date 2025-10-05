@@ -1,0 +1,22 @@
+=========================================
+=== RSA Configuration Files ===
+=========================================
+Timestamp: 20251005_154413
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== /var/ace/sdconf.rec ===
+No /var/ace/sdconf.rec
+
+=== /var/ace/sdopts.rec ===
+No /var/ace/sdopts.rec
+
+=== PAM RSA Configuration ===
+No PAM RSA configuration
+
+=== /var/ace/ Directory ===
+No /var/ace/ directory
+
+=== RSA Config Directory ===
+No RSA config directory
+
+=========================================

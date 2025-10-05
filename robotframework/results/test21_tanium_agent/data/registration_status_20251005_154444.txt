@@ -1,0 +1,22 @@
+=========================================
+=== Tanium Agent Registration ===
+=========================================
+Timestamp: 20251005_154444
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Computer ID (Registration ID) ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+ComputerID not available
+
+=== Last Registration Logs ===
+
+
+=== Public Key Fingerprint ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+Fingerprint not available
+
+=== Client Status ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+Status command not available
+
+=========================================

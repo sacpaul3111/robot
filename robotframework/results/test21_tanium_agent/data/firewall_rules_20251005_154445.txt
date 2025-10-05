@@ -1,0 +1,15 @@
+=========================================
+=== Tanium Firewall Rules ===
+=========================================
+Timestamp: 20251005_154445
+Target Server: alhxvdvitap01 (172.30.16.186)
+Expected Port: 17472
+
+=== iptables (Port 17472) ===
+No iptables rules for Tanium port
+
+=== firewalld ===
+bash: line 1: firewall-cmd: command not found
+firewalld not active
+
+=========================================

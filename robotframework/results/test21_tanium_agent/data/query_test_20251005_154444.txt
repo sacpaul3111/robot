@@ -1,0 +1,16 @@
+=========================================
+=== Tanium Query Responsiveness Test ===
+=========================================
+Timestamp: 20251005_154444
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Query Test ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+
+=== Last Query Logs ===
+
+
+=== Query Results Cache ===
+Query results directory not found
+
+=========================================

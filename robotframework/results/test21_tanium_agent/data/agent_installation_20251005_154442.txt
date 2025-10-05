@@ -1,0 +1,23 @@
+=========================================
+=== Tanium Agent Installation ===
+=========================================
+Timestamp: 20251005_154442
+Target Server: alhxvdvitap01 (172.30.16.186)
+Expected Install Dir: /opt/Tanium/TaniumClient
+
+=== Tanium Packages ===
+No Tanium packages found
+
+=== TaniumClient Binary ===
+TaniumClient binary not found
+
+=== Tanium CLI ===
+taniumcli not found
+
+=== Installation Directory ===
+Tanium installation directory not found
+
+=== Data Directory ===
+Tanium data directory not found
+
+=========================================

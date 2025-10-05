@@ -1,0 +1,20 @@
+=========================================
+=== Tanium Agent Version ===
+=========================================
+Timestamp: 20251005_154443
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== TaniumClient Version ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+Version command not available
+
+=== Package Version ===
+Package version not available
+
+=== Version File ===
+Version file not found
+
+=== Agent Info ===
+bash: line 1: /opt/Tanium/TaniumClient/TaniumClient: No such file or directory
+
+=========================================

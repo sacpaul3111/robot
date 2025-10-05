@@ -1,0 +1,30 @@
+=========================================
+=== Patch Management Registration ===
+=========================================
+Timestamp: 20251005_154414
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Satellite Status ===
+bash: line 1: subscription-manager: command not found
+subscription-manager not available
+
+=== Satellite Identity ===
+bash: line 1: subscription-manager: command not found
+Not registered with Satellite
+
+=== Katello Facts ===
+No Katello facts file
+
+=== Ansible Configuration ===
+No Ansible configuration
+
+=== Ansible Hosts ===
+Not in Ansible hosts
+
+=== Yum Plugins ===
+No yum plugin configs
+
+=== Satellite Packages ===
+No Satellite packages found
+
+=========================================

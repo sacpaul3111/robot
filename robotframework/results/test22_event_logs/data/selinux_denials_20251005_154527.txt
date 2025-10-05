@@ -1,0 +1,17 @@
+=========================================
+=== SELinux Denials ===
+=========================================
+Timestamp: 20251005_154527
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== SELinux Status ===
+bash: line 1: getenforce: command not found
+SELinux not available
+
+=== Audit Denials (ausearch) ===
+bash: line 1: ausearch: command not found
+
+=== SELinux Alerts (sealert) ===
+bash: line 1: sealert: command not found
+
+=========================================

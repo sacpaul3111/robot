@@ -1,0 +1,17 @@
+=== CPU Information Report ===
+Timestamp: 20251005_154650
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== CPU Core Count ===
+CPU Cores: 8
+
+=== CPU Model ===
+Model: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+
+=== Detailed CPU Information ===
+CPU(s):                               8
+On-line CPU(s) list:                  0-7
+Model name:                           11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Core(s) per socket:                   4
+Socket(s):                            1
+NUMA node0 CPU(s):                    0-7

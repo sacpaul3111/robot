@@ -1,0 +1,88 @@
+=========================================
+=== Kernel Error Analysis ===
+=========================================
+Timestamp: 20251005_154527
+Target Server: alhxvdvitap01 (172.30.16.186)
+
+=== Kernel Errors (dmesg) ===
+[    0.000000] Command line: initrd=\initrd.img WSL_ROOT_INIT=1 panic=-1 nr_cpus=8 hv_utils.timesync_implicit=1 console=hvc0 debug pty.legacy_count=0 WSL_ENABLE_CRASH_DUMP=1
+[    0.066872] Kernel command line: initrd=\initrd.img WSL_ROOT_INIT=1 panic=-1 nr_cpus=8 hv_utils.timesync_implicit=1 console=hvc0 debug pty.legacy_count=0 WSL_ENABLE_CRASH_DUMP=1
+[    0.291955] Failed to register legacy timer interrupt
+[    0.301784] Hyper-V: Disabling IBT because of Hyper-V bug
+[    0.382240] ACPI: _OSC evaluation for CPUs failed, trying _PDC
+[    0.382263] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.452896] SGI XFS with ACLs, security attributes, realtime, verbose warnings, quota, no debug enabled
+[    0.571135] AMD-Vi: AMD IOMMUv2 functionality not available on this system - This is not a bug.
+[    0.836271] RAS: Correctable Errors collector initialized.
+[    3.296026] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+[    3.300988] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[    3.301729] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[    3.302362] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[    3.303507] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[    3.407990] Failed to connect to bus: No such file or directory
+[    6.922011] WSL (218) ERROR: CheckConnection: getaddrinfo() failed: -5
+[  696.250432] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+[  696.259075] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  696.260165] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  696.261178] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[  696.262293] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[  696.553147] Failed to connect to bus: No such file or directory
+[ 4516.421508] WSL (218) ERROR: CheckConnection: getaddrinfo() failed: -5
+[ 7190.273408] WSL (218) ERROR: CheckConnection: getaddrinfo() failed: -5
+
+=== Hardware Related Errors ===
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: x86/mm: Memory block size: 128MB
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: VFS: Disk quotas dquot_6.6.0
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Freeing initrd memory: 2664K
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: hv_balloon: Using Dynamic Memory protocol version 2.0
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: hv_balloon: Cold memory discard hint enabled with order 9
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Freeing unused decrypted memory: 2028K
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Freeing unused kernel image (initmem) memory: 4492K
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: Freeing unused kernel image (rodata/data gap) memory: 840K
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: scsi 0:0:0:0: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: scsi 0:0:0:1: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: sd 0:0:0:0: [sda] Attached SCSI disk
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: sd 0:0:0:1: [sdb] Attached SCSI disk
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: scsi 0:0:0:2: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: sd 0:0:0:2: [sdc] Attached SCSI disk
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: scsi 0:0:0:3: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Oct 05 12:06:43 DESKTOP-933PGUE kernel: sd 0:0:0:3: [sdd] Attached SCSI disk
+Oct 05 12:07:30 DESKTOP-933PGUE kernel: hv_balloon: Max. dynamic memory size: 8112 MB
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: RAMDISK: [mem 0x04be4000-0x04e7dfff]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: ACPI: Reserving FACP table memory at [mem 0x101000-0x101113]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: ACPI: Reserving DSDT table memory at [mem 0x1011b8-0x11f2d3]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: ACPI: Reserving FACS table memory at [mem 0x101114-0x101153]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: ACPI: Reserving OEM0 table memory at [mem 0x101154-0x1011b7]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: ACPI: Reserving SRAT table memory at [mem 0x11f2d4-0x11f603]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: ACPI: Reserving APIC table memory at [mem 0x11f604-0x11f68b]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: Early memory node ranges
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000dffff]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0x000e0000-0x000e0fff]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0x000e1000-0x000fffff]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0x00100000-0x001fffff]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: PM: hibernation: Registered nosave memory: [mem 0xf8000000-0xffffffff]
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: Memory: 4123796K/8305276K available (20480K kernel code, 3457K rwdata, 13496K rodata, 4492K init, 6208K bss, 264432K reserved, 0K cma-reserved)
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: Freeing SMP alternatives memory: 44K
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: x86/mm: Memory block size: 128MB
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: VFS: Disk quotas dquot_6.6.0
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: Freeing initrd memory: 2664K
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: hv_balloon: Using Dynamic Memory protocol version 2.0
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: hv_balloon: Cold memory discard hint enabled with order 9
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: Freeing unused decrypted memory: 2028K
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: Freeing unused kernel image (initmem) memory: 4492K
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: Freeing unused kernel image (rodata/data gap) memory: 840K
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: scsi 0:0:0:0: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: scsi 0:0:0:1: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: sd 0:0:0:0: [sda] Attached SCSI disk
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: sd 0:0:0:1: [sdb] Attached SCSI disk
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: scsi 0:0:0:2: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: sd 0:0:0:2: [sdc] Attached SCSI disk
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: scsi 0:0:0:3: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: sd 0:0:0:3: [sdd] Attached SCSI disk
+Oct 05 12:18:16 DESKTOP-933PGUE kernel: hv_balloon: Max. dynamic memory size: 8112 MB
+
+=== Out of Memory Errors ===
+
+
+=========================================

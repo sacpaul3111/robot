@@ -1,0 +1,88 @@
+=========================================
+=== Critical Errors Analysis ===
+=========================================
+Timestamp: 20251005_154513
+Target Server: alhxvdvitap01 (172.30.16.186)
+Search Keywords: ['critical', 'emergency', 'fatal', 'panic', 'segfault', 'kernel panic', 'out of memory', 'oom-killer']
+
+=== Emergency Level (Priority 0) ===
+-- No entries --
+
+=== Alert Level (Priority 1) ===
+Oct 05 12:31:21 alhxvdvitap01 sudo[626]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 12:31:55 alhxvdvitap01 sudo[953]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 12:32:45 alhxvdvitap01 sudo[1371]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:11 alhxvdvitap01 sudo[1844]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:34 alhxvdvitap01 sudo[1869]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:54 alhxvdvitap01 sudo[1872]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:10:18 alhxvdvitap01 sudo[1899]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:10:41 alhxvdvitap01 sudo[1924]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:11:01 alhxvdvitap01 sudo[1929]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:11:25 alhxvdvitap01 sudo[1934]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:11:45 alhxvdvitap01 sudo[1959]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:12:08 alhxvdvitap01 sudo[1962]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 14:13:59 alhxvdvitap01 sudo[4020]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:24:43 alhxvdvitap01 sudo[8900]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:25:28 alhxvdvitap01 sudo[9185]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:30:32 alhxvdvitap01 sudo[11090]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:30:53 alhxvdvitap01 sudo[11117]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:31:16 alhxvdvitap01 sudo[11120]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:31:39 alhxvdvitap01 sudo[11179]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:32:00 alhxvdvitap01 sudo[11205]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:32:22 alhxvdvitap01 sudo[11296]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:32:45 alhxvdvitap01 sudo[11341]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:33:06 alhxvdvitap01 sudo[11400]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:33:29 alhxvdvitap01 sudo[11403]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+
+=== Critical Level (Priority 2) ===
+Sep 28 08:51:05 DESKTOP-933PGUE sudo[1026]: pam_unix(sudo:auth): auth could not identify password for [sac]
+-- Boot 1eee50944e4745269e3cc8421a05f8ec --
+Sep 29 14:21:47 DESKTOP-933PGUE sudo[10015]: pam_unix(sudo:auth): auth could not identify password for [sac]
+-- Boot c3e9f72d9501467cb833a308f82df79a --
+Oct 05 12:31:21 alhxvdvitap01 sudo[626]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 12:31:55 alhxvdvitap01 sudo[953]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 12:32:45 alhxvdvitap01 sudo[1371]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:11 alhxvdvitap01 sudo[1844]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:11 alhxvdvitap01 sudo[1844]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:09:34 alhxvdvitap01 sudo[1869]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:34 alhxvdvitap01 sudo[1869]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:09:54 alhxvdvitap01 sudo[1872]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:09:54 alhxvdvitap01 sudo[1872]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:10:18 alhxvdvitap01 sudo[1899]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:10:18 alhxvdvitap01 sudo[1899]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:10:41 alhxvdvitap01 sudo[1924]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:10:41 alhxvdvitap01 sudo[1924]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:11:01 alhxvdvitap01 sudo[1929]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:11:01 alhxvdvitap01 sudo[1929]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:11:25 alhxvdvitap01 sudo[1934]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:11:25 alhxvdvitap01 sudo[1934]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:11:45 alhxvdvitap01 sudo[1959]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:11:45 alhxvdvitap01 sudo[1959]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 13:12:08 alhxvdvitap01 sudo[1962]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 13:12:08 alhxvdvitap01 sudo[1962]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 14:13:59 alhxvdvitap01 sudo[4020]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:24:43 alhxvdvitap01 sudo[8900]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:25:28 alhxvdvitap01 sudo[9185]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:30:32 alhxvdvitap01 sudo[11090]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:30:32 alhxvdvitap01 sudo[11090]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:30:53 alhxvdvitap01 sudo[11117]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:30:53 alhxvdvitap01 sudo[11117]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:31:16 alhxvdvitap01 sudo[11120]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:31:16 alhxvdvitap01 sudo[11120]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:31:39 alhxvdvitap01 sudo[11179]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:31:39 alhxvdvitap01 sudo[11179]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:32:00 alhxvdvitap01 sudo[11205]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:32:00 alhxvdvitap01 sudo[11205]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:32:22 alhxvdvitap01 sudo[11296]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:32:22 alhxvdvitap01 sudo[11296]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:32:45 alhxvdvitap01 sudo[11341]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:32:45 alhxvdvitap01 sudo[11341]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:33:06 alhxvdvitap01 sudo[11400]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:33:06 alhxvdvitap01 sudo[11400]: pam_unix(sudo:auth): auth could not identify password for [sac]
+Oct 05 15:33:29 alhxvdvitap01 sudo[11403]:      sac : unable to resolve host alhxvdvitap01: Temporary failure in name resolution
+Oct 05 15:33:29 alhxvdvitap01 sudo[11403]: pam_unix(sudo:auth): auth could not identify password for [sac]
+
+=== Critical Keywords in Recent Logs ===
+No critical keywords found
+
+=========================================
