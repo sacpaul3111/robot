@@ -117,11 +117,8 @@ Normal - Step 3.2: Review Unnecessary Services Status
     Log    📊 Security services status:    console=yes
     FOR    ${service}    IN    @{REQUIRED_SERVICES_DISABLED}
         ${status}=    Run Keyword And Return Status    Get From Dictionary    ${validation_results}    ${service}
-        IF    ${status}
-            Log    📊 - ${service}: ${validation_results}[${service}]    console=yes
-        ELSE
-            Log    📊 - ${service}: status check skipped    console=yes
-        END
+        Run Keyword If    ${status}    Log    📊 - ${service}: ${validation_results}[${service}]    console=yes
+        Run Keyword Unless    ${status}    Log    📊 - ${service}: status check skipped    console=yes
     END
 
     Log    STEP 3.2: COMPLETED - Security services status documented    level=INFO    console=yes
