@@ -476,7 +476,7 @@ Collect Authentication Logs
     # Collect authentication-related logs
     ${auth_secure}=       Execute Command    tail -${LOG_LINES_TO_COLLECT} /var/log/secure 2>/dev/null || tail -${LOG_LINES_TO_COLLECT} /var/log/auth.log 2>/dev/null || echo "No auth logs"
     ${failed_logins}=     Execute Command    journalctl --no-pager | grep -i "failed password\|authentication failure" | tail -50 2>&1 || echo "No failed login entries"
-    ${successful_logins}= Execute Command    journalctl --no-pager | grep -i "accepted password\|session opened" | tail -50 2>&1 || echo "No successful login entries"
+    ${successful_logins}=    Execute Command    journalctl --no-pager | grep -i "accepted password\|session opened" | tail -50 2>&1 || echo "No successful login entries"
     ${lastlog}=           Execute Command    lastlog 2>&1 | head -30 || echo "lastlog not available"
     ${last}=              Execute Command    last | head -30 2>&1 || echo "last not available"
 
