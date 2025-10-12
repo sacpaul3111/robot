@@ -228,6 +228,12 @@ Generate Executive Summary
     ${end_time}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
     ${duration}=    Subtract Date From Date    ${end_time}    ${TEST_START_TIME}
 
+    # Pre-compute status comparisons
+    ${hostname_status}=    Set Variable If    '${TARGET_HOSTNAME}' == '${SERVER_HOSTNAME}'    ✅ MATCH    ❌ MISMATCH
+    ${ip_status}=    Set Variable If    '${TARGET_IP}' == '${SERVER_IP}'    ✅ MATCH    ❌ MISMATCH
+    ${subnet_status}=    Set Variable If    '${TARGET_SUBNET}' == '${SERVER_SUBNET}'    ✅ MATCH    ❌ MISMATCH
+    ${gateway_status}=    Set Variable If    '${TARGET_GATEWAY}' == '${SERVER_GATEWAY}'    ✅ MATCH    ❌ MISMATCH
+
     # Create comprehensive comparison report
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${summary_file}=    Set Variable    ${DATA_DIR}/network_validation_summary_${timestamp}.txt
@@ -249,22 +255,22 @@ Generate Executive Summary
     ...    HOSTNAME:
     ...    - EDS Expected:  ${TARGET_HOSTNAME}
     ...    - Server Actual: ${SERVER_HOSTNAME}
-    ...    - Status: ${'✅ MATCH' if '${TARGET_HOSTNAME}' == '${SERVER_HOSTNAME}' else '❌ MISMATCH'}
+    ...    - Status: ${hostname_status}
     ...    ${EMPTY}
     ...    IP ADDRESS:
     ...    - EDS Expected:  ${TARGET_IP}
     ...    - Server Actual: ${SERVER_IP}
-    ...    - Status: ${'✅ MATCH' if '${TARGET_IP}' == '${SERVER_IP}' else '❌ MISMATCH'}
+    ...    - Status: ${ip_status}
     ...    ${EMPTY}
     ...    SUBNET:
     ...    - EDS Expected:  ${TARGET_SUBNET}
     ...    - Server Actual: ${SERVER_SUBNET}
-    ...    - Status: ${'✅ MATCH' if '${TARGET_SUBNET}' == '${SERVER_SUBNET}' else '❌ MISMATCH'}
+    ...    - Status: ${subnet_status}
     ...    ${EMPTY}
     ...    GATEWAY:
     ...    - EDS Expected:  ${TARGET_GATEWAY}
     ...    - Server Actual: ${SERVER_GATEWAY}
-    ...    - Status: ${'✅ MATCH' if '${TARGET_GATEWAY}' == '${SERVER_GATEWAY}' else '❌ MISMATCH'}
+    ...    - Status: ${gateway_status}
     ...    ${EMPTY}
     ...    DNS/FQDN:
     ...    - EDS CNAME:     ${TARGET_CNAME}
