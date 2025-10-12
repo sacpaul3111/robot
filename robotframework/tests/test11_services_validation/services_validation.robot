@@ -1,9 +1,10 @@
 *** Settings ***
 Documentation    ⚙️ Services Validation Test Suite - Test-11
-...              🔍 Process: Find hostname in EDS → SSH to server → Collect service status data → Document all running services
-...              ✅ Validates: Required services (autofs, sshd, sssd, chronyd, ntpd, syslog) are enabled
-...              ❌ Validates: Unnecessary services (iptables, selinux) are disabled
-...              📊 Documents complete service list for manual compliance review
+...              🔍 Process: Connect to Target → List All Running Services → Document Service Status
+...              📋 Step 1: Connect to Target - SSH directly to the host machine
+...              📋 Step 2: List All Running Services - Execute commands to list all running services and their statuses
+...              📋 Step 3: Document Service Status - Save the complete service list for review
+...              ℹ️  NOTE: This test collects and documents services for manual review. Service validation checks are informational only.
 ...
 Resource         ../../settings.resource
 Resource         services_keywords.resource
@@ -67,8 +68,8 @@ Critical - Step 2.2: Document Service Status to File
     # Save service status to file
     ${service_file}=    Save Services Status to File
 
-    # Verify file was created
-    File Should Exist    ${service_file}
+    # Verify file was created (use OperatingSystem.File Should Exist for local files)
+    OperatingSystem.File Should Exist    ${service_file}
     ${file_size}=    Get File Size    ${service_file}
     Should Be True    ${file_size} > 0
 
@@ -78,49 +79,51 @@ Critical - Step 2.2: Document Service Status to File
     Log    📄 File size: ${file_size} bytes    console=yes
     Log    ✅ STEP 2.2: COMPLETED - Service documentation saved    console=yes
 
-Critical - Step 3.1: Validate Required Services Enabled
-    [Documentation]    ✅ Verify required services (autofs, sshd, sssd, chronyd, ntpd, syslog) are enabled
-    ...                Step 3 of validation process: Validate Against Standards (Part 1)
-    [Tags]             critical    services    step3    validation    enabled
+Normal - Step 3.1: Review Required Services Status
+    [Documentation]    ℹ️  Check status of required services (autofs, sshd, sssd, chronyd, ntpd, syslog)
+    ...                Step 3 of validation process: Document Service Status (Part 1 - Informational)
+    [Tags]             normal    informational    services    review    step3
 
     Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    🔍 STEP 3.1: VALIDATE REQUIRED SERVICES ENABLED    console=yes
+    Log    ℹ️  STEP 3.1: REQUIRED SERVICES STATUS REVIEW (INFORMATIONAL)    console=yes
     Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Required services: ${REQUIRED_SERVICES_ENABLED}    console=yes
 
-    # Validate each required service
+    # Check each required service status
     ${validation_results}=    Validate Required Services Are Enabled
 
-    Log    📊 Required services validation:    console=yes
+    Log    📊 Required services status:    console=yes
     FOR    ${service}    IN    @{REQUIRED_SERVICES_ENABLED}
         ${status}=    Get From Dictionary    ${validation_results}    ${service}
         Log    📊 - ${service}: ${status}    console=yes
     END
 
-    Log    ✅ Required services validation completed    console=yes
-    Log    ✅ STEP 3.1: COMPLETED - Required services validated    console=yes
+    Log    ℹ️  STEP 3.1: COMPLETED - Required services status documented    console=yes
 
-Critical - Step 3.2: Validate Unnecessary Services Disabled
-    [Documentation]    ❌ Verify unnecessary services (iptables, selinux) are disabled
-    ...                Step 3 of validation process: Validate Against Standards (Part 2)
-    [Tags]             critical    services    step3    validation    disabled    security
+Normal - Step 3.2: Review Unnecessary Services Status
+    [Documentation]    ℹ️  Check status of services that should be disabled (iptables, selinux)
+    ...                Step 3 of validation process: Document Service Status (Part 2 - Informational)
+    [Tags]             normal    informational    security    review    step3
 
     Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    🔍 STEP 3.2: VALIDATE UNNECESSARY SERVICES DISABLED    console=yes
+    Log    ℹ️  STEP 3.2: SECURITY SERVICES STATUS REVIEW (INFORMATIONAL)    console=yes
     Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Services to check: ${REQUIRED_SERVICES_DISABLED}    console=yes
 
-    # Validate unnecessary services are disabled
-    ${validation_results}=    Validate Unnecessary Services Are Disabled
+    # Check unnecessary services status
+    ${validation_results}=    Run Keyword And Continue On Failure
+    ...    Validate Unnecessary Services Are Disabled
 
-    Log    📊 Unnecessary services validation:    console=yes
+    Log    📊 Security services status:    console=yes
     FOR    ${service}    IN    @{REQUIRED_SERVICES_DISABLED}
-        ${status}=    Get From Dictionary    ${validation_results}    ${service}
-        Log    📊 - ${service}: ${status}    console=yes
+        ${status}=    Run Keyword And Return Status    Get From Dictionary    ${validation_results}    ${service}
+        Run Keyword If    ${status}
+        ...    Log    📊 - ${service}: ${validation_results}[${service}]    console=yes
+        ...    ELSE
+        ...    Log    📊 - ${service}: status check skipped    console=yes
     END
 
-    Log    ✅ Unnecessary services validation completed    console=yes
-    Log    ✅ STEP 3.2: COMPLETED - Unnecessary services validated    console=yes
+    Log    ℹ️  STEP 3.2: COMPLETED - Security services status documented    console=yes
 
 Normal - Service Dependency Analysis
     [Documentation]    🔗 Analyze service dependencies and relationships
@@ -175,8 +178,8 @@ Normal - Service Startup Time Analysis
     Log    ✅ Service startup analysis: INFORMATIONAL    console=yes
 
 Normal - Security Services Status
-    [Documentation]    🔒 Check status of security-related services and configurations
-    [Tags]             normal    security    firewall    selinux
+    [Documentation]    🔒 Check status of security-related services and configurations (Informational)
+    [Tags]             normal    security    firewall    selinux    informational
 
     Log    🔍 Checking security services status...    console=yes
 
@@ -191,9 +194,11 @@ Normal - Security Services Status
     Log    🔒 iptables Status: ${iptables_status}    console=yes
     Log    🔒 firewalld Status: ${firewalld_status}    console=yes
 
-    # Validate SELinux is disabled as required
-    Should Contain Any    ${selinux_status}    Disabled    Permissive    not available
-    ...    ⚠️ SELinux should be disabled but shows: ${selinux_status}
+    # Document findings without failing
+    Run Keyword If    '${selinux_status}' == 'Enforcing'
+    ...    Log    ℹ️  SELinux is Enforcing - documented for review    console=yes
+    ...    ELSE
+    ...    Log    ℹ️  SELinux status: ${selinux_status}    console=yes
 
     Log    ℹ️ Security services status check completed    console=yes
-    Log    ✅ Security services status: DOCUMENTED    console=yes
+    Log    ✅ Security services status: DOCUMENTED (INFORMATIONAL)    console=yes

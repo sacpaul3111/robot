@@ -10,7 +10,7 @@ Library          DateTime
 Resource         ../../settings.resource
 
 *** Variables ***
-${DATA_DIR}                results/test22_event_logs/data
+${DATA_DIR}                ${OUTPUT_DIR}/data
 
 # Suite-level variables for log data
 ${JOURNAL_LOGS}                ${EMPTY}
@@ -635,10 +635,10 @@ Check SELinux Denials
     [Documentation]    🔒 Check for SELinux denials
     Log    🔒 Checking SELinux denials...    console=yes
 
-    # Check SELinux status and denials
+    # Check SELinux status and denials (with timeouts to prevent hanging)
     ${selinux_status}=   Execute Command    getenforce 2>&1 || echo "SELinux not available"
-    ${audit_denials}=    Execute Command    ausearch -m avc -ts recent 2>&1 | tail -100 || grep -i "denied" /var/log/audit/audit.log 2>/dev/null | tail -50 || echo "No SELinux denials found"
-    ${sealert}=          Execute Command    sealert -a /var/log/audit/audit.log 2>&1 | head -50 || echo "sealert not available"
+    ${audit_denials}=    Execute Command    timeout 30 ausearch -m avc -ts recent 2>&1 | tail -100 || grep -i "denied" /var/log/audit/audit.log 2>/dev/null | tail -50 || echo "No SELinux denials found"
+    ${sealert}=          Execute Command    timeout 30 sealert -a /var/log/audit/audit.log 2>&1 | head -50 || echo "sealert not available or timed out"
 
     # Combine SELinux info
     ${selinux_denials}=    Catenate    SEPARATOR=\n

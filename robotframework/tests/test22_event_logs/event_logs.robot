@@ -50,7 +50,7 @@ Critical - Step 2.1: Collect System Journal Logs (journalctl)
     ${journal_file}=    Save Journal Logs to File    ${journal_logs}
 
     # Verify data was collected
-    File Should Exist    ${journal_file}
+    OperatingSystem.File Should Exist    ${journal_file}
 
     Log    📄 Journal logs saved to: ${journal_file}    console=yes
     Log    ✅ System journal logs collected successfully    console=yes
@@ -72,7 +72,7 @@ Critical - Step 2.2: Collect Boot Messages (dmesg)
     ${dmesg_file}=    Save Dmesg to File    ${dmesg_output}
 
     # Verify data was collected
-    File Should Exist    ${dmesg_file}
+    OperatingSystem.File Should Exist    ${dmesg_file}
     Should Not Be Empty    ${dmesg_output}
 
     Log    📄 dmesg output saved to: ${dmesg_file}    console=yes
@@ -95,7 +95,7 @@ Critical - Step 2.3: Collect System Log Files
     ${syslog_file}=    Save System Logs to File    ${system_logs}
 
     # Verify data was collected
-    File Should Exist    ${syslog_file}
+    OperatingSystem.File Should Exist    ${syslog_file}
 
     Log    📄 System logs saved to: ${syslog_file}    console=yes
     Log    ✅ System log files collected successfully    console=yes

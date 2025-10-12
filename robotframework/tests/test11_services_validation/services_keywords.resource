@@ -200,15 +200,20 @@ Check Service Is Disabled
     [Arguments]    ${service_name}    ${results_dict}
 
     # Check if service is enabled
-    ${is_enabled}=    Execute Command    systemctl is-enabled ${service_name} 2>/dev/null || echo "disabled"
+    ${is_enabled_raw}=    Execute Command    systemctl is-enabled ${service_name} 2>/dev/null || echo "disabled"
+    ${is_enabled}=    Strip String    ${is_enabled_raw}
 
     # Check if service is active
-    ${is_active}=    Execute Command    systemctl is-active ${service_name} 2>/dev/null || echo "inactive"
+    ${is_active_raw}=    Execute Command    systemctl is-active ${service_name} 2>/dev/null || echo "inactive"
+    ${is_active}=    Strip String    ${is_active_raw}
 
-    # Service should be disabled AND inactive
-    ${status}=    Set Variable If
-    ...    '${is_enabled}' in ['disabled', 'masked'] and '${is_active}' == 'inactive'    disabled
-    ...    ELSE    active-or-enabled
+    # Service should be disabled AND inactive - check both conditions separately
+    ${is_disabled_or_masked}=    Run Keyword And Return Status    Should Be True
+    ...    '${is_enabled}' in ['disabled', 'masked', 'not-found']
+
+    ${is_inactive}=    Run Keyword And Return Status    Should Be Equal    ${is_active}    inactive
+
+    ${status}=    Set Variable If    ${is_disabled_or_masked} and ${is_inactive}    disabled    active-or-enabled
 
     Set To Dictionary    ${results_dict}    ${service_name}=${status}
 

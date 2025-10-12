@@ -10,7 +10,7 @@ Library          DateTime
 Resource         ../../settings.resource
 
 *** Variables ***
-${DATA_DIR}                results/test18_patch_management/data
+${DATA_DIR}                ${OUTPUT_DIR}/data
 
 # Suite-level variables for RSA and patch management data
 ${RSA_AGENT_STATUS}            ${EMPTY}
@@ -96,9 +96,9 @@ Collect RSA Configuration Files
     [Documentation]    📄 Collect RSA configuration files from common locations
     Log    📄 Collecting RSA configuration files...    console=yes
 
-    # Check common RSA configuration file locations
-    ${sdconf}=           Execute Command    cat /var/ace/sdconf.rec 2>/dev/null || echo "No /var/ace/sdconf.rec"
-    ${sdopts}=           Execute Command    cat /var/ace/sdopts.rec 2>/dev/null || echo "No /var/ace/sdopts.rec"
+    # Check common RSA configuration file locations (use strings for binary files)
+    ${sdconf}=           Execute Command    ls -la /var/ace/sdconf.rec 2>/dev/null && strings /var/ace/sdconf.rec 2>/dev/null | head -20 || echo "No /var/ace/sdconf.rec"
+    ${sdopts}=           Execute Command    ls -la /var/ace/sdopts.rec 2>/dev/null && strings /var/ace/sdopts.rec 2>/dev/null | head -20 || echo "No /var/ace/sdopts.rec"
     ${pam_rsa}=          Execute Command    cat /etc/pam.d/rsa 2>/dev/null || grep -r rsa /etc/pam.d/ 2>/dev/null || echo "No PAM RSA configuration"
     ${ace_data}=         Execute Command    ls -la /var/ace/ 2>/dev/null || echo "No /var/ace/ directory"
     ${rsa_config_dir}=   Execute Command    ls -la /opt/rsa/*/config/ 2>/dev/null || echo "No RSA config directory"
