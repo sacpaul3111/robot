@@ -1,0 +1,86 @@
+================================================================================
+ROBOT FRAMEWORK COMPLIANCE TESTS - EXTERNAL SYSTEMS ACCESS REQUIREMENTS
+================================================================================
+
+The following external systems require network connectivity and credentials:
+
+1. TARGET SERVERS (All Tests)
+   - SSH access to Linux/Unix servers
+   - Username: root (or privileged user)
+   - Password: [provided via CyberArk or environment variable]
+
+2. VMWARE VCENTER (test4, test9, test15)
+   - URL: https://vcenter.example.com
+   - Username: administrator@vsphere.local
+   - Password: [provided via CyberArk]
+   - Purpose: VM configuration, datastore, backup validation
+
+3. SPLUNK (test14)
+   - URL: https://splunk.example.com:8000
+   - Username: admin
+   - Password: [provided via CyberArk]
+   - Purpose: Log forwarding validation (CIP-007 R4.1)
+   - Note: May require Citrix browser access
+
+4. CYBERARK PASSWORD VAULT (test16)
+   - URL: https://cyberark.example.com
+   - Username: admin
+   - Password: [provided via CyberArk]
+   - Purpose: Password vault enrollment validation (CIP-007 R5.2/R5.4)
+   - Note: May require Citrix/Jumpbox access
+
+5. TANIUM SERVER (test21)
+   - Server: tanium.example.com:17472
+   - Username: admin
+   - Password: [provided via CyberArk]
+   - Purpose: Agent connectivity and module validation
+
+6. ANSIBLE TOWER/AWX (test24)
+   - URL: https://tower.example.com
+   - Username: admin
+   - Password: [provided via CyberArk]
+   - Purpose: Playbook execution validation
+
+7. SERVICENOW/CRQ SYSTEM (test23)
+   - URL: https://servicenow.company.com
+   - Username: [to be configured]
+   - Password: [provided via CyberArk]
+   - Purpose: Change management validation (CIP-010 R1)
+   - Note: May require Citrix browser access
+
+8. RED HAT SATELLITE SERVER (test18)
+   - Server: satellite.example.com
+   - Purpose: Patch management registration validation
+   - Note: SSH access via target server
+
+9. RSA AUTHENTICATION SERVER (test18)
+   - Server: rsa.domain.com:5500
+   - Purpose: Two-factor authentication validation
+   - Note: Connectivity check only, no direct login required
+
+================================================================================
+NETWORK REQUIREMENTS
+================================================================================
+
+Firewall rules must allow:
+- SSH (port 22) to target servers
+- HTTPS (port 443) to vCenter, Splunk, CyberArk, Ansible Tower, ServiceNow
+- Tanium client-server (port 17472)
+- Splunk syslog (port 514)
+- RSA authentication ports (5500, 5555)
+
+================================================================================
+UPDATE ENDPOINTS IN: variables.resource
+================================================================================
+
+Replace "example.com" with actual FQDNs:
+- ${VCENTER_URL}
+- ${SPLUNK_URL}
+- ${CYBERARK_URL}
+- ${TANIUM_SERVER}
+- ${ANSIBLE_TOWER_URL}
+- ${CRQ_SYSTEM_URL}
+- ${SATELLITE_SERVER}
+- ${EXPECTED_RSA_SERVER}
+
+================================================================================

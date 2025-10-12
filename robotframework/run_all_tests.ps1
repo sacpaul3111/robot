@@ -1,44 +1,56 @@
 param(
-    [string]$Username,
-    [string]$Password,
     [Parameter(Mandatory=$true)]
     [string]$TargetHostname,
+    [string]$SshUsername,
+    [string]$SshPassword,
+    [string]$VcenterUsername,
+    [string]$VcenterPassword,
+    [string]$SplunkUsername,
+    [string]$SplunkPassword,
+    [string]$CyberarkUsername,
+    [string]$CyberarkPassword,
+    [string]$TaniumUsername,
+    [string]$TaniumPassword,
+    [string]$AnsibleTowerUsername,
+    [string]$AnsibleTowerPassword,
     [string]$OutputDir = "results"
 )
 
 Write-Host "GSA Itential Robot Framework - Test Runner" -ForegroundColor Cyan
 
-# Get credentials from environment variables if not provided as parameters
-if ([string]::IsNullOrEmpty($Username)) {
-    $Username = $env:SSH_USERNAME
-    if ([string]::IsNullOrEmpty($Username)) {
-        Write-Host "ERROR: Username not provided. Set SSH_USERNAME environment variable or use -Username parameter" -ForegroundColor Red
+# Get SSH credentials from environment variables if not provided as parameters
+if ([string]::IsNullOrEmpty($SshUsername)) {
+    $SshUsername = $env:SSH_USERNAME
+    if ([string]::IsNullOrEmpty($SshUsername)) {
+        Write-Host "ERROR: SSH Username not provided. Set SSH_USERNAME environment variable or use -SshUsername parameter" -ForegroundColor Red
         exit 1
     }
-    Write-Host "Using username from environment variable: SSH_USERNAME" -ForegroundColor Yellow
+    Write-Host "Using SSH username from environment variable" -ForegroundColor Yellow
 }
 
-if ([string]::IsNullOrEmpty($Password)) {
-    $Password = $env:SSH_PASSWORD
-    if ([string]::IsNullOrEmpty($Password)) {
-        Write-Host "ERROR: Password not provided. Set SSH_PASSWORD environment variable or use -Password parameter" -ForegroundColor Red
+if ([string]::IsNullOrEmpty($SshPassword)) {
+    $SshPassword = $env:SSH_PASSWORD
+    if ([string]::IsNullOrEmpty($SshPassword)) {
+        Write-Host "ERROR: SSH Password not provided. Set SSH_PASSWORD environment variable or use -SshPassword parameter" -ForegroundColor Red
         exit 1
     }
-    Write-Host "Using password from environment variable: SSH_PASSWORD" -ForegroundColor Yellow
+    Write-Host "Using SSH password from environment variable" -ForegroundColor Yellow
 }
 
-# Detect Python executable (prefer venv)
-$pythonExe = $null
-if (Test-Path "venv\Scripts\python.exe") {
-    $pythonExe = "venv\Scripts\python.exe"
-} elseif (Test-Path "..\venv\Scripts\python.exe") {
-    $pythonExe = "..\venv\Scripts\python.exe"
-} elseif ($env:VIRTUAL_ENV) {
-    $pythonExe = "$env:VIRTUAL_ENV\Scripts\python.exe"
-} else {
-    $pythonExe = "python.exe"
-}
+# Get other credentials from environment variables if not provided
+if ([string]::IsNullOrEmpty($VcenterUsername)) { $VcenterUsername = $env:VCENTER_USERNAME }
+if ([string]::IsNullOrEmpty($VcenterPassword)) { $VcenterPassword = $env:VCENTER_PASSWORD }
+if ([string]::IsNullOrEmpty($SplunkUsername)) { $SplunkUsername = $env:SPLUNK_USERNAME }
+if ([string]::IsNullOrEmpty($SplunkPassword)) { $SplunkPassword = $env:SPLUNK_PASSWORD }
+if ([string]::IsNullOrEmpty($CyberarkUsername)) { $CyberarkUsername = $env:CYBERARK_USERNAME }
+if ([string]::IsNullOrEmpty($CyberarkPassword)) { $CyberarkPassword = $env:CYBERARK_PASSWORD }
+if ([string]::IsNullOrEmpty($TaniumUsername)) { $TaniumUsername = $env:TANIUM_USERNAME }
+if ([string]::IsNullOrEmpty($TaniumPassword)) { $TaniumPassword = $env:TANIUM_PASSWORD }
+if ([string]::IsNullOrEmpty($AnsibleTowerUsername)) { $AnsibleTowerUsername = $env:ANSIBLE_TOWER_USERNAME }
+if ([string]::IsNullOrEmpty($AnsibleTowerPassword)) { $AnsibleTowerPassword = $env:ANSIBLE_TOWER_PASSWORD }
 
+# Use system Python
+$pythonExe = "python.exe"
 Write-Host "Using Python: $pythonExe" -ForegroundColor Yellow
 
 # Create results directory
@@ -65,7 +77,23 @@ foreach ($testDir in $testDirs) {
     if ($robotFile) {
         # Run the robot test with visible output
         Write-Host ""
-        & $pythonExe -m robot --variable SSH_USERNAME:$Username --variable SSH_PASSWORD:"$Password" --variable TARGET_HOSTNAME:$TargetHostname --variable TEST_SUITE_ID:$testId --outputdir $suiteDir $robotFile.FullName
+        & $pythonExe -m robot `
+            --variable TARGET_HOSTNAME:$TargetHostname `
+            --variable TEST_SUITE_ID:$testId `
+            --variable SSH_USERNAME:$SshUsername `
+            --variable SSH_PASSWORD:"$SshPassword" `
+            --variable VCENTER_USERNAME:$VcenterUsername `
+            --variable VCENTER_PASSWORD:"$VcenterPassword" `
+            --variable SPLUNK_USERNAME:$SplunkUsername `
+            --variable SPLUNK_PASSWORD:"$SplunkPassword" `
+            --variable CYBERARK_USERNAME:$CyberarkUsername `
+            --variable CYBERARK_PASSWORD:"$CyberarkPassword" `
+            --variable TANIUM_USERNAME:$TaniumUsername `
+            --variable TANIUM_PASSWORD:"$TaniumPassword" `
+            --variable ANSIBLE_TOWER_USERNAME:$AnsibleTowerUsername `
+            --variable ANSIBLE_TOWER_PASSWORD:"$AnsibleTowerPassword" `
+            --outputdir $suiteDir `
+            $robotFile.FullName
         Write-Host ""
 
         # Collect output file for consolidation

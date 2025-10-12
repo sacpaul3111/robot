@@ -13,11 +13,35 @@
     # Default values - can be overridden with -e flag
     robot_project_dir: "{{ playbook_dir }}/.."
     robot_output_dir: "results"
-    robot_username: "{{ lookup('env', 'SSH_USERNAME') | default('', true) }}"
-    robot_password: "{{ lookup('env', 'SSH_PASSWORD') | default('', true) }}"
-    # Accept both TargetHostname (PowerShell style) and target_hostname (Ansible style)
-    robot_target_hostname: "{{ TargetHostname | default(target_hostname) | default('') }}"
-    robot_python_venv: "{{ robot_project_dir }}/venv"
+
+    # TARGET_HOSTNAME - Primary variable used by Robot Framework tests
+    # Accept TargetHostname (from Itential) and map to TARGET_HOSTNAME
+    target_hostname: "{{ TargetHostname | default(target_hostname) | default('') }}"
+
+    # SSH Credentials for target server
+    ssh_username: "{{ lookup('env', 'SSH_USERNAME') | default('', true) }}"
+    ssh_password: "{{ lookup('env', 'SSH_PASSWORD') | default('', true) }}"
+
+    # vCenter Credentials (test4, test9, test15)
+    vcenter_username: "{{ lookup('env', 'VCENTER_USERNAME') | default('', true) }}"
+    vcenter_password: "{{ lookup('env', 'VCENTER_PASSWORD') | default('', true) }}"
+
+    # Splunk Credentials (test14)
+    splunk_username: "{{ lookup('env', 'SPLUNK_USERNAME') | default('', true) }}"
+    splunk_password: "{{ lookup('env', 'SPLUNK_PASSWORD') | default('', true) }}"
+
+    # CyberArk Credentials (test16)
+    cyberark_username: "{{ lookup('env', 'CYBERARK_USERNAME') | default('', true) }}"
+    cyberark_password: "{{ lookup('env', 'CYBERARK_PASSWORD') | default('', true) }}"
+
+    # Tanium Credentials (test21)
+    tanium_username: "{{ lookup('env', 'TANIUM_USERNAME') | default('', true) }}"
+    tanium_password: "{{ lookup('env', 'TANIUM_PASSWORD') | default('', true) }}"
+
+    # Ansible Tower/AWX Credentials (test24)
+    ansible_tower_username: "{{ lookup('env', 'ANSIBLE_TOWER_USERNAME') | default('', true) }}"
+    ansible_tower_password: "{{ lookup('env', 'ANSIBLE_TOWER_PASSWORD') | default('', true) }}"
+
     fail_on_test_errors: false
 
   pre_tasks:
@@ -28,7 +52,7 @@
           - "   GSA Itential Robot Framework - Test Execution"
           - "========================================================"
           - "Project Directory: {{ robot_project_dir }}"
-          - "Target Hostname:   {{ robot_target_hostname }}"
+          - "Target Hostname:   {{ target_hostname }}"
           - "Output Directory:  {{ robot_output_dir }}"
           - "========================================================"
 
@@ -37,43 +61,27 @@
         msg: |
           ERROR: Target hostname is required!
           Usage: ansible-playbook run_tests.yml -e TargetHostname=<hostname>
-                 ansible-playbook run_tests.yml -e target_hostname=<hostname>
           Example: ansible-playbook run_tests.yml -e TargetHostname=alhxvdvitap01
-      when: robot_target_hostname == ''
+      when: target_hostname == ''
 
     - name: Validate SSH credentials are provided
       fail:
         msg: |
           ERROR: SSH credentials required!
           Set environment variables: export SSH_USERNAME=<user> SSH_PASSWORD=<pass>
-          Or use: -e robot_username=<user> -e robot_password=<pass>
-      when: robot_username == '' or robot_password == ''
+          Or use: -e ssh_username=<user> -e ssh_password=<pass>
+      when: ssh_username == '' or ssh_password == ''
 
-    - name: Check if project directory exists
-      stat:
+    - name: Create project directory if it doesn't exist
+      file:
         path: "{{ robot_project_dir }}"
-      register: project_dir_stat
-
-    - name: Fail if project directory does not exist
-      fail:
-        msg: "Project directory does not exist: {{ robot_project_dir }}"
-      when: not project_dir_stat.stat.exists
+        state: directory
+        mode: '0755'
 
   tasks:
-    - name: Check if Python virtual environment exists
-      stat:
-        path: "{{ robot_python_venv }}/bin/python"
-      register: venv_stat
-
-    - name: Set Python executable path (venv)
-      set_fact:
-        python_executable: "{{ robot_python_venv }}/bin/python"
-      when: venv_stat.stat.exists
-
-    - name: Set Python executable path (system)
+    - name: Set Python executable to system python
       set_fact:
         python_executable: "python3"
-      when: not venv_stat.stat.exists
 
     - name: Display Python executable being used
       debug:
@@ -201,7 +209,7 @@
           GSA Itential Robot Framework - Test Execution Summary
           ========================================================
           Execution Date: {{ ansible_date_time.iso8601 }}
-          Target Hostname: {{ robot_target_hostname }}
+          Target Hostname: {{ target_hostname }}
 
           ========================================================
           RESULTS SUMMARY

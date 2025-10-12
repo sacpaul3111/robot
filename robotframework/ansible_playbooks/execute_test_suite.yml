@@ -40,10 +40,20 @@
 - name: Execute Robot Framework test suite
   command: >
     {{ python_executable }} -m robot
-    --variable SSH_USERNAME:{{ robot_username }}
-    --variable SSH_PASSWORD:{{ robot_password }}
-    --variable TARGET_HOSTNAME:{{ robot_target_hostname }}
+    --variable TARGET_HOSTNAME:{{ target_hostname }}
     --variable TEST_SUITE_ID:{{ test_suite_id }}
+    --variable SSH_USERNAME:{{ ssh_username }}
+    --variable SSH_PASSWORD:{{ ssh_password }}
+    --variable VCENTER_USERNAME:{{ vcenter_username }}
+    --variable VCENTER_PASSWORD:{{ vcenter_password }}
+    --variable SPLUNK_USERNAME:{{ splunk_username }}
+    --variable SPLUNK_PASSWORD:{{ splunk_password }}
+    --variable CYBERARK_USERNAME:{{ cyberark_username }}
+    --variable CYBERARK_PASSWORD:{{ cyberark_password }}
+    --variable TANIUM_USERNAME:{{ tanium_username }}
+    --variable TANIUM_PASSWORD:{{ tanium_password }}
+    --variable ANSIBLE_TOWER_USERNAME:{{ ansible_tower_username }}
+    --variable ANSIBLE_TOWER_PASSWORD:{{ ansible_tower_password }}
     --outputdir {{ robot_project_dir }}/{{ robot_output_dir }}/{{ test_suite_name }}
     {{ robot_files.files[0].path }}
   args:

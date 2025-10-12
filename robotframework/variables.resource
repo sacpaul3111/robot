@@ -49,3 +49,55 @@ ${NETWORK_TIMEOUT}        15
 ${LOG_LEVEL}              INFO
 ${SCREENSHOT_FORMAT}      PNG
 ${REPORT_FORMAT}          HTML
+
+# ===========================================
+# External System Endpoints
+# ===========================================
+# vCenter Configuration (test4, test9, test15)
+${VCENTER_URL}            https://vcenter.example.com
+${VCENTER_API_BASE}       https://vcenter.example.com/api
+
+# Splunk Configuration (test14)
+${SPLUNK_URL}             https://splunk.example.com:8000
+${SPLUNK_API_BASE}        https://splunk.example.com:8089
+${SPLUNK_SERVER}          splunk.example.com
+${SPLUNK_PORT}            514
+
+# CyberArk Configuration (test16)
+${CYBERARK_URL}           https://cyberark.example.com
+${CYBERARK_API_BASE}      https://cyberark.example.com/PasswordVault/API
+
+# Tanium Configuration (test21)
+${TANIUM_SERVER}          tanium.example.com
+${TANIUM_PORT}            17472
+
+# Ansible Tower/AWX Configuration (test24)
+${ANSIBLE_TOWER_URL}      https://tower.example.com
+${ANSIBLE_API_VERSION}    v2
+
+# ===========================================
+# External System Credentials (from Ansible)
+# ===========================================
+# SSH Credentials (all tests)
+${SSH_USERNAME}           ${EMPTY}
+${SSH_PASSWORD}           ${EMPTY}
+
+# vCenter Credentials (test4, test9, test15)
+${VCENTER_USERNAME}       ${EMPTY}
+${VCENTER_PASSWORD}       ${EMPTY}
+
+# Splunk Credentials (test14)
+${SPLUNK_USERNAME}        ${EMPTY}
+${SPLUNK_PASSWORD}        ${EMPTY}
+
+# CyberArk Credentials (test16)
+${CYBERARK_USERNAME}      ${EMPTY}
+${CYBERARK_PASSWORD}      ${EMPTY}
+
+# Tanium Credentials (test21)
+${TANIUM_USERNAME}        ${EMPTY}
+${TANIUM_PASSWORD}        ${EMPTY}
+
+# Ansible Tower Credentials (test24)
+${ANSIBLE_TOWER_USERNAME}    ${EMPTY}
+${ANSIBLE_TOWER_PASSWORD}    ${EMPTY}
