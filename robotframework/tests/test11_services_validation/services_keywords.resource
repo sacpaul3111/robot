@@ -130,10 +130,8 @@ Validate Required Services Are Enabled
         Set To Dictionary    ${validation_results}    ${service}=${is_enabled}
 
         # Log result
-        Run Keyword If    '${is_enabled}' == 'enabled'
-        ...    Log    ✅ ${service}: ENABLED    console=yes
-        ...    ELSE
-        ...    Log    ⚠️ ${service}: NOT ENABLED or NOT FOUND    console=yes
+        Run Keyword If    '${is_enabled}' == 'enabled'    Log    ✅ ${service}: ENABLED    console=yes
+        Run Keyword If    '${is_enabled}' != 'enabled'    Log    ⚠️ ${service}: NOT ENABLED or NOT FOUND    console=yes
     END
 
     RETURN    ${validation_results}
@@ -187,10 +185,8 @@ Validate Unnecessary Services Are Disabled
         # Special handling for selinux (not a service)
         ${is_selinux}=    Evaluate    '${service}' == 'selinux'
 
-        Run Keyword If    ${is_selinux}
-        ...    Check SELinux Status    ${validation_results}
-        ...    ELSE
-        ...    Check Service Is Disabled    ${service}    ${validation_results}
+        Run Keyword If    ${is_selinux}    Check SELinux Status    ${validation_results}
+        Run Keyword If    not ${is_selinux}    Check Service Is Disabled    ${service}    ${validation_results}
     END
 
     RETURN    ${validation_results}
@@ -218,10 +214,8 @@ Check Service Is Disabled
     Set To Dictionary    ${results_dict}    ${service_name}=${status}
 
     # Log result
-    Run Keyword If    '${status}' == 'disabled'
-    ...    Log    ✅ ${service_name}: DISABLED    console=yes
-    ...    ELSE
-    ...    Log    ⚠️ ${service_name}: ACTIVE or ENABLED (enabled=${is_enabled}, active=${is_active})    console=yes
+    Run Keyword If    '${status}' == 'disabled'    Log    ✅ ${service_name}: DISABLED    console=yes
+    Run Keyword If    '${status}' != 'disabled'    Log    ⚠️ ${service_name}: ACTIVE or ENABLED (enabled=${is_enabled}, active=${is_active})    console=yes
 
 Check SELinux Status
     [Documentation]    🔍 Check if SELinux is disabled
@@ -229,17 +223,14 @@ Check SELinux Status
 
     ${selinux_status}=    Execute Command    getenforce 2>/dev/null || echo "Disabled"
 
-    ${status}=    Set Variable If
-    ...    '${selinux_status}' in ['Disabled', 'Permissive']    disabled
-    ...    ELSE    enforcing
+    ${is_disabled}=    Evaluate    '${selinux_status}' in ['Disabled', 'Permissive']
+    ${status}=    Set Variable If    ${is_disabled}    disabled    enforcing
 
     Set To Dictionary    ${results_dict}    selinux=${status}
 
     # Log result
-    Run Keyword If    '${status}' == 'disabled'
-    ...    Log    ✅ selinux: DISABLED (${selinux_status})    console=yes
-    ...    ELSE
-    ...    Log    ⚠️ selinux: ENFORCING (${selinux_status})    console=yes
+    Run Keyword If    '${status}' == 'disabled'    Log    ✅ selinux: DISABLED (${selinux_status})    console=yes
+    Run Keyword If    '${status}' != 'disabled'    Log    ⚠️ selinux: ENFORCING (${selinux_status})    console=yes
 
 Save Failed Services Report
     [Documentation]    📄 Save failed services report to file
