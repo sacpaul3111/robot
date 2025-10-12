@@ -98,7 +98,7 @@ Normal - Step 3.1: Review Required Services Status
         Log    📊 - ${service}: ${status}    console=yes
     END
 
-    Log    ℹ️  STEP 3.1: COMPLETED - Required services status documented    console=yes
+    Log    STEP 3.1: COMPLETED - Required services status documented    level=INFO    console=yes
 
 Normal - Step 3.2: Review Unnecessary Services Status
     [Documentation]    ℹ️  Check status of services that should be disabled (iptables, selinux)
@@ -117,13 +117,14 @@ Normal - Step 3.2: Review Unnecessary Services Status
     Log    📊 Security services status:    console=yes
     FOR    ${service}    IN    @{REQUIRED_SERVICES_DISABLED}
         ${status}=    Run Keyword And Return Status    Get From Dictionary    ${validation_results}    ${service}
-        Run Keyword If    ${status}
-        ...    Log    📊 - ${service}: ${validation_results}[${service}]    console=yes
-        ...    ELSE
-        ...    Log    📊 - ${service}: status check skipped    console=yes
+        IF    ${status}
+            Log    📊 - ${service}: ${validation_results}[${service}]    console=yes
+        ELSE
+            Log    📊 - ${service}: status check skipped    console=yes
+        END
     END
 
-    Log    ℹ️  STEP 3.2: COMPLETED - Security services status documented    console=yes
+    Log    STEP 3.2: COMPLETED - Security services status documented    level=INFO    console=yes
 
 Normal - Service Dependency Analysis
     [Documentation]    🔗 Analyze service dependencies and relationships
