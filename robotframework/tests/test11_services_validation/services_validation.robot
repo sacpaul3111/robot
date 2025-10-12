@@ -151,7 +151,7 @@ Normal - Failed Services Report
     ${failed_services}=    Execute Command    systemctl --failed --no-pager --no-legend
 
     Run Keyword If    '${failed_services}' == ''    Log    ✅ No failed services detected    console=yes
-    ...    ELSE    Log    ⚠️ Failed services detected:\n${failed_services}    console=yes
+    Run Keyword If    '${failed_services}' != ''    Log    ⚠️ Failed services detected:\n${failed_services}    console=yes
 
     # Save failed services to file if any exist
     Run Keyword If    '${failed_services}' != ''    Save Failed Services Report    ${failed_services}
@@ -193,10 +193,8 @@ Normal - Security Services Status
     Log    🔒 firewalld Status: ${firewalld_status}    console=yes
 
     # Document findings without failing
-    Run Keyword If    '${selinux_status}' == 'Enforcing'
-    ...    Log    SELinux is Enforcing - documented for review    level=INFO    console=yes
-    ...    ELSE
-    ...    Log    SELinux status: ${selinux_status}    level=INFO    console=yes
+    Run Keyword If    '${selinux_status}' == 'Enforcing'    Log    SELinux is Enforcing - documented for review    level=INFO    console=yes
+    Run Keyword If    '${selinux_status}' != 'Enforcing'    Log    SELinux status: ${selinux_status}    level=INFO    console=yes
 
     Log    ℹ️ Security services status check completed    console=yes
     Log    ✅ Security services status: DOCUMENTED (INFORMATIONAL)    console=yes
