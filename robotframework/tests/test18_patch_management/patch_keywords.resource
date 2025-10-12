@@ -447,7 +447,7 @@ Check Available Patches
 
     # Check for available updates (yum/dnf)
     ${yum_updates}=      Execute Command    yum check-update 2>&1 || dnf check-update 2>&1 || echo "Package manager check not available"
-    ${security_updates}= Execute Command    yum updateinfo list security 2>&1 || dnf updateinfo list security 2>&1 || echo "Security updates check not available"
+    ${security_updates}=    Execute Command    yum updateinfo list security 2>&1 || dnf updateinfo list security 2>&1 || echo "Security updates check not available"
     ${last_update}=      Execute Command    rpm -qa --last | head -20 || echo "RPM query not available"
     ${yum_history}=      Execute Command    yum history list 2>&1 | head -20 || dnf history list 2>&1 | head -20 || echo "Update history not available"
 

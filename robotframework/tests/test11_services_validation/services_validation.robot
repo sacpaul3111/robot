@@ -85,7 +85,7 @@ Normal - Step 3.1: Review Required Services Status
     [Tags]             normal    informational    services    review    step3
 
     Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    ℹ️  STEP 3.1: REQUIRED SERVICES STATUS REVIEW (INFORMATIONAL)    console=yes
+    Log    msg=ℹ️  STEP 3.1: REQUIRED SERVICES STATUS REVIEW (INFORMATIONAL)    console=yes
     Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Required services: ${REQUIRED_SERVICES_ENABLED}    console=yes
 
@@ -106,7 +106,7 @@ Normal - Step 3.2: Review Unnecessary Services Status
     [Tags]             normal    informational    security    review    step3
 
     Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    ℹ️  STEP 3.2: SECURITY SERVICES STATUS REVIEW (INFORMATIONAL)    console=yes
+    Log    msg=ℹ️  STEP 3.2: SECURITY SERVICES STATUS REVIEW (INFORMATIONAL)    console=yes
     Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Services to check: ${REQUIRED_SERVICES_DISABLED}    console=yes
 
@@ -196,9 +196,9 @@ Normal - Security Services Status
 
     # Document findings without failing
     Run Keyword If    '${selinux_status}' == 'Enforcing'
-    ...    Log    ℹ️  SELinux is Enforcing - documented for review    console=yes
+    ...    Log    msg=ℹ️  SELinux is Enforcing - documented for review    console=yes
     ...    ELSE
-    ...    Log    ℹ️  SELinux status: ${selinux_status}    console=yes
+    ...    Log    msg=ℹ️  SELinux status: ${selinux_status}    console=yes
 
     Log    ℹ️ Security services status check completed    console=yes
     Log    ✅ Security services status: DOCUMENTED (INFORMATIONAL)    console=yes
