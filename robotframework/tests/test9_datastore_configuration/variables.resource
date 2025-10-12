@@ -5,10 +5,10 @@ Documentation    Variable definitions for Datastore Configuration Test Suite
 # Target Configuration - Pulled from command line like test3
 ${TARGET_HOSTNAME}             # Set via command line --variable TARGET_HOSTNAME:value
 
-# vCenter Connection Settings
+# vCenter Connection Settings - Provided via Ansible/command line
 ${VCENTER_SERVER}              vcenter.example.com
-${VCENTER_USERNAME}            administrator@vsphere.local
-${VCENTER_PASSWORD}            %{VCENTER_PASSWORD=default_password}
+${VCENTER_USERNAME}            ${EMPTY}
+${VCENTER_PASSWORD}            ${EMPTY}
 ${VCENTER_HOST}                ${TARGET_HOSTNAME}    # Use same hostname as test3
 ${CLUSTER_NAME}                Production-Cluster
 

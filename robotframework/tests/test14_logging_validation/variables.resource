@@ -2,12 +2,12 @@
 Documentation    Logging and Splunk Validation Variables - Test-14
 
 *** Variables ***
-# Test Configuration
-${TEST_HOSTNAME}           RHEL8-TEST-01    # Hostname to lookup in EDS
+# Target Configuration - Set via command line
+${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
 
-# SSH Connection Settings
-${SSH_USERNAME}            sac
-${SSH_PASSWORD}            sac
+# SSH Connection Settings - Provided via Ansible/command line
+${SSH_USERNAME}            ${EMPTY}
+${SSH_PASSWORD}            ${EMPTY}
 ${SSH_TIMEOUT}             30 seconds
 
 # Syslog-ng Configuration

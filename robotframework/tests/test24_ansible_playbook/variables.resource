@@ -17,10 +17,10 @@ ${TEST24_DATA_DIR}        results/test24_ansible_playbook/data
 @{NORMAL_TAGS}           normal      informational    analysis
 @{ANSIBLE_TAGS}          playbook    job    tower    awx
 
-# 🤖 Ansible Tower/AWX Configuration
+# 🤖 Ansible Tower/AWX Configuration - Provided via Ansible/command line
 ${ANSIBLE_TOWER_URL}      # Set via command line --variable ANSIBLE_TOWER_URL:https://tower.example.com
-${ANSIBLE_USERNAME}       admin
-${ANSIBLE_PASSWORD}       # Set via command line --variable ANSIBLE_PASSWORD:password
+${ANSIBLE_USERNAME}       ${EMPTY}
+${ANSIBLE_PASSWORD}       ${EMPTY}
 ${ANSIBLE_SSL_VERIFY}     ${False}    # Set to ${True} if using valid SSL certificates
 ${ANSIBLE_JOB_ID}         # Set via command line --variable ANSIBLE_JOB_ID:12345
 
@@ -84,9 +84,9 @@ ${LOG_PREFIX_PASSED}      ✅ PASSED
 ${LOG_PREFIX_WARNING}     ⚠️ WARNING
 ${LOG_PREFIX_INFO}        ℹ️ INFO
 
-# 🔐 SSH Connection Settings (inherited from EDS lookup)
-${SSH_USERNAME}           root
-${SSH_PASSWORD}           password
+# 🔐 SSH Connection Settings - Provided via Ansible/command line
+${SSH_USERNAME}           ${EMPTY}
+${SSH_PASSWORD}           ${EMPTY}
 ${SSH_TIMEOUT}            30
 
 # 🎯 Target Server Configuration (from EDS)

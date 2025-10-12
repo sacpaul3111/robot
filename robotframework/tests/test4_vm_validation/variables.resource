@@ -17,10 +17,10 @@ ${TARGET_VM_HARDWARE_VERSION}    ${EMPTY}
 ${TARGET_VM_MEMORY_RESERVATION}  ${EMPTY}
 ${TARGET_VM_CPU_RESERVATION}     ${EMPTY}
 
-# vCenter credentials - Default values (can be overridden via environment variables)
-${VCENTER_USERNAME}              test
-${VCENTER_PASSWORD}              test
-${DEFAULT_VCENTER_HOST}          www.linux.com
+# vCenter credentials - Provided via Ansible/command line
+${VCENTER_USERNAME}              ${EMPTY}
+${VCENTER_PASSWORD}              ${EMPTY}
+${DEFAULT_VCENTER_HOST}          vcenter.example.com
 
 *** Keywords ***
 Initialize VM Test Environment And Lookup Configuration

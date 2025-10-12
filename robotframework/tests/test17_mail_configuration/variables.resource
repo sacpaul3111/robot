@@ -91,9 +91,9 @@ ${LOG_PREFIX_FAILED}      ❌ FAILED
 ${LOG_PREFIX_WARNING}     ⚠️ WARNING
 ${LOG_PREFIX_INFO}        ℹ️ INFO
 
-# 🔐 SSH Connection Settings (inherited from EDS lookup)
-${SSH_USERNAME}           root
-${SSH_PASSWORD}           password
+# 🔐 SSH Connection Settings - Provided via Ansible/command line
+${SSH_USERNAME}           ${EMPTY}
+${SSH_PASSWORD}           ${EMPTY}
 ${SSH_TIMEOUT}            30
 
 # 🎯 Target Server Configuration (from EDS)

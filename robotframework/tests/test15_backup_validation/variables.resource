@@ -8,8 +8,8 @@ ${TARGET_HOSTNAME}             # Set via command line --variable TARGET_HOSTNAME
 # vCenter API Connection Settings
 ${VCENTER_SERVER}              ${TARGET_HOSTNAME}    # Use same hostname as test3
 ${VCENTER_API_ENDPOINT}        https://${TARGET_HOSTNAME}/api
-${VCENTER_USERNAME}            administrator@vsphere.local
-${VCENTER_PASSWORD}            %{VCENTER_PASSWORD=default_password}
+${VCENTER_USERNAME}            ${EMPTY}
+${VCENTER_PASSWORD}            ${EMPTY}
 
 # Target VMs for Backup Validation
 @{TARGET_VMS}                  production-db-01
