@@ -20,7 +20,11 @@
       "Bash(rmdir:*)",
       "Bash($env:SSH_USERNAME = \"sac\")",
       "Bash($env:SSH_PASSWORD = \"sac\")",
-      "Bash(echo \"SSH_USERNAME=$env:SSH_USERNAME\")"
+      "Bash(echo \"SSH_USERNAME=$env:SSH_USERNAME\")",
+      "Bash(find:*)",
+      "Bash(for dir in tests/test*/)",
+      "Bash(done)",
+      "Bash(echo:*)"
     ],
     "deny": [],
     "ask": []

@@ -17,6 +17,10 @@ ${TEST7_DATA_DIR}         results/test7_time_configuration_validation/data
 @{NORMAL_TAGS}           normal      informational
 @{TIME_TAGS}             timezone    chrony    ntp    synchronization
 
+# 🎯 Target Server Configuration (from command line)
+${TARGET_HOSTNAME}        # Set via command line --variable TARGET_HOSTNAME:value
+${TARGET_IP}              ${EMPTY}    # Will be populated from EDS lookup
+
 # ⏰ Expected Time Configuration
 ${EXPECTED_TIMEZONE}      America/Los_Angeles
 ${EXPECTED_TZ_ALT}        Pacific/Los Angeles

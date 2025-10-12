@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-10T19:31:29.490956" rpa="false" schemaversion="5">
+<suite id="s1" name="Ansible Playbook Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test24_ansible_playbook\ansible_playbook_validation.robot">
+<kw name="Initialize Ansible Test Environment" owner="ansible_keywords" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-10T19:31:30.876781" level="INFO">🚀 Initializing Test-24: Ansible Playbook Validation Environment...</msg>
+<arg>🚀 Initializing Test-24: Ansible Playbook Validation Environment...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-10T19:31:30.876521" elapsed="0.000613"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-10-10T19:31:30.878436" level="INFO" html="true">Created directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test24_ansible_playbook\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test24_ansible_playbook\data&lt;/a&gt;'.</msg>
+<arg>${DATA_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-10-10T19:31:30.877482" elapsed="0.001055"/>
+</kw>
+<kw name="Lookup Server Config" owner="EDSLookup">
+<msg time="2025-10-10T19:31:30.904459" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-10T19:31:30.904737" level="INFO">Extracted IP from EDS: 172.30.16.186</msg>
+<msg time="2025-10-10T19:31:30.904793" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-10T19:31:30.904840" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-10T19:31:30.904873" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-10T19:31:30.904904" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-10T19:31:30.904935" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-10T19:31:30.904971" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-10T19:31:30.905001" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-10T19:31:30.905030" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-10T19:31:30.905065" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-10T19:31:30.905095" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-10T19:31:30.905123" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-10T19:31:30.905151" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-10T19:31:30.905180" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-10T19:31:30.905208" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-10T19:31:30.905235" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-10T19:31:30.905261" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-10T19:31:30.905293" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-10T19:31:30.905450" level="INFO">${eds_config} = {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<var>${eds_config}</var>
+<arg>${TARGET_HOSTNAME}</arg>
+<doc>Lookup server configuration from EDS sheet based on hostname</doc>
+<status status="PASS" start="2025-10-10T19:31:30.878693" elapsed="0.026790"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-10-10T19:31:30.907490" level="INFO">${TARGET_IP} = 172.30.16.186</msg>
+<arg>${TARGET_IP}</arg>
+<arg>${eds_config['ip']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-10-10T19:31:30.905732" elapsed="0.001920"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-10T19:31:30.908466" level="INFO">📋 Target Server: alhxvdvitap01</msg>
+<arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-10T19:31:30.908053" elapsed="0.000788"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-10T19:31:30.909882" level="INFO">📋 Target IP: 172.30.16.186</msg>
+<arg>📋 Target IP: ${TARGET_IP}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-10T19:31:30.909274" elapsed="0.001259"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-10T19:31:30.911265" level="INFO">🔗 Connecting to target server: 172.30.16.186...</msg>
+<arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-10T19:31:30.910807" elapsed="0.000720"/>
+</kw>
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${TARGET_IP}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2025-10-10T19:31:30.911785" elapsed="0.000320"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2025-10-10T19:31:30.912539" level="INFO">Logging into '172.30.16.186:22' as 'pauls6'.</msg>
+<msg time="2025-10-10T19:31:33.925411" level="FAIL">TimeoutError: timed out</msg>
+<arg>${SSH_USERNAME}</arg>
+<arg>${SSH_PASSWORD}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="FAIL" start="2025-10-10T19:31:30.912273" elapsed="3.021112">TimeoutError: timed out</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ SSH connection established successfully</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-10T19:31:33.933719" elapsed="0.000047"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>🔗 Initializing Ansible Tower/AWX API session...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-10T19:31:33.933938" elapsed="0.000032"/>
+</kw>
+<kw name="Initialize Ansible API Session" owner="ansible_keywords">
+<doc>🔗 Create authenticated session with Ansible Tower/AWX API</doc>
+<status status="NOT RUN" start="2025-10-10T19:31:33.934354" elapsed="0.000062"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>✅ Test-24 environment initialized</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-10-10T19:31:33.934620" elapsed="0.000032"/>
+</kw>
+<doc>🏗️ Set up test environment for Ansible playbook validation</doc>
+<status status="FAIL" start="2025-10-10T19:31:30.875665" elapsed="3.059208">TimeoutError: timed out</status>
+</kw>
+<test id="s1-t1" name="Critical - Connect to Target Server" line="19">
+<doc>🔗 Establish direct connection to target machine via SSH</doc>
+<tag>connection</tag>
+<tag>critical</tag>
+<tag>infrastructure</tag>
+<tag>ssh</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.935010" elapsed="0.001241">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t2" name="Critical - Connect to Ansible Tower/AWX API" line="32">
+<doc>🔗 Establish connection to Ansible Tower/AWX API endpoint</doc>
+<tag>ansible</tag>
+<tag>api</tag>
+<tag>connection</tag>
+<tag>critical</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.938204" elapsed="0.001029">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t3" name="Critical - Retrieve Job Information by Job ID" line="45">
+<doc>📋 Pull job details from Ansible Tower/AWX using specific job ID</doc>
+<tag>ansible</tag>
+<tag>api</tag>
+<tag>critical</tag>
+<tag>job_retrieval</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.941375" elapsed="0.001524">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t4" name="Critical - Query Job Status and Execution Details" line="72">
+<doc>📊 Query job status endpoint to retrieve execution status and playbook details</doc>
+<tag>ansible</tag>
+<tag>api</tag>
+<tag>critical</tag>
+<tag>execution</tag>
+<tag>status</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.944575" elapsed="0.001189">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t5" name="Critical - Validate Job Completed Successfully" line="104">
+<doc>✅ Verify job completed successfully by checking status field</doc>
+<tag>ansible</tag>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.947792" elapsed="0.000989">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t6" name="Critical - Validate No Job Failures" line="121">
+<doc>✅ Verify playbook executed without failures</doc>
+<tag>ansible</tag>
+<tag>critical</tag>
+<tag>failures</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.950225" elapsed="0.001060">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t7" name="Critical - Review Warnings and Skipped Tasks" line="136">
+<doc>📋 Review any warnings or skipped tasks in the job execution</doc>
+<tag>ansible</tag>
+<tag>critical</tag>
+<tag>validation</tag>
+<tag>warnings</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.952491" elapsed="0.001102">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t8" name="Critical - Confirm Playbook Executed Without Failures" line="163">
+<doc>✅ Final validation that playbook executed without failures</doc>
+<tag>ansible</tag>
+<tag>compliance</tag>
+<tag>critical</tag>
+<tag>final</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.954936" elapsed="0.001209">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t9" name="Normal - Document Complete Job Details" line="185">
+<doc>📄 Save complete job information to file for audit trail</doc>
+<tag>audit</tag>
+<tag>compliance</tag>
+<tag>documentation</tag>
+<tag>normal</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.957951" elapsed="0.001150">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t10" name="Normal - Playbook Task Details Analysis" line="203">
+<doc>📊 Analyze individual playbook tasks and their execution</doc>
+<tag>analysis</tag>
+<tag>normal</tag>
+<tag>playbook</tag>
+<tag>tasks</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.960414" elapsed="0.000710">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t11" name="Normal - Job Execution Time Analysis" line="226">
+<doc>⏱️ Analyze job execution time and performance metrics</doc>
+<tag>analysis</tag>
+<tag>normal</tag>
+<tag>performance</tag>
+<tag>timing</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.962569" elapsed="0.000762">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<test id="s1-t12" name="Normal - Ansible Tower/AWX Version Information" line="252">
+<doc>📋 Retrieve and document Ansible Tower/AWX version information</doc>
+<tag>ansible</tag>
+<tag>informational</tag>
+<tag>normal</tag>
+<tag>version</tag>
+<status status="FAIL" start="2025-10-10T19:31:33.965096" elapsed="0.000922">Parent suite setup failed:
+TimeoutError: timed out</status>
+</test>
+<kw name="Close All SSH Connections" owner="ansible_keywords" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-10T19:31:33.969138" level="INFO">🔌 Closing SSH connections...</msg>
+<arg>🔌 Closing SSH connections...</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-10T19:31:33.968887" elapsed="0.000616"/>
+</kw>
+<kw name="Close All Connections" owner="SSHLibrary">
+<doc>Closes all open connections.</doc>
+<status status="PASS" start="2025-10-10T19:31:33.969754" elapsed="0.000170"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-10-10T19:31:33.970375" level="INFO">✅ SSH connections closed</msg>
+<arg>✅ SSH connections closed</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-10-10T19:31:33.970060" elapsed="0.000578"/>
+</kw>
+<doc>🔌 Close all SSH connections</doc>
+<status status="PASS" start="2025-10-10T19:31:33.968472" elapsed="0.002485"/>
+</kw>
+<doc>🤖 Ansible Playbook Validation Test Suite - Test-24
+🔍 Process: Connect to Ansible Tower/AWX → Pull job status via API → Validate build compliance
+✅ Validates: Asset built with Ansible playbook successfully
+📊 Verifies job completion, playbook details, and execution status</doc>
+<status status="FAIL" start="2025-10-10T19:31:29.493863" elapsed="4.477228">Suite setup failed:
+TimeoutError: timed out</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="12" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0">analysis</stat>
+<stat pass="0" fail="8" skip="0">ansible</stat>
+<stat pass="0" fail="3" skip="0">api</stat>
+<stat pass="0" fail="1" skip="0">audit</stat>
+<stat pass="0" fail="3" skip="0">compliance</stat>
+<stat pass="0" fail="2" skip="0">connection</stat>
+<stat pass="0" fail="8" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">documentation</stat>
+<stat pass="0" fail="1" skip="0">execution</stat>
+<stat pass="0" fail="1" skip="0">failures</stat>
+<stat pass="0" fail="1" skip="0">final</stat>
+<stat pass="0" fail="1" skip="0">informational</stat>
+<stat pass="0" fail="1" skip="0">infrastructure</stat>
+<stat pass="0" fail="1" skip="0">job_retrieval</stat>
+<stat pass="0" fail="4" skip="0">normal</stat>
+<stat pass="0" fail="1" skip="0">performance</stat>
+<stat pass="0" fail="1" skip="0">playbook</stat>
+<stat pass="0" fail="1" skip="0">ssh</stat>
+<stat pass="0" fail="1" skip="0">status</stat>
+<stat pass="0" fail="1" skip="0">tasks</stat>
+<stat pass="0" fail="1" skip="0">timing</stat>
+<stat pass="0" fail="4" skip="0">validation</stat>
+<stat pass="0" fail="1" skip="0">version</stat>
+<stat pass="0" fail="1" skip="0">warnings</stat>
+</tag>
+<suite>
+<stat name="Ansible Playbook Validation" id="s1" pass="0" fail="12" skip="0">Ansible Playbook Validation</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-10-10T19:31:29.776770" level="ERROR">Error in file 'C:\Users\sacpa\Projects\robot\robotframework\tests\test24_ansible_playbook\ansible_keywords.resource' on line 10: Importing library 'RequestsLibrary' failed: ModuleNotFoundError: No module named 'RequestsLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\sacpa\Projects\robot\robotframework
+  C:\Users\sacpa\AppData\Local\Programs\Python\Python313\python313.zip
+  C:\Users\sacpa\AppData\Local\Programs\Python\Python313\DLLs
+  C:\Users\sacpa\AppData\Local\Programs\Python\Python313\Lib
+  C:\Users\sacpa\AppData\Local\Programs\Python\Python313
+  C:\Users\sacpa\Projects\robot\robotframework\venv
+  C:\Users\sacpa\Projects\robot\robotframework\venv\Lib\site-packages</msg>
+<msg time="2025-10-10T19:31:29.779052" level="ERROR">Error in file 'C:\Users\sacpa\Projects\robot\robotframework\tests\test24_ansible_playbook\ansible_keywords.resource' on line 11: Importing library 'JSONLibrary' failed: ModuleNotFoundError: No module named 'JSONLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\sacpa\Projects\robot\robotframework
+  C:\Users\sacpa\AppData\Local\Programs\Python\Python313\python313.zip
+  C:\Users\sacpa\AppData\Local\Programs\Python\Python313\DLLs
+  C:\Users\sacpa\AppData\Local\Programs\Python\Python313\Lib
+  C:\Users\sacpa\AppData\Local\Programs\Python\Python313
+  C:\Users\sacpa\Projects\robot\robotframework\venv
+  C:\Users\sacpa\Projects\robot\robotframework\venv\Lib\site-packages</msg>
+<msg time="2025-10-10T19:31:29.783112" level="ERROR">Error in file 'C:\Users\sacpa\Projects\robot\robotframework\tests\test24_ansible_playbook\variables.resource' on line 32: Setting variable '${ENDPOINT_JOB_TEMPLATES} /api/${ANSIBLE_API_VERSION}/job_templates/' failed: Invalid variable name '${ENDPOINT_JOB_TEMPLATES} /api/${ANSIBLE_API_VERSION}/job_templates/'.</msg>
+</errors>
+</robot>

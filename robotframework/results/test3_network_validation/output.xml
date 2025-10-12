@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-10-05T15:45:42.461747" rpa="false" schemaversion="5">
-<suite id="s1" name="Network Validation" source="/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test3_network_validation/network_validation.robot">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-10T19:31:34.994622" rpa="false" schemaversion="5">
+<suite id="s1" name="Network Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test3_network_validation\network_validation.robot">
 <kw name="Initialize Test Environment And Lookup Configuration" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:45:53.490376" level="INFO">${start_time} = 2025-10-05 15:45:53</msg>
+<msg time="2025-10-10T19:31:36.643825" level="INFO">${start_time} = 2025-10-10 19:31:36</msg>
 <var>${start_time}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.490035" elapsed="0.000392"/>
+<status status="PASS" start="2025-10-10T19:31:36.643199" elapsed="0.000717"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.491782" level="INFO">${TEST_START_TIME} = 2025-10-05 15:45:53</msg>
+<msg time="2025-10-10T19:31:36.648557" level="INFO">${TEST_START_TIME} = 2025-10-10 19:31:36</msg>
 <arg>${TEST_START_TIME}</arg>
 <arg>${start_time}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.490635" elapsed="0.001203"/>
+<status status="PASS" start="2025-10-10T19:31:36.644251" elapsed="0.004549"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Set Variable" owner="BuiltIn">
 <arg>${TEST_SUITE_ID}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.492867" elapsed="0.000166"/>
+<status status="PASS" start="2025-10-10T19:31:36.650750" elapsed="0.000299"/>
 </kw>
-<msg time="2025-10-05T15:45:53.493149" level="INFO">${suite_id} = test3</msg>
+<msg time="2025-10-10T19:31:36.651226" level="INFO">${suite_id} = test3</msg>
 <var>${suite_id}</var>
 <arg>'${TEST_SUITE_ID}' == '${EMPTY}'</arg>
 <arg>Auto Detect Test Suite ID</arg>
@@ -30,268 +30,214 @@
 <arg>Set Variable</arg>
 <arg>${TEST_SUITE_ID}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.491985" elapsed="0.001204"/>
+<status status="PASS" start="2025-10-10T19:31:36.649193" elapsed="0.002083"/>
 </kw>
 <kw name="Auto Detect Test Suite Name" owner="network_keywords">
 <kw name="Get Variable Value" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.494101" level="INFO">${suite_source} = /mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test3_network_validation/network_validation.robot</msg>
+<msg time="2025-10-10T19:31:36.652395" level="INFO">${suite_source} = C:\Users\sacpa\Projects\robot\robotframework\tests\test3_network_validation\network_validation.robot</msg>
 <var>${suite_source}</var>
 <arg>${SUITE_SOURCE}</arg>
 <arg>${EMPTY}</arg>
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.493860" elapsed="0.000278"/>
+<status status="PASS" start="2025-10-10T19:31:36.652055" elapsed="0.000392"/>
 </kw>
 <kw name="Split String" owner="String">
-<msg time="2025-10-05T15:45:53.494557" level="INFO">${path_parts} = ['', 'mnt', 'c', 'Users', 'sacpa', 'Projects', 'robot', 'robotframework', 'tests', 'test3_network_validation', 'network_validation.robot']</msg>
+<msg time="2025-10-10T19:31:36.652991" level="INFO">${path_parts} = ['C:', 'Users', 'sacpa', 'Projects', 'robot', 'robotframework', 'tests', 'test3_network_validation', 'network_validation.robot']</msg>
 <var>${path_parts}</var>
 <arg>${suite_source}</arg>
 <arg>${/}</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.494318" elapsed="0.000271"/>
+<status status="PASS" start="2025-10-10T19:31:36.652648" elapsed="0.000386"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Match Regexp" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.495520" level="FAIL">'' does not match '^test\d+_'</msg>
+<msg time="2025-10-10T19:31:36.655169" level="FAIL">'C:' does not match '^test\d+_'</msg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="FAIL" start="2025-10-05T15:45:53.495172" elapsed="0.000541">'' does not match '^test\d+_'</status>
+<status status="FAIL" start="2025-10-10T19:31:36.654642" elapsed="0.001181">'C:' does not match '^test\d+_'</status>
 </kw>
-<msg time="2025-10-05T15:45:53.495907" level="INFO">${is_test_dir} = False</msg>
+<msg time="2025-10-10T19:31:36.656139" level="INFO">${is_test_dir} = False</msg>
 <var>${is_test_dir}</var>
 <arg>Should Match Regexp</arg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.495005" elapsed="0.000938"/>
+<status status="PASS" start="2025-10-10T19:31:36.654159" elapsed="0.002027"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${is_test_dir}</arg>
 <arg>Return From Keyword</arg>
 <arg>${part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.496168" elapsed="0.000150"/>
+<status status="PASS" start="2025-10-10T19:31:36.657090" elapsed="0.000564"/>
 </kw>
-<var name="${part}"/>
-<status status="PASS" start="2025-10-05T15:45:53.494882" elapsed="0.001485"/>
+<var name="${part}">C:</var>
+<status status="PASS" start="2025-10-10T19:31:36.653729" elapsed="0.004054"/>
 </iter>
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Match Regexp" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.497360" level="FAIL">'mnt' does not match '^test\d+_'</msg>
+<msg time="2025-10-10T19:31:36.659373" level="FAIL">'Users' does not match '^test\d+_'</msg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="FAIL" start="2025-10-05T15:45:53.497135" elapsed="0.000320">'mnt' does not match '^test\d+_'</status>
+<status status="FAIL" start="2025-10-10T19:31:36.658701" elapsed="0.001059">'Users' does not match '^test\d+_'</status>
 </kw>
-<msg time="2025-10-05T15:45:53.497585" level="INFO">${is_test_dir} = False</msg>
+<msg time="2025-10-10T19:31:36.660170" level="INFO">${is_test_dir} = False</msg>
 <var>${is_test_dir}</var>
 <arg>Should Match Regexp</arg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.496639" elapsed="0.000974"/>
+<status status="PASS" start="2025-10-10T19:31:36.658339" elapsed="0.001884"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${is_test_dir}</arg>
 <arg>Return From Keyword</arg>
 <arg>${part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.497753" elapsed="0.000162"/>
-</kw>
-<var name="${part}">mnt</var>
-<status status="PASS" start="2025-10-05T15:45:53.496493" elapsed="0.001471"/>
-</iter>
-<iter>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Should Match Regexp" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.498568" level="FAIL">'c' does not match '^test\d+_'</msg>
-<arg>${part}</arg>
-<arg>^test\\d+_</arg>
-<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="FAIL" start="2025-10-05T15:45:53.498355" elapsed="0.000284">'c' does not match '^test\d+_'</status>
-</kw>
-<msg time="2025-10-05T15:45:53.498744" level="INFO">${is_test_dir} = False</msg>
-<var>${is_test_dir}</var>
-<arg>Should Match Regexp</arg>
-<arg>${part}</arg>
-<arg>^test\\d+_</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.498205" elapsed="0.000565"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${is_test_dir}</arg>
-<arg>Return From Keyword</arg>
-<arg>${part}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.498904" elapsed="0.000124"/>
-</kw>
-<var name="${part}">c</var>
-<status status="PASS" start="2025-10-05T15:45:53.498077" elapsed="0.000993"/>
-</iter>
-<iter>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Should Match Regexp" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.499651" level="FAIL">'Users' does not match '^test\d+_'</msg>
-<arg>${part}</arg>
-<arg>^test\\d+_</arg>
-<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="FAIL" start="2025-10-05T15:45:53.499455" elapsed="0.000300">'Users' does not match '^test\d+_'</status>
-</kw>
-<msg time="2025-10-05T15:45:53.499873" level="INFO">${is_test_dir} = False</msg>
-<var>${is_test_dir}</var>
-<arg>Should Match Regexp</arg>
-<arg>${part}</arg>
-<arg>^test\\d+_</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.499300" elapsed="0.000601"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${is_test_dir}</arg>
-<arg>Return From Keyword</arg>
-<arg>${part}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.500041" elapsed="0.000125"/>
+<status status="PASS" start="2025-10-10T19:31:36.660969" elapsed="0.000255"/>
 </kw>
 <var name="${part}">Users</var>
-<status status="PASS" start="2025-10-05T15:45:53.499175" elapsed="0.001042"/>
+<status status="PASS" start="2025-10-10T19:31:36.658076" elapsed="0.003250"/>
 </iter>
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Match Regexp" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.500840" level="FAIL">'sacpa' does not match '^test\d+_'</msg>
+<msg time="2025-10-10T19:31:36.662753" level="FAIL">'sacpa' does not match '^test\d+_'</msg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="FAIL" start="2025-10-05T15:45:53.500637" elapsed="0.000273">'sacpa' does not match '^test\d+_'</status>
+<status status="FAIL" start="2025-10-10T19:31:36.662305" elapsed="0.000615">'sacpa' does not match '^test\d+_'</status>
 </kw>
-<msg time="2025-10-05T15:45:53.501985" level="INFO">${is_test_dir} = False</msg>
+<msg time="2025-10-10T19:31:36.663172" level="INFO">${is_test_dir} = False</msg>
 <var>${is_test_dir}</var>
 <arg>Should Match Regexp</arg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.500445" elapsed="0.001586"/>
+<status status="PASS" start="2025-10-10T19:31:36.661745" elapsed="0.001481"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${is_test_dir}</arg>
 <arg>Return From Keyword</arg>
 <arg>${part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.502206" elapsed="0.000152"/>
+<status status="PASS" start="2025-10-10T19:31:36.663577" elapsed="0.000246"/>
 </kw>
 <var name="${part}">sacpa</var>
-<status status="PASS" start="2025-10-05T15:45:53.500322" elapsed="0.002083"/>
+<status status="PASS" start="2025-10-10T19:31:36.661490" elapsed="0.002398"/>
 </iter>
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Match Regexp" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.503010" level="FAIL">'Projects' does not match '^test\d+_'</msg>
+<msg time="2025-10-10T19:31:36.664621" level="FAIL">'Projects' does not match '^test\d+_'</msg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="FAIL" start="2025-10-05T15:45:53.502766" elapsed="0.000311">'Projects' does not match '^test\d+_'</status>
+<status status="FAIL" start="2025-10-10T19:31:36.664384" elapsed="0.000334">'Projects' does not match '^test\d+_'</status>
 </kw>
-<msg time="2025-10-05T15:45:53.503176" level="INFO">${is_test_dir} = False</msg>
+<msg time="2025-10-10T19:31:36.664869" level="INFO">${is_test_dir} = False</msg>
 <var>${is_test_dir}</var>
 <arg>Should Match Regexp</arg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.502623" elapsed="0.000576"/>
+<status status="PASS" start="2025-10-10T19:31:36.664183" elapsed="0.000721"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${is_test_dir}</arg>
 <arg>Return From Keyword</arg>
 <arg>${part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.503323" elapsed="0.000145"/>
+<status status="PASS" start="2025-10-10T19:31:36.665072" elapsed="0.000146"/>
 </kw>
 <var name="${part}">Projects</var>
-<status status="PASS" start="2025-10-05T15:45:53.502521" elapsed="0.000987"/>
+<status status="PASS" start="2025-10-10T19:31:36.664040" elapsed="0.001235"/>
 </iter>
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Match Regexp" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.504096" level="FAIL">'robot' does not match '^test\d+_'</msg>
+<msg time="2025-10-10T19:31:36.665977" level="FAIL">'robot' does not match '^test\d+_'</msg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="FAIL" start="2025-10-05T15:45:53.503883" elapsed="0.000278">'robot' does not match '^test\d+_'</status>
+<status status="FAIL" start="2025-10-10T19:31:36.665735" elapsed="0.000332">'robot' does not match '^test\d+_'</status>
 </kw>
-<msg time="2025-10-05T15:45:53.504269" level="INFO">${is_test_dir} = False</msg>
+<msg time="2025-10-10T19:31:36.666486" level="INFO">${is_test_dir} = False</msg>
 <var>${is_test_dir}</var>
 <arg>Should Match Regexp</arg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.503698" elapsed="0.000595"/>
+<status status="PASS" start="2025-10-10T19:31:36.665537" elapsed="0.000983"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${is_test_dir}</arg>
 <arg>Return From Keyword</arg>
 <arg>${part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.504418" elapsed="0.000109"/>
+<status status="PASS" start="2025-10-10T19:31:36.666703" elapsed="0.000148"/>
 </kw>
 <var name="${part}">robot</var>
-<status status="PASS" start="2025-10-05T15:45:53.503603" elapsed="0.000990"/>
+<status status="PASS" start="2025-10-10T19:31:36.665400" elapsed="0.001504"/>
 </iter>
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Match Regexp" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.505222" level="FAIL">'robotframework' does not match '^test\d+_'</msg>
+<msg time="2025-10-10T19:31:36.667831" level="FAIL">'robotframework' does not match '^test\d+_'</msg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="FAIL" start="2025-10-05T15:45:53.504927" elapsed="0.000366">'robotframework' does not match '^test\d+_'</status>
+<status status="FAIL" start="2025-10-10T19:31:36.667479" elapsed="0.000447">'robotframework' does not match '^test\d+_'</status>
 </kw>
-<msg time="2025-10-05T15:45:53.505406" level="INFO">${is_test_dir} = False</msg>
+<msg time="2025-10-10T19:31:36.668050" level="INFO">${is_test_dir} = False</msg>
 <var>${is_test_dir}</var>
 <arg>Should Match Regexp</arg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.504795" elapsed="0.000635"/>
+<status status="PASS" start="2025-10-10T19:31:36.667148" elapsed="0.000931"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${is_test_dir}</arg>
 <arg>Return From Keyword</arg>
 <arg>${part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.505572" elapsed="0.000316"/>
+<status status="PASS" start="2025-10-10T19:31:36.668249" elapsed="0.000152"/>
 </kw>
 <var name="${part}">robotframework</var>
-<status status="PASS" start="2025-10-05T15:45:53.504699" elapsed="0.001234"/>
+<status status="PASS" start="2025-10-10T19:31:36.667031" elapsed="0.001422"/>
 </iter>
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Should Match Regexp" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.506472" level="FAIL">'tests' does not match '^test\d+_'</msg>
+<msg time="2025-10-10T19:31:36.669130" level="FAIL">'tests' does not match '^test\d+_'</msg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="FAIL" start="2025-10-05T15:45:53.506286" elapsed="0.000249">'tests' does not match '^test\d+_'</status>
+<status status="FAIL" start="2025-10-10T19:31:36.668896" elapsed="0.000355">'tests' does not match '^test\d+_'</status>
 </kw>
-<msg time="2025-10-05T15:45:53.506631" level="INFO">${is_test_dir} = False</msg>
+<msg time="2025-10-10T19:31:36.669430" level="INFO">${is_test_dir} = False</msg>
 <var>${is_test_dir}</var>
 <arg>Should Match Regexp</arg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.506142" elapsed="0.000512"/>
+<status status="PASS" start="2025-10-10T19:31:36.668701" elapsed="0.000770"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${is_test_dir}</arg>
 <arg>Return From Keyword</arg>
 <arg>${part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.506775" elapsed="0.000109"/>
+<status status="PASS" start="2025-10-10T19:31:36.669663" elapsed="0.000187"/>
 </kw>
 <var name="${part}">tests</var>
-<status status="PASS" start="2025-10-05T15:45:53.506035" elapsed="0.000885"/>
+<status status="PASS" start="2025-10-10T19:31:36.668569" elapsed="0.001334"/>
 </iter>
 <iter>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -299,605 +245,559 @@
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.507285" elapsed="0.000192"/>
+<status status="PASS" start="2025-10-10T19:31:36.670269" elapsed="0.000148"/>
 </kw>
-<msg time="2025-10-05T15:45:53.507589" level="INFO">${is_test_dir} = True</msg>
+<msg time="2025-10-10T19:31:36.670508" level="INFO">${is_test_dir} = True</msg>
 <var>${is_test_dir}</var>
 <arg>Should Match Regexp</arg>
 <arg>${part}</arg>
 <arg>^test\\d+_</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.507149" elapsed="0.000465"/>
+<status status="PASS" start="2025-10-10T19:31:36.670116" elapsed="0.000417"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Return From Keyword" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.508022" level="INFO">Returning from the enclosing user keyword.</msg>
+<msg time="2025-10-10T19:31:36.670909" level="INFO">Returning from the enclosing user keyword.</msg>
 <arg>${part}</arg>
 <doc>Returns from the enclosing user keyword.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.507935" elapsed="0.000170"/>
+<status status="PASS" start="2025-10-10T19:31:36.670838" elapsed="0.000153"/>
 </kw>
 <arg>${is_test_dir}</arg>
 <arg>Return From Keyword</arg>
 <arg>${part}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.507746" elapsed="0.000415"/>
+<status status="PASS" start="2025-10-10T19:31:36.670656" elapsed="0.000389"/>
 </kw>
 <var name="${part}">test3_network_validation</var>
-<status status="PASS" start="2025-10-05T15:45:53.507050" elapsed="0.001173"/>
+<status status="PASS" start="2025-10-10T19:31:36.670012" elapsed="0.001077"/>
 </iter>
 <var>${part}</var>
 <value>@{path_parts}</value>
-<status status="PASS" start="2025-10-05T15:45:53.494675" elapsed="0.013610"/>
+<status status="PASS" start="2025-10-10T19:31:36.653155" elapsed="0.017971"/>
 </for>
 <kw name="Log" owner="BuiltIn">
 <arg>⚠️ Could not auto-detect test suite name, defaulting to test3_network_validation</arg>
 <arg>WARN</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:45:53.508441" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-10-10T19:31:36.671256" elapsed="0.000023"/>
 </kw>
 <return>
 <value>test3_network_validation</value>
-<status status="NOT RUN" start="2025-10-05T15:45:53.508548" elapsed="0.000057"/>
+<status status="NOT RUN" start="2025-10-10T19:31:36.671338" elapsed="0.000026"/>
 </return>
-<msg time="2025-10-05T15:45:53.508842" level="INFO">${suite_name} = test3_network_validation</msg>
+<msg time="2025-10-10T19:31:36.671534" level="INFO">${suite_name} = test3_network_validation</msg>
 <var>${suite_name}</var>
 <doc>Auto-detect full test suite name from current working directory or test file path</doc>
-<status status="PASS" start="2025-10-05T15:45:53.493553" elapsed="0.015331"/>
+<status status="PASS" start="2025-10-10T19:31:36.651704" elapsed="0.019857"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.509333" level="INFO">${TEST_SUITE_ID} = test3</msg>
+<msg time="2025-10-10T19:31:36.671933" level="INFO">${TEST_SUITE_ID} = test3</msg>
 <arg>${TEST_SUITE_ID}</arg>
 <arg>${suite_id}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.509045" elapsed="0.000342"/>
+<status status="PASS" start="2025-10-10T19:31:36.671689" elapsed="0.000316"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.510722" level="INFO">${TEST_SUITE_NAME} = Hostname Validation Test Suite - test3</msg>
+<msg time="2025-10-10T19:31:36.672484" level="INFO">${TEST_SUITE_NAME} = Hostname Validation Test Suite - test3</msg>
 <arg>${TEST_SUITE_NAME}</arg>
 <arg>Hostname Validation Test Suite - ${suite_id}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.510417" elapsed="0.000370"/>
+<status status="PASS" start="2025-10-10T19:31:36.672225" elapsed="0.000307"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.511266" level="INFO">${TEST_REPORTS_DIR} = /mnt/c/Users/sacpa/Projects/robot/robotframework/results/test3_network_validation</msg>
+<msg time="2025-10-10T19:31:36.672943" level="INFO">${TEST_REPORTS_DIR} = C:\Users\sacpa\Projects\robot\robotframework/results/test3_network_validation</msg>
 <arg>${TEST_REPORTS_DIR}</arg>
 <arg>${REPORTS_DIR}/${suite_name}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.510952" elapsed="0.000371"/>
+<status status="PASS" start="2025-10-10T19:31:36.672662" elapsed="0.000329"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.511774" level="INFO">${DATA_DIR} = /mnt/c/Users/sacpa/Projects/robot/robotframework/results/test3_network_validation/data</msg>
+<msg time="2025-10-10T19:31:36.673284" level="INFO">${DATA_DIR} = C:\Users\sacpa\Projects\robot\robotframework/results/test3_network_validation/data</msg>
 <arg>${DATA_DIR}</arg>
 <arg>${TEST_REPORTS_DIR}/data</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.511494" elapsed="0.000352"/>
+<status status="PASS" start="2025-10-10T19:31:36.673112" elapsed="0.000212"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-05T15:45:53.512800" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-10T19:31:36.673930" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results"&gt;C:\Users\sacpa\Projects\robot\robotframework\results&lt;/a&gt;' already exists.</msg>
 <arg>${REPORTS_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.511990" elapsed="0.000948"/>
+<status status="PASS" start="2025-10-10T19:31:36.673440" elapsed="0.000617"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-05T15:45:53.513944" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test3_network_validation"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test3_network_validation&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-10T19:31:36.674937" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test3_network_validation"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test3_network_validation&lt;/a&gt;' already exists.</msg>
 <arg>${TEST_REPORTS_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.513123" elapsed="0.000932"/>
+<status status="PASS" start="2025-10-10T19:31:36.674403" elapsed="0.000896"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-05T15:45:53.516779" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test3_network_validation/data"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test3_network_validation/data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-10T19:31:36.675702" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test3_network_validation\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test3_network_validation\data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.514238" elapsed="0.002660"/>
+<status status="PASS" start="2025-10-10T19:31:36.675479" elapsed="0.000289"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🔍 Looking up configuration for hostname: ${TARGET_HOSTNAME}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.517083" elapsed="0.000331"/>
+<status status="PASS" start="2025-10-10T19:31:36.675910" elapsed="0.001264"/>
 </kw>
 <kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-10-05T15:45:53.575139" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
-<msg time="2025-10-05T15:45:53.575559" level="INFO">Extracted IP from EDS: 172.30.16.186</msg>
-<msg time="2025-10-05T15:45:53.575653" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
-<msg time="2025-10-05T15:45:53.575701" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
-<msg time="2025-10-05T15:45:53.575740" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
-<msg time="2025-10-05T15:45:53.575779" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
-<msg time="2025-10-05T15:45:53.575820" level="INFO">Extracted domain from EDS: gnscet.com</msg>
-<msg time="2025-10-05T15:45:53.575866" level="INFO">Extracted CPU cores from EDS: 8</msg>
-<msg time="2025-10-05T15:45:53.575909" level="INFO">Extracted RAM from EDS: 16</msg>
-<msg time="2025-10-05T15:45:53.575950" level="INFO">Extracted storage type from EDS: VSAN</msg>
-<msg time="2025-10-05T15:45:53.576015" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
-<msg time="2025-10-05T15:45:53.576059" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
-<msg time="2025-10-05T15:45:53.576107" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
-<msg time="2025-10-05T15:45:53.576152" level="INFO">Extracted logical volume/partition from EDS: /</msg>
-<msg time="2025-10-05T15:45:53.576204" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-05T15:45:53.576251" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-05T15:45:53.576343" level="INFO">Extracted drive purpose from EDS: OS</msg>
-<msg time="2025-10-05T15:45:53.576398" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
-<msg time="2025-10-05T15:45:53.576441" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
-<msg time="2025-10-05T15:45:53.576696" level="INFO">${config} = {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<msg time="2025-10-10T19:31:36.699966" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-10T19:31:36.700254" level="INFO">Extracted IP from EDS: 172.30.16.186</msg>
+<msg time="2025-10-10T19:31:36.700311" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-10T19:31:36.700363" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-10T19:31:36.700417" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-10T19:31:36.700470" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-10T19:31:36.700516" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-10T19:31:36.700550" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-10T19:31:36.700582" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-10T19:31:36.700611" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-10T19:31:36.700649" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-10T19:31:36.700678" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-10T19:31:36.700729" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-10T19:31:36.700759" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-10T19:31:36.700788" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-10T19:31:36.700822" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-10T19:31:36.700868" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-10T19:31:36.700912" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-10T19:31:36.700960" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-10T19:31:36.701116" level="INFO">${config} = {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
 <var>${config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
 <doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="PASS" start="2025-10-05T15:45:53.517581" elapsed="0.059167"/>
+<status status="PASS" start="2025-10-10T19:31:36.677440" elapsed="0.023709"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.577499" level="INFO">${TARGET_IP} = 172.30.16.186</msg>
+<msg time="2025-10-10T19:31:36.701619" level="INFO">${TARGET_IP} = 172.30.16.186</msg>
 <arg>${TARGET_IP}</arg>
 <arg>${config}[ip]</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.577064" elapsed="0.000517"/>
+<status status="PASS" start="2025-10-10T19:31:36.701369" elapsed="0.000296"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.578192" level="INFO">${TARGET_SUBNET} = 10.26.216.0/24</msg>
+<msg time="2025-10-10T19:31:36.701987" level="INFO">${TARGET_SUBNET} = 10.26.216.0/24</msg>
 <arg>${TARGET_SUBNET}</arg>
 <arg>${config}[subnet]</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.577835" elapsed="0.000424"/>
+<status status="PASS" start="2025-10-10T19:31:36.701812" elapsed="0.000214"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.578737" level="INFO">${TARGET_MASK} = 255.255.255.0</msg>
+<msg time="2025-10-10T19:31:36.702295" level="INFO">${TARGET_MASK} = 255.255.255.0</msg>
 <arg>${TARGET_MASK}</arg>
 <arg>${config}[mask]</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.578461" elapsed="0.000338"/>
+<status status="PASS" start="2025-10-10T19:31:36.702138" elapsed="0.000194"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.579233" level="INFO">${TARGET_GATEWAY} = 10.26.216.4</msg>
+<msg time="2025-10-10T19:31:36.702593" level="INFO">${TARGET_GATEWAY} = 10.26.216.4</msg>
 <arg>${TARGET_GATEWAY}</arg>
 <arg>${config}[gateway]</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.578977" elapsed="0.000308"/>
+<status status="PASS" start="2025-10-10T19:31:36.702439" elapsed="0.000191"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.579678" level="INFO">${TARGET_CNAME} = alhxvdvitap01</msg>
+<msg time="2025-10-10T19:31:36.702966" level="INFO">${TARGET_CNAME} = alhxvdvitap01</msg>
 <arg>${TARGET_CNAME}</arg>
 <arg>${config}[cname]</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.579447" elapsed="0.000281"/>
+<status status="PASS" start="2025-10-10T19:31:36.702796" elapsed="0.000214"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.580142" level="INFO">${TARGET_DOMAIN} = gnscet.com</msg>
+<msg time="2025-10-10T19:31:36.703310" level="INFO">${TARGET_DOMAIN} = gnscet.com</msg>
 <arg>${TARGET_DOMAIN}</arg>
 <arg>${config}[domain]</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.579901" elapsed="0.000302"/>
+<status status="PASS" start="2025-10-10T19:31:36.703131" elapsed="0.000221"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n📋 EDS Configuration for ${TARGET_HOSTNAME}:</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.580846" elapsed="0.001060"/>
+<status status="PASS" start="2025-10-10T19:31:36.703474" elapsed="0.000529"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📍 IP: ${TARGET_IP}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.582067" elapsed="0.000203"/>
+<status status="PASS" start="2025-10-10T19:31:36.704191" elapsed="0.000485"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📍 Subnet: ${TARGET_SUBNET}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.582411" elapsed="0.000224"/>
+<status status="PASS" start="2025-10-10T19:31:36.704902" elapsed="0.000488"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📍 Gateway: ${TARGET_GATEWAY}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.582806" elapsed="0.000924"/>
+<status status="PASS" start="2025-10-10T19:31:36.705560" elapsed="0.000379"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📍 CNAME: ${TARGET_CNAME}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.583910" elapsed="0.000326"/>
+<status status="PASS" start="2025-10-10T19:31:36.706201" elapsed="0.001913"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📍 Domain: ${TARGET_DOMAIN}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.584439" elapsed="0.000221"/>
+<status status="PASS" start="2025-10-10T19:31:36.708425" elapsed="0.000892"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🚀 ===================================================</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.584806" elapsed="0.000510"/>
+<status status="PASS" start="2025-10-10T19:31:36.709676" elapsed="0.000600"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🌐 NETWORK VALIDATION: EDS vs SERVER COMPARISON</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.585463" elapsed="0.000158"/>
+<status status="PASS" start="2025-10-10T19:31:36.710440" elapsed="0.000383"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>⚡ Test Suite: ${suite_id} (${TEST_SUITE_NAME})</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.585737" elapsed="0.000281"/>
+<status status="PASS" start="2025-10-10T19:31:36.711091" elapsed="0.000536"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>═══════════════════════════════════════════════════</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.586346" elapsed="0.000187"/>
+<status status="PASS" start="2025-10-10T19:31:36.712041" elapsed="0.000416"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📅 Start Time: ${start_time}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.586651" elapsed="0.000189"/>
+<status status="PASS" start="2025-10-10T19:31:36.712671" elapsed="0.000361"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🎯 Target Hostname: ${TARGET_HOSTNAME}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.586958" elapsed="0.000220"/>
+<status status="PASS" start="2025-10-10T19:31:36.713246" elapsed="0.000350"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🌐 SSH Target IP: ${TARGET_IP}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.587538" elapsed="0.000264"/>
+<status status="PASS" start="2025-10-10T19:31:36.714206" elapsed="0.000592"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📊 Suite Reports: ${TEST_REPORTS_DIR}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.587965" elapsed="0.000192"/>
+<status status="PASS" start="2025-10-10T19:31:36.715049" elapsed="0.000671"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📊 Overall Reports: ${REPORTS_DIR}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.588268" elapsed="0.000198"/>
+<status status="PASS" start="2025-10-10T19:31:36.716168" elapsed="0.000754"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>===================================================</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.588592" elapsed="0.000155"/>
+<status status="PASS" start="2025-10-10T19:31:36.717354" elapsed="0.000520"/>
 </kw>
 <doc>🚀 Load EDS configuration and prepare for server validation</doc>
-<status status="PASS" start="2025-10-05T15:45:53.489139" elapsed="0.099716"/>
+<status status="PASS" start="2025-10-10T19:31:36.640621" elapsed="0.077533"/>
 </kw>
 <test id="s1-t1" name="Critical - Hostname Validation" line="18">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:45:53.590006" level="INFO">${timestamp} = 2025-10-05 15:45:53</msg>
+<msg time="2025-10-10T19:31:36.720849" level="INFO">${timestamp} = 2025-10-10 19:31:36</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.589819" elapsed="0.000212"/>
+<status status="PASS" start="2025-10-10T19:31:36.720436" elapsed="0.000488"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.590479" level="INFO">🚀 Starting: Critical - Hostname Validation at 2025-10-05 15:45:53</msg>
+<msg time="2025-10-10T19:31:36.721449" level="INFO">🚀 Starting: Critical - Hostname Validation at 2025-10-10 19:31:36</msg>
 <arg>🚀 Starting: ${test_name} at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.590167" elapsed="0.000433"/>
+<status status="PASS" start="2025-10-10T19:31:36.721177" elapsed="0.000773"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-10-05T15:45:53.589518" elapsed="0.001189"/>
+<status status="PASS" start="2025-10-10T19:31:36.719588" elapsed="0.002490"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.590942" level="INFO">🔍 Validating hostname: EDS vs Server...</msg>
+<msg time="2025-10-10T19:31:36.722800" level="INFO">🔍 Validating hostname: EDS vs Server...</msg>
 <arg>🔍 Validating hostname: EDS vs Server...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.590822" elapsed="0.000212"/>
+<status status="PASS" start="2025-10-10T19:31:36.722561" elapsed="0.001226"/>
 </kw>
 <kw name="Get Hostname From Server" owner="network_keywords">
 <kw name="Establish SSH Session" owner="network_keywords">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:53.591929" level="INFO">🔌 Connecting to alhxvdvitap01 via SSH (172.30.16.186)...</msg>
+<msg time="2025-10-10T19:31:36.726079" level="INFO">🔌 Connecting to alhxvdvitap01 via SSH (172.30.16.186)...</msg>
 <arg>🔌 Connecting to ${TARGET_HOSTNAME} via SSH (${TARGET_IP})...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.591736" elapsed="0.000289"/>
+<status status="PASS" start="2025-10-10T19:31:36.725337" elapsed="0.002268"/>
 </kw>
 <kw name="Close All Connections" owner="SSHLibrary">
 <doc>Closes all open connections.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.592159" elapsed="0.000118"/>
+<status status="PASS" start="2025-10-10T19:31:36.727905" elapsed="0.000203"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${TARGET_IP}</arg>
 <arg>port=22</arg>
 <arg>timeout=30</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.592363" elapsed="0.000372"/>
+<status status="PASS" start="2025-10-10T19:31:36.728301" elapsed="0.000528"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
-<msg time="2025-10-05T15:45:53.593069" level="INFO">Logging into '172.30.16.186:22' as 'sac'.</msg>
-<msg time="2025-10-05T15:45:55.282786" level="INFO">Read output: Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/pro
-
- System information as of Sun Oct  5 15:45:53 CDT 2025
-
-  System load:  1.09                Processes:             36
-  Usage of /:   0.7% of 1006.85GB   Users logged in:       1
-  Memory usage: 7%                  IPv4 address for eth0: 172.30.16.186
-  Swap usage:   0%
-
- * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
-   just raised the bar for easy, resilient and secure K8s cluster deployment.
-
-   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
-Last login: Sun Oct  5 15:45:10 2025 from 172.30.16.186
-[?2004hsac@alhxvdvitap01:~$</msg>
+<msg time="2025-10-10T19:31:36.729318" level="INFO">Logging into '172.30.16.186:22' as 'pauls6'.</msg>
+<msg time="2025-10-10T19:31:57.796218" level="FAIL">TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond</msg>
 <arg>${SSH_USERNAME}</arg>
 <arg>${SSH_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="PASS" start="2025-10-05T15:45:53.592863" elapsed="1.690224"/>
+<status status="FAIL" start="2025-10-10T19:31:36.729028" elapsed="21.075085">TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond</status>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:45:55.283926" level="INFO">Executing command 'echo "SSH connection successful"'.</msg>
-<msg time="2025-10-05T15:45:55.298347" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:45:55.298825" level="INFO">${test_output} = SSH connection successful</msg>
 <var>${test_output}</var>
 <arg>echo "SSH connection successful"</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.283583" elapsed="0.015302"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.804596" elapsed="0.000067"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${test_output}</arg>
 <arg>SSH connection successful</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.299228" elapsed="0.000430"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.804910" elapsed="0.000046"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.302052" level="INFO">${SSH_CONNECTION_ACTIVE} = True</msg>
 <arg>${SSH_CONNECTION_ACTIVE}</arg>
 <arg>${TRUE}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.301500" elapsed="0.000643"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.805224" elapsed="0.000211"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.302778" level="INFO">✅ SSH session established to 172.30.16.186</msg>
 <arg>✅ SSH session established to ${TARGET_IP}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.302371" elapsed="0.000668"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.805669" elapsed="0.000042"/>
 </kw>
 <doc>SSH to server using IP from EDS lookup</doc>
-<status status="PASS" start="2025-10-05T15:45:53.591490" elapsed="1.711747"/>
+<status status="FAIL" start="2025-10-10T19:31:36.725054" elapsed="21.080991">TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond</status>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:45:55.303664" level="INFO">Executing command 'hostname'.</msg>
-<msg time="2025-10-05T15:45:55.361053" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:45:55.361426" level="INFO">${hostname} = alhxvdvitap01</msg>
 <var>${hostname}</var>
 <arg>hostname</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.303473" elapsed="0.058019"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.806571" elapsed="0.000080"/>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2025-10-05T15:45:55.362441" level="INFO">${hostname} = alhxvdvitap01</msg>
 <var>${hostname}</var>
 <arg>${hostname}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.361925" elapsed="0.000585"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.808235" elapsed="0.000108"/>
 </kw>
 <return>
 <value>${hostname}</value>
-<status status="PASS" start="2025-10-05T15:45:55.362652" elapsed="0.000132"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.808555" elapsed="0.000076"/>
 </return>
-<msg time="2025-10-05T15:45:55.363135" level="INFO">${actual_hostname} = alhxvdvitap01</msg>
 <var>${actual_hostname}</var>
 <doc>SSH to server and get actual hostname</doc>
-<status status="PASS" start="2025-10-05T15:45:53.591248" elapsed="1.771947"/>
+<status status="FAIL" start="2025-10-10T19:31:36.724365" elapsed="21.084983">TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond</status>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.363979" level="INFO">${expected_hostname} = alhxvdvitap01</msg>
 <var>${expected_hostname}</var>
 <arg>${TARGET_HOSTNAME}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.363531" elapsed="0.000578"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.810766" elapsed="0.000094"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.365232" level="INFO">📋 EDS Expected: alhxvdvitap01</msg>
 <arg>📋 EDS Expected: ${expected_hostname}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.364663" elapsed="0.000873"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.812065" elapsed="0.000086"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.366420" level="INFO">🖥️ Server Actual: alhxvdvitap01</msg>
 <arg>🖥️ Server Actual: ${actual_hostname}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.365923" elapsed="0.000843"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.812852" elapsed="0.000082"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${actual_hostname}</arg>
 <arg>${expected_hostname}</arg>
 <arg>❌ HOSTNAME MISMATCH: EDS expects '${expected_hostname}' but server shows '${actual_hostname}'</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.367030" elapsed="0.000519"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.814036" elapsed="0.000067"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.368016" level="INFO">✅ Hostname validation: PASSED - EDS matches Server</msg>
 <arg>✅ Hostname validation: PASSED - EDS matches Server</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.367755" elapsed="0.000423"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.814685" elapsed="0.000062"/>
 </kw>
 <kw name="Log Test End" owner="network_keywords" type="TEARDOWN">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:45:55.369721" level="INFO">${timestamp} = 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.818429" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.369345" elapsed="0.000465"/>
+<status status="PASS" start="2025-10-10T19:31:57.817304" elapsed="0.001206"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.370355" level="INFO">✅ Completed: Critical - Hostname Validation (PASS) at 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.819328" level="INFO">✅ Completed: Critical - Hostname Validation (FAIL) at 2025-10-10 19:31:57</msg>
 <arg>✅ Completed: ${test_name} (${test_status}) at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.370009" elapsed="0.000507"/>
+<status status="PASS" start="2025-10-10T19:31:57.818806" elapsed="0.001008"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-10-05T15:45:55.368724" elapsed="0.001846"/>
+<status status="PASS" start="2025-10-10T19:31:57.816031" elapsed="0.004062"/>
 </kw>
 <doc>🔧 SSH to server and compare hostname with EDS expectation</doc>
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>hostname</tag>
-<status status="PASS" start="2025-10-05T15:45:53.588945" elapsed="1.781660"/>
+<status status="FAIL" start="2025-10-10T19:31:36.718355" elapsed="21.102536">TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond</status>
 </test>
 <test id="s1-t2" name="Critical - IP Address Validation" line="37">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:45:55.372070" level="INFO">${timestamp} = 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.830070" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.371599" elapsed="0.000522"/>
+<status status="PASS" start="2025-10-10T19:31:57.829503" elapsed="0.000640"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.372865" level="INFO">🚀 Starting: Critical - IP Address Validation at 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.830856" level="INFO">🚀 Starting: Critical - IP Address Validation at 2025-10-10 19:31:57</msg>
 <arg>🚀 Starting: ${test_name} at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.372424" elapsed="0.000605"/>
+<status status="PASS" start="2025-10-10T19:31:57.830427" elapsed="0.001051"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-10-05T15:45:55.371323" elapsed="0.001820"/>
+<status status="PASS" start="2025-10-10T19:31:57.827854" elapsed="0.003889"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.373734" level="INFO">🔍 Validating IP address: EDS vs Server...</msg>
+<msg time="2025-10-10T19:31:57.832875" level="INFO">🔍 Validating IP address: EDS vs Server...</msg>
 <arg>🔍 Validating IP address: EDS vs Server...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.373375" elapsed="0.000599"/>
+<status status="PASS" start="2025-10-10T19:31:57.832452" elapsed="0.000960"/>
 </kw>
 <kw name="Get IP Address From Server" owner="network_keywords">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:45:55.375170" level="INFO">Executing command 'hostname -I | awk '{print $1}' || ip addr show | grep -oP '(?&lt;=inet\s)\d+\.\d+\.\d+\.\d+''.</msg>
-<msg time="2025-10-05T15:45:55.424919" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:45:55.425377" level="INFO">${ip_output} = 172.30.16.186</msg>
+<msg time="2025-10-10T19:31:57.835067" level="INFO">Executing command 'hostname -I | awk '{print $1}' || ip addr show | grep -oP '(?&lt;=inet\s)\d+\.\d+\.\d+\.\d+''.</msg>
+<msg time="2025-10-10T19:31:57.835291" level="FAIL">Connection not open</msg>
 <var>${ip_output}</var>
 <arg>hostname -I | awk '{print $1}' || ip addr show | grep -oP '(?&lt;=inet\\s)\\d+\\.\\d+\\.\\d+\\.\\d+'</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.374874" elapsed="0.050566"/>
+<status status="FAIL" start="2025-10-10T19:31:57.834768" elapsed="0.003722">Connection not open</status>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2025-10-05T15:45:55.426226" level="INFO">${ip} = 172.30.16.186</msg>
 <var>${ip}</var>
 <arg>${ip_output}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.425785" elapsed="0.000521"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.838861" elapsed="0.000080"/>
 </kw>
 <return>
 <value>${ip}</value>
-<status status="PASS" start="2025-10-05T15:45:55.426417" elapsed="0.000083"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.839053" elapsed="0.000041"/>
 </return>
-<msg time="2025-10-05T15:45:55.426748" level="INFO">${actual_ip} = 172.30.16.186</msg>
 <var>${actual_ip}</var>
 <doc>SSH to server and get actual IP address</doc>
-<status status="PASS" start="2025-10-05T15:45:55.374345" elapsed="0.052446"/>
+<status status="FAIL" start="2025-10-10T19:31:57.834184" elapsed="0.005122">Connection not open</status>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.427440" level="INFO">${expected_ip} = 172.30.16.186</msg>
 <var>${expected_ip}</var>
 <arg>${TARGET_IP}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.427005" elapsed="0.000495"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.840076" elapsed="0.000083"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.429247" level="INFO">📋 EDS Expected: 172.30.16.186</msg>
 <arg>📋 EDS Expected: ${expected_ip}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.428825" elapsed="0.000657"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.843847" elapsed="0.000115"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.430262" level="INFO">🖥️ Server Actual: 172.30.16.186</msg>
 <arg>🖥️ Server Actual: ${actual_ip}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.429828" elapsed="0.000635"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.844714" elapsed="0.000079"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${actual_ip}</arg>
 <arg>${expected_ip}</arg>
 <arg>❌ IP MISMATCH: EDS expects '${expected_ip}' but server shows '${actual_ip}'</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.430787" elapsed="0.000705"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.845683" elapsed="0.000151"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.432080" level="INFO">✅ IP address validation: PASSED - EDS matches Server</msg>
 <arg>✅ IP address validation: PASSED - EDS matches Server</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.431748" elapsed="0.000728"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.846500" elapsed="0.000083"/>
 </kw>
 <kw name="Log Test End" owner="network_keywords" type="TEARDOWN">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:45:55.434415" level="INFO">${timestamp} = 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.851796" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.433998" elapsed="0.000470"/>
+<status status="PASS" start="2025-10-10T19:31:57.851079" elapsed="0.000819"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.435033" level="INFO">✅ Completed: Critical - IP Address Validation (PASS) at 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.852801" level="INFO">✅ Completed: Critical - IP Address Validation (FAIL) at 2025-10-10 19:31:57</msg>
 <arg>✅ Completed: ${test_name} (${test_status}) at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.434663" elapsed="0.000788"/>
+<status status="PASS" start="2025-10-10T19:31:57.852276" elapsed="0.001135"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-10-05T15:45:55.433378" elapsed="0.002224"/>
+<status status="PASS" start="2025-10-10T19:31:57.849485" elapsed="0.004135"/>
 </kw>
 <doc>🌐 SSH to server and compare IP configuration with EDS expectation</doc>
 <tag>critical</tag>
 <tag>ip</tag>
 <tag>networking</tag>
-<status status="PASS" start="2025-10-05T15:45:55.370871" elapsed="0.064801"/>
+<status status="FAIL" start="2025-10-10T19:31:57.824493" elapsed="0.029820">Connection not open</status>
 </test>
 <test id="s1-t3" name="Critical - Subnet Validation" line="56">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:45:55.438551" level="INFO">${timestamp} = 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.862254" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.438240" elapsed="0.000353"/>
+<status status="PASS" start="2025-10-10T19:31:57.861459" elapsed="0.001015"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.439002" level="INFO">🚀 Starting: Critical - Subnet Validation at 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.863685" level="INFO">🚀 Starting: Critical - Subnet Validation at 2025-10-10 19:31:57</msg>
 <arg>🚀 Starting: ${test_name} at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.438756" elapsed="0.000382"/>
+<status status="PASS" start="2025-10-10T19:31:57.863033" elapsed="0.001256"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-10-05T15:45:55.437837" elapsed="0.001391"/>
+<status status="PASS" start="2025-10-10T19:31:57.860337" elapsed="0.004554"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.439542" level="INFO">🔍 Validating subnet: EDS vs Server...</msg>
+<msg time="2025-10-10T19:31:57.866456" level="INFO">🔍 Validating subnet: EDS vs Server...</msg>
 <arg>🔍 Validating subnet: EDS vs Server...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.439382" elapsed="0.000281"/>
+<status status="PASS" start="2025-10-10T19:31:57.865972" elapsed="0.001381"/>
 </kw>
 <kw name="Get Subnet From Server" owner="network_keywords">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:45:55.440489" level="INFO">Executing command 'ip route show | grep 172.30.16.186'.</msg>
-<msg time="2025-10-05T15:45:55.471523" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:45:55.471812" level="INFO">${route_output} = 172.30.16.0/20 dev eth0 proto kernel scope link src 172.30.16.186 </msg>
+<msg time="2025-10-10T19:31:57.869649" level="INFO">Executing command 'ip route show | grep 172.30.16.186'.</msg>
+<msg time="2025-10-10T19:31:57.870492" level="FAIL">Connection not open</msg>
 <var>${route_output}</var>
 <arg>ip route show | grep ${TARGET_IP}</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.440287" elapsed="0.031565"/>
+<status status="FAIL" start="2025-10-10T19:31:57.869156" elapsed="0.006155">Connection not open</status>
 </kw>
 <kw name="Get Regexp Matches" owner="String">
-<msg time="2025-10-05T15:45:55.473261" level="INFO">${subnet} = ['172.30.16.0/20']</msg>
 <var>${subnet}</var>
 <arg>${route_output}</arg>
 <arg>(\\d+\\.\\d+\\.\\d+\\.\\d+/\\d+)</arg>
 <arg>1</arg>
 <doc>Returns a list of all non-overlapping matches in the given string.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.472264" elapsed="0.001046"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.876212" elapsed="0.000113"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="RETURN">
-<msg time="2025-10-05T15:45:55.476497" level="FAIL">No keyword with name 'RETURN' found.</msg>
-<arg>${subnet}[0]</arg>
-<status status="FAIL" start="2025-10-05T15:45:55.476429" elapsed="0.000234">No keyword with name 'RETURN' found.</status>
-</kw>
 <arg>${subnet}</arg>
 <arg>RETURN</arg>
 <arg>${subnet}[0]</arg>
@@ -905,390 +805,356 @@ Last login: Sun Oct  5 15:45:10 2025 from 172.30.16.186
 <arg>RETURN</arg>
 <arg>${TARGET_SUBNET}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="FAIL" start="2025-10-05T15:45:55.473582" elapsed="0.003231">No keyword with name 'RETURN' found.</status>
+<status status="NOT RUN" start="2025-10-10T19:31:57.878084" elapsed="0.000212"/>
 </kw>
 <var>${actual_subnet}</var>
 <doc>SSH to server and get subnet configuration</doc>
-<status status="FAIL" start="2025-10-05T15:45:55.439869" elapsed="0.037481">No keyword with name 'RETURN' found.</status>
+<status status="FAIL" start="2025-10-10T19:31:57.868202" elapsed="0.010667">Connection not open</status>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${expected_subnet}</var>
 <arg>${TARGET_SUBNET}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-10-05T15:45:55.477539" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.879647" elapsed="0.000091"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>📋 EDS Expected: ${expected_subnet}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:45:55.477681" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.880551" elapsed="0.000065"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>🖥️ Server Actual: ${actual_subnet}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:45:55.477801" elapsed="0.000019"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.881384" elapsed="0.000073"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${actual_subnet}</arg>
 <arg>${expected_subnet}</arg>
 <arg>❌ SUBNET MISMATCH: EDS expects '${expected_subnet}' but server shows '${actual_subnet}'</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" start="2025-10-05T15:45:55.477975" elapsed="0.000027"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.882101" elapsed="0.000063"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Subnet validation: PASSED - EDS matches Server</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:45:55.478141" elapsed="0.000020"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.882775" elapsed="0.000058"/>
 </kw>
 <kw name="Log Test End" owner="network_keywords" type="TEARDOWN">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:45:55.479147" level="INFO">${timestamp} = 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.885972" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.478841" elapsed="0.000351"/>
+<status status="PASS" start="2025-10-10T19:31:57.885061" elapsed="0.001081"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.479546" level="INFO">✅ Completed: Critical - Subnet Validation (FAIL) at 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.887713" level="INFO">✅ Completed: Critical - Subnet Validation (FAIL) at 2025-10-10 19:31:57</msg>
 <arg>✅ Completed: ${test_name} (${test_status}) at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.479313" elapsed="0.000360"/>
+<status status="PASS" start="2025-10-10T19:31:57.886832" elapsed="0.001347"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-10-05T15:45:55.478454" elapsed="0.002291"/>
+<status status="PASS" start="2025-10-10T19:31:57.883886" elapsed="0.004574"/>
 </kw>
 <doc>🌍 SSH to server and compare subnet configuration with EDS expectation</doc>
 <tag>critical</tag>
 <tag>networking</tag>
 <tag>subnet</tag>
-<status status="FAIL" start="2025-10-05T15:45:55.437001" elapsed="0.043827">No keyword with name 'RETURN' found.</status>
+<status status="FAIL" start="2025-10-10T19:31:57.857472" elapsed="0.031830">Connection not open</status>
 </test>
 <test id="s1-t4" name="Critical - Gateway Validation" line="75">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:45:55.482337" level="INFO">${timestamp} = 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.896342" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.482121" elapsed="0.000278"/>
+<status status="PASS" start="2025-10-10T19:31:57.895729" elapsed="0.000703"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.482765" level="INFO">🚀 Starting: Critical - Gateway Validation at 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.896986" level="INFO">🚀 Starting: Critical - Gateway Validation at 2025-10-10 19:31:57</msg>
 <arg>🚀 Starting: ${test_name} at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.482561" elapsed="0.000316"/>
+<status status="PASS" start="2025-10-10T19:31:57.896657" elapsed="0.000765"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-10-05T15:45:55.481820" elapsed="0.001147"/>
+<status status="PASS" start="2025-10-10T19:31:57.894803" elapsed="0.002759"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.483209" level="INFO">🔍 Validating gateway: EDS vs Server...</msg>
+<msg time="2025-10-10T19:31:57.898427" level="INFO">🔍 Validating gateway: EDS vs Server...</msg>
 <arg>🔍 Validating gateway: EDS vs Server...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.483082" elapsed="0.000236"/>
+<status status="PASS" start="2025-10-10T19:31:57.898112" elapsed="0.000706"/>
 </kw>
 <kw name="Get Gateway From Server" owner="network_keywords">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:45:55.483835" level="INFO">Executing command 'ip route show default | awk '{print $3}''.</msg>
-<msg time="2025-10-05T15:45:55.537054" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:45:55.537427" level="INFO">${gateway_output} = 172.30.16.1</msg>
+<msg time="2025-10-10T19:31:57.900303" level="INFO">Executing command 'ip route show default | awk '{print $3}''.</msg>
+<msg time="2025-10-10T19:31:57.900525" level="FAIL">Connection not open</msg>
 <var>${gateway_output}</var>
 <arg>ip route show default | awk '{print $3}'</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.483750" elapsed="0.053738"/>
+<status status="FAIL" start="2025-10-10T19:31:57.900093" elapsed="0.002340">Connection not open</status>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2025-10-05T15:45:55.538174" level="INFO">${gateway} = 172.30.16.1</msg>
 <var>${gateway}</var>
 <arg>${gateway_output}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.537769" elapsed="0.000452"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.902688" elapsed="0.000062"/>
 </kw>
 <return>
 <value>${gateway}</value>
-<status status="PASS" start="2025-10-05T15:45:55.538306" elapsed="0.000075"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.902826" elapsed="0.000031"/>
 </return>
-<msg time="2025-10-05T15:45:55.538664" level="INFO">${actual_gateway} = 172.30.16.1</msg>
 <var>${actual_gateway}</var>
 <doc>SSH to server and get gateway configuration</doc>
-<status status="PASS" start="2025-10-05T15:45:55.483556" elapsed="0.055151"/>
+<status status="FAIL" start="2025-10-10T19:31:57.899485" elapsed="0.003526">Connection not open</status>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.539410" level="INFO">${expected_gateway} = 10.26.216.4</msg>
 <var>${expected_gateway}</var>
 <arg>${TARGET_GATEWAY}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.538912" elapsed="0.000623"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.903603" elapsed="0.000047"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.540325" level="INFO">📋 EDS Expected: 10.26.216.4</msg>
 <arg>📋 EDS Expected: ${expected_gateway}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.539881" elapsed="0.000834"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.904202" elapsed="0.000046"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.541575" level="INFO">🖥️ Server Actual: 172.30.16.1</msg>
 <arg>🖥️ Server Actual: ${actual_gateway}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.541205" elapsed="0.000594"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.905188" elapsed="0.000104"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.542885" level="FAIL">❌ GATEWAY MISMATCH: EDS expects '10.26.216.4' but server shows '172.30.16.1': 172.30.16.1 != 10.26.216.4</msg>
 <arg>${actual_gateway}</arg>
 <arg>${expected_gateway}</arg>
 <arg>❌ GATEWAY MISMATCH: EDS expects '${expected_gateway}' but server shows '${actual_gateway}'</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="FAIL" start="2025-10-05T15:45:55.542088" elapsed="0.001398">❌ GATEWAY MISMATCH: EDS expects '10.26.216.4' but server shows '172.30.16.1': 172.30.16.1 != 10.26.216.4</status>
+<status status="NOT RUN" start="2025-10-10T19:31:57.905799" elapsed="0.000043"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>✅ Gateway validation: PASSED - EDS matches Server</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:45:55.543745" elapsed="0.000039"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.906628" elapsed="0.000066"/>
 </kw>
 <kw name="Log Test End" owner="network_keywords" type="TEARDOWN">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:45:55.545835" level="INFO">${timestamp} = 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.912974" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.545410" elapsed="0.000474"/>
+<status status="PASS" start="2025-10-10T19:31:57.912446" elapsed="0.000639"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.546640" level="INFO">✅ Completed: Critical - Gateway Validation (FAIL) at 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.913797" level="INFO">✅ Completed: Critical - Gateway Validation (FAIL) at 2025-10-10 19:31:57</msg>
 <arg>✅ Completed: ${test_name} (${test_status}) at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.546065" elapsed="0.000856"/>
+<status status="PASS" start="2025-10-10T19:31:57.913385" elapsed="0.000870"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-10-05T15:45:55.544258" elapsed="0.002829"/>
+<status status="PASS" start="2025-10-10T19:31:57.909470" elapsed="0.005252"/>
 </kw>
 <doc>🛣️ SSH to server and compare gateway configuration with EDS expectation</doc>
 <tag>critical</tag>
 <tag>gateway</tag>
 <tag>networking</tag>
-<status status="FAIL" start="2025-10-05T15:45:55.481185" elapsed="0.065977">❌ GATEWAY MISMATCH: EDS expects '10.26.216.4' but server shows '172.30.16.1': 172.30.16.1 != 10.26.216.4</status>
+<status status="FAIL" start="2025-10-10T19:31:57.892392" elapsed="0.023629">Connection not open</status>
 </test>
 <test id="s1-t5" name="Critical - DNS Name Validation" line="94">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:45:55.551034" level="INFO">${timestamp} = 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.920004" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.550784" elapsed="0.000290"/>
+<status status="PASS" start="2025-10-10T19:31:57.919418" elapsed="0.000668"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.551567" level="INFO">🚀 Starting: Critical - DNS Name Validation at 2025-10-05 15:45:55</msg>
+<msg time="2025-10-10T19:31:57.920895" level="INFO">🚀 Starting: Critical - DNS Name Validation at 2025-10-10 19:31:57</msg>
 <arg>🚀 Starting: ${test_name} at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.551251" elapsed="0.000459"/>
+<status status="PASS" start="2025-10-10T19:31:57.920385" elapsed="0.001132"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-10-05T15:45:55.550377" elapsed="0.001447"/>
+<status status="PASS" start="2025-10-10T19:31:57.918879" elapsed="0.002885"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:45:55.552126" level="INFO">🔍 Validating DNS configuration: EDS vs Server...</msg>
+<msg time="2025-10-10T19:31:57.922894" level="INFO">🔍 Validating DNS configuration: EDS vs Server...</msg>
 <arg>🔍 Validating DNS configuration: EDS vs Server...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.551970" elapsed="0.000411"/>
+<status status="PASS" start="2025-10-10T19:31:57.922480" elapsed="0.000984"/>
 </kw>
 <kw name="Get FQDN From Server" owner="network_keywords">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:45:55.553714" level="INFO">Executing command 'hostname -f 2&gt;/dev/null || hostname'.</msg>
-<msg time="2025-10-05T15:46:08.471427" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:46:08.471879" level="INFO">${fqdn_output} = alhxvdvitap01</msg>
+<msg time="2025-10-10T19:31:57.927617" level="INFO">Executing command 'hostname -f 2&gt;/dev/null || hostname'.</msg>
+<msg time="2025-10-10T19:31:57.927900" level="FAIL">Connection not open</msg>
 <var>${fqdn_output}</var>
 <arg>hostname -f 2&gt;/dev/null || hostname</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:45:55.553181" elapsed="12.920113"/>
+<status status="FAIL" start="2025-10-10T19:31:57.926989" elapsed="0.003488">Connection not open</status>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2025-10-05T15:46:08.474411" level="INFO">${fqdn} = alhxvdvitap01</msg>
 <var>${fqdn}</var>
 <arg>${fqdn_output}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.473934" elapsed="0.000538"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.930980" elapsed="0.000089"/>
 </kw>
 <return>
 <value>${fqdn}</value>
-<status status="PASS" start="2025-10-05T15:46:08.474639" elapsed="0.000122"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.931236" elapsed="0.000054"/>
 </return>
-<msg time="2025-10-05T15:46:08.475074" level="INFO">${actual_fqdn} = alhxvdvitap01</msg>
 <var>${actual_fqdn}</var>
 <doc>SSH to server and get FQDN</doc>
-<status status="PASS" start="2025-10-05T15:45:55.552829" elapsed="12.922297"/>
+<status status="FAIL" start="2025-10-10T19:31:57.925380" elapsed="0.006239">Connection not open</status>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.475858" level="INFO">${expected_cname} = alhxvdvitap01</msg>
 <var>${expected_cname}</var>
 <arg>${TARGET_CNAME}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.475438" elapsed="0.000487"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.932367" elapsed="0.000061"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.476928" level="INFO">${expected_domain} = gnscet.com</msg>
 <var>${expected_domain}</var>
 <arg>${TARGET_DOMAIN}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.476215" elapsed="0.000803"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.933080" elapsed="0.000055"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.477877" level="INFO">${expected_fqdn} = alhxvdvitap01.gnscet.com</msg>
 <var>${expected_fqdn}</var>
 <arg>${expected_cname}.${expected_domain}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.477274" elapsed="0.000675"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.933759" elapsed="0.000055"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.478796" level="INFO">📋 EDS Expected CNAME: alhxvdvitap01</msg>
 <arg>📋 EDS Expected CNAME: ${expected_cname}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.478306" elapsed="0.000759"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.934417" elapsed="0.000051"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.480082" level="INFO">📋 EDS Expected Domain: gnscet.com</msg>
 <arg>📋 EDS Expected Domain: ${expected_domain}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.479528" elapsed="0.000824"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.935066" elapsed="0.000051"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.481177" level="INFO">📋 EDS Expected FQDN: alhxvdvitap01.gnscet.com</msg>
 <arg>📋 EDS Expected FQDN: ${expected_fqdn}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.480793" elapsed="0.000654"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.936441" elapsed="0.000095"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.482173" level="INFO">🖥️ Server Actual FQDN: alhxvdvitap01</msg>
 <arg>🖥️ Server Actual FQDN: ${actual_fqdn}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.481756" elapsed="0.000717"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.937489" elapsed="0.000050"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${TARGET_HOSTNAME}</arg>
 <arg>${expected_cname}</arg>
 <arg>❌ CNAME MISMATCH: EDS CNAME '${expected_cname}' doesn't match hostname '${TARGET_HOSTNAME}'</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.482766" elapsed="0.000729"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.938107" elapsed="0.000088"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.484033" level="INFO">✅ DNS validation: PASSED - EDS configuration validated</msg>
 <arg>✅ DNS validation: PASSED - EDS configuration validated</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.483770" elapsed="0.001061"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.938842" elapsed="0.000098"/>
 </kw>
 <kw name="Log Test End" owner="network_keywords" type="TEARDOWN">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:46:08.486842" level="INFO">${timestamp} = 2025-10-05 15:46:08</msg>
+<msg time="2025-10-10T19:31:57.943489" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.486351" elapsed="0.000558"/>
+<status status="PASS" start="2025-10-10T19:31:57.942557" elapsed="0.001080"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.487958" level="INFO">✅ Completed: Critical - DNS Name Validation (PASS) at 2025-10-05 15:46:08</msg>
+<msg time="2025-10-10T19:31:57.944666" level="INFO">✅ Completed: Critical - DNS Name Validation (FAIL) at 2025-10-10 19:31:57</msg>
 <arg>✅ Completed: ${test_name} (${test_status}) at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.487168" elapsed="0.001004"/>
+<status status="PASS" start="2025-10-10T19:31:57.943943" elapsed="0.001267"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-10-05T15:46:08.485507" elapsed="0.003193"/>
+<status status="PASS" start="2025-10-10T19:31:57.939976" elapsed="0.005426"/>
 </kw>
 <doc>🌐 SSH to server and compare DNS configuration with EDS expectation</doc>
 <tag>critical</tag>
 <tag>dns</tag>
 <tag>hostname</tag>
-<status status="PASS" start="2025-10-05T15:45:55.547637" elapsed="12.941172"/>
+<status status="FAIL" start="2025-10-10T19:31:57.917763" elapsed="0.028005">Connection not open</status>
 </test>
 <test id="s1-t6" name="Normal - NTP Configuration Validation" line="117">
 <kw name="Log Test Start" owner="network_keywords" type="SETUP">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:46:08.492248" level="INFO">${timestamp} = 2025-10-05 15:46:08</msg>
+<msg time="2025-10-10T19:31:57.949402" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.491442" elapsed="0.000931"/>
+<status status="PASS" start="2025-10-10T19:31:57.949120" elapsed="0.000412"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.493124" level="INFO">🚀 Starting: Normal - NTP Configuration Validation at 2025-10-05 15:46:08</msg>
+<msg time="2025-10-10T19:31:57.949991" level="INFO">🚀 Starting: Normal - NTP Configuration Validation at 2025-10-10 19:31:57</msg>
 <arg>🚀 Starting: ${test_name} at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.492705" elapsed="0.000626"/>
+<status status="PASS" start="2025-10-10T19:31:57.949711" elapsed="0.000771"/>
 </kw>
 <arg>${TEST_NAME}</arg>
-<status status="PASS" start="2025-10-05T15:46:08.490713" elapsed="0.002800"/>
+<status status="PASS" start="2025-10-10T19:31:57.948690" elapsed="0.001958"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.494084" level="INFO">🔍 Validating NTP service on server...</msg>
+<msg time="2025-10-10T19:31:57.951320" level="INFO">🔍 Validating NTP service on server...</msg>
 <arg>🔍 Validating NTP service on server...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.493803" elapsed="0.000459"/>
+<status status="PASS" start="2025-10-10T19:31:57.951101" elapsed="0.000613"/>
 </kw>
 <kw name="Get NTP Status From Server" owner="network_keywords">
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:46:08.495257" level="INFO">Executing command 'systemctl is-active chronyd 2&gt;/dev/null || systemctl is-active ntp 2&gt;/dev/null || systemctl is-active ntpd 2&gt;/dev/null || echo "inactive"'.</msg>
-<msg time="2025-10-05T15:46:08.557483" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:46:08.557815" level="INFO">${ntp_status} = inactive
-inactive
-inactive
-inactive</msg>
+<msg time="2025-10-10T19:31:57.952924" level="INFO">Executing command 'systemctl is-active chronyd 2&gt;/dev/null || systemctl is-active ntp 2&gt;/dev/null || systemctl is-active ntpd 2&gt;/dev/null || echo "inactive"'.</msg>
+<msg time="2025-10-10T19:31:57.953065" level="FAIL">Connection not open</msg>
 <var>${ntp_status}</var>
 <arg>systemctl is-active chronyd 2&gt;/dev/null || systemctl is-active ntp 2&gt;/dev/null || systemctl is-active ntpd 2&gt;/dev/null || echo "inactive"</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.495058" elapsed="0.062797"/>
+<status status="FAIL" start="2025-10-10T19:31:57.952780" elapsed="0.001774">Connection not open</status>
 </kw>
 <kw name="Strip String" owner="String">
-<msg time="2025-10-05T15:46:08.558452" level="INFO">${ntp_status} = inactive
-inactive
-inactive
-inactive</msg>
 <var>${ntp_status}</var>
 <arg>${ntp_status}</arg>
 <doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.558178" elapsed="0.000310"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.954769" elapsed="0.000031"/>
 </kw>
 <return>
 <value>${ntp_status}</value>
-<status status="PASS" start="2025-10-05T15:46:08.558554" elapsed="0.000055"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.954868" elapsed="0.000027"/>
 </return>
-<msg time="2025-10-05T15:46:08.558833" level="INFO">${ntp_status} = inactive
-inactive
-inactive
-inactive</msg>
 <var>${ntp_status}</var>
 <doc>SSH to server and check NTP service status</doc>
-<status status="PASS" start="2025-10-05T15:46:08.494613" elapsed="0.064250"/>
+<status status="FAIL" start="2025-10-10T19:31:57.952396" elapsed="0.002643">Connection not open</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.560051" level="INFO">🖥️ Server NTP Status: inactive
-inactive
-inactive
-inactive</msg>
 <arg>🖥️ Server NTP Status: ${ntp_status}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.559800" elapsed="0.000403"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.955685" elapsed="0.000044"/>
 </kw>
 <kw name="Should Contain Any" owner="BuiltIn">
 <arg>${ntp_status}</arg>
@@ -1297,142 +1163,141 @@ inactive</msg>
 <arg>synchronized</arg>
 <arg>❌ NTP SERVICE: Time synchronization service not active on server</arg>
 <doc>Fails if ``container`` does not contain any of the ``*items``.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.560550" elapsed="0.000290"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.956202" elapsed="0.000042"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.561140" level="INFO">✅ NTP validation: PASSED - Time sync service active</msg>
 <arg>✅ NTP validation: PASSED - Time sync service active</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.560994" elapsed="0.000312"/>
+<status status="NOT RUN" start="2025-10-10T19:31:57.956797" elapsed="0.000042"/>
 </kw>
 <kw name="Log Test End" owner="network_keywords" type="TEARDOWN">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:46:08.562360" level="INFO">${timestamp} = 2025-10-05 15:46:08</msg>
+<msg time="2025-10-10T19:31:57.960608" level="INFO">${timestamp} = 2025-10-10 19:31:57</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.562135" elapsed="0.000261"/>
+<status status="PASS" start="2025-10-10T19:31:57.959448" elapsed="0.001252"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:46:08.563001" level="INFO">✅ Completed: Normal - NTP Configuration Validation (PASS) at 2025-10-05 15:46:08</msg>
+<msg time="2025-10-10T19:31:57.961625" level="INFO">✅ Completed: Normal - NTP Configuration Validation (FAIL) at 2025-10-10 19:31:57</msg>
 <arg>✅ Completed: ${test_name} (${test_status}) at ${timestamp}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.562705" elapsed="0.000436"/>
+<status status="PASS" start="2025-10-10T19:31:57.961062" elapsed="0.000982"/>
 </kw>
 <arg>${TEST_NAME}</arg>
 <arg>${TEST_STATUS}</arg>
-<status status="PASS" start="2025-10-05T15:46:08.561681" elapsed="0.001574"/>
+<status status="PASS" start="2025-10-10T19:31:57.958200" elapsed="0.003999"/>
 </kw>
 <doc>📈 SSH to server and validate NTP service is running</doc>
 <tag>normal</tag>
 <tag>ntp</tag>
 <tag>time</tag>
-<status status="PASS" start="2025-10-05T15:46:08.489562" elapsed="0.073743"/>
+<status status="FAIL" start="2025-10-10T19:31:57.947619" elapsed="0.014911">Connection not open</status>
 </test>
 <kw name="Generate Executive Summary" owner="network_keywords" type="TEARDOWN">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:46:08.565191" level="INFO">${end_time} = 2025-10-05 15:46:08</msg>
+<msg time="2025-10-10T19:31:57.965241" level="INFO">${end_time} = 2025-10-10 19:31:57</msg>
 <var>${end_time}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.564862" elapsed="0.000366"/>
+<status status="PASS" start="2025-10-10T19:31:57.964939" elapsed="0.000345"/>
 </kw>
 <kw name="Subtract Date From Date" owner="DateTime">
-<msg time="2025-10-05T15:46:08.566396" level="INFO">${duration} = 15.0</msg>
+<msg time="2025-10-10T19:31:57.968573" level="INFO">${duration} = 21.0</msg>
 <var>${duration}</var>
 <arg>${end_time}</arg>
 <arg>${TEST_START_TIME}</arg>
 <doc>Subtracts date from another date and returns time between.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.565366" elapsed="0.001060"/>
+<status status="PASS" start="2025-10-10T19:31:57.965455" elapsed="0.003190"/>
 </kw>
 <kw name="Close All Connections" owner="SSHLibrary">
 <doc>Closes all open connections.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.566542" elapsed="0.000315"/>
+<status status="PASS" start="2025-10-10T19:31:57.968875" elapsed="0.000217"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n🎯 ═══════════════════════════════════════════════════════════════</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.566970" elapsed="0.000240"/>
+<status status="PASS" start="2025-10-10T19:31:57.969258" elapsed="0.000594"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📊 EXECUTIVE SUMMARY - ${TEST_SUITE_ID} EDS vs SERVER VALIDATION</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.567338" elapsed="0.000200"/>
+<status status="PASS" start="2025-10-10T19:31:57.970074" elapsed="0.000549"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>═══════════════════════════════════════════════════════════════</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.567667" elapsed="0.000147"/>
+<status status="PASS" start="2025-10-10T19:31:57.970831" elapsed="0.000342"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>⏱️ Duration: ${duration} seconds</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.567932" elapsed="0.000184"/>
+<status status="PASS" start="2025-10-10T19:31:57.971393" elapsed="0.000633"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🎯 Target: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.568311" elapsed="0.000363"/>
+<status status="PASS" start="2025-10-10T19:31:57.972232" elapsed="0.000551"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📋 EDS Data: Successfully loaded and compared</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.568841" elapsed="0.000144"/>
+<status status="PASS" start="2025-10-10T19:31:57.972984" elapsed="0.000592"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🔌 SSH Connection: Used for server validation</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.569107" elapsed="0.000136"/>
+<status status="PASS" start="2025-10-10T19:31:57.974237" elapsed="0.000638"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📊 Suite Reports: ${TEST_REPORTS_DIR}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.569397" elapsed="0.000243"/>
+<status status="PASS" start="2025-10-10T19:31:57.975301" elapsed="0.000867"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>📊 Overall Reports: ${REPORTS_DIR}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.569788" elapsed="0.000222"/>
+<status status="PASS" start="2025-10-10T19:31:57.976641" elapsed="0.000836"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>🏆 Overall Status: TEST COMPLETED</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.570156" elapsed="0.000140"/>
+<status status="PASS" start="2025-10-10T19:31:57.977731" elapsed="0.000395"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>═══════════════════════════════════════════════════════════════</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-05T15:46:08.570432" elapsed="0.000150"/>
+<status status="PASS" start="2025-10-10T19:31:57.978608" elapsed="0.000448"/>
 </kw>
 <doc>Generate test summary and close connections</doc>
-<status status="PASS" start="2025-10-05T15:46:08.564226" elapsed="0.006431"/>
+<status status="PASS" start="2025-10-10T19:31:57.964599" elapsed="0.014636"/>
 </kw>
 <doc>🌐 Hostname Validation Test Suite - Test-3
 🔍 Process: Find hostname in EDS → SSH to IP → Compare server vs EDS
 ✅ Pass if server matches EDS, ❌ Fail if mismatch</doc>
-<status status="FAIL" start="2025-10-05T15:45:42.465026" elapsed="26.105659"/>
+<status status="FAIL" start="2025-10-10T19:31:34.998387" elapsed="22.980932"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="2" skip="0">All Tests</stat>
+<stat pass="0" fail="6" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">compliance</stat>
-<stat pass="3" fail="2" skip="0">critical</stat>
-<stat pass="1" fail="0" skip="0">dns</stat>
+<stat pass="0" fail="1" skip="0">compliance</stat>
+<stat pass="0" fail="5" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">dns</stat>
 <stat pass="0" fail="1" skip="0">gateway</stat>
-<stat pass="2" fail="0" skip="0">hostname</stat>
-<stat pass="1" fail="0" skip="0">ip</stat>
-<stat pass="1" fail="2" skip="0">networking</stat>
-<stat pass="1" fail="0" skip="0">normal</stat>
-<stat pass="1" fail="0" skip="0">ntp</stat>
+<stat pass="0" fail="2" skip="0">hostname</stat>
+<stat pass="0" fail="1" skip="0">ip</stat>
+<stat pass="0" fail="3" skip="0">networking</stat>
+<stat pass="0" fail="1" skip="0">normal</stat>
+<stat pass="0" fail="1" skip="0">ntp</stat>
 <stat pass="0" fail="1" skip="0">subnet</stat>
-<stat pass="1" fail="0" skip="0">time</stat>
+<stat pass="0" fail="1" skip="0">time</stat>
 </tag>
 <suite>
-<stat name="Network Validation" id="s1" pass="4" fail="2" skip="0">Network Validation</stat>
+<stat name="Network Validation" id="s1" pass="0" fail="6" skip="0">Network Validation</stat>
 </suite>
 </statistics>
 <errors>

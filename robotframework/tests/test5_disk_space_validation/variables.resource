@@ -35,6 +35,10 @@ ${CMD_MEMORY_DETAILED}    cat /proc/meminfo
 ${CMD_VOLUME_GROUPS}      vgs
 ${CMD_LOGICAL_VOLUMES}    lvs
 
+# 🎯 Target Server Configuration (from command line)
+${TARGET_HOSTNAME}        # Set via command line --variable TARGET_HOSTNAME:value
+${TARGET_IP}              ${EMPTY}    # Will be populated from EDS lookup
+
 # 📋 EDS Field Mappings (populated at runtime from EDS lookup)
 ${TARGET_CPU_CORES}       ${EMPTY}    # Will be set from EDS
 ${TARGET_RAM}             ${EMPTY}    # Will be set from EDS

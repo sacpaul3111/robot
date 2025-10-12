@@ -17,11 +17,14 @@ Test Setup       Log Test Start    ${TEST_NAME}
 Test Teardown    Log Test End      ${TEST_NAME}    ${TEST_STATUS}
 
 *** Test Cases ***
-Critical - Connect to Target Server
+Critical - Step 1: Connect to Target Server
     [Documentation]    🔗 Establish direct connection to target machine via SSH
-    [Tags]             critical    connection    ssh    infrastructure
+    ...                Step 1 of validation process: Connect to Target
+    [Tags]             critical    connection    step1    ssh    infrastructure
 
-    Log    🔍 Verifying SSH connection to target server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 1: CONNECT TO TARGET SERVER VIA SSH    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Target: ${TARGET_HOSTNAME} (${TARGET_IP})    console=yes
 
     # Connection already established in Suite Setup
@@ -29,12 +32,16 @@ Critical - Connect to Target Server
     Should Contain    ${connection_status}    Connection active
 
     Log    ✅ SSH connection verified and active    console=yes
+    Log    ✅ STEP 1: COMPLETED - SSH connection established    console=yes
 
-Critical - Collect System Journal Logs (journalctl)
+Critical - Step 2.1: Collect System Journal Logs (journalctl)
     [Documentation]    📋 Collect system journal logs using journalctl
-    [Tags]             critical    logs    journalctl    systemd
+    ...                Step 2 of validation process: Collect Event Log Data (Part 1)
+    [Tags]             critical    logs    step2    data_collection    journalctl
 
-    Log    🔍 Collecting system journal logs...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.1: COLLECT SYSTEM JOURNAL LOGS (JOURNALCTL)    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect journalctl data with various filters
     ${journal_logs}=    Collect Journalctl Logs
@@ -47,12 +54,16 @@ Critical - Collect System Journal Logs (journalctl)
 
     Log    📄 Journal logs saved to: ${journal_file}    console=yes
     Log    ✅ System journal logs collected successfully    console=yes
+    Log    ✅ STEP 2.1: COMPLETED - Journal logs collected    console=yes
 
-Critical - Collect Boot Messages (dmesg)
+Critical - Step 2.2: Collect Boot Messages (dmesg)
     [Documentation]    🚀 Collect kernel boot messages using dmesg
-    [Tags]             critical    logs    dmesg    kernel    boot
+    ...                Step 2 of validation process: Collect Event Log Data (Part 2)
+    [Tags]             critical    logs    step2    data_collection    dmesg
 
-    Log    🔍 Collecting kernel boot messages...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.2: COLLECT BOOT MESSAGES (DMESG)    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect dmesg output
     ${dmesg_output}=    Collect Dmesg Output
@@ -66,12 +77,16 @@ Critical - Collect Boot Messages (dmesg)
 
     Log    📄 dmesg output saved to: ${dmesg_file}    console=yes
     Log    ✅ Kernel boot messages collected successfully    console=yes
+    Log    ✅ STEP 2.2: COMPLETED - Boot messages collected    console=yes
 
-Critical - Collect System Log Files
+Critical - Step 2.3: Collect System Log Files
     [Documentation]    📂 Collect important system log files from /var/log
-    [Tags]             critical    logs    var_log    system
+    ...                Step 2 of validation process: Collect Event Log Data (Part 3)
+    [Tags]             critical    logs    step2    data_collection    var_log
 
-    Log    🔍 Collecting system log files from /var/log...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.3: COLLECT SYSTEM LOG FILES    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect various system logs
     ${system_logs}=    Collect System Log Files
@@ -84,12 +99,16 @@ Critical - Collect System Log Files
 
     Log    📄 System logs saved to: ${syslog_file}    console=yes
     Log    ✅ System log files collected successfully    console=yes
+    Log    ✅ STEP 2.3: COMPLETED - System log files collected    console=yes
 
-Critical - Check for Critical Errors in Journalctl
+Critical - Step 3.1: Check for Critical Errors in Journalctl
     [Documentation]    ⚠️ Search for critical and emergency level errors in journal
-    [Tags]             critical    validation    errors    journalctl
+    ...                Step 3 of validation process: Validate Against Standards (Part 1)
+    [Tags]             critical    validation    step3    errors    journalctl
 
-    Log    🔍 Searching for critical errors in journal...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.1: CHECK FOR CRITICAL ERRORS IN JOURNALCTL    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Search for critical errors
     ${critical_errors}=    Search Critical Errors in Journal
@@ -103,12 +122,16 @@ Critical - Check for Critical Errors in Journalctl
     Log    ⚠️ Critical error count: ${error_count}    console=yes
     Log    📄 Critical errors saved to: ${errors_file}    console=yes
     Log    ✅ Critical error validation completed    console=yes
+    Log    ✅ STEP 3.1: COMPLETED - Critical errors checked    console=yes
 
-Critical - Validate Clean Boot Sequence
+Critical - Step 3.2: Validate Clean Boot Sequence
     [Documentation]    🚀 Validate system boot sequence is clean without errors
-    [Tags]             critical    validation    boot    sequence
+    ...                Step 3 of validation process: Validate Against Standards (Part 2)
+    [Tags]             critical    validation    step3    boot    sequence
 
-    Log    🔍 Validating boot sequence...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.2: VALIDATE CLEAN BOOT SEQUENCE    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Analyze boot sequence
     ${boot_analysis}=    Analyze Boot Sequence
@@ -118,12 +141,16 @@ Critical - Validate Clean Boot Sequence
 
     Log    📄 Boot analysis saved to: ${boot_file}    console=yes
     Log    ✅ Boot sequence validation completed    console=yes
+    Log    ✅ STEP 3.2: COMPLETED - Boot sequence validated    console=yes
 
-Critical - Validate Service Startup Status
+Critical - Step 3.3: Validate Service Startup Status
     [Documentation]    🔧 Verify all critical services started successfully
-    [Tags]             critical    validation    services    startup
+    ...                Step 3 of validation process: Validate Against Standards (Part 3)
+    [Tags]             critical    validation    step3    services    startup
 
-    Log    🔍 Validating service startup status...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.3: VALIDATE SERVICE STARTUP STATUS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Check service startup from logs
     ${service_startup}=    Validate Service Startup Status
@@ -133,12 +160,16 @@ Critical - Validate Service Startup Status
 
     Log    📄 Service startup analysis saved to: ${startup_file}    console=yes
     Log    ✅ Service startup validation completed    console=yes
+    Log    ✅ STEP 3.3: COMPLETED - Service startup validated    console=yes
 
-Critical - Check Log Rotation Configuration
+Critical - Step 3.4: Check Log Rotation Configuration
     [Documentation]    🔄 Validate log rotation is properly configured
-    [Tags]             critical    validation    logrotate    configuration
+    ...                Step 3 of validation process: Validate Against Standards (Part 4)
+    [Tags]             critical    validation    step3    logrotate    configuration
 
-    Log    🔍 Checking log rotation configuration...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.4: CHECK LOG ROTATION CONFIGURATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect log rotation configuration
     ${logrotate_config}=    Check Logrotate Configuration
@@ -148,6 +179,7 @@ Critical - Check Log Rotation Configuration
 
     Log    📄 Logrotate configuration saved to: ${logrotate_file}    console=yes
     Log    ✅ Log rotation configuration validated    console=yes
+    Log    ✅ STEP 3.4: COMPLETED - Log rotation validated    console=yes
 
 Normal - Analyze Repeating Error Patterns
     [Documentation]    🔁 Search for repeating error patterns that might indicate issues

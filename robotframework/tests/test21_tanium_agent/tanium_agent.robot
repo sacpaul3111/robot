@@ -17,11 +17,14 @@ Test Setup       Log Test Start    ${TEST_NAME}
 Test Teardown    Log Test End      ${TEST_NAME}    ${TEST_STATUS}
 
 *** Test Cases ***
-Critical - Connect to Target Server
+Critical - Step 1: Connect to Target Server
     [Documentation]    🔗 Establish direct connection to target machine via SSH
-    [Tags]             critical    connection    ssh    infrastructure
+    ...                Step 1 of validation process: Connect to Target
+    [Tags]             critical    connection    step1    ssh    infrastructure
 
-    Log    🔍 Verifying SSH connection to target server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 1: CONNECT TO TARGET SERVER VIA SSH    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Target: ${TARGET_HOSTNAME} (${TARGET_IP})    console=yes
 
     # Connection already established in Suite Setup
@@ -29,12 +32,16 @@ Critical - Connect to Target Server
     Should Contain    ${connection_status}    Connection active
 
     Log    ✅ SSH connection verified and active    console=yes
+    Log    ✅ STEP 1: COMPLETED - SSH connection established    console=yes
 
-Critical - Check Tanium Agent Installation
+Critical - Step 2.1: Check Tanium Agent Installation
     [Documentation]    📦 Verify Tanium agent is installed on the system
-    [Tags]             critical    tanium    agent    installation
+    ...                Step 2 of validation process: Collect Tanium Agent Data (Part 1)
+    [Tags]             critical    tanium    step2    data_collection    installation
 
-    Log    🔍 Checking Tanium agent installation...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.1: CHECK TANIUM AGENT INSTALLATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Check Tanium agent installation
     ${agent_install}=    Check Tanium Agent Installation
@@ -44,12 +51,16 @@ Critical - Check Tanium Agent Installation
 
     Log    📄 Agent installation details saved to: ${install_file}    console=yes
     Log    ✅ Tanium agent installation check completed    console=yes
+    Log    ✅ STEP 2.1: COMPLETED - Agent installation checked    console=yes
 
-Critical - Validate Tanium Agent Service Status
+Critical - Step 2.2: Validate Tanium Agent Service Status
     [Documentation]    🔧 Verify Tanium agent service is running
-    [Tags]             critical    tanium    service    status
+    ...                Step 2 of validation process: Collect Tanium Agent Data (Part 2)
+    [Tags]             critical    tanium    step2    data_collection    service
 
-    Log    🔍 Validating Tanium agent service status...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.2: VALIDATE TANIUM AGENT SERVICE STATUS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Check service status
     ${service_status}=    Check Tanium Agent Service Status
@@ -63,12 +74,16 @@ Critical - Validate Tanium Agent Service Status
 
     Log    📄 Service status saved to: ${status_file}    console=yes
     Log    ✅ Tanium agent service is running    console=yes
+    Log    ✅ STEP 2.2: COMPLETED - Service status validated    console=yes
 
-Critical - Check Tanium Server Connectivity
+Critical - Step 3.1: Check Tanium Server Connectivity
     [Documentation]    🌐 Test connectivity to Tanium server
-    [Tags]             critical    tanium    connectivity    network
+    ...                Step 3 of validation process: Validate Against Standards (Part 1)
+    [Tags]             critical    tanium    step3    validation    connectivity
 
-    Log    🔍 Testing Tanium server connectivity...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.1: CHECK TANIUM SERVER CONNECTIVITY    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Expected Tanium Server: ${EXPECTED_TANIUM_SERVER}    console=yes
 
     # Test server connectivity
@@ -79,12 +94,16 @@ Critical - Check Tanium Server Connectivity
 
     Log    📄 Connectivity test saved to: ${conn_file}    console=yes
     Log    ✅ Tanium server connectivity test completed    console=yes
+    Log    ✅ STEP 3.1: COMPLETED - Server connectivity validated    console=yes
 
-Critical - Collect Tanium Agent Version
+Critical - Step 3.2: Collect Tanium Agent Version
     [Documentation]    📋 Collect Tanium agent version information
-    [Tags]             critical    tanium    version    info
+    ...                Step 3 of validation process: Validate Against Standards (Part 2)
+    [Tags]             critical    tanium    step3    validation    version
 
-    Log    🔍 Collecting Tanium agent version...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.2: COLLECT TANIUM AGENT VERSION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect agent version
     ${agent_version}=    Collect Tanium Agent Version
@@ -99,12 +118,16 @@ Critical - Collect Tanium Agent Version
     Log    📋 Agent Version: ${agent_version}    console=yes
     Log    📄 Version information saved to: ${version_file}    console=yes
     Log    ✅ Tanium agent version collected    console=yes
+    Log    ✅ STEP 3.2: COMPLETED - Agent version collected    console=yes
 
-Critical - Validate Tanium Agent Configuration
+Critical - Step 3.3: Validate Tanium Agent Configuration
     [Documentation]    ⚙️ Validate Tanium agent configuration files
-    [Tags]             critical    tanium    configuration    validation
+    ...                Step 3 of validation process: Validate Against Standards (Part 3)
+    [Tags]             critical    tanium    step3    validation    configuration
 
-    Log    🔍 Validating Tanium agent configuration...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.3: VALIDATE TANIUM AGENT CONFIGURATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect and validate configuration
     ${config_data}=    Validate Tanium Agent Configuration
@@ -114,12 +137,16 @@ Critical - Validate Tanium Agent Configuration
 
     Log    📄 Configuration saved to: ${config_file}    console=yes
     Log    ✅ Tanium agent configuration validated    console=yes
+    Log    ✅ STEP 3.3: COMPLETED - Configuration validated    console=yes
 
-Critical - Check Tanium Agent Registration Status
+Critical - Step 3.4: Check Tanium Agent Registration Status
     [Documentation]    📝 Verify agent is registered with Tanium server
-    [Tags]             critical    tanium    registration    status
+    ...                Step 3 of validation process: Validate Against Standards (Part 4)
+    [Tags]             critical    tanium    step3    validation    registration
 
-    Log    🔍 Checking Tanium agent registration status...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.4: CHECK TANIUM AGENT REGISTRATION STATUS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Check registration status
     ${registration_status}=    Check Tanium Agent Registration
@@ -129,12 +156,16 @@ Critical - Check Tanium Agent Registration Status
 
     Log    📄 Registration status saved to: ${reg_file}    console=yes
     Log    ✅ Agent registration status checked    console=yes
+    Log    ✅ STEP 3.4: COMPLETED - Registration status checked    console=yes
 
-Critical - Validate Tanium Sensor Inventory
+Critical - Step 3.5: Validate Tanium Sensor Inventory
     [Documentation]    📊 Validate Tanium is collecting sensor inventory data
-    [Tags]             critical    tanium    inventory    sensors
+    ...                Step 3 of validation process: Validate Against Standards (Part 5)
+    [Tags]             critical    tanium    step3    validation    inventory
 
-    Log    🔍 Validating Tanium sensor inventory...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.5: VALIDATE TANIUM SENSOR INVENTORY    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect sensor inventory
     ${sensor_inventory}=    Collect Tanium Sensor Inventory
@@ -144,12 +175,16 @@ Critical - Validate Tanium Sensor Inventory
 
     Log    📄 Sensor inventory saved to: ${inventory_file}    console=yes
     Log    ✅ Sensor inventory validation completed    console=yes
+    Log    ✅ STEP 3.5: COMPLETED - Sensor inventory validated    console=yes
 
-Critical - Test Tanium Query Responsiveness
+Critical - Step 3.6: Test Tanium Query Responsiveness
     [Documentation]    ⚡ Test agent's ability to respond to Tanium queries
-    [Tags]             critical    tanium    query    responsiveness
+    ...                Step 3 of validation process: Validate Against Standards (Part 6)
+    [Tags]             critical    tanium    step3    validation    query
 
-    Log    🔍 Testing Tanium query responsiveness...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.6: TEST TANIUM QUERY RESPONSIVENESS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Test query responsiveness
     ${query_test}=    Test Tanium Query Response
@@ -159,6 +194,7 @@ Critical - Test Tanium Query Responsiveness
 
     Log    📄 Query test results saved to: ${query_file}    console=yes
     Log    ✅ Query responsiveness test completed    console=yes
+    Log    ✅ STEP 3.6: COMPLETED - Query responsiveness tested    console=yes
 
 Normal - Check Tanium Module Installations
     [Documentation]    📦 Verify required Tanium modules are installed

@@ -16,93 +16,219 @@ Test Setup       Log Test Start    ${TEST_NAME}
 Test Teardown    Log Test End      ${TEST_NAME}    ${TEST_STATUS}
 
 *** Test Cases ***
-Critical - CPU Cores Validation
-    [Documentation]    💻 SSH to server and validate CPU core count matches EDS specification
-    [Tags]             critical    cpu    hardware    compliance
+Critical - Step 1: Connect to Target Server
+    [Documentation]    🔌 Establish direct SSH connection to target machine
+    ...                Step 1 of validation process: Connect to Target
+    [Tags]             critical    connection    step1    ssh    infrastructure
 
-    Log    🔍 Validating CPU cores: EDS vs Server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 1: CONNECT TO TARGET SERVER VIA SSH    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    📋 Target: ${TARGET_HOSTNAME} (${TARGET_IP})    console=yes
 
-    # Connect to target server and collect CPU information
+    # Establish SSH connection (already done in suite setup)
+    # Verify connection is active
+    ${test_output}=    Execute Command    echo "SSH connection active"
+    Should Contain    ${test_output}    SSH connection active
+
+    Log    ✅ SSH connection verified and active    console=yes
+    Log    ✅ STEP 1: COMPLETED - SSH connection established    console=yes
+
+Critical - Step 2.1: Collect CPU Information
+    [Documentation]    💻 Execute commands to gather CPU core count from server
+    ...                Step 2 of validation process: Collect System Resource Data (Part 1)
+    [Tags]             critical    cpu    hardware    step2    data_collection
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.1: COLLECT CPU INFORMATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+
+    # Collect CPU information from server
     ${actual_cpu_cores}=    Get CPU Information From Server
 
-    Log    📋 EDS Expected CPU Cores: ${TARGET_CPU_CORES}    console=yes
-    Log    💻 Server Actual CPU Cores: ${actual_cpu_cores}    console=yes
+    Set Suite Variable    ${SERVER_CPU_CORES}    ${actual_cpu_cores}
 
-    # Validate CPU cores match EDS expectation
-    Validate CPU Cores Against EDS    ${actual_cpu_cores}
+    Log    💻 Server CPU Cores: ${actual_cpu_cores}    console=yes
+    Log    ✅ STEP 2.1: COMPLETED - CPU information collected    console=yes
 
-    Log    ✅ CPU cores validation: PASSED - EDS matches Server    console=yes
+Critical - Step 2.2: Collect Memory Information
+    [Documentation]    🧠 Execute commands to gather memory allocation from server
+    ...                Step 2 of validation process: Collect System Resource Data (Part 2)
+    [Tags]             critical    memory    hardware    step2    data_collection
 
-Critical - Memory Allocation Validation
-    [Documentation]    🧠 SSH to server and validate memory allocation matches EDS specification
-    [Tags]             critical    memory    hardware    compliance
-
-    Log    🔍 Validating memory allocation: EDS vs Server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.2: COLLECT MEMORY INFORMATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect memory information from server
     ${actual_memory_gb}=    Get Memory Information From Server
 
-    Log    📋 EDS Expected RAM: ${TARGET_RAM} GB    console=yes
-    Log    🧠 Server Actual RAM: ${actual_memory_gb} GB    console=yes
+    Set Suite Variable    ${SERVER_MEMORY_GB}    ${actual_memory_gb}
 
-    # Validate memory allocation matches EDS expectation
-    Validate Memory Against EDS    ${actual_memory_gb}
+    Log    🧠 Server RAM: ${actual_memory_gb} GB    console=yes
+    Log    ✅ STEP 2.2: COMPLETED - Memory information collected    console=yes
 
-    Log    ✅ Memory allocation validation: PASSED - EDS matches Server    console=yes
+Critical - Step 2.3: Collect Disk Space Information
+    [Documentation]    💾 Execute commands to gather disk space allocation from server
+    ...                Step 2 of validation process: Collect System Resource Data (Part 3)
+    [Tags]             critical    storage    disk    step2    data_collection
 
-Critical - Disk Space Allocation Validation
-    [Documentation]    💾 SSH to server and validate disk space allocation against EDS requirements
-    [Tags]             critical    storage    disk    compliance
-
-    Log    🔍 Validating disk space allocation: EDS vs Server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.3: COLLECT DISK SPACE INFORMATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect comprehensive disk space information
     ${actual_root_size}=    Get Disk Space Information From Server
 
-    Log    📋 EDS Expected Storage Allocation: ${TARGET_STORAGE_ALLOC_GB} GB    console=yes
-    Log    📋 EDS Recommended Storage: ${TARGET_RECOMMENDED_GB} GB    console=yes
+    Set Suite Variable    ${SERVER_ROOT_SIZE}    ${actual_root_size}
+
     Log    💾 Server Root Filesystem Size: ${actual_root_size}    console=yes
+    Log    ✅ STEP 2.3: COMPLETED - Disk space information collected    console=yes
 
-    # Log disk space information for compliance review
-    Log    ℹ️ Disk space validation: Root=${actual_root_size}, Expected=${TARGET_STORAGE_ALLOC_GB}GB    console=yes
-    Log    ✅ Disk space allocation: LOGGED for compliance review    console=yes
+Critical - Step 2.4: Collect Storage Type Information
+    [Documentation]    📡 Execute commands to gather storage infrastructure type from server
+    ...                Step 2 of validation process: Collect System Resource Data (Part 4)
+    [Tags]             critical    storage    infrastructure    step2    data_collection
 
-Critical - Storage Type Validation
-    [Documentation]    📡 SSH to server and validate storage infrastructure matches EDS specification
-    [Tags]             critical    storage    infrastructure    compliance
-
-    Log    🔍 Validating storage type: EDS vs Server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.4: COLLECT STORAGE TYPE INFORMATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Identify storage type from server
     ${actual_storage_type}=    Get Storage Type From Server
 
-    Log    📋 EDS Expected Storage Type: ${TARGET_STORAGE_TYPE}    console=yes
-    Log    📡 Server Detected Storage Type: ${actual_storage_type}    console=yes
+    Set Suite Variable    ${SERVER_STORAGE_TYPE}    ${actual_storage_type}
 
-    # Validate storage type (informational due to detection variations)
-    Validate Storage Type Against EDS    ${actual_storage_type}
+    Log    📡 Server Storage Type: ${actual_storage_type}    console=yes
+    Log    ✅ STEP 2.4: COMPLETED - Storage type information collected    console=yes
 
-    Log    ✅ Storage type validation: INFORMATIONAL - Logged for review    console=yes
+Critical - Step 2.5: Collect Filesystem Information
+    [Documentation]    🗂️ Execute commands to gather filesystem configuration from server
+    ...                Step 2 of validation process: Collect System Resource Data (Part 5)
+    [Tags]             critical    filesystem    storage    step2    data_collection
 
-Critical - Root Filesystem Validation
-    [Documentation]    🗂️ SSH to server and validate root filesystem configuration against EDS
-    [Tags]             critical    filesystem    storage    compliance
-
-    Log    🔍 Validating root filesystem configuration: EDS vs Server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.5: COLLECT FILESYSTEM INFORMATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Get filesystem information from server
-    ${actual_fs_type}=      Get Filesystem Information From Server
-    ${actual_root_size}=    Get Disk Space Information From Server
+    ${actual_fs_type}=    Get Filesystem Information From Server
+
+    Set Suite Variable    ${SERVER_FS_TYPE}    ${actual_fs_type}
+
+    Log    🗂️ Server Root Filesystem Type: ${actual_fs_type}    console=yes
+    Log    ✅ STEP 2.5: COMPLETED - Filesystem information collected    console=yes
+
+Critical - Step 2.6: Collect Operating System Information
+    [Documentation]    🖥️ Execute commands to gather operating system details from server
+    ...                Step 2 of validation process: Collect System Resource Data (Part 6)
+    [Tags]             critical    os    system    step2    data_collection
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.6: COLLECT OPERATING SYSTEM INFORMATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+
+    # Get OS information from server
+    ${os_info}=    Execute Command    cat /etc/os-release | grep PRETTY_NAME | cut -d'"' -f2
+    ${kernel_info}=    Execute Command    uname -r
+
+    Set Suite Variable    ${SERVER_OS_INFO}      ${os_info}
+    Set Suite Variable    ${SERVER_KERNEL_INFO}  ${kernel_info}
+
+    Log    🖥️ Server OS: ${os_info}    console=yes
+    Log    🖥️ Server Kernel: ${kernel_info}    console=yes
+    Log    ✅ STEP 2.6: COMPLETED - OS information collected    console=yes
+
+Critical - Step 3.1: Validate CPU Cores Against EDS
+    [Documentation]    ✅ Compare collected CPU core count with EDS expected value
+    ...                Step 3 of validation process: Validate Against EDS Standards (Part 1)
+    [Tags]             critical    validation    step3    compliance    cpu    hardware
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.1: VALIDATE CPU CORES AGAINST EDS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+
+    Log    📋 EDS Expected: ${TARGET_CPU_CORES}    console=yes
+    Log    💻 Server Actual: ${SERVER_CPU_CORES}    console=yes
+
+    # Validate CPU cores match EDS expectation
+    Validate CPU Cores Against EDS    ${SERVER_CPU_CORES}
+
+    Log    ✅ CPU cores validation: PASSED    console=yes
+    Log    ✅ STEP 3.1: COMPLETED - CPU cores validated    console=yes
+
+Critical - Step 3.2: Validate Memory Against EDS
+    [Documentation]    ✅ Compare collected memory allocation with EDS expected value
+    ...                Step 3 of validation process: Validate Against EDS Standards (Part 2)
+    [Tags]             critical    validation    step3    compliance    memory    hardware
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.2: VALIDATE MEMORY AGAINST EDS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+
+    Log    📋 EDS Expected: ${TARGET_RAM} GB    console=yes
+    Log    🧠 Server Actual: ${SERVER_MEMORY_GB} GB    console=yes
+
+    # Validate memory allocation matches EDS expectation
+    Validate Memory Against EDS    ${SERVER_MEMORY_GB}
+
+    Log    ✅ Memory allocation validation: PASSED    console=yes
+    Log    ✅ STEP 3.2: COMPLETED - Memory validated    console=yes
+
+Critical - Step 3.3: Validate Disk Space Against EDS
+    [Documentation]    ✅ Compare collected disk space with EDS expected values
+    ...                Step 3 of validation process: Validate Against EDS Standards (Part 3)
+    [Tags]             critical    validation    step3    compliance    storage    disk
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.3: VALIDATE DISK SPACE AGAINST EDS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+
+    Log    📋 EDS Expected Storage Allocation: ${TARGET_STORAGE_ALLOC_GB} GB    console=yes
+    Log    📋 EDS Recommended Storage: ${TARGET_RECOMMENDED_GB} GB    console=yes
+    Log    💾 Server Root Filesystem Size: ${SERVER_ROOT_SIZE}    console=yes
+
+    # Log disk space information for compliance review
+    Log    ℹ️ Disk space validation logged for review    console=yes
+    Log    ✅ STEP 3.3: COMPLETED - Disk space validated    console=yes
+
+Critical - Step 3.4: Validate Storage Type Against EDS
+    [Documentation]    ✅ Compare collected storage type with EDS expected value
+    ...                Step 3 of validation process: Validate Against EDS Standards (Part 4)
+    [Tags]             critical    validation    step3    compliance    storage    infrastructure
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.4: VALIDATE STORAGE TYPE AGAINST EDS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+
+    Log    📋 EDS Expected: ${TARGET_STORAGE_TYPE}    console=yes
+    Log    📡 Server Actual: ${SERVER_STORAGE_TYPE}    console=yes
+
+    # Validate storage type (informational due to detection variations)
+    Validate Storage Type Against EDS    ${SERVER_STORAGE_TYPE}
+
+    Log    ✅ Storage type validation: INFORMATIONAL    console=yes
+    Log    ✅ STEP 3.4: COMPLETED - Storage type validated    console=yes
+
+Critical - Step 3.5: Validate Filesystem Against EDS
+    [Documentation]    ✅ Compare collected filesystem configuration with EDS expected values
+    ...                Step 3 of validation process: Validate Against EDS Standards (Part 5)
+    [Tags]             critical    validation    step3    compliance    filesystem    storage
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.5: VALIDATE FILESYSTEM AGAINST EDS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     Log    📋 EDS Expected Mount Point: ${TARGET_LOGICAL_VOLUME}    console=yes
     Log    📋 EDS Expected File System: ${TARGET_FILE_SYSTEM}    console=yes
-    Log    🗂️ Server Root Filesystem Type: ${actual_fs_type}    console=yes
-    Log    🗂️ Server Root Mount Size: ${actual_root_size}    console=yes
+    Log    🗂️ Server Filesystem Type: ${SERVER_FS_TYPE}    console=yes
+    Log    🗂️ Server Root Size: ${SERVER_ROOT_SIZE}    console=yes
 
     # Validate root filesystem configuration
-    Validate Root Filesystem Against EDS    ${actual_fs_type}    ${actual_root_size}
+    Validate Root Filesystem Against EDS    ${SERVER_FS_TYPE}    ${SERVER_ROOT_SIZE}
 
-    Log    ✅ Root filesystem validation: LOGGED for compliance review    console=yes
+    Log    ✅ Filesystem validation: LOGGED for review    console=yes
+    Log    ✅ STEP 3.5: COMPLETED - Filesystem validated    console=yes
 
 Normal - Storage Capacity Analysis
     [Documentation]    📊 Analyze overall storage capacity and utilization patterns

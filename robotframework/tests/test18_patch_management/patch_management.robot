@@ -17,11 +17,14 @@ Test Setup       Log Test Start    ${TEST_NAME}
 Test Teardown    Log Test End      ${TEST_NAME}    ${TEST_STATUS}
 
 *** Test Cases ***
-Critical - Connect to Target Server
+Critical - Step 1: Connect to Target Server
     [Documentation]    🔗 Establish direct connection to target machine via SSH
-    [Tags]             critical    connection    ssh    infrastructure
+    ...                Step 1 of validation process: Connect to Target
+    [Tags]             critical    connection    step1    ssh    infrastructure
 
-    Log    🔍 Verifying SSH connection to target server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 1: CONNECT TO TARGET SERVER VIA SSH    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Target: ${TARGET_HOSTNAME} (${TARGET_IP})    console=yes
 
     # Connection already established in Suite Setup
@@ -29,12 +32,16 @@ Critical - Connect to Target Server
     Should Contain    ${connection_status}    Connection active
 
     Log    ✅ SSH connection verified and active    console=yes
+    Log    ✅ STEP 1: COMPLETED - SSH connection established    console=yes
 
-Critical - Check RSA Agent Installation
+Critical - Step 2.1: Check RSA Agent Installation
     [Documentation]    🔐 Verify RSA SecurID agent is installed on the system
-    [Tags]             critical    rsa    agent    installation
+    ...                Step 2 of validation process: Collect Patch Management Data (Part 1)
+    [Tags]             critical    rsa    step2    data_collection    agent
 
-    Log    🔍 Checking RSA SecurID agent installation...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.1: CHECK RSA AGENT INSTALLATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Check RSA agent installation
     ${agent_status}=    Check RSA Agent Installation
@@ -44,12 +51,16 @@ Critical - Check RSA Agent Installation
 
     Log    📄 RSA agent status saved to: ${agent_file}    console=yes
     Log    ✅ RSA agent installation check completed    console=yes
+    Log    ✅ STEP 2.1: COMPLETED - RSA agent installation checked    console=yes
 
-Critical - Validate RSA Configuration Files
+Critical - Step 2.2: Validate RSA Configuration Files
     [Documentation]    📄 Check for RSA configuration files and validate their presence
-    [Tags]             critical    rsa    configuration    files
+    ...                Step 2 of validation process: Collect Patch Management Data (Part 2)
+    [Tags]             critical    rsa    step2    data_collection    configuration
 
-    Log    🔍 Validating RSA configuration files...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.2: VALIDATE RSA CONFIGURATION FILES    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect RSA configuration files
     ${config_status}=    Collect RSA Configuration Files
@@ -59,24 +70,32 @@ Critical - Validate RSA Configuration Files
 
     Log    📄 RSA configuration saved to: ${config_file}    console=yes
     Log    ✅ RSA configuration files validated    console=yes
+    Log    ✅ STEP 2.2: COMPLETED - RSA configuration validated    console=yes
 
-Critical - Check RSA Authentication Settings
+Critical - Step 2.3: Check RSA Authentication Settings
     [Documentation]    🔐 Verify RSA authentication is properly configured
-    [Tags]             critical    rsa    authentication    settings
+    ...                Step 2 of validation process: Collect Patch Management Data (Part 3)
+    [Tags]             critical    rsa    step2    data_collection    authentication
 
-    Log    🔍 Checking RSA authentication settings...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.3: CHECK RSA AUTHENTICATION SETTINGS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Validate RSA authentication configuration
     ${auth_settings}=    Validate RSA Authentication Settings
 
     Log    🔐 RSA Authentication Status: ${auth_settings}    console=yes
     Log    ✅ RSA authentication settings validated    console=yes
+    Log    ✅ STEP 2.3: COMPLETED - RSA authentication settings checked    console=yes
 
-Critical - Test RSA Server Connectivity
+Critical - Step 2.4: Test RSA Server Connectivity
     [Documentation]    🌐 Test connectivity to RSA authentication server
-    [Tags]             critical    rsa    connectivity    network
+    ...                Step 2 of validation process: Collect Patch Management Data (Part 4)
+    [Tags]             critical    rsa    step2    data_collection    connectivity
 
-    Log    🔍 Testing RSA server connectivity...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.4: TEST RSA SERVER CONNECTIVITY    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Expected RSA Server: ${EXPECTED_RSA_SERVER}    console=yes
 
     # Test RSA server connectivity
@@ -87,24 +106,32 @@ Critical - Test RSA Server Connectivity
 
     Log    📄 Connectivity test saved to: ${conn_file}    console=yes
     Log    ✅ RSA server connectivity test completed    console=yes
+    Log    ✅ STEP 2.4: COMPLETED - RSA connectivity tested    console=yes
 
-Critical - Validate RSA Agent Status
+Critical - Step 3.1: Validate RSA Agent Status
     [Documentation]    🔧 Check if RSA agent service is running
-    [Tags]             critical    rsa    service    status
+    ...                Step 3 of validation process: Validate Against Standards (Part 1)
+    [Tags]             critical    rsa    step3    validation    service
 
-    Log    🔍 Validating RSA agent service status...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.1: VALIDATE RSA AGENT STATUS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Check RSA agent service status
     ${service_status}=    Check RSA Agent Service Status
 
     Log    🔧 RSA Agent Service: ${service_status}    console=yes
     Log    ✅ RSA agent service status validated    console=yes
+    Log    ✅ STEP 3.1: COMPLETED - RSA agent status validated    console=yes
 
-Critical - Check Patch Management Registration
+Critical - Step 3.2: Check Patch Management Registration
     [Documentation]    📦 Verify system is registered with patch management server (Ansible/Satellite)
-    [Tags]             critical    patch_management    registration    satellite    ansible
+    ...                Step 3 of validation process: Validate Against Standards (Part 2)
+    [Tags]             critical    patch_management    step3    validation    registration
 
-    Log    🔍 Checking patch management server registration...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.2: CHECK PATCH MANAGEMENT REGISTRATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Check Satellite/Ansible registration
     ${registration_status}=    Check Patch Management Registration
@@ -114,6 +141,7 @@ Critical - Check Patch Management Registration
 
     Log    📄 Registration status saved to: ${reg_file}    console=yes
     Log    ✅ Patch management registration check completed    console=yes
+    Log    ✅ STEP 3.2: COMPLETED - Patch management registration validated    console=yes
 
 Normal - Validate Two-Factor Authentication Flow
     [Documentation]    🔐 Verify RSA two-factor authentication flow is ready

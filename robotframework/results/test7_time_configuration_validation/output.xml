@@ -1,1773 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-10-05T15:50:21.753826" rpa="false" schemaversion="5">
-<suite id="s1" name="Time Configuration Validation" source="/mnt/c/Users/sacpa/Projects/robot/robotframework/tests/test7_time_configuration_validation/time_configuration_validation.robot">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2025-10-10T19:32:07.463754" rpa="false" schemaversion="5">
+<suite id="s1" name="Time Configuration Validation" source="C:\Users\sacpa\Projects\robot\robotframework\tests\test7_time_configuration_validation\time_configuration_validation.robot">
 <kw name="Initialize Time Test Environment" owner="time_keywords" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:35.941086" level="INFO">🚀 Initializing Test-7: Time Configuration Validation Environment...</msg>
+<msg time="2025-10-10T19:32:08.767091" level="INFO">🚀 Initializing Test-7: Time Configuration Validation Environment...</msg>
 <arg>🚀 Initializing Test-7: Time Configuration Validation Environment...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:35.940638" elapsed="0.000694"/>
+<status status="PASS" start="2025-10-10T19:32:08.766729" elapsed="0.000727"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-10-05T15:50:35.942745" level="INFO" html="true">Directory '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7_time_configuration_validation/data"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7_time_configuration_validation/data&lt;/a&gt;' already exists.</msg>
+<msg time="2025-10-10T19:32:08.768237" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test7_time_configuration_validation\data"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test7_time_configuration_validation\data&lt;/a&gt;' already exists.</msg>
 <arg>${DATA_DIR}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-10-05T15:50:35.941577" elapsed="0.001261"/>
+<status status="PASS" start="2025-10-10T19:32:08.767862" elapsed="0.000519"/>
 </kw>
 <kw name="Lookup Server Config" owner="EDSLookup">
-<msg time="2025-10-05T15:50:35.981901" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
-<msg time="2025-10-05T15:50:35.982153" level="INFO">Extracted IP from EDS: 172.30.16.186</msg>
-<msg time="2025-10-05T15:50:35.982198" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
-<msg time="2025-10-05T15:50:35.982227" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
-<msg time="2025-10-05T15:50:35.982252" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
-<msg time="2025-10-05T15:50:35.982275" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
-<msg time="2025-10-05T15:50:35.982297" level="INFO">Extracted domain from EDS: gnscet.com</msg>
-<msg time="2025-10-05T15:50:35.982324" level="INFO">Extracted CPU cores from EDS: 8</msg>
-<msg time="2025-10-05T15:50:35.982348" level="INFO">Extracted RAM from EDS: 16</msg>
-<msg time="2025-10-05T15:50:35.982371" level="INFO">Extracted storage type from EDS: VSAN</msg>
-<msg time="2025-10-05T15:50:35.982408" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
-<msg time="2025-10-05T15:50:35.982431" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
-<msg time="2025-10-05T15:50:35.982453" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
-<msg time="2025-10-05T15:50:35.982476" level="INFO">Extracted logical volume/partition from EDS: /</msg>
-<msg time="2025-10-05T15:50:35.982498" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-05T15:50:35.982520" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
-<msg time="2025-10-05T15:50:35.982540" level="INFO">Extracted drive purpose from EDS: OS</msg>
-<msg time="2025-10-05T15:50:35.982560" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
-<msg time="2025-10-05T15:50:35.982584" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
-<msg time="2025-10-05T15:50:35.982788" level="INFO">${eds_config} = {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
+<msg time="2025-10-10T19:32:08.788912" level="INFO">Found matching row for hostname 'alhxvdvitap01'</msg>
+<msg time="2025-10-10T19:32:08.789271" level="INFO">Extracted IP from EDS: 172.30.16.186</msg>
+<msg time="2025-10-10T19:32:08.789357" level="INFO">Extracted subnet from EDS: 10.26.216.0/24</msg>
+<msg time="2025-10-10T19:32:08.789407" level="INFO">Extracted mask from EDS: 255.255.255.0</msg>
+<msg time="2025-10-10T19:32:08.789451" level="INFO">Extracted gateway from EDS: 10.26.216.4</msg>
+<msg time="2025-10-10T19:32:08.789506" level="INFO">Extracted CNAME from EDS: alhxvdvitap01</msg>
+<msg time="2025-10-10T19:32:08.789552" level="INFO">Extracted domain from EDS: gnscet.com</msg>
+<msg time="2025-10-10T19:32:08.789605" level="INFO">Extracted CPU cores from EDS: 8</msg>
+<msg time="2025-10-10T19:32:08.789651" level="INFO">Extracted RAM from EDS: 16</msg>
+<msg time="2025-10-10T19:32:08.789696" level="INFO">Extracted storage type from EDS: VSAN</msg>
+<msg time="2025-10-10T19:32:08.789950" level="INFO">Extracted storage total TB from EDS: 0.465</msg>
+<msg time="2025-10-10T19:32:08.790173" level="INFO">Extracted drive/volume group from EDS: rootvg:</msg>
+<msg time="2025-10-10T19:32:08.790240" level="INFO">Extracted file system from EDS: /dev/mapper/rootvg-rootlv</msg>
+<msg time="2025-10-10T19:32:08.790463" level="INFO">Extracted logical volume/partition from EDS: /</msg>
+<msg time="2025-10-10T19:32:08.790584" level="INFO">Extracted storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-10T19:32:08.790780" level="INFO">Extracted recommended storage allocation GB from EDS: 20</msg>
+<msg time="2025-10-10T19:32:08.790861" level="INFO">Extracted drive purpose from EDS: OS</msg>
+<msg time="2025-10-10T19:32:08.791003" level="INFO">Extracted OS type from EDS: RHEL 9.6</msg>
+<msg time="2025-10-10T19:32:08.791127" level="INFO">EDS configuration for alhxvdvitap01: {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': 'VSAN', 'storage_total_tb': '0.465', 'drive_volume_group': 'rootvg:', 'file_system': '/dev/mapper/rootvg-rootlv', 'logical_volume_partition': '/', 'storage_allocation_gb': '20', 'recommended_storage_gb': '20', 'drive_purpose': 'OS', 'os_type': 'RHEL 9.6'}</msg>
+<msg time="2025-10-10T19:32:08.791635" level="INFO">${eds_config} = {'ip': '172.30.16.186', 'subnet': '10.26.216.0/24', 'mask': '255.255.255.0', 'gateway': '10.26.216.4', 'cname': 'alhxvdvitap01', 'domain': 'gnscet.com', 'cpu_cores': '8', 'ram': '16', 'storage_type': ...</msg>
 <var>${eds_config}</var>
 <arg>${TARGET_HOSTNAME}</arg>
 <doc>Lookup server configuration from EDS sheet based on hostname</doc>
-<status status="PASS" start="2025-10-05T15:50:35.942989" elapsed="0.039837"/>
+<status status="PASS" start="2025-10-10T19:32:08.768584" elapsed="0.023130"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:50:35.984899" level="INFO">${TARGET_IP} = 172.30.16.186</msg>
+<msg time="2025-10-10T19:32:08.795285" level="INFO">${TARGET_IP} = 172.30.16.186</msg>
 <arg>${TARGET_IP}</arg>
 <arg>${eds_config['ip']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:50:35.983041" elapsed="0.002051"/>
+<status status="PASS" start="2025-10-10T19:32:08.792488" elapsed="0.002885"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:35.985621" level="INFO">📋 Target Server: alhxvdvitap01</msg>
+<msg time="2025-10-10T19:32:08.795911" level="INFO">📋 Target Server: alhxvdvitap01</msg>
 <arg>📋 Target Server: ${TARGET_HOSTNAME}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:35.985291" elapsed="0.000463"/>
+<status status="PASS" start="2025-10-10T19:32:08.795606" elapsed="0.001239"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:35.986098" level="INFO">📋 Target IP: 172.30.16.186</msg>
+<msg time="2025-10-10T19:32:08.797345" level="INFO">📋 Target IP: 172.30.16.186</msg>
 <arg>📋 Target IP: ${TARGET_IP}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:35.985913" elapsed="0.000289"/>
+<status status="PASS" start="2025-10-10T19:32:08.797063" elapsed="0.000620"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:35.986493" level="INFO">🔗 Connecting to target server: 172.30.16.186...</msg>
+<msg time="2025-10-10T19:32:08.798163" level="INFO">🔗 Connecting to target server: 172.30.16.186...</msg>
 <arg>🔗 Connecting to target server: ${TARGET_IP}...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:35.986343" elapsed="0.000246"/>
+<status status="PASS" start="2025-10-10T19:32:08.797925" elapsed="0.000546"/>
 </kw>
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${TARGET_IP}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2025-10-05T15:50:35.986721" elapsed="0.000255"/>
+<status status="PASS" start="2025-10-10T19:32:08.798694" elapsed="0.000284"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:35.987410" level="INFO">Logging into '172.30.16.186:22' as 'sac'.</msg>
-<msg time="2025-10-05T15:50:37.759802" level="INFO">Read output: Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/pro
-
- System information as of Sun Oct  5 15:50:36 CDT 2025
-
-  System load:  0.52                Processes:             36
-  Usage of /:   0.7% of 1006.85GB   Users logged in:       1
-  Memory usage: 7%                  IPv4 address for eth0: 172.30.16.186
-  Swap usage:   0%
-
- * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
-   just raised the bar for easy, resilient and secure K8s cluster deployment.
-
-   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
-Last login: Sun Oct  5 15:46:48 2025 from 172.30.16.186
-[?2004hsac@alhxvdvitap01:~$</msg>
+<msg time="2025-10-10T19:32:08.799302" level="INFO">Logging into '172.30.16.186:22' as 'pauls6'.</msg>
+<msg time="2025-10-10T19:32:11.810440" level="FAIL">TimeoutError: timed out</msg>
 <arg>${SSH_USERNAME}</arg>
 <arg>${SSH_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="PASS" start="2025-10-05T15:50:35.987135" elapsed="1.772798"/>
+<status status="FAIL" start="2025-10-10T19:32:08.799105" elapsed="3.024151">TimeoutError: timed out</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:37.760331" level="INFO">✅ SSH connection established successfully</msg>
 <arg>✅ SSH connection established successfully</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.760123" elapsed="0.000345"/>
+<status status="NOT RUN" start="2025-10-10T19:32:11.823724" elapsed="0.000068"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:37.760718" level="INFO">✅ Test-7 environment initialized</msg>
 <arg>✅ Test-7 environment initialized</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.760603" elapsed="0.000197"/>
+<status status="NOT RUN" start="2025-10-10T19:32:11.824928" elapsed="0.000126"/>
 </kw>
 <doc>🏗️ Set up test environment for time configuration validation</doc>
-<status status="PASS" start="2025-10-05T15:50:35.939869" elapsed="1.821019"/>
+<status status="FAIL" start="2025-10-10T19:32:08.765464" elapsed="3.060122">TimeoutError: timed out</status>
 </kw>
 <test id="s1-t1" name="Critical - Connect to Target Server" line="19">
-<kw name="Log Test Start" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:37.762137" level="INFO">🏁 Starting: Critical - Connect to Target Server</msg>
-<arg>🏁 Starting: ${test_name}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.761991" elapsed="0.001289"/>
-</kw>
-<arg>${TEST_NAME}</arg>
-<doc>📝 Log the start of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:37.761668" elapsed="0.001701"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:37.763639" level="INFO">🔍 Verifying SSH connection to target server...</msg>
-<arg>🔍 Verifying SSH connection to target server...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.763506" elapsed="0.000222"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:37.764025" level="INFO">📋 Target: alhxvdvitap01 (172.30.16.186)</msg>
-<arg>📋 Target: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.763840" elapsed="0.000292"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:37.764717" level="INFO">Executing command 'echo "Connection active"'.</msg>
-<msg time="2025-10-05T15:50:37.776875" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:37.777243" level="INFO">${connection_status} = Connection active</msg>
-<var>${connection_status}</var>
-<arg>echo "Connection active"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.764325" elapsed="0.012960"/>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${connection_status}</arg>
-<arg>Connection active</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.777569" elapsed="0.000281"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:37.778235" level="INFO">✅ SSH connection verified and active</msg>
-<arg>✅ SSH connection verified and active</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.778046" elapsed="0.000353"/>
-</kw>
-<kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
-<if>
-<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:37.779558" level="INFO">✅ Completed: Critical - Connect to Target Server - PASS</msg>
-<arg>✅ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.779372" elapsed="0.000302"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:37.779161" elapsed="0.000580"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<arg>❌ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:37.779897" elapsed="0.000019"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:37.779782" elapsed="0.000164"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:37.779127" elapsed="0.000841"/>
-</if>
-<arg>${TEST_NAME}</arg>
-<arg>${TEST_STATUS}</arg>
-<doc>📝 Log the end of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:37.778827" elapsed="0.001192"/>
-</kw>
 <doc>🔗 Establish direct connection to target machine via SSH</doc>
 <tag>connection</tag>
 <tag>critical</tag>
 <tag>infrastructure</tag>
 <tag>ssh</tag>
-<status status="PASS" start="2025-10-05T15:50:37.761029" elapsed="0.019031"/>
+<status status="FAIL" start="2025-10-10T19:32:11.825944" elapsed="0.003685">Parent suite setup failed:
+TimeoutError: timed out</status>
 </test>
 <test id="s1-t2" name="Critical - Collect Time Configuration Data" line="32">
-<kw name="Log Test Start" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:37.781424" level="INFO">🏁 Starting: Critical - Collect Time Configuration Data</msg>
-<arg>🏁 Starting: ${test_name}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.781264" elapsed="0.000254"/>
-</kw>
-<arg>${TEST_NAME}</arg>
-<doc>📝 Log the start of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:37.780902" elapsed="0.000683"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:37.781800" level="INFO">🔍 Collecting time configuration data from server...</msg>
-<arg>🔍 Collecting time configuration data from server...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.781695" elapsed="0.000185"/>
-</kw>
-<kw name="Collect Time Configuration Data" owner="time_keywords">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:37.782436" level="INFO">⏰ Collecting time configuration data from server...</msg>
-<arg>⏰ Collecting time configuration data from server...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.782342" elapsed="0.000175"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:37.782700" level="INFO">Executing command 'timedatectl'.</msg>
-<msg time="2025-10-05T15:50:37.970634" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:37.971203" level="INFO">${timedatectl_output} =                Local time: Sun 2025-10-05 15:50:37 CDT
-           Universal time: Sun 2025-10-05 20:50:37 UTC
-                 RTC time: Sun 2025-10-05 20:50:40
-                Time zone: America/Chic...</msg>
-<var>${timedatectl_output}</var>
-<arg>timedatectl</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.782621" elapsed="0.188685"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:37.972339" level="INFO">Executing command 'chronyc sources -v'.</msg>
-<msg time="2025-10-05T15:50:38.026169" level="INFO">Command exited with return code 127.</msg>
-<msg time="2025-10-05T15:50:38.026628" level="INFO">${chrony_sources_output} = </msg>
-<var>${chrony_sources_output}</var>
-<arg>chronyc sources -v</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:37.971942" elapsed="0.054745"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.027386" level="INFO">Executing command 'chronyc tracking'.</msg>
-<msg time="2025-10-05T15:50:38.078446" level="INFO">Command exited with return code 127.</msg>
-<msg time="2025-10-05T15:50:38.078744" level="INFO">${chrony_tracking_output} = </msg>
-<var>${chrony_tracking_output}</var>
-<arg>chronyc tracking</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.027137" elapsed="0.051648"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.079250" level="INFO">Executing command 'hwclock --show 2&gt;/dev/null || echo "hwclock requires privileges"'.</msg>
-<msg time="2025-10-05T15:50:38.130840" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.131196" level="INFO">${hwclock_output} = hwclock requires privileges</msg>
-<var>${hwclock_output}</var>
-<arg>hwclock --show 2&gt;/dev/null || echo "hwclock requires privileges"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.079072" elapsed="0.052174"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.131793" level="INFO">Executing command 'date'.</msg>
-<msg time="2025-10-05T15:50:38.177580" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.177980" level="INFO">${current_date_output} = Sun Oct  5 15:50:38 CDT 2025</msg>
-<var>${current_date_output}</var>
-<arg>date</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.131537" elapsed="0.046500"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.179404" level="INFO">Executing command 'cat /etc/timezone 2&gt;/dev/null || echo "N/A"'.</msg>
-<msg time="2025-10-05T15:50:38.236264" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.236600" level="INFO">${timezone_file_output} = America/Chicago</msg>
-<var>${timezone_file_output}</var>
-<arg>cat /etc/timezone 2&gt;/dev/null || echo "N/A"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.179035" elapsed="0.057606"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.237476" level="INFO">Executing command 'ls -l /etc/localtime'.</msg>
-<msg time="2025-10-05T15:50:38.290751" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.291009" level="INFO">${localtime_link_output} = lrwxrwxrwx 1 root root 35 Oct  5 12:18 /etc/localtime -&gt; /usr/share/zoneinfo/America/Chicago</msg>
-<var>${localtime_link_output}</var>
-<arg>ls -l /etc/localtime</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.237169" elapsed="0.053873"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.291709" level="INFO">Executing command 'systemctl status chronyd 2&gt;/dev/null || systemctl status chrony 2&gt;/dev/null || echo "Chrony service not found"'.</msg>
-<msg time="2025-10-05T15:50:38.367132" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.367923" level="INFO">${chrony_status_output} = Chrony service not found</msg>
-<var>${chrony_status_output}</var>
-<arg>systemctl status chronyd 2&gt;/dev/null || systemctl status chrony 2&gt;/dev/null || echo "Chrony service not found"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.291452" elapsed="0.076544"/>
-</kw>
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:50:38.369969" level="INFO">${timestamp} = 20251005_155038</msg>
-<var>${timestamp}</var>
-<arg>result_format=%Y%m%d_%H%M%S</arg>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.369491" elapsed="0.000527"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.370701" level="INFO">${time_config_file} = results/test7_time_configuration_validation/data/time_configuration_20251005_155038.txt</msg>
-<var>${time_config_file}</var>
-<arg>${DATA_DIR}/time_configuration_${timestamp}.txt</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.370283" elapsed="0.000458"/>
-</kw>
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.371623" level="INFO">${time_data} = === Time Configuration Report ===
-Timestamp: 20251005_155038
-Target Server: alhxvdvitap01 (172.30.16.186)
-
-=== Timedatectl Output ===
-               Local time: Sun 2025-10-05 15:50:37 CDT
-           ...</msg>
-<var>${time_data}</var>
-<arg>SEPARATOR=\n</arg>
-<arg>=== Time Configuration Report ===</arg>
-<arg>Timestamp: ${timestamp}</arg>
-<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
-<arg>=== Timedatectl Output ===</arg>
-<arg>${timedatectl_output}</arg>
-<arg>=== Current Date/Time ===</arg>
-<arg>${current_date_output}</arg>
-<arg>=== Timezone Configuration ===</arg>
-<arg>Timezone File: ${timezone_file_output}</arg>
-<arg>Localtime Link: ${localtime_link_output}</arg>
-<arg>=== Chrony Service Status ===</arg>
-<arg>${chrony_status_output}</arg>
-<arg>=== Chrony Sources (NTP Servers) ===</arg>
-<arg>${chrony_sources_output}</arg>
-<arg>=== Chrony Tracking (Synchronization Status) ===</arg>
-<arg>${chrony_tracking_output}</arg>
-<arg>=== Hardware Clock ===</arg>
-<arg>${hwclock_output}</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.370901" elapsed="0.000835"/>
-</kw>
-<kw name="Create File" owner="OperatingSystem">
-<msg time="2025-10-05T15:50:38.386526" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7_time_configuration_validation/data/time_configuration_20251005_155038.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7_time_configuration_validation/data/time_configuration_20251005_155038.txt&lt;/a&gt;'.</msg>
-<arg>${time_config_file}</arg>
-<arg>${time_data}</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.371943" elapsed="0.015347"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.387769" level="INFO">📄 Time configuration data saved to: results/test7_time_configuration_validation/data/time_configuration_20251005_155038.txt</msg>
-<arg>📄 Time configuration data saved to: ${time_config_file}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.387495" elapsed="0.000402"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.388356" level="INFO">${TIMEDATECTL_OUTPUT} =                Local time: Sun 2025-10-05 15:50:37 CDT
-           Universal time: Sun 2025-10-05 20:50:37 UTC
-                 RTC time: Sun 2025-10-05 20:50:40
-                Time zone: America/Chic...</msg>
-<arg>${TIMEDATECTL_OUTPUT}</arg>
-<arg>${timedatectl_output}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.388097" elapsed="0.000302"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.389530" level="INFO">${CHRONY_SOURCES_OUTPUT} = </msg>
-<arg>${CHRONY_SOURCES_OUTPUT}</arg>
-<arg>${chrony_sources_output}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.388514" elapsed="0.001118"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.390171" level="INFO">${CHRONY_TRACKING_OUTPUT} = </msg>
-<arg>${CHRONY_TRACKING_OUTPUT}</arg>
-<arg>${chrony_tracking_output}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.389957" elapsed="0.000256"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.390604" level="INFO">${CHRONY_STATUS_OUTPUT} = Chrony service not found</msg>
-<arg>${CHRONY_STATUS_OUTPUT}</arg>
-<arg>${chrony_status_output}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.390405" elapsed="0.000239"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.390901" level="INFO">${CURRENT_DATE_OUTPUT} = Sun Oct  5 15:50:38 CDT 2025</msg>
-<arg>${CURRENT_DATE_OUTPUT}</arg>
-<arg>${current_date_output}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.390753" elapsed="0.000179"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.391136" level="INFO">✅ Time configuration data collected successfully</msg>
-<arg>✅ Time configuration data collected successfully</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.391016" elapsed="0.000223"/>
-</kw>
-<doc>⏰ Execute time-related commands and collect all time configuration data</doc>
-<status status="PASS" start="2025-10-05T15:50:37.782148" elapsed="0.609183"/>
-</kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.391591" level="INFO">Length is 311.</msg>
-<arg>${TIMEDATECTL_OUTPUT}</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.391468" elapsed="0.000169"/>
-</kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.392380" level="INFO">Length is 0.</msg>
-<msg time="2025-10-05T15:50:38.392509" level="FAIL">'' should not be empty.</msg>
-<arg>${CHRONY_SOURCES_OUTPUT}</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.392247" elapsed="0.000485">'' should not be empty.</status>
-</kw>
-<kw name="Should Not Be Empty" owner="BuiltIn">
-<arg>${CHRONY_TRACKING_OUTPUT}</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.392864" elapsed="0.000038"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>📋 Timedatectl output collected: ${TIMEDATECTL_OUTPUT[:100]}...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.393101" elapsed="0.000020"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>📋 Chrony sources collected: ${CHRONY_SOURCES_OUTPUT[:100]}...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.393209" elapsed="0.000015"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Time configuration data collected successfully</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.393301" elapsed="0.000014"/>
-</kw>
-<kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
-<if>
-<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.394444" elapsed="0.000019"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.394254" elapsed="0.000244"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.394829" level="INFO">❌ Completed: Critical - Collect Time Configuration Data - FAIL</msg>
-<arg>❌ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.394628" elapsed="0.000309"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:38.394523" elapsed="0.000469"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:38.394229" elapsed="0.000804"/>
-</if>
-<arg>${TEST_NAME}</arg>
-<arg>${TEST_STATUS}</arg>
-<doc>📝 Log the end of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.393949" elapsed="0.001156"/>
-</kw>
 <doc>⏰ Execute time-related commands to gather timezone, chrony, and NTP configuration</doc>
 <tag>critical</tag>
 <tag>data_collection</tag>
 <tag>ntp</tag>
 <tag>time</tag>
-<status status="FAIL" start="2025-10-05T15:50:37.780341" elapsed="0.614811">'' should not be empty.</status>
+<status status="FAIL" start="2025-10-10T19:32:11.832195" elapsed="0.001825">Parent suite setup failed:
+TimeoutError: timed out</status>
 </test>
 <test id="s1-t3" name="Critical - Validate Timezone Setting" line="50">
-<kw name="Log Test Start" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.396896" level="INFO">🏁 Starting: Critical - Validate Timezone Setting</msg>
-<arg>🏁 Starting: ${test_name}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.396676" elapsed="0.000376"/>
-</kw>
-<arg>${TEST_NAME}</arg>
-<doc>📝 Log the start of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.396150" elapsed="0.000979"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.397342" level="INFO">🔍 Validating timezone configuration...</msg>
-<arg>🔍 Validating timezone configuration...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.397232" elapsed="0.000200"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.397720" level="INFO">📋 Expected Timezone: Pacific/Los Angeles (America/Los_Angeles)</msg>
-<arg>📋 Expected Timezone: Pacific/Los Angeles (America/Los_Angeles)</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.397550" elapsed="0.000271"/>
-</kw>
-<kw name="Validate Timezone Configuration" owner="time_keywords">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.398464" level="INFO">🔍 Validating timezone configuration...</msg>
-<arg>🔍 Validating timezone configuration...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.398361" elapsed="0.000199"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.398771" level="INFO">Executing command 'timedatectl | grep "Time zone"'.</msg>
-<msg time="2025-10-05T15:50:38.427616" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.428297" level="INFO">${timezone_line} =                 Time zone: America/Chicago (CDT, -0500)</msg>
-<var>${timezone_line}</var>
-<arg>timedatectl | grep "Time zone"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.398685" elapsed="0.029908"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.430451" level="INFO">⏰ Timezone info:                 Time zone: America/Chicago (CDT, -0500)</msg>
-<arg>⏰ Timezone info: ${timezone_line}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.429612" elapsed="0.001213"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.431878" level="FAIL">'                Time zone: America/Chicago (CDT, -0500)' does not contain 'America/Los_Angeles'</msg>
-<arg>${timezone_line}</arg>
-<arg>America/Los_Angeles</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.431568" elapsed="0.000443">'                Time zone: America/Chicago (CDT, -0500)' does not contain 'America/Los_Angeles'</status>
-</kw>
-<msg time="2025-10-05T15:50:38.432154" level="INFO">${contains_la} = False</msg>
-<var>${contains_la}</var>
-<arg>Should Contain</arg>
-<arg>${timezone_line}</arg>
-<arg>America/Los_Angeles</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.431204" elapsed="0.000981"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.433566" level="FAIL">'                Time zone: America/Chicago (CDT, -0500)' does not contain 'Pacific'</msg>
-<arg>${timezone_line}</arg>
-<arg>Pacific</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.432646" elapsed="0.001021">'                Time zone: America/Chicago (CDT, -0500)' does not contain 'Pacific'</status>
-</kw>
-<msg time="2025-10-05T15:50:38.433810" level="INFO">${contains_pacific} = False</msg>
-<var>${contains_pacific}</var>
-<arg>Should Contain</arg>
-<arg>${timezone_line}</arg>
-<arg>Pacific</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.432387" elapsed="0.001455"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.434404" level="INFO">${timezone_valid} = False</msg>
-<var>${timezone_valid}</var>
-<arg>${contains_la} or ${contains_pacific}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.434014" elapsed="0.000429"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Fail" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.436716" level="FAIL">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</msg>
-<arg>❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found: ${timezone_line}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.434904" elapsed="0.001970">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</status>
-</kw>
-<arg>not ${timezone_valid}</arg>
-<arg>Fail</arg>
-<arg>❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found: ${timezone_line}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.434622" elapsed="0.002473">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Timezone validation: PASSED - Timezone set to Pacific/Los Angeles</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.437468" elapsed="0.000054"/>
-</kw>
-<return>
-<value>${timezone_line}</value>
-<status status="NOT RUN" start="2025-10-05T15:50:38.437630" elapsed="0.000045"/>
-</return>
-<var>${timezone_result}</var>
-<doc>🌎 Validate timezone is set to Pacific/Los Angeles</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.398093" elapsed="0.039792">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>⏰ Timezone validation result: ${timezone_result}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.438140" elapsed="0.000072"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Timezone validation: PASSED - Timezone correctly set to Pacific/Los Angeles</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.438480" elapsed="0.000037"/>
-</kw>
-<kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
-<if>
-<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.440084" elapsed="0.000028"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.439792" elapsed="0.000372"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.440619" level="INFO">❌ Completed: Critical - Validate Timezone Setting - FAIL</msg>
-<arg>❌ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.440290" elapsed="0.000560"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:38.440192" elapsed="0.000854"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:38.439767" elapsed="0.001311"/>
-</if>
-<arg>${TEST_NAME}</arg>
-<arg>${TEST_STATUS}</arg>
-<doc>📝 Log the end of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.439369" elapsed="0.001783"/>
-</kw>
 <doc>🌎 Validate timezone is set to Pacific/Los Angeles (America/Los_Angeles)</doc>
 <tag>compliance</tag>
 <tag>critical</tag>
 <tag>timezone</tag>
-<status status="FAIL" start="2025-10-05T15:50:38.395458" elapsed="0.045764">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</status>
+<status status="FAIL" start="2025-10-10T19:32:11.836259" elapsed="0.001958">Parent suite setup failed:
+TimeoutError: timed out</status>
 </test>
 <test id="s1-t4" name="Critical - Validate Chrony Service Status" line="63">
-<kw name="Log Test Start" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.443311" level="INFO">🏁 Starting: Critical - Validate Chrony Service Status</msg>
-<arg>🏁 Starting: ${test_name}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.443113" elapsed="0.000295"/>
-</kw>
-<arg>${TEST_NAME}</arg>
-<doc>📝 Log the start of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.442185" elapsed="0.001328"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.443957" level="INFO">🔍 Validating chrony service status...</msg>
-<arg>🔍 Validating chrony service status...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.443752" elapsed="0.000285"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.444230" level="INFO">📋 Expected: Chrony service active and running</msg>
-<arg>📋 Expected: Chrony service active and running</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.444136" elapsed="0.000167"/>
-</kw>
-<kw name="Validate Chrony Service Status" owner="time_keywords">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.444817" level="INFO">🔍 Validating chrony service status...</msg>
-<arg>🔍 Validating chrony service status...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.444719" elapsed="0.000153"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.445266" level="FAIL">'Chrony service not found' does not contain 'active (running)'</msg>
-<arg>${CHRONY_STATUS_OUTPUT}</arg>
-<arg>active (running)</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.445110" elapsed="0.000222">'Chrony service not found' does not contain 'active (running)'</status>
-</kw>
-<msg time="2025-10-05T15:50:38.445419" level="INFO">${service_active} = False</msg>
-<var>${service_active}</var>
-<arg>Should Contain</arg>
-<arg>${CHRONY_STATUS_OUTPUT}</arg>
-<arg>active (running)</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.444989" elapsed="0.000451"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Fail" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.445902" level="FAIL">❌ CHRONY SERVICE ISSUE: Chrony service is not active. Status: Chrony service not found</msg>
-<arg>❌ CHRONY SERVICE ISSUE: Chrony service is not active. Status: ${CHRONY_STATUS_OUTPUT}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.445739" elapsed="0.000216">❌ CHRONY SERVICE ISSUE: Chrony service is not active. Status: Chrony service not found</status>
-</kw>
-<arg>not ${service_active}</arg>
-<arg>Fail</arg>
-<arg>❌ CHRONY SERVICE ISSUE: Chrony service is not active. Status: ${CHRONY_STATUS_OUTPUT}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.445547" elapsed="0.000448">❌ CHRONY SERVICE ISSUE: Chrony service is not active. Status: Chrony service not found</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Chrony service validation: PASSED - Service is active and running</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.446082" elapsed="0.000016"/>
-</kw>
-<doc>📡 Validate chrony service is active and running</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.444496" elapsed="0.001682">❌ CHRONY SERVICE ISSUE: Chrony service is not active. Status: Chrony service not found</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Chrony service validation: PASSED - Service is active</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.446295" elapsed="0.000018"/>
-</kw>
-<kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
-<if>
-<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.447674" elapsed="0.000021"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.447497" elapsed="0.000237"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.448073" level="INFO">❌ Completed: Critical - Validate Chrony Service Status - FAIL</msg>
-<arg>❌ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.447888" elapsed="0.000288"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:38.447762" elapsed="0.000465"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:38.447476" elapsed="0.000773"/>
-</if>
-<arg>${TEST_NAME}</arg>
-<arg>${TEST_STATUS}</arg>
-<doc>📝 Log the end of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.447210" elapsed="0.001083"/>
-</kw>
 <doc>📡 Validate chrony service is active and running</doc>
 <tag>chrony</tag>
 <tag>critical</tag>
 <tag>ntp</tag>
 <tag>service</tag>
-<status status="FAIL" start="2025-10-05T15:50:38.441536" elapsed="0.006795">❌ CHRONY SERVICE ISSUE: Chrony service is not active. Status: Chrony service not found</status>
+<status status="FAIL" start="2025-10-10T19:32:11.841594" elapsed="0.002391">Parent suite setup failed:
+TimeoutError: timed out</status>
 </test>
 <test id="s1-t5" name="Critical - Validate NTP Server Configuration" line="75">
-<kw name="Log Test Start" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.449584" level="INFO">🏁 Starting: Critical - Validate NTP Server Configuration</msg>
-<arg>🏁 Starting: ${test_name}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.449454" elapsed="0.000225"/>
-</kw>
-<arg>${TEST_NAME}</arg>
-<doc>📝 Log the start of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.449225" elapsed="0.000529"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.449957" level="INFO">🔍 Validating NTP server configuration...</msg>
-<arg>🔍 Validating NTP server configuration...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.449848" elapsed="0.000207"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.450364" level="INFO">📋 Expected NTP Server: ntpx.domain.com</msg>
-<arg>📋 Expected NTP Server: ntpx.domain.com</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.450167" elapsed="0.000295"/>
-</kw>
-<kw name="Validate NTP Server Configuration" owner="time_keywords">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.451527" level="INFO">🔍 Validating NTP server configuration...</msg>
-<arg>🔍 Validating NTP server configuration...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.451158" elapsed="0.000482"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.452610" level="FAIL">'' does not contain 'ntpx.domain.com'</msg>
-<arg>${CHRONY_SOURCES_OUTPUT}</arg>
-<arg>ntpx.domain.com</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.452361" elapsed="0.000337">'' does not contain 'ntpx.domain.com'</status>
-</kw>
-<msg time="2025-10-05T15:50:38.452795" level="INFO">${ntp_configured} = False</msg>
-<var>${ntp_configured}</var>
-<arg>Should Contain</arg>
-<arg>${CHRONY_SOURCES_OUTPUT}</arg>
-<arg>ntpx.domain.com</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.451988" elapsed="0.000827"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.453283" level="WARN">⚠️ WARNING: Expected NTP server 'ntpx.domain.com' not found in chrony sources</msg>
-<arg>⚠️ WARNING: Expected NTP server 'ntpx.domain.com' not found in chrony sources</arg>
-<arg>WARN</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.453190" elapsed="0.000223"/>
-</kw>
-<arg>not ${ntp_configured}</arg>
-<arg>Log</arg>
-<arg>⚠️ WARNING: Expected NTP server 'ntpx.domain.com' not found in chrony sources</arg>
-<arg>WARN</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.452981" elapsed="0.000481"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.453690" level="INFO">Executing command 'chronyc sources | grep -E "^\^|^\*" || echo "No NTP servers found"'.</msg>
-<msg time="2025-10-05T15:50:38.478004" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.478233" level="INFO">${ntp_servers_line} = No NTP servers found</msg>
-<var>${ntp_servers_line}</var>
-<arg>chronyc sources | grep -E "^\\^|^\\*" || echo "No NTP servers found"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.453584" elapsed="0.024675"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.478768" level="INFO">🕐 Configured NTP servers: No NTP servers found</msg>
-<arg>🕐 Configured NTP servers: ${ntp_servers_line}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.478506" elapsed="0.000409"/>
-</kw>
-<if>
-<branch type="IF" condition="${ntp_configured}">
-<kw name="Log" owner="BuiltIn">
-<arg>✅ NTP server validation: PASSED - ntpx.domain.com is configured</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.479703" elapsed="0.000047"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.479278" elapsed="0.000537"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.480133" level="INFO">ℹ️ NTP server validation: INFORMATIONAL - Check NTP server configuration</msg>
-<arg>ℹ️ NTP server validation: INFORMATIONAL - Check NTP server configuration</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.479964" elapsed="0.000281"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:38.479856" elapsed="0.000446"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:38.479226" elapsed="0.001100"/>
-</if>
-<return>
-<value>${ntp_servers_line}</value>
-<status status="PASS" start="2025-10-05T15:50:38.480369" elapsed="0.000061"/>
-</return>
-<msg time="2025-10-05T15:50:38.480736" level="INFO">${ntp_servers} = No NTP servers found</msg>
-<var>${ntp_servers}</var>
-<doc>🕐 Validate NTP server is configured to ntpx.domain.com</doc>
-<status status="PASS" start="2025-10-05T15:50:38.450769" elapsed="0.030007"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.481201" level="INFO">🕐 Configured NTP servers: No NTP servers found</msg>
-<arg>🕐 Configured NTP servers: ${ntp_servers}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.480964" elapsed="0.000356"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.481671" level="INFO">✅ NTP server configuration validated</msg>
-<arg>✅ NTP server configuration validated</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.481519" elapsed="0.000265"/>
-</kw>
-<kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
-<if>
-<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.484184" level="INFO">✅ Completed: Critical - Validate NTP Server Configuration - PASS</msg>
-<arg>✅ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.483865" elapsed="0.000466"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:38.483551" elapsed="0.000871"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<arg>❌ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.484679" elapsed="0.000039"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.484470" elapsed="0.000316"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:38.483519" elapsed="0.001298"/>
-</if>
-<arg>${TEST_NAME}</arg>
-<arg>${TEST_STATUS}</arg>
-<doc>📝 Log the end of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.483052" elapsed="0.001837"/>
-</kw>
 <doc>🕐 Validate NTP server is configured to use ntpx.domain.com</doc>
 <tag>configuration</tag>
 <tag>critical</tag>
 <tag>ntp</tag>
 <tag>server</tag>
-<status status="PASS" start="2025-10-05T15:50:38.448593" elapsed="0.036416"/>
+<status status="FAIL" start="2025-10-10T19:32:11.846407" elapsed="0.001785">Parent suite setup failed:
+TimeoutError: timed out</status>
 </test>
 <test id="s1-t6" name="Critical - Validate Time Synchronization Status" line="88">
-<kw name="Log Test Start" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.486996" level="INFO">🏁 Starting: Critical - Validate Time Synchronization Status</msg>
-<arg>🏁 Starting: ${test_name}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.486690" elapsed="0.000696"/>
-</kw>
-<arg>${TEST_NAME}</arg>
-<doc>📝 Log the start of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.486214" elapsed="0.001276"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.488000" level="INFO">🔍 Validating time synchronization status...</msg>
-<arg>🔍 Validating time synchronization status...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.487709" elapsed="0.001574"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.489566" level="INFO">📋 Expected: System clock synchronized with NTP server</msg>
-<arg>📋 Expected: System clock synchronized with NTP server</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.489417" elapsed="0.000233"/>
-</kw>
-<kw name="Validate Time Synchronization Status" owner="time_keywords">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.493317" level="INFO">🔍 Validating time synchronization status...</msg>
-<arg>🔍 Validating time synchronization status...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.492574" elapsed="0.000912"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.493798" level="INFO">Executing command 'timedatectl | grep "synchronized"'.</msg>
-<msg time="2025-10-05T15:50:38.539545" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.539851" level="INFO">${sync_line} = System clock synchronized: yes</msg>
-<var>${sync_line}</var>
-<arg>timedatectl | grep "synchronized"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.493681" elapsed="0.046205"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.540421" level="INFO">🔄 Synchronization status: System clock synchronized: yes</msg>
-<arg>🔄 Synchronization status: ${sync_line}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.540134" elapsed="0.000458"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${sync_line}</arg>
-<arg>yes</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.541171" elapsed="0.000153"/>
-</kw>
-<msg time="2025-10-05T15:50:38.541410" level="INFO">${is_synchronized} = True</msg>
-<var>${is_synchronized}</var>
-<arg>Should Contain</arg>
-<arg>${sync_line}</arg>
-<arg>yes</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.540832" elapsed="0.000601"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.541957" level="FAIL">: Normal: '' does not contain 'Leap status'</msg>
-<arg>${CHRONY_TRACKING_OUTPUT}</arg>
-<arg>Leap status</arg>
-<arg>: Normal</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.541684" elapsed="0.000372">: Normal: '' does not contain 'Leap status'</status>
-</kw>
-<msg time="2025-10-05T15:50:38.542186" level="INFO">${tracking_synced} = False</msg>
-<var>${tracking_synced}</var>
-<arg>Should Contain</arg>
-<arg>${CHRONY_TRACKING_OUTPUT}</arg>
-<arg>Leap status</arg>
-<arg>: Normal</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.541545" elapsed="0.000672"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>not ${is_synchronized}</arg>
-<arg>Log</arg>
-<arg>⚠️ WARNING: System clock may not be synchronized</arg>
-<arg>WARN</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.542394" elapsed="0.000285"/>
-</kw>
-<if>
-<branch type="IF" condition="${is_synchronized} and ${tracking_synced}">
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Time synchronization validation: PASSED - System clock is synchronized</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.543156" elapsed="0.000033"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.542846" elapsed="0.000400"/>
-</branch>
-<branch type="ELSE IF" condition="${is_synchronized}">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.543842" level="INFO">✅ Time synchronization validation: PARTIAL - System reports synchronized</msg>
-<arg>✅ Time synchronization validation: PARTIAL - System reports synchronized</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.543480" elapsed="0.000480"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:38.543285" elapsed="0.000735"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<arg>ℹ️ Time synchronization validation: INFORMATIONAL - Check synchronization status</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.544393" elapsed="0.000046"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.544054" elapsed="0.000440"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:38.542770" elapsed="0.001752"/>
-</if>
-<return>
-<value>${sync_line}</value>
-<status status="PASS" start="2025-10-05T15:50:38.544571" elapsed="0.000054"/>
-</return>
-<msg time="2025-10-05T15:50:38.544803" level="INFO">${sync_status} = System clock synchronized: yes</msg>
-<var>${sync_status}</var>
-<doc>🔄 Validate time synchronization is working properly</doc>
-<status status="PASS" start="2025-10-05T15:50:38.491085" elapsed="0.053748"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.545804" level="INFO">🔄 Synchronization status: System clock synchronized: yes</msg>
-<arg>🔄 Synchronization status: ${sync_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.545552" elapsed="0.000386"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.546308" level="INFO">✅ Time synchronization validation completed</msg>
-<arg>✅ Time synchronization validation completed</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.546115" elapsed="0.000318"/>
-</kw>
-<kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
-<if>
-<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.548386" level="INFO">✅ Completed: Critical - Validate Time Synchronization Status - PASS</msg>
-<arg>✅ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.547978" elapsed="0.001537"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:38.547539" elapsed="0.002058"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<arg>❌ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.550114" elapsed="0.000050"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.549634" elapsed="0.000593"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:38.547493" elapsed="0.002759"/>
-</if>
-<arg>${TEST_NAME}</arg>
-<arg>${TEST_STATUS}</arg>
-<doc>📝 Log the end of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.546869" elapsed="0.003447"/>
-</kw>
 <doc>🔄 Validate time synchronization is working and clock is synchronized</doc>
 <tag>critical</tag>
 <tag>ntp</tag>
 <tag>synchronization</tag>
 <tag>time</tag>
-<status status="PASS" start="2025-10-05T15:50:38.485361" elapsed="0.064999"/>
+<status status="FAIL" start="2025-10-10T19:32:11.850728" elapsed="0.001816">Parent suite setup failed:
+TimeoutError: timed out</status>
 </test>
 <test id="s1-t7" name="Normal - Comprehensive Time Configuration Validation" line="101">
-<kw name="Log Test Start" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.551699" level="INFO">🏁 Starting: Normal - Comprehensive Time Configuration Validation</msg>
-<arg>🏁 Starting: ${test_name}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.551549" elapsed="0.000254"/>
-</kw>
-<arg>${TEST_NAME}</arg>
-<doc>📝 Log the start of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.551261" elapsed="0.000617"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.552149" level="INFO">🔍 Performing comprehensive time configuration validation...</msg>
-<arg>🔍 Performing comprehensive time configuration validation...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.551982" elapsed="0.000260"/>
-</kw>
-<kw name="Validate All Time Settings" owner="time_keywords">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.553515" level="INFO">🔍 Performing comprehensive time configuration validation...</msg>
-<arg>🔍 Performing comprehensive time configuration validation...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.552812" elapsed="0.000819"/>
-</kw>
-<kw name="Validate Timezone Configuration" owner="time_keywords">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.554177" level="INFO">🔍 Validating timezone configuration...</msg>
-<arg>🔍 Validating timezone configuration...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.554061" elapsed="0.000208"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.554491" level="INFO">Executing command 'timedatectl | grep "Time zone"'.</msg>
-<msg time="2025-10-05T15:50:38.600149" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.600345" level="INFO">${timezone_line} =                 Time zone: America/Chicago (CDT, -0500)</msg>
-<var>${timezone_line}</var>
-<arg>timedatectl | grep "Time zone"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.554395" elapsed="0.045979"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.600994" level="INFO">⏰ Timezone info:                 Time zone: America/Chicago (CDT, -0500)</msg>
-<arg>⏰ Timezone info: ${timezone_line}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.600695" elapsed="0.000444"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.601726" level="FAIL">'                Time zone: America/Chicago (CDT, -0500)' does not contain 'America/Los_Angeles'</msg>
-<arg>${timezone_line}</arg>
-<arg>America/Los_Angeles</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.601477" elapsed="0.000323">'                Time zone: America/Chicago (CDT, -0500)' does not contain 'America/Los_Angeles'</status>
-</kw>
-<msg time="2025-10-05T15:50:38.601894" level="INFO">${contains_la} = False</msg>
-<var>${contains_la}</var>
-<arg>Should Contain</arg>
-<arg>${timezone_line}</arg>
-<arg>America/Los_Angeles</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.601309" elapsed="0.000607"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Should Contain" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.602301" level="FAIL">'                Time zone: America/Chicago (CDT, -0500)' does not contain 'Pacific'</msg>
-<arg>${timezone_line}</arg>
-<arg>Pacific</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.602149" elapsed="0.000202">'                Time zone: America/Chicago (CDT, -0500)' does not contain 'Pacific'</status>
-</kw>
-<msg time="2025-10-05T15:50:38.602429" level="INFO">${contains_pacific} = False</msg>
-<var>${contains_pacific}</var>
-<arg>Should Contain</arg>
-<arg>${timezone_line}</arg>
-<arg>Pacific</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.602026" elapsed="0.000421"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.602831" level="INFO">${timezone_valid} = False</msg>
-<var>${timezone_valid}</var>
-<arg>${contains_la} or ${contains_pacific}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.602570" elapsed="0.000288"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Fail" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.603501" level="FAIL">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</msg>
-<arg>❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found: ${timezone_line}</arg>
-<doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.603234" elapsed="0.000327">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</status>
-</kw>
-<arg>not ${timezone_valid}</arg>
-<arg>Fail</arg>
-<arg>❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found: ${timezone_line}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.602969" elapsed="0.000639">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Timezone validation: PASSED - Timezone set to Pacific/Los Angeles</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.604235" elapsed="0.000031"/>
-</kw>
-<return>
-<value>${timezone_line}</value>
-<status status="NOT RUN" start="2025-10-05T15:50:38.604327" elapsed="0.000033"/>
-</return>
-<var>${timezone}</var>
-<doc>🌎 Validate timezone is set to Pacific/Los Angeles</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.553836" elapsed="0.050662">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</status>
-</kw>
-<kw name="Validate Chrony Service Status" owner="time_keywords">
-<doc>📡 Validate chrony service is active and running</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.604783" elapsed="0.000045"/>
-</kw>
-<kw name="Validate NTP Server Configuration" owner="time_keywords">
-<var>${ntp_servers}</var>
-<doc>🕐 Validate NTP server is configured to ntpx.domain.com</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.605214" elapsed="0.000039"/>
-</kw>
-<kw name="Validate Time Synchronization Status" owner="time_keywords">
-<var>${sync_status}</var>
-<doc>🔄 Validate time synchronization is working properly</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.605572" elapsed="0.000037"/>
-</kw>
-<kw name="Get Current Date" owner="DateTime">
-<var>${timestamp}</var>
-<arg>result_format=%Y%m%d_%H%M%S</arg>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.605789" elapsed="0.000028"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${validation_file}</var>
-<arg>${DATA_DIR}/time_validation_summary_${timestamp}.txt</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.606044" elapsed="0.000030"/>
-</kw>
-<kw name="Catenate" owner="BuiltIn">
-<var>${validation_summary}</var>
-<arg>SEPARATOR=\n</arg>
-<arg>=== Time Configuration Validation Summary ===</arg>
-<arg>Timestamp: ${timestamp}</arg>
-<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
-<arg>=== Timezone Validation ===</arg>
-<arg>Expected: Pacific/Los Angeles (America/Los_Angeles)</arg>
-<arg>Actual: ${timezone}</arg>
-<arg>Status: ✅ PASSED</arg>
-<arg>=== Chrony Service Validation ===</arg>
-<arg>Expected: Active and Running</arg>
-<arg>Status: ✅ PASSED</arg>
-<arg>=== NTP Server Configuration ===</arg>
-<arg>Expected: ntpx.domain.com</arg>
-<arg>Configured Servers: ${ntp_servers}</arg>
-<arg>=== Time Synchronization ===</arg>
-<arg>Synchronization Status: ${sync_status}</arg>
-<arg>=== Overall Status ===</arg>
-<arg>Time configuration validation completed successfully</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.606195" elapsed="0.000022"/>
-</kw>
-<kw name="Create File" owner="OperatingSystem">
-<arg>${validation_file}</arg>
-<arg>${validation_summary}</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.606400" elapsed="0.000024"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>📄 Validation summary saved to: ${validation_file}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.606547" elapsed="0.000023"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Comprehensive time configuration validation completed</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.606691" elapsed="0.000023"/>
-</kw>
-<doc>📊 Comprehensive validation of all time configuration settings</doc>
-<status status="FAIL" start="2025-10-05T15:50:38.552424" elapsed="0.054416">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>📊 Comprehensive validation summary:</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.607030" elapsed="0.000029"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>📊 - Timezone: Pacific/Los Angeles ✅</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.607184" elapsed="0.000027"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>📊 - Chrony Service: Active ✅</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.607332" elapsed="0.000346"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>📊 - NTP Server: Configured ✅</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.607829" elapsed="0.000036"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>📊 - Synchronization: Verified ✅</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.608007" elapsed="0.000029"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Comprehensive time configuration validation: PASSED</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.608158" elapsed="0.000021"/>
-</kw>
-<kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
-<if>
-<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
-<kw name="Log" owner="BuiltIn">
-<arg>✅ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.611587" elapsed="0.000032"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.610479" elapsed="0.001243"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.612692" level="INFO">❌ Completed: Normal - Comprehensive Time Configuration Validation - FAIL</msg>
-<arg>❌ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.612249" elapsed="0.001782"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:38.611767" elapsed="0.002404"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:38.610440" elapsed="0.003774"/>
-</if>
-<arg>${TEST_NAME}</arg>
-<arg>${TEST_STATUS}</arg>
-<doc>📝 Log the end of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.609829" elapsed="0.004510"/>
-</kw>
 <doc>📊 Perform comprehensive validation of all time configuration settings</doc>
 <tag>compliance</tag>
 <tag>comprehensive</tag>
 <tag>normal</tag>
 <tag>validation</tag>
-<status status="FAIL" start="2025-10-05T15:50:38.550664" elapsed="0.063750">❌ TIMEZONE MISMATCH: Expected 'America/Los_Angeles' or 'Pacific', found:                 Time zone: America/Chicago (CDT, -0500)</status>
+<status status="FAIL" start="2025-10-10T19:32:11.854696" elapsed="0.002073">Parent suite setup failed:
+TimeoutError: timed out</status>
 </test>
 <test id="s1-t8" name="Normal - Hardware Clock Verification" line="117">
-<kw name="Log Test Start" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.616705" level="INFO">🏁 Starting: Normal - Hardware Clock Verification</msg>
-<arg>🏁 Starting: ${test_name}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.616466" elapsed="0.000724"/>
-</kw>
-<arg>${TEST_NAME}</arg>
-<doc>📝 Log the start of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.616097" elapsed="0.001188"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.618675" level="INFO">🔍 Verifying hardware clock configuration...</msg>
-<arg>🔍 Verifying hardware clock configuration...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.618483" elapsed="0.000308"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.619046" level="INFO">Executing command 'hwclock --show 2&gt;/dev/null || echo "hwclock requires privileges"'.</msg>
-<msg time="2025-10-05T15:50:38.649343" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.649603" level="INFO">${hwclock_output} = hwclock requires privileges</msg>
-<var>${hwclock_output}</var>
-<arg>hwclock --show 2&gt;/dev/null || echo "hwclock requires privileges"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.618934" elapsed="0.030699"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.650031" level="INFO">Executing command 'date'.</msg>
-<msg time="2025-10-05T15:50:38.706500" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.706725" level="INFO">${current_date} = Sun Oct  5 15:50:38 CDT 2025</msg>
-<var>${current_date}</var>
-<arg>date</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.649892" elapsed="0.056859"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.707253" level="INFO">🕰️ Hardware Clock: hwclock requires privileges</msg>
-<arg>🕰️ Hardware Clock: ${hwclock_output}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.706971" elapsed="0.000463"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.707849" level="INFO">📅 System Date: Sun Oct  5 15:50:38 CDT 2025</msg>
-<arg>📅 System Date: ${current_date}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.707642" elapsed="0.000336"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.708250" level="INFO">ℹ️ Hardware clock information collected for review</msg>
-<arg>ℹ️ Hardware clock information collected for review</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.708128" elapsed="0.000239"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.708659" level="INFO">✅ Hardware clock verification: INFORMATIONAL</msg>
-<arg>✅ Hardware clock verification: INFORMATIONAL</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.708512" elapsed="0.000269"/>
-</kw>
-<kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
-<if>
-<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.710444" level="INFO">✅ Completed: Normal - Hardware Clock Verification - PASS</msg>
-<arg>✅ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.710209" elapsed="0.000364"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:38.709808" elapsed="0.000818"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<arg>❌ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.710785" elapsed="0.000023"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.710661" elapsed="0.000184"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:38.709755" elapsed="0.001114"/>
-</if>
-<arg>${TEST_NAME}</arg>
-<arg>${TEST_STATUS}</arg>
-<doc>📝 Log the end of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.709225" elapsed="0.001710"/>
-</kw>
 <doc>🕰️ Verify hardware clock and its synchronization with system clock</doc>
 <tag>clock</tag>
 <tag>hardware</tag>
 <tag>normal</tag>
 <tag>verification</tag>
-<status status="PASS" start="2025-10-05T15:50:38.615138" elapsed="0.095846"/>
+<status status="FAIL" start="2025-10-10T19:32:11.859936" elapsed="0.002275">Parent suite setup failed:
+TimeoutError: timed out</status>
 </test>
 <test id="s1-t9" name="Normal - NTP Source Analysis" line="134">
-<kw name="Log Test Start" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.712338" level="INFO">🏁 Starting: Normal - NTP Source Analysis</msg>
-<arg>🏁 Starting: ${test_name}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.712166" elapsed="0.000282"/>
-</kw>
-<arg>${TEST_NAME}</arg>
-<doc>📝 Log the start of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.711843" elapsed="0.000675"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.712783" level="INFO">🔍 Analyzing NTP source details...</msg>
-<arg>🔍 Analyzing NTP source details...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.712646" elapsed="0.000237"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.713178" level="INFO">Executing command 'chronyc sources -v'.</msg>
-<msg time="2025-10-05T15:50:38.755956" level="INFO">Command exited with return code 127.</msg>
-<msg time="2025-10-05T15:50:38.756345" level="INFO">${sources_verbose} = </msg>
-<var>${sources_verbose}</var>
-<arg>chronyc sources -v</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.713064" elapsed="0.043324"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.756848" level="INFO">Executing command 'chronyc sourcestats'.</msg>
-<msg time="2025-10-05T15:50:38.808264" level="INFO">Command exited with return code 127.</msg>
-<msg time="2025-10-05T15:50:38.808771" level="INFO">${sourcestats} = </msg>
-<var>${sourcestats}</var>
-<arg>chronyc sourcestats</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.756664" elapsed="0.052222"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.810113" level="INFO">📊 NTP Sources (Verbose): </msg>
-<arg>📊 NTP Sources (Verbose): ${sources_verbose}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.809540" elapsed="0.000826"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.811140" level="INFO">📊 NTP Source Statistics: </msg>
-<arg>📊 NTP Source Statistics: ${sourcestats}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.810699" elapsed="0.000577"/>
-</kw>
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:50:38.812021" level="INFO">${timestamp} = 20251005_155038</msg>
-<var>${timestamp}</var>
-<arg>result_format=%Y%m%d_%H%M%S</arg>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.811625" elapsed="0.000544"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.812713" level="INFO">${ntp_analysis_file} = results/test7_time_configuration_validation/data/ntp_source_analysis_20251005_155038.txt</msg>
-<var>${ntp_analysis_file}</var>
-<arg>${DATA_DIR}/ntp_source_analysis_${timestamp}.txt</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.812383" elapsed="0.000370"/>
-</kw>
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.813535" level="INFO">${ntp_analysis_data} = === NTP Source Analysis ===
-Timestamp: 20251005_155038
-Target Server: alhxvdvitap01 (172.30.16.186)
-
-=== Chrony Sources (Verbose) ===
-
-
-=== Chrony Source Statistics ===
-</msg>
-<var>${ntp_analysis_data}</var>
-<arg>SEPARATOR=\n</arg>
-<arg>=== NTP Source Analysis ===</arg>
-<arg>Timestamp: ${timestamp}</arg>
-<arg>Target Server: ${TARGET_HOSTNAME} (${TARGET_IP})</arg>
-<arg>=== Chrony Sources (Verbose) ===</arg>
-<arg>${sources_verbose}</arg>
-<arg>=== Chrony Source Statistics ===</arg>
-<arg>${sourcestats}</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.813014" elapsed="0.001099"/>
-</kw>
-<kw name="Create File" owner="OperatingSystem">
-<msg time="2025-10-05T15:50:38.819555" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7_time_configuration_validation/data/ntp_source_analysis_20251005_155038.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7_time_configuration_validation/data/ntp_source_analysis_20251005_155038.txt&lt;/a&gt;'.</msg>
-<arg>${ntp_analysis_file}</arg>
-<arg>${ntp_analysis_data}</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.814266" elapsed="0.005383"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.820185" level="INFO">📄 NTP source analysis saved to: results/test7_time_configuration_validation/data/ntp_source_analysis_20251005_155038.txt</msg>
-<arg>📄 NTP source analysis saved to: ${ntp_analysis_file}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.819915" elapsed="0.000393"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.821008" level="INFO">✅ NTP source analysis: INFORMATIONAL - Available for review</msg>
-<arg>✅ NTP source analysis: INFORMATIONAL - Available for review</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.820490" elapsed="0.000655"/>
-</kw>
-<kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
-<if>
-<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.822894" level="INFO">✅ Completed: Normal - NTP Source Analysis - PASS</msg>
-<arg>✅ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.822672" elapsed="0.000340"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:38.822097" elapsed="0.000969"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<arg>❌ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:38.823226" elapsed="0.000023"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:38.823100" elapsed="0.000188"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:38.822032" elapsed="0.001279"/>
-</if>
-<arg>${TEST_NAME}</arg>
-<arg>${TEST_STATUS}</arg>
-<doc>📝 Log the end of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.821650" elapsed="0.001723"/>
-</kw>
 <doc>📊 Analyze NTP source details and server reachability</doc>
 <tag>analysis</tag>
 <tag>normal</tag>
 <tag>ntp</tag>
 <tag>sources</tag>
-<status status="PASS" start="2025-10-05T15:50:38.711304" elapsed="0.112117"/>
+<status status="FAIL" start="2025-10-10T19:32:11.864159" elapsed="0.001378">Parent suite setup failed:
+TimeoutError: timed out</status>
 </test>
 <test id="s1-t10" name="Normal - Clock Drift Monitoring" line="166">
-<kw name="Log Test Start" owner="time_keywords" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.824821" level="INFO">🏁 Starting: Normal - Clock Drift Monitoring</msg>
-<arg>🏁 Starting: ${test_name}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.824522" elapsed="0.000531"/>
-</kw>
-<arg>${TEST_NAME}</arg>
-<doc>📝 Log the start of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:38.824197" elapsed="0.000926"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.825337" level="INFO">🔍 Monitoring clock drift and accuracy...</msg>
-<arg>🔍 Monitoring clock drift and accuracy...</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.825230" elapsed="0.000256"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.825700" level="INFO">Executing command 'chronyc tracking'.</msg>
-<msg time="2025-10-05T15:50:38.871625" level="INFO">Command exited with return code 127.</msg>
-<msg time="2025-10-05T15:50:38.871902" level="INFO">${tracking_output} = </msg>
-<var>${tracking_output}</var>
-<arg>chronyc tracking</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.825609" elapsed="0.046329"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:38.872525" level="INFO">📉 Chrony Tracking Info: </msg>
-<arg>📉 Chrony Tracking Info: ${tracking_output}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.872187" elapsed="0.000509"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.873088" level="INFO">Executing command 'chronyc tracking | grep "System time" || echo "N/A"'.</msg>
-<msg time="2025-10-05T15:50:38.917749" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.918038" level="INFO">${system_time_line} = N/A</msg>
-<var>${system_time_line}</var>
-<arg>chronyc tracking | grep "System time" || echo "N/A"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.872884" elapsed="0.045209"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.918605" level="INFO">Executing command 'chronyc tracking | grep "Last offset" || echo "N/A"'.</msg>
-<msg time="2025-10-05T15:50:38.965487" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:38.965684" level="INFO">${last_offset_line} = N/A</msg>
-<var>${last_offset_line}</var>
-<arg>chronyc tracking | grep "Last offset" || echo "N/A"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.918392" elapsed="0.047318"/>
-</kw>
-<kw name="Execute Command" owner="SSHLibrary">
-<msg time="2025-10-05T15:50:38.966024" level="INFO">Executing command 'chronyc tracking | grep "RMS offset" || echo "N/A"'.</msg>
-<msg time="2025-10-05T15:50:39.018295" level="INFO">Command exited with return code 0.</msg>
-<msg time="2025-10-05T15:50:39.018564" level="INFO">${rms_offset_line} = N/A</msg>
-<var>${rms_offset_line}</var>
-<arg>chronyc tracking | grep "RMS offset" || echo "N/A"</arg>
-<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2025-10-05T15:50:38.965902" elapsed="0.052700"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.019152" level="INFO">📊 System Time Offset: N/A</msg>
-<arg>📊 System Time Offset: ${system_time_line}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.018857" elapsed="0.000461"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.019996" level="INFO">📊 Last Offset: N/A</msg>
-<arg>📊 Last Offset: ${last_offset_line}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.019593" elapsed="0.000559"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.020744" level="INFO">📊 RMS Offset: N/A</msg>
-<arg>📊 RMS Offset: ${rms_offset_line}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.020385" elapsed="0.000505"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.025010" level="INFO">ℹ️ Clock drift monitoring: Data collected for analysis</msg>
-<arg>ℹ️ Clock drift monitoring: Data collected for analysis</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.024450" elapsed="0.000753"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.025636" level="INFO">✅ Clock drift monitoring: INFORMATIONAL</msg>
-<arg>✅ Clock drift monitoring: INFORMATIONAL</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.025428" elapsed="0.000335"/>
-</kw>
-<kw name="Log Test End" owner="time_keywords" type="TEARDOWN">
-<if>
-<branch type="IF" condition="&quot;${test_status}&quot; == &quot;PASS&quot;">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.027066" level="INFO">✅ Completed: Normal - Clock Drift Monitoring - PASS</msg>
-<arg>✅ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.026820" elapsed="0.000358"/>
-</kw>
-<status status="PASS" start="2025-10-05T15:50:39.026580" elapsed="0.000658"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log" owner="BuiltIn">
-<arg>❌ Completed: ${test_name} - ${test_status}</arg>
-<arg>console=yes</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-10-05T15:50:39.027407" elapsed="0.000024"/>
-</kw>
-<status status="NOT RUN" start="2025-10-05T15:50:39.027274" elapsed="0.000193"/>
-</branch>
-<status status="PASS" start="2025-10-05T15:50:39.026553" elapsed="0.000936"/>
-</if>
-<arg>${TEST_NAME}</arg>
-<arg>${TEST_STATUS}</arg>
-<doc>📝 Log the end of a test case</doc>
-<status status="PASS" start="2025-10-05T15:50:39.026202" elapsed="0.001346"/>
-</kw>
 <doc>📉 Monitor clock drift and synchronization accuracy</doc>
 <tag>accuracy</tag>
 <tag>drift</tag>
 <tag>monitoring</tag>
 <tag>normal</tag>
-<status status="PASS" start="2025-10-05T15:50:38.823695" elapsed="0.203898"/>
+<status status="FAIL" start="2025-10-10T19:32:11.867730" elapsed="0.001867">Parent suite setup failed:
+TimeoutError: timed out</status>
 </test>
 <kw name="Generate Time Configuration Executive Summary" owner="time_keywords" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.028617" level="INFO">📊 Generating Test-7 Time Configuration Executive Summary...</msg>
+<msg time="2025-10-10T19:32:11.875480" level="INFO">📊 Generating Test-7 Time Configuration Executive Summary...</msg>
 <arg>📊 Generating Test-7 Time Configuration Executive Summary...</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.028485" elapsed="0.000253"/>
+<status status="PASS" start="2025-10-10T19:32:11.874851" elapsed="0.002011"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-10-05T15:50:39.029207" level="INFO">${timestamp} = 2025-10-05 15:50:39</msg>
+<msg time="2025-10-10T19:32:11.878517" level="INFO">${timestamp} = 2025-10-10 19:32:11</msg>
 <var>${timestamp}</var>
 <arg>result_format=%Y-%m-%d %H:%M:%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.028947" elapsed="0.000310"/>
+<status status="PASS" start="2025-10-10T19:32:11.877437" elapsed="0.001196"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.029494" level="INFO">${summary_file} = results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
+<msg time="2025-10-10T19:32:11.879578" level="INFO">${summary_file} = results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
 <var>${summary_file}</var>
 <arg>results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.029377" elapsed="0.000141"/>
+<status status="PASS" start="2025-10-10T19:32:11.879214" elapsed="0.000427"/>
 </kw>
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.029957" level="INFO">${summary_content} = ========================================
+<msg time="2025-10-10T19:32:11.880751" level="INFO">${summary_content} = ========================================
 ⏰ TEST-7: TIME CONFIGURATION VALIDATION
 📊 EXECUTIVE SUMMARY REPORT
 ========================================
 
-📅 Report Generated: 2025-10-05 15:50:39
+📅 Report Generated: 2025-10-10 19:32:11
 🎯 Target S...</msg>
 <var>${summary_content}</var>
 <arg>SEPARATOR=\n</arg>
@@ -1803,74 +250,74 @@ Target Server: alhxvdvitap01 (172.30.16.186)
 <arg>End of Executive Summary</arg>
 <arg>========================================</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.029609" elapsed="0.000375"/>
+<status status="PASS" start="2025-10-10T19:32:11.879873" elapsed="0.000949"/>
 </kw>
 <kw name="Create File" owner="OperatingSystem">
-<msg time="2025-10-05T15:50:39.037179" level="INFO" html="true">Created file '&lt;a href="file:///mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt"&gt;/mnt/c/Users/sacpa/Projects/robot/robotframework/results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt&lt;/a&gt;'.</msg>
+<msg time="2025-10-10T19:32:11.883041" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\sacpa\Projects\robot\robotframework\results\test7_time_configuration_validation\Test7_Time_Configuration_Executive_Summary.txt"&gt;C:\Users\sacpa\Projects\robot\robotframework\results\test7_time_configuration_validation\Test7_Time_Configuration_Executive_Summary.txt&lt;/a&gt;'.</msg>
 <arg>${summary_file}</arg>
 <arg>${summary_content}</arg>
 <doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.030199" elapsed="0.007123"/>
+<status status="PASS" start="2025-10-10T19:32:11.881226" elapsed="0.001972"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.038011" level="INFO">📊 Executive summary generated: results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
+<msg time="2025-10-10T19:32:11.883855" level="INFO">📊 Executive summary generated: results/test7_time_configuration_validation/Test7_Time_Configuration_Executive_Summary.txt</msg>
 <arg>📊 Executive summary generated: ${summary_file}</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.037670" elapsed="0.000524"/>
+<status status="PASS" start="2025-10-10T19:32:11.883478" elapsed="0.000934"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-10-05T15:50:39.038498" level="INFO">✅ Test-7 Time Configuration Validation completed successfully!</msg>
+<msg time="2025-10-10T19:32:11.885819" level="INFO">✅ Test-7 Time Configuration Validation completed successfully!</msg>
 <arg>✅ Test-7 Time Configuration Validation completed successfully!</arg>
 <arg>console=yes</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-10-05T15:50:39.038361" elapsed="0.000252"/>
+<status status="PASS" start="2025-10-10T19:32:11.884913" elapsed="0.001622"/>
 </kw>
 <doc>📊 Generate executive summary for time configuration validation</doc>
-<status status="PASS" start="2025-10-05T15:50:39.028303" elapsed="0.010389"/>
+<status status="PASS" start="2025-10-10T19:32:11.873276" elapsed="0.013583"/>
 </kw>
 <doc>⏰ Time Configuration Validation Test Suite - Test-7
 🔍 Process: Find hostname in EDS → SSH to server → Collect time/NTP data → Validate timezone and NTP configuration
 ✅ Pass if timezone is Pacific/Los Angeles and NTP server is ntpx.domain.com with proper synchronization
 📊 Validates: Timezone setting, Chrony service status, NTP server configuration, time synchronization</doc>
-<status status="FAIL" start="2025-10-05T15:50:21.758450" elapsed="17.280280"/>
+<status status="FAIL" start="2025-10-10T19:32:07.466590" elapsed="4.420403">Suite setup failed:
+TimeoutError: timed out</status>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="4" skip="0">All Tests</stat>
+<stat pass="0" fail="10" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">accuracy</stat>
-<stat pass="1" fail="0" skip="0">analysis</stat>
+<stat pass="0" fail="1" skip="0">accuracy</stat>
+<stat pass="0" fail="1" skip="0">analysis</stat>
 <stat pass="0" fail="1" skip="0">chrony</stat>
-<stat pass="1" fail="0" skip="0">clock</stat>
+<stat pass="0" fail="1" skip="0">clock</stat>
 <stat pass="0" fail="2" skip="0">compliance</stat>
 <stat pass="0" fail="1" skip="0">comprehensive</stat>
-<stat pass="1" fail="0" skip="0">configuration</stat>
-<stat pass="1" fail="0" skip="0">connection</stat>
-<stat pass="3" fail="3" skip="0">critical</stat>
+<stat pass="0" fail="1" skip="0">configuration</stat>
+<stat pass="0" fail="1" skip="0">connection</stat>
+<stat pass="0" fail="6" skip="0">critical</stat>
 <stat pass="0" fail="1" skip="0">data_collection</stat>
-<stat pass="1" fail="0" skip="0">drift</stat>
-<stat pass="1" fail="0" skip="0">hardware</stat>
-<stat pass="1" fail="0" skip="0">infrastructure</stat>
-<stat pass="1" fail="0" skip="0">monitoring</stat>
-<stat pass="3" fail="1" skip="0">normal</stat>
-<stat pass="3" fail="2" skip="0">ntp</stat>
-<stat pass="1" fail="0" skip="0">server</stat>
+<stat pass="0" fail="1" skip="0">drift</stat>
+<stat pass="0" fail="1" skip="0">hardware</stat>
+<stat pass="0" fail="1" skip="0">infrastructure</stat>
+<stat pass="0" fail="1" skip="0">monitoring</stat>
+<stat pass="0" fail="4" skip="0">normal</stat>
+<stat pass="0" fail="5" skip="0">ntp</stat>
+<stat pass="0" fail="1" skip="0">server</stat>
 <stat pass="0" fail="1" skip="0">service</stat>
-<stat pass="1" fail="0" skip="0">sources</stat>
-<stat pass="1" fail="0" skip="0">ssh</stat>
-<stat pass="1" fail="0" skip="0">synchronization</stat>
-<stat pass="1" fail="1" skip="0">time</stat>
+<stat pass="0" fail="1" skip="0">sources</stat>
+<stat pass="0" fail="1" skip="0">ssh</stat>
+<stat pass="0" fail="1" skip="0">synchronization</stat>
+<stat pass="0" fail="2" skip="0">time</stat>
 <stat pass="0" fail="1" skip="0">timezone</stat>
 <stat pass="0" fail="1" skip="0">validation</stat>
-<stat pass="1" fail="0" skip="0">verification</stat>
+<stat pass="0" fail="1" skip="0">verification</stat>
 </tag>
 <suite>
-<stat name="Time Configuration Validation" id="s1" pass="6" fail="4" skip="0">Time Configuration Validation</stat>
+<stat name="Time Configuration Validation" id="s1" pass="0" fail="10" skip="0">Time Configuration Validation</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-10-05T15:50:38.453283" level="WARN">⚠️ WARNING: Expected NTP server 'ntpx.domain.com' not found in chrony sources</msg>
 </errors>
 </robot>

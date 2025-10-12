@@ -138,10 +138,12 @@ Establish SSH Session
     Log    ✅ SSH session established to ${TARGET_IP}    console=yes
 
 Get Hostname From Server
-    [Documentation]    SSH to server and get actual hostname
-    
+    [Documentation]    SSH to server and get actual hostname (short name without domain)
+
     Establish SSH Session
-    ${hostname}=    Execute Command    hostname
+    # Use 'hostname -s' to get short hostname without domain
+    # Fall back to 'hostname' and strip domain if -s flag not supported
+    ${hostname}=    Execute Command    hostname -s 2>/dev/null || hostname | cut -d'.' -f1
     ${hostname}=    Strip String    ${hostname}
     RETURN    ${hostname}
 
@@ -152,16 +154,18 @@ Get IP Address From Server
     ${ip}=    Strip String    ${ip_output}
     RETURN    ${ip}
 
-Get Subnet From Server  
+Get Subnet From Server
     [Documentation]    SSH to server and get subnet configuration
-    
+
     ${route_output}=    Execute Command    ip route show | grep ${TARGET_IP}
     ${subnet}=    Get Regexp Matches    ${route_output}    (\\d+\\.\\d+\\.\\d+\\.\\d+/\\d+)    1
-    
-    Run Keyword If    ${subnet}
-    ...    RETURN    ${subnet}[0]
-    ...    ELSE
-    ...    RETURN    ${TARGET_SUBNET}
+
+    ${subnet_length}=    Get Length    ${subnet}
+    IF    ${subnet_length} > 0
+        RETURN    ${subnet}[0]
+    ELSE
+        RETURN    ${TARGET_SUBNET}
+    END
 
 Get Gateway From Server
     [Documentation]    SSH to server and get gateway configuration

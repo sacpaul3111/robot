@@ -17,11 +17,14 @@ Test Setup       Log Test Start    ${TEST_NAME}
 Test Teardown    Log Test End      ${TEST_NAME}    ${TEST_STATUS}
 
 *** Test Cases ***
-Critical - Connect to Target Server
-    [Documentation]    🔗 Establish direct connection to target machine via SSH
-    [Tags]             critical    connection    ssh    infrastructure
+Critical - Step 1: Connect to Target Server
+    [Documentation]    🔗 Establish direct SSH connection to target machine
+    ...                Step 1 of validation process: Connect to Target
+    [Tags]             critical    connection    step1    ssh    infrastructure
 
-    Log    🔍 Verifying SSH connection to target server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 1: CONNECT TO TARGET SERVER VIA SSH    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Target: ${TARGET_HOSTNAME} (${TARGET_IP})    console=yes
 
     # Connection already established in Suite Setup
@@ -29,12 +32,16 @@ Critical - Connect to Target Server
     Should Contain    ${connection_status}    Connection active
 
     Log    ✅ SSH connection verified and active    console=yes
+    Log    ✅ STEP 1: COMPLETED - SSH connection established    console=yes
 
-Critical - List All Running Services
+Critical - Step 2.1: Collect All Services Status
     [Documentation]    📋 Execute systemctl to list all services and their current status
-    [Tags]             critical    services    data_collection    systemctl
+    ...                Step 2 of validation process: Collect Service Data (Part 1)
+    [Tags]             critical    services    step2    data_collection    systemctl
 
-    Log    🔍 Collecting complete service list from server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.1: COLLECT ALL SERVICES STATUS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Execute service list collection
     Collect All Services Status
@@ -43,14 +50,19 @@ Critical - List All Running Services
     Should Not Be Empty    ${ALL_SERVICES_OUTPUT}
     Should Not Be Empty    ${ENABLED_SERVICES_OUTPUT}
 
+    Set Suite Variable    ${SERVICES_DATA_COLLECTED}    ${TRUE}
+
     Log    📋 Total services collected: ${ALL_SERVICES_OUTPUT.count('●')} entries    console=yes
-    Log    ✅ Service list collected successfully    console=yes
+    Log    ✅ STEP 2.1: COMPLETED - Service list collected    console=yes
 
-Critical - Document Service Status to File
+Critical - Step 2.2: Document Service Status to File
     [Documentation]    💾 Save complete service list output to file for compliance review
-    [Tags]             critical    documentation    compliance    file_output
+    ...                Step 2 of validation process: Collect Service Data (Part 2)
+    [Tags]             critical    documentation    step2    data_collection    file_output
 
-    Log    🔍 Saving service status documentation...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.2: DOCUMENT SERVICE STATUS TO FILE    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Save service status to file
     ${service_file}=    Save Services Status to File
@@ -60,15 +72,20 @@ Critical - Document Service Status to File
     ${file_size}=    Get File Size    ${service_file}
     Should Be True    ${file_size} > 0
 
+    Set Suite Variable    ${SERVICE_STATUS_FILE}    ${service_file}
+
     Log    📄 Service status saved to: ${service_file}    console=yes
     Log    📄 File size: ${file_size} bytes    console=yes
-    Log    ✅ Service documentation saved successfully    console=yes
+    Log    ✅ STEP 2.2: COMPLETED - Service documentation saved    console=yes
 
-Critical - Validate Required Services Enabled
+Critical - Step 3.1: Validate Required Services Enabled
     [Documentation]    ✅ Verify required services (autofs, sshd, sssd, chronyd, ntpd, syslog) are enabled
-    [Tags]             critical    services    validation    enabled
+    ...                Step 3 of validation process: Validate Against Standards (Part 1)
+    [Tags]             critical    services    step3    validation    enabled
 
-    Log    🔍 Validating required services are enabled...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.1: VALIDATE REQUIRED SERVICES ENABLED    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Required services: ${REQUIRED_SERVICES_ENABLED}    console=yes
 
     # Validate each required service
@@ -81,12 +98,16 @@ Critical - Validate Required Services Enabled
     END
 
     Log    ✅ Required services validation completed    console=yes
+    Log    ✅ STEP 3.1: COMPLETED - Required services validated    console=yes
 
-Critical - Validate Unnecessary Services Disabled
+Critical - Step 3.2: Validate Unnecessary Services Disabled
     [Documentation]    ❌ Verify unnecessary services (iptables, selinux) are disabled
-    [Tags]             critical    services    validation    disabled    security
+    ...                Step 3 of validation process: Validate Against Standards (Part 2)
+    [Tags]             critical    services    step3    validation    disabled    security
 
-    Log    🔍 Validating unnecessary services are disabled...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.2: VALIDATE UNNECESSARY SERVICES DISABLED    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Services to check: ${REQUIRED_SERVICES_DISABLED}    console=yes
 
     # Validate unnecessary services are disabled
@@ -99,6 +120,7 @@ Critical - Validate Unnecessary Services Disabled
     END
 
     Log    ✅ Unnecessary services validation completed    console=yes
+    Log    ✅ STEP 3.2: COMPLETED - Unnecessary services validated    console=yes
 
 Normal - Service Dependency Analysis
     [Documentation]    🔗 Analyze service dependencies and relationships

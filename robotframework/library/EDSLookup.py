@@ -64,25 +64,52 @@ class EDSLookup:
             row = matching_rows.iloc[0]
             info(f"Found matching row for hostname '{hostname}'")
 
-            # Extract configuration using correct column names from EDS
+            # Extract configuration using actual EDS column names
+            # All extractions use safe method - returns 'N/A' if column doesn't exist or is empty
             config = {
+                # Network Configuration
                 'ip': self._extract_ip(row),
-                'subnet': self._extract_subnet(row),
-                'mask': self._extract_mask(row),
-                'gateway': self._extract_gateway(row),
-                'cname': self._extract_cname(row),
-                'domain': self._extract_domain(row),
-                'cpu_cores': self._extract_cpu_cores(row),
-                'ram': self._extract_ram(row),
-                'storage_type': self._extract_storage_type(row),
-                'storage_total_tb': self._extract_storage_total_tb(row),
-                'drive_volume_group': self._extract_drive_volume_group(row),
-                'file_system': self._extract_file_system(row),
-                'logical_volume_partition': self._extract_logical_volume_partition(row),
-                'storage_allocation_gb': self._extract_storage_allocation_gb(row),
-                'recommended_storage_gb': self._extract_recommended_storage_gb(row),
-                'drive_purpose': self._extract_drive_purpose(row),
-                'os_type': self._extract_os_type(row)
+                'subnet': self._extract_safe(row, 'Subnet', 'N/A'),
+                'mask': self._extract_safe(row, 'Mask', 'N/A'),
+                'gateway': self._extract_safe(row, 'Gateway', 'N/A'),
+                'cname': self._extract_safe(row, 'CNAME', 'N/A'),
+                'domain': self._extract_safe(row, 'DOMAIN', 'N/A'),
+                'vlan_number': self._extract_safe(row, 'VLAN Number', 'N/A'),
+                'vlan_id': self._extract_safe(row, 'VLAN ID (Description of VLAN)', 'N/A'),
+                'teaming_bonding': self._extract_safe(row, 'Teaming Bonding (Y/N)', 'N/A'),
+
+                # Server Configuration
+                'host_description': self._extract_safe(row, 'Host Description', 'N/A'),
+                'cluster_name': self._extract_safe(row, 'Cluster Name', 'N/A'),
+                'container_type': self._extract_safe(row, 'Container Type', 'N/A'),
+                'type': self._extract_safe(row, 'Type', 'N/A'),
+                'purpose': self._extract_safe(row, 'Purpose', 'N/A'),
+                'classification': self._extract_safe(row, 'Classification', 'N/A'),
+                'site': self._extract_safe(row, 'Site', 'N/A'),
+                'environment': self._extract_safe(row, 'Environment', 'N/A'),
+                'trust_level': self._extract_safe(row, 'Trust Level', 'N/A'),
+                'os_type': self._extract_safe(row, 'OS Type', 'N/A'),
+
+                # Hardware Configuration
+                'cpu_cores': self._extract_safe(row, 'Number of CPU Cores (recom)', 'N/A'),
+                'ram': self._extract_safe(row, 'RAM', 'N/A'),
+
+                # Storage Configuration
+                'storage_type': self._extract_safe(row, 'Storage Type', 'N/A'),
+                'storage_total_tb': self._extract_safe(row, 'Storage Total TB', 'N/A'),
+                'drive_volume_group': self._extract_safe(row, 'Drive or Volume Group', 'N/A'),
+                'file_system': self._extract_safe(row, 'Files System', 'N/A'),
+                'logical_volume_partition': self._extract_safe(row, 'Logical Volume Name/Partition (Mounted On)', 'N/A'),
+                'storage_allocation_gb': self._extract_safe(row, 'Storage Allocation (GB)', 'N/A'),
+                'recommended_storage_gb': self._extract_safe(row, 'Recommended Storage Allocation (GB)', 'N/A'),
+                'drive_purpose': self._extract_safe(row, 'Drive Purpose', 'N/A'),
+
+                # Additional fields that may or may not exist in EDS
+                'vxrail_cluster': self._extract_safe(row, 'VxRail Cluster', 'N/A'),
+                'vcenter_host': self._extract_safe(row, 'vCenter Host', 'N/A'),
+                'vm_hardware_version': self._extract_safe(row, 'VM Hardware Version', 'N/A'),
+                'vm_memory_reservation': self._extract_safe(row, 'VM Memory Reservation', 'N/A'),
+                'vm_cpu_reservation': self._extract_safe(row, 'VM CPU Reservation', 'N/A')
             }
 
             info(f"EDS configuration for {hostname}: {config}")
@@ -302,3 +329,16 @@ class EDSLookup:
             raise ValueError(f"OS type not found in EDS column '{os_col}'")
         except Exception as e:
             raise ValueError(f"Failed to extract OS type from EDS: {str(e)}")
+
+    def _extract_safe(self, row, column_name, default='N/A'):
+        """Safely extract a value from EDS row, returning default if not found"""
+        try:
+            if column_name in row.index and pd.notna(row[column_name]):
+                value = str(row[column_name])
+                info(f"Extracted {column_name} from EDS: {value}")
+                return value
+            info(f"{column_name} not found in EDS, using default: {default}")
+            return default
+        except Exception as e:
+            warn(f"Error extracting {column_name} from EDS: {str(e)}, using default: {default}")
+            return default

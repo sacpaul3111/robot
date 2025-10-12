@@ -17,11 +17,14 @@ Test Setup       Log Test Start    ${TEST_NAME}
 Test Teardown    Log Test End      ${TEST_NAME}    ${TEST_STATUS}
 
 *** Test Cases ***
-Critical - Connect to Target Server
+Critical - Step 1: Connect to Target Server
     [Documentation]    🔗 Establish direct connection to target machine via SSH
-    [Tags]             critical    connection    ssh    infrastructure
+    ...                Step 1 of validation process: Connect to Target
+    [Tags]             critical    connection    step1    ssh    infrastructure
 
-    Log    🔍 Verifying SSH connection to target server...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 1: CONNECT TO TARGET SERVER VIA SSH    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Target: ${TARGET_HOSTNAME} (${TARGET_IP})    console=yes
 
     # Connection already established in Suite Setup
@@ -29,12 +32,16 @@ Critical - Connect to Target Server
     Should Contain    ${connection_status}    Connection active
 
     Log    ✅ SSH connection verified and active    console=yes
+    Log    ✅ STEP 1: COMPLETED - SSH connection established    console=yes
 
-Critical - Collect DNS MX Records
+Critical - Step 2.1: Collect DNS MX Records
     [Documentation]    🌐 Execute nslookup to collect MX records for mail domain
-    [Tags]             critical    dns    mx_records    mail
+    ...                Step 2 of validation process: Collect Mail Configuration Data (Part 1)
+    [Tags]             critical    dns    step2    data_collection    mx_records
 
-    Log    🔍 Collecting DNS MX records for mail domain...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.1: COLLECT DNS MX RECORDS    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Expected SMTP Relay: ${EXPECTED_SMTP_RELAY}    console=yes
 
     # Collect MX records
@@ -45,12 +52,16 @@ Critical - Collect DNS MX Records
 
     Log    🌐 MX Records: ${mx_records}    console=yes
     Log    ✅ DNS MX records collected successfully    console=yes
+    Log    ✅ STEP 2.1: COMPLETED - MX records collected    console=yes
 
-Critical - Collect Mail.rc Configuration
+Critical - Step 2.2: Collect Mail.rc Configuration
     [Documentation]    📄 Read and collect /etc/mail.rc configuration file
-    [Tags]             critical    config    mail_rc    smtp
+    ...                Step 2 of validation process: Collect Mail Configuration Data (Part 2)
+    [Tags]             critical    config    step2    data_collection    mail_rc
 
-    Log    🔍 Collecting /etc/mail.rc configuration...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.2: COLLECT MAIL.RC CONFIGURATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
 
     # Collect mail.rc configuration
     ${mail_rc_content}=    Collect Mail RC Configuration
@@ -60,12 +71,16 @@ Critical - Collect Mail.rc Configuration
 
     Log    📄 Mail.rc configuration saved to: ${mail_rc_file}    console=yes
     Log    ✅ Mail.rc configuration collected    console=yes
+    Log    ✅ STEP 2.2: COMPLETED - Mail.rc configuration collected    console=yes
 
-Critical - Validate SMTP Relay Configuration
+Critical - Step 3.1: Validate SMTP Relay Configuration
     [Documentation]    📧 Validate SMTP relay server is configured correctly in mail.rc
-    [Tags]             critical    smtp    relay    validation
+    ...                Step 3 of validation process: Validate Against Standards (Part 1)
+    [Tags]             critical    smtp    step3    validation    relay
 
-    Log    🔍 Validating SMTP relay configuration...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.1: VALIDATE SMTP RELAY CONFIGURATION    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Expected SMTP Relay: ${EXPECTED_SMTP_RELAY}    console=yes
 
     # Validate SMTP relay in mail.rc
@@ -73,12 +88,16 @@ Critical - Validate SMTP Relay Configuration
 
     Log    📧 SMTP Relay Validation: ${validation_result}    console=yes
     Log    ✅ SMTP relay configuration validated    console=yes
+    Log    ✅ STEP 3.1: COMPLETED - SMTP relay validated    console=yes
 
-Critical - Test SMTP Port Connectivity
+Critical - Step 3.2: Test SMTP Port Connectivity
     [Documentation]    🔌 Test connectivity to SMTP server on port 25 using telnet/nc
-    [Tags]             critical    connectivity    smtp    port25
+    ...                Step 3 of validation process: Validate Against Standards (Part 2)
+    [Tags]             critical    connectivity    step3    validation    smtp
 
-    Log    🔍 Testing SMTP port connectivity...    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 3.2: TEST SMTP PORT CONNECTIVITY    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 SMTP Server: ${EXPECTED_SMTP_RELAY}    console=yes
     Log    📋 SMTP Port: ${SMTP_PORT}    console=yes
 
@@ -87,6 +106,7 @@ Critical - Test SMTP Port Connectivity
 
     Log    🔌 SMTP Connectivity Result: ${connectivity_result}    console=yes
     Log    ✅ SMTP port connectivity test completed    console=yes
+    Log    ✅ STEP 3.2: COMPLETED - SMTP connectivity validated    console=yes
 
 Normal - Send Test Email
     [Documentation]    📨 Send a test email to verify mail subsystem functionality
