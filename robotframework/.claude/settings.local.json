@@ -24,7 +24,11 @@
       "Bash(find:*)",
       "Bash(for dir in tests/test*/)",
       "Bash(done)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(do)",
+      "Bash(if ! grep -q \"DATA_DIR\" \"$dir\"*.resource)",
+      "Bash(then)",
+      "Bash(fi)"
     ],
     "deny": [],
     "ask": []

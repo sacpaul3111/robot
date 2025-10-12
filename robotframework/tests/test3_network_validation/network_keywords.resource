@@ -145,13 +145,22 @@ Get Hostname From Server
     # Fall back to 'hostname' and strip domain if -s flag not supported
     ${hostname}=    Execute Command    hostname -s 2>/dev/null || hostname | cut -d'.' -f1
     ${hostname}=    Strip String    ${hostname}
+
+    # Save to evidence file
+    Save Evidence To Data    hostname.txt    Hostname: ${hostname}
+
     RETURN    ${hostname}
 
 Get IP Address From Server
     [Documentation]    SSH to server and get actual IP address
-    
+
     ${ip_output}=    Execute Command    hostname -I | awk '{print $1}' || ip addr show | grep -oP '(?<=inet\\s)\\d+\\.\\d+\\.\\d+\\.\\d+'
     ${ip}=    Strip String    ${ip_output}
+
+    # Save full network config to evidence
+    ${ip_config}=    Execute Command    ip addr show
+    Save Evidence To Data    ip_configuration.txt    ${ip_config}
+
     RETURN    ${ip}
 
 Get Subnet From Server
@@ -169,41 +178,129 @@ Get Subnet From Server
 
 Get Gateway From Server
     [Documentation]    SSH to server and get gateway configuration
-    
+
     ${gateway_output}=    Execute Command    ip route show default | awk '{print $3}'
     ${gateway}=    Strip String    ${gateway_output}
+
+    # Save full routing table to evidence
+    ${route_table}=    Execute Command    ip route show
+    Save Evidence To Data    routing_table.txt    ${route_table}
+
     RETURN    ${gateway}
 
 Get FQDN From Server
     [Documentation]    SSH to server and get FQDN
-    
+
     ${fqdn_output}=    Execute Command    hostname -f 2>/dev/null || hostname
     ${fqdn}=    Strip String    ${fqdn_output}
+
+    # Save DNS config to evidence
+    ${dns_config}=    Execute Command    cat /etc/resolv.conf 2>/dev/null || echo "DNS config not accessible"
+    Save Evidence To Data    dns_configuration.txt    ${dns_config}
+
     RETURN    ${fqdn}
 
 Get NTP Status From Server
     [Documentation]    SSH to server and check NTP service status
-    
+
     ${ntp_status}=    Execute Command    systemctl is-active chronyd 2>/dev/null || systemctl is-active ntp 2>/dev/null || systemctl is-active ntpd 2>/dev/null || echo "inactive"
     ${ntp_status}=    Strip String    ${ntp_status}
+
+    # Save full NTP status to evidence
+    ${ntp_detail}=    Execute Command    timedatectl status 2>/dev/null || systemctl status chronyd 2>/dev/null || systemctl status ntpd 2>/dev/null || echo "NTP info not available"
+    Save Evidence To Data    ntp_status.txt    ${ntp_detail}
+
     RETURN    ${ntp_status}
+
+Save Evidence To Data
+    [Documentation]    Save evidence data to the data folder with timestamp
+    [Arguments]    ${filename}    ${content}
+
+    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
+    ${evidence_file}=    Set Variable    ${DATA_DIR}/${filename}
+
+    Create File    ${evidence_file}    ${content}
+    Log    📄 Evidence saved: ${evidence_file}    console=yes
 
 Generate Executive Summary
     [Documentation]    Generate test summary and close connections
-    
+
     ${end_time}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
     ${duration}=    Subtract Date From Date    ${end_time}    ${TEST_START_TIME}
-    
+
+    # Create comprehensive comparison report
+    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
+    ${summary_file}=    Set Variable    ${DATA_DIR}/network_validation_summary_${timestamp}.txt
+
+    ${summary_content}=    Catenate    SEPARATOR=\n
+    ...    ═══════════════════════════════════════════════════════════════
+    ...    NETWORK VALIDATION TEST - EXECUTIVE SUMMARY
+    ...    ═══════════════════════════════════════════════════════════════
+    ...    ${EMPTY}
+    ...    Test Suite: ${TEST_SUITE_ID} - Network Validation
+    ...    Target Server: ${TARGET_HOSTNAME}
+    ...    Execution Time: ${TEST_START_TIME} to ${end_time}
+    ...    Duration: ${duration} seconds
+    ...    ${EMPTY}
+    ...    ═══════════════════════════════════════════════════════════════
+    ...    EDS CONFIGURATION vs SERVER ACTUAL
+    ...    ═══════════════════════════════════════════════════════════════
+    ...    ${EMPTY}
+    ...    HOSTNAME:
+    ...    - EDS Expected:  ${TARGET_HOSTNAME}
+    ...    - Server Actual: ${SERVER_HOSTNAME}
+    ...    - Status: ${'✅ MATCH' if '${TARGET_HOSTNAME}' == '${SERVER_HOSTNAME}' else '❌ MISMATCH'}
+    ...    ${EMPTY}
+    ...    IP ADDRESS:
+    ...    - EDS Expected:  ${TARGET_IP}
+    ...    - Server Actual: ${SERVER_IP}
+    ...    - Status: ${'✅ MATCH' if '${TARGET_IP}' == '${SERVER_IP}' else '❌ MISMATCH'}
+    ...    ${EMPTY}
+    ...    SUBNET:
+    ...    - EDS Expected:  ${TARGET_SUBNET}
+    ...    - Server Actual: ${SERVER_SUBNET}
+    ...    - Status: ${'✅ MATCH' if '${TARGET_SUBNET}' == '${SERVER_SUBNET}' else '❌ MISMATCH'}
+    ...    ${EMPTY}
+    ...    GATEWAY:
+    ...    - EDS Expected:  ${TARGET_GATEWAY}
+    ...    - Server Actual: ${SERVER_GATEWAY}
+    ...    - Status: ${'✅ MATCH' if '${TARGET_GATEWAY}' == '${SERVER_GATEWAY}' else '❌ MISMATCH'}
+    ...    ${EMPTY}
+    ...    DNS/FQDN:
+    ...    - EDS CNAME:     ${TARGET_CNAME}
+    ...    - EDS Domain:    ${TARGET_DOMAIN}
+    ...    - Server FQDN:   ${SERVER_FQDN}
+    ...    ${EMPTY}
+    ...    NTP STATUS:
+    ...    - Server Status: ${SERVER_NTP_STATUS}
+    ...    ${EMPTY}
+    ...    ═══════════════════════════════════════════════════════════════
+    ...    EVIDENCE FILES COLLECTED
+    ...    ═══════════════════════════════════════════════════════════════
+    ...    - hostname.txt - Server hostname information
+    ...    - ip_configuration.txt - Full IP address configuration
+    ...    - routing_table.txt - Complete routing table
+    ...    - dns_configuration.txt - DNS resolver configuration
+    ...    - ntp_status.txt - NTP/time synchronization status
+    ...    ${EMPTY}
+    ...    ═══════════════════════════════════════════════════════════════
+    ...    OVERALL STATUS: TEST COMPLETED
+    ...    ═══════════════════════════════════════════════════════════════
+
+    Create File    ${summary_file}    ${summary_content}
+    Log    📄 Summary saved: ${summary_file}    console=yes
+
     Close All Connections
-    
+
     Log To Console    \n🎯 ═══════════════════════════════════════════════════════════════
     Log To Console    📊 EXECUTIVE SUMMARY - ${TEST_SUITE_ID} EDS vs SERVER VALIDATION
     Log To Console    ═══════════════════════════════════════════════════════════════
     Log To Console    ⏱️ Duration: ${duration} seconds
     Log To Console    🎯 Target: ${TARGET_HOSTNAME} (${TARGET_IP})
     Log To Console    📋 EDS Data: Successfully loaded and compared
-    Log To Console    🔌 SSH Connection: Used for server validation  
+    Log To Console    🔌 SSH Connection: Used for server validation
     Log To Console    📊 Suite Reports: ${TEST_REPORTS_DIR}
+    Log To Console    📊 Evidence Data: ${DATA_DIR}
     Log To Console    📊 Overall Reports: ${REPORTS_DIR}
     Log To Console    🏆 Overall Status: TEST COMPLETED
     Log To Console    ═══════════════════════════════════════════════════════════════

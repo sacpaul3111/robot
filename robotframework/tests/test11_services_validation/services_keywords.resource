@@ -10,7 +10,7 @@ Library          DateTime
 Resource         ../../settings.resource
 
 *** Variables ***
-${DATA_DIR}                results/test11_services_validation/data
+${DATA_DIR}                ${OUTPUT_DIR}/data
 
 # Suite-level variables for service data
 ${ALL_SERVICES_OUTPUT}         ${EMPTY}
