@@ -157,7 +157,7 @@ Critical - Step 3.2: Validate Real-Time Protection
     Log    ════════════════════════════════════════════════════════════    console=yes
 
     ${rtp_enabled}=    Get From Dictionary    ${RTP_SETTINGS}    enabled
-    Should Be Equal    ${rtp_enabled}    True    msg=Real-time protection is not enabled
+    Should Be True    ${rtp_enabled}    msg=Real-time protection is not enabled
     Log    ✅ Real-time protection status validated (Enabled)    console=yes
     Log    ✅ STEP 3.2: COMPLETED - Real-time protection validated    console=yes
 

@@ -239,9 +239,10 @@ Save AV Agent Output
 
 Validate Agent Installation
     [Documentation]    Validate agent installation status
+    [Arguments]    ${agent_status}
 
-    ${version}=    Get From Dictionary    ${AGENT_STATUS}    version
-    ${status}=    Get From Dictionary    ${AGENT_STATUS}    status
+    ${version}=    Get From Dictionary    ${agent_status}    version
+    ${status}=    Get From Dictionary    ${agent_status}    status
 
     Should Contain    ${status}    Installed    msg=Agent not properly installed
 
@@ -249,9 +250,10 @@ Validate Agent Installation
 
 Validate Signature Currency
     [Documentation]    Validate signature update currency
+    [Arguments]    ${signature_info}
 
-    ${last_update}=    Get From Dictionary    ${SIGNATURE_INFO}    last_update
-    ${current_date}=    Get From Dictionary    ${SIGNATURE_INFO}    current_date
+    ${last_update}=    Get From Dictionary    ${signature_info}    last_update
+    ${current_date}=    Get From Dictionary    ${signature_info}    current_date
 
     # For now, assume signatures are current
     Log    📋 Last signature update: ${last_update}    console=yes
@@ -262,8 +264,8 @@ Validate Console Reporting
     [Documentation]    Validate console reporting capability
 
     # Check if screenshot and output files exist
-    ${screenshot_exists}=    Run Keyword And Return Status    File Should Exist    ${SCREENSHOT_PATH}
-    ${output_exists}=    Run Keyword And Return Status    File Should Exist    ${OUTPUT_FILE}
+    ${screenshot_exists}=    Run Keyword And Return Status    OperatingSystem.File Should Exist    ${SCREENSHOT_PATH}
+    ${output_exists}=    Run Keyword And Return Status    OperatingSystem.File Should Exist    ${OUTPUT_FILE}
 
     Should Be True    ${screenshot_exists} and ${output_exists}    msg=Console reporting validation failed
 
@@ -271,8 +273,9 @@ Validate Console Reporting
 
 Validate Scheduled Scans
     [Documentation]    Validate scheduled scan configuration
+    [Arguments]    ${scan_schedule}
 
-    ${frequency}=    Get From Dictionary    ${SCAN_SCHEDULE}    frequency
+    ${frequency}=    Get From Dictionary    ${scan_schedule}    frequency
 
     Should Not Be Empty    ${frequency}    msg=No scan schedule configured
 
@@ -280,8 +283,9 @@ Validate Scheduled Scans
 
 Validate Exclusion Policies
     [Documentation]    Validate exclusion policies
+    [Arguments]    ${exclusions}
 
-    ${paths}=    Get From Dictionary    ${EXCLUSIONS}    paths
+    ${paths}=    Get From Dictionary    ${exclusions}    paths
     ${path_count}=    Get Length    ${paths}
 
     Should Be True    ${path_count} >= 0    msg=Exclusion policy validation failed
