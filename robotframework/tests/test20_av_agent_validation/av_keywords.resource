@@ -21,8 +21,8 @@ Initialize AV Agent Validation Test Environment
     Log    📋 SSH connection established to ${TARGET_HOSTNAME}    console=yes
 
     # Create results directories
-    Create Directory    ${TEST20_RESULTS_DIR}    parents=True
-    Create Directory    ${TEST20_DATA_DIR}    parents=True
+    Create Directory    ${TEST20_RESULTS_DIR}
+    Create Directory    ${TEST20_DATA_DIR}
 
     Log    ✅ AV Agent Validation Test Environment Initialized    console=yes
 
