@@ -1,8 +1,9 @@
 *** Settings ***
 Documentation    🛡️ AV Agent Validation Test Suite - Test-20
-...              🔍 Process: SSH to Target Machine → Collect AV Agent Information → Validate AV Protection
+...              🔍 Process: SSH to Target Machine → Collect AV Agent Information → Document to Files → Validate AV Protection
 ...              ✅ Pass if antivirus agent configuration meets CIP-007 R3.1 requirements for malware protection
 ...              📊 Validates: Agent installation, real-time protection, signature updates, scan schedules, exclusions
+...              💾 Saves: Agent status, RTP settings, signature info, scan schedules, exclusions, comprehensive report
 ...              ℹ️  Note: This test validates the AV agent installed on the target machine via SSH (no GUI console)
 ...
 Resource         ../../settings.resource
@@ -113,6 +114,29 @@ Critical - Step 2.5: Collect Exclusion Configurations
     ${exclusion_count}=    Get Length    ${exclusions['paths']}
     Log    ✅ Exclusion paths configured: ${exclusion_count}    console=yes
     Log    ✅ STEP 2.5: COMPLETED - Exclusion configurations collected    console=yes
+
+Critical - Step 2.6: Document AV Agent Data to Files
+    [Documentation]    💾 Save complete AV agent data to files for compliance review
+    ...                Step 2 of validation process: Collect AV Agent Data (Part 6)
+    [Tags]             critical    documentation    step2    data_collection    file_output
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.6: DOCUMENT AV AGENT DATA TO FILES    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+
+    # Save all AV agent data to files
+    ${summary_file}=    Save AV Agent Data to Files
+
+    # Verify files were created
+    OperatingSystem.File Should Exist    ${summary_file}
+    ${file_size}=    OperatingSystem.Get File Size    ${summary_file}
+    Should Be True    ${file_size} > 0
+
+    Set Suite Variable    ${AV_DATA_FILES_SAVED}    ${TRUE}
+
+    Log    📄 AV agent data saved to: ${TEST20_DATA_DIR}    console=yes
+    Log    📄 Summary file: ${summary_file}    console=yes
+    Log    ✅ STEP 2.6: COMPLETED - AV agent documentation saved    console=yes
 
 Critical - Step 3.1: Validate Agent Installation
     [Documentation]    ✅ Validate agent installation status against requirements

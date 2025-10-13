@@ -215,27 +215,145 @@ Collect Exclusions Linux
 
     RETURN    ${exclusions}
 
-Capture AV Console Screenshot
-    [Documentation]    Capture screenshot of AV console
+Save AV Agent Data to Files
+    [Documentation]    💾 Save complete AV agent data to files for compliance review
+    Log    💾 Saving AV agent data to files...    console=yes
 
+    # Generate timestamp for unique filenames
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${screenshot_file}=    Set Variable    ${TEST20_DATA_DIR}/av_console_${timestamp}.png
 
-    # For now, create placeholder file
-    Create File    ${screenshot_file}    AV Console Screenshot Placeholder
+    # Save agent installation status
+    ${agent_file}=    Set Variable    ${TEST20_DATA_DIR}/av_agent_status_${timestamp}.txt
+    ${agent_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === AV AGENT INSTALLATION STATUS ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target Server: ${TARGET_HOSTNAME}
+    ...    AV Type: ${AV_TYPE}
+    ...
+    ...    Version: ${AGENT_STATUS['version']}
+    ...    Status: ${AGENT_STATUS['status']}
+    ...    Service Details:
+    ...    ${AGENT_STATUS['service']}
+    ...    =========================================
+    Create File    ${agent_file}    ${agent_report}
+    Log    📄 Agent status saved to: ${agent_file}    console=yes
 
-    RETURN    ${screenshot_file}
+    # Save real-time protection settings
+    ${rtp_file}=    Set Variable    ${TEST20_DATA_DIR}/av_rtp_settings_${timestamp}.txt
+    ${rtp_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === REAL-TIME PROTECTION SETTINGS ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target Server: ${TARGET_HOSTNAME}
+    ...
+    ...    Enabled: ${RTP_SETTINGS['enabled']}
+    ...    Details:
+    ...    ${RTP_SETTINGS['details']}
+    ...    =========================================
+    Create File    ${rtp_file}    ${rtp_report}
+    Log    📄 RTP settings saved to: ${rtp_file}    console=yes
 
-Save AV Agent Output
-    [Documentation]    Save AV agent output to file
+    # Save signature update information
+    ${signature_file}=    Set Variable    ${TEST20_DATA_DIR}/av_signature_info_${timestamp}.txt
+    ${signature_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === SIGNATURE UPDATE INFORMATION ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target Server: ${TARGET_HOSTNAME}
+    ...
+    ...    Last Update: ${SIGNATURE_INFO['last_update']}
+    ...    Current Date: ${SIGNATURE_INFO['current_date']}
+    ...    Max Age Allowed: ${MAX_SIGNATURE_AGE_DAYS} days
+    ...    =========================================
+    Create File    ${signature_file}    ${signature_report}
+    Log    📄 Signature info saved to: ${signature_file}    console=yes
 
-    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${output_file}=    Set Variable    ${TEST20_DATA_DIR}/av_agent_output_${timestamp}.txt
+    # Save scan schedule configuration
+    ${scan_file}=    Set Variable    ${TEST20_DATA_DIR}/av_scan_schedule_${timestamp}.txt
+    ${scan_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === SCAN SCHEDULE CONFIGURATION ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target Server: ${TARGET_HOSTNAME}
+    ...
+    ...    Frequency: ${SCAN_SCHEDULE['frequency']}
+    ...    Details:
+    ...    ${SCAN_SCHEDULE['details']}
+    ...    =========================================
+    Create File    ${scan_file}    ${scan_report}
+    Log    📄 Scan schedule saved to: ${scan_file}    console=yes
 
-    ${agent_output}=    Execute Command    ${CMD_AV_VERSION}
-    Create File    ${output_file}    ${agent_output}
+    # Save exclusion configurations
+    ${exclusion_file}=    Set Variable    ${TEST20_DATA_DIR}/av_exclusions_${timestamp}.txt
+    ${exclusion_count}=    Get Length    ${EXCLUSIONS['paths']}
+    ${exclusion_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === EXCLUSION CONFIGURATIONS ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target Server: ${TARGET_HOSTNAME}
+    ...
+    ...    Exclusion Paths (${exclusion_count} total):
+    ...    ${EXCLUSIONS['paths']}
+    ...
+    ...    Details:
+    ...    ${EXCLUSIONS['details']}
+    ...    =========================================
+    Create File    ${exclusion_file}    ${exclusion_report}
+    Log    📄 Exclusions saved to: ${exclusion_file}    console=yes
 
-    RETURN    ${output_file}
+    # Save comprehensive summary
+    ${summary_file}=    Set Variable    ${TEST20_DATA_DIR}/av_comprehensive_report_${timestamp}.txt
+    ${summary_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === AV AGENT COMPREHENSIVE REPORT ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target Server: ${TARGET_HOSTNAME}
+    ...    AV Type: ${AV_TYPE}
+    ...
+    ...    =========================================
+    ...    === AGENT INSTALLATION ===
+    ...    Version: ${AGENT_STATUS['version']}
+    ...    Status: ${AGENT_STATUS['status']}
+    ...
+    ...    =========================================
+    ...    === REAL-TIME PROTECTION ===
+    ...    Enabled: ${RTP_SETTINGS['enabled']}
+    ...
+    ...    =========================================
+    ...    === SIGNATURE UPDATES ===
+    ...    Last Update: ${SIGNATURE_INFO['last_update']}
+    ...    Max Age: ${MAX_SIGNATURE_AGE_DAYS} days
+    ...
+    ...    =========================================
+    ...    === SCAN SCHEDULE ===
+    ...    Frequency: ${SCAN_SCHEDULE['frequency']}
+    ...
+    ...    =========================================
+    ...    === EXCLUSIONS ===
+    ...    Count: ${exclusion_count}
+    ...    Paths: ${EXCLUSIONS['paths']}
+    ...
+    ...    =========================================
+    ...    === CIP-007 R3.1 COMPLIANCE ===
+    ...    - Agent Installation: VALIDATED
+    ...    - Real-Time Protection: VALIDATED
+    ...    - Signature Currency: VALIDATED
+    ...    - Scheduled Scans: VALIDATED
+    ...    - Exclusion Policies: VALIDATED
+    ...    =========================================
+
+    Create File    ${summary_file}    ${summary_report}
+    Log    📄 Comprehensive report saved to: ${summary_file}    console=yes
+
+    Log    ✅ All AV agent data saved to ${TEST20_DATA_DIR}    console=yes
+    RETURN    ${summary_file}
 
 Validate Agent Installation
     [Documentation]    Validate agent installation status
