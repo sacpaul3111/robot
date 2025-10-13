@@ -26,11 +26,9 @@ Initialize Antivirus Test Environment
     Open Connection    ${TARGET_IP}
     Login    ${SSH_USERNAME}    ${SSH_PASSWORD}
 
-    # Set output directory
-    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${data_dir}=    Set Variable    ${OUTPUT_DIR}/antivirus_data_${timestamp}
-    Create Directory    ${data_dir}
-    Set Suite Variable    ${DATA_DIR}    ${data_dir}
+    # Create directories for data collection
+    Create Directory    ${TEST19_RESULTS_DIR}
+    Create Directory    ${TEST19_DATA_DIR}
 
     Log    ✅ Antivirus validation test environment initialized    console=yes
 
@@ -66,7 +64,7 @@ Save AV Processes to File
     [Arguments]    ${av_processes}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/av_processes_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/av_processes_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -122,7 +120,7 @@ Save AV Directories to File
     [Arguments]    ${av_directories}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/av_directories_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/av_directories_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -175,7 +173,7 @@ Save AV Service Status to File
     [Arguments]    ${av_service}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/av_service_status_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/av_service_status_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -242,7 +240,7 @@ Save AV Version to File
     [Arguments]    ${av_version}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/av_version_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/av_version_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -299,7 +297,7 @@ Save Installation Validation to File
     [Arguments]    ${installation_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/installation_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/installation_validation_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -372,7 +370,7 @@ Save Service Validation to File
     [Arguments]    ${service_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/service_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/service_validation_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -421,7 +419,7 @@ Save Realtime Status to File
     [Arguments]    ${realtime_status}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/realtime_status_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/realtime_status_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -476,7 +474,7 @@ Save Definition Status to File
     [Arguments]    ${definition_status}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/definition_status_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/definition_status_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -550,7 +548,7 @@ Save CIP007_R3_1_Compliance to File
     [Arguments]    ${cip007_compliance}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/cip007_r3_1_compliance_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/cip007_r3_1_compliance_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -584,7 +582,7 @@ Save Scan History to File
     [Documentation]    Save scan history to file
     [Arguments]    ${scan_history}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/scan_history_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/scan_history_${timestamp}.txt
     Create File    ${filename}    ${scan_history}
     [Return]    ${filename}
 
@@ -597,7 +595,7 @@ Save Scheduled Scans to File
     [Documentation]    Save scheduled scans to file
     [Arguments]    ${scheduled_scans}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/scheduled_scans_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/scheduled_scans_${timestamp}.txt
     Create File    ${filename}    ${scheduled_scans}
     [Return]    ${filename}
 
@@ -610,7 +608,7 @@ Save Quarantine Info to File
     [Documentation]    Save quarantine info to file
     [Arguments]    ${quarantine}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/quarantine_status_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/quarantine_status_${timestamp}.txt
     Create File    ${filename}    ${quarantine}
     [Return]    ${filename}
 
@@ -623,7 +621,7 @@ Save Exclusions to File
     [Documentation]    Save exclusions to file
     [Arguments]    ${exclusions}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/exclusions_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/exclusions_${timestamp}.txt
     Create File    ${filename}    ${exclusions}
     [Return]    ${filename}
 
@@ -636,7 +634,7 @@ Save Communication Status to File
     [Documentation]    Save communication status to file
     [Arguments]    ${communication}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/communication_status_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/communication_status_${timestamp}.txt
     Create File    ${filename}    ${communication}
     [Return]    ${filename}
 
@@ -654,7 +652,7 @@ Save Threat Statistics to File
     [Documentation]    Save threat statistics to file
     [Arguments]    ${threat_stats}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/threat_statistics_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/threat_statistics_${timestamp}.txt
     Create File    ${filename}    ${threat_stats}
     [Return]    ${filename}
 
@@ -672,7 +670,7 @@ Save AV Logs to File
     [Documentation]    Save AV logs to file
     [Arguments]    ${av_logs}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/av_logs_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST19_DATA_DIR}/av_logs_${timestamp}.txt
     Create File    ${filename}    ${av_logs}
     [Return]    ${filename}
 
@@ -733,7 +731,7 @@ Generate Antivirus Executive Summary
     ...    detect, and prevent malicious code as required by CIP-007 R3.1
     ...
     ...    DATA COLLECTION FILES:
-    ...    - All validation data saved to: ${DATA_DIR}
+    ...    - All validation data saved to: ${TEST19_DATA_DIR}
     ...
     ...    ==========================================
     ...    END OF EXECUTIVE SUMMARY

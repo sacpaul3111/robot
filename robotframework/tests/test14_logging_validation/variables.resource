@@ -2,6 +2,10 @@
 Documentation    Logging and Splunk Validation Variables - Test-14
 
 *** Variables ***
+# 📁 Directory Paths
+${TEST14_RESULTS_DIR}        results/test14_logging_validation
+${TEST14_DATA_DIR}           results/test14_logging_validation/data
+
 # Target Configuration - Set via command line
 ${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
 

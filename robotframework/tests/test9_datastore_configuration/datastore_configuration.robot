@@ -1,8 +1,9 @@
 *** Settings ***
 Documentation    💾 Datastore Configuration Validation Test Suite - Test-9
-...              🔍 Process: Connect to vCenter → Collect Datastore Information → Validate Datastore Configuration
+...              🔍 Process: Connect to vCenter → Collect Datastore Information → Document to Files → Validate Datastore Configuration
 ...              ✅ Pass if datastore configuration meets cluster standards and application requirements
 ...              📊 Validates: VM assignments, available capacity, performance tiers, subscription levels
+...              💾 Saves: VM assignments, capacity data, performance tiers, subscription levels, validation report
 ...
 Resource         ../../settings.resource
 Resource         datastore_keywords.resource
@@ -145,6 +146,29 @@ Critical - Step 2.5: Capture Host Configuration Screenshot
 
     Log    ✅ Screenshot saved: ${screenshot_path}    console=yes
     Log    ✅ STEP 2.5: COMPLETED - Screenshot captured    console=yes
+
+Critical - Step 2.6: Document Datastore Configuration Data to Files
+    [Documentation]    💾 Save complete datastore configuration data to files for compliance review
+    ...                Step 2 of validation process: Collect Datastore Configuration Data (Part 6)
+    [Tags]             critical    documentation    step2    data_collection    file_output
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.6: DOCUMENT DATASTORE CONFIGURATION DATA TO FILES    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+
+    # Save all datastore configuration data to files
+    ${validation_file}=    Save Datastore Configuration Data to Files
+
+    # Verify files were created
+    OperatingSystem.File Should Exist    ${validation_file}
+    ${file_size}=    OperatingSystem.Get File Size    ${validation_file}
+    Should Be True    ${file_size} > 0
+
+    Set Suite Variable    ${DATASTORE_DATA_FILES_SAVED}    ${TRUE}
+
+    Log    📄 Datastore configuration data saved to: ${TEST9_DATA_DIR}    console=yes
+    Log    📄 Validation file: ${validation_file}    console=yes
+    Log    ✅ STEP 2.6: COMPLETED - Datastore configuration documentation saved    console=yes
     Log    ✅ All datastore information collected successfully    console=yes
 
 Critical - Step 3.1: Validate VM Datastore Placement

@@ -2,6 +2,10 @@
 Documentation    Variable definitions for Backup Validation Test Suite
 
 *** Variables ***
+# 📁 Directory Paths
+${TEST15_RESULTS_DIR}           results/test15_backup_validation
+${TEST15_DATA_DIR}              results/test15_backup_validation/data
+
 # Target Configuration - Pulled from command line like test3
 ${TARGET_HOSTNAME}             # Set via command line --variable TARGET_HOSTNAME:value
 

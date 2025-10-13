@@ -1,34 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(tree:*)",
-      "Bash(python3:*)",
-      "Bash(source:*)",
-      "Bash(pip install:*)",
-      "Bash(pipx install:*)",
-      "Bash(robot:*)",
-      "Bash(command -v:*)",
-      "Read(//usr/bin/**)",
-      "Bash(getent:*)",
-      "Bash(chmod:*)",
-      "Bash(./run_enhanced_reports.sh:*)",
-      "Bash(mkdir:*)",
-      "Bash(sudo apt:*)",
-      "Bash(sudo apt install:*)",
-      "Bash(python -m robot:*)",
-      "Bash(python:*)",
-      "Bash(rmdir:*)",
-      "Bash($env:SSH_USERNAME = \"sac\")",
-      "Bash($env:SSH_PASSWORD = \"sac\")",
-      "Bash(echo \"SSH_USERNAME=$env:SSH_USERNAME\")",
-      "Bash(find:*)",
-      "Bash(for dir in tests/test*/)",
-      "Bash(done)",
-      "Bash(echo:*)",
-      "Bash(do)",
-      "Bash(if ! grep -q \"DATA_DIR\" \"$dir\"*.resource)",
-      "Bash(then)",
-      "Bash(fi)"
+      "Bash(do echo \"=== $dir ===\")",
+      "Bash(for test_dir in test8_ssh_key_authentication test9_datastore_configuration test12_id_agent_validation test13_password_policy_validation test14_logging_validation test15_backup_validation test16_password_vault_validation test19_antivirus_validation test21_tanium_agent test23_change_management_validation test24_ansible_playbook)",
+      "Bash(do echo \"=== $test_dir ===\")"
     ],
     "deny": [],
     "ask": []

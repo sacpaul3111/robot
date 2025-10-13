@@ -2,6 +2,10 @@
 Documentation    Password Vault and CyberArk Validation Variables - Test-16
 
 *** Variables ***
+# 📁 Directory Paths
+${TEST16_RESULTS_DIR}        results/test16_password_vault_validation
+${TEST16_DATA_DIR}           results/test16_password_vault_validation/data
+
 # Target Configuration - Set via command line
 ${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
 

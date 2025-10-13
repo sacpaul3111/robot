@@ -26,11 +26,9 @@ Initialize Logging Validation Test Environment
     Open Connection    ${TARGET_IP}
     Login    ${SSH_USERNAME}    ${SSH_PASSWORD}
 
-    # Set output directory
-    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${data_dir}=    Set Variable    ${OUTPUT_DIR}/logging_data_${timestamp}
-    Create Directory    ${data_dir}
-    Set Suite Variable    ${DATA_DIR}    ${data_dir}
+    # Create directories for data collection
+    Create Directory    ${TEST14_RESULTS_DIR}
+    Create Directory    ${TEST14_DATA_DIR}
 
     Log    ✅ Logging validation test environment initialized    console=yes
 
@@ -60,7 +58,7 @@ Save Splunk Access Verification to File
     [Arguments]    ${splunk_access}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/splunk_access_verification_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/splunk_access_verification_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -108,7 +106,7 @@ Save Syslog Config to File
     [Arguments]    ${syslog_config}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/syslog_ng_config_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/syslog_ng_config_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -155,7 +153,7 @@ Save Service Status to File
     [Arguments]    ${service_status}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/syslog_service_status_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/syslog_service_status_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -204,7 +202,7 @@ Save Test Message to File
     [Arguments]    ${test_message}    ${log_result}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/test_log_message_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/test_log_message_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -248,7 +246,7 @@ Save Forwarding Config to File
     [Arguments]    ${forwarding_config}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/forwarding_config_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/forwarding_config_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -308,7 +306,7 @@ Save Splunk Search to File
     [Arguments]    ${splunk_search}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/splunk_search_criteria_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/splunk_search_criteria_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -362,7 +360,7 @@ Save Forwarding Validation to File
     [Arguments]    ${forward_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/forwarding_validation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/forwarding_validation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -434,7 +432,7 @@ Save Delivery Validation to File
     [Arguments]    ${delivery_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/message_delivery_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/message_delivery_validation_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -491,7 +489,7 @@ Save Splunk Validation to File
     [Arguments]    ${splunk_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/splunk_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/splunk_validation_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -546,7 +544,7 @@ Save Retention Validation to File
     [Arguments]    ${retention_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/retention_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/retention_validation_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -607,7 +605,7 @@ Save Critical Events Validation to File
     [Arguments]    ${critical_events_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/critical_events_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/critical_events_validation_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -676,7 +674,7 @@ Save CIP007_R4_1_Compliance to File
     [Arguments]    ${cip007_compliance}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/cip007_r4_1_compliance_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/cip007_r4_1_compliance_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -710,7 +708,7 @@ Save Local Storage Info to File
     [Documentation]    Save local storage info to file
     [Arguments]    ${local_storage}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/local_storage_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/local_storage_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${local_storage}
     [Return]    ${filename}
 
@@ -723,7 +721,7 @@ Save Permissions Info to File
     [Documentation]    Save permissions info to file
     [Arguments]    ${permissions}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/log_permissions_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/log_permissions_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${permissions}
     [Return]    ${filename}
 
@@ -736,7 +734,7 @@ Save Rotation Config to File
     [Documentation]    Save rotation config to file
     [Arguments]    ${rotation_config}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/log_rotation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/log_rotation_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${rotation_config}
     [Return]    ${filename}
 
@@ -749,7 +747,7 @@ Save Statistics to File
     [Documentation]    Save statistics to file
     [Arguments]    ${stats}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/syslog_statistics_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/syslog_statistics_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${stats}
     [Return]    ${filename}
 
@@ -762,7 +760,7 @@ Save Connectivity Test to File
     [Documentation]    Save connectivity test to file
     [Arguments]    ${connectivity}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/splunk_connectivity_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/splunk_connectivity_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${connectivity}
     [Return]    ${filename}
 
@@ -781,7 +779,7 @@ Save Error Logs to File
     [Documentation]    Save error logs to file
     [Arguments]    ${error_logs}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/syslog_errors_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/syslog_errors_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${error_logs}
     [Return]    ${filename}
 
@@ -795,7 +793,7 @@ Save TLS Config to File
     [Documentation]    Save TLS configuration to file
     [Arguments]    ${tls_config}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/tls_config_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/tls_config_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${tls_config}
     [Return]    ${filename}
 
@@ -814,7 +812,7 @@ Save Index Config to File
     [Documentation]    Save index configuration to file
     [Arguments]    ${index_config}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/splunk_index_config_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST14_DATA_DIR}/splunk_index_config_${timestamp}.txt
     Create File    ${filename}    ${index_config}
     [Return]    ${filename}
 
@@ -878,7 +876,7 @@ Generate Logging Validation Executive Summary
     ...    (Subject to manual Splunk UI verification)
     ...
     ...    DATA COLLECTION FILES:
-    ...    - All validation data saved to: ${DATA_DIR}
+    ...    - All validation data saved to: ${TEST14_DATA_DIR}
     ...
     ...    ==========================================
     ...    END OF EXECUTIVE SUMMARY

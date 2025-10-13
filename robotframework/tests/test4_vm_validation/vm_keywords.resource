@@ -4,6 +4,8 @@ Library          ../../library/VCenterAPI.py
 Library          Collections
 Library          String
 Library          BuiltIn
+Library          DateTime
+Library          OperatingSystem
 
 *** Keywords ***
 Connect To vCenter And Get VM Details
@@ -209,6 +211,136 @@ Validate VM Disk Configuration
     ...    ❌ DISK ERROR: VM has no disk capacity configured
 
     Log    ✅ Disk configuration validated    console=yes
+
+Save VM Data to Files
+    [Documentation]    💾 Save complete VM configuration data to files for compliance review
+    Log    💾 Saving VM configuration data to files...    console=yes
+
+    # Generate timestamp for unique filenames
+    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
+
+    # Build network adapter details
+    ${network_details}=    Set Variable    ${EMPTY}
+    FOR    ${adapter}    IN    @{VM_NETWORK_ADAPTERS}
+        ${label}=    Get From Dictionary    ${adapter}    label
+        ${type}=     Get From Dictionary    ${adapter}    type
+        ${network}=  Get From Dictionary    ${adapter}    network_name
+        ${network_details}=    Catenate    SEPARATOR=\n    ${network_details}
+        ...    - ${label}: Type=${type}, Network=${network}
+    END
+
+    # Save VM configuration summary
+    ${vm_config_file}=    Set Variable    ${TEST4_DATA_DIR}/vm_configuration_${timestamp}.txt
+    ${vm_config_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === VM CONFIGURATION SUMMARY ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target VM: ${TARGET_HOSTNAME}
+    ...    vCenter Host: ${TARGET_VCENTER_HOST}
+    ...
+    ...    CLUSTER PLACEMENT:
+    ...    - Cluster: ${VM_CLUSTER_ID}
+    ...
+    ...    COMPUTE RESOURCES:
+    ...    - CPU Cores: ${VM_CPU_COUNT}
+    ...    - Memory: ${VM_MEMORY_GB} GB
+    ...
+    ...    HARDWARE:
+    ...    - Hardware Version: ${VM_HW_VERSION}
+    ...
+    ...    NETWORK CONFIGURATION:
+    ...    ${network_details}
+    ...
+    ...    STORAGE:
+    ...    - Total Disk Capacity: ${VM_DISK_CAPACITY} GB
+    ...    =========================================
+    Create File    ${vm_config_file}    ${vm_config_report}
+    Log    📄 VM configuration saved to: ${vm_config_file}    console=yes
+
+    # Save EDS comparison report
+    ${comparison_file}=    Set Variable    ${TEST4_DATA_DIR}/eds_comparison_${timestamp}.txt
+    ${comparison_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === VM vs EDS COMPARISON REPORT ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target VM: ${TARGET_HOSTNAME}
+    ...
+    ...    CLUSTER PLACEMENT:
+    ...    - EDS Expected: ${TARGET_VXRAIL_CLUSTER}
+    ...    - vCenter Actual: ${VM_CLUSTER_ID}
+    ...
+    ...    CPU CONFIGURATION:
+    ...    - EDS Expected: ${TARGET_VM_CPU_CORES} cores
+    ...    - vCenter Actual: ${VM_CPU_COUNT} cores
+    ...
+    ...    MEMORY CONFIGURATION:
+    ...    - EDS Expected: ${TARGET_VM_RAM} GB
+    ...    - vCenter Actual: ${VM_MEMORY_GB} GB
+    ...
+    ...    HARDWARE VERSION:
+    ...    - EDS Expected: ${TARGET_VM_HARDWARE_VERSION}
+    ...    - vCenter Actual: ${VM_HW_VERSION}
+    ...
+    ...    NETWORK ADAPTERS:
+    ...    ${network_details}
+    ...
+    ...    DISK CONFIGURATION:
+    ...    - Total Capacity: ${VM_DISK_CAPACITY} GB
+    ...
+    ...    MEMORY RESERVATION:
+    ...    - EDS Setting: ${TARGET_VM_MEMORY_RESERVATION}
+    ...
+    ...    CPU RESERVATION:
+    ...    - EDS Setting: ${TARGET_VM_CPU_RESERVATION}
+    ...    =========================================
+    Create File    ${comparison_file}    ${comparison_report}
+    Log    📄 EDS comparison saved to: ${comparison_file}    console=yes
+
+    # Save comprehensive validation report
+    ${validation_file}=    Set Variable    ${TEST4_DATA_DIR}/vm_validation_report_${timestamp}.txt
+    ${validation_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === VM VALIDATION COMPREHENSIVE REPORT ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target VM: ${TARGET_HOSTNAME}
+    ...    vCenter: ${TARGET_VCENTER_HOST}
+    ...
+    ...    TEST SUITE: Test-4 VM Configuration Validation
+    ...    PURPOSE: Validate VM configuration matches EDS specifications
+    ...
+    ...    =========================================
+    ...    === COLLECTED DATA ===
+    ...    =========================================
+    ...    Cluster: ${VM_CLUSTER_ID}
+    ...    CPU Cores: ${VM_CPU_COUNT}
+    ...    Memory: ${VM_MEMORY_GB} GB
+    ...    Hardware Version: ${VM_HW_VERSION}
+    ...    Network Adapters: ${network_details}
+    ...    Disk Capacity: ${VM_DISK_CAPACITY} GB
+    ...
+    ...    =========================================
+    ...    === EDS REQUIREMENTS ===
+    ...    =========================================
+    ...    Required Cluster: ${TARGET_VXRAIL_CLUSTER}
+    ...    Required CPU: ${TARGET_VM_CPU_CORES} cores
+    ...    Required Memory: ${TARGET_VM_RAM} GB
+    ...    Required HW Version: ${TARGET_VM_HARDWARE_VERSION}
+    ...    Memory Reservation: ${TARGET_VM_MEMORY_RESERVATION}
+    ...    CPU Reservation: ${TARGET_VM_CPU_RESERVATION}
+    ...
+    ...    =========================================
+    ...    === VALIDATION RESULTS ===
+    ...    =========================================
+    ...    See test report for detailed validation results
+    ...    =========================================
+    Create File    ${validation_file}    ${validation_report}
+    Log    📄 Validation report saved to: ${validation_file}    console=yes
+
+    Log    ✅ All VM configuration data saved to ${TEST4_DATA_DIR}    console=yes
+    RETURN    ${validation_file}
 
 Disconnect From vCenter
     [Documentation]    Disconnect from vCenter API session

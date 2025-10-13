@@ -2,6 +2,10 @@
 Documentation    Antivirus Agent Validation Variables - Test-19
 
 *** Variables ***
+# 📁 Directory Paths
+${TEST19_RESULTS_DIR}        results/test19_antivirus_validation
+${TEST19_DATA_DIR}           results/test19_antivirus_validation/data
+
 # Target Configuration - Set via command line
 ${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
 

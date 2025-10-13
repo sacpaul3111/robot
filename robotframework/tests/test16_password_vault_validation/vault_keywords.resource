@@ -26,11 +26,9 @@ Initialize Password Vault Test Environment
     Open Connection    ${TARGET_IP}
     Login    ${SSH_USERNAME}    ${SSH_PASSWORD}
 
-    # Set output directory
-    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${data_dir}=    Set Variable    ${OUTPUT_DIR}/password_vault_data_${timestamp}
-    Create Directory    ${data_dir}
-    Set Suite Variable    ${DATA_DIR}    ${data_dir}
+    # Create directories for data collection
+    Create Directory    ${TEST16_RESULTS_DIR}
+    Create Directory    ${TEST16_DATA_DIR}
 
     Log    ✅ Password vault test environment initialized    console=yes
 
@@ -67,7 +65,7 @@ Save Vault Access Verification to File
     [Arguments]    ${vault_access}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/vault_access_verification_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/vault_access_verification_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -127,7 +125,7 @@ Save Vault Search to File
     [Arguments]    ${vault_search}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/vault_search_criteria_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/vault_search_criteria_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -190,7 +188,7 @@ Save Enrolled Accounts to File
     [Arguments]    ${accounts_info}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/enrolled_accounts_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/enrolled_accounts_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -241,7 +239,7 @@ Save Sync Status to File
     [Documentation]    Save sync status documentation to file
     [Arguments]    ${sync_status}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/sync_status_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/sync_status_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${sync_status}
     [Return]    ${filename}
 
@@ -283,7 +281,7 @@ Save Rotation Policies to File
     [Documentation]    Save rotation policies documentation to file
     [Arguments]    ${rotation_policies}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/rotation_policies_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/rotation_policies_${timestamp}.txt
     Create File    ${filename}    ${rotation_policies}
     [Return]    ${filename}
 
@@ -319,7 +317,7 @@ Save Agent Check to File
     [Documentation]    Save agent check results to file
     [Arguments]    ${agent_check}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/agent_check_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/agent_check_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${agent_check}
     [Return]    ${filename}
 
@@ -374,7 +372,7 @@ Save Audit Logs Documentation to File
     [Documentation]    Save audit logs documentation to file
     [Arguments]    ${audit_logs}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/audit_logs_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/audit_logs_${timestamp}.txt
     Create File    ${filename}    ${audit_logs}
     [Return]    ${filename}
 
@@ -422,7 +420,7 @@ Save Enrollment Validation to File
     [Documentation]    Save enrollment validation to file
     [Arguments]    ${enrollment_validation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/enrollment_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/enrollment_validation_${timestamp}.txt
     Create File    ${filename}    ${enrollment_validation}
     [Return]    ${filename}
 
@@ -462,7 +460,7 @@ Save Rotation Validation to File
     [Documentation]    Save rotation validation to file
     [Arguments]    ${rotation_validation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/rotation_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/rotation_validation_${timestamp}.txt
     Create File    ${filename}    ${rotation_validation}
     [Return]    ${filename}
 
@@ -507,7 +505,7 @@ Save Workflow Validation to File
     [Documentation]    Save workflow validation to file
     [Arguments]    ${workflow_validation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/workflow_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/workflow_validation_${timestamp}.txt
     Create File    ${filename}    ${workflow_validation}
     [Return]    ${filename}
 
@@ -551,7 +549,7 @@ Save Service Account Validation to File
     [Documentation]    Save service account validation to file
     [Arguments]    ${service_acct_validation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/service_account_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/service_account_validation_${timestamp}.txt
     Create File    ${filename}    ${service_acct_validation}
     [Return]    ${filename}
 
@@ -604,7 +602,7 @@ Save Audit Validation to File
     [Documentation]    Save audit validation to file
     [Arguments]    ${audit_validation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/audit_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/audit_validation_${timestamp}.txt
     Create File    ${filename}    ${audit_validation}
     [Return]    ${filename}
 
@@ -669,7 +667,7 @@ Save CIP007_Vault_Compliance to File
     [Documentation]    Save CIP-007 vault compliance to file
     [Arguments]    ${cip007_compliance}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/cip007_vault_compliance_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/cip007_vault_compliance_${timestamp}.txt
     Create File    ${filename}    ${cip007_compliance}
     Log    📄 CIP-007 vault compliance saved to: ${filename}    console=yes
     [Return]    ${filename}
@@ -683,7 +681,7 @@ Save Platform Config to File
     [Documentation]    Save platform config to file
     [Arguments]    ${platform_config}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/platform_config_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST16_DATA_DIR}/platform_config_${timestamp}.txt
     Create File    ${filename}    ${platform_config}
     [Return]    ${filename}
 
@@ -789,7 +787,7 @@ Generate Password Vault Executive Summary
     ...    (Subject to manual CyberArk UI verification)
     ...
     ...    DATA COLLECTION FILES:
-    ...    - All validation data saved to: ${DATA_DIR}
+    ...    - All validation data saved to: ${TEST16_DATA_DIR}
     ...
     ...    ==========================================
     ...    END OF EXECUTIVE SUMMARY

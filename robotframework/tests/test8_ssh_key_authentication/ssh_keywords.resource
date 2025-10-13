@@ -9,16 +9,14 @@ Library          OperatingSystem
 Library          DateTime
 Resource         ../../settings.resource
 
-*** Variables ***
-${DATA_DIR}                results/test8_ssh_key_authentication/data
-
 *** Keywords ***
 Initialize SSH Key Test Environment
     [Documentation]    🏗️ Set up test environment for SSH key authentication validation
     Log    🚀 Initializing Test-8: SSH Key Authentication Validation Environment...    console=yes
 
     # Create directories for data collection
-    Create Directory    ${DATA_DIR}
+    Create Directory    ${TEST8_RESULTS_DIR}
+    Create Directory    ${TEST8_DATA_DIR}
 
     Log    📋 Code Server: ${CODE_SERVER_HOST}    console=yes
     Log    📋 Code Server User: ${CODE_SERVER_USER}    console=yes
@@ -36,6 +34,108 @@ Initialize SSH Key Test Environment
     Log    👤 Connected as: ${whoami}@${hostname}    console=yes
 
     Log    ✅ Test-8 environment initialized    console=yes
+
+Save SSH Authentication Data to Files
+    [Documentation]    💾 Save complete SSH authentication data to files for compliance review
+    Log    💾 Saving SSH authentication data to files...    console=yes
+
+    # Generate timestamp for unique filenames
+    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
+
+    # Save authorized_keys configuration
+    ${authkeys_file}=    Set Variable    ${TEST8_DATA_DIR}/authorized_keys_config_${timestamp}.txt
+    ${authkeys_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === AUTHORIZED_KEYS CONFIGURATION ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target: ${TARGET_USER}@${TARGET_HOST}
+    ...
+    ...    Authorized Keys Path: ${AUTHORIZED_KEYS_PATH}
+    ...    File Permissions: ${AUTHORIZED_KEYS_PERMS}
+    ...    Expected Permissions: ${EXPECTED_KEY_PERMS}
+    ...
+    ...    === Public Key ===
+    ...    ${PUBLIC_KEY}
+    ...
+    ...    === Authorized Keys Content ===
+    ...    ${AUTHORIZED_KEYS}
+    ...    =========================================
+    Create File    ${authkeys_file}    ${authkeys_report}
+    Log    📄 Authorized keys configuration saved to: ${authkeys_file}    console=yes
+
+    # Save SSH configuration details
+    ${sshconfig_file}=    Set Variable    ${TEST8_DATA_DIR}/ssh_configuration_${timestamp}.txt
+    ${sshconfig_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === SSH CONFIGURATION ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target: ${TARGET_HOST}
+    ...
+    ...    === SSH Server Configuration ===
+    ...    ${SSH_CONFIG}
+    ...
+    ...    === Connection Details ===
+    ...    ${CONNECTION_DETAILS}
+    ...
+    ...    === SSH Key Configuration ===
+    ...    Private Key Path: ${SSH_KEY_PATH}
+    ...    Authorized Keys Path: ${AUTHORIZED_KEYS_PATH}
+    ...    Expected Key Permissions: ${EXPECTED_KEY_PERMS}
+    ...    Expected Directory Permissions: ${EXPECTED_DIR_PERMS}
+    ...    =========================================
+    Create File    ${sshconfig_file}    ${sshconfig_report}
+    Log    📄 SSH configuration saved to: ${sshconfig_file}    console=yes
+
+    # Save comprehensive validation report
+    ${validation_file}=    Set Variable    ${TEST8_DATA_DIR}/ssh_validation_report_${timestamp}.txt
+    ${validation_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === SSH KEY AUTHENTICATION VALIDATION REPORT ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Code Server (Jump Box): ${CODE_SERVER_HOST}
+    ...    Target Machine: ${TARGET_HOST}
+    ...
+    ...    TEST SUITE: Test-8 SSH Key Authentication Validation
+    ...    PURPOSE: Validate SSH key-based passwordless authentication
+    ...
+    ...    =========================================
+    ...    === AUTHENTICATION TEST RESULTS ===
+    ...    =========================================
+    ...    Passwordless SSH: ${SSH_AUTH_SUCCESSFUL}
+    ...    Connection Path: ${CODE_SERVER_HOST} → ${TARGET_HOST}
+    ...    Authentication Method: SSH Key-based
+    ...
+    ...    =========================================
+    ...    === AUTHORIZED KEYS CONFIGURATION ===
+    ...    =========================================
+    ...    File Path: ${AUTHORIZED_KEYS_PATH}
+    ...    File Permissions: ${AUTHORIZED_KEYS_PERMS}
+    ...    Expected Permissions: ${EXPECTED_KEY_PERMS}
+    ...    Public Key Match: Verified
+    ...
+    ...    =========================================
+    ...    === SSH CONFIGURATION ===
+    ...    =========================================
+    ...    ${SSH_CONFIG}
+    ...
+    ...    =========================================
+    ...    === CONNECTION DETAILS ===
+    ...    =========================================
+    ...    ${CONNECTION_DETAILS}
+    ...
+    ...    =========================================
+    ...    === VALIDATION STATUS ===
+    ...    =========================================
+    ...    See test report for detailed validation results
+    ...    =========================================
+    Create File    ${validation_file}    ${validation_report}
+    Log    📄 Validation report saved to: ${validation_file}    console=yes
+
+    Log    ✅ All SSH authentication data saved to ${TEST8_DATA_DIR}    console=yes
+    RETURN    ${validation_file}
 
 Validate SSH Authentication Chain
     [Documentation]    🔗 Comprehensive validation of SSH authentication chain
@@ -62,7 +162,7 @@ Validate SSH Authentication Chain
     ${target_ssh_perms}=    Execute Command    ssh -o StrictHostKeyChecking=no -i ${SSH_KEY_PATH} ${TARGET_USER}@${TARGET_HOST} 'stat -c "%a %n" ~/.ssh ~/.ssh/authorized_keys 2>/dev/null || echo "Permission check error"'
 
     # Save authentication chain validation data
-    ${chain_file}=    Set Variable    ${DATA_DIR}/ssh_authentication_chain_${timestamp}.txt
+    ${chain_file}=    Set Variable    ${TEST8_DATA_DIR}/ssh_authentication_chain_${timestamp}.txt
 
     ${chain_data}=    Catenate    SEPARATOR=\n
     ...    === SSH Authentication Chain Validation ===

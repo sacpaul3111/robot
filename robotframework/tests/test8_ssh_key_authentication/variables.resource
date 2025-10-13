@@ -4,6 +4,10 @@ Documentation    🔐 Test-8 SSH Key Authentication Variables
 ...
 
 *** Variables ***
+# 📁 Directory Paths
+${TEST8_RESULTS_DIR}         results/test8_ssh_key_authentication
+${TEST8_DATA_DIR}            results/test8_ssh_key_authentication/data
+
 # Code Server (Jump Box) Configuration
 ${CODE_SERVER_HOST}          192.168.1.100
 ${CODE_SERVER_USER}          codeserver

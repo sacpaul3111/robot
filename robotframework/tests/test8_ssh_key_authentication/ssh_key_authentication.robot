@@ -1,8 +1,9 @@
 *** Settings ***
 Documentation    🔐 SSH Key Authentication Validation Test Suite - Test-8
-...              🔍 Process: Connect to Code Server → Test SSH key authentication → Validate authorized_keys configuration
+...              🔍 Process: Connect to Code Server → Test SSH key authentication → Document to Files → Validate authorized_keys configuration
 ...              ✅ Pass if SSH key authentication works passwordlessly from Code Server to target machine
 ...              📊 Validates: SSH key authentication, authorized_keys permissions, SSH configuration
+...              💾 Saves: Authorized_keys config, SSH configuration, validation report
 ...
 Resource         ../../settings.resource
 Resource         ssh_keywords.resource
@@ -100,6 +101,29 @@ Critical - Step 2.3: Collect SSH Configuration
 
     Log    📋 SSH server configuration: ${ssh_config}    console=yes
     Log    ✅ STEP 2.3: COMPLETED - SSH configuration collected    console=yes
+
+Critical - Step 2.4: Document SSH Authentication Data to Files
+    [Documentation]    💾 Save complete SSH authentication data to files for compliance review
+    ...                Step 2 of validation process: Collect SSH Authentication Data (Part 4)
+    [Tags]             critical    documentation    step2    data_collection    file_output
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.4: DOCUMENT SSH AUTHENTICATION DATA TO FILES    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+
+    # Save all SSH authentication data to files
+    ${validation_file}=    Save SSH Authentication Data to Files
+
+    # Verify files were created
+    OperatingSystem.File Should Exist    ${validation_file}
+    ${file_size}=    OperatingSystem.Get File Size    ${validation_file}
+    Should Be True    ${file_size} > 0
+
+    Set Suite Variable    ${SSH_DATA_FILES_SAVED}    ${TRUE}
+
+    Log    📄 SSH authentication data saved to: ${TEST8_DATA_DIR}    console=yes
+    Log    📄 Validation file: ${validation_file}    console=yes
+    Log    ✅ STEP 2.4: COMPLETED - SSH authentication documentation saved    console=yes
 
 Critical - Step 3.1: Validate Passwordless SSH
     [Documentation]    ✅ Validate passwordless SSH authentication works correctly from jump box to target

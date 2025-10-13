@@ -26,11 +26,9 @@ Initialize ID Agent Test Environment
     Open Connection    ${TARGET_IP}
     Login    ${SSH_USERNAME}    ${SSH_PASSWORD}
 
-    # Set output directory
-    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${data_dir}=    Set Variable    ${OUTPUT_DIR}/id_agent_data_${timestamp}
-    Create Directory    ${data_dir}
-    Set Suite Variable    ${DATA_DIR}    ${data_dir}
+    # Create directories for data collection
+    Create Directory    ${TEST12_RESULTS_DIR}
+    Create Directory    ${TEST12_DATA_DIR}
 
     Log    ✅ ID agent test environment initialized    console=yes
 
@@ -57,7 +55,7 @@ Save RPM Installation to File
     [Arguments]    ${rpm_info}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_rpm_installation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_rpm_installation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -104,7 +102,7 @@ Save Service Status to File
     [Arguments]    ${service_status}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_service_status_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_service_status_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -149,7 +147,7 @@ Save Agent Version to File
     [Arguments]    ${version_info}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_agent_version_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_agent_version_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -199,7 +197,7 @@ Save Services Validation to File
     [Arguments]    ${services_check}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_services_validation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_services_validation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -250,7 +248,7 @@ Save Software Validation to File
     [Arguments]    ${software_check}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_software_validation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_software_validation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -301,7 +299,7 @@ Save Baseline Validation to File
     [Arguments]    ${baseline_check}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_baseline_validation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_baseline_validation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -350,7 +348,7 @@ Save Configuration Validation to File
     [Arguments]    ${config_check}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_configuration_validation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_configuration_validation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -401,7 +399,7 @@ Save Registration Status to File
     [Arguments]    ${registration_check}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_registration_status_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_registration_status_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -453,7 +451,7 @@ Save CIP010_Compliance to File
     [Arguments]    ${compliance_check}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_cip010_compliance_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_cip010_compliance_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -486,7 +484,7 @@ Save Agent Logs to File
     [Documentation]    Save agent logs to file
     [Arguments]    ${agent_logs}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_agent_logs_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_agent_logs_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${agent_logs}
     [Return]    ${filename}
 
@@ -499,7 +497,7 @@ Save Transmission Status to File
     [Documentation]    Save transmission status to file
     [Arguments]    ${transmission_status}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_transmission_status_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_transmission_status_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${transmission_status}
     [Return]    ${filename}
 
@@ -517,7 +515,7 @@ Save Network Test to File
     [Documentation]    Save network test results to file
     [Arguments]    ${network_test}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_network_test_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_network_test_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${network_test}
     [Return]    ${filename}
 
@@ -530,7 +528,7 @@ Save Resource Usage to File
     [Documentation]    Save resource usage to file
     [Arguments]    ${resource_usage}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_resource_usage_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_resource_usage_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${resource_usage}
     [Return]    ${filename}
 
@@ -543,7 +541,7 @@ Save Firewall Rules to File
     [Documentation]    Save firewall rules to file
     [Arguments]    ${firewall_rules}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_firewall_rules_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_firewall_rules_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${firewall_rules}
     [Return]    ${filename}
 
@@ -556,7 +554,7 @@ Save Update Status to File
     [Documentation]    Save update status to file
     [Arguments]    ${update_status}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_update_status_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_update_status_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${update_status}
     [Return]    ${filename}
 
@@ -569,7 +567,7 @@ Save Certificate Status to File
     [Documentation]    Save certificate status to file
     [Arguments]    ${cert_status}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_certificate_status_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_certificate_status_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${cert_status}
     [Return]    ${filename}
 
@@ -582,7 +580,7 @@ Save Error History to File
     [Documentation]    Save error history to file
     [Arguments]    ${error_history}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_error_history_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_error_history_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${error_history}
     [Return]    ${filename}
 
@@ -595,7 +593,7 @@ Save Data Freshness to File
     [Documentation]    Save data freshness check to file
     [Arguments]    ${data_freshness}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/id_data_freshness_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_data_freshness_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${data_freshness}
     [Return]    ${filename}
 
@@ -648,7 +646,7 @@ Generate ID Agent Executive Summary
     ...       agent configuration and registration with ID server
     ...
     ...    DATA COLLECTION FILES:
-    ...    - All validation data saved to: ${DATA_DIR}
+    ...    - All validation data saved to: ${TEST12_DATA_DIR}
     ...
     ...    ==========================================
     ...    END OF EXECUTIVE SUMMARY

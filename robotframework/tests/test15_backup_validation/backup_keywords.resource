@@ -20,8 +20,9 @@ Initialize Backup Validation Test Environment
     ${start_time}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
     Set Global Variable    ${TEST_START_TIME}    ${start_time}
 
-    # Create results directory
-    Create Directory    results/test15_backup_validation
+    # Create directories for data collection
+    Create Directory    ${TEST15_RESULTS_DIR}
+    Create Directory    ${TEST15_DATA_DIR}
 
     Log    ✅ Test environment initialized at ${TEST_START_TIME}    console=yes
 
@@ -234,7 +235,7 @@ Generate Backup Validation Executive Summary
     Set Global Variable    ${TEST_END_TIME}    ${end_time}
 
     # Generate summary report
-    ${summary_file}=    Set Variable    results/test15_backup_validation/Test15_Backup_Validation_Executive_Summary.txt
+    ${summary_file}=    Set Variable    ${TEST15_RESULTS_DIR}/Test15_Backup_Validation_Executive_Summary.txt
 
     ${summary_content}=    Catenate    SEPARATOR=\n
     ...    ========================================
@@ -291,7 +292,7 @@ Generate Backup Validation Executive Summary
     ...    📁 SUPPORTING DOCUMENTATION
     ...    ========================================
     ...    📄 API data collected in JSON format
-    ...    📊 Robot Framework reports: results/test15_backup_validation/
+    ...    📊 Robot Framework reports: ${TEST15_RESULTS_DIR}/
     ...
     ...    ========================================
     ...    🏆 COMPLIANCE STATUS

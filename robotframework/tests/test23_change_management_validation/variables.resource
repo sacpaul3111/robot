@@ -2,6 +2,10 @@
 Documentation    Change Management Validation Variables - Test-23
 
 *** Variables ***
+# 📁 Directory Paths
+${TEST23_RESULTS_DIR}        results/test23_change_management_validation
+${TEST23_DATA_DIR}           results/test23_change_management_validation/data
+
 # Target Configuration - Set via command line
 ${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
 

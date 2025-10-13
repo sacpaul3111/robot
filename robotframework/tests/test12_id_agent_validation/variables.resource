@@ -2,6 +2,10 @@
 Documentation    Industrial Defender Agent Validation Variables - Test-12
 
 *** Variables ***
+# 📁 Directory Paths
+${TEST12_RESULTS_DIR}        results/test12_id_agent_validation
+${TEST12_DATA_DIR}           results/test12_id_agent_validation/data
+
 # Target Configuration - Set via command line
 ${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
 

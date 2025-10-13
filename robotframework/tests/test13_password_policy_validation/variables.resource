@@ -2,6 +2,10 @@
 Documentation    Password Policy Validation Variables - Test-13
 
 *** Variables ***
+# 📁 Directory Paths
+${TEST13_RESULTS_DIR}        results/test13_password_policy_validation
+${TEST13_DATA_DIR}           results/test13_password_policy_validation/data
+
 # Target Configuration - Set via command line
 ${TARGET_HOSTNAME}           # Set via command line --variable TARGET_HOSTNAME:value
 

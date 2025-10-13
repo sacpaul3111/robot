@@ -26,11 +26,9 @@ Initialize Password Policy Test Environment
     Open Connection    ${TARGET_IP}
     Login    ${SSH_USERNAME}    ${SSH_PASSWORD}
 
-    # Set output directory
-    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${data_dir}=    Set Variable    ${OUTPUT_DIR}/password_policy_data_${timestamp}
-    Create Directory    ${data_dir}
-    Set Suite Variable    ${DATA_DIR}    ${data_dir}
+    # Create directories for data collection
+    Create Directory    ${TEST13_RESULTS_DIR}
+    Create Directory    ${TEST13_DATA_DIR}
 
     Log    ✅ Password policy test environment initialized    console=yes
 
@@ -51,7 +49,7 @@ Save Login Defs to File
     [Arguments]    ${login_defs}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/login_defs_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/login_defs_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -93,7 +91,7 @@ Save PWQuality to File
     [Arguments]    ${pwquality_conf}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/pwquality_conf_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/pwquality_conf_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -135,7 +133,7 @@ Save PAM System Auth to File
     [Arguments]    ${pam_system_auth}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/pam_system_auth_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/pam_system_auth_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -165,7 +163,7 @@ Save Additional Policy Files
     [Arguments]    ${pam_password_auth}    ${pam_common_password}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/additional_policy_files_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/additional_policy_files_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -218,7 +216,7 @@ Save Length Validation to File
     [Arguments]    ${length_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/length_validation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/length_validation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -282,7 +280,7 @@ Save Complexity Validation to File
     [Arguments]    ${complexity_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/complexity_validation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/complexity_validation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -345,7 +343,7 @@ Save History Validation to File
     [Arguments]    ${history_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/history_validation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/history_validation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -404,7 +402,7 @@ Save Lockout Validation to File
     [Arguments]    ${lockout_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/lockout_validation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/lockout_validation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -478,7 +476,7 @@ Save Expiration Validation to File
     [Arguments]    ${expiration_validation}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/expiration_validation_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/expiration_validation_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -571,7 +569,7 @@ Save CIP007_Compliance to File
     [Arguments]    ${cip007_compliance}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/cip007_r5_compliance_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/cip007_r5_compliance_${TARGET_HOSTNAME}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -605,7 +603,7 @@ Save Aging Parameters to File
     [Documentation]    Save aging parameters to file
     [Arguments]    ${aging_params}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/aging_parameters_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/aging_parameters_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${aging_params}
     [Return]    ${filename}
 
@@ -618,7 +616,7 @@ Save Faillock Configuration to File
     [Documentation]    Save faillock configuration to file
     [Arguments]    ${faillock_conf}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/faillock_conf_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/faillock_conf_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${faillock_conf}
     [Return]    ${filename}
 
@@ -650,7 +648,7 @@ Save Root Policy Check to File
     [Documentation]    Save root policy check to file
     [Arguments]    ${root_policy}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/root_policy_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/root_policy_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${root_policy}
     [Return]    ${filename}
 
@@ -669,7 +667,7 @@ Save User Password Status to File
     [Documentation]    Save user password status to file
     [Arguments]    ${user_status}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/user_password_status_${TARGET_HOSTNAME}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST13_DATA_DIR}/user_password_status_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${user_status}
     [Return]    ${filename}
 
@@ -732,7 +730,7 @@ Generate Password Policy Executive Summary
     ...       PASSWORD CONTROLS: FULLY COMPLIANT
     ...
     ...    DATA COLLECTION FILES:
-    ...    - All validation data saved to: ${DATA_DIR}
+    ...    - All validation data saved to: ${TEST13_DATA_DIR}
     ...
     ...    ==========================================
     ...    END OF EXECUTIVE SUMMARY

@@ -1,8 +1,9 @@
 *** Settings ***
 Documentation    🖥️ VM Configuration Validation Test Suite - Test-4
-...              🔍 Process: Connect to vCenter API → Query VM details → Compare vCenter vs EDS
+...              🔍 Process: Connect to vCenter API → Query VM details → Document to Files → Compare vCenter vs EDS
 ...              ✅ Pass if VM configuration matches EDS requirements, ❌ Fail if mismatch
 ...              📊 Validates: Cluster placement, CPU cores, memory, hardware version, network, disks
+...              💾 Saves: VM configuration summary, EDS comparison, comprehensive validation report
 ...
 Resource         ../../settings.resource
 Resource         vm_keywords.resource
@@ -153,6 +154,29 @@ Critical - Step 2.6: Collect VM Disk Configuration
 
     Log    🖥️ VM Total Disk Capacity: ${total_disk_capacity} GB    console=yes
     Log    ✅ STEP 2.6: COMPLETED - Disk configuration collected    console=yes
+
+Critical - Step 2.7: Document VM Configuration Data to Files
+    [Documentation]    💾 Save complete VM configuration data to files for compliance review
+    ...                Step 2 of validation process: Collect VM Configuration Data (Part 7)
+    [Tags]             critical    documentation    step2    data_collection    file_output
+
+    Log    ════════════════════════════════════════════════════════════    console=yes
+    Log    🔍 STEP 2.7: DOCUMENT VM CONFIGURATION DATA TO FILES    console=yes
+    Log    ════════════════════════════════════════════════════════════    console=yes
+
+    # Save all VM configuration data to files
+    ${validation_file}=    Save VM Data to Files
+
+    # Verify files were created
+    OperatingSystem.File Should Exist    ${validation_file}
+    ${file_size}=    OperatingSystem.Get File Size    ${validation_file}
+    Should Be True    ${file_size} > 0
+
+    Set Suite Variable    ${VM_DATA_FILES_SAVED}    ${TRUE}
+
+    Log    📄 VM configuration data saved to: ${TEST4_DATA_DIR}    console=yes
+    Log    📄 Validation file: ${validation_file}    console=yes
+    Log    ✅ STEP 2.7: COMPLETED - VM configuration documentation saved    console=yes
 
 Critical - Step 3.1: Validate Cluster Placement Against EDS
     [Documentation]    ✅ Compare collected cluster placement with EDS expected value

@@ -21,11 +21,9 @@ Initialize Change Management Test Environment
     Log    📋 Target Hostname: ${TARGET_HOSTNAME}    console=yes
     Log    📋 Target IP: ${TARGET_IP}    console=yes
 
-    # Set output directory
-    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${data_dir}=    Set Variable    ${OUTPUT_DIR}/change_mgmt_data_${timestamp}
-    Create Directory    ${data_dir}
-    Set Suite Variable    ${DATA_DIR}    ${data_dir}
+    # Create directories for data collection
+    Create Directory    ${TEST23_RESULTS_DIR}
+    Create Directory    ${TEST23_DATA_DIR}
 
     Log    ✅ Change management test environment initialized    console=yes
 
@@ -66,7 +64,7 @@ Save CRQ Access Verification to File
     [Arguments]    ${crq_access}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/crq_access_verification_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/crq_access_verification_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -119,7 +117,7 @@ Save Asset Platform Access to File
     [Arguments]    ${asset_access}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/asset_platform_access_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/asset_platform_access_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -193,7 +191,7 @@ Save Change Form to File
     [Arguments]    ${change_form}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/change_form_${CHANGE_FORM_ID}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/change_form_${CHANGE_FORM_ID}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -274,7 +272,7 @@ Save CRQ Tasks to File
     [Arguments]    ${crq_tasks}
 
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/crq_tasks_${CHANGE_REQUEST_NUMBER}_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/crq_tasks_${CHANGE_REQUEST_NUMBER}_${timestamp}.txt
 
     ${report}=    Catenate    SEPARATOR=\n
     ...    ==========================================
@@ -340,7 +338,7 @@ Save Mandatory Fields to File
     [Documentation]    Save mandatory fields documentation to file
     [Arguments]    ${mandatory_fields}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/mandatory_fields_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/mandatory_fields_${timestamp}.txt
     Create File    ${filename}    ${mandatory_fields}
     [Return]    ${filename}
 
@@ -394,7 +392,7 @@ Save Build Documentation to File
     [Documentation]    Save build documentation to file
     [Arguments]    ${build_docs}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/build_documentation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/build_documentation_${timestamp}.txt
     Create File    ${filename}    ${build_docs}
     [Return]    ${filename}
 
@@ -448,7 +446,7 @@ Save Test Results to File
     [Documentation]    Save test results documentation to file
     [Arguments]    ${test_results}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/test_results_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/test_results_${timestamp}.txt
     Create File    ${filename}    ${test_results}
     [Return]    ${filename}
 
@@ -508,7 +506,7 @@ Save Handoff Package to File
     [Documentation]    Save handoff package documentation to file
     [Arguments]    ${handoff_package}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/handoff_package_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/handoff_package_${timestamp}.txt
     Create File    ${filename}    ${handoff_package}
     [Return]    ${filename}
 
@@ -555,7 +553,7 @@ Save Approvals Validation to File
     [Documentation]    Save approvals validation to file
     [Arguments]    ${approvals_validation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/approvals_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/approvals_validation_${timestamp}.txt
     Create File    ${filename}    ${approvals_validation}
     [Return]    ${filename}
 
@@ -591,7 +589,7 @@ Save Tasks Validation to File
     [Documentation]    Save tasks validation to file
     [Arguments]    ${tasks_validation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/tasks_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/tasks_validation_${timestamp}.txt
     Create File    ${filename}    ${tasks_validation}
     [Return]    ${filename}
 
@@ -631,7 +629,7 @@ Save Closure Validation to File
     [Documentation]    Save closure validation to file
     [Arguments]    ${closure_validation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/closure_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/closure_validation_${timestamp}.txt
     Create File    ${filename}    ${closure_validation}
     [Return]    ${filename}
 
@@ -681,7 +679,7 @@ Save Archival Validation to File
     [Documentation]    Save archival validation to file
     [Arguments]    ${archival_validation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/archival_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/archival_validation_${timestamp}.txt
     Create File    ${filename}    ${archival_validation}
     [Return]    ${filename}
 
@@ -738,7 +736,7 @@ Save Handoff Validation to File
     [Documentation]    Save handoff validation to file
     [Arguments]    ${handoff_validation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/handoff_validation_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/handoff_validation_${timestamp}.txt
     Create File    ${filename}    ${handoff_validation}
     [Return]    ${filename}
 
@@ -806,7 +804,7 @@ Save Change Management Compliance to File
     [Documentation]    Save change management compliance to file
     [Arguments]    ${cm_compliance}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/change_mgmt_compliance_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/change_mgmt_compliance_${timestamp}.txt
     Create File    ${filename}    ${cm_compliance}
     Log    📄 Change management compliance saved to: ${filename}    console=yes
     [Return]    ${filename}
@@ -820,7 +818,7 @@ Save Implementation Verification to File
     [Documentation]    Save implementation verification to file
     [Arguments]    ${implementation}
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
-    ${filename}=    Set Variable    ${DATA_DIR}/implementation_verification_${timestamp}.txt
+    ${filename}=    Set Variable    ${TEST23_DATA_DIR}/implementation_verification_${timestamp}.txt
     Create File    ${filename}    ${implementation}
     [Return]    ${filename}
 
@@ -938,7 +936,7 @@ Generate Change Management Executive Summary
     ...    ✅ READY FOR FINAL CLOSURE
     ...
     ...    DATA COLLECTION FILES:
-    ...    - All validation data saved to: ${DATA_DIR}
+    ...    - All validation data saved to: ${TEST23_DATA_DIR}
     ...
     ...    ==========================================
     ...    END OF EXECUTIVE SUMMARY

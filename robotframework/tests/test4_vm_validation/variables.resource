@@ -8,6 +8,10 @@ Library          OperatingSystem
 # 🎯 Target Server Configuration (from command line)
 ${TARGET_HOSTNAME}               # Set via command line --variable TARGET_HOSTNAME:value
 
+# 📁 Directory Paths
+${TEST4_RESULTS_DIR}             results/test4_vm_validation
+${TEST4_DATA_DIR}                results/test4_vm_validation/data
+
 # Will be populated from EDS during suite setup
 ${TARGET_VXRAIL_CLUSTER}         ${EMPTY}
 ${TARGET_VCENTER_HOST}           ${EMPTY}
@@ -63,6 +67,10 @@ Initialize VM Test Environment And Lookup Configuration
     Log    📋 - CPU Cores: ${TARGET_VM_CPU_CORES}    console=yes
     Log    📋 - RAM: ${TARGET_VM_RAM}    console=yes
     Log    📋 - Hardware Version: ${TARGET_VM_HARDWARE_VERSION}    console=yes
+
+    # Create results directories
+    Create Directory    ${TEST4_RESULTS_DIR}
+    Create Directory    ${TEST4_DATA_DIR}
 
     Log    ✅ VM Test Environment Initialized    console=yes
 

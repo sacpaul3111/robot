@@ -14,7 +14,9 @@ Initialize Datastore Configuration Test Environment
     [Documentation]    Initialize test environment and create necessary directories
     Log    🚀 Initializing Datastore Configuration Test Environment...    console=yes
 
-    # Create screenshot directory
+    # Create directories
+    Create Directory    ${TEST9_RESULTS_DIR}
+    Create Directory    ${TEST9_DATA_DIR}
     Create Directory    ${SCREENSHOT_DIR}
 
     # Initialize vCenter connection variables
@@ -180,6 +182,125 @@ Validate Subscription Ratios
     Log    📊 Validation complete: ${oversub_count} oversubscribed datastores found    console=yes
 
     RETURN    ${results}
+
+Save Datastore Configuration Data to Files
+    [Documentation]    💾 Save complete datastore configuration data to files for compliance review
+    Log    💾 Saving datastore configuration data to files...    console=yes
+
+    # Generate timestamp for unique filenames
+    ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
+
+    # Save VM datastore assignments
+    ${vm_assignments_file}=    Set Variable    ${TEST9_DATA_DIR}/vm_datastore_assignments_${timestamp}.txt
+    ${vm_count}=    Get Length    ${VM_ASSIGNMENTS}
+    ${vm_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === VM DATASTORE ASSIGNMENTS ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target Host: ${VCENTER_HOST}
+    ...    Total VMs: ${vm_count}
+    ...
+    ...    ${VM_ASSIGNMENTS}
+    ...    =========================================
+    Create File    ${vm_assignments_file}    ${vm_report}
+    Log    📄 VM assignments saved to: ${vm_assignments_file}    console=yes
+
+    # Save datastore capacity data
+    ${capacity_file}=    Set Variable    ${TEST9_DATA_DIR}/datastore_capacity_${timestamp}.txt
+    ${capacity_count}=    Get Length    ${CAPACITY_DATA}
+    ${capacity_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === DATASTORE CAPACITY DATA ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target Host: ${VCENTER_HOST}
+    ...    Total Datastores: ${capacity_count}
+    ...    Minimum Free Capacity: ${MIN_FREE_CAPACITY_PERCENT}%
+    ...
+    ...    ${CAPACITY_DATA}
+    ...    =========================================
+    Create File    ${capacity_file}    ${capacity_report}
+    Log    📄 Capacity data saved to: ${capacity_file}    console=yes
+
+    # Save performance tier data
+    ${tiers_file}=    Set Variable    ${TEST9_DATA_DIR}/performance_tiers_${timestamp}.txt
+    ${tiers_count}=    Get Length    ${PERFORMANCE_TIERS}
+    ${tiers_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === DATASTORE PERFORMANCE TIERS ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target Host: ${VCENTER_HOST}
+    ...    Total Datastores: ${tiers_count}
+    ...
+    ...    ${PERFORMANCE_TIERS}
+    ...    =========================================
+    Create File    ${tiers_file}    ${tiers_report}
+    Log    📄 Performance tiers saved to: ${tiers_file}    console=yes
+
+    # Save subscription data
+    ${subscription_file}=    Set Variable    ${TEST9_DATA_DIR}/subscription_levels_${timestamp}.txt
+    ${subscription_count}=    Get Length    ${SUBSCRIPTION_DATA}
+    ${subscription_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === DATASTORE SUBSCRIPTION LEVELS ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    Target Host: ${VCENTER_HOST}
+    ...    Total Datastores: ${subscription_count}
+    ...    Max Subscription Ratio: ${MAX_SUBSCRIPTION_RATIO}
+    ...
+    ...    ${SUBSCRIPTION_DATA}
+    ...    =========================================
+    Create File    ${subscription_file}    ${subscription_report}
+    Log    📄 Subscription levels saved to: ${subscription_file}    console=yes
+
+    # Save comprehensive validation report
+    ${validation_file}=    Set Variable    ${TEST9_DATA_DIR}/datastore_validation_report_${timestamp}.txt
+    ${validation_report}=    Catenate    SEPARATOR=\n
+    ...    =========================================
+    ...    === DATASTORE CONFIGURATION VALIDATION REPORT ===
+    ...    =========================================
+    ...    Timestamp: ${timestamp}
+    ...    vCenter: ${VCENTER_SERVER}
+    ...    Target Host: ${VCENTER_HOST}
+    ...    Cluster: ${CLUSTER_NAME}
+    ...
+    ...    TEST SUITE: Test-9 Datastore Configuration Validation
+    ...    PURPOSE: Validate datastore configuration and VM placement
+    ...
+    ...    =========================================
+    ...    === COLLECTED DATA SUMMARY ===
+    ...    =========================================
+    ...    VMs: ${vm_count}
+    ...    Datastores: ${capacity_count}
+    ...    Screenshot: ${SCREENSHOT_PATH}
+    ...
+    ...    =========================================
+    ...    === VALIDATION THRESHOLDS ===
+    ...    =========================================
+    ...    Minimum Free Capacity: ${MIN_FREE_CAPACITY_PERCENT}%
+    ...    Maximum Subscription Ratio: ${MAX_SUBSCRIPTION_RATIO}
+    ...
+    ...    =========================================
+    ...    === DETAILED DATA FILES ===
+    ...    =========================================
+    ...    VM Assignments: ${vm_assignments_file}
+    ...    Capacity Data: ${capacity_file}
+    ...    Performance Tiers: ${tiers_file}
+    ...    Subscription Levels: ${subscription_file}
+    ...
+    ...    =========================================
+    ...    === VALIDATION STATUS ===
+    ...    =========================================
+    ...    See test report for detailed validation results
+    ...    =========================================
+    Create File    ${validation_file}    ${validation_report}
+    Log    📄 Validation report saved to: ${validation_file}    console=yes
+
+    Log    ✅ All datastore configuration data saved to ${TEST9_DATA_DIR}    console=yes
+    RETURN    ${validation_file}
 
 Validate Complete Datastore Configuration
     [Documentation]    Perform comprehensive datastore configuration validation

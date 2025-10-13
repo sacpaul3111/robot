@@ -2,6 +2,10 @@
 Documentation    Variable definitions for Datastore Configuration Test Suite
 
 *** Variables ***
+# 📁 Directory Paths
+${TEST9_RESULTS_DIR}           results/test9_datastore_configuration
+${TEST9_DATA_DIR}              results/test9_datastore_configuration/data
+
 # Target Configuration - Pulled from command line like test3
 ${TARGET_HOSTNAME}             # Set via command line --variable TARGET_HOSTNAME:value
 
