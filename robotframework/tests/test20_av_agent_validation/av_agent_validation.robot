@@ -1,8 +1,9 @@
 *** Settings ***
 Documentation    🛡️ AV Agent Validation Test Suite - Test-20
-...              🔍 Process: Connect to AV Console → Collect AV Agent Information → Validate AV Protection
-...              ✅ Pass if antivirus configuration meets CIP-007 R3.1 requirements for malware protection
+...              🔍 Process: SSH to Target Machine → Collect AV Agent Information → Validate AV Protection
+...              ✅ Pass if antivirus agent configuration meets CIP-007 R3.1 requirements for malware protection
 ...              📊 Validates: Agent installation, real-time protection, signature updates, scan schedules, exclusions
+...              ℹ️  Note: This test validates the AV agent installed on the target machine via SSH (no GUI console)
 ...
 Resource         ../../settings.resource
 Resource         av_keywords.resource
@@ -15,13 +16,13 @@ Test Setup       Log Test Start    ${TEST_NAME}
 Test Teardown    Log Test End      ${TEST_NAME}    ${TEST_STATUS}
 
 *** Test Cases ***
-Critical - Step 1: Connect to AV Console
-    [Documentation]    🔗 SSH directly to the target machine to check Sentinel or McAfee installation status
-    ...                Step 1 of validation process: Connect to Target
-    [Tags]             critical    connection    step1    av_console
+Critical - Step 1: Connect to Target Machine
+    [Documentation]    🔗 SSH directly to the target machine to check AV agent installation status
+    ...                Step 1 of validation process: Connect to Target Machine
+    [Tags]             critical    connection    step1    ssh
 
     Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    🔍 STEP 1: CONNECT TO AV CONSOLE    console=yes
+    Log    🔍 STEP 1: CONNECT TO TARGET MACHINE VIA SSH    console=yes
     Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Target Machine: ${TARGET_HOSTNAME}    console=yes
     Log    📋 Expected AV Type: ${AV_TYPE}    console=yes
@@ -113,26 +114,6 @@ Critical - Step 2.5: Collect Exclusion Configurations
     Log    ✅ Exclusion paths configured: ${exclusion_count}    console=yes
     Log    ✅ STEP 2.5: COMPLETED - Exclusion configurations collected    console=yes
 
-Critical - Step 2.6: Capture Screenshots and Save Outputs
-    [Documentation]    📸 Capture console screenshots and save command outputs
-    ...                Step 2 of validation process: Collect AV Agent Data (Part 6)
-    [Tags]             critical    av_collection    step2    documentation
-
-    Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    🔍 STEP 2.6: CAPTURE SCREENSHOTS AND SAVE OUTPUTS    console=yes
-    Log    ════════════════════════════════════════════════════════════    console=yes
-
-    ${screenshot_path}=    Capture AV Console Screenshot
-    Set Suite Variable    ${SCREENSHOT_PATH}    ${screenshot_path}
-    OperatingSystem.File Should Exist    ${screenshot_path}
-    Log    ✅ Screenshot saved: ${screenshot_path}    console=yes
-
-    ${output_file}=    Save AV Agent Output
-    Set Suite Variable    ${OUTPUT_FILE}    ${output_file}
-    OperatingSystem.File Should Exist    ${output_file}
-    Log    ✅ Output saved: ${output_file}    console=yes
-    Log    ✅ STEP 2.6: COMPLETED - Screenshots and outputs saved    console=yes
-
 Critical - Step 3.1: Validate Agent Installation
     [Documentation]    ✅ Validate agent installation status against requirements
     ...                Step 3 of validation process: Validate Against CIP-007 R3.1 Standards (Part 1)
@@ -176,47 +157,33 @@ Critical - Step 3.3: Validate Signature Currency
     Log    ✅ Signature currency validated (Current)    console=yes
     Log    ✅ STEP 3.3: COMPLETED - Signature currency validated    console=yes
 
-Critical - Step 3.4: Validate Console Reporting
-    [Documentation]    ✅ Validate console reporting functionality
-    ...                Step 3 of validation process: Validate Against CIP-007 R3.1 Standards (Part 4)
-    [Tags]             critical    validation    step3    cip007_r31    reporting
-
-    Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    🔍 STEP 3.4: VALIDATE CONSOLE REPORTING    console=yes
-    Log    ════════════════════════════════════════════════════════════    console=yes
-
-    ${console_reporting}=    Validate Console Reporting
-    Should Be True    ${console_reporting}    msg=Console reporting validation failed
-    Log    ✅ Console reporting validated    console=yes
-    Log    ✅ STEP 3.4: COMPLETED - Console reporting validated    console=yes
-
-Critical - Step 3.5: Validate Scheduled Scans
+Critical - Step 3.4: Validate Scheduled Scans
     [Documentation]    ✅ Validate scheduled scan configuration
-    ...                Step 3 of validation process: Validate Against CIP-007 R3.1 Standards (Part 5)
+    ...                Step 3 of validation process: Validate Against CIP-007 R3.1 Standards (Part 4)
     [Tags]             critical    validation    step3    cip007_r31    scans
 
     Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    🔍 STEP 3.5: VALIDATE SCHEDULED SCANS    console=yes
+    Log    🔍 STEP 3.4: VALIDATE SCHEDULED SCANS    console=yes
     Log    ════════════════════════════════════════════════════════════    console=yes
 
     ${scan_valid}=    Validate Scheduled Scans    ${SCAN_SCHEDULE}
     Should Be True    ${scan_valid}    msg=Scheduled scan validation failed
     Log    ✅ Scheduled scans validated    console=yes
-    Log    ✅ STEP 3.5: COMPLETED - Scheduled scans validated    console=yes
+    Log    ✅ STEP 3.4: COMPLETED - Scheduled scans validated    console=yes
 
-Critical - Step 3.6: Validate Exclusion Policies
+Critical - Step 3.5: Validate Exclusion Policies
     [Documentation]    ✅ Validate exclusion policies are appropriate
-    ...                Step 3 of validation process: Validate Against CIP-007 R3.1 Standards (Part 6)
+    ...                Step 3 of validation process: Validate Against CIP-007 R3.1 Standards (Part 5)
     [Tags]             critical    validation    step3    cip007_r31    exclusions
 
     Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    🔍 STEP 3.6: VALIDATE EXCLUSION POLICIES    console=yes
+    Log    🔍 STEP 3.5: VALIDATE EXCLUSION POLICIES    console=yes
     Log    ════════════════════════════════════════════════════════════    console=yes
 
     ${exclusion_valid}=    Validate Exclusion Policies    ${EXCLUSIONS}
     Should Be True    ${exclusion_valid}    msg=Exclusion policy validation failed
     Log    ✅ Exclusion policies validated    console=yes
-    Log    ✅ STEP 3.6: COMPLETED - Exclusion policies validated    console=yes
+    Log    ✅ STEP 3.5: COMPLETED - Exclusion policies validated    console=yes
 
 Normal - Comprehensive AV Validation Summary
     [Documentation]    📊 Generate comprehensive summary of all AV validation results
