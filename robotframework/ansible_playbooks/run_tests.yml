@@ -18,29 +18,9 @@
     # Accept TargetHostname (from Itential) and map to TARGET_HOSTNAME
     target_hostname: "{{ TargetHostname | default(target_hostname) | default('') }}"
 
-    # SSH Credentials for target server
-    ssh_username: "{{ lookup('env', 'SSH_USERNAME') | default('', true) }}"
-    ssh_password: "{{ lookup('env', 'SSH_PASSWORD') | default('', true) }}"
-
-    # vCenter Credentials (test4, test9, test15)
-    vcenter_username: "{{ lookup('env', 'VCENTER_USERNAME') | default('', true) }}"
-    vcenter_password: "{{ lookup('env', 'VCENTER_PASSWORD') | default('', true) }}"
-
-    # Splunk Credentials (test14)
-    splunk_username: "{{ lookup('env', 'SPLUNK_USERNAME') | default('', true) }}"
-    splunk_password: "{{ lookup('env', 'SPLUNK_PASSWORD') | default('', true) }}"
-
-    # CyberArk Credentials (test16)
-    cyberark_username: "{{ lookup('env', 'CYBERARK_USERNAME') | default('', true) }}"
-    cyberark_password: "{{ lookup('env', 'CYBERARK_PASSWORD') | default('', true) }}"
-
-    # Tanium Credentials (test21)
-    tanium_username: "{{ lookup('env', 'TANIUM_USERNAME') | default('', true) }}"
-    tanium_password: "{{ lookup('env', 'TANIUM_PASSWORD') | default('', true) }}"
-
-    # Ansible Tower/AWX Credentials (test24)
-    ansible_tower_username: "{{ lookup('env', 'ANSIBLE_TOWER_USERNAME') | default('', true) }}"
-    ansible_tower_password: "{{ lookup('env', 'ANSIBLE_TOWER_PASSWORD') | default('', true) }}"
+    # All credentials are provided via environment variables
+    # No need to define them here - they are passed directly to Robot Framework
+    # via the environment block in execute_test_suite.yml
 
     fail_on_test_errors: false
 
@@ -64,13 +44,20 @@
           Example: ansible-playbook run_tests.yml -e TargetHostname=alhxvdvitap01
       when: target_hostname == ''
 
-    - name: Validate SSH credentials are provided
+    - name: Validate SSH credentials are provided via environment
       fail:
         msg: |
           ERROR: SSH credentials required!
-          Set environment variables: export SSH_USERNAME=<user> SSH_PASSWORD=<pass>
-          Or use: -e ssh_username=<user> -e ssh_password=<pass>
-      when: ssh_username == '' or ssh_password == ''
+          Please ensure environment variables are set:
+            export SSH_USERNAME=<user>
+            export SSH_PASSWORD=<pass>
+
+          Or source credentials file:
+            source credentials.env
+
+          Or use wrapper script:
+            ./run_tests.sh {{ target_hostname }}
+      when: lookup('env', 'SSH_USERNAME') == '' or lookup('env', 'SSH_PASSWORD') == ''
 
     - name: Create project directory if it doesn't exist
       file:
@@ -176,6 +163,7 @@
         total_count: "{{ total_tests_final | default(total_tests) }}"
         passed_count: "{{ passed_tests_final | default(passed_tests) }}"
         failed_count: "{{ failed_tests_final | default(failed_tests) }}"
+        nexus_artifacts_url: "https://nexus.company.com/repository/robot-framework-artifacts/{{ target_hostname }}/{{ ansible_date_time.iso8601 | regex_replace('[:]', '-') }}"
 
   post_tasks:
     - name: Display test execution summary
@@ -195,6 +183,9 @@
           - "  Directory:    {{ results_directory }}"
           - "  Log:          {{ consolidated_log }}"
           - "  Report:       {{ consolidated_report }}"
+          - ""
+          - "Artifacts URL (Nexus OSS):"
+          - "  {{ nexus_artifacts_url }}"
           - "========================================================"
 
     - name: Display individual test suite results
@@ -232,6 +223,11 @@
           Directory:  {{ results_directory }}
           Log:        {{ consolidated_log }}
           Report:     {{ consolidated_report }}
+
+          ========================================================
+          ARTIFACTS URL (NEXUS OSS)
+          ========================================================
+          {{ nexus_artifacts_url }}
           ========================================================
         dest: "{{ robot_project_dir }}/{{ robot_output_dir }}/TEST_SUMMARY.txt"
         mode: '0644'

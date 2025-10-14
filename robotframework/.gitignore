@@ -1,0 +1,82 @@
+# Credential files - NEVER COMMIT THESE
+credentials.env
+*credentials.env
+!credentials.env.example
+*.vault_pass*
+.vault_pass
+vault_pass.txt
+vault_credentials.yml
+!vault_credentials.yml.example
+
+# Sensitive configuration files
+*_credentials.*
+*_secrets.*
+*.key
+*.pem
+id_rsa*
+
+# Robot Framework results
+results/
+output.xml
+log.html
+report.html
+*.png
+*.jpg
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+
+# Logs
+*.log
+logs/
+
+# Ansible
+*.retry
+.ansible/
+
+# Temporary files
+tmp/
+temp/
+.cache/

@@ -42,22 +42,43 @@
     {{ python_executable }} -m robot
     --variable TARGET_HOSTNAME:{{ target_hostname }}
     --variable TEST_SUITE_ID:{{ test_suite_id }}
-    --variable SSH_USERNAME:{{ ssh_username }}
-    --variable SSH_PASSWORD:{{ ssh_password }}
-    --variable VCENTER_USERNAME:{{ vcenter_username }}
-    --variable VCENTER_PASSWORD:{{ vcenter_password }}
-    --variable SPLUNK_USERNAME:{{ splunk_username }}
-    --variable SPLUNK_PASSWORD:{{ splunk_password }}
-    --variable CYBERARK_USERNAME:{{ cyberark_username }}
-    --variable CYBERARK_PASSWORD:{{ cyberark_password }}
-    --variable TANIUM_USERNAME:{{ tanium_username }}
-    --variable TANIUM_PASSWORD:{{ tanium_password }}
-    --variable ANSIBLE_TOWER_USERNAME:{{ ansible_tower_username }}
-    --variable ANSIBLE_TOWER_PASSWORD:{{ ansible_tower_password }}
     --outputdir {{ robot_project_dir }}/{{ robot_output_dir }}/{{ test_suite_name }}
     {{ robot_files.files[0].path }}
   args:
     chdir: "{{ robot_project_dir }}"
+  environment:
+    # All credentials and configuration from environment variables
+    SSH_USERNAME: "{{ lookup('env', 'SSH_USERNAME') }}"
+    SSH_PASSWORD: "{{ lookup('env', 'SSH_PASSWORD') }}"
+    VCENTER_USERNAME: "{{ lookup('env', 'VCENTER_USERNAME') }}"
+    VCENTER_PASSWORD: "{{ lookup('env', 'VCENTER_PASSWORD') }}"
+    VCENTER_SERVER: "{{ lookup('env', 'VCENTER_SERVER') }}"
+    SPLUNK_USERNAME: "{{ lookup('env', 'SPLUNK_USERNAME') }}"
+    SPLUNK_PASSWORD: "{{ lookup('env', 'SPLUNK_PASSWORD') }}"
+    SPLUNK_SERVER: "{{ lookup('env', 'SPLUNK_SERVER') }}"
+    SPLUNK_PORT: "{{ lookup('env', 'SPLUNK_PORT') }}"
+    CYBERARK_USERNAME: "{{ lookup('env', 'CYBERARK_USERNAME') }}"
+    CYBERARK_PASSWORD: "{{ lookup('env', 'CYBERARK_PASSWORD') }}"
+    CYBERARK_SERVER: "{{ lookup('env', 'CYBERARK_SERVER') }}"
+    CYBERARK_SAFE: "{{ lookup('env', 'CYBERARK_SAFE') }}"
+    TANIUM_USERNAME: "{{ lookup('env', 'TANIUM_USERNAME') }}"
+    TANIUM_PASSWORD: "{{ lookup('env', 'TANIUM_PASSWORD') }}"
+    TANIUM_SERVER: "{{ lookup('env', 'TANIUM_SERVER') }}"
+    TANIUM_PORT: "{{ lookup('env', 'TANIUM_PORT') }}"
+    ANSIBLE_TOWER_USERNAME: "{{ lookup('env', 'ANSIBLE_TOWER_USERNAME') }}"
+    ANSIBLE_TOWER_PASSWORD: "{{ lookup('env', 'ANSIBLE_TOWER_PASSWORD') }}"
+    ANSIBLE_TOWER_SERVER: "{{ lookup('env', 'ANSIBLE_TOWER_SERVER') }}"
+    ANSIBLE_TOWER_PORT: "{{ lookup('env', 'ANSIBLE_TOWER_PORT') }}"
+    RSA_SERVER: "{{ lookup('env', 'RSA_SERVER') }}"
+    RSA_PORT: "{{ lookup('env', 'RSA_PORT') }}"
+    SMTP_SERVER: "{{ lookup('env', 'SMTP_SERVER') }}"
+    SMTP_PORT: "{{ lookup('env', 'SMTP_PORT') }}"
+    TEST_EMAIL_RECIPIENT: "{{ lookup('env', 'TEST_EMAIL_RECIPIENT') }}"
+    NTP_SERVER: "{{ lookup('env', 'NTP_SERVER') }}"
+    EDS_FILE_PATH: "{{ lookup('env', 'EDS_FILE_PATH') }}"
+    EDS_SHEET_NAME: "{{ lookup('env', 'EDS_SHEET_NAME') }}"
+    ROBOT_TIMEOUT: "{{ lookup('env', 'ROBOT_TIMEOUT') }}"
+    ROBOT_LOG_LEVEL: "{{ lookup('env', 'ROBOT_LOG_LEVEL') }}"
   register: robot_execution
   ignore_errors: yes
   when: robot_files.files | length > 0
