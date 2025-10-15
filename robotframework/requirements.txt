@@ -1,0 +1,139 @@
+# Robot Framework Test Suite - Python Requirements
+# Install with: pip3 install -r requirements.txt
+
+#############################################################################
+# Core Robot Framework
+#############################################################################
+robotframework>=3.2.2
+
+#############################################################################
+# Robot Framework Libraries
+#############################################################################
+# SSH connectivity for remote server testing
+robotframework-sshlibrary>=3.7.0
+
+# Web UI testing (for Citrix/browser-based tests)
+robotframework-seleniumlibrary>=5.1.3
+
+#############################################################################
+# HTTP/API Libraries
+#############################################################################
+# HTTP requests for API testing (vCenter, Splunk, CyberArk, etc.)
+requests>=2.27.1
+
+# Advanced HTTP client
+urllib3>=1.26.8
+
+#############################################################################
+# SSH and Security Libraries
+#############################################################################
+# SSH protocol implementation
+paramiko>=2.9.2
+
+# Cryptography support
+cryptography>=36.0.1
+
+# SSH key management
+pycryptodome>=3.14.1
+
+#############################################################################
+# XML/HTML Parsing
+#############################################################################
+# XML and HTML parsing for reports and API responses
+lxml>=4.7.1
+
+# HTML parsing
+beautifulsoup4>=4.10.0
+
+#############################################################################
+# Excel/CSV Data Processing
+#############################################################################
+# Excel file reading (EDS file)
+openpyxl>=3.0.9
+
+# Excel file reading (older formats)
+xlrd>=2.0.1
+
+# Data analysis and manipulation
+pandas>=1.3.5
+
+#############################################################################
+# Date/Time Libraries
+#############################################################################
+# Date and time manipulation
+python-dateutil>=2.8.2
+
+# Timezone handling
+pytz>=2021.3
+
+#############################################################################
+# JSON/YAML Processing
+#############################################################################
+# YAML parsing
+PyYAML>=6.0
+
+# JSON schema validation
+jsonschema>=4.4.0
+
+#############################################################################
+# Network Libraries
+#############################################################################
+# IP address manipulation
+netaddr>=0.8.0
+
+# DNS queries
+dnspython>=2.2.0
+
+#############################################################################
+# Testing Utilities
+#############################################################################
+# HTTP mocking for testing
+responses>=0.20.0
+
+# Test fixtures
+pytest>=7.0.1
+
+#############################################################################
+# System Libraries
+#############################################################################
+# Cross-platform process utilities
+psutil>=5.9.0
+
+# File system operations
+pathlib2>=2.3.7
+
+#############################################################################
+# Optional: vCenter/VMware Integration
+#############################################################################
+# VMware vSphere API (uncomment if needed)
+# pyvmomi>=7.0.3
+
+#############################################################################
+# Optional: Database Connectivity
+#############################################################################
+# PostgreSQL (uncomment if needed)
+# psycopg2-binary>=2.9.3
+
+# MySQL (uncomment if needed)
+# pymysql>=1.0.2
+
+#############################################################################
+# Optional: Additional Security
+#############################################################################
+# Certificate verification
+certifi>=2021.10.8
+
+# Secure password hashing
+bcrypt>=3.2.0
+
+#############################################################################
+# Development Tools (Optional)
+#############################################################################
+# Code formatting
+# black>=22.1.0
+
+# Linting
+# pylint>=2.12.2
+
+# Type checking
+# mypy>=0.931

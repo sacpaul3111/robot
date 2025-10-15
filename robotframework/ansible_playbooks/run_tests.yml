@@ -2,7 +2,22 @@
 #############################################################################
 # Ansible Playbook: Robot Framework Test Execution
 # Description: Execute all Robot Framework tests with pass/fail summary
-# Usage: ansible-playbook run_tests.yml -e TargetHostname=<hostname>
+#
+# USAGE:
+#   # Method 1: With Ansible Vault (recommended for production)
+#   ansible-playbook run_tests.yml \
+#     -e TargetHostname=<hostname> \
+#     -e @/etc/ansible/vault/robot_credentials.yml \
+#     --vault-password-file=/etc/ansible/vault/.vault_pass
+#
+#   # Method 2: With environment variables (development)
+#   source credentials.env
+#   ansible-playbook run_tests.yml -e TargetHostname=<hostname>
+#
+#   # Method 3: Using wrapper script (easiest)
+#   ./run_tests_vault.sh <hostname>
+#
+# For detailed documentation, see: docs/ENVIRONMENT_VARIABLES_APPROACH.md
 #############################################################################
 
 - name: Execute Robot Framework Tests
@@ -34,7 +49,140 @@
           - "Project Directory: {{ robot_project_dir }}"
           - "Target Hostname:   {{ target_hostname }}"
           - "Output Directory:  {{ robot_output_dir }}"
+          - "Operating System:  {{ ansible_distribution }} {{ ansible_distribution_version }}"
           - "========================================================"
+
+    #########################################################################
+    # PREREQUISITE CHECKS AND INSTALLATION
+    #########################################################################
+
+    - name: Check if Python 3 is installed
+      command: python3 --version
+      register: python3_check
+      ignore_errors: yes
+      changed_when: false
+
+    - name: Check if pip3 is installed
+      command: pip3 --version
+      register: pip3_check
+      ignore_errors: yes
+      changed_when: false
+
+    - name: Check if git is installed
+      command: git --version
+      register: git_check
+      ignore_errors: yes
+      changed_when: false
+
+    - name: Display prerequisite check results
+      debug:
+        msg:
+          - "Prerequisite Check Results:"
+          - "  Python 3: {{ 'Installed' if python3_check.rc == 0 else 'NOT INSTALLED' }}"
+          - "  pip3:     {{ 'Installed' if pip3_check.rc == 0 else 'NOT INSTALLED' }}"
+          - "  git:      {{ 'Installed' if git_check.rc == 0 else 'NOT INSTALLED' }}"
+
+    - name: Install system packages (RHEL/CentOS/Rocky)
+      become: yes
+      yum:
+        name:
+          - python3
+          - python3-pip
+          - python3-devel
+          - git
+          - gcc
+          - libxml2-devel
+          - libxslt-devel
+          - libffi-devel
+          - openssl-devel
+          - sshpass
+        state: present
+      when:
+        - ansible_os_family == 'RedHat'
+        - python3_check.rc != 0 or pip3_check.rc != 0 or git_check.rc != 0
+      ignore_errors: yes
+
+    - name: Install system packages (Ubuntu/Debian)
+      become: yes
+      apt:
+        name:
+          - python3
+          - python3-pip
+          - python3-dev
+          - git
+          - gcc
+          - libxml2-dev
+          - libxslt1-dev
+          - libffi-dev
+          - libssl-dev
+          - sshpass
+        state: present
+        update_cache: yes
+      when:
+        - ansible_os_family == 'Debian'
+        - python3_check.rc != 0 or pip3_check.rc != 0 or git_check.rc != 0
+      ignore_errors: yes
+
+    - name: Upgrade pip to latest version
+      pip:
+        name: pip
+        executable: pip3
+        state: latest
+        extra_args: --user
+      ignore_errors: yes
+
+    - name: Check if Robot Framework is installed
+      command: python3 -m robot --version
+      register: robot_check
+      ignore_errors: yes
+      changed_when: false
+
+    - name: Check if SSHLibrary is installed
+      command: python3 -c "import SSHLibrary"
+      register: sshlibrary_check
+      ignore_errors: yes
+      changed_when: false
+
+    - name: Install Robot Framework and required libraries
+      pip:
+        name:
+          - robotframework>=3.2.2
+          - robotframework-sshlibrary>=3.7.0
+          - robotframework-seleniumlibrary>=5.1.3
+          - requests>=2.27.1
+          - paramiko>=2.9.2
+          - cryptography>=36.0.1
+          - lxml>=4.7.1
+          - openpyxl>=3.0.9
+          - pandas>=1.3.5
+        executable: pip3
+        state: present
+        extra_args: --user
+      when: robot_check.rc != 0 or sshlibrary_check.rc != 0
+      ignore_errors: yes
+
+    - name: Verify Python 3 is available after installation
+      command: python3 --version
+      register: python3_verify
+      changed_when: false
+      failed_when: python3_verify.rc != 0
+
+    - name: Verify Robot Framework is available after installation
+      command: python3 -m robot --version
+      register: robot_verify
+      changed_when: false
+      failed_when: robot_verify.rc != 0
+
+    - name: Display installed versions
+      debug:
+        msg:
+          - "Installed Software Versions:"
+          - "  {{ python3_verify.stdout }}"
+          - "  {{ robot_verify.stdout }}"
+
+    #########################################################################
+    # VALIDATION
+    #########################################################################
 
     - name: Validate target hostname is provided
       fail:

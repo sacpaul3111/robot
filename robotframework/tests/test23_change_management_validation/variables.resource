@@ -14,11 +14,17 @@ ${SSH_USERNAME}            ${EMPTY}
 ${SSH_PASSWORD}            ${EMPTY}
 ${SSH_TIMEOUT}             30 seconds
 
-# CRQ System Configuration
-${CRQ_SYSTEM_URL}          https://servicenow.company.com    # ServiceNow instance URL
-${CRQ_USERNAME}            ${EMPTY}                          # CRQ username (to be configured)
-${CRQ_PASSWORD}            ${EMPTY}                          # CRQ password (to be configured)
-${CRQ_TIMEOUT}             60 seconds                        # CRQ system connection timeout
+# BMC Helix Change Management System Configuration
+${BMC_HELIX_URL}           https://helix.company.com         # BMC Helix instance URL
+${BMC_HELIX_USERNAME}      ${EMPTY}                          # BMC Helix username (to be configured)
+${BMC_HELIX_PASSWORD}      ${EMPTY}                          # BMC Helix password (to be configured)
+${BMC_HELIX_TIMEOUT}       60 seconds                        # BMC Helix connection timeout
+
+# Legacy CRQ variables (for backward compatibility)
+${CRQ_SYSTEM_URL}          ${BMC_HELIX_URL}                  # Alias for BMC Helix URL
+${CRQ_USERNAME}            ${BMC_HELIX_USERNAME}             # Alias for BMC Helix username
+${CRQ_PASSWORD}            ${BMC_HELIX_PASSWORD}             # Alias for BMC Helix password
+${CRQ_TIMEOUT}             ${BMC_HELIX_TIMEOUT}              # Alias for BMC Helix timeout
 
 # Change Request Information
 ${CHANGE_REQUEST_NUMBER}   ${EMPTY}    # CRQ number (e.g., CHG0012345)
@@ -26,10 +32,11 @@ ${CHANGE_FORM_ID}          ${EMPTY}    # Asset change form ID
 ${PROJECT_NAME}            ${EMPTY}    # Project name for this build
 ${BUILD_REQUEST_ID}        ${EMPTY}    # Build request identifier
 
-# ServiceNow/Asset Management Platform
-${ASSET_MGMT_URL}          https://assetmgmt.company.com     # Asset management platform URL
-${ASSET_MGMT_USERNAME}     ${EMPTY}                          # Asset management username
-${ASSET_MGMT_PASSWORD}     ${EMPTY}                          # Asset management password
+# Asset Management Platform (Integrated with BMC Helix)
+${ASSET_MGMT_PLATFORM}     BMC Helix ITSM                    # Asset management platform name
+${ASSET_MGMT_URL}          ${BMC_HELIX_URL}                  # Asset management platform URL (same as BMC Helix)
+${ASSET_MGMT_USERNAME}     ${BMC_HELIX_USERNAME}             # Asset management username
+${ASSET_MGMT_PASSWORD}     ${BMC_HELIX_PASSWORD}             # Asset management password
 ${ASSET_MGMT_TIMEOUT}      60 seconds                        # Asset management timeout
 
 # Access Method

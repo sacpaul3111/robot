@@ -1,0 +1,204 @@
+---
+#############################################################################
+# Robot Framework Test Suite - Ansible Vault Template
+#############################################################################
+#
+# PURPOSE:
+#   Template for creating encrypted Ansible Vault file with all credentials
+#
+# USAGE:
+#   1. Create encrypted vault:
+#      ansible-vault create /etc/ansible/vault/robot_credentials.yml
+#
+#   2. Copy this template content into the editor
+#
+#   3. Update all credentials with your actual values
+#
+#   4. Save and exit (vim: :wq, nano: Ctrl+X, Y, Enter)
+#
+# SECURITY:
+#   - Never commit actual credentials to git
+#   - Only this template file should be in git
+#   - Keep vault password in secure location
+#   - Use restrictive permissions: chmod 600
+#
+#############################################################################
+
+#############################################################################
+# SSH Credentials (Required for ALL tests)
+#############################################################################
+# Used to SSH into target servers for validation
+ssh_username: "admin"
+ssh_password: "ChangeMe_SSH_Password!"
+
+#############################################################################
+# vCenter/VMware Credentials (Required for test4, test9, test15)
+#############################################################################
+# Used for VM validation, datastore configuration, and backup validation
+vcenter_username: "vcenter_admin@vsphere.local"
+vcenter_password: "ChangeMe_vCenter_Password!"
+vcenter_server: "vcenter.domain.com"
+
+#############################################################################
+# Splunk Credentials (Required for test14)
+#############################################################################
+# Used for centralized logging validation (CIP-007 R4.1)
+splunk_username: "splunk_admin"
+splunk_password: "ChangeMe_Splunk_Password!"
+splunk_server: "splunk.domain.com"
+splunk_port: "8089"
+
+#############################################################################
+# CyberArk/Password Vault Credentials (Required for test16)
+#############################################################################
+# Used for password vault validation (CIP-007 R5.6)
+cyberark_username: "vault_admin"
+cyberark_password: "ChangeMe_CyberArk_Password!"
+cyberark_server: "cyberark.domain.com"
+cyberark_safe: "BES_Cyber_Assets"
+
+#############################################################################
+# Tanium Credentials (Required for test21)
+#############################################################################
+# Used for endpoint management validation
+tanium_username: "tanium_admin"
+tanium_password: "ChangeMe_Tanium_Password!"
+tanium_server: "tanium.domain.com"
+tanium_port: "443"
+
+#############################################################################
+# BMC Helix Change Management System Credentials (Required for test23)
+#############################################################################
+# Used for BMC Helix ITSM change request validation (CIP-010 R1)
+# Note: BMC Helix integrates change management and asset management
+bmc_helix_url: "https://helix.company.com"
+bmc_helix_username: "helix_admin"
+bmc_helix_password: "ChangeMe_Helix_Password!"
+change_request_number: "CHG0012345"  # Set to your CRQ number
+change_form_id: "CHGFORM001"  # Set to your change form ID
+
+#############################################################################
+# Ansible Tower/AWX Credentials (Required for test24)
+#############################################################################
+# Used for Ansible Tower/AWX job validation
+# Note: Test 24 validates an existing job by ID, not create new jobs
+ansible_tower_url: "https://tower.domain.com"
+ansible_username: "tower_admin"
+ansible_password: "ChangeMe_Tower_Password!"
+ansible_job_id: ""  # Set this to the job ID you want to validate (e.g., "12345")
+
+#############################################################################
+# RSA Authentication Server (Required for test18)
+#############################################################################
+# Used for RSA SecurID authentication validation
+rsa_server: "rsa.domain.com"
+rsa_port: "5500"
+
+#############################################################################
+# SMTP/Mail Configuration (Required for test17)
+#############################################################################
+# Used for mail configuration validation
+smtp_server: "mail.domain.com"
+smtp_port: "25"
+test_email_recipient: "admin@domain.com"
+
+#############################################################################
+# NTP Configuration (Required for test7)
+#############################################################################
+# Used for time synchronization validation
+ntp_server: "ntpx.domain.com"
+
+#############################################################################
+# EDS (Enterprise Design Standards) Configuration
+#############################################################################
+# Path to EDS Excel file containing server specifications
+# Update this path to match your environment
+eds_file_path: "/opt/robot/data/EDS_Itential_DRAFT_v0.01.xlsx"
+eds_sheet_name: "Server Requirements"
+
+#############################################################################
+# Robot Framework Test Execution Settings
+#############################################################################
+# Test execution timeout and logging settings
+robot_timeout: "300"           # Default timeout in seconds
+robot_log_level: "INFO"        # Log level: TRACE, DEBUG, INFO, WARN, ERROR
+robot_output_dir: "results"    # Results output directory
+
+#############################################################################
+# Optional: Nexus Repository Configuration
+#############################################################################
+# Used for uploading test artifacts (configured in CI/CD pipelines)
+# Uncomment and configure if using Nexus artifact repository
+# nexus_url: "https://nexus.company.com"
+# nexus_repository: "robot-framework-artifacts"
+# nexus_username: "nexus_uploader"
+# nexus_password: "ChangeMe_Nexus_Password!"
+
+#############################################################################
+# Optional: Notification Settings
+#############################################################################
+# Email and Slack notifications for test results
+# Uncomment and configure if using notifications
+# notification_email: "test-results@domain.com"
+# smtp_notification_server: "smtp.domain.com"
+# slack_webhook_url: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+
+#############################################################################
+# NOTES:
+#############################################################################
+#
+# 1. Variable Naming Convention:
+#    - All variables use lowercase with underscores (snake_case)
+#    - Example: ssh_username, vcenter_password, splunk_server
+#
+# 2. Required vs Optional:
+#    - SSH credentials are required for ALL tests
+#    - Other credentials only needed for specific tests
+#    - Tests automatically skip if credentials not provided
+#
+# 3. Creating the Vault:
+#    ```bash
+#    # Create encrypted vault
+#    ansible-vault create /etc/ansible/vault/robot_credentials.yml \
+#      --vault-password-file=/etc/ansible/vault/.vault_pass
+#
+#    # Paste this template content
+#    # Update all "ChangeMe_" passwords
+#    # Save and exit
+#    ```
+#
+# 4. Editing the Vault:
+#    ```bash
+#    ansible-vault edit /etc/ansible/vault/robot_credentials.yml \
+#      --vault-password-file=/etc/ansible/vault/.vault_pass
+#    ```
+#
+# 5. Viewing the Vault:
+#    ```bash
+#    ansible-vault view /etc/ansible/vault/robot_credentials.yml \
+#      --vault-password-file=/etc/ansible/vault/.vault_pass
+#    ```
+#
+# 6. Verifying Vault Works:
+#    ```bash
+#    ansible localhost -m debug \
+#      -a "msg={{ ssh_username }}" \
+#      -e @/etc/ansible/vault/robot_credentials.yml \
+#      --vault-password-file=/etc/ansible/vault/.vault_pass
+#    ```
+#
+# 7. Execution with Vault:
+#    ```bash
+#    # Using wrapper script (recommended)
+#    ./run_tests_vault.sh alhxvdvitap01
+#
+#    # Using ansible-playbook directly
+#    ansible-playbook ansible_playbooks/run_tests.yml \
+#      -e TargetHostname=alhxvdvitap01 \
+#      -e @/etc/ansible/vault/robot_credentials.yml \
+#      --vault-password-file=/etc/ansible/vault/.vault_pass
+#    ```
+#
+#############################################################################
+# END OF TEMPLATE
+#############################################################################

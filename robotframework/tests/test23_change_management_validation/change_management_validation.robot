@@ -19,16 +19,16 @@ Test Teardown    Log Test End      ${TEST_NAME}    ${TEST_STATUS}
 
 *** Test Cases ***
 Critical - Step 1.1: Connect to Change Request System
-    [Documentation]    🔗 Establish connection to CRQ/ServiceNow system
+    [Documentation]    🔗 Establish connection to BMC Helix Change Management system
     ...                Step 1 of validation process: Connect to Change Management Systems (Part 1)
-    [Tags]             critical    connection    step1    crq    servicenow
+    [Tags]             critical    connection    step1    crq    bmc_helix    itsm
 
     Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    🔍 STEP 1.1: CONNECT TO CHANGE REQUEST SYSTEM    console=yes
+    Log    🔍 STEP 1.1: CONNECT TO BMC HELIX CHANGE MANAGEMENT SYSTEM    console=yes
     Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    📋 CRQ System: ${CRQ_SYSTEM_URL}    console=yes
+    Log    📋 BMC Helix URL: ${BMC_HELIX_URL}    console=yes
     Log    📋 Change Number: ${CHANGE_REQUEST_NUMBER}    console=yes
-    Log    ⚠️ Note: Access via ServiceNow UI or API    console=yes
+    Log    ⚠️ Note: Access via BMC Helix ITSM UI or API    console=yes
 
     # Verify CRQ system access configuration
     ${crq_access}=    Verify CRQ System Access Configuration
@@ -36,20 +36,21 @@ Critical - Step 1.1: Connect to Change Request System
     # Save CRQ access verification
     ${access_file}=    Save CRQ Access Verification to File    ${crq_access}
 
-    Log    📄 CRQ access verification saved to: ${access_file}    console=yes
-    Log    ✅ CRQ system access verified    console=yes
-    Log    ✅ STEP 1.1: COMPLETED - CRQ system access verified    console=yes
+    Log    📄 BMC Helix access verification saved to: ${access_file}    console=yes
+    Log    ✅ BMC Helix system access verified    console=yes
+    Log    ✅ STEP 1.1: COMPLETED - BMC Helix system access verified    console=yes
 
 Critical - Step 1.2: Connect to Asset Change Management Platform
-    [Documentation]    🔗 Establish connection to asset change management platform
+    [Documentation]    🔗 Establish connection to BMC Helix ITSM asset management
     ...                Step 1 of validation process: Connect to Change Management Systems (Part 2)
-    [Tags]             critical    connection    step1    asset    platform
+    [Tags]             critical    connection    step1    asset    platform    bmc_helix
 
     Log    ════════════════════════════════════════════════════════════    console=yes
-    Log    🔍 STEP 1.2: CONNECT TO ASSET CHANGE MANAGEMENT PLATFORM    console=yes
+    Log    🔍 STEP 1.2: CONNECT TO BMC HELIX ASSET MANAGEMENT    console=yes
     Log    ════════════════════════════════════════════════════════════    console=yes
     Log    📋 Asset Platform: ${ASSET_MGMT_PLATFORM}    console=yes
-    Log    ⚠️ Note: Access asset change forms and build documentation    console=yes
+    Log    📋 BMC Helix URL: ${ASSET_MGMT_URL}    console=yes
+    Log    ⚠️ Note: Access asset change forms via BMC Helix ITSM    console=yes
 
     # Verify asset management platform access
     ${asset_access}=    Verify Asset Management Platform Access
@@ -102,7 +103,7 @@ Critical - Step 2.2: Collect CRQ Task Completion Data
 
     Log    📊 CRQ Tasks: Documented    console=yes
     Log    📄 CRQ tasks saved to: ${tasks_file}    console=yes
-    Log    ⚠️ Manual Step: Verify all tasks completed in ServiceNow    console=yes
+    Log    ⚠️ Manual Step: Verify all tasks completed in BMC Helix    console=yes
     Log    ✅ STEP 2.2: COMPLETED - CRQ task data collected    console=yes
 
 Critical - Step 2.3: Verify Mandatory Field Population

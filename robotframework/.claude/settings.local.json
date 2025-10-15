@@ -3,7 +3,9 @@
     "allow": [
       "Bash(do echo \"=== $dir ===\")",
       "Bash(for test_dir in test8_ssh_key_authentication test9_datastore_configuration test12_id_agent_validation test13_password_policy_validation test14_logging_validation test15_backup_validation test16_password_vault_validation test19_antivirus_validation test21_tanium_agent test23_change_management_validation test24_ansible_playbook)",
-      "Bash(do echo \"=== $test_dir ===\")"
+      "Bash(do echo \"=== $test_dir ===\")",
+      "Bash(for test_dir in tests/test{3..24}*/)",
+      "Bash(do if [ -d \"$test_dir\" ])"
     ],
     "deny": [],
     "ask": []
