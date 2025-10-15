@@ -90,7 +90,7 @@ Save Netstat Output to File
     Create File    ${filename}    ${report}
     Log    📄 Netstat output saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Count Lines
     [Documentation]    Count non-empty lines in text
@@ -107,7 +107,7 @@ Count Lines
         ${non_empty}=    Set Variable If    ${length} > 0    ${non_empty + 1}    ${non_empty}
     END
 
-    [Return]    ${non_empty}
+    RETURN    ${non_empty}
 
 Save Port Summary to File
     [Documentation]    Save port summary to file
@@ -141,7 +141,7 @@ Save Port Summary to File
     Create File    ${filename}    ${summary}
     Log    📄 Port summary saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Save Services Info to File
     [Documentation]    Save services information to file
@@ -170,7 +170,7 @@ Save Services Info to File
     Create File    ${filename}    ${report}
     Log    📄 Services info saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Save Network Statistics to File
     [Documentation]    Save network statistics to file
@@ -204,7 +204,7 @@ Save Network Statistics to File
     Create File    ${filename}    ${stats}
     Log    📄 Network statistics saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate All Port Data Collected
     [Documentation]    Validate that all port data collection steps completed successfully

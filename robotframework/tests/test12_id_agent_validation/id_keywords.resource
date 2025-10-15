@@ -69,7 +69,7 @@ Check ID Agent RPM Installation
     ...    Package Details:
     ...    ${rpm_info}
 
-    [Return]    ${full_info}
+    RETURN    ${full_info}
 
 Save RPM Installation to File
     [Documentation]    Save RPM installation details to file
@@ -98,7 +98,7 @@ Save RPM Installation to File
     Create File    ${filename}    ${report}
     Log    📄 RPM installation details saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check ID Agent Service Status
     [Documentation]    Check Industrial Defender agent service status
@@ -116,7 +116,7 @@ Check ID Agent Service Status
     ...
     ...    Service Enabled: ${service_enabled}
 
-    [Return]    ${full_status}
+    RETURN    ${full_status}
 
 Save Service Status to File
     [Documentation]    Save service status to file
@@ -145,7 +145,7 @@ Save Service Status to File
     Create File    ${filename}    ${report}
     Log    📄 Service status saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Collect ID Agent Version
     [Documentation]    Collect Industrial Defender agent version information
@@ -161,7 +161,7 @@ Collect ID Agent Version
     ...    RPM Version: ${rpm_version}
     ...    Agent Version: ${agent_version}
 
-    [Return]    ${version_info}
+    RETURN    ${version_info}
 
 Save Agent Version to File
     [Documentation]    Save agent version information to file
@@ -190,7 +190,7 @@ Save Agent Version to File
     Create File    ${filename}    ${report}
     Log    📄 Agent version saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Services Data Collection
     [Documentation]    Validate Industrial Defender is collecting services information
@@ -211,7 +211,7 @@ Validate Services Data Collection
     ...
     ...    CIP-010 R1 Requirement: Services inventory monitoring - ACTIVE
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Services Validation to File
     [Documentation]    Save services validation to file
@@ -241,7 +241,7 @@ Save Services Validation to File
     Create File    ${filename}    ${report}
     Log    📄 Services validation saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Software Data Collection
     [Documentation]    Validate Industrial Defender is collecting installed software information
@@ -262,7 +262,7 @@ Validate Software Data Collection
     ...
     ...    CIP-010 R1 Requirement: Software inventory monitoring - ACTIVE
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Software Validation to File
     [Documentation]    Save software validation to file
@@ -292,7 +292,7 @@ Save Software Validation to File
     Create File    ${filename}    ${report}
     Log    📄 Software validation saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Baseline Data Collection
     [Documentation]    Validate Industrial Defender is collecting configuration baseline data
@@ -313,7 +313,7 @@ Validate Baseline Data Collection
     ...
     ...    CIP-010 R1 Requirement: Configuration baseline monitoring - ACTIVE
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Baseline Validation to File
     [Documentation]    Save baseline validation to file
@@ -343,7 +343,7 @@ Save Baseline Validation to File
     Create File    ${filename}    ${report}
     Log    📄 Baseline validation saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Verify ID Agent Configuration File
     [Documentation]    Verify Industrial Defender agent configuration file exists
@@ -362,7 +362,7 @@ Verify ID Agent Configuration File
     ...    Configuration Content (first 50 lines):
     ...    ${config_content}
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Configuration Validation to File
     [Documentation]    Save configuration validation to file
@@ -391,7 +391,7 @@ Save Configuration Validation to File
     Create File    ${filename}    ${report}
     Log    📄 Configuration validation saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check ID Agent Registration Status
     [Documentation]    Check Industrial Defender agent registration status
@@ -413,7 +413,7 @@ Check ID Agent Registration Status
     ...
     ...    NOTE: Coordinate with Avetic Bayon to confirm proper registration
 
-    [Return]    ${registration}
+    RETURN    ${registration}
 
 Save Registration Status to File
     [Documentation]    Save registration status to file
@@ -443,7 +443,7 @@ Save Registration Status to File
     Create File    ${filename}    ${report}
     Log    📄 Registration status saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate CIP010_R1 Compliance
     [Documentation]    Validate CIP-010 R1 compliance requirements are met
@@ -465,7 +465,7 @@ Validate CIP010_R1 Compliance
     ...
     ...    Compliance Status: MEETS CIP-010 R1 REQUIREMENTS
 
-    [Return]    ${compliance_check}
+    RETURN    ${compliance_check}
 
 Save CIP010_Compliance to File
     [Documentation]    Save CIP-010 R1 compliance validation to file
@@ -494,12 +494,12 @@ Save CIP010_Compliance to File
     Create File    ${filename}    ${report}
     Log    📄 CIP-010 R1 compliance validation saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Collect ID Agent Logs
     [Documentation]    Collect Industrial Defender agent logs
     ${logs}=    Execute Command    cat ${ID_LOG_PATH} 2>/dev/null | tail -100 || echo "Agent logs not available"
-    [Return]    ${logs}
+    RETURN    ${logs}
 
 Save Agent Logs to File
     [Documentation]    Save agent logs to file
@@ -507,12 +507,12 @@ Save Agent Logs to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_agent_logs_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${agent_logs}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check ID Agent Data Transmission
     [Documentation]    Check Industrial Defender agent data transmission status
     ${transmission}=    Execute Command    netstat -an | grep ${ID_SERVER_PORT} || echo "No active connections to ID server"
-    [Return]    ${transmission}
+    RETURN    ${transmission}
 
 Save Transmission Status to File
     [Documentation]    Save transmission status to file
@@ -520,17 +520,17 @@ Save Transmission Status to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_transmission_status_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${transmission_status}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Agent Last Communication
     [Documentation]    Check last communication with ID server
     ${last_comm}=    Execute Command    grep -i "communication\|connect" ${ID_LOG_PATH} 2>/dev/null | tail -5 || echo "Communication info not available"
-    [Return]    ${last_comm}
+    RETURN    ${last_comm}
 
 Test ID Agent Network Connectivity
     [Documentation]    Test network connectivity to ID server
     ${connectivity}=    Execute Command    ping -c 3 ${ID_SERVER_HOST} 2>/dev/null || echo "Ping test - checking network"
-    [Return]    ${connectivity}
+    RETURN    ${connectivity}
 
 Save Network Test to File
     [Documentation]    Save network test results to file
@@ -538,12 +538,12 @@ Save Network Test to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_network_test_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${network_test}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check ID Agent Resource Usage
     [Documentation]    Check Industrial Defender agent resource usage
     ${resources}=    Execute Command    ps aux | grep -i "industrial.*defender" | grep -v grep || echo "Process not found"
-    [Return]    ${resources}
+    RETURN    ${resources}
 
 Save Resource Usage to File
     [Documentation]    Save resource usage to file
@@ -551,12 +551,12 @@ Save Resource Usage to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_resource_usage_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${resource_usage}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check ID Agent Firewall Rules
     [Documentation]    Check firewall rules for Industrial Defender agent
     ${firewall}=    Execute Command    firewall-cmd --list-all 2>/dev/null || iptables -L 2>/dev/null || echo "Firewall check"
-    [Return]    ${firewall}
+    RETURN    ${firewall}
 
 Save Firewall Rules to File
     [Documentation]    Save firewall rules to file
@@ -564,12 +564,12 @@ Save Firewall Rules to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_firewall_rules_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${firewall_rules}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check ID Agent Update Status
     [Documentation]    Check Industrial Defender agent update status
     ${updates}=    Execute Command    yum list updates ${ID_PACKAGE_NAME} 2>/dev/null || echo "Update check not available"
-    [Return]    ${updates}
+    RETURN    ${updates}
 
 Save Update Status to File
     [Documentation]    Save update status to file
@@ -577,12 +577,12 @@ Save Update Status to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_update_status_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${update_status}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check ID Agent Certificates
     [Documentation]    Check Industrial Defender agent certificates
     ${certs}=    Execute Command    ls -la ${ID_CERT_DIR}/*.crt ${ID_CERT_DIR}/*.pem 2>/dev/null || echo "Certificates not available"
-    [Return]    ${certs}
+    RETURN    ${certs}
 
 Save Certificate Status to File
     [Documentation]    Save certificate status to file
@@ -590,12 +590,12 @@ Save Certificate Status to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_certificate_status_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${cert_status}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check ID Agent Error History
     [Documentation]    Check Industrial Defender agent error history
     ${errors}=    Execute Command    grep -i "error\|fail\|critical" ${ID_LOG_PATH} 2>/dev/null | tail -20 || echo "No recent errors found"
-    [Return]    ${errors}
+    RETURN    ${errors}
 
 Save Error History to File
     [Documentation]    Save error history to file
@@ -603,12 +603,12 @@ Save Error History to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_error_history_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${error_history}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Compliance Data Freshness
     [Documentation]    Check compliance data freshness
     ${freshness}=    Execute Command    ls -lt ${ID_DATA_DIR} 2>/dev/null | head -10 || echo "Data directory check"
-    [Return]    ${freshness}
+    RETURN    ${freshness}
 
 Save Data Freshness to File
     [Documentation]    Save data freshness check to file
@@ -616,7 +616,7 @@ Save Data Freshness to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST12_DATA_DIR}/id_data_freshness_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${data_freshness}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate All ID Agent Settings
     [Documentation]    Validate all Industrial Defender agent settings

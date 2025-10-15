@@ -155,24 +155,29 @@ Collect OS Version Information
     ${os_file}=    Set Variable    ${TEST6_DATA_DIR}/${OS_INFO_TEMPLATE} % (${timestamp})
     ${kernel_file}=    Set Variable    ${TEST6_DATA_DIR}/${KERNEL_INFO_TEMPLATE} % (${timestamp})
 
-    Create File    ${os_file}
-    ...    ====================================\n
-    ...    OS VERSION INFORMATION\n
-    ...    ====================================\n
-    ...    Target: ${TARGET_HOSTNAME} (${TARGET_IP})\n
-    ...    OS Type: ${TARGET_OS_TYPE}\n
-    ...    Collection Time: ${timestamp}\n
-    ...    ====================================\n\n
-    ...    ${os_output}\n
+    ${os_content}=    Catenate    SEPARATOR=\n
+    ...    ====================================
+    ...    OS VERSION INFORMATION
+    ...    ====================================
+    ...    Target: ${TARGET_HOSTNAME} (${TARGET_IP})
+    ...    OS Type: ${TARGET_OS_TYPE}
+    ...    Collection Time: ${timestamp}
+    ...    ====================================
+    ...    ${EMPTY}
+    ...    ${os_output}
 
-    Create File    ${kernel_file}
-    ...    ====================================\n
-    ...    KERNEL INFORMATION\n
-    ...    ====================================\n
-    ...    Target: ${TARGET_HOSTNAME} (${TARGET_IP})\n
-    ...    Collection Time: ${timestamp}\n
-    ...    ====================================\n\n
-    ...    ${kernel_output}\n
+    ${kernel_content}=    Catenate    SEPARATOR=\n
+    ...    ====================================
+    ...    KERNEL INFORMATION
+    ...    ====================================
+    ...    Target: ${TARGET_HOSTNAME} (${TARGET_IP})
+    ...    Collection Time: ${timestamp}
+    ...    ====================================
+    ...    ${EMPTY}
+    ...    ${kernel_output}
+
+    Create File    ${os_file}    ${os_content}
+    Create File    ${kernel_file}    ${kernel_content}
 
     Set Suite Variable    ${OS_VERSION_OUTPUT}    ${os_output}
     Set Suite Variable    ${KERNEL_OUTPUT}         ${kernel_output}
@@ -200,19 +205,23 @@ Collect Installed Packages
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${packages_file}=    Set Variable    ${TEST6_DATA_DIR}/${PACKAGE_LIST_TEMPLATE} % (${timestamp})
 
-    Create File    ${packages_file}
-    ...    ====================================\n
-    ...    INSTALLED PACKAGES\n
-    ...    ====================================\n
-    ...    Target: ${TARGET_HOSTNAME} (${TARGET_IP})\n
-    ...    OS Type: ${TARGET_OS_TYPE}\n
-    ...    Collection Time: ${timestamp}\n
-    ...    ====================================\n\n
-    ...    FULL PACKAGE LIST:\n
-    ...    ${packages_output}\n\n
-    ...    ====================================\n
-    ...    BASE PACKAGES:\n
-    ...    ${base_packages}\n
+    ${packages_content}=    Catenate    SEPARATOR=\n
+    ...    ====================================
+    ...    INSTALLED PACKAGES
+    ...    ====================================
+    ...    Target: ${TARGET_HOSTNAME} (${TARGET_IP})
+    ...    OS Type: ${TARGET_OS_TYPE}
+    ...    Collection Time: ${timestamp}
+    ...    ====================================
+    ...    ${EMPTY}
+    ...    FULL PACKAGE LIST:
+    ...    ${packages_output}
+    ...    ${EMPTY}
+    ...    ====================================
+    ...    BASE PACKAGES:
+    ...    ${base_packages}
+
+    Create File    ${packages_file}    ${packages_content}
 
     Set Suite Variable    ${PACKAGES_OUTPUT}       ${packages_output}
     Set Suite Variable    ${BASE_PACKAGES_OUTPUT}  ${base_packages}
@@ -238,19 +247,23 @@ Collect Patch History
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${patch_file}=    Set Variable    ${TEST6_DATA_DIR}/${PATCH_HISTORY_TEMPLATE} % (${timestamp})
 
-    Create File    ${patch_file}
-    ...    ====================================\n
-    ...    PATCH HISTORY\n
-    ...    ====================================\n
-    ...    Target: ${TARGET_HOSTNAME} (${TARGET_IP})\n
-    ...    OS Type: ${TARGET_OS_TYPE}\n
-    ...    Collection Time: ${timestamp}\n
-    ...    ====================================\n\n
-    ...    RECENT PATCHES:\n
-    ...    ${patch_output}\n\n
-    ...    ====================================\n
-    ...    PENDING SECURITY UPDATES:\n
-    ...    ${security_output}\n
+    ${patch_content}=    Catenate    SEPARATOR=\n
+    ...    ====================================
+    ...    PATCH HISTORY
+    ...    ====================================
+    ...    Target: ${TARGET_HOSTNAME} (${TARGET_IP})
+    ...    OS Type: ${TARGET_OS_TYPE}
+    ...    Collection Time: ${timestamp}
+    ...    ====================================
+    ...    ${EMPTY}
+    ...    RECENT PATCHES:
+    ...    ${patch_output}
+    ...    ${EMPTY}
+    ...    ====================================
+    ...    PENDING SECURITY UPDATES:
+    ...    ${security_output}
+
+    Create File    ${patch_file}    ${patch_content}
 
     Set Suite Variable    ${PATCH_HISTORY_OUTPUT}    ${patch_output}
     Set Suite Variable    ${SECURITY_UPDATES_OUTPUT}    ${security_output}
@@ -274,14 +287,17 @@ Collect Ansible Build Template Info
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${template_file}=    Set Variable    ${TEST6_DATA_DIR}/${ANSIBLE_TEMPLATE_TEMPLATE} % (${timestamp})
 
-    Create File    ${template_file}
-    ...    ====================================\n
-    ...    ANSIBLE BUILD TEMPLATE INFORMATION\n
-    ...    ====================================\n
-    ...    Target: ${TARGET_HOSTNAME} (${TARGET_IP})\n
-    ...    Collection Time: ${timestamp}\n
-    ...    ====================================\n\n
-    ...    ${template_info}\n
+    ${template_content}=    Catenate    SEPARATOR=\n
+    ...    ====================================
+    ...    ANSIBLE BUILD TEMPLATE INFORMATION
+    ...    ====================================
+    ...    Target: ${TARGET_HOSTNAME} (${TARGET_IP})
+    ...    Collection Time: ${timestamp}
+    ...    ====================================
+    ...    ${EMPTY}
+    ...    ${template_info}
+
+    Create File    ${template_file}    ${template_content}
 
     Set Suite Variable    ${ANSIBLE_TEMPLATE_OUTPUT}    ${template_info}
     Set Suite Variable    ${ANSIBLE_TEMPLATE_FILE_PATH}    ${template_file}
