@@ -78,7 +78,7 @@ Check Antivirus Processes
     ...    General AV Processes:
     ...    ${av_processes}
 
-    [Return]    ${process_info}
+    RETURN    ${process_info}
 
 Save AV Processes to File
     [Documentation]    Save AV process information to file
@@ -107,7 +107,7 @@ Save AV Processes to File
     Create File    ${filename}    ${report}
     Log    📄 AV processes saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Antivirus Installation Directories
     [Documentation]    Check for antivirus installation directories
@@ -134,7 +134,7 @@ Check Antivirus Installation Directories
     ...    Common AV Directories:
     ...    ${common_av_dirs}
 
-    [Return]    ${dir_info}
+    RETURN    ${dir_info}
 
 Save AV Directories to File
     [Documentation]    Save AV directory information to file
@@ -160,7 +160,7 @@ Save AV Directories to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Antivirus Service Status
     [Documentation]    Check antivirus service status
@@ -187,7 +187,7 @@ Check Antivirus Service Status
     ...    ${sentinelone_service}
     ...    Enabled: ${sentinelone_enabled}
 
-    [Return]    ${service_info}
+    RETURN    ${service_info}
 
 Save AV Service Status to File
     [Documentation]    Save AV service status to file
@@ -213,7 +213,7 @@ Save AV Service Status to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Verify Service Is Running
     [Documentation]    Verify if antivirus service is running
@@ -223,7 +223,7 @@ Verify Service Is Running
     ${is_running}=    Run Keyword And Return Status
     ...    Should Contain Any    ${service_status}    running    active    Running    Active
 
-    [Return]    ${is_running}
+    RETURN    ${is_running}
 
 Collect Antivirus Version Info
     [Documentation]    Collect antivirus version information
@@ -254,7 +254,7 @@ Collect Antivirus Version Info
     ...    DPKG Package Info:
     ...    ${dpkg_version}
 
-    [Return]    ${version_info}
+    RETURN    ${version_info}
 
 Save AV Version to File
     [Documentation]    Save AV version information to file
@@ -280,7 +280,7 @@ Save AV Version to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Antivirus Installation
     [Documentation]    Validate antivirus agent is properly installed
@@ -311,7 +311,7 @@ Validate Antivirus Installation
     ...
     ...    Validation Status: Installation presence validated
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Installation Validation to File
     [Documentation]    Save installation validation to file
@@ -338,7 +338,7 @@ Save Installation Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Agent Installed
     [Documentation]    Check if antivirus agent is installed
@@ -360,7 +360,7 @@ Check Agent Installed
     # Agent is installed if we have either McAfee or SentinelOne
     ${agent_installed}=    Evaluate    (${has_mcafee} or ${has_sentinelone}) and (${has_mcafee_dir} or ${has_sentinelone_dir})
 
-    [Return]    ${agent_installed}
+    RETURN    ${agent_installed}
 
 Validate Service Running
     [Documentation]    Validate antivirus service is running
@@ -384,7 +384,7 @@ Validate Service Running
     ...    CIP-007 R3.1 Requirement: Malware prevention service must be active
     ...    Validation Status: Service running validated
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Service Validation to File
     [Documentation]    Save service validation to file
@@ -410,7 +410,7 @@ Save Service Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Real Time Protection Status
     [Documentation]    Check real-time protection status
@@ -433,7 +433,7 @@ Check Real Time Protection Status
     ...
     ...    Real-time protection must be enabled for CIP-007 R3.1 compliance
 
-    [Return]    ${realtime_info}
+    RETURN    ${realtime_info}
 
 Save Realtime Status to File
     [Documentation]    Save real-time protection status to file
@@ -459,7 +459,7 @@ Save Realtime Status to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Definition Update Status
     [Documentation]    Check malware definition update status
@@ -488,7 +488,7 @@ Check Definition Update Status
     ...
     ...    Definitions must be current per CIP-007 R3.1
 
-    [Return]    ${definition_info}
+    RETURN    ${definition_info}
 
 Save Definition Status to File
     [Documentation]    Save definition update status to file
@@ -514,7 +514,7 @@ Save Definition Status to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Overall CIP007_R3_1_Compliance
     [Documentation]    Validate overall CIP-007 R3.1 compliance
@@ -562,7 +562,7 @@ Validate Overall CIP007_R3_1_Compliance
     ...    The target system has deployed antivirus agent (McAfee or SentinelOne)
     ...    to deter, detect, and prevent malicious code as required by CIP-007 R3.1
 
-    [Return]    ${compliance}
+    RETURN    ${compliance}
 
 Save CIP007_R3_1_Compliance to File
     [Documentation]    Save CIP-007 R3.1 compliance to file
@@ -592,12 +592,12 @@ Save CIP007_R3_1_Compliance to File
     Create File    ${filename}    ${report}
     Log    📄 CIP-007 R3.1 compliance saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Scan History
     [Documentation]    Check antivirus scan history
     ${scan_history}=    Execute Command    find /var/log -name "*mcafee*" -o -name "*sentinelone*" 2>/dev/null | xargs tail -50 2>/dev/null || echo "Scan history check"
-    [Return]    ${scan_history}
+    RETURN    ${scan_history}
 
 Save Scan History to File
     [Documentation]    Save scan history to file
@@ -605,12 +605,12 @@ Save Scan History to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST19_DATA_DIR}/scan_history_${timestamp}.txt
     Create File    ${filename}    ${scan_history}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Scheduled Scans
     [Documentation]    Check scheduled scan configuration
     ${scheduled}=    Execute Command    crontab -l 2>/dev/null | grep -i "mcafee\|sentinelone\|scan" || echo "Scheduled scans: Check agent configuration"
-    [Return]    ${scheduled}
+    RETURN    ${scheduled}
 
 Save Scheduled Scans to File
     [Documentation]    Save scheduled scans to file
@@ -618,12 +618,12 @@ Save Scheduled Scans to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST19_DATA_DIR}/scheduled_scans_${timestamp}.txt
     Create File    ${filename}    ${scheduled_scans}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Quarantine Status
     [Documentation]    Check quarantine status
     ${quarantine}=    Execute Command    find /quarantine /opt/McAfee/quarantine /opt/sentinelone/quarantine -type f 2>/dev/null | wc -l || echo "Quarantine check: 0 items"
-    [Return]    ${quarantine}
+    RETURN    ${quarantine}
 
 Save Quarantine Info to File
     [Documentation]    Save quarantine info to file
@@ -631,12 +631,12 @@ Save Quarantine Info to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST19_DATA_DIR}/quarantine_status_${timestamp}.txt
     Create File    ${filename}    ${quarantine}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Exclusions Configuration
     [Documentation]    Check exclusions configuration
     ${exclusions}=    Execute Command    ${MCAFEE_STATUS_CMD} 2>/dev/null | grep -i "exclusion" || echo "Exclusions: Check agent configuration"
-    [Return]    ${exclusions}
+    RETURN    ${exclusions}
 
 Save Exclusions to File
     [Documentation]    Save exclusions to file
@@ -644,12 +644,12 @@ Save Exclusions to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST19_DATA_DIR}/exclusions_${timestamp}.txt
     Create File    ${filename}    ${exclusions}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Agent Communication
     [Documentation]    Check agent communication with management server
     ${communication}=    Execute Command    netstat -an | grep -E "${MCAFEE_MGMT_PORT}|${SENTINELONE_MGMT_PORT}" || echo "Communication: Check network connectivity"
-    [Return]    ${communication}
+    RETURN    ${communication}
 
 Save Communication Status to File
     [Documentation]    Save communication status to file
@@ -657,17 +657,17 @@ Save Communication Status to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST19_DATA_DIR}/communication_status_${timestamp}.txt
     Create File    ${filename}    ${communication}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check On Access Scanning
     [Documentation]    Check on-access scanning configuration
     ${on_access}=    Set Variable    On-access scanning: Verify in agent status
-    [Return]    ${on_access}
+    RETURN    ${on_access}
 
 Check Threat Statistics
     [Documentation]    Check threat detection statistics
     ${threat_stats}=    Execute Command    ${MCAFEE_STATUS_CMD} 2>/dev/null | grep -i "threat\|detect\|block" || echo "Threat statistics: Check agent logs"
-    [Return]    ${threat_stats}
+    RETURN    ${threat_stats}
 
 Save Threat Statistics to File
     [Documentation]    Save threat statistics to file
@@ -675,17 +675,17 @@ Save Threat Statistics to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST19_DATA_DIR}/threat_statistics_${timestamp}.txt
     Create File    ${filename}    ${threat_stats}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Update Mechanism
     [Documentation]    Check update mechanism
     ${update_mechanism}=    Set Variable    Auto-update enabled via management server
-    [Return]    ${update_mechanism}
+    RETURN    ${update_mechanism}
 
 Check Antivirus Logs
     [Documentation]    Check antivirus logs
     ${av_logs}=    Execute Command    journalctl -u ${MCAFEE_SERVICE_NAME} -u ${SENTINELONE_SERVICE_NAME} -n 50 --no-pager 2>/dev/null || echo "AV logs: Check /var/log"
-    [Return]    ${av_logs}
+    RETURN    ${av_logs}
 
 Save AV Logs to File
     [Documentation]    Save AV logs to file
@@ -693,12 +693,12 @@ Save AV Logs to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST19_DATA_DIR}/av_logs_${timestamp}.txt
     Create File    ${filename}    ${av_logs}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Policy Compliance Status
     [Documentation]    Check policy compliance status
     ${policy_compliance}=    Set Variable    Policy compliance: Managed by central console
-    [Return]    ${policy_compliance}
+    RETURN    ${policy_compliance}
 
 Validate All AV Settings
     [Documentation]    Validate all antivirus settings collected

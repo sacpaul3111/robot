@@ -63,7 +63,7 @@ Collect Login Defs Configuration
     # Verify content was collected
     Should Not Be Empty    ${login_defs}
 
-    [Return]    ${login_defs}
+    RETURN    ${login_defs}
 
 Save Login Defs to File
     [Documentation]    Save login.defs content to file
@@ -93,7 +93,7 @@ Save Login Defs to File
     Create File    ${filename}    ${report}
     Log    📄 Login.defs saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Collect PWQuality Configuration
     [Documentation]    Collect /etc/security/pwquality.conf file content
@@ -105,7 +105,7 @@ Collect PWQuality Configuration
     # Verify content was collected
     Should Not Be Empty    ${pwquality}
 
-    [Return]    ${pwquality}
+    RETURN    ${pwquality}
 
 Save PWQuality to File
     [Documentation]    Save pwquality.conf content to file
@@ -135,7 +135,7 @@ Save PWQuality to File
     Create File    ${filename}    ${report}
     Log    📄 pwquality.conf saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Collect PAM System Auth Configuration
     [Documentation]    Collect /etc/pam.d/system-auth file content
@@ -147,7 +147,7 @@ Collect PAM System Auth Configuration
     # Verify content was collected
     Should Not Be Empty    ${pam_auth}
 
-    [Return]    ${pam_auth}
+    RETURN    ${pam_auth}
 
 Save PAM System Auth to File
     [Documentation]    Save PAM system-auth content to file
@@ -177,7 +177,7 @@ Save PAM System Auth to File
     Create File    ${filename}    ${report}
     Log    📄 PAM system-auth saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Save Additional Policy Files
     [Documentation]    Save additional password policy files
@@ -211,7 +211,7 @@ Save Additional Policy Files
     Create File    ${filename}    ${report}
     Log    📄 Additional policy files saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Password Minimum Length
     [Documentation]    Validate password minimum length from pwquality.conf
@@ -230,7 +230,7 @@ Validate Password Minimum Length
     ...    CIP-007 R5.5 Requirement: Minimum password length ≥ ${CIP007_MIN_PASSWORD_LENGTH}
     ...    Validation Status: Checking against requirement
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Length Validation to File
     [Documentation]    Save length validation results to file
@@ -257,7 +257,7 @@ Save Length Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Extract Password Min Length
     [Documentation]    Extract minimum password length value from pwquality.conf
@@ -266,10 +266,10 @@ Extract Password Min Length
     # Try to extract minlen value
     ${minlen}=    Execute Command    echo "${pwquality_content}" | grep -E "^minlen\\s*=" | awk -F'=' '{print $2}' | tr -d ' ' || echo "8"
 
-    # Convert to integer, default to 8 if not found
-    ${minlen_int}=    Convert To Integer    ${minlen}    8
+    # Convert to integer (default already handled by || echo "8")
+    ${minlen_int}=    Convert To Integer    ${minlen}
 
-    [Return]    ${minlen_int}
+    RETURN    ${minlen_int}
 
 Validate Password Complexity
     [Documentation]    Validate password complexity requirements
@@ -294,7 +294,7 @@ Validate Password Complexity
     ...    CIP-007 R5.5 Requirement: Mixed character classes required
     ...    Validation Status: Complexity requirements configured
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Complexity Validation to File
     [Documentation]    Save complexity validation results to file
@@ -321,7 +321,7 @@ Save Complexity Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Extract Complexity Settings
     [Documentation]    Extract complexity settings summary
@@ -338,7 +338,7 @@ Extract Complexity Settings
     ...    - Digits: ${dcredit}
     ...    - Special: ${ocredit}
 
-    [Return]    ${summary}
+    RETURN    ${summary}
 
 Validate Password History
     [Documentation]    Validate password history settings from PAM
@@ -357,7 +357,7 @@ Validate Password History
     ...    CIP-007 R5.6 Requirement: Prevent password reuse (typically ≥ ${CIP007_PASSWORD_HISTORY_COUNT})
     ...    Validation Status: Checking history configuration
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save History Validation to File
     [Documentation]    Save history validation results to file
@@ -384,7 +384,7 @@ Save History Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Extract Password History Value
     [Documentation]    Extract password history value from PAM configuration
@@ -393,10 +393,10 @@ Extract Password History Value
     # Try to extract remember value from PAM
     ${remember}=    Execute Command    echo "${pam_content}" | grep -oP "remember=\\K\\d+" | head -1 || echo "5"
 
-    # Convert to integer, default to 5 if not found
-    ${remember_int}=    Convert To Integer    ${remember}    5
+    # Convert to integer (default already handled by || echo "5")
+    ${remember_int}=    Convert To Integer    ${remember}
 
-    [Return]    ${remember_int}
+    RETURN    ${remember_int}
 
 Validate Account Lockout Policy
     [Documentation]    Validate account lockout policy from PAM
@@ -416,7 +416,7 @@ Validate Account Lockout Policy
     ...    CIP-007 R5.4 Requirement: Lock account after failed login attempts (≤ ${CIP007_MAX_LOGIN_ATTEMPTS})
     ...    Validation Status: Checking lockout configuration
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Lockout Validation to File
     [Documentation]    Save lockout validation results to file
@@ -443,7 +443,7 @@ Save Lockout Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Extract Lockout Attempts
     [Documentation]    Extract lockout attempts value from PAM configuration
@@ -452,10 +452,10 @@ Extract Lockout Attempts
     # Try to extract deny value from faillock or tally
     ${deny}=    Execute Command    echo "${pam_content}" | grep -oP "deny=\\K\\d+" | head -1 || echo "5"
 
-    # Convert to integer, default to 5 if not found
-    ${deny_int}=    Convert To Integer    ${deny}    5
+    # Convert to integer (default already handled by || echo "5")
+    ${deny_int}=    Convert To Integer    ${deny}
 
-    [Return]    ${deny_int}
+    RETURN    ${deny_int}
 
 Extract Lockout Duration
     [Documentation]    Extract lockout duration from PAM configuration
@@ -464,10 +464,10 @@ Extract Lockout Duration
     # Try to extract unlock_time value from faillock
     ${unlock_time}=    Execute Command    echo "${pam_content}" | grep -oP "unlock_time=\\K\\d+" | head -1 || echo "900"
 
-    # Convert to integer, default to 900 (15 minutes) if not found
-    ${unlock_int}=    Convert To Integer    ${unlock_time}    900
+    # Convert to integer (default already handled by || echo "900")
+    ${unlock_int}=    Convert To Integer    ${unlock_time}
 
-    [Return]    ${unlock_int}
+    RETURN    ${unlock_int}
 
 Validate Password Expiration
     [Documentation]    Validate password expiration settings from login.defs
@@ -490,7 +490,7 @@ Validate Password Expiration
     ...    CIP-007 R5.7 Requirement: Password expiration ≤ ${CIP007_MAX_PASSWORD_AGE_DAYS} days
     ...    Validation Status: Checking expiration configuration
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Expiration Validation to File
     [Documentation]    Save expiration validation results to file
@@ -517,7 +517,7 @@ Save Expiration Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Extract Password Max Days
     [Documentation]    Extract PASS_MAX_DAYS value from login.defs
@@ -526,10 +526,10 @@ Extract Password Max Days
     # Extract PASS_MAX_DAYS
     ${max_days}=    Execute Command    echo "${login_defs_content}" | grep -E "^PASS_MAX_DAYS" | awk '{print $2}' || echo "90"
 
-    # Convert to integer, default to 90 if not found
-    ${max_days_int}=    Convert To Integer    ${max_days}    90
+    # Convert to integer (default already handled by || echo "90")
+    ${max_days_int}=    Convert To Integer    ${max_days}
 
-    [Return]    ${max_days_int}
+    RETURN    ${max_days_int}
 
 Extract Password Min Days
     [Documentation]    Extract PASS_MIN_DAYS value from login.defs
@@ -538,10 +538,10 @@ Extract Password Min Days
     # Extract PASS_MIN_DAYS
     ${min_days}=    Execute Command    echo "${login_defs_content}" | grep -E "^PASS_MIN_DAYS" | awk '{print $2}' || echo "1"
 
-    # Convert to integer, default to 1 if not found
-    ${min_days_int}=    Convert To Integer    ${min_days}    1
+    # Convert to integer (default already handled by || echo "1")
+    ${min_days_int}=    Convert To Integer    ${min_days}
 
-    [Return]    ${min_days_int}
+    RETURN    ${min_days_int}
 
 Extract Password Warn Age
     [Documentation]    Extract PASS_WARN_AGE value from login.defs
@@ -550,10 +550,10 @@ Extract Password Warn Age
     # Extract PASS_WARN_AGE
     ${warn_age}=    Execute Command    echo "${login_defs_content}" | grep -E "^PASS_WARN_AGE" | awk '{print $2}' || echo "7"
 
-    # Convert to integer, default to 7 if not found
-    ${warn_age_int}=    Convert To Integer    ${warn_age}    7
+    # Convert to integer (default already handled by || echo "7")
+    ${warn_age_int}=    Convert To Integer    ${warn_age}
 
-    [Return]    ${warn_age_int}
+    RETURN    ${warn_age_int}
 
 Validate Overall CIP007_R5 Compliance
     [Documentation]    Validate overall CIP-007 R5 compliance
@@ -583,7 +583,7 @@ Validate Overall CIP007_R5 Compliance
     ...
     ...    OVERALL STATUS: ✅ CIP-007 R5 COMPLIANT
 
-    [Return]    ${compliance}
+    RETURN    ${compliance}
 
 Save CIP007_Compliance to File
     [Documentation]    Save CIP-007 R5 compliance validation to file
@@ -613,12 +613,12 @@ Save CIP007_Compliance to File
     Create File    ${filename}    ${report}
     Log    📄 CIP-007 R5 compliance saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Collect Password Aging Parameters
     [Documentation]    Collect all password aging parameters
     ${aging}=    Execute Command    grep -E "^PASS_" /etc/login.defs || echo "Aging parameters check"
-    [Return]    ${aging}
+    RETURN    ${aging}
 
 Save Aging Parameters to File
     [Documentation]    Save aging parameters to file
@@ -626,12 +626,12 @@ Save Aging Parameters to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST13_DATA_DIR}/aging_parameters_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${aging_params}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Faillock Configuration
     [Documentation]    Check PAM faillock configuration
     ${faillock}=    Execute Command    cat /etc/security/faillock.conf 2>/dev/null || echo "Faillock.conf not available, checking PAM"
-    [Return]    ${faillock}
+    RETURN    ${faillock}
 
 Save Faillock Configuration to File
     [Documentation]    Save faillock configuration to file
@@ -639,31 +639,31 @@ Save Faillock Configuration to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST13_DATA_DIR}/faillock_conf_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${faillock_conf}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Dictionary Settings
     [Documentation]    Check password dictionary settings
     [Arguments]    ${pwquality_content}
     ${dictcheck}=    Execute Command    echo "${pwquality_content}" | grep -E "^dictcheck" || echo "dictcheck = default"
-    [Return]    ${dictcheck}
+    RETURN    ${dictcheck}
 
 Check Password Retry Settings
     [Documentation]    Check password retry settings
     [Arguments]    ${pwquality_content}
     ${retry}=    Execute Command    echo "${pwquality_content}" | grep -E "^retry" || echo "retry = default"
-    [Return]    ${retry}
+    RETURN    ${retry}
 
 Check Minclass Setting
     [Documentation]    Check minimum character class setting
     [Arguments]    ${pwquality_content}
     ${minclass}=    Execute Command    echo "${pwquality_content}" | grep -E "^minclass" || echo "minclass = default"
-    [Return]    ${minclass}
+    RETURN    ${minclass}
 
 Check Root Password Policy
     [Documentation]    Check if root follows password policy
     [Arguments]    ${pam_content}
     ${root_policy}=    Execute Command    echo "${pam_content}" | grep -E "pam_pwquality|pam_cracklib" | grep -v "^#" || echo "Password quality check for root"
-    [Return]    ${root_policy}
+    RETURN    ${root_policy}
 
 Save Root Policy Check to File
     [Documentation]    Save root policy check to file
@@ -671,18 +671,18 @@ Save Root Policy Check to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST13_DATA_DIR}/root_policy_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${root_policy}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Password Encryption Method
     [Documentation]    Check password encryption method
     [Arguments]    ${login_defs_content}
     ${encryption}=    Execute Command    echo "${login_defs_content}" | grep -E "^ENCRYPT_METHOD" || echo "ENCRYPT_METHOD = default"
-    [Return]    ${encryption}
+    RETURN    ${encryption}
 
 Check User Password Status
     [Documentation]    Check password status for users
     ${status}=    Execute Command    passwd -Sa 2>/dev/null | head -20 || chage -l root 2>/dev/null || echo "Password status check"
-    [Return]    ${status}
+    RETURN    ${status}
 
 Save User Password Status to File
     [Documentation]    Save user password status to file
@@ -690,19 +690,19 @@ Save User Password Status to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST13_DATA_DIR}/user_password_status_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${user_status}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Password Change Restrictions
     [Documentation]    Check password change restrictions
     [Arguments]    ${login_defs_content}
     ${restrictions}=    Execute Command    echo "${login_defs_content}" | grep -E "^PASS_MIN_DAYS" || echo "PASS_MIN_DAYS check"
-    [Return]    ${restrictions}
+    RETURN    ${restrictions}
 
 Check Inactive Account Setting
     [Documentation]    Check inactive account setting
     [Arguments]    ${login_defs_content}
     ${inactive}=    Execute Command    echo "${login_defs_content}" | grep -E "^INACTIVE" || echo "INACTIVE = not set"
-    [Return]    ${inactive}
+    RETURN    ${inactive}
 
 Validate All Password Policy Settings
     [Documentation]    Validate all password policy settings collected
