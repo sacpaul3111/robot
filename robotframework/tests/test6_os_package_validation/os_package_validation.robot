@@ -7,7 +7,6 @@ Documentation    📦 OS and Package Validation Test Suite - Test-6
 Resource         ../../settings.resource
 Resource         os_package_keywords.resource
 Resource         variables.resource
-Library          ../../library/EDSLookup.py
 
 Suite Setup      Initialize OS Package Test Environment
 Suite Teardown   Close All SSH Connections

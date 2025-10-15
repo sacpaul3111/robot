@@ -5,30 +5,51 @@ Library          OperatingSystem
 Library          String
 Library          DateTime
 Library          Collections
+Library          ../../library/EDSLookup.py
 
 *** Keywords ***
+Log Test Start
+    [Arguments]    ${test_name}
+    ${timestamp}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
+    Log    🚀 Starting: ${test_name} at ${timestamp}    console=yes
+
+Log Test End
+    [Arguments]    ${test_name}    ${test_status}=UNKNOWN
+    ${timestamp}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
+    Log    ✅ Completed: ${test_name} (${test_status}) at ${timestamp}    console=yes
+
 Initialize Password Policy Test Environment
     [Documentation]    Initialize test environment and establish SSH connection
     Log    🔧 Initializing Password Policy Test Environment    console=yes
 
-    # Get target information from EDS
-    ${hostname}=    Get EDS Value    ${TEST_HOSTNAME}    Hostname
-    ${ip_address}=    Get EDS Value    ${TEST_HOSTNAME}    IP Address
+    # Lookup configuration from EDS sheet
+    Log To Console    \n🔍 Looking up configuration for hostname: ${TARGET_HOSTNAME}
 
-    Set Suite Variable    ${TARGET_HOSTNAME}    ${hostname}
-    Set Suite Variable    ${TARGET_IP}    ${ip_address}
+    ${config}=    Lookup Server Config    ${TARGET_HOSTNAME}
 
+    # Set EDS configuration as suite variables
+    Set Suite Variable    ${TARGET_IP}           ${config}[ip]
+    Set Suite Variable    ${TARGET_SUBNET}       ${config}[subnet]
+    Set Suite Variable    ${TARGET_MASK}         ${config}[mask]
+    Set Suite Variable    ${TARGET_GATEWAY}      ${config}[gateway]
+    Set Suite Variable    ${TARGET_CNAME}        ${config}[cname]
+    Set Suite Variable    ${TARGET_DOMAIN}       ${config}[domain]
+
+    Log To Console    \n📋 EDS Configuration for ${TARGET_HOSTNAME}:
+    Log To Console    📍 IP: ${TARGET_IP}
+    Log To Console    📍 Subnet: ${TARGET_SUBNET}
+    Log To Console    📍 Gateway: ${TARGET_GATEWAY}
     Log    📋 Target Hostname: ${TARGET_HOSTNAME}    console=yes
     Log    📋 Target IP: ${TARGET_IP}    console=yes
+
+    # Create directories for data collection
+    Create Directory    ${TEST13_RESULTS_DIR}
+    Create Directory    ${TEST13_DATA_DIR}
 
     # Establish SSH connection
     Log    🔗 Establishing SSH connection to ${TARGET_IP}...    console=yes
     Open Connection    ${TARGET_IP}
     Login    ${SSH_USERNAME}    ${SSH_PASSWORD}
-
-    # Create directories for data collection
-    Create Directory    ${TEST13_RESULTS_DIR}
-    Create Directory    ${TEST13_DATA_DIR}
 
     Log    ✅ Password policy test environment initialized    console=yes
 

@@ -32,12 +32,12 @@ ${WINRM_USERNAME}         ${EMPTY}    # Set via environment or command line
 ${WINRM_PASSWORD}         ${EMPTY}    # Set via environment or command line
 
 # 🐧 Linux OS Commands
-${CMD_LINUX_OS_VERSION}       cat /etc/os-release
-${CMD_LINUX_KERNEL}           uname -r
-${CMD_LINUX_PACKAGES}         rpm -qa --qf "%{NAME}-%{VERSION}-%{RELEASE}.%{ARCH}\n" || dpkg -l
-${CMD_LINUX_PATCH_HISTORY}    rpm -qa --last | head -100 || dpkg -l | tail -100
-${CMD_LINUX_BASE_PACKAGES}    rpm -qa --qf "%{NAME}\n" | sort || dpkg -query -f '${Package}\n' -W | sort
-${CMD_LINUX_SECURITY_UPDATES} yum list updates --security 2>/dev/null || dnf list updates --security 2>/dev/null || apt list --upgradable 2>/dev/null
+${CMD_LINUX_OS_VERSION}          cat /etc/os-release
+${CMD_LINUX_KERNEL}              uname -r
+${CMD_LINUX_PACKAGES}            rpm -qa --qf "\\%{NAME}-\\%{VERSION}-\\%{RELEASE}.\\%{ARCH}\\n" || dpkg -l
+${CMD_LINUX_PATCH_HISTORY}       rpm -qa --last | head -100 || dpkg -l | tail -100
+${CMD_LINUX_BASE_PACKAGES}       rpm -qa --qf "\\%{NAME}\\n" | sort || dpkg -query -f '\\${Package}\\n' -W | sort
+${CMD_LINUX_SECURITY_UPDATES}    yum list updates --security 2>/dev/null || dnf list updates --security 2>/dev/null || apt list --upgradable 2>/dev/null
 
 # 🪟 Windows OS Commands (PowerShell)
 ${CMD_WIN_OS_VERSION}         Get-ComputerInfo | Select-Object WindowsProductName, WindowsVersion, OsHardwareAbstractionLayer

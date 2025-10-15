@@ -32,7 +32,7 @@ ${CIP007_REQUIRE_UPPERCASE}     ${TRUE}    # Require uppercase letters
 ${CIP007_REQUIRE_LOWERCASE}     ${TRUE}    # Require lowercase letters
 ${CIP007_REQUIRE_DIGITS}        ${TRUE}    # Require digits
 ${CIP007_REQUIRE_SPECIAL}       ${TRUE}    # Require special characters
-${CIP007_MIN_CHARACTER_CLASSES} 3          # Minimum number of character classes
+${CIP007_MIN_CHARACTER_CLASSES}    3       # Minimum number of character classes
 
 # CIP-007 R5.6 Requirements - Password History
 ${CIP007_PASSWORD_HISTORY_COUNT}    5    # Number of previous passwords to remember

@@ -9,7 +9,6 @@ Documentation    🔐 Password Policy Validation Test Suite - Test-13
 Resource         ../../settings.resource
 Resource         password_keywords.resource
 Resource         variables.resource
-Library          ../../library/EDSLookup.py
 
 Suite Setup      Initialize Password Policy Test Environment
 Suite Teardown   Generate Password Policy Executive Summary

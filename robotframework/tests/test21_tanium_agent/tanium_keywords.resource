@@ -1,12 +1,14 @@
 *** Settings ***
 Documentation    🔍 Tanium Agent Validation Keywords for Test-21
 ...              📋 Provides Tanium agent installation, status, and reporting validation capabilities
+...              ⚠️ Validates agent locally on target server via SSH - does NOT require Tanium console access
 ...
 Library          SSHLibrary
 Library          Collections
 Library          String
 Library          OperatingSystem
 Library          DateTime
+Library          ../../library/EDSLookup.py
 Resource         ../../settings.resource
 
 *** Variables ***
@@ -19,22 +21,44 @@ ${AGENT_VERSION}               ${EMPTY}
 ${AGENT_CONFIGURATION}         ${EMPTY}
 
 *** Keywords ***
+Log Test Start
+    [Arguments]    ${test_name}
+    ${timestamp}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
+    Log    🚀 Starting: ${test_name} at ${timestamp}    console=yes
+
+Log Test End
+    [Arguments]    ${test_name}    ${test_status}=UNKNOWN
+    ${timestamp}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
+    Log    ✅ Completed: ${test_name} (${test_status}) at ${timestamp}    console=yes
+
 Initialize Tanium Agent Test Environment
-    [Documentation]    🏗️ Set up test environment for Tanium agent validation
+    [Documentation]    🏗️ Set up test environment and SSH directly to target server for Tanium agent validation
     Log    🚀 Initializing Test-21: Tanium Agent Validation Environment...    console=yes
 
     # Create directories for data collection
     Create Directory    ${DATA_DIR}
 
-    # Lookup EDS configuration to get target IP
-    ${eds_config}=    EDSLookup.Lookup Server Config    ${TARGET_HOSTNAME}
-    Set Suite Variable    ${TARGET_IP}    ${eds_config['ip']}
+    # Lookup configuration from EDS sheet
+    Log To Console    \n🔍 Looking up configuration for hostname: ${TARGET_HOSTNAME}
+    ${config}=    Lookup Server Config    ${TARGET_HOSTNAME}
 
-    Log    📋 Target Server: ${TARGET_HOSTNAME}    console=yes
+    # Set EDS configuration as suite variables
+    Set Suite Variable    ${TARGET_IP}           ${config}[ip]
+    Set Suite Variable    ${TARGET_SUBNET}       ${config}[subnet]
+    Set Suite Variable    ${TARGET_MASK}         ${config}[mask]
+    Set Suite Variable    ${TARGET_GATEWAY}      ${config}[gateway]
+    Set Suite Variable    ${TARGET_CNAME}        ${config}[cname]
+    Set Suite Variable    ${TARGET_DOMAIN}       ${config}[domain]
+
+    Log To Console    \n📋 EDS Configuration for ${TARGET_HOSTNAME}:
+    Log To Console    📍 IP: ${TARGET_IP}
+    Log To Console    📍 Subnet: ${TARGET_SUBNET}
+    Log To Console    📍 Gateway: ${TARGET_GATEWAY}
+    Log    📋 Target Hostname: ${TARGET_HOSTNAME}    console=yes
     Log    📋 Target IP: ${TARGET_IP}    console=yes
 
     # Establish SSH connection to target server
-    Log    🔗 Connecting to target server: ${TARGET_IP}...    console=yes
+    Log    🔗 Establishing SSH connection to ${TARGET_IP}...    console=yes
     Open Connection    ${TARGET_IP}
     Login    ${SSH_USERNAME}    ${SSH_PASSWORD}
 
@@ -960,17 +984,3 @@ Execute Command
     [Arguments]    ${command}
     ${output}=    SSHLibrary.Execute Command    ${command}
     RETURN    ${output}
-
-Log Test Start
-    [Documentation]    📝 Log the start of a test case
-    [Arguments]    ${test_name}
-    Log    \n================================================================================    console=yes
-    Log    🏁 Starting Test: ${test_name}    console=yes
-    Log    ================================================================================    console=yes
-
-Log Test End
-    [Documentation]    📝 Log the end of a test case with status
-    [Arguments]    ${test_name}    ${status}
-    Log    ================================================================================    console=yes
-    Log    🏁 Completed Test: ${test_name} | Status: ${status}    console=yes
-    Log    ================================================================================\n    console=yes

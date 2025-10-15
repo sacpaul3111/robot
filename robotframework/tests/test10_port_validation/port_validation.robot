@@ -8,7 +8,6 @@ Documentation    🔌 Port Validation Test Suite - Test-10
 Resource         ../../settings.resource
 Resource         port_keywords.resource
 Resource         variables.resource
-Library          ../../library/EDSLookup.py
 
 Suite Setup      Initialize Port Validation Test Environment
 Suite Teardown   Generate Port Validation Executive Summary

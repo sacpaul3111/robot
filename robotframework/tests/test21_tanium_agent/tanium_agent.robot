@@ -1,9 +1,10 @@
 *** Settings ***
-Documentation    🔍 Tanium Agent Reporting Status Test Suite - Test-21
-...              🔍 Process: Find hostname in EDS → SSH to server → Check Tanium agent status → Validate reporting in console
-...              ✅ Validates: Agent installation, service status, server connectivity, inventory reporting, module installations, query responsiveness
-...              📊 Documents: Agent version, service status, server communication, installed modules, query results, console listings
-...              🎯 Focus: Verify Tanium agent is properly installed, running, and reporting to Tanium console
+Documentation    🔍 Tanium Agent Validation Test Suite - Test-21
+...              🔍 Process: Find hostname in EDS → SSH directly to target server → Check Tanium agent status → Validate configuration
+...              ✅ Validates: Agent installation, service status, server connectivity, configuration, module installations, query responsiveness
+...              📊 Documents: Agent version, service status, server communication, installed modules, configuration files
+...              🎯 Focus: Verify Tanium agent is properly installed, running, and configured on the target server
+...              ⚠️ Note: Test validates agent directly on server via SSH - does NOT require Tanium console access
 ...
 Resource         ../../settings.resource
 Resource         tanium_keywords.resource

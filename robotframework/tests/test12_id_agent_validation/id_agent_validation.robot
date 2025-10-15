@@ -9,7 +9,6 @@ Documentation    🛡️ Industrial Defender Agent Validation Test Suite - Test-
 Resource         ../../settings.resource
 Resource         id_keywords.resource
 Resource         variables.resource
-Library          ../../library/EDSLookup.py
 
 Suite Setup      Initialize ID Agent Test Environment
 Suite Teardown   Generate ID Agent Executive Summary

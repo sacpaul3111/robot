@@ -9,7 +9,6 @@ Documentation    🛡️ Antivirus Agent Validation Test Suite - Test-19
 Resource         ../../settings.resource
 Resource         av_keywords.resource
 Resource         variables.resource
-Library          ../../library/EDSLookup.py
 
 Suite Setup      Initialize Antivirus Test Environment
 Suite Teardown   Generate Antivirus Executive Summary

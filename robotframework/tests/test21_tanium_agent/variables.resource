@@ -1,12 +1,18 @@
 *** Settings ***
 Documentation    🔍 Variables for Test-21: Tanium Agent Validation
 ...              📋 Contains all configuration variables for Tanium agent testing
+...              ⚠️ Test validates agent directly on target server via SSH
+...              ⚠️ Does NOT require Tanium console credentials or API access
 
 *** Variables ***
-# Target Server Configuration
+# Target Server Configuration - Set via command line
 ${TARGET_HOSTNAME}              # Set via command line --variable TARGET_HOSTNAME:value
 
-# Tanium Server Configuration
+# SSH Credentials - Set via environment variables or command line
+${SSH_USERNAME}                 ${EMPTY}
+${SSH_PASSWORD}                 ${EMPTY}
+
+# Tanium Server Configuration (for connectivity testing only - no console access required)
 ${EXPECTED_TANIUM_SERVER}       tanium.domain.com
 ${TANIUM_SERVER_PORT}           17472
 

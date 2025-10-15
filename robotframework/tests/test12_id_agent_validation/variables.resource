@@ -43,6 +43,6 @@ ${ID_SERVER_PORT}          443                      # ID server port (adjust as 
 ${AVETIC_BAYON_CONTACT}    Coordinate with Avetic Bayon for agent registration confirmation
 
 # Test Timeouts
-${AGENT_CHECK_TIMEOUT}     60 seconds
-${DATA_COLLECTION_TIMEOUT} 90 seconds
-${VALIDATION_TIMEOUT}      120 seconds
+${AGENT_CHECK_TIMEOUT}        60 seconds
+${DATA_COLLECTION_TIMEOUT}    90 seconds
+${VALIDATION_TIMEOUT}         120 seconds

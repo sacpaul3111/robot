@@ -32,16 +32,12 @@ Initialize OS Package Test Environment
     Set Suite Variable    ${TARGET_IP}           ${eds_config['ip']}
     Set Suite Variable    ${TARGET_OS_TYPE}      ${eds_config['os_type']}
 
-    # Get credentials from environment variables with fallback to defaults
-    ${ssh_user}=    Get Environment Variable    SSH_USERNAME    sac
-    ${ssh_pass}=    Get Environment Variable    SSH_PASSWORD    sac
-    ${winrm_user}=  Get Environment Variable    WINRM_USERNAME  administrator
-    ${winrm_pass}=  Get Environment Variable    WINRM_PASSWORD  ${EMPTY}
+    # Use credentials from command-line variables (should be set via -v arguments)
+    # SSH_USERNAME and SSH_PASSWORD are expected to be passed via command line
+    # WINRM_USERNAME and WINRM_PASSWORD are expected for Windows targets
 
-    Set Suite Variable    ${SSH_USERNAME}      ${ssh_user}
-    Set Suite Variable    ${SSH_PASSWORD}      ${ssh_pass}
-    Set Suite Variable    ${WINRM_USERNAME}    ${winrm_user}
-    Set Suite Variable    ${WINRM_PASSWORD}    ${winrm_pass}
+    # These variables are already set from command line, no need to override
+    # They should have been passed as: -v SSH_USERNAME:value -v SSH_PASSWORD:value
 
     Log    📋 EDS Configuration Retrieved:    console=yes
     Log    📋 - IP Address: ${TARGET_IP}    console=yes

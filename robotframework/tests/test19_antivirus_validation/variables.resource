@@ -54,7 +54,7 @@ ${SENTINELONE_MGMT_PORT}       443                           # SentinelOne manag
 # Antivirus Service Requirements
 ${SERVICE_MUST_BE_RUNNING}     ${TRUE}        # Service must be running
 ${SERVICE_MUST_BE_ENABLED}     ${TRUE}        # Service must be enabled at boot
-${REALTIME_PROTECTION_REQUIRED} ${TRUE}       # Real-time protection required
+${REALTIME_PROTECTION_REQUIRED}    ${TRUE}    # Real-time protection required
 
 # Definition Update Requirements
 ${MAX_DEFINITION_AGE_DAYS}     7              # Maximum days since last definition update
@@ -123,7 +123,7 @@ ${MAX_MEMORY_USAGE_MB}         1024              # Maximum acceptable memory usa
 
 # Compliance Flags
 ${CIP007_R3_1_REQUIRED}        ${TRUE}           # CIP-007 R3.1 compliance required
-${MALWARE_PREVENTION_MANDATORY} ${TRUE}          # Malware prevention is mandatory
+${MALWARE_PREVENTION_MANDATORY}    ${TRUE}       # Malware prevention is mandatory
 
 # Agent Health Indicators
 @{HEALTH_INDICATORS}
