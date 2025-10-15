@@ -4,6 +4,7 @@ Library          SSHLibrary
 Library          OperatingSystem
 Library          String
 Library          DateTime
+Library          Collections
 Library          ../../library/EDSLookup.py
 
 *** Keywords ***

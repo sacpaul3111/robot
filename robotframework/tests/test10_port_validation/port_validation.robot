@@ -101,8 +101,8 @@ Critical - Step 2.4: Save Netstat Output to File
     Set Suite Variable    ${NETSTAT_FILE}    ${netstat_file}
 
     # Verify file was created
-    File Should Exist    ${netstat_file}
-    ${file_size}=    Get File Size    ${netstat_file}
+    OperatingSystem.File Should Exist    ${netstat_file}
+    ${file_size}=    OperatingSystem.Get File Size    ${netstat_file}
     Should Be True    ${file_size} > 0    msg=Netstat output file is empty
 
     Log    📄 Netstat output saved to: ${netstat_file}    console=yes
@@ -123,7 +123,7 @@ Critical - Step 3.1: Verify Data Collection Succeeded
     Should Not Be Empty    ${LISTENING_PORTS}    msg=Listening ports data not collected
     Should Not Be Empty    ${ALL_CONNECTIONS}    msg=All connections data not collected
     Should Not Be Empty    ${SERVICES_WITH_PIDS}    msg=Services with PIDs data not collected
-    File Should Exist    ${NETSTAT_FILE}    msg=Netstat output file not found
+    OperatingSystem.File Should Exist    ${NETSTAT_FILE}    msg=Netstat output file not found
 
     Log    ✅ All netstat data verified successfully    console=yes
     Log    ✅ STEP 3.1: COMPLETED - Data collection verified    console=yes
