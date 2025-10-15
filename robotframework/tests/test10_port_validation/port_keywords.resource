@@ -97,17 +97,19 @@ Count Lines
     [Arguments]    ${text}
 
     @{lines}=    Split To Lines    ${text}
-    ${count}=    Get Length    ${lines}
+    ${non_empty_lines}=    Create List
 
-    # Subtract header lines and empty lines
-    ${non_empty}=    Set Variable    0
+    # Count non-empty lines
     FOR    ${line}    IN    @{lines}
         ${trimmed}=    Strip String    ${line}
         ${length}=    Get Length    ${trimmed}
-        ${non_empty}=    Set Variable If    ${length} > 0    ${non_empty + 1}    ${non_empty}
+        IF    ${length} > 0
+            Append To List    ${non_empty_lines}    ${line}
+        END
     END
 
-    RETURN    ${non_empty}
+    ${count}=    Get Length    ${non_empty_lines}
+    RETURN    ${count}
 
 Save Port Summary to File
     [Documentation]    Save port summary to file
@@ -217,8 +219,8 @@ Validate All Port Data Collected
     Variable Should Exist    ${TCP_LISTENING_PORTS}    msg=TCP listening ports not extracted
     Variable Should Exist    ${UDP_LISTENING_PORTS}    msg=UDP listening ports not extracted
 
-    # Verify file exists
-    File Should Exist    ${NETSTAT_FILE}    msg=Netstat output file not found
+    # Verify file exists (use OperatingSystem library for local files)
+    OperatingSystem.File Should Exist    ${NETSTAT_FILE}    msg=Netstat output file not found
 
     Log    ✅ All port data validation checks passed    console=yes
 
