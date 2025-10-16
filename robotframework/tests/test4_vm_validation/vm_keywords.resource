@@ -8,6 +8,16 @@ Library          DateTime
 Library          OperatingSystem
 
 *** Keywords ***
+Log Test Start
+    [Arguments]    ${test_name}
+    ${timestamp}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
+    Log    🚀 Starting: ${test_name} at ${timestamp}    console=yes
+
+Log Test End
+    [Arguments]    ${test_name}    ${test_status}=UNKNOWN
+    ${timestamp}=    Get Current Date    result_format=%Y-%m-%d %H:%M:%S
+    Log    ✅ Completed: ${test_name} (${test_status}) at ${timestamp}    console=yes
+
 Connect To vCenter And Get VM Details
     [Documentation]    Connect to vCenter API and retrieve comprehensive VM configuration
     [Arguments]    ${vm_name}    ${vcenter_host}    ${vcenter_user}    ${vcenter_pass}

@@ -6,13 +6,13 @@ Test Suite: Test-4 VM Validation
 Target VM: alhxvdvitap01
 
 EDS CONFIGURATION:
-- VxRail Cluster: 
-- vCenter Host: 
-- Expected CPU Cores: 
-- Expected RAM: 
-- Expected Hardware Version: 
-- Memory Reservation: 
-- CPU Reservation: 
+- VxRail Cluster: N/A
+- vCenter Host: vcenter.example.com
+- Expected CPU Cores: 8
+- Expected RAM: 16
+- Expected Hardware Version: N/A
+- Memory Reservation: N/A
+- CPU Reservation: N/A
 
 VALIDATION STATUS:
 - See detailed test report for validation results

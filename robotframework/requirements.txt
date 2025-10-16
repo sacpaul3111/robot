@@ -105,8 +105,8 @@ pathlib2>=2.3.7
 #############################################################################
 # Optional: vCenter/VMware Integration
 #############################################################################
-# VMware vSphere API (uncomment if needed)
-# pyvmomi>=7.0.3
+# VMware vSphere API
+pyvmomi>=8.0.0
 
 #############################################################################
 # Optional: Database Connectivity

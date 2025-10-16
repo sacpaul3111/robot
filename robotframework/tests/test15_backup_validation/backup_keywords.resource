@@ -28,21 +28,21 @@ Initialize Backup Validation Test Environment
 
 Connect To vCenter API
     [Documentation]    Establish connection to vCenter REST API
-    Log    🔗 Connecting to vCenter API: ${VCENTER_API_ENDPOINT}    console=yes
+    Log    🔗 Connecting to vCenter API: ${VCENTER_SERVER}    console=yes
 
     # Connect to vCenter API using library
-    ${connection}=    VCenter API Connect    ${VCENTER_API_ENDPOINT}    ${VCENTER_USERNAME}    ${VCENTER_PASSWORD}    ${API_TIMEOUT}    ${API_VERIFY_SSL}
-    Set Global Variable    ${VCENTER_API_CONN}    ${connection}
+    ${success}=    Connect To Vcenter Api    ${VCENTER_SERVER}    ${VCENTER_USERNAME}    ${VCENTER_PASSWORD}
+    Set Global Variable    ${VCENTER_API_CONN}    ${success}
 
-    Log    ✅ Connected to vCenter API: ${VCENTER_API_ENDPOINT}    console=yes
-    RETURN    ${connection}
+    Log    ✅ Connected to vCenter API: ${VCENTER_SERVER}    console=yes
+    RETURN    ${success}
 
 Verify vCenter API Connection
     [Documentation]    Verify vCenter API connection is active
     Log    🔍 Verifying vCenter API connection status...    console=yes
 
     # Verify connection
-    ${status}=    VCenter API Verify Connection    ${VCENTER_API_CONN}
+    ${status}=    Verify Vcenter Api Connection
 
     Log    ✅ vCenter API connection verified: ${status}    console=yes
     RETURN    ${status}
@@ -52,7 +52,7 @@ Collect Backup Policy Configuration
     Log    📊 Collecting backup policy configuration via API...    console=yes
 
     # Collect backup policies
-    ${policies}=    VCenter API Get Backup Policies    ${VCENTER_API_CONN}    ${TARGET_VMS}
+    ${policies}=    Collect Backup Policy Configuration    ${TARGET_VMS}
 
     ${count}=    Get Length    ${policies}
     Log    📊 Collected backup policies for ${count} VMs    console=yes
@@ -64,7 +64,7 @@ Collect Backup Schedule Settings
     Log    📊 Collecting backup schedule settings via API...    console=yes
 
     # Collect schedules
-    ${schedules}=    VCenter API Get Backup Schedules    ${VCENTER_API_CONN}    ${TARGET_VMS}
+    ${schedules}=    Collect Backup Schedule Settings    ${TARGET_VMS}
 
     ${count}=    Get Length    ${schedules}
     Log    📊 Collected backup schedules for ${count} VMs    console=yes
@@ -76,7 +76,7 @@ Collect Recent Backup Job Status
     Log    📊 Collecting recent backup job status via API...    console=yes
 
     # Collect job status
-    ${jobs}=    VCenter API Get Recent Backup Jobs    ${VCENTER_API_CONN}    ${TARGET_VMS}    ${BACKUP_LOOKBACK_DAYS}
+    ${jobs}=    Collect Recent Backup Job Status    ${TARGET_VMS}    ${BACKUP_LOOKBACK_DAYS}
 
     ${count}=    Get Length    ${jobs}
     Log    📊 Collected ${count} recent backup jobs    console=yes
@@ -88,7 +88,7 @@ Collect Retention Policy Settings
     Log    📊 Collecting retention policy settings via API...    console=yes
 
     # Collect retention policies
-    ${retention}=    VCenter API Get Retention Policies    ${VCENTER_API_CONN}    ${TARGET_VMS}
+    ${retention}=    Collect Retention Policy Settings    ${TARGET_VMS}
 
     ${count}=    Get Length    ${retention}
     Log    📊 Collected retention policies for ${count} VMs    console=yes
@@ -100,7 +100,7 @@ Collect Latest Backup Timestamps
     Log    📊 Collecting latest backup timestamps via API...    console=yes
 
     # Collect timestamps
-    ${timestamps}=    VCenter API Get Latest Backup Timestamps    ${VCENTER_API_CONN}    ${TARGET_VMS}
+    ${timestamps}=    Collect Latest Backup Timestamps    ${TARGET_VMS}
 
     ${count}=    Get Length    ${timestamps}
     Log    📊 Collected latest backup timestamps for ${count} VMs    console=yes
@@ -112,7 +112,7 @@ Collect Offsite Replication Status
     Log    📊 Collecting offsite replication status via API...    console=yes
 
     # Collect replication status
-    ${replication}=    VCenter API Get Offsite Replication Status    ${VCENTER_API_CONN}    ${TARGET_VMS}
+    ${replication}=    Collect Offsite Replication Status    ${TARGET_VMS}
 
     ${count}=    Get Length    ${replication}
     Log    📊 Collected offsite replication status for ${count} VMs    console=yes
@@ -125,7 +125,7 @@ Validate Backup Policy Applied
     Log    ✅ Validating backup policy application...    console=yes
 
     # Validate policies
-    ${results}=    Backup Validator Validate Policies    ${policy_data}    ${TARGET_VMS}
+    ${results}=    Validate Backup Policy Applied    ${policy_data}
 
     ${violations}=    Get From Dictionary    ${results}    violations
     ${violation_count}=    Get Length    ${violations}
@@ -139,7 +139,7 @@ Validate Schedule Alignment With RPO
     Log    ✅ Validating schedule alignment with RPO requirements...    console=yes
 
     # Validate schedules
-    ${results}=    Backup Validator Validate RPO Alignment    ${schedule_data}    ${VM_CRITICALITY}    ${RPO_REQUIREMENTS}
+    ${results}=    Validate Schedule Alignment With Rpo    ${schedule_data}    ${RPO_REQUIREMENTS}    ${VM_CRITICALITY}
 
     ${rpo_violations}=    Get From Dictionary    ${results}    rpo_violations
     ${rpo_violation_count}=    Get Length    ${rpo_violations}
@@ -153,7 +153,7 @@ Validate Retention Settings Compliance
     Log    ✅ Validating retention settings compliance...    console=yes
 
     # Validate retention
-    ${results}=    Backup Validator Validate Retention Compliance    ${retention_data}    ${MIN_DAILY_RETENTION}    ${MIN_WEEKLY_RETENTION}    ${MIN_MONTHLY_RETENTION}
+    ${results}=    Validate Retention Settings Compliance    ${retention_data}    ${MIN_DAILY_RETENTION}    ${MIN_WEEKLY_RETENTION}    ${MIN_MONTHLY_RETENTION}
 
     ${violations}=    Get From Dictionary    ${results}    violations
     ${violation_count}=    Get Length    ${violations}
@@ -167,7 +167,7 @@ Validate Recent Job Completion Status
     Log    ✅ Validating recent backup job completion status...    console=yes
 
     # Validate job completion
-    ${results}=    Backup Validator Validate Job Status    ${job_status}
+    ${results}=    Validate Recent Job Completion Status    ${job_status}
 
     ${failed_jobs}=    Get From Dictionary    ${results}    failed_jobs
     ${failed_count}=    Get Length    ${failed_jobs}
@@ -181,7 +181,7 @@ Validate Backup Recency
     Log    ✅ Validating backup recency...    console=yes
 
     # Validate recency
-    ${results}=    Backup Validator Validate Backup Recency    ${timestamp_data}    ${MAX_BACKUP_AGE_HOURS}
+    ${results}=    Validate Backup Recency    ${timestamp_data}    ${MAX_BACKUP_AGE_HOURS}
 
     ${stale_backups}=    Get From Dictionary    ${results}    stale_backups
     ${stale_count}=    Get Length    ${stale_backups}
@@ -195,7 +195,7 @@ Validate Offsite Replication Configuration
     Log    ✅ Validating offsite replication configuration...    console=yes
 
     # Validate offsite replication
-    ${results}=    Backup Validator Validate Offsite Replication    ${replication_data}    ${OFFSITE_REQUIRED_VMS}
+    ${results}=    Validate Offsite Replication Configuration    ${replication_data}    ${OFFSITE_REQUIRED_VMS}
 
     ${violations}=    Get From Dictionary    ${results}    violations
     ${violation_count}=    Get Length    ${violations}
@@ -313,7 +313,7 @@ Generate Backup Validation Executive Summary
 
     # Disconnect from vCenter API
     IF    ${VCENTER_API_CONN}
-        VCenter API Disconnect    ${VCENTER_API_CONN}
+        Disconnect From Vcenter Api
         Log    🔌 Disconnected from vCenter API    console=yes
     END
 
