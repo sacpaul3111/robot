@@ -6,8 +6,8 @@ Library          OperatingSystem
 Library          String
 Library          DateTime
 Library          Screenshot
-Library          ../../libraries/VCenterLibrary.py
-Library          ../../libraries/DatastoreValidator.py
+Library          ../../library/VCenterLibrary.py
+Library          ../../library/DatastoreValidator.py
 
 *** Keywords ***
 Initialize Datastore Configuration Test Environment

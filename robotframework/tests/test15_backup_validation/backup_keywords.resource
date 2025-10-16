@@ -4,8 +4,8 @@ Library          Collections
 Library          OperatingSystem
 Library          String
 Library          DateTime
-Library          ../../libraries/VCenterAPILibrary.py
-Library          ../../libraries/BackupValidator.py
+Library          ../../library/VCenterAPILibrary.py
+Library          ../../library/BackupValidator.py
 
 *** Keywords ***
 Initialize Backup Validation Test Environment
