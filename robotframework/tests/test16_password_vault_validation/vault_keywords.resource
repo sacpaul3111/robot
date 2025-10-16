@@ -5,6 +5,7 @@ Library          OperatingSystem
 Library          String
 Library          DateTime
 Library          Collections
+Library          ../../library/EDSLookup.py
 
 *** Keywords ***
 Initialize Password Vault Test Environment
@@ -12,11 +13,9 @@ Initialize Password Vault Test Environment
     Log    🔧 Initializing Password Vault Test Environment    console=yes
 
     # Get target information from EDS
-    ${hostname}=    Get EDS Value    ${TEST_HOSTNAME}    Hostname
-    ${ip_address}=    Get EDS Value    ${TEST_HOSTNAME}    IP Address
-
-    Set Suite Variable    ${TARGET_HOSTNAME}    ${hostname}
-    Set Suite Variable    ${TARGET_IP}    ${ip_address}
+    ${eds_config}=    Lookup Server Config    ${TEST_HOSTNAME}
+    Set Suite Variable    ${TARGET_HOSTNAME}    ${eds_config}[hostname]
+    Set Suite Variable    ${TARGET_IP}    ${eds_config}[ip]
 
     Log    📋 Target Hostname: ${TARGET_HOSTNAME}    console=yes
     Log    📋 Target IP: ${TARGET_IP}    console=yes
