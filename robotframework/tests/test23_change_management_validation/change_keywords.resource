@@ -57,7 +57,7 @@ Verify CRQ System Access Configuration
     ...
     ...    Verification Status: Configuration Documented
 
-    [Return]    ${access_info}
+    RETURN    ${access_info}
 
 Save CRQ Access Verification to File
     [Documentation]    Save CRQ access verification to file
@@ -83,7 +83,7 @@ Save CRQ Access Verification to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Verify Asset Management Platform Access
     [Documentation]    Verify asset management platform access
@@ -110,7 +110,7 @@ Verify Asset Management Platform Access
     ...
     ...    Verification Status: Platform access documented
 
-    [Return]    ${asset_info}
+    RETURN    ${asset_info}
 
 Save Asset Platform Access to File
     [Documentation]    Save asset platform access to file
@@ -135,7 +135,7 @@ Save Asset Platform Access to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Collect Asset Change Form Information
     [Documentation]    Collect asset change form information
@@ -184,7 +184,7 @@ Collect Asset Change Form Information
     ...    - Verify all sections completed
     ...    - Capture screenshot of form status
 
-    [Return]    ${form_info}
+    RETURN    ${form_info}
 
 Save Change Form to File
     [Documentation]    Save change form information to file
@@ -211,7 +211,7 @@ Save Change Form to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Collect CRQ Task Information
     [Documentation]    Collect CRQ task information
@@ -265,7 +265,7 @@ Collect CRQ Task Information
     ...    - Verify all tasks show "Closed Complete"
     ...    - Capture screenshot of task list
 
-    [Return]    ${tasks_info}
+    RETURN    ${tasks_info}
 
 Save CRQ Tasks to File
     [Documentation]    Save CRQ tasks information to file
@@ -291,7 +291,7 @@ Save CRQ Tasks to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Mandatory Field Requirements
     [Documentation]    Document mandatory field requirements
@@ -332,7 +332,7 @@ Document Mandatory Field Requirements
     ...    - Verify all mandatory fields populated
     ...    - Verify no fields marked "Required" are empty
 
-    [Return]    ${fields_doc}
+    RETURN    ${fields_doc}
 
 Save Mandatory Fields to File
     [Documentation]    Save mandatory fields documentation to file
@@ -340,7 +340,7 @@ Save Mandatory Fields to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/mandatory_fields_${timestamp}.txt
     Create File    ${filename}    ${mandatory_fields}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Build Documentation Requirements
     [Documentation]    Document build documentation requirements
@@ -386,7 +386,7 @@ Document Build Documentation Requirements
     ...    - Verify all documents present
     ...    - Verify documents are current and accurate
 
-    [Return]    ${build_doc}
+    RETURN    ${build_doc}
 
 Save Build Documentation to File
     [Documentation]    Save build documentation to file
@@ -394,7 +394,7 @@ Save Build Documentation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/build_documentation_${timestamp}.txt
     Create File    ${filename}    ${build_docs}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Test Results Requirements
     [Documentation]    Document test results requirements
@@ -440,7 +440,7 @@ Document Test Results Requirements
     ...    - Verify all tests passed
     ...    - Verify no open critical defects
 
-    [Return]    ${test_doc}
+    RETURN    ${test_doc}
 
 Save Test Results to File
     [Documentation]    Save test results documentation to file
@@ -448,7 +448,7 @@ Save Test Results to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/test_results_${timestamp}.txt
     Create File    ${filename}    ${test_results}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Handoff Package Requirements
     [Documentation]    Document handoff package requirements
@@ -500,7 +500,7 @@ Document Handoff Package Requirements
     ...    - Confirm operations team acceptance
     ...    - Document handoff meeting
 
-    [Return]    ${handoff_doc}
+    RETURN    ${handoff_doc}
 
 Save Handoff Package to File
     [Documentation]    Save handoff package documentation to file
@@ -508,7 +508,7 @@ Save Handoff Package to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/handoff_package_${timestamp}.txt
     Create File    ${filename}    ${handoff_package}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Change Form Approvals
     [Documentation]    Validate change form approvals
@@ -547,7 +547,7 @@ Validate Change Form Approvals
     ...    Validation Status: All approvals must be obtained
     ...    MANUAL VERIFICATION: Review approval history in CRQ system
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Approvals Validation to File
     [Documentation]    Save approvals validation to file
@@ -555,7 +555,7 @@ Save Approvals Validation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/approvals_validation_${timestamp}.txt
     Create File    ${filename}    ${approvals_validation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate CRQ Task Completions
     [Documentation]    Validate CRQ task completions
@@ -583,7 +583,7 @@ Validate CRQ Task Completions
     ...    Validation Status: All tasks completed
     ...    MANUAL VERIFICATION: Review task list in ServiceNow CRQ
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Tasks Validation to File
     [Documentation]    Save tasks validation to file
@@ -591,7 +591,7 @@ Save Tasks Validation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/tasks_validation_${timestamp}.txt
     Create File    ${filename}    ${tasks_validation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate CRQ Closure Readiness
     [Documentation]    Validate CRQ closure readiness
@@ -623,7 +623,7 @@ Validate CRQ Closure Readiness
     ...    Validation Status: Ready for closure
     ...    MANUAL VERIFICATION: Verify CRQ can be moved to "Closed" state
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Closure Validation to File
     [Documentation]    Save closure validation to file
@@ -631,7 +631,7 @@ Save Closure Validation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/closure_validation_${timestamp}.txt
     Create File    ${filename}    ${closure_validation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Documentation Archival
     [Documentation]    Validate documentation archival
@@ -673,7 +673,7 @@ Validate Documentation Archival
     ...    Archival Status: All documentation archived
     ...    Retention Period: Per organizational policy (typically 7 years)
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Archival Validation to File
     [Documentation]    Save archival validation to file
@@ -681,7 +681,7 @@ Save Archival Validation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/archival_validation_${timestamp}.txt
     Create File    ${filename}    ${archival_validation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Handoff Completeness
     [Documentation]    Validate handoff completeness
@@ -730,7 +730,7 @@ Validate Handoff Completeness
     ...
     ...    Handoff Status: Complete and accepted by operations
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Handoff Validation to File
     [Documentation]    Save handoff validation to file
@@ -738,7 +738,7 @@ Save Handoff Validation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/handoff_validation_${timestamp}.txt
     Create File    ${filename}    ${handoff_validation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Overall Change Management Compliance
     [Documentation]    Validate overall change management compliance
@@ -798,7 +798,7 @@ Validate Overall Change Management Compliance
     ...    ✅ All organizational requirements met
     ...    ✅ Change request ready for final closure
 
-    [Return]    ${compliance}
+    RETURN    ${compliance}
 
 Save Change Management Compliance to File
     [Documentation]    Save change management compliance to file
@@ -807,12 +807,12 @@ Save Change Management Compliance to File
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/change_mgmt_compliance_${timestamp}.txt
     Create File    ${filename}    ${cm_compliance}
     Log    📄 Change management compliance saved to: ${filename}    console=yes
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Implementation Success Criteria
     [Documentation]    Document implementation success criteria
     ${implementation}=    Set Variable    Implementation successful - all success criteria met
-    [Return]    ${implementation}
+    RETURN    ${implementation}
 
 Save Implementation Verification to File
     [Documentation]    Save implementation verification to file
@@ -820,52 +820,52 @@ Save Implementation Verification to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST23_DATA_DIR}/implementation_verification_${timestamp}.txt
     Create File    ${filename}    ${implementation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document PIR Requirements
     [Documentation]    Document post-implementation review requirements
     ${pir}=    Set Variable    Post-Implementation Review scheduled per change management policy
-    [Return]    ${pir}
+    RETURN    ${pir}
 
 Document Stakeholder Notifications
     [Documentation]    Document stakeholder notifications
     ${notifications}=    Set Variable    All stakeholders notified of change completion
-    [Return]    ${notifications}
+    RETURN    ${notifications}
 
 Document Rollback Plan
     [Documentation]    Document rollback plan
     ${rollback}=    Set Variable    Rollback plan documented and tested (not required - implementation successful)
-    [Return]    ${rollback}
+    RETURN    ${rollback}
 
 Document CMDB Update
     [Documentation]    Document CMDB update
     ${cmdb}=    Set Variable    CMDB updated with new configuration items and relationships
-    [Return]    ${cmdb}
+    RETURN    ${cmdb}
 
 Document Change Impact Assessment
     [Documentation]    Document change impact assessment
     ${impact}=    Set Variable    Change impact assessed and documented in CRQ
-    [Return]    ${impact}
+    RETURN    ${impact}
 
 Document Risk Assessment
     [Documentation]    Document risk assessment
     ${risk}=    Set Variable    Risk assessment completed and mitigation strategies implemented
-    [Return]    ${risk}
+    RETURN    ${risk}
 
 Document Schedule Compliance
     [Documentation]    Document schedule compliance
     ${schedule}=    Set Variable    Change implemented within approved maintenance window
-    [Return]    ${schedule}
+    RETURN    ${schedule}
 
 Document Communication Plan Execution
     [Documentation]    Document communication plan execution
     ${communication}=    Set Variable    Communication plan executed - all stakeholders informed
-    [Return]    ${communication}
+    RETURN    ${communication}
 
 Document Lessons Learned
     [Documentation]    Document lessons learned
     ${lessons}=    Set Variable    Lessons learned documented for future reference
-    [Return]    ${lessons}
+    RETURN    ${lessons}
 
 Validate All Change Management Settings
     [Documentation]    Validate all change management settings collected

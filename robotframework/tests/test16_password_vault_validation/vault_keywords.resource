@@ -58,7 +58,7 @@ Verify CyberArk Vault Access Configuration
     ...
     ...    Verification Status: Configuration Documented
 
-    [Return]    ${access_info}
+    RETURN    ${access_info}
 
 Save Vault Access Verification to File
     [Documentation]    Save vault access verification to file
@@ -84,7 +84,7 @@ Save Vault Access Verification to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Vault Search Criteria
     [Documentation]    Document vault search criteria for target host
@@ -118,7 +118,7 @@ Document Vault Search Criteria
     ...    3. Document account count (interactive and non-interactive)
     ...    4. Verify all privileged accounts are enrolled
 
-    [Return]    ${search_criteria}
+    RETURN    ${search_criteria}
 
 Save Vault Search to File
     [Documentation]    Save vault search documentation to file
@@ -144,7 +144,7 @@ Save Vault Search to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Expected Enrolled Accounts
     [Documentation]    Document expected enrolled accounts for target host
@@ -181,7 +181,7 @@ Document Expected Enrolled Accounts
     ...    3. Verify no privileged accounts are missing
     ...    4. Capture screenshot showing all accounts
 
-    [Return]    ${accounts_doc}
+    RETURN    ${accounts_doc}
 
 Save Enrolled Accounts to File
     [Documentation]    Save enrolled accounts documentation to file
@@ -208,7 +208,7 @@ Save Enrolled Accounts to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Password Sync Requirements
     [Documentation]    Document password synchronization requirements
@@ -233,7 +233,7 @@ Document Password Sync Requirements
     ...    4. Confirm auto-sync is enabled
     ...    5. Document any out-of-sync accounts
 
-    [Return]    ${sync_doc}
+    RETURN    ${sync_doc}
 
 Save Sync Status to File
     [Documentation]    Save sync status documentation to file
@@ -241,7 +241,7 @@ Save Sync Status to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/sync_status_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${sync_status}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Password Rotation Policies
     [Documentation]    Document password rotation policy requirements
@@ -275,7 +275,7 @@ Document Password Rotation Policies
     ...    4. Confirm no rotation failures
     ...    5. Verify rotation is scheduled and active
 
-    [Return]    ${rotation_doc}
+    RETURN    ${rotation_doc}
 
 Save Rotation Policies to File
     [Documentation]    Save rotation policies documentation to file
@@ -283,7 +283,7 @@ Save Rotation Policies to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/rotation_policies_${timestamp}.txt
     Create File    ${filename}    ${rotation_policies}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check CyberArk Agent on Target
     [Documentation]    Check for CyberArk agent on target system
@@ -311,7 +311,7 @@ Check CyberArk Agent on Target
     ...
     ...    NOTE: CyberArk can manage passwords with or without local agent
 
-    [Return]    ${agent_check}
+    RETURN    ${agent_check}
 
 Save Agent Check to File
     [Documentation]    Save agent check results to file
@@ -319,7 +319,7 @@ Save Agent Check to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/agent_check_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${agent_check}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Audit Log Requirements
     [Documentation]    Document audit log requirements for vault
@@ -366,7 +366,7 @@ Document Audit Log Requirements
     ...    5. Capture screenshot of recent audit events
     ...    6. Document audit retention period
 
-    [Return]    ${audit_doc}
+    RETURN    ${audit_doc}
 
 Save Audit Logs Documentation to File
     [Documentation]    Save audit logs documentation to file
@@ -374,7 +374,7 @@ Save Audit Logs Documentation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/audit_logs_${timestamp}.txt
     Create File    ${filename}    ${audit_logs}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Account Enrollment Status
     [Documentation]    Validate privileged account enrollment status
@@ -414,7 +414,7 @@ Validate Account Enrollment Status
     ...    Compliance Status: MANUAL VERIFICATION REQUIRED
     ...    All privileged accounts must be enrolled per CIP-007 R5.2
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Enrollment Validation to File
     [Documentation]    Save enrollment validation to file
@@ -422,7 +422,7 @@ Save Enrollment Validation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/enrollment_validation_${timestamp}.txt
     Create File    ${filename}    ${enrollment_validation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Password Rotation Configuration
     [Documentation]    Validate password rotation configuration
@@ -454,7 +454,7 @@ Validate Password Rotation Configuration
     ...    Compliance Status: CONFIGURATION VALIDATED
     ...    Password rotation meets CIP-007 R5.4 requirements
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Rotation Validation to File
     [Documentation]    Save rotation validation to file
@@ -462,7 +462,7 @@ Save Rotation Validation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/rotation_validation_${timestamp}.txt
     Create File    ${filename}    ${rotation_validation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Checkout Checkin Workflow
     [Documentation]    Validate checkout/checkin workflow configuration
@@ -499,7 +499,7 @@ Validate Checkout Checkin Workflow
     ...    Compliance Status: WORKFLOW VALIDATED
     ...    Checkout/checkin process meets security requirements
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Workflow Validation to File
     [Documentation]    Save workflow validation to file
@@ -507,7 +507,7 @@ Save Workflow Validation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/workflow_validation_${timestamp}.txt
     Create File    ${filename}    ${workflow_validation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Service Account Controls
     [Documentation]    Validate service account controls
@@ -543,7 +543,7 @@ Validate Service Account Controls
     ...    Compliance Status: SERVICE ACCOUNT CONTROLS VALIDATED
     ...    Non-interactive accounts meet CIP-007 R5.2 requirements
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Service Account Validation to File
     [Documentation]    Save service account validation to file
@@ -551,7 +551,7 @@ Save Service Account Validation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/service_account_validation_${timestamp}.txt
     Create File    ${filename}    ${service_acct_validation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Audit Logging Capability
     [Documentation]    Validate audit logging capability
@@ -596,7 +596,7 @@ Validate Audit Logging Capability
     ...    Compliance Status: AUDIT LOGGING VALIDATED
     ...    All required events are being logged
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Audit Validation to File
     [Documentation]    Save audit validation to file
@@ -604,7 +604,7 @@ Save Audit Validation to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/audit_validation_${timestamp}.txt
     Create File    ${filename}    ${audit_validation}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Overall CIP007_R5_Vault_Compliance
     [Documentation]    Validate overall CIP-007 R5 vault compliance
@@ -661,7 +661,7 @@ Validate Overall CIP007_R5_Vault_Compliance
     ...
     ...    (Subject to manual verification in CyberArk UI)
 
-    [Return]    ${compliance}
+    RETURN    ${compliance}
 
 Save CIP007_Vault_Compliance to File
     [Documentation]    Save CIP-007 vault compliance to file
@@ -670,12 +670,12 @@ Save CIP007_Vault_Compliance to File
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/cip007_vault_compliance_${timestamp}.txt
     Create File    ${filename}    ${cip007_compliance}
     Log    📄 CIP-007 vault compliance saved to: ${filename}    console=yes
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Platform Configuration
     [Documentation]    Document platform configuration
     ${platform}=    Set Variable    Platform-specific rotation and verification settings documented
-    [Return]    ${platform}
+    RETURN    ${platform}
 
 Save Platform Config to File
     [Documentation]    Save platform config to file
@@ -683,52 +683,52 @@ Save Platform Config to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST16_DATA_DIR}/platform_config_${timestamp}.txt
     Create File    ${filename}    ${platform_config}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Password Complexity Requirements
     [Documentation]    Document password complexity requirements
     ${complexity}=    Set Variable    Minimum length, character classes, complexity rules per CIP-007 R5.5
-    [Return]    ${complexity}
+    RETURN    ${complexity}
 
 Document Dual Control Requirements
     [Documentation]    Document dual control requirements
     ${dual_control}=    Set Variable    Dual control and approval requirements per access policy
-    [Return]    ${dual_control}
+    RETURN    ${dual_control}
 
 Document Safe Permissions
     [Documentation]    Document safe permissions
     ${permissions}=    Set Variable    Safe ACLs and access control lists configuration
-    [Return]    ${permissions}
+    RETURN    ${permissions}
 
 Document Password Change Verification
     [Documentation]    Document password change verification
     ${verification}=    Set Variable    Post-change verification and reconciliation enabled
-    [Return]    ${verification}
+    RETURN    ${verification}
 
 Document Session Monitoring Configuration
     [Documentation]    Document session monitoring configuration
     ${monitoring}=    Set Variable    PSM session recording and monitoring per compliance requirements
-    [Return]    ${monitoring}
+    RETURN    ${monitoring}
 
 Document Reconciliation Account Settings
     [Documentation]    Document reconciliation account settings
     ${reconciliation}=    Set Variable    Reconciliation accounts configured for password verification
-    [Return]    ${reconciliation}
+    RETURN    ${reconciliation}
 
 Document CPM Status
     [Documentation]    Document CPM status
     ${cpm}=    Set Variable    Central Policy Manager active and managing password rotations
-    [Return]    ${cpm}
+    RETURN    ${cpm}
 
 Document PSM Integration Status
     [Documentation]    Document PSM integration status
     ${psm}=    Set Variable    Privileged Session Manager integration for connection management
-    [Return]    ${psm}
+    RETURN    ${psm}
 
 Document Disaster Recovery Configuration
     [Documentation]    Document disaster recovery configuration
     ${dr}=    Set Variable    Vault replication, backup, and disaster recovery configured
-    [Return]    ${dr}
+    RETURN    ${dr}
 
 Validate All Vault Settings
     [Documentation]    Validate all vault settings collected

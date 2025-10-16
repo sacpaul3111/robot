@@ -51,7 +51,7 @@ Verify Splunk Access Configuration
     ...
     ...    Verification Status: Configuration Documented
 
-    [Return]    ${access_info}
+    RETURN    ${access_info}
 
 Save Splunk Access Verification to File
     [Documentation]    Save Splunk access verification to file
@@ -77,7 +77,7 @@ Save Splunk Access Verification to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Collect Syslog NG Configuration
     [Documentation]    Collect syslog-ng configuration from target
@@ -99,7 +99,7 @@ Collect Syslog NG Configuration
     # Verify content was collected
     Should Not Be Empty    ${syslog_conf}
 
-    [Return]    ${full_config}
+    RETURN    ${full_config}
 
 Save Syslog Config to File
     [Documentation]    Save syslog-ng configuration to file
@@ -128,7 +128,7 @@ Save Syslog Config to File
     Create File    ${filename}    ${report}
     Log    📄 Syslog-ng configuration saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Syslog NG Service Status
     [Documentation]    Check syslog-ng service status
@@ -146,7 +146,7 @@ Check Syslog NG Service Status
     ...
     ...    Service Enabled: ${service_enabled}
 
-    [Return]    ${full_status}
+    RETURN    ${full_status}
 
 Save Service Status to File
     [Documentation]    Save service status to file
@@ -172,7 +172,7 @@ Save Service Status to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Generate Test Log Message
     [Documentation]    Generate unique test log message for validation
@@ -184,7 +184,7 @@ Generate Test Log Message
 
     Log    📝 Generated Test Message ID: ${test_message}    console=yes
 
-    [Return]    ${test_message}
+    RETURN    ${test_message}
 
 Send Test Log Message
     [Documentation]    Send test log message to syslog
@@ -195,7 +195,7 @@ Send Test Log Message
     # Send test message using logger command
     ${result}=    Execute Command    logger -t "CIP007_TEST" -p local0.info "TEST_MESSAGE: ${test_message}" && echo "Message sent successfully" || echo "Failed to send message"
 
-    [Return]    ${result}
+    RETURN    ${result}
 
 Save Test Message to File
     [Documentation]    Save test message details to file
@@ -228,7 +228,7 @@ Save Test Message to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Extract Forwarding Destinations
     [Documentation]    Extract forwarding destinations from syslog-ng config
@@ -239,7 +239,7 @@ Extract Forwarding Destinations
     # Extract destination configurations
     ${destinations}=    Execute Command    echo "${syslog_config}" | grep -E "destination.*\\{|tcp\\(|udp\\(" | head -20 || echo "No destinations found"
 
-    [Return]    ${destinations}
+    RETURN    ${destinations}
 
 Save Forwarding Config to File
     [Documentation]    Save forwarding configuration to file
@@ -267,7 +267,7 @@ Save Forwarding Config to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Splunk Search Criteria
     [Documentation]    Document Splunk search criteria for verification
@@ -299,7 +299,7 @@ Document Splunk Search Criteria
     ...    5. Capture screenshots of event lists
     ...    6. Verify 90-day retention in index settings
 
-    [Return]    ${search_criteria}
+    RETURN    ${search_criteria}
 
 Save Splunk Search to File
     [Documentation]    Save Splunk search documentation to file
@@ -326,7 +326,7 @@ Save Splunk Search to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Forwarding Configuration
     [Documentation]    Validate syslog-ng forwarding configuration
@@ -353,7 +353,7 @@ Validate Forwarding Configuration
     ...    CIP-007 R4.1 Requirement: Log generation and transmission to central logging system
     ...    Validation Result: COMPLIANT
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Forwarding Validation to File
     [Documentation]    Save forwarding validation to file
@@ -380,7 +380,7 @@ Save Forwarding Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Splunk Destination Configured
     [Documentation]    Check if Splunk server is configured as destination
@@ -399,7 +399,7 @@ Check Splunk Destination Configured
 
     ${configured}=    Evaluate    ${splunk_found} or ${has_tcp_dest}
 
-    [Return]    ${configured}
+    RETURN    ${configured}
 
 Validate Message Delivery
     [Documentation]    Validate test message delivery
@@ -425,7 +425,7 @@ Validate Message Delivery
     ...
     ...    Validation Status: Local generation confirmed, Splunk reception requires manual verification
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Delivery Validation to File
     [Documentation]    Save delivery validation to file
@@ -451,7 +451,7 @@ Save Delivery Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Splunk Event Reception
     [Documentation]    Validate Splunk is receiving events from target
@@ -482,7 +482,7 @@ Validate Splunk Event Reception
     ...    CIP-007 R4.1 Requirement: Central log aggregation and monitoring
     ...    Validation Status: Configuration validated, manual Splunk verification required
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Splunk Validation to File
     [Documentation]    Save Splunk validation to file
@@ -508,7 +508,7 @@ Save Splunk Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Log Retention Policy
     [Documentation]    Validate log retention meets CIP-007 R4.1 90-day requirement
@@ -537,7 +537,7 @@ Validate Log Retention Policy
     ...    Validation Status: Configuration documented, manual Splunk verification required
     ...    Compliance Requirement: 90-day retention MANDATORY per CIP-007 R4.1
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Retention Validation to File
     [Documentation]    Save retention validation to file
@@ -563,7 +563,7 @@ Save Retention Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Critical Event Capture
     [Documentation]    Validate critical security events are being captured
@@ -598,7 +598,7 @@ Validate Critical Event Capture
     ...    Validation Status: Critical event categories configured for capture
     ...    Compliance: MEETS CIP-007 R4.1 requirements
 
-    [Return]    ${validation}
+    RETURN    ${validation}
 
 Save Critical Events Validation to File
     [Documentation]    Save critical events validation to file
@@ -624,7 +624,7 @@ Save Critical Events Validation to File
     ...    ==========================================
 
     Create File    ${filename}    ${report}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Overall CIP007_R4_1 Compliance
     [Documentation]    Validate overall CIP-007 R4.1 compliance
@@ -667,7 +667,7 @@ Validate Overall CIP007_R4_1 Compliance
     ...    OVERALL COMPLIANCE STATUS: ✅ CIP-007 R4.1 COMPLIANT
     ...    (Subject to manual Splunk verification)
 
-    [Return]    ${compliance}
+    RETURN    ${compliance}
 
 Save CIP007_R4_1_Compliance to File
     [Documentation]    Save CIP-007 R4.1 compliance to file
@@ -697,12 +697,12 @@ Save CIP007_R4_1_Compliance to File
     Create File    ${filename}    ${report}
     Log    📄 CIP-007 R4.1 compliance saved to: ${filename}    console=yes
 
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Local Log Storage
     [Documentation]    Check local log storage configuration
     ${storage}=    Execute Command    df -h /var/log && ls -lh /var/log/messages* /var/log/syslog* 2>/dev/null | head -20 || echo "Log storage check"
-    [Return]    ${storage}
+    RETURN    ${storage}
 
 Save Local Storage Info to File
     [Documentation]    Save local storage info to file
@@ -710,12 +710,12 @@ Save Local Storage Info to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST14_DATA_DIR}/local_storage_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${local_storage}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Log File Permissions
     [Documentation]    Check log file permissions
     ${permissions}=    Execute Command    ls -la /var/log/*.log /var/log/messages 2>/dev/null | head -20 || echo "Permission check"
-    [Return]    ${permissions}
+    RETURN    ${permissions}
 
 Save Permissions Info to File
     [Documentation]    Save permissions info to file
@@ -723,12 +723,12 @@ Save Permissions Info to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST14_DATA_DIR}/log_permissions_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${permissions}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Log Rotation Configuration
     [Documentation]    Check log rotation configuration
     ${rotation}=    Execute Command    cat /etc/logrotate.d/syslog 2>/dev/null || cat /etc/logrotate.conf 2>/dev/null | grep -A10 "syslog" || echo "Rotation config check"
-    [Return]    ${rotation}
+    RETURN    ${rotation}
 
 Save Rotation Config to File
     [Documentation]    Save rotation config to file
@@ -736,12 +736,12 @@ Save Rotation Config to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST14_DATA_DIR}/log_rotation_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${rotation_config}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Collect Syslog NG Statistics
     [Documentation]    Collect syslog-ng statistics
     ${stats}=    Execute Command    syslog-ng-ctl stats 2>/dev/null || echo "Statistics not available"
-    [Return]    ${stats}
+    RETURN    ${stats}
 
 Save Statistics to File
     [Documentation]    Save statistics to file
@@ -749,12 +749,12 @@ Save Statistics to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST14_DATA_DIR}/syslog_statistics_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${stats}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Test Splunk Connectivity
     [Documentation]    Test network connectivity to Splunk server
     ${connectivity}=    Execute Command    ping -c 3 ${SPLUNK_SERVER} 2>/dev/null || nc -zv ${SPLUNK_SERVER} ${SPLUNK_PORT} 2>&1 || echo "Connectivity test to ${SPLUNK_SERVER}"
-    [Return]    ${connectivity}
+    RETURN    ${connectivity}
 
 Save Connectivity Test to File
     [Documentation]    Save connectivity test to file
@@ -762,18 +762,18 @@ Save Connectivity Test to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST14_DATA_DIR}/splunk_connectivity_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${connectivity}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Validate Log Message Format
     [Documentation]    Validate log message format
     [Arguments]    ${syslog_config}
     ${format}=    Execute Command    echo "${syslog_config}" | grep -E "template|format" | head -10 || echo "Format: Standard syslog format"
-    [Return]    ${format}
+    RETURN    ${format}
 
 Check Syslog NG Error Logs
     [Documentation]    Check for errors in syslog-ng logs
     ${errors}=    Execute Command    journalctl -u syslog-ng -n 50 --no-pager 2>/dev/null || grep -i "syslog-ng" /var/log/messages 2>/dev/null | tail -20 || echo "Error log check"
-    [Return]    ${errors}
+    RETURN    ${errors}
 
 Save Error Logs to File
     [Documentation]    Save error logs to file
@@ -781,13 +781,13 @@ Save Error Logs to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST14_DATA_DIR}/syslog_errors_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${error_logs}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check TLS Configuration
     [Documentation]    Check TLS/SSL configuration for log transport
     [Arguments]    ${syslog_config}
     ${tls}=    Execute Command    echo "${syslog_config}" | grep -E "tls|ssl" | head -10 || echo "TLS configuration check"
-    [Return]    ${tls}
+    RETURN    ${tls}
 
 Save TLS Config to File
     [Documentation]    Save TLS configuration to file
@@ -795,7 +795,7 @@ Save TLS Config to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST14_DATA_DIR}/tls_config_${TARGET_HOSTNAME}_${timestamp}.txt
     Create File    ${filename}    ${tls_config}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Document Splunk Index Configuration
     [Documentation]    Document expected Splunk index configuration
@@ -806,7 +806,7 @@ Document Splunk Index Configuration
     ...    - Max Data Size: Based on daily log volume
     ...    - Frozen Path: Configured for archival
     ...    Manual verification required in Splunk UI
-    [Return]    ${index_doc}
+    RETURN    ${index_doc}
 
 Save Index Config to File
     [Documentation]    Save index configuration to file
@@ -814,13 +814,13 @@ Save Index Config to File
     ${timestamp}=    Get Current Date    result_format=%Y%m%d_%H%M%S
     ${filename}=    Set Variable    ${TEST14_DATA_DIR}/splunk_index_config_${timestamp}.txt
     Create File    ${filename}    ${index_config}
-    [Return]    ${filename}
+    RETURN    ${filename}
 
 Check Log Source Identification
     [Documentation]    Check log source identification
     [Arguments]    ${syslog_config}
     ${source_id}=    Execute Command    echo "${syslog_config}" | grep -E "keep-hostname|use-fqdn" || echo "Source identification: hostname-based"
-    [Return]    ${source_id}
+    RETURN    ${source_id}
 
 Validate All Logging Settings
     [Documentation]    Validate all logging settings collected

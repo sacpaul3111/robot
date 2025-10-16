@@ -26,7 +26,7 @@ ${SPLUNK_PORT}             514                                # Syslog port (typ
 ${SPLUNK_INDEX}            main                               # Default Splunk index (update as needed)
 
 # Citrix Configuration
-${CITRIX_BROWSER_REQUIRED} ${TRUE}    # Splunk access requires Citrix browser environment
+${CITRIX_BROWSER_REQUIRED}=    ${TRUE}    # Splunk access requires Citrix browser environment
 
 # CIP-007 R4.1 Requirements - Security Event Monitoring
 ${CIP007_LOG_RETENTION_DAYS}    90    # Required log retention period in days
@@ -81,7 +81,7 @@ ${GENERATE_DETAILED_REPORT}      ${TRUE}    # Generate detailed compliance repor
 # Manual Verification Checklist
 @{MANUAL_VERIFICATION_STEPS}
 ...    Login to Splunk via Citrix browser
-...    Execute search: host="${TEST_HOSTNAME}" earliest=-15m
+...    Execute search: host="<TARGET_HOSTNAME>" earliest=-15m
 ...    Verify test message appears in results
 ...    Check index retention settings (Settings → Indexes)
 ...    Verify retention period ≥ 90 days
@@ -92,7 +92,7 @@ ${GENERATE_DETAILED_REPORT}      ${TRUE}    # Generate detailed compliance repor
 ...    Confirm no gaps in log collection
 
 # Test Timeouts
-${SYSLOG_CHECK_TIMEOUT}    60 seconds
-${SPLUNK_SEARCH_TIMEOUT}   90 seconds
-${DATA_COLLECTION_TIMEOUT} 120 seconds
-${VALIDATION_TIMEOUT}      180 seconds
+${SYSLOG_CHECK_TIMEOUT}      60 seconds
+${SPLUNK_SEARCH_TIMEOUT}     90 seconds
+${DATA_COLLECTION_TIMEOUT}=    120 seconds
+${VALIDATION_TIMEOUT}        180 seconds
