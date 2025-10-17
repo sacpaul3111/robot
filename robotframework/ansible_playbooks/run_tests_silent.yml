@@ -1,0 +1,116 @@
+---
+#############################################################################
+# Ansible Playbook: Robot Framework Test Execution (Silent Mode)
+# Description: Execute tests and return only status and artifacts URL
+#
+# USAGE:
+#   # Method 1: With extra variables
+#   ansible-playbook run_tests_silent.yml \
+#     -e TargetHostname=<hostname> \
+#     -e SSH_USERNAME=<user> \
+#     -e SSH_PASSWORD=<pass>
+#
+#   # Method 2: With environment variables
+#   export SSH_USERNAME=<user>
+#   export SSH_PASSWORD=<pass>
+#   ansible-playbook run_tests_silent.yml -e TargetHostname=<hostname>
+#
+# OUTPUT:
+#   Returns JSON with two fields:
+#   {
+#     "overall_status": "PASSED" or "FAILED",
+#     "nexus_artifacts_url": "https://nexus.company.com/repository/..."
+#   }
+#
+# NOTES:
+#   - All playbook output is redirected to: /tmp/ansible_robot_output_<hostname>.log
+#   - Only final status and artifacts URL are displayed on console
+#   - Use set_stats for Ansible Tower/AWX integration to capture variables
+#############################################################################
+
+- name: Execute Robot Framework Tests (Silent Mode)
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  vars:
+    # Default values - can be overridden with -e flag
+    robot_project_dir: "{{ playbook_dir }}/.."
+    robot_output_dir: "results"
+    target_hostname: "{{ TargetHostname | default('') }}"
+
+    # Credentials with same priority as run_tests.yml
+    ssh_username: "{{ SSH_USERNAME | default(lookup('env', 'SSH_USERNAME')) }}"
+    ssh_password: "{{ SSH_PASSWORD | default(lookup('env', 'SSH_PASSWORD')) }}"
+
+  tasks:
+    - name: Validate target hostname is provided
+      fail:
+        msg: "ERROR: TargetHostname is required. Usage: ansible-playbook run_tests_silent.yml -e TargetHostname=<hostname>"
+      when: target_hostname == ''
+
+    - name: Validate SSH credentials are provided
+      fail:
+        msg: "ERROR: SSH credentials required. Provide via -e SSH_USERNAME=<user> -e SSH_PASSWORD=<pass> or environment variables."
+      when: ssh_username == '' or ssh_password == ''
+
+    - name: Execute main test playbook silently
+      shell: |
+        ansible-playbook {{ playbook_dir }}/run_tests.yml \
+          -e TargetHostname={{ target_hostname }} \
+          -e SSH_USERNAME='{{ ssh_username }}' \
+          -e SSH_PASSWORD='{{ ssh_password }}' \
+          > /tmp/ansible_robot_output_{{ target_hostname }}.log 2>&1
+      register: playbook_execution
+      failed_when: false
+      no_log: true
+      changed_when: false
+
+    - name: Read test summary file
+      slurp:
+        src: "{{ robot_project_dir }}/{{ robot_output_dir }}/TEST_SUMMARY.txt"
+      register: summary_file
+      ignore_errors: yes
+
+    - name: Parse overall status from summary
+      set_fact:
+        overall_status: "{{ 'PASSED' if 'Overall Status: PASSED' in (summary_file.content | b64decode) else 'FAILED' }}"
+      when: summary_file is succeeded
+
+    - name: Parse nexus URL from summary
+      set_fact:
+        nexus_url_raw: "{{ (summary_file.content | b64decode) | regex_search('ARTIFACTS URL \\(NEXUS OSS\\)\\s*========================================================\\s*(.+?)\\s*========', '\\1', multiline=True) }}"
+      when: summary_file is succeeded
+
+    - name: Set nexus artifacts URL
+      set_fact:
+        nexus_artifacts_url: "{{ nexus_url_raw[0] | trim }}"
+      when:
+        - summary_file is succeeded
+        - nexus_url_raw is defined
+        - nexus_url_raw | length > 0
+
+    - name: Set default values if summary not found
+      set_fact:
+        overall_status: "{{ overall_status | default('FAILED') }}"
+        nexus_artifacts_url: "{{ nexus_artifacts_url | default('N/A') }}"
+        detailed_log_path: "/tmp/ansible_robot_output_{{ target_hostname }}.log"
+
+  post_tasks:
+    - name: Display results
+      debug:
+        msg:
+          - "========================================================"
+          - "ROBOT FRAMEWORK TEST RESULTS"
+          - "========================================================"
+          - "Overall Status:      {{ overall_status }}"
+          - "Nexus Artifacts URL: {{ nexus_artifacts_url }}"
+          - "Detailed Log:        {{ detailed_log_path }}"
+          - "========================================================"
+
+    - name: Set stats for external consumption
+      set_stats:
+        data:
+          overall_status: "{{ overall_status }}"
+          nexus_artifacts_url: "{{ nexus_artifacts_url }}"
+          detailed_log: "{{ detailed_log_path }}"
+        per_host: no
