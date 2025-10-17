@@ -31,7 +31,7 @@
 
     # TARGET_HOSTNAME - Primary variable used by Robot Framework tests
     # Accept TargetHostname (from Itential) and map to TARGET_HOSTNAME
-    target_hostname: "{{ TargetHostname | default(target_hostname) | default('') }}"
+    target_hostname: "{{ TargetHostname | default('') }}"
 
     # All credentials are provided via environment variables
     # No need to define them here - they are passed directly to Robot Framework
