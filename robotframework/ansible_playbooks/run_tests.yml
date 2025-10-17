@@ -4,17 +4,24 @@
 # Description: Execute all Robot Framework tests with pass/fail summary
 #
 # USAGE:
-#   # Method 1: With Ansible Vault (recommended for production)
+#   # Method 1: With extra variables (recommended for ad-hoc testing)
+#   ansible-playbook run_tests.yml \
+#     -e TargetHostname=<hostname> \
+#     -e SSH_USERNAME=<user> \
+#     -e SSH_PASSWORD=<pass>
+#
+#   # Method 2: With environment variables (development)
+#   export SSH_USERNAME=<user>
+#   export SSH_PASSWORD=<pass>
+#   ansible-playbook run_tests.yml -e TargetHostname=<hostname>
+#
+#   # Method 3: With Ansible Vault (recommended for production)
 #   ansible-playbook run_tests.yml \
 #     -e TargetHostname=<hostname> \
 #     -e @/etc/ansible/vault/robot_credentials.yml \
 #     --vault-password-file=/etc/ansible/vault/.vault_pass
 #
-#   # Method 2: With environment variables (development)
-#   source credentials.env
-#   ansible-playbook run_tests.yml -e TargetHostname=<hostname>
-#
-#   # Method 3: Using wrapper script (easiest)
+#   # Method 4: Using wrapper script (easiest)
 #   ./run_tests_vault.sh <hostname>
 #
 # For detailed documentation, see: docs/ENVIRONMENT_VARIABLES_APPROACH.md
@@ -33,9 +40,12 @@
     # Accept TargetHostname (from Itential) and map to TARGET_HOSTNAME
     target_hostname: "{{ TargetHostname | default('') }}"
 
-    # All credentials are provided via environment variables
-    # No need to define them here - they are passed directly to Robot Framework
-    # via the environment block in execute_test_suite.yml
+    # Credentials can be provided via:
+    # 1. Extra variables: -e SSH_USERNAME=user -e SSH_PASSWORD=pass (highest priority)
+    # 2. Environment variables: export SSH_USERNAME=user (fallback)
+    # 3. Ansible vault: --vault-password-file (for production)
+    ssh_username: "{{ SSH_USERNAME | default(lookup('env', 'SSH_USERNAME')) }}"
+    ssh_password: "{{ SSH_PASSWORD | default(lookup('env', 'SSH_PASSWORD')) }}"
 
     fail_on_test_errors: false
 
@@ -203,20 +213,31 @@
           Example: ansible-playbook run_tests.yml -e TargetHostname=alhxvdvitap01
       when: target_hostname == ''
 
-    - name: Validate SSH credentials are provided via environment
+    - name: Validate SSH credentials are provided
       fail:
         msg: |
           ERROR: SSH credentials required!
-          Please ensure environment variables are set:
-            export SSH_USERNAME=<user>
-            export SSH_PASSWORD=<pass>
 
-          Or source credentials file:
-            source credentials.env
+          You can provide credentials in one of three ways:
 
-          Or use wrapper script:
-            ./run_tests.sh {{ target_hostname }}
-      when: lookup('env', 'SSH_USERNAME') == '' or lookup('env', 'SSH_PASSWORD') == ''
+          1. As extra variables (recommended for ad-hoc runs):
+             ansible-playbook run_tests.yml \
+               -e TargetHostname={{ target_hostname }} \
+               -e SSH_USERNAME=<user> \
+               -e SSH_PASSWORD=<pass>
+
+          2. As environment variables:
+             export SSH_USERNAME=<user>
+             export SSH_PASSWORD=<pass>
+             ansible-playbook run_tests.yml -e TargetHostname={{ target_hostname }}
+
+          3. Using wrapper script:
+             ./run_tests.sh {{ target_hostname }}
+
+          Current values:
+            SSH_USERNAME: {{ 'SET' if ssh_username != '' else 'NOT SET' }}
+            SSH_PASSWORD: {{ 'SET' if ssh_password != '' else 'NOT SET' }}
+      when: ssh_username == '' or ssh_password == ''
 
     - name: Create project directory if it doesn't exist
       file:
