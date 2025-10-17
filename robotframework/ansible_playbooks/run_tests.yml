@@ -123,12 +123,17 @@
         - python3_check.rc != 0 or pip3_check.rc != 0 or git_check.rc != 0
       ignore_errors: yes
 
+    - name: Check if running in virtualenv
+      command: python3 -c "import sys; print('yes' if hasattr(sys, 'real_prefix') or (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix) else 'no')"
+      register: virtualenv_check
+      changed_when: false
+
     - name: Upgrade pip to latest version
       pip:
         name: pip
         executable: pip3
         state: latest
-        extra_args: --user
+        extra_args: "{{ '' if virtualenv_check.stdout == 'yes' else '--user' }}"
       ignore_errors: yes
 
     - name: Check if Robot Framework is installed
@@ -136,6 +141,7 @@
       register: robot_check
       ignore_errors: yes
       changed_when: false
+      failed_when: false
 
     - name: Check if SSHLibrary is installed
       command: python3 -c "import SSHLibrary"
@@ -157,8 +163,10 @@
           - pandas>=1.3.5
         executable: pip3
         state: present
-        extra_args: --user
-      when: robot_check.rc != 0 or sshlibrary_check.rc != 0
+        extra_args: "{{ '' if virtualenv_check.stdout == 'yes' else '--user' }}"
+      when: >
+        ('Robot Framework' not in robot_check.stdout) or
+        sshlibrary_check.rc != 0
       ignore_errors: yes
 
     - name: Verify Python 3 is available after installation
@@ -171,7 +179,10 @@
       command: python3 -m robot --version
       register: robot_verify
       changed_when: false
-      failed_when: robot_verify.rc != 0
+      failed_when:
+        - robot_verify.rc != 0
+        - robot_verify.rc != 251
+        - "'Robot Framework' not in robot_verify.stdout"
 
     - name: Display installed versions
       debug:
